@@ -92,23 +92,16 @@ Every mechanism has exactly one function.
   transition point and either permits the transition or blocks it. It
   does not look and yields no findings.
 
-### 2.2 Mechanism shape
+### 2.2 Specifying a mechanism
 
-Every mechanism is specified by filling a fixed set of slots — the
-mechanism shape.
+A mechanism is specified in the form that fits its function (§2.1) —
+there is no single shared template.
 
-| Slot | Meaning |
-|---|---|
-| Function | inspection or gate |
-| Trigger | when the mechanism runs |
-| Output | a finding (inspection) or a permit/block (gate) |
-
-A mechanism's trigger is stated in cycle / phase / pass terms; an
-inspection's finding is recorded in the tracker; a gate's
-permit/block applies to a phase or status transition.
-
-Named mechanism instances fill this shape — the standardized lenses
-(specified by the domain instance), the [READY] gate (§3.1, §4.4).
+- An **inspection** — a lens — is specified by the lens-entry shape
+  (`modules.md`): its name, the question it asks, and its scope,
+  which carries the trigger that brings it into a cycle.
+- A **gate** is specified directly — the condition it checks and the
+  transition it guards (the [READY] gate: §3.1, §4.4).
 
 ### 2.3 The un-fakeable-artifact rule
 
