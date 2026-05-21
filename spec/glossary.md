@@ -26,7 +26,7 @@ two:
    far. Produces a finding when the lens catches something, nothing
    when it does not. Generative.
 2. **Gate** — permit or block on accumulated state. Does not look;
-   produces no findings; it holds or fails. Gated.
+   produces no findings. Gated.
 
 **Lens** — a single defined inspection criterion: one specific
 question asked of the work already produced. All looking is lensed;

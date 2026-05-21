@@ -89,7 +89,7 @@ Every mechanism has exactly one function.
   is ad-hoc (task-derived) or standardized (pre-written; the
   standardized set is specified by the domain instance).
 - **Gate** permits or blocks. It checks accumulated state at a
-  transition point and either allows the transition or holds it. It
+  transition point and either permits the transition or blocks it. It
   does not look and yields no findings.
 
 ### 2.2 Mechanism shape
@@ -166,9 +166,8 @@ and can stand as a basis; its interpretation, synthesis, or
 recommendation cannot, and is re-grounded against the actual artifact
 before anything rests on it.
 
-Load-bearing means a claim or premise that a design decision, a
-recommendation, or [READY] rests on. A claim of bounded, contained
-cost does not carry the basis apparatus.
+Only load-bearing claims and premises carry the basis apparatus; a
+claim of bounded, contained cost does not.
 
 ---
 
