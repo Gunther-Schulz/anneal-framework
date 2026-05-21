@@ -26,6 +26,12 @@ proceed to the next phase. The operator's input on a design decision
 is free-form override against the recorded tracker (`core.md` §1) —
 never an answer to a posed choice.
 
+The menu **persists**. It is the last element of every response until
+the operator selects continue or proceed. The operator may interject
+free-form instead of selecting — a question, a comment, an override;
+the AI answers the question or applies the override, and then
+re-presents the menu. The operator never loses the advance choice.
+
 ### 1.2 auto-battle
 
 The loop self-advances without per-cycle operator input. Advancement
