@@ -248,16 +248,18 @@ standardized lenses.
   verification is run and its output shown. verify does not pass on
   static inspection alone.
 
-verify accounts for every check: each planned-vs-actual check and
-each applicable lens either holds — recorded as a cited-clean line —
-or finds a divergence from the locked design or a lens issue. A
-divergence or lens issue is recorded as a **finding**, entering the
+verify accounts for every check. Each planned-vs-actual check, and
+every standardized lens — applied where it is in scope, or given a
+cited reason it is not — either holds, recorded as a cited-clean
+line, or yields a divergence from the locked design or a lens issue;
+a failed run of the executable verification is likewise an issue.
+Every divergence or issue is recorded as a **finding**, entering the
 finding track (§4.1) at [PENDING].
 
 verify's terminal result is **[PASSED]** — every check accounted for
-and no finding left open — or **[ISSUES FOUND]**. [ISSUES FOUND]
-returns the run to resolve the open findings; verify then re-runs
-(§5).
+and no finding short of [VERIFIED] — or **[ISSUES FOUND]**.
+[ISSUES FOUND] returns the run to resolve those findings; verify then
+re-runs (§5).
 
 ---
 
