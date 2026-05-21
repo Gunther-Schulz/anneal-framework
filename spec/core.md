@@ -322,8 +322,8 @@ A finding — an observation recorded by inspection — moves through:
    state.
 
 A finding whose stated content is found inaccurate during
-verification is corrected in place; verification continues, with no
-status change.
+verification is corrected — appended as a new line at its current
+status (`modules.md` §3.1); verification continues.
 
 A [VERIFIED] finding can then be invalidated:
 

@@ -105,6 +105,16 @@ the run's ledger, not its design narrative. The standardized-pass
 findings artifact (§3.2) is a separate per-cycle artifact, not part
 of the tracker.
 
+The tracker is **append-only**. A new entry, and every later change
+to an entry — a new status, a corrected summary — is a new ledger
+line appended to the tracker; existing lines are never edited. Each
+line carries its entry's identifier, and an entry's current state is
+its latest line: where current state is needed — the [READY] gate, a
+resume, the closed artifact — it is the tracker reduced to the latest
+line per entry. The append-only history is the run's audit trail;
+because no line is ever rewritten, no past entry can be silently
+altered.
+
 ### 3.2 The standardized-pass findings artifact
 
 Each cycle's standardized inspection pass emits a findings artifact
