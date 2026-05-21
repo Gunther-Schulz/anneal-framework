@@ -85,8 +85,6 @@ the domain by answering:
 - **Verification** — what is "the domain's executable verification"
   that verify runs and shows? (Tests, build, linters; a metrics
   check; a structured review.)
-- **External data** — what external inputs does the work consume,
-  that the branch-coverage discipline applies to?
 
 Record the bindings as a table. Clippy's `core.md` is the worked
 example.
@@ -111,9 +109,10 @@ incident confirms a lens or adds one — promoting the set toward
 **Path 1**, incident-grounded.
 
 Each lens fills the lens-entry shape — Name, Question, Scope
-(`spec/modules.md` §2.1). Keep the set closed and
-complete-for-the-domain: the standardized inspection pass accounts
-for every lens, every cycle.
+(`spec/modules.md` §2.1). Keep the set closed — a lens is in it or
+not — so the standardized inspection pass can account for every lens,
+every cycle. Completeness for the domain is the aim the Path 2
+process above approaches, not a property declared up front.
 
 Clippy's set is not a template, but it can be read for *shapes* that
 recur across domains — does a change force a coupled change
@@ -141,7 +140,7 @@ Then validate:
   fix the plugin), a *spec gap* (the plugin followed the spec and it
   still broke → a new finding for the framework or the instance
   spec), or a *conformant success* (followed and worked → a positive
-  signal for `validation-watch.md`).
+  signal for `spec/validation-watch.md`).
 
 ---
 
