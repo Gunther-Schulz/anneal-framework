@@ -232,6 +232,11 @@ Discovery in implement is minimal — a small local clarification, not
 new design. Major new scope surfacing during implementation holds the
 phase and returns the run to investigate-design; no work is lost.
 
+implement reports completion when the locked design is carried out.
+The implement→verify transition is not gated: verify (§3.3) is itself
+the check on implement, so an incomplete implementation surfaces as
+verify findings rather than passing silently.
+
 ### 3.3 verify
 
 verify checks the completed work against the locked design and the
@@ -245,39 +250,58 @@ standardized lenses.
   verification is run and its output shown. verify does not pass on
   static inspection alone.
 
-A divergence or a lens finding is recorded; verify does not pass
-while unresolved findings remain.
+verify accounts for every check: each planned-vs-actual check and
+each applicable lens either holds — recorded as a cited-clean line —
+or finds a divergence from the locked design or a lens issue. A
+divergence or lens issue is recorded as a **finding**, entering the
+finding track (§4.1) at [PENDING].
 
-verify's terminal result is **[PASSED]** — no unresolved findings —
-or **[ISSUES FOUND]**. Each verify check is recorded as **[VERIFIED]**
-(the check held) or **[VIOLATION]** (a divergence from the design or
-a lens finding).
+verify's terminal result is **[PASSED]** — every check accounted for
+and no finding left open — or **[ISSUES FOUND]**. [ISSUES FOUND]
+returns the run to resolve the open findings; verify then re-runs
+(§5).
 
 ---
 
 ## 4. The status-state machine
 
 A status tag records the state of a finding, a design decision, or
-an implementation step. There are three tracks. (verify's result
-tags — [PASSED], [ISSUES FOUND], [VIOLATION] — are not a track; they
-are specified in §3.3.)
+an implementation step. There are three tracks. ([PASSED] and
+[ISSUES FOUND] — verify's phase result — are not a track; they are
+specified in §3.3.)
+
+Three tags appear in more than one track, each track-scoped and with
+one consistent sense: **[PENDING]** (recorded, not yet at a
+terminal), **[VERIFIED]** (a verified terminal), **[INVALIDATED]** (a
+verified terminal contradicted by later evidence). The reuse is
+deliberate — one vocabulary across the tracks, not three.
 
 ### 4.1 Finding states
 
-A finding — an observation recorded by inspection — moves forward
-through:
+A finding — an observation recorded by inspection — moves through:
 
 1. **[PENDING]** — recorded; not yet verified.
-2. **[PARTIALLY VERIFIED]** — verification evidence gathered, but the
-   verification gate has not yet passed.
-3. **[VERIFIED]** — the verification gate has passed.
+2. **[PARTIALLY VERIFIED]** — verification begun but incomplete. A
+   finding fully verified in one step moves [PENDING] → [VERIFIED]
+   directly; [PARTIALLY VERIFIED] holds a finding whose verification
+   spans steps or cycles.
+3. **[VERIFIED]** — verification complete: the finding's content is
+   established on evidence — whether that content is a live concern
+   (it informs the design) or a non-issue (investigated, it does
+   not). Which it is lives in the finding's summary, not a separate
+   state.
+
+A finding whose stated content is found inaccurate during
+verification is corrected in place; verification continues, with no
+status change.
 
 A [VERIFIED] finding can then be invalidated:
 
 4. **[INVALIDATED]** — a [VERIFIED] finding contradicted by later
-   evidence. Only a [VERIFIED] finding becomes [INVALIDATED]; a
-   finding contradicted before it reached [VERIFIED] is simply
-   corrected, with no status change.
+   evidence. An [INVALIDATED] finding reopens — it reverts to
+   [PENDING] for re-verification — and holds the phase (§4.4) until
+   it does. Only a [VERIFIED] finding becomes [INVALIDATED]; one
+   contradicted before [VERIFIED] is simply corrected.
 
 ### 4.2 Implementation-step states
 
@@ -289,6 +313,11 @@ An implementation step — a unit of the locked design — moves through:
 An [INVALIDATED] finding or design decision reverts every dependent
 [RESOLVED] step to [PENDING].
 
+[RESOLVED] is a design-maturity state, reached in investigate-design.
+implement carries out [RESOLVED] steps and verify checks them; the
+step track does not separately mark a step as carried out — verify is
+that check.
+
 ### 4.3 Design-decision states
 
 A design decision — a recorded choice about what to build, including
@@ -298,25 +327,27 @@ on, or, where it rests on an assumption, that assumption named. The
 basis is mandatory; a decision whose basis is an assumption cannot
 reach [VERIFIED]. It moves through:
 
-1. **[DIRECTION]** — a high-level direction; no concrete detail yet.
+1. **[OUTLINED]** — a high-level direction; no concrete detail yet.
 2. **[PENDING]** — a concrete decision whose detail still needs
    investigation.
-3. **[CONDITIONAL]** — a concrete decision that depends on an
-   unverified assumption; the assumption is recorded with it.
-4. **[VERIFIED]** — a concrete decision, complete and locked.
+3. **[CONDITIONAL]** — a concrete decision resting on an unverified
+   assumption; the assumption is recorded with it.
+4. **[VERIFIED]** — a concrete decision, complete, its basis
+   evidence — locked.
 5. **[INVALIDATED]** — a [VERIFIED] decision contradicted by later
-   evidence. The decision reopens: it reverts toward [PENDING] to be
-   re-formed, and its dependent [RESOLVED] steps revert with it. Only
-   a [VERIFIED] decision becomes [INVALIDATED]; one contradicted
-   before [VERIFIED] is simply revised.
+   evidence.
 
-A decision progresses from [DIRECTION] to a [VERIFIED] concrete
-decision. [PENDING] and [CONDITIONAL] are intermediate concrete
-states; a [CONDITIONAL] decision becomes [VERIFIED] when its
-assumption is verified, and is revised if the assumption fails. A
-[VERIFIED] decision reopens to [INVALIDATED] when later evidence
-contradicts it — as §3.1's scope decision re-opens when the target
-set grows.
+An [OUTLINED] decision becomes concrete as either [PENDING] or
+[CONDITIONAL]. [PENDING] and [CONDITIONAL] are the
+concrete-intermediate states, and a decision moves between them as
+investigation proceeds — a [PENDING] decision found to rest on an
+unverified assumption becomes [CONDITIONAL]; a [CONDITIONAL] decision
+becomes [VERIFIED] when its assumption is verified, and reverts to
+[PENDING] to be re-formed if the assumption is disproved. An
+[INVALIDATED] decision reopens — it reverts to [PENDING], and its
+dependent [RESOLVED] steps revert with it (§4.2) — and holds the
+phase (§4.4) until re-formed. Only a [VERIFIED] decision becomes
+[INVALIDATED]; one contradicted before [VERIFIED] is simply revised.
 
 ### 4.4 Relationship to [READY]
 
