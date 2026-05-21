@@ -120,8 +120,9 @@ investigate-design phase: [READY] permits transition to implement,
 when every check is accounted for and no finding is short of
 [VERIFIED], [ISSUES FOUND] otherwise. Specified in `core.md` §3.3.
 
-**Design decision** — a recorded choice about what to build. Its
-shape — a summary, a basis, and a status — is specified in `core.md`.
+**Design decision** — a committed resolution: the AI's resolved
+choice about what to build, including a choice to defer or exclude.
+Its shape, states, and rules are specified in `core.md` §4.2.
 
 **Scope** — the set of elements a run's work will modify; the
 foundational design decision, established by search. Specified in

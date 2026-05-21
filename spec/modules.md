@@ -16,11 +16,15 @@ start (`core.md` §5).
 ### 1.1 interactive
 
 The operator advances the run. After each investigate-design cycle,
-and at each phase boundary, the AI presents the tracker — its
-findings and recorded design decisions — and a recommendation. This
-advance point is a **menu**: the operator selects an option —
-continue the loop, or proceed to the next phase — or free-form
-overrides (`core.md` §1) instead of taking a listed option.
+and at each phase boundary, the AI presents a **closed artifact** —
+the tracker (its findings and recorded design decisions), a
+recommendation, and the menu — and nothing else. Design decisions are
+recorded in the tracker; they are never posed to the operator as
+questions or choices (`core.md` §1, §4.2). The **menu** carries only
+loop control: the operator selects an option — continue the loop, or
+proceed to the next phase. The operator's input on a design decision
+is free-form override against the recorded tracker (`core.md` §1) —
+never an answer to a posed choice.
 
 ### 1.2 auto-battle
 

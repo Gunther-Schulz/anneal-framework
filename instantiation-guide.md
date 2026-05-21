@@ -128,12 +128,24 @@ With the instance spec written, generate the plugin:
   architecture, file layout, enforcement primitives, progressive
   disclosure. The spec is the source of truth; skill-craft is how it
   becomes a skill.
+- Render faithfully. Each framework rule or mechanism becomes
+  operational plugin text — and the rendering is lossy by default:
+  paraphrase silently drops clauses, and a structurally-enforced
+  mechanism flattens into a soft principle. Apply skill-craft's
+  rendering-fidelity rule — every load-bearing clause of the source
+  survives, and a structural mechanism renders *as* a structural
+  mechanism (a forced step, a gate), never as prose. Verify by a
+  clause-level diff against the source, not by re-reading the rendered
+  text — the renderer is blind to its own flattening.
 
 Then validate:
 
-- **Generative test** — could the plugin's skeleton be built from the
-  spec alone? A coherent skeleton means the spec is complete; failure
-  exposes a gap.
+- **Generative test** — not merely "could a skeleton be built," but:
+  does each rendered rule carry every load-bearing clause of its
+  source, and is every structural mechanism still structural? Verified
+  against the spec, clause by clause. A faithful render means the spec
+  is complete and the rendering held; a dropped clause or a flattened
+  mechanism is the finding.
 - **Empirical test** — run the instance on a real task and review the
   run against the spec. Triage each run-vs-spec deviation: an
   *adherence gap* (the spec is right, the plugin did not follow it →
@@ -144,7 +156,6 @@ Then validate:
 
 ---
 
-*Status: §§1–4 are written from the Clippy spec effort, which lived
-the spec-first process. §5 — the generate-and-validate half — will be
-sharpened once the Clippy plugin rewrite has exercised the
-spec→plugin path end-to-end.*
+*Status: written from the Clippy spec effort and its first plugin
+rewrite — which exercised the spec→plugin path and exposed the
+rendering-fidelity gap §5 now addresses.*

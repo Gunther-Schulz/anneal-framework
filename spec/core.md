@@ -105,8 +105,9 @@ there is no single shared template.
 
 ### 2.3 The un-fakeable-artifact rule
 
-A mechanism's output must be an artifact that cannot be produced
-without doing the work the mechanism represents.
+Every load-bearing artifact the protocol requires — a mechanism's
+output, and a recorded design decision — must be an artifact that
+cannot be produced without doing the work it represents.
 
 - A gate's check must require such an artifact. A form check — "N
   items are present," "a sample exists," "the section is filled in" —
@@ -114,9 +115,18 @@ without doing the work the mechanism represents.
   without firing.
 - An inspection's finding, or its cited reason that a lens is clean,
   must cite evidence that required looking.
+- A design decision's artifact is its committed resolution and basis
+  (§4.2). An open question, or a choice posed to the operator, is the
+  absence of a resolution — not the artifact — so the design-decision
+  track cannot hold one.
 
 An artifact a non-adherent AI can produce by pattern alone enforces
 nothing.
+
+This rule reaches the protocol's behavioral rules, not its mechanisms
+alone: a rule whose adherence cannot be read off an artifact is not
+enforced. A load-bearing rule is specified so that following it
+produces an artifact and not following it produces none.
 
 ### 2.4 The basis rule
 
@@ -303,14 +313,21 @@ A [VERIFIED] finding can then be invalidated:
 
 ### 4.2 Design-decision states
 
-A design decision — a recorded choice about what to build, including
-a choice to defer or exclude — carries a summary and a **basis**
-(§2.4): the evidence it rests on, or, where it rests on an
-assumption, that assumption named. The
-basis is mandatory; a decision whose basis is an assumption cannot
-reach [VERIFIED]. It moves through:
+A design decision is the AI's resolved choice about what to build — a
+**committed position**, including a choice to defer or exclude. It is
+never an open question or a choice posed to the operator: per §2.3 a
+question is the absence of a resolution and yields no valid artifact,
+so the design-decision track holds none. It carries that resolution,
+a **basis** (§2.4) — the evidence the choice rests on, or, where it
+rests on an assumption, that assumption named — and a status. A
+decision the operator could resolve is recorded [CONDITIONAL] — the
+AI's committed recommendation carrying the operator-resolvable
+assumption — never a posed choice; the operator overrides it from the
+tracker (§1). The basis is mandatory; a decision whose basis is an
+assumption cannot reach [VERIFIED]. It moves through:
 
-1. **[OUTLINED]** — a high-level direction; no concrete detail yet.
+1. **[OUTLINED]** — a committed direction; concrete detail not yet
+   investigated.
 2. **[PENDING]** — a concrete decision whose detail still needs
    investigation.
 3. **[CONDITIONAL]** — a concrete decision resting on an unverified
