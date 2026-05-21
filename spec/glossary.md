@@ -77,7 +77,7 @@ three, run in sequence:
 2. **implement** — carrying out the locked design, producing the
    work.
 3. **verify** — checking the produced work against the locked design
-   and the quality standards.
+   and the standardized lenses.
 
 **Investigation** — a single run of the investigate-design phase, from
 the first cycle to [READY].
@@ -116,8 +116,12 @@ investigate-design phase: [READY] permits transition to implement,
 [NOT READY] precedes it. How [READY] is determined is specified in
 `core.md`.
 
+**[PASSED] / [ISSUES FOUND]** — verify's terminal result: [PASSED]
+when every check is accounted for and no finding is short of
+[VERIFIED], [ISSUES FOUND] otherwise. Specified in `core.md` §3.3.
+
 **Design decision** — a recorded choice about what to build. Its
-shape — basis, levels — is specified in `core.md`.
+shape — a summary, a basis, and a status — is specified in `core.md`.
 
 **Scope** — the set of elements a run's work will modify; the
 foundational design decision, established by search. Specified in

@@ -59,11 +59,6 @@ new Diligence-based plugin for a domain.
 
 ## Entry conventions
 
-- **Template / binding / instance.** For each kind of thing
-  (mechanism, phase, mode): skill-craft defines the *template* — the
-  slots an entry fills; the Diligence framework *binds* the template
-  to its vocabulary; an instance holds the named domain-specific
-  content (the lens set).
 - **Operational vs analytic terms.** Operational terms appear in the
   generated protocol text; the AI acts on them. Analytic terms are
   for reasoning about the framework in this spec and never appear in
