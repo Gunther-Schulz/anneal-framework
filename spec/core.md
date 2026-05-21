@@ -212,7 +212,8 @@ problem space, not the AI's model of it. It is established first and
 reaches [VERIFIED] only when search-established. When a later cycle
 grows the set of intended targets, the scope decision re-opens and is
 re-searched. Because [READY] requires every design decision
-[VERIFIED] (§4.3), an unestablished scope holds the phase.
+[VERIFIED] — or, in auto-battle, [AUTO-ACCEPTED] (§4.3) — an
+unestablished scope, at neither, holds the phase.
 
 **[READY]** has two parts. From the cycle history, investigate-design
 reaches [READY] only when both hold:
@@ -221,8 +222,9 @@ reaches [READY] only when both hold:
 - the last cycle's standardized inspection pass produced no material
   finding — none that changes the design.
 
-The tracker-state conditions — every design decision [VERIFIED], no
-finding left open — complete the gate and are specified in §4.3. [READY] permits the transition to implement; until the full
+The tracker-state conditions — every design decision [VERIFIED] (or
+[AUTO-ACCEPTED] in auto-battle), no finding left open — complete the
+gate and are specified in §4.3. [READY] permits the transition to implement; until the full
 gate is met, the phase is [NOT READY] and the loop continues.
 
 ### 3.2 implement
