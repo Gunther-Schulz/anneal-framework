@@ -87,7 +87,21 @@ stale assumptions about wording cause failed edits. Check
 Never assert current state from memory or from a document written
 earlier; verify against the live source.
 
-### 6. Honest trade-offs, and proportionality
+### 6. Edit holistically — integrate, don't insert
+
+An edit integrates a change into a document that must stay coherent
+as a whole — it is not the insertion of correct content at a
+plausible spot. Hold the whole document's structure in view before
+editing; after, it is no muddier than before — right placement,
+weight proportional to the change's importance, no prose accreted
+where a list belongs. Where accretion has already happened,
+re-deriving the structure is part of the edit. The local check — "is
+the new content correct" — always passes while the whole degrades;
+the holistic check is whether the document, as a whole, still
+coheres. A substantive edit's coherence is verified in a separate
+context (practice 2's isolation, applied to structure).
+
+### 7. Honest trade-offs, and proportionality
 
 Every design proposal names its real cost, not only its benefit.
 Push back on an idea — including the operator's — when the reasoning
@@ -96,7 +110,7 @@ future need. Promote a pattern to a higher level (instance →
 framework, or framework → skill-craft) only when a *second* user
 appears — the rule of three. Until then it lives where it is used.
 
-### 7. Design, then decide, then implement
+### 8. Design, then decide, then implement
 
 Surface a design and its genuine choices and trade-offs before
 building. The operator decides. Only then implement — at the source
@@ -116,12 +130,16 @@ A change runs the same loop:
    and why.
 4. **Re-render** the affected instance files from the corrected spec
    — faithfully, clause by clause.
-5. **Verify** the render in a separate context (practice 2); a
-   contract change is audited for all dependents (practice 4); a
-   changed skill file is reviewed against skill-craft's full review,
-   and a changed framework-spec section against skill-craft's
-   protocol-quality lens (a spec is not a skill — its skill-structure
-   checks do not apply).
+5. **Verify** — each check below, in a separate context where it
+   requires one:
+   - the render against its source (practice 2);
+   - every dependent of a contract change (practice 4);
+   - a changed skill file against skill-craft's full review;
+   - a changed framework-spec section against skill-craft's
+     protocol-quality lens (a spec is not a skill — its
+     skill-structure checks do not apply);
+   - the whole document a substantive edit touched, for coherence
+     (practice 6).
 6. **Release the instance** — version-bump the plugin, commit,
    reinstall.
 7. **Persist outcomes** — real-run findings and deferred ideas in the
