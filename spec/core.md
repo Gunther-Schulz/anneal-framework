@@ -416,6 +416,20 @@ phase (§5.3) until re-formed. Only a [VERIFIED] or [AUTO-ACCEPTED]
 decision becomes [INVALIDATED]; one contradicted before reaching
 either is simply revised.
 
+A design decision's basis can be broken by another decision, not only
+by external evidence: a decision that removes, alters, or supersedes
+what another decision's basis depends on contradicts that decision as
+disproving evidence would. So when a design decision is locked or its
+meaning changes, it is examined against the run's other recorded
+design decisions — does it break what any of their bases rests on. A
+decision whose basis it breaks is reopened by the rule above —
+[INVALIDATED] if it reached [VERIFIED] or [AUTO-ACCEPTED], otherwise
+revised — and this holds whether or not that decision's work product
+exists yet: the contradiction is between the decisions, not in the
+work product, so a search of the work product cannot surface it. The
+examination is incremental — the newly locked or changed decision
+against the run's existing decisions, not a re-scan of every pair.
+
 ### 5.3 Relationship to [READY]
 
 [READY] (§4.1) is the point at which the working context judges the
