@@ -96,14 +96,15 @@ carries nothing else:
 - **Design decision** — a status tag, a one-sentence summary of the
   committed position, and its basis (`core.md` §3.2).
 
-The evidence and basis fields hold a §3.2 artifact — a located read,
-a search result — not prose describing one; a free-text account of
-having looked is not a basis (§3.2), and in a tracker entry it is a
-malformed field. An entry has no narrative field: reasoning that is
-not a citable basis does not belong in the tracker — the tracker is
-the run's ledger, not its design narrative. The standardized-pass
-findings artifact (§3.2) is a separate per-cycle artifact, not part
-of the tracker.
+The evidence and basis fields hold a `core.md` §3.2 artifact — a
+located read, a search result — not prose describing one; a free-text
+account of having looked is not a basis (`core.md` §3.2), and in a
+tracker entry it is a malformed field. An entry has no narrative
+field: reasoning that is not a citable basis does not belong in the
+tracker — the tracker is the run's ledger, not its design narrative.
+The standardized-pass findings artifact (§3.2) and the implementation
+decomposition (§3.3) are separate per-cycle and per-decision
+artifacts, persisted alongside the tracker, not part of it.
 
 The tracker is **append-only**. A new entry, and every later change
 to an entry — a new status, a corrected summary — is a new ledger
@@ -121,3 +122,28 @@ Each cycle's standardized inspection pass emits a findings artifact
 (`core.md` §4.1): one line for every lens in the set — a finding or a
 cited-clean reason for a lens in scope, a cited reason for one out of
 scope.
+
+The artifact is **persisted** and carries its **cycle number**. It is
+a per-cycle run artifact kept alongside the tracker, not part of it
+(§3.1). Persistence is what lets the isolated [READY] evaluation
+(`core.md` §4.1) confirm that every cycle's pass ran and the last was
+clean — without it, that [READY] condition is unauditable. The
+instance supplies the persistence mechanism, as it does for the
+tracker.
+
+### 3.3 The implementation decomposition
+
+A design decision reaching for [VERIFIED] carries an **implementation
+decomposition** (`core.md` §5.2): the concrete steps implementing it
+entails, each marked *mechanical* — no design choice — or *a design
+decision*, named and tracked as its own entry. A step left unmarked,
+or marked a design decision and not yet [VERIFIED], does not support
+the parent's [VERIFIED].
+
+The decomposition is **persisted** and identifies its design
+decision, like the standardized-pass artifact (§3.2) and for the same
+reason: the isolated [READY] evaluation (`core.md` §4.1) re-derives it
+to confirm completeness, and cannot if it is not kept. It is not part
+of the tracker — the tracker entry carries the decision's status,
+summary, and basis; the decomposition is the separate artifact behind
+the completeness the [VERIFIED] tag claims.

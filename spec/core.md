@@ -115,25 +115,45 @@ there is no single shared template.
 
 ## 3. The grounding discipline
 
-### 3.1 The un-fakeable-artifact rule
+### 3.1 The evidence-bearing-artifact rule
 
 Every load-bearing artifact the protocol requires — a mechanism's
-output, and a recorded design decision — must be an artifact that
-cannot be produced without doing the work it represents.
+output, a recorded design decision — must be **evidence-bearing**:
+producing it requires doing the work it represents, so a
+non-adherent AI cannot produce it by pattern alone. A bare claim —
+"checked all consumers" — is satisfiable whether or not the work
+happened; a located enumeration — "consumers: [file:line, …]" — is
+not.
 
-- A gate's check must require such an artifact. A form check — "N
-  items are present," "a sample exists," "the section is filled in" —
-  is satisfiable whether or not the work happened, so the gate passes
+Evidence-bearing is a gradient, not an absolute — no artifact an AI
+produces is un-fakeable, since it can fabricate one. An artifact's
+strength is how far faking it requires active fabrication rather than
+mere omission, and how cheaply a checker catches the fake. A
+**strong** artifact points at external, re-checkable truth — a search
+result, a located read, an executed verification's output: faking it
+means fabricating something a checker re-runs and catches. A **weak**
+artifact is a claim about the run's own state — a status tag, a
+self-assessment that work is complete: there is no external truth to
+check it against.
+
+- A gate's check must require an evidence-bearing artifact. A form
+  check — "N items are present," "the section is filled in" — is
+  satisfiable whether or not the work happened, so the gate passes
   without firing.
 - An inspection's finding, or its cited reason that a lens is clean,
   must cite evidence that required looking.
-- A design decision's artifact is its committed resolution and basis
-  (§5.2). An open question, or a choice posed to the operator, is the
-  absence of a resolution — not the artifact — so the design-decision
-  track cannot hold one.
+- A design decision's artifact is its committed resolution, its basis
+  (§5.2), and its implementation decomposition (§5.2). An open
+  question, or a choice posed to the operator, is the absence of a
+  resolution — so the design-decision track cannot hold one.
 
-An artifact a non-adherent AI can produce by pattern alone enforces
-nothing.
+A weak artifact is not self-enforcing — the protocol cannot rest on
+the artifact alone. It is enforced by a **separate checker**: a
+context that did not produce the artifact re-derives it, or the
+operator inspects it. The artifact still earns its place — it makes
+faking require fabrication, and gives the checker something concrete
+to check — but the guarantee comes from the checker, not the
+artifact.
 
 This rule reaches the protocol's behavioral rules, not its mechanisms
 alone: a rule whose adherence cannot be read off an artifact is not
@@ -240,8 +260,27 @@ reaches [READY] only when both hold:
 
 The tracker-state conditions — every design decision [VERIFIED] (or
 [AUTO-ACCEPTED] in auto-battle), no finding left open — complete the
-gate and are specified in §5.3. [READY] permits the transition to implement; until the full
-gate is met, the phase is [NOT READY] and the loop continues.
+gate and are specified in §5.3.
+
+The gate's conditions are tracker tags — but a tag is a weak
+artifact (§3.1): it claims its work is done, yet is producible by
+pattern alone, so a gate checking tags alone passes without firing
+(§3.1). The tags are made trustworthy before the gate, by an
+**isolated [READY] evaluation** — a verification of the design,
+conducted by a context that did not run the cycles. When the working
+context judges the gate met, the isolated evaluation re-derives
+rather than trusts: that each [VERIFIED] decision's basis is evidence
+and its implementation decomposition holds, that each finding is
+genuinely resolved, that every cycle's standardized pass ran. For
+whatever fails — a mis-marked decision, a recall-proxy basis, a
+missing pass — it yields a finding, reopening the entry at fault
+(§5.1, §5.2) so the loop continues. The [READY] gate then checks the
+resulting tracker state. The isolated evaluation is to the design
+what verify (§4.3) is to the implemented work — an isolated check,
+run before the gate rather than after the phase.
+
+[READY] permits the transition to implement; until the full gate is
+met, the phase is [NOT READY] and the loop continues.
 
 ### 4.2 implement
 
@@ -358,7 +397,13 @@ decision the operator could resolve is recorded [CONDITIONAL] — the
 AI's committed recommendation carrying the operator-resolvable
 assumption — never a posed choice; the operator overrides it from the
 tracker (§1). The basis is mandatory; a decision whose basis is an
-assumption cannot reach [VERIFIED]. It moves through:
+assumption cannot reach [VERIFIED]. Completeness — that implementing
+the decision introduces no new design decision — is shown by an
+**implementation decomposition**: the concrete steps implementing it
+entails, each either mechanical or itself a tracked design decision.
+A step that is an unresolved design decision is recorded as its own
+entry and holds the parent below [VERIFIED]. The decomposition is
+mandatory for [VERIFIED], as the basis is. It moves through:
 
 1. **[OUTLINED]** — a committed direction; concrete detail not yet
    investigated.
@@ -366,9 +411,10 @@ assumption cannot reach [VERIFIED]. It moves through:
    investigation.
 3. **[CONDITIONAL]** — a concrete decision resting on an unverified
    assumption; the assumption is recorded with it.
-4. **[VERIFIED]** — a concrete decision, complete and locked, its
-   basis evidence, detailed enough that implementing it introduces no
-   new design decision.
+4. **[VERIFIED]** — a concrete decision, complete and locked: its
+   basis is evidence, and its implementation decomposition holds —
+   every step mechanical or itself a [VERIFIED] decision, so
+   implementing it introduces no new design decision.
 5. **[AUTO-ACCEPTED]** — a [CONDITIONAL] decision that auto-battle
    accepted on the AI's committed recommendation, the run proceeding
    without the operator who would otherwise resolve it (`modules.md`
@@ -395,6 +441,13 @@ phase (§5.3) until re-formed. Only a [VERIFIED] or [AUTO-ACCEPTED]
 decision becomes [INVALIDATED]; one contradicted before reaching
 either is simply revised.
 
+A decision the isolated [READY] evaluation (§4.1) finds did not earn
+its [VERIFIED] tag — its basis a recall-proxy, its implementation
+decomposition incomplete — is not [INVALIDATED]: nothing contradicted
+it, the tag was simply unearned. It reverts to [PENDING], appended as
+a new line, with the disqualifying gap recorded as the finding that
+reopened it.
+
 ### 5.3 Relationship to [READY]
 
 Beyond the cycle-history condition in §4.1, the [READY] gate
@@ -403,6 +456,10 @@ left below [VERIFIED], and every design decision is [VERIFIED] — or,
 in auto-battle, [VERIFIED] or [AUTO-ACCEPTED] (§5.2). An [INVALIDATED]
 finding, a load-bearing finding short of [VERIFIED], or a design
 decision short of that bar holds the phase at [NOT READY].
+
+These conditions, and §4.1's cycle-history condition, are met only
+when the isolated [READY] evaluation (§4.1) confirms them — re-derived
+from evidence, not read off the working context's own tags.
 
 ---
 
@@ -421,10 +478,11 @@ the run are specified in `modules.md` §1.
 investigate-design → implement → verify, entering a phase only when
 its predecessor has reported completion. The investigate-design →
 implement transition is held by the [READY] gate (§4.1, §5.3):
-implement is not entered until [READY]. Each time verify is conducted
-— on first reaching it, and on each re-run after [ISSUES FOUND] — the
-orchestrator establishes it in a context isolated from the one that
-conducted investigate-design and implement (§4.3).
+implement is not entered until [READY]. The orchestrator establishes
+two checks in a context isolated from the one that ran the work: the
+[READY] evaluation, when the working context judges the gate met
+(§4.1); and verify, each time it is conducted — on first reaching it,
+and on each re-run after [ISSUES FOUND] (§4.3).
 
 **Loopbacks.** A phase may return the run to an earlier phase; the
 orchestrator honors the return rather than proceeding. implement

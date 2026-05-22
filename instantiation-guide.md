@@ -55,7 +55,7 @@ fork, not an instance.
 - the three phases (investigate-design, implement, verify) and their
   specs
 - the two-pass cycle, and inspection / gate — the two functions
-- the basis rule and the un-fakeable-artifact rule
+- the basis rule and the evidence-bearing-artifact rule
 - the tracker's form and the status-state machine
 - [READY] and the gates
 - the two modes (interactive, auto-battle)

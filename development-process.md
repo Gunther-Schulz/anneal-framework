@@ -20,7 +20,7 @@ Three repositories, three levels of abstraction:
 - **diligence-framework** — the one domain-general methodology: the
   investigate-design / implement / verify phases, the tracker, the
   gates and status-state machine, the basis rule, the
-  un-fakeable-artifact rule. Built *using* skill-craft's mechanisms.
+  evidence-bearing-artifact rule. Built *using* skill-craft's mechanisms.
 - **An instance** — the framework bound to a domain and rendered into
   a working plugin. `coding-clippy` is the instance for software
   engineering. An instance is *rendered* — paraphrased, with domain

@@ -111,8 +111,8 @@ minimal-quantity rule above — and how *strongly enforced*. They do not
 trade off. A minimal prescription can be fully structural: a two-line
 blocking gate is minimal *and* enforced. A rule load-bearing for the
 purpose — one whose violation breaks grounded claims or the coherent
-picture — is given structural enforcement (an un-fakeable artifact, a
-gate, a forced step) regardless of how minimal it is. "Minimal" never
+picture — is given structural enforcement (an evidence-bearing
+artifact, a gate, a forced step) regardless of how minimal it is. "Minimal" never
 licenses "soft": a load-bearing rule left as unenforced prose is
 under-prescribed, not minimally prescribed.
 
