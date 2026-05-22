@@ -87,7 +87,7 @@ stale assumptions about wording cause failed edits. Check
 Never assert current state from memory or from a document written
 earlier; verify against the live source.
 
-### 6. Edit holistically — integrate, don't insert
+### 6. Integrate, don't insert
 
 An edit integrates a change into a document that must stay coherent
 as a whole — it is not the insertion of correct content at a
@@ -97,7 +97,7 @@ weight proportional to the change's importance, no prose accreted
 where a list belongs. Where accretion has already happened,
 re-deriving the structure is part of the edit. The local check — "is
 the new content correct" — always passes while the whole degrades;
-the holistic check is whether the document, as a whole, still
+the check that matters is whether the document, as a whole, still
 coheres. A substantive edit's coherence is verified in a separate
 context (practice 2's isolation, applied to structure).
 
