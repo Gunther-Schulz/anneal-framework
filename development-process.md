@@ -109,8 +109,10 @@ A change runs the same loop:
    — faithfully, clause by clause.
 5. **Verify** the render in a separate context (practice 2); a
    contract change is audited for all dependents (practice 4); a
-   changed skill file is reviewed against skill-craft, the
-   skill-quality reviewer.
+   changed skill file is reviewed against skill-craft's full review,
+   and a changed framework-spec section against skill-craft's
+   protocol-quality lens (a spec is not a skill — its skill-structure
+   checks do not apply).
 6. **Release the instance** — version-bump the plugin, commit,
    reinstall.
 7. **Persist outcomes** — real-run findings and deferred ideas in the

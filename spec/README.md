@@ -42,6 +42,14 @@ The line between the framework and an instance: the framework's
 method is fixed; the instance supplies only the domain's standardized
 lens set and the domain wording. See `../instantiation-guide.md`.
 
+An instance is a **rendered artifact** — its protocol files are
+generated from this spec and stay generated from it. The spec is the
+standing source of truth: a change to the methodology is made here
+and re-rendered into the instance, never hand-edited into the
+instance directly. Hand-editing drifts the instance from the spec and
+forfeits re-derivability. The re-render procedure is
+`../development-process.md`.
+
 ## Files
 
 - `glossary.md` — locked term definitions. Definitions only.
