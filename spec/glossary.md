@@ -87,7 +87,8 @@ exactly two, in order:
    with task-derived lenses. The default activity. (Analytic
    character: ad-hoc inspection.)
 2. **Standardized inspection pass** — the AI applies the standardized
-   lens set to what the investigation pass produced.
+   lenses whose scope the cycle's work touched to what the
+   investigation pass produced.
 
 **Orchestrator** — the coordinating layer of a run: it detects the
 mode, conducts the phase pipeline through its transitions, and

@@ -123,6 +123,7 @@ altered.
 ### 3.2 The standardized-pass findings artifact
 
 Each cycle's standardized inspection pass emits a findings artifact
-(`core.md` §4.1): one line for every lens in the set — a finding or a
-cited-clean reason for a lens in scope, a cited reason for one out of
-scope.
+(`core.md` §4.1): one line for each lens whose scope the cycle touched
+— a finding, or a cited-clean reason. A lens out of scope that cycle
+is not lined; the standardized set is accounted for whole once, at
+[READY] (`core.md` §4.1).

@@ -220,12 +220,11 @@ design recorded in the tracker. It ends at [READY].
    Findings are recorded in the tracker.
 2. **Standardized inspection pass.** Apply each standardized lens
    whose scope this cycle's investigation touched — incremental, over
-   what this cycle produced. The pass emits a findings artifact that
-   accounts for **every** lens in the set: for a lens in scope, a
-   finding or a one-line cited reason it is clean; for a lens out of
-   scope, a one-line cited reason it does not apply this cycle. A
-   lens is never silently absent. (The standardized lens set is
-   specified by the domain instance.)
+   what this cycle produced. The pass emits a line for each in-scope
+   lens: a finding, or a one-line cited reason it is clean. A lens out
+   of scope this cycle is not lined — the set is not re-attested every
+   cycle; it is accounted for whole once, at [READY]. (The
+   standardized lens set is specified by the domain instance.)
 
 The standardized inspection pass runs every cycle.
 
@@ -249,17 +248,20 @@ unestablished scope, at neither, holds the phase.
 complete — every concern resolved, every design decision at its
 terminal, and the last cycle's standardized inspection pass producing
 no material finding. The supporting facts are recorded across the run:
-every cycle has completed its standardized inspection pass; the last
-cycle's pass was clean; every design decision is [VERIFIED] — or, in
-auto-battle, [VERIFIED] or [AUTO-ACCEPTED] (§5.3); no finding is left
-open. These are the status the tracker carries (§5.3) — a notebook of
+the standardized lens set is accounted for whole — every lens applied
+in the cycle(s) where its scope was touched, or carrying a cited
+reason it was out of scope for the run, no lens silently absent; the
+last cycle's pass left no material finding; every design decision is
+[VERIFIED] — or, in auto-battle, [VERIFIED] or [AUTO-ACCEPTED] (§5.3);
+no finding is left open. These are the status the tracker carries (§5.3) — a notebook of
 where each concern stands — not a mechanical check the run self-passes.
 
 At [READY] the AI does not certify itself ready: it presents the
 design — the tracker, the recorded design decisions, and a
 recommendation — for the operator's judgment. The cycle-history facts
-(every cycle ran its standardized pass; the last was clean) are part
-of what is presented and weighed, not a self-passed gate. The
+(the standardized lens set accounted for whole; the last cycle's pass
+clean) are part of what is presented and weighed, not a self-passed
+gate. The
 operator's decision to proceed is the transition to implement; until
 the operator proceeds, the phase continues and the loop may run
 further cycles.
