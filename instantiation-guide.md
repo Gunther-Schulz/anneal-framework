@@ -88,6 +88,17 @@ in `bindings.md`, the render's instance-side input. The section is
 optional and most instances leave it empty: the framework defines the
 slot, it never dictates its content.
 
+Together these are the instance spec's **slots** — its
+render-consumed kinds of content, each with a framework-defined
+meaning: the three required above, and the optional presentation
+section. The set is **closed**. An instance never adds a slot
+silently — an unrecognised section is undefined input to the render.
+A genuinely new slot is proposed to the framework and recognised in
+this guide, or it does not exist. An instance's freedom is in how it
+fills the slots, and in free-form rationale the render does not
+consume — not in inventing render-consumed structure the framework
+does not know.
+
 ## 3. Binding the framework to the domain
 
 The framework spec is written in domain-general terms. Bind each to
