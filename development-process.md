@@ -41,12 +41,21 @@ binding (instance) — and fix it *there*, then re-render downward.
 Patching the instance directly hides the real gap; the same fault
 recurs in the next render, or the next instance.
 
-A deviation found by running the instance is triaged to its level: an
-*adherence gap* — the instance did not follow the spec → fix the
-instance's render; a *spec gap* — it followed the spec and still
-broke → a finding for the framework or the instance spec; a
-*conformant success* — it followed and worked → a positive signal,
-logged to `spec/validation-watch.md`.
+A deviation found by running the instance is triaged. A *render gap*
+— the instance file does not faithfully carry the spec → fix the
+render. A *spec gap* — the render is faithful, the AI followed it,
+and it still broke → a finding for the framework or the instance
+spec. A *conformant success* — followed and worked → a positive
+signal, logged to `spec/validation-watch.md`. The subtle case is a
+faithful render the AI did *not* follow: do not call it a render gap
+by reflex. First test the rule for underspecification — if it was
+loose enough to admit the violating reading, it fails the framework's
+evidence-bearing standard (`spec/core.md` §3.1, that violating a
+load-bearing rule produces no artifact) and is a *spec gap*: sharpen
+the rule. Only a faithful render of an already-unambiguous,
+evidence-bearing rule, violated anyway, is a true *adherence gap* —
+not a render fix but the irreducible residual the verify, operator,
+and loopback backstops carry.
 
 ### 2. Rendering is lossy — renderer ≠ verifier
 
