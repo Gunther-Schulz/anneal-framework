@@ -119,6 +119,16 @@ future need. Promote a pattern to a higher level (instance →
 framework, or framework → skill-craft) only when a *second* user
 appears — the rule of three. Until then it lives where it is used.
 
+A failure surfacing invites two responses, gated differently.
+*Adding a new mechanism* — a checker, an artifact, a verdict pass —
+is gated: it earns its place only by the rule of three and the
+warrant filters (`spec/README.md` §Extending the framework); a single
+failure does not justify it. *Fixing a bug in an existing
+instruction* — a loophole, an ambiguity, a contradiction, or a
+load-bearing rule left as weak prose where a forcing function belongs
+— is not gated: it is debugging the procedure, legitimate on first
+sight. The over-build caution governs the first, never the second.
+
 ### 8. Design, then decide, then implement
 
 Surface a design and its genuine choices and trade-offs before
