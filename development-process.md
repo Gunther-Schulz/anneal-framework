@@ -1,0 +1,115 @@
+# Development process
+
+This document is the development process for evolving the
+**diligence-framework**, **skill-craft**, and the framework's
+**instances** (such as `coding-clippy`). It covers development work
+*on* these repos — distinct from `instantiation-guide.md`, which
+covers deriving a new instance from the framework.
+
+A fresh session does not hold this process by default. Read and
+adopt it before doing development work here.
+
+## The three levels
+
+Three repositories, three levels of abstraction:
+
+- **skill-craft** — how to build any Claude Code skill:
+  structural-enforcement mechanisms (forcing functions, blocking
+  gates, observable checkpoints, menus), protocol conventions, skill
+  architecture. Domain-agnostic and skill-agnostic.
+- **diligence-framework** — the one domain-general methodology: the
+  investigate-design / implement / verify phases, the tracker, the
+  gates and status-state machine, the basis rule, the
+  un-fakeable-artifact rule. Built *using* skill-craft's mechanisms.
+- **An instance** — the framework bound to a domain and rendered into
+  a working plugin. `coding-clippy` is the instance for software
+  engineering. An instance is *rendered* — paraphrased, with domain
+  bindings — from the framework spec.
+
+A change belongs at the highest level at which it is true. Work flows
+down: skill-craft informs the framework; the framework is rendered
+into instances.
+
+## The practices
+
+### 1. Fix at the source
+
+A problem that surfaces in an instance is rarely the instance's to
+fix. Diagnose which level it belongs to — a skill-design weakness
+(skill-craft), a methodology gap (framework), or a genuine domain
+binding (instance) — and fix it *there*, then re-render downward.
+Patching the instance directly hides the real gap; the same fault
+recurs in the next render, or the next instance.
+
+### 2. Rendering is lossy — renderer ≠ verifier
+
+An instance is rendered from the framework spec by paraphrase.
+Paraphrase silently flattens structural rules into soft prose ("must"
+becomes "should") and drops clauses. The renderer cannot see its own
+flattening — it reads its output as faithful. So every render is
+verified by a **separate context** — a fresh subagent, or a different
+party — by clause-level diff against the source. The context that
+produced a render never verifies it.
+
+### 3. Subagents for context-heavy work
+
+Transcript analysis, large audits, multi-file renders, and
+verification all consume context. Delegate them to a subagent with a
+self-contained brief and an explicit concise-report requirement; the
+main session stays lean. A sub-agent's **facts** — cited file:line —
+can be relied on; its **recommendations and interpretation** are
+re-checked against the framework before being acted on, because a
+sub-agent's framing reflects its brief, not the full context.
+
+### 4. A contract change audits every dependent
+
+When a rule, a shape, or a status changes, that is a contract
+change. Grep for *every* spot that encodes the old contract — across
+all three repos — including the changed file itself: an intra-file or
+intra-repo dependent is the easiest to miss. A found instance is the
+*start* of the audit, not the end; the question is always "what is
+the class, and where else does it live."
+
+### 5. Ground before asserting or editing
+
+Re-read the exact current text of a passage before editing it —
+stale assumptions about wording cause failed edits. Check
+`git status` and `git log` before claiming the state of a repo.
+Never assert current state from memory or from a document written
+earlier; verify against the live source.
+
+### 6. Honest trade-offs, and proportionality
+
+Every design proposal names its real cost, not only its benefit.
+Push back on an idea — including the operator's — when the reasoning
+warrants it. Do not over-build: no machinery for a hypothetical
+future need. Promote a pattern to a higher level (instance →
+framework, or framework → skill-craft) only when a *second* user
+appears — the rule of three. Until then it lives where it is used.
+
+### 7. Design, then decide, then implement
+
+Surface a design and its genuine choices and trade-offs before
+building. The operator decides. Only then implement — at the source
+level, re-rendered, verified. Do not accrete a design through
+implementation, and do not implement past the point the operator has
+agreed.
+
+## The release loop
+
+A change runs the same loop:
+
+1. **Diagnose the level** — skill-craft, framework, or instance
+   (practice 1).
+2. **Fix at the source** — edit the spec at the level the change
+   belongs to.
+3. **Commit the source repo** — a clear message stating what changed
+   and why.
+4. **Re-render** the affected instance files from the corrected spec
+   — faithfully, clause by clause.
+5. **Verify** the render in a separate context (practice 2); a
+   contract change is audited for all dependents (practice 4).
+6. **Release the instance** — version-bump the plugin, commit,
+   reinstall.
+7. **Persist outcomes** — real-run findings and deferred ideas in the
+   instance's status log; process changes back into this document.
