@@ -100,9 +100,11 @@ carries nothing else:
   committed position, and its basis (`core.md` §3.2).
 
 The evidence and basis fields hold a `core.md` §3.2 artifact — a
-located read, a search result — not prose describing one; a free-text
-account of having looked is not a basis (`core.md` §3.2), and in a
-tracker entry it is a malformed field. An entry has no narrative
+located read, or the re-runnable search behind a completeness claim
+(the executable query, not the count it returned) — not prose
+describing one; a free-text account of having looked is not a basis
+(`core.md` §3.2), and neither is a bare count with no query behind it
+— in a tracker entry, each is a malformed field. An entry has no narrative
 field: reasoning that is not a citable basis does not belong in the
 tracker — the tracker is the run's ledger, not its design narrative.
 The standardized-pass findings artifact (§3.2) is a separate

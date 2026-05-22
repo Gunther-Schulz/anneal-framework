@@ -177,8 +177,12 @@ The rule has two edges:
   a coarser proxy of it. A claim about a *complete set* — a scope, an
   element's dependents, an input's value-classes, a flaw class's
   instances — has the whole set as its unit; its basis is an
-  exhaustive search, not a declared scope or one instance. The
-search's own reach is not exempt: a scope narrowed by where the
+  exhaustive search — not a declared scope, not one instance —
+  recorded as the **re-runnable search itself**, the executable
+  query, not the count it returned. A count detached from the search
+  that produced it reads identically whether the search ran or the
+  count was recalled; only the query, re-runnable, tells them apart.
+  The search's own reach is not exempt: a scope narrowed by where the
 members are assumed to live is a declared scope in a search's
 clothing — and a member co-located with the change is the one a
 search of "everywhere else" is built to miss. A claim
