@@ -86,7 +86,7 @@ the domain by answering:
   that verify runs and shows? (Tests, build, linters; a metrics
   check; a structured review.)
 
-Record the bindings as a table. Clippy's `core.md` is the worked
+Record the bindings as a table. Clippy's `bindings.md` is the worked
 example.
 
 ## 4. Deriving the standardized lens set
