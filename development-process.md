@@ -13,7 +13,7 @@ adopt it before doing development work here.
 
 Three repositories, three levels of abstraction:
 
-- **skill-craft** — how to build any Claude Code skill:
+- **skill-craft** — how to build and review any Claude Code skill:
   structural-enforcement mechanisms (forcing functions, blocking
   gates, observable checkpoints, menus), protocol conventions, skill
   architecture. Domain-agnostic and skill-agnostic.
@@ -108,7 +108,9 @@ A change runs the same loop:
 4. **Re-render** the affected instance files from the corrected spec
    — faithfully, clause by clause.
 5. **Verify** the render in a separate context (practice 2); a
-   contract change is audited for all dependents (practice 4).
+   contract change is audited for all dependents (practice 4); a
+   changed skill file is reviewed against skill-craft, the
+   skill-quality reviewer.
 6. **Release the instance** — version-bump the plugin, commit,
    reinstall.
 7. **Persist outcomes** — real-run findings and deferred ideas in the
