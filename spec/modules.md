@@ -57,7 +57,14 @@ purpose:
    and its rationale (including any "not recommended because…" calls)
    live in their own section. The menu carries only the loop-control
    options (continue / proceed), plain, at the very end — no inline
-   annotations.
+   annotations. **For each open [CONDITIONAL] decision, the
+   recommendation surfaces the AI's committed default crisply** — what
+   the AI recommends, what value or shape selecting proceed will commit
+   to. This is what makes proceed-select an informed accept: the
+   operator sees what they accept when they accept; the [CONDITIONAL]
+   then records [AUTO-ACCEPTED] (`core.md` §5.2). The operator's
+   alternative is free-form override against the tracker at any moment,
+   in either mode (`core.md` §1).
 5. **Commands and code set apart.** Search commands, file paths,
    tracker citations are presented as code, not buried in prose.
 
@@ -66,29 +73,37 @@ blockers in seconds; a deep read goes into the persisted artifacts.
 
 ### 1.2 auto-battle
 
+Auto-battle is **interactive minus the operator**. Every protocol
+behavior — cycle loop, lens application, basis-rule discipline,
+tracker shape, dispatch self-check (`core.md` §4.2), verify
+isolation (`core.md` §4.3), [CONDITIONAL] handling — is identical to
+interactive mode. The single difference is the operator slot at
+decision moments: in interactive, an operator selects continue or
+proceed at the closed-artifact presentation; in auto-battle, no
+operator is present, so the AI's committed recommendation is taken
+as default automatically.
+
 The loop self-advances without per-cycle operator input. Cycles run
 until the working context judges the design complete (`core.md` §4.1,
-[READY]). In interactive mode the operator is then presented the
-design and decides to proceed; auto-battle has no operator, so that
-judgement is itself the transition to implement — the operator's
-decision at [READY] is skipped.
+[READY]). At [READY], where interactive presents the closed artifact
+and waits for the operator's proceed-selection, auto-battle skips
+the presentation and proceeds directly — the same default-take of
+the AI's recommendation, just without the operator-present-to-attest.
 
-A design decision recorded [CONDITIONAL] would, in interactive mode,
-hold the run until the operator resolves it (`core.md` §1, §5.2).
-Auto-battle has no operator to resolve it. Instead, when such a
-decision still rests on its assumption as the design reaches [READY],
-auto-battle **accepts the AI's committed recommendation** — every
-design decision carries one (`core.md` §1) — and the decision is
-tagged **[AUTO-ACCEPTED]** (`core.md` §5.2): the recommendation
-stands, the assumption it rested on was not verified, and the tag
-records exactly that. The run proceeds. Every [AUTO-ACCEPTED]
-decision is, by its tag, surfaced in the tracker for the operator's
-review of the completed run — it is auto-battle accepting a call the
-operator would otherwise have made, recorded as such, never silently.
+A [CONDITIONAL] decision still resting on its assumption when the
+design reaches [READY] is recorded [AUTO-ACCEPTED] (`core.md` §5.2)
+in both modes. Interactive: the operator's proceed-selection without
+override on the open [CONDITIONAL] is the trigger (the closed-
+artifact form per §1.1 rule #4 surfaces the AI's recommendation, so
+proceed-select is an informed accept). Auto-battle: mode-absence-of-
+operator is the trigger. The tag records the same thing in either
+case — the recommendation stands; the assumption was not verified.
+Every [AUTO-ACCEPTED] decision is, by its tag, surfaced in the
+tracker for the operator's review of the completed run.
 
 Auto-battle's remaining halt conditions — when a phase genuinely
-cannot complete, such as a verify loop that will not converge — are a
-separate effort, not yet undertaken.
+cannot complete, such as a verify loop that will not converge — are
+a separate effort, not yet undertaken.
 
 ## 2. The standardized lens set
 

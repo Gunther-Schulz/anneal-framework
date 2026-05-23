@@ -115,19 +115,25 @@ context (practice 2's isolation, applied to structure).
 Every design proposal names its real cost, not only its benefit.
 Push back on an idea — including the operator's — when the reasoning
 warrants it. Do not over-build: no machinery for a hypothetical
-future need. Promote a pattern to a higher level (instance →
-framework, or framework → skill-craft) only when a *second* user
-appears — the rule of three. Until then it lives where it is used.
+future need.
 
-A failure surfacing invites two responses, gated differently.
-*Adding a new mechanism* — a checker, an artifact, a verdict pass —
-is gated: it earns its place only by the rule of three and the
-warrant filters (`spec/README.md` §Extending the framework); a single
-failure does not justify it. *Fixing a bug in an existing
-instruction* — a loophole, an ambiguity, a contradiction, or a
-load-bearing rule left as weak prose where a forcing function belongs
-— is not gated: it is debugging the procedure, legitimate on first
-sight. The over-build caution governs the first, never the second.
+A failure surfacing invites a fix. The gate on the fix is its
+**structural form**, not its occurrence count. Per skill-craft's
+"Judgment calls as design risk" (`PROCEDURE.md`), every rule the AI
+must follow has one of three forms: **mechanical criteria** (computed
+from observable evidence), **structural enforcement** (artifact-shape
+forcing function), or **safety net** (accept the AI will sometimes
+fail; catch downstream). A proposed fix in pure prose form — an "AI
+must X" rule with none of the three backing it — is malformed; it
+adds an unenforced suggestion (skill-craft anti-pattern: "Naked
+judgment call"; "Procedure drift through incremental patches" /
+adversarial tone). Both adding a new mechanism and fixing an existing
+instruction are gated by this: can the fix be classified as one of
+the three forms? If yes, it earns its place at n=1 — wait-for-
+recurrence is the wrong gate (the recurrence isn't what makes the
+fix valid; the structural form is). If no, the fix isn't ready —
+keep iterating on form, or accept the failure shape isn't tractable
+for codification at all (operator catch remains the catch).
 
 The cost calculus differs for **foundation work** — work on the
 framework spec, skill-craft, an instance's foundations, or
@@ -151,18 +157,24 @@ fire at either stage, design-time placement wins.
 ### 8. Design, then decide, then implement
 
 Surface a design and its **genuine choices** and trade-offs before
-building. Genuine includes the proper-fix option: the AI's default
-disposition is to prefer the proper fix and lead with it, weighing
-cheaper alternatives honestly against it — not to construct
-cheap-only menus. Cheap variants are sometimes right (small stakes,
-throwaway scope) but rarely on foundation work (practice 7) — the
-production-run amortization changes the math. The operator decides;
-the operator's go before implementation is part of the discipline,
-even when established tenets already authorize the workstream —
-incremental steps within an authorized workstream do not need
-ceremonial confirmation, but crossing into implementation after a
-design surface does. Only then implement — at the source level,
-re-rendered, verified. Do not accrete a design through
+building. Genuine includes two things: (a) the **proper-fix option** —
+the AI's default disposition is to prefer the proper fix and lead
+with it, weighing cheaper alternatives honestly against it (not to
+construct cheap-only menus); and (b) for any new rule the AI must
+follow, the rule's **mitigation classification** per practice 7's
+structural-quality gate (mechanical criteria / structural enforcement
+/ safety net per skill-craft's "Judgment calls as design risk"). A
+design surface that omits either — only cheap variants on the menu,
+or a new rule without its mitigation classification — is malformed;
+operator review should send it back. Cheap variants are sometimes
+right (small stakes, throwaway scope) but rarely on foundation work
+(practice 7) — the production-run amortization changes the math. The
+operator decides; the operator's go before implementation is part of
+the discipline, even when established tenets already authorize the
+workstream — incremental steps within an authorized workstream do
+not need ceremonial confirmation, but crossing into implementation
+after a design surface does. Only then implement — at the source
+level, re-rendered, verified. Do not accrete a design through
 implementation, and do not implement past the point the operator
 has agreed.
 

@@ -73,10 +73,12 @@ design decision (§5.2), with its basis (§3.2) — visible, never
 silent. This holds for a decision to defer or not act: "defer X,
 because Y" is a recorded decision, not an absence. A decision resting
 on an assumption — including one only the operator could confirm —
-carries that assumption as its basis; per §3.2 it holds the run short
-of [READY] until the assumption is grounded or the operator resolves
-it. The operator, seeing the recorded decisions, retains free-form
-override at any point, in either mode.
+carries that assumption as its basis (§3.2) and is recorded
+[CONDITIONAL] with the AI's committed recommendation. At [READY],
+unresolved [CONDITIONAL]s become [AUTO-ACCEPTED] in both modes
+(§5.2) — the recommendation taken as default unless overridden. The
+operator, seeing the recorded decisions, retains free-form override
+at any point, in either mode.
 
 The operator's request sets the task; it may also propose a solution.
 Such a proposal is a strong input, not a locked design: that it is
@@ -278,7 +280,7 @@ problem space, not the AI's model of it. It is established first and
 reaches [VERIFIED] only when search-established. When a later cycle
 grows the set of intended targets, the scope decision re-opens and is
 re-searched. Because [READY] requires every design decision
-[VERIFIED] — or, in auto-battle, [AUTO-ACCEPTED] (§5.3) — an
+[VERIFIED] or [AUTO-ACCEPTED] (§5.3) — applies in both modes — an
 unestablished scope, at neither, holds the phase.
 
 **[READY]** is reached when the working context judges the design
@@ -289,7 +291,7 @@ the standardized lens set is accounted for whole — every lens applied
 in the cycle(s) where its scope was touched, or carrying a cited
 reason it was out of scope for the run, no lens silently absent; the
 last cycle's pass left no material finding; every design decision is
-[VERIFIED] — or, in auto-battle, [VERIFIED] or [AUTO-ACCEPTED] (§5.3);
+[VERIFIED] or [AUTO-ACCEPTED] (§5.3) — both modes;
 no finding is left open. These are the status the tracker carries (§5.3) — a notebook of
 where each concern stands — not a mechanical check the run self-passes.
 
@@ -520,13 +522,16 @@ assumption cannot reach [VERIFIED]. It moves through:
 4. **[VERIFIED]** — a concrete decision, complete and locked, its
    basis evidence, detailed enough that implementing it introduces no
    new design decision.
-5. **[AUTO-ACCEPTED]** — a [CONDITIONAL] decision that auto-battle
-   accepted on the AI's committed recommendation, the run proceeding
-   without the operator who would otherwise resolve it (`modules.md`
-   §1.2). The recommendation stands; the assumption it rested on was
-   not verified — [AUTO-ACCEPTED] records exactly that, and does not
-   claim the verification that [VERIFIED] does. Reached only in
-   auto-battle.
+5. **[AUTO-ACCEPTED]** — a [CONDITIONAL] decision the AI's committed
+   recommendation was taken as default when the operator did not
+   override: in interactive mode, by the operator selecting proceed at
+   the closed-artifact presentation without overriding any open
+   [CONDITIONAL] (`modules.md` §1.1); in auto-battle mode, by the
+   absence of an operator (`modules.md` §1.2). The recommendation
+   stands; the assumption it rested on was not verified —
+   [AUTO-ACCEPTED] records exactly that, and does not claim the
+   verification that [VERIFIED] does. Both modes reach this state; the
+   difference is who-or-what occupies the decision-moment.
 6. **[INVALIDATED]** — a [VERIFIED] or [AUTO-ACCEPTED] decision
    contradicted by later evidence.
 
@@ -536,11 +541,13 @@ concrete-intermediate states, and a decision moves between them as
 investigation proceeds — a [PENDING] decision found to rest on an
 unverified assumption becomes [CONDITIONAL]; a [CONDITIONAL] decision
 becomes [VERIFIED] when its assumption is verified, and reverts to
-[PENDING] to be re-formed if the assumption is disproved. In
-auto-battle, a [CONDITIONAL] decision still resting on its assumption
-when the design reaches [READY] — with no operator available to
-resolve it — becomes [AUTO-ACCEPTED] rather than holding the run
-(`modules.md` §1.2). An [INVALIDATED] decision reopens — it reverts to [PENDING],
+[PENDING] to be re-formed if the assumption is disproved. A
+[CONDITIONAL] decision still resting on its assumption when the
+design reaches [READY] becomes [AUTO-ACCEPTED] — the AI's committed
+recommendation taken as default. In interactive mode the operator's
+proceed-selection without override is the trigger; in auto-battle
+the absence of operator is the trigger (`modules.md` §1.1, §1.2).
+The recommendation stands; the assumption was not verified. An [INVALIDATED] decision reopens — it reverts to [PENDING],
 and any decision that depended on it reverts with it — and holds the
 phase (§5.3) until re-formed. Only a [VERIFIED] or [AUTO-ACCEPTED]
 decision becomes [INVALIDATED]; one contradicted before reaching
@@ -565,11 +572,14 @@ against the run's existing decisions, not a re-scan of every pair.
 [READY] (§4.1) is the point at which the working context judges the
 design complete. The tracker state it weighs in that judgment: no
 finding is [INVALIDATED], no load-bearing finding is left below
-[VERIFIED], and every design decision is [VERIFIED] — or, in
-auto-battle, [VERIFIED] or [AUTO-ACCEPTED] (§5.2). An [INVALIDATED]
-finding, a load-bearing finding short of [VERIFIED], or a design
-decision short of that bar is an unresolved concern — the design is
-not complete, and the loop continues.
+[VERIFIED], and every design decision is [VERIFIED] or
+[AUTO-ACCEPTED] (§5.2). The [AUTO-ACCEPTED] terminal applies in both
+modes — interactive mode reaches it by the operator's proceed-
+selection without override on open [CONDITIONAL]s, auto-battle by
+mode-absence-of-operator. An [INVALIDATED] finding, a load-bearing
+finding short of [VERIFIED], or a design decision short of that bar
+is an unresolved concern — the design is not complete, and the loop
+continues.
 
 These are the status the tracker carries — a notebook of where each
 concern stands — that the AI reads when it judges the design complete
