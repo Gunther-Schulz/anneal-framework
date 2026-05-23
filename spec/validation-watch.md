@@ -231,3 +231,44 @@ on disjoint runner files). Resume-from-tracker observed working in
 practice (fresh-prompt "Run Clippy per docs/MULTI_STRATEGY_ARCHITECTURE.md"
 properly continues mid-Unit-5). Unit 5 resume is the first real test
 of the dispatched protocol — slices 4b/4c the parallel candidate.
+
+**Verify-cycle audit outcomes (2026-05-23, Unit 5 post-run review).**
+Finding-by-finding classification of F-V1 through F-V13 against the
+existing lens set / rule set:
+- **8 adherence gaps on existing rules**: Coupled-change × 5 (F-V3,
+  F-V8, F-V11, F-V12, partial F-V9), Branch-coverage × 1 (F-V10),
+  Failure-path × 1 (F-V13), §5.2 cross-decision basis-break × 1
+  (F-V1).
+- **2 real lens-coverage gaps** at replacement sites — behavioral
+  coupling not articulated in Coupled-change as written (F-V2
+  paper-bets parity, F-V5 bet_calc threading).
+- **3 verify-policy gaps** on linter warnings (F-V4, F-V6, F-V9 —
+  ruff F841 + B905) — spec was ambiguous on whether warnings count
+  as findings.
+- **1 false alarm** (F-V7).
+
+Protocol changes this audit prompted (this commit's siblings):
+- `core.md` §3.2: basis-rule extended — delete/replace/amend
+  decisions must carry the references search + behavioral-parity
+  enumeration as basis (forcing function for the Coupled-change
+  adherence recurrence).
+- `core.md` §4.3: clarified that non-failure output (linter
+  warnings, deprecations) counts as a finding unless explicitly
+  de-prioritized — closes the spec ambiguity that allowed
+  ruff-caught items to slip as "context only."
+- Instance `lenses.md` Coupled-change: extended question to cover
+  behavioral coupling at replacement, not just reference coupling.
+- `development-process.md`: practice 8 extended with the recurring
+  prefer-proper-fix violation caution; new practice 9 codifying
+  foundation-work disposition (no cost gating; design-time trumps
+  implementation-time; proper-full-solution default; trust tenets,
+  don't ask ceremonially).
+
+Dispatch self-check (Lever B from the implement-phase
+lens-application discussion — applying lenses at the dispatch
+boundary so each unit self-checks against the locked design before
+returning state) is the open design pass that compounds with the
+design-time forcing function — a per-dispatch-unit catcher for
+references introduced post-design and behaviors slipping the
+locked enumeration. Surfaced as the next design work in this
+session; not yet locked in spec.
