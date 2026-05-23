@@ -131,11 +131,14 @@ sight. The over-build caution governs the first, never the second.
 
 ### 8. Design, then decide, then implement
 
-Surface a design and its genuine choices and trade-offs before
-building. The operator decides. Only then implement — at the source
-level, re-rendered, verified. Do not accrete a design through
-implementation, and do not implement past the point the operator has
-agreed.
+Surface a design and its **genuine choices** and trade-offs before
+building. Genuine includes the proper-fix option: the AI's default
+disposition is to prefer the proper fix and lead with it, weighing
+cheaper alternatives honestly against it — not to construct
+cheap-only menus. The operator decides. Only then implement — at
+the source level, re-rendered, verified. Do not accrete a design
+through implementation, and do not implement past the point the
+operator has agreed.
 
 ## The release loop
 
