@@ -32,6 +32,34 @@ free-form instead of selecting — a question, a comment, an override;
 the AI answers the question or applies the override, and then
 re-presents the menu. The operator never loses the advance choice.
 
+**Closed-artifact form.** The closed artifact is structured for the
+dual-purpose principle (`core.md` §3.1) — both the operator's
+decision and the AI's own discipline. The form follows from that
+purpose:
+
+1. **State leads.** Open with what the operator needs to decide on:
+   counts (findings, decisions, by status), whether the last cycle's
+   standardized pass was clean, and the named blockers preventing
+   [READY] (drawn from [PENDING] decisions and weak-basis entries in
+   the ledger). Decision-relevant content first; detail follows.
+2. **Scannable inventories.** Findings and decisions are bulleted
+   lists, one entry per line, with status tag and identifier at the
+   start of each line — not paragraph-prose summaries.
+3. **Pointer, not duplicate.** Where retained artifacts (the tracker
+   file, the standardized-pass per-cycle artifact) hold detail, the
+   closed artifact references them — it does not paragraph-summarize.
+   Detail lives once, in its persisted home.
+4. **Recommendation separate from menu.** The AI's next-step proposal
+   and its rationale (including any "not recommended because…" calls)
+   live in their own section. The menu carries only the loop-control
+   options (continue / proceed), plain, at the very end — no inline
+   annotations.
+5. **Commands and code set apart.** Search commands, file paths,
+   tracker citations are presented as code, not buried in prose.
+
+The result is a two-tier read: a skim gets state + recommendation +
+blockers in seconds; a deep read goes into the persisted artifacts.
+
 ### 1.2 auto-battle
 
 The loop self-advances without per-cycle operator input. Cycles run
@@ -109,6 +137,15 @@ field: reasoning that is not a citable basis does not belong in the
 tracker — the tracker is the run's ledger, not its design narrative.
 The standardized-pass findings artifact (§3.2) is a separate
 per-cycle artifact, not part of the tracker.
+
+A design decision may carry, as an optional sub-line under its peer
+entry, a structured **considered** field — one line per alternative
+in the shape `considered: <alternative> (rejected: <reason>)`. The
+rejection reason carries a cited basis (`core.md` §3.2) where
+applicable; loose narrative does not belong here. The field is
+optional — fabricating alternatives degrades the ledger. Use it
+where alternatives were genuinely weighed and naming them informs a
+later reader (the operator at [READY] or post-hoc debugging).
 
 The tracker is **append-only**. A new entry, and every later change
 to an entry — a new status, a corrected summary — is a new ledger

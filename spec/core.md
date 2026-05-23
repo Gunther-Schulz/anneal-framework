@@ -145,6 +145,18 @@ faking require fabrication, and gives the checker something concrete
 to check — but the guarantee comes from the checker, not the
 artifact.
 
+Every artifact this rule reaches serves both audiences and both AI
+failure modes. It **informs the operator or checker** who reads it
+(a grounded basis for review and decision). And it **constrains the
+AI producing it** in two distinct ways — keeping the AI *honest*
+(faking requires fabrication, not mere omission) AND keeping it
+*oriented* (the artifact records what's been checked, what's
+outstanding, what's been ruled out, so the AI doesn't drift, fixate
+on a narrow focus, or re-tread verified ground). The discipline that
+makes an artifact hard to fake is the same discipline that makes it
+scaffolding for the AI's next move — and the same discipline that
+makes it useful for inspection. One property, three purposes.
+
 This rule reaches the protocol's behavioral rules, not its mechanisms
 alone: a rule whose adherence cannot be read off an artifact is not
 enforced. A load-bearing rule is specified so that following it
