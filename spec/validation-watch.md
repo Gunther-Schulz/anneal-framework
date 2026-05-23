@@ -180,48 +180,54 @@ protocol gap; tracked operator-side.
 
 ## V-6. Implementation decomposition + impl-phase subagent topology
 
-**Decision (`implement.md`, `SKILL.md`).** Implement-phase agent
-topology is left unspecified. The operator may dispatch parallel-
-eligible slices of impl work to subagents ad-hoc; the spec does not
-mandate, forbid, or formalize a protocol for impl decomposition,
-subagent dispatch, tracker write ordering across writers, or loopback
-returns across an agent boundary. Verify remains the only
-post-investigate-design phase with spec-mandated subagent isolation
-(`SKILL.md`).
+**Decision (`core.md` §4.2, §6; `modules.md` §3.3).** The impl phase
+opens with an impl plan: dispatch units derived from the locked
+design, dependency-ordered, parallel-eligibility marked with a
+search-established disjointness basis. Dispatch to subagents is the
+default when the plan has two or more units; a single-unit plan is
+implemented in the working context. The orchestrator owns the tracker
+append; subagents return state. A subagent surfacing major new scope
+triggers a loopback to investigate-design, with other in-flight
+parallel subagents halted. Per-unit commits are the checkpoint
+discipline that makes resume-from-tracker reliable.
 
-**Why uncertain.** The situation surfaced once. The design challenges
-(loopback-across-boundary, tracker concurrency, verify-over-
-heterogeneous-source) are tractable but the protocol design needs
-evidence ground. The session-budget-checkpoint discipline the AI
-produced ad-hoc (per-slice commits + tracker checkpoint + resume next
-session) is partly covered by the lifecycle's resume-from-in-progress-
-run (`SKILL.md`), but only partly — the per-slice commit cadence
-itself isn't named. Chose ship-fast over design-first: test operator-
-invoked ad-hoc dispatch in subsequent units before committing to a
-protocol shape from one observation. The full design pass (impl
-decomposition + parallel dispatch + checkpoint, touching `implement.md`,
-`SKILL.md`, and the tracker model) is on the roadmap when evidence
-warrants.
+**Why uncertain.** Design completed on n=1 evidence (Unit 5, mid-impl
+session-budget exhaustion, 2026-05-23). Ship-fast applied: a
+reversible spec change with a real post-analysis hook (this entry),
+preferred over withholding for more runs of the unsupported old
+protocol. Several calls rest on analogy to verify rather than direct
+evidence — that the impl-subagent brief shape mirroring verify will
+be artifact-sufficient, that the loopback-from-impl-subagent pattern
+works the same as verify's [ISSUES FOUND] return, that one-writer
+tracker append remains workable when parallel subagents return state
+in short intervals. The ≥2-unit dispatch threshold is a judgment call
+balancing verify-isolation symmetry against mechanism-creep on
+trivial impls.
 
-**Production signal to watch.** (1) Recurrence of mid-impl session-
-budget-exhaustion — same shape (large unit, AI surfaces remaining
-volume, per-slice commits, proposes resume) or a different shape
-(push-through-and-fail, stop without committing per slice). (2)
-Whether operator-invoked subagent dispatch on parallel-eligible slices
-(candidate: Unit 6, may not trigger to full extent) works smoothly —
-tracker write integration, return-state handling, verify scope across
-heterogeneous-source code. (3) What protocol gaps surface in ad-hoc
-use. Outcomes: recurrence + ad-hoc-clean → spec the observed protocol;
-recurrence + ad-hoc-messy → design the protocol sooner; non-recurrence
-+ Unit 6 doesn't exercise it → keep watching.
+**Production signal to watch.** (1) Whether impl-plan production at
+implement-start works smoothly — is the dispatch-unit grouping
+intuitive from the locked design, is parallel-eligibility usefully
+identifiable, does the artifact feel useful or ceremonial. Difficulty
+here is also a downstream signal on [READY] quality (V-5): a tracker
+[READY]'d but not naturally yielding a clean impl plan suggests the
+design was incomplete. (2) Whether parallel dispatch actually
+parallelizes cleanly in practice (Unit 6 candidate, may not exercise
+it to full extent) — tracker write integration, return-state
+handling, no race-on-merge surprises. (3) Whether the
+loopback-across-boundary protocol fires correctly — subagent halts at
+the right moments (not too liberal, not too conservative);
+orchestrator's halt-other-subagents works without lost work. (4)
+Whether per-unit commits become natural cadence or chafe (too coarse
+/ too fine). (5) Whether verify's task remains tractable when reading
+code from multiple impl subagents.
 
 **First signal (2026-05-23).** Unit 5 implement phase, mid-flight at
 slice 4a complete (Slices 1, 2, 3, 4a committed locally; tests passing
-through 4a; ~3000 lines across 4b–5 remaining). AI surfaced the
-remaining volume and recommended session checkpoint + resume next
-session. Decomposition itself was clean (slices 4b and 4c are plausibly
+through 4a; ~3000 lines across 4b–5 remaining). AI ad-hoc surfaced
+the remaining volume and recommended session checkpoint + resume next
+session. Decomposition was clean (slices 4b and 4c are plausibly
 parallel-eligible: both implement the Protocol locked in 4a, operate
-on disjoint runner files). The warning text + the checkpoint
-recommendation were ad-hoc; the resume mechanism the recommendation
-points to is partly in spec (the lifecycle's in-progress-run resume),
-the per-slice commit discipline is not.
+on disjoint runner files). Resume-from-tracker observed working in
+practice (fresh-prompt "Run Clippy per docs/MULTI_STRATEGY_ARCHITECTURE.md"
+properly continues mid-Unit-5). Unit 5 resume is the first real test
+of the dispatched protocol — slices 4b/4c the parallel candidate.

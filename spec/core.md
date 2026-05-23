@@ -322,10 +322,66 @@ Discovery in implement is minimal — a small local clarification, not
 new design. Major new scope surfacing during implementation holds the
 phase and returns the run to investigate-design; no work is lost.
 
-implement reports completion when the locked design is carried out.
-The implement→verify transition is not gated: verify (§4.3) is itself
-the check on implement, so an incomplete implementation surfaces as
-verify findings rather than passing silently.
+**The impl plan.** implement opens with an impl plan: the locked
+design's decisions grouped into **dispatch units**, the units'
+dependency order, and a parallel-eligibility marker on each. The
+locked design's decisions are the grouping unit — the impl plan is a
+planning artifact, not a new tracker construct.
+Parallel-eligibility is a load-bearing claim per §3.2: a unit's
+file and contract scopes are listed, and the disjointness from
+sibling units' scopes is established by the re-runnable search
+behind the claim, not by recall — silent substitution rejected here
+as elsewhere. A unit whose disjointness is not search-established is
+sequential by default. The impl plan is persisted alongside the
+tracker (`modules.md` §3.3) — a phase-start artifact kept for the
+run's history and for resume.
+
+**Dispatch.** implement dispatches a unit's work to a subagent —
+isolated from the run's working context — when the impl plan
+contains two or more units. A single-unit plan is implemented in
+the working context. The subagent is briefed artifact-driven,
+mirroring verify (§4.3): it loads the orchestrator's skill files,
+receives the tracker (in full, or reduced to the unit's in-scope
+decisions) and the locked contracts the unit honors, and implements
+the in-scope decisions. The subagent does not design; major new
+scope surfacing during its work halts it (below). Parallel-eligible
+units may be dispatched concurrently; the disjointness basis on
+each unit is what makes concurrent dispatch safe.
+
+**Tracker writes.** The orchestrator (§6) owns the tracker append.
+A dispatched subagent does not write to the tracker directly; on
+completion or halt it returns its state — findings, the completed
+unit's commit reference, a loopback signal where applicable — and
+the orchestrator appends in deterministic order. The append-only
+model (`modules.md` §3.1) is preserved without concurrency
+machinery.
+
+**Loopback across the subagent boundary.** A subagent that finds
+major new scope halts and returns a loopback-required result with
+the finding — its location, what the locked design missed, what
+investigation is needed. On receiving loopback-required from any
+dispatched subagent, the orchestrator halts other parallel
+subagents in flight, preserves their committed work and tracker
+state, and returns the run to investigate-design with the new
+finding. The halt of in-flight subagents is required: their work
+may rest on the disjoint-scope claim the new finding contradicts.
+The pattern mirrors verify's [ISSUES FOUND] return (§4.3, §6).
+
+**Checkpoint.** A dispatch unit's work product is committed
+(persistently recorded — instance-specific, e.g. a git commit for
+code) on completion; the commit reference is what the orchestrator
+appends to the tracker. The commit plus tracker line is the unit's
+persistence artifact. A run interrupted mid-implement resumes by
+reading the tracker, finding the last-completed unit, and
+dispatching the next per the impl plan (§6, Run lifecycle).
+Without the per-unit commit cadence resume must re-derive from
+work-product state — a silent-substitution shape this rule closes.
+
+implement reports completion when every unit in the impl plan is
+completed. The implement→verify transition is not gated: verify
+(§4.3) is itself the check on implement, so an incomplete
+implementation surfaces as verify findings rather than passing
+silently.
 
 ### 4.3 verify
 
@@ -512,10 +568,26 @@ orchestrator establishes verify in a context isolated from the one
 that ran the work, each time verify is conducted — on first reaching
 it, and on each re-run after [ISSUES FOUND] (§4.3).
 
+**Dispatch in implement.** When implement's impl plan (§4.2) contains
+two or more dispatch units, the orchestrator dispatches each unit's
+work to a subagent isolated from the run's working context.
+Parallel-eligible units — each carrying a search-established
+disjointness basis (§3.2, §4.2) — may be dispatched concurrently.
+The orchestrator owns the tracker append: a dispatched subagent
+returns its state on completion or halt — findings, the unit's
+commit reference, a loopback signal where applicable — and the
+orchestrator appends in deterministic order. The append-only model
+(`modules.md` §3.1) is preserved without concurrency machinery. A
+single-unit impl plan is implemented in the working context with no
+dispatch.
+
 **Loopbacks.** A phase may return the run to an earlier phase; the
 orchestrator honors the return rather than proceeding. implement
-returns to investigate-design when major new scope surfaces (§4.2);
-an [INVALIDATED] finding or design decision reopens design work (§5);
+returns to investigate-design when major new scope surfaces (§4.2) —
+including when a dispatched subagent surfaces it: the orchestrator
+halts other parallel subagents in flight, preserves their committed
+work and tracker state, and returns the run with the new finding. An
+[INVALIDATED] finding or design decision reopens design work (§5);
 verify ending [ISSUES FOUND] returns the run to resolve those
 findings, then re-runs.
 

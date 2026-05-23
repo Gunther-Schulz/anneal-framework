@@ -132,6 +132,16 @@ Its shape, states, and rules are specified in `core.md` §5.2.
 foundational design decision, established by search. Specified in
 `core.md` §4.1.
 
+**Dispatch unit** — a group of design decisions implemented together
+as one piece of impl-phase work. Derived from the locked design at
+implement-phase start. Specified in `core.md` §4.2.
+
+**Impl plan** — implement-phase's planning artifact: a list of
+dispatch units in dependency order, each carrying a
+parallel-eligibility marker. Produced at implement-phase start;
+persisted alongside the tracker. Specified in `core.md` §4.2 and
+`modules.md` §3.3.
+
 ## Modes
 
 **Mode** — how a run drives the phases. The framework has two:

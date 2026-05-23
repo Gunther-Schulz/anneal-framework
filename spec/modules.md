@@ -186,3 +186,31 @@ Each cycle's standardized inspection pass emits a findings artifact
 — a finding, or a cited-clean reason. A lens out of scope that cycle
 is not lined; the standardized set is accounted for whole once, at
 [READY] (`core.md` §4.1).
+
+### 3.3 The impl plan
+
+implement-phase's planning artifact (`core.md` §4.2): a list of
+**dispatch units** in dependency order, with a parallel-eligibility
+marker on each. A dispatch unit is a group of design decisions
+implemented together as one piece of work; the unit's entry cites
+the [VERIFIED] decisions it implements (by their tracker
+identifiers).
+
+Parallel-eligibility is a load-bearing claim per `core.md` §3.2: the
+unit's file and contract scopes are listed, and the disjointness
+from sibling units' scopes is established by the re-runnable search
+behind the claim — the executable query, not the asserted
+disjointness or a recalled enumeration. A unit whose disjointness is
+not search-established is sequential by default. The basis-rule
+discipline that governs decision bases (`core.md` §3.2) applies here
+in the same form: a recalled disjointness is not a basis; the search
+is.
+
+The plan is persisted alongside the tracker — a phase-start artifact,
+kept for the run's history and for resume. Like the standardized-pass
+artifact (§3.2), it is a per-phase artifact persisted alongside the
+tracker, not filed into it.
+
+On a loopback from implement to investigate-design (`core.md` §4.2,
+§6), the impl plan is invalidated: a new plan is produced after the
+next [READY], reflecting any changes to the locked design.
