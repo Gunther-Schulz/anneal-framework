@@ -136,3 +136,42 @@ implement) or past it entirely (not acceptable). And whether the
 cycle's scope. If lens-catchable concerns routinely reach implement,
 the per-cycle whole-set attestation earned its cost and should
 return.
+
+---
+
+## V-5. [READY] self-assessment vs external check
+
+**Decision (`core.md` §4.1, v0.8.7 + v0.8.9).** The [READY] judgment
+is sharpened — a presence-based fresh-session-implementability test
+plus the named silent-substitution failure shape — but it remains
+self-assessment. The producing AI judges whether a fresh session
+could implement from the tracker alone. No external check (no
+subagent) at [READY]; the operator's review at the closed-artifact
+presentation is the only external catcher.
+
+**Why uncertain.** The v0.8.0 lean rework removed the 0.7.0 isolated
+[READY] evaluation (a per-cycle automatic subagent that
+false-confirmed once and missed cross-decision contradictions). The
+replacement is operator-review-at-presentation plus, in v0.8.7/0.8.9,
+sharper self-assessment criteria. Whether the named self-assessment
+reduces false-[READY]s enough — or whether an external check is
+needed — is empirical. Cycle 3 of the Unit-5 run was a false-[READY]
+the sharpening targets; the next runs under v0.8.9 are the first
+real test. Adding a subagent-at-[READY] check before that evidence
+would be the over-mechanization reflex this session repeatedly
+reversed.
+
+**Production signal to watch.** Whether false-[READY]s recur under
+v0.8.9 — cycles declaring [READY] that subsequent cycles still
+surface material design gaps for. If they recur, the candidate fix
+is an *operator-invoked* subagent-at-[READY] external check —
+structurally different from the 0.7.0 isolated eval: operator-invoked
+(not automatic), whole-design (not per-decision), "what would
+surface during implementation" simulation (not cached verdict),
+output to the operator (not cached in the tracker). If false-[READY]s
+do not recur, the named self-assessment is sufficient and no new
+mechanism is warranted. A separate failure shape — *smuggled
+premises* inside [VERIFIED] decision bodies (multi-sentence narrative
+that buries unverified architectural premises) — is an adherence gap
+on the existing `modules.md` §3.1 "no narrative field" rule, not a
+protocol gap; tracked operator-side.
