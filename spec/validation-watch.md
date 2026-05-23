@@ -175,3 +175,53 @@ premises* inside [VERIFIED] decision bodies (multi-sentence narrative
 that buries unverified architectural premises) — is an adherence gap
 on the existing `modules.md` §3.1 "no narrative field" rule, not a
 protocol gap; tracked operator-side.
+
+---
+
+## V-6. Implementation decomposition + impl-phase subagent topology
+
+**Decision (`implement.md`, `SKILL.md`).** Implement-phase agent
+topology is left unspecified. The operator may dispatch parallel-
+eligible slices of impl work to subagents ad-hoc; the spec does not
+mandate, forbid, or formalize a protocol for impl decomposition,
+subagent dispatch, tracker write ordering across writers, or loopback
+returns across an agent boundary. Verify remains the only
+post-investigate-design phase with spec-mandated subagent isolation
+(`SKILL.md`).
+
+**Why uncertain.** The situation surfaced once. The design challenges
+(loopback-across-boundary, tracker concurrency, verify-over-
+heterogeneous-source) are tractable but the protocol design needs
+evidence ground. The session-budget-checkpoint discipline the AI
+produced ad-hoc (per-slice commits + tracker checkpoint + resume next
+session) is partly covered by the lifecycle's resume-from-in-progress-
+run (`SKILL.md`), but only partly — the per-slice commit cadence
+itself isn't named. Chose ship-fast over design-first: test operator-
+invoked ad-hoc dispatch in subsequent units before committing to a
+protocol shape from one observation. The full design pass (impl
+decomposition + parallel dispatch + checkpoint, touching `implement.md`,
+`SKILL.md`, and the tracker model) is on the roadmap when evidence
+warrants.
+
+**Production signal to watch.** (1) Recurrence of mid-impl session-
+budget-exhaustion — same shape (large unit, AI surfaces remaining
+volume, per-slice commits, proposes resume) or a different shape
+(push-through-and-fail, stop without committing per slice). (2)
+Whether operator-invoked subagent dispatch on parallel-eligible slices
+(candidate: Unit 6, may not trigger to full extent) works smoothly —
+tracker write integration, return-state handling, verify scope across
+heterogeneous-source code. (3) What protocol gaps surface in ad-hoc
+use. Outcomes: recurrence + ad-hoc-clean → spec the observed protocol;
+recurrence + ad-hoc-messy → design the protocol sooner; non-recurrence
++ Unit 6 doesn't exercise it → keep watching.
+
+**First signal (2026-05-23).** Unit 5 implement phase, mid-flight at
+slice 4a complete (Slices 1, 2, 3, 4a committed locally; tests passing
+through 4a; ~3000 lines across 4b–5 remaining). AI surfaced the
+remaining volume and recommended session checkpoint + resume next
+session. Decomposition itself was clean (slices 4b and 4c are plausibly
+parallel-eligible: both implement the Protocol locked in 4a, operate
+on disjoint runner files). The warning text + the checkpoint
+recommendation were ad-hoc; the resume mechanism the recommendation
+points to is partly in spec (the lifecycle's in-progress-run resume),
+the per-slice commit discipline is not.
