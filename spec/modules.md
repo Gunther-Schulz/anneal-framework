@@ -36,70 +36,42 @@ free-form instead of selecting — a question, a comment, an override;
 the AI answers the question or applies the override, and then
 re-presents the menu. The operator never loses the advance choice.
 
-**Closed-artifact form.** The closed artifact is structured for the
-dual-purpose principle (`core.md` §3.1) — both the operator's
-decision and the AI's own discipline. The form follows from that
-purpose:
+**Closed-artifact form.** The closed artifact contains these named
+sections in this order. Each section is required; missing or
+out-of-order sections make the artifact malformed:
 
-1. **State leads.** Open with what the operator needs to decide on:
-   counts (findings, decisions, by status), whether the last cycle's
-   standardized pass was clean, and the named blockers preventing
-   [READY] (drawn from [PENDING] decisions and weak-basis entries in
-   the ledger). Decision-relevant content first; detail follows.
-2. **Scannable inventories.** Findings and decisions are bulleted
-   lists, one entry per line, with status tag and identifier at the
-   start of each line — not paragraph-prose summaries.
-3. **Pointer, not duplicate.** Where retained artifacts (the tracker
-   file, the standardized-pass per-cycle artifact) hold detail, the
-   closed artifact references them — it does not paragraph-summarize.
-   Detail lives once, in its persisted home.
-4. **Recommendation separate from menu.** The AI's next-step proposal
-   (thorough-fix-shaped per `core.md` §1; not pre-clipped on cost)
-   and its rationale (including any "not recommended because…" calls)
-   live in their own section. The menu carries only the loop-control
-   options (continue / proceed), plain, at the very end — no inline
-   annotations. **For each open [CONDITIONAL] decision, the
-   recommendation surfaces the AI's committed default crisply** — what
-   the AI recommends, what value or shape selecting proceed will commit
-   to. This is what makes proceed-select an informed accept: the
-   operator sees what they accept when they accept; the [CONDITIONAL]
-   then records [AUTO-ACCEPTED] (`core.md` §5.2). The operator's
-   alternative is free-form override against the tracker at any moment,
-   in either mode (`core.md` §1).
-5. **Commands and code set apart.** Search commands, file paths,
-   tracker citations are presented as code, not buried in prose.
-
-**Template.** Concretely, the closed artifact contains these named
-sections in this order. Each section is required; missing a section
-makes the artifact malformed:
-
-1. **State summary** — counts (findings + decisions by status, per
-   *State leads*); the last cycle's standardized-pass status (clean
-   or line items); the fresh-session implementability result line
-   (PASSED / FAILED, per `core.md` §4.1); named blockers preventing
-   [READY] (drawn from open [PENDING] decisions and weak-basis
-   entries).
-2. **Inventories** — findings and design decisions as scannable
-   one-per-line ledger entries (per *Scannable inventories*).
-3. **Persisted artifacts** — citations to where detail lives (the
-   tracker file path, the standardized-pass artifact path) per
-   *Pointer, not duplicate*.
+1. **State summary** — what the operator decides on first:
+   counts (findings + decisions by status), the last cycle's
+   standardized-pass status (clean or line items), the
+   fresh-session implementability result line (PASSED / FAILED
+   per `core.md` §4.1), named blockers preventing [READY] (open
+   [PENDING] decisions and weak-basis ledger entries).
+   Decision-relevant content first; detail follows.
+2. **Inventories** — findings and decisions as scannable
+   one-per-line ledger entries with status tag and identifier at
+   start; not paragraph-prose summaries.
+3. **Persisted artifacts** — citations to where detail lives
+   (tracker file path, standardized-pass artifact path). The
+   closed artifact references; it does not paragraph-summarize.
 4. **Recommendation** — the AI's next-step proposal,
-   thorough-fix-shaped per `core.md` §1, with rationale and any
-   "not recommended because…" callouts; for each open [CONDITIONAL],
-   the AI's committed default surfaced crisply (per *Recommendation
-   separate from menu*).
-5. **Menu** — continue / proceed only; plain; no inline annotations.
+   thorough-fix-shaped per `core.md` §1; rationale and any "not
+   recommended because…" callouts in this section. **For each
+   open [CONDITIONAL] decision, the AI's committed default
+   surfaces crisply** — what the operator accepts by selecting
+   proceed; the [CONDITIONAL] then records [AUTO-ACCEPTED]
+   (`core.md` §5.2). Operator's free-form override against the
+   tracker is available in either mode (`core.md` §1).
+5. **Menu** — continue / proceed only; plain; no inline
+   annotations.
 
-A response missing any section, or presenting them out of order, is
-a malformed closed artifact. Operator review at presentation is the
-catcher (in interactive mode); in auto-battle no closed artifact is
-presented, but the [AUTO-ACCEPTED] decisions + fresh-session result
-line + tracker entries serve the same surface-and-catch function at
-post-run review.
+Search commands, file paths, tracker citations are presented as
+code, not buried in prose.
 
-The result is a two-tier read: a skim gets state + recommendation +
-blockers in seconds; a deep read goes into the persisted artifacts.
+Operator review at presentation is the catcher (interactive
+mode); in auto-battle no closed artifact is presented, but the
+[AUTO-ACCEPTED] decisions + fresh-session result line + tracker
+entries serve the same surface-and-catch function at post-run
+review.
 
 ### 1.2 auto-battle
 
