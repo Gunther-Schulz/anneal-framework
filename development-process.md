@@ -225,7 +225,19 @@ A change runs the same loop:
      surface for optional address.
    - the whole document a substantive edit touched, for coherence
      (practice 6).
-6. **Release the instance** — version-bump the plugin, commit,
-   reinstall.
+6. **Release the instance** — version-bump the plugin, commit and
+   push to remote, then **pull the marketplace clone for each
+   affected instance** so the local Claude install reads the new
+   version:
+   ```
+   cd ~/.claude/plugins/marketplaces/<instance>/ && git pull --ff-only
+   ```
+   Repeat for every affected instance (clippy / daneel /
+   campaign-craft / ...). The operator's `/reload-plugins` is the
+   sole activation action; an un-pulled marketplace clone means
+   `/reload-plugins` reads the stale version — the release is
+   committed and pushed but not actually deployed locally. The AI
+   completes the pull as part of the release, not as an operator
+   handoff step.
 7. **Persist outcomes** — real-run findings and deferred ideas in the
    instance's status log; process changes back into this document.
