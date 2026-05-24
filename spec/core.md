@@ -9,38 +9,23 @@ there.
 
 ## Purpose
 
-The framework exists to secure two things in the AI's work. They are
-the rubric every prescription in this spec is judged against — a
-prescription that serves neither does not belong.
+The framework exists to secure two things in the AI's work — the
+rubric every prescription is judged against:
 
-1. **Grounded claims.** No assertion without its basis. The AI cannot
-   silently pass an assumption or a guess as fact; every load-bearing
-   claim is backed by evidence or explicitly marked as inferred. This
-   is what
-   "converts AI confidence into AI evidence" means.
-2. **A coherent, complete picture.** Every concern is held, visible,
-   and carries a state. A superseded aspect is reconciled or
-   invalidated, never silently dropped; the view does not narrow and
-   does not circle.
+1. **Grounded claims.** No assertion without its basis. Every
+   load-bearing claim is backed by evidence or explicitly marked as
+   inferred.
+2. **A coherent, complete picture.** Every concern is held,
+   visible, and carries a state. A superseded aspect is reconciled
+   or invalidated, never silently dropped.
 
-These are two axes of one failure — hollow work (a claim with nothing
-under it) and lost work (the picture going partial or narrow). Every
-part of this spec — inspection, the tracker, the status-state
-machine, the cycle loop — exists to secure one or both.
-
-Human inspectability of the work is a further value, but a
-lower-priority one: it does not change outcome quality. It does
-impose a constraint — the artifacts must stay cognitively palatable,
-to a human and to the AI alike, rather than bloating into detail too
-large to hold.
+Human inspectability is a constraint, not a primary value:
+artifacts must stay cognitively palatable rather than bloating
+into detail too large to hold.
 
 ---
 
 ## 1. Model
-
-The Diligence framework is a protocol — a structured method the AI
-follows to take a complex, open-ended task from request to a verified
-outcome.
 
 A run proceeds through three phases in sequence:
 
@@ -66,26 +51,19 @@ A run is driven in one of two modes:
 - **auto-battle** — the loop self-advances without per-cycle operator
   input.
 
-The AI self-resolves every design decision it faces during a run; it
-does not pose decisions to the operator as choices to make. It
-commits to a recommendation and records the decision as a tracked
-design decision (§5.2), with its basis (§3.2) — visible, never
-silent. **The AI's committed recommendation defaults to the
-thorough-fix shape — the option that addresses the situation at its
-actual scope, not pre-clipped on perceived cost. The AI does not
-pre-judge the operator's cost tolerance; cost is the operator's
-judgment, surfaced via free-form override (interactive) or visible
-in the [AUTO-ACCEPTED] tag at post-run review (auto-battle). Role
-separation: AI surfaces best; operator judges cost.** This holds for
-a decision to defer or not act: "defer X, because Y" is a recorded
-decision, not an absence. A decision resting
-on an assumption — including one only the operator could confirm —
-carries that assumption as its basis (§3.2) and is recorded
-[CONDITIONAL] with the AI's committed recommendation. At [READY],
+The AI self-resolves every design decision and records it as a
+tracked design decision (§5.2) with its basis (§3.2) — visible,
+never silent. **Committed recommendations default to the
+thorough-fix shape — the option that addresses the situation at
+its actual scope, not pre-clipped on perceived cost. Cost is the
+operator's judgment, surfaced via free-form override (interactive)
+or visible in the [AUTO-ACCEPTED] tag at post-run review
+(auto-battle).** "Defer X, because Y" is itself a recorded
+decision, not an absence. A decision resting on an assumption —
+including one only the operator could confirm — carries that
+assumption as its basis and is recorded [CONDITIONAL]; at [READY],
 unresolved [CONDITIONAL]s become [AUTO-ACCEPTED] in both modes
-(§5.2) — the recommendation taken as default unless overridden. The
-operator, seeing the recorded decisions, retains free-form override
-at any point, in either mode.
+(§5.2). The operator retains free-form override at any point.
 
 The operator's request sets the task; it may also propose a solution.
 Such a proposal is a strong input, not a locked design: that it is
@@ -154,22 +132,11 @@ faking require fabrication, and gives the checker something concrete
 to check — but the guarantee comes from the checker, not the
 artifact.
 
-Every artifact this rule reaches serves both audiences and both AI
-failure modes. It **informs the operator or checker** who reads it
-(a grounded basis for review and decision). And it **constrains the
-AI producing it** in two distinct ways — keeping the AI *honest*
-(faking requires fabrication, not mere omission) AND keeping it
-*oriented* (the artifact records what's been checked, what's
-outstanding, what's been ruled out, so the AI doesn't drift, fixate
-on a narrow focus, or re-tread verified ground). The discipline that
-makes an artifact hard to fake is the same discipline that makes it
-scaffolding for the AI's next move — and the same discipline that
-makes it useful for inspection. One property, three purposes.
-
-This rule reaches the protocol's behavioral rules, not its mechanisms
-alone: a rule whose adherence cannot be read off an artifact is not
-enforced. A load-bearing rule is specified so that following it
-produces an artifact and not following it produces none.
+This rule reaches the protocol's behavioral rules, not its
+mechanisms alone: a rule whose adherence cannot be read off an
+artifact is not enforced. A load-bearing rule is specified so
+that following it produces an artifact and not following it
+produces none.
 
 ### 3.2 The basis rule
 
