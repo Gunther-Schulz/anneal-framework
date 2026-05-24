@@ -215,17 +215,21 @@ A change runs the same loop:
      (Layer 1 plugin structure + Layer 2 protocol conventions +
      Layer 4 evolution disciplines + all anti-patterns);
    - a changed framework-spec section (`spec/*.md`,
-     `development-process.md`) against skill-craft's Layer 2
-     principles + Layer 4 disciplines + all anti-patterns. Layer 1
-     skill-structure checks (frontmatter, file layout, SKILL.md
-     trigger format) do NOT apply to specs because specs are not
-     skills — but every other skill-craft rule does. This is
-     skill-craft's self-review mandate adopted for the framework:
-     after committing any framework canonical file, dispatch a
-     fresh-context subagent to apply the mandate's 5 checks
-     (`skill-craft/plugin/skills/skill-craft/PROCEDURE.md`,
-     "Self-review mandate"), restricting Check #1's "canonical
-     rules" iteration to Layer 2 + Layer 4 + anti-patterns.
+     `development-process.md`) against skill-craft's self-review
+     mandate, with Check #1's canonical-rules iteration restricted
+     to Layer 2 + Layer 4 + anti-patterns (Layer 1 skill-structure
+     checks excluded). After commit:
+     ```
+     - [ ] Subagent dispatched with: commit SHA, changed-file list,
+           instruction to load SKILL.md + PROCEDURE.md +
+           references/anti-patterns.md from
+           `skill-craft/plugin/skills/skill-craft/`?
+       - NO → CANNOT proceed.
+       - YES → Evidence: [loaded-references manifest from subagent]
+     ```
+     Recovery: blocking → revert; notable → operator amend
+     decision (next-commit fix or accept-with-rationale); nit →
+     surface for optional address.
    - the whole document a substantive edit touched, for coherence
      (practice 6).
 6. **Release the instance** — version-bump the plugin, commit,
