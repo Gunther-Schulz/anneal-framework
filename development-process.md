@@ -186,14 +186,10 @@ rule's scope → extend; existing rule becomes redundant → reduce
 / merge; only if none → add new. A design that proposes a new
 clause without surfacing this sequence is malformed.
 
-**AI-tightness.** The framework targets AI consumption. Each new
-clause is sized to load-bearing content: cross-references
-(`§X.Y`, `file.md`) substitute for explanation; restating-with-
-different-emphasis is bloat (skill-craft anti-pattern "Procedure
-drift through incremental patches"). WHY-rationale prose the AI
-can infer from anchored cross-references is omitted. A new clause
-whose word-count is dominated by explanation rather than rule is
-malformed.
+**AI-tightness** per skill-craft "Procedure drift" anti-pattern
+(AI-tightness check sub-clause). Framework spec targets AI
+consumption; WHY-rationale prose the AI infers from anchored
+cross-references is bloat. Applies per-edit.
 
 The AI takes operator wording as intent, not literal text;
 improves where the intent supports a better expression. A design
@@ -242,13 +238,9 @@ A change runs the same loop:
      (practice 6);
    - **cross-spec coherence** when the commit touches 2+ spec files
      OR when an instance render makes a rule visible in more than
-     one home — does the spec read as a coherent set across files,
-     or has accretion fragmented a concept across multiple homes
-     (e.g., a rule in `core.md` §3.2 elaborated in `modules.md`
-     §3.1 elaborated again in instance `foundations.md`)? The
-     check looks for the same rule restated in multiple places
-     with different framing; the amendment-discipline reduce/merge
-     step (practice 9 (d)) is applied to consolidate.
+     one home. Applies skill-craft's amendment-discipline multi-file
+     extension (`PROCEDURE.md`): scan every home; restated rule
+     with different framing across N files is the reduce/merge case.
 6. **Release the instance** — version-bump the plugin, commit and
    push to remote, then **pull the marketplace clone for each
    affected instance** so the local Claude install reads the new
