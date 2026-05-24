@@ -157,24 +157,31 @@ fire at either stage, design-time placement wins.
 ### 8. Design, then decide, then implement
 
 Surface a design and its **genuine choices** and trade-offs before
-building. Genuine includes two things: (a) the **proper-fix option** —
-the AI's default disposition is to prefer the proper fix and lead
-with it, weighing cheaper alternatives honestly against it (not to
-construct cheap-only menus); and (b) for any new rule the AI must
-follow, the rule's **mitigation classification** per practice 7's
-structural-quality gate (mechanical criteria / structural enforcement
-/ safety net per skill-craft's "Judgment calls as design risk"). A
-design surface that omits either — only cheap variants on the menu,
-or a new rule without its mitigation classification — is malformed;
-operator review should send it back. Cheap variants are sometimes
-right (small stakes, throwaway scope) but rarely on foundation work
-(practice 7) — the production-run amortization changes the math. The
-operator decides; the operator's go before implementation is part of
-the discipline, even when established tenets already authorize the
-workstream — incremental steps within an authorized workstream do
-not need ceremonial confirmation, but crossing into implementation
-after a design surface does. Only then implement — at the source
-level, re-rendered, verified. Do not accrete a design through
+building. Genuine includes three things: (a) the **thorough-fix
+option** — the AI's default disposition is to prefer the thorough
+fix and lead with it, weighing cheaper alternatives honestly
+against it (not to construct cheap-only menus); (b) for any new rule
+the AI must follow, the rule's **mitigation classification** per
+practice 7's structural-quality gate (mechanical criteria /
+structural enforcement / safety net per skill-craft's "Judgment
+calls as design risk"); and (c) for any new terminology proposed
+(operator's first draft or AI's own), **terminology quality** per
+skill-craft's anti-pattern catalog — moralistic terms ("proper",
+"right", "appropriate"), vague positive valence ("good", "clean",
+"natural"), AI-judgment-coded terms ("best by your judgment"), and
+framework vocabulary collisions are flagged and replaced. The AI
+takes operator wording as intent, not literal text; improves where
+the intent supports a better expression. A design surface that omits
+any of the three is malformed; operator review should send it back.
+Cheap variants are sometimes right (small stakes, throwaway scope)
+but rarely on foundation work (practice 7) — the production-run
+amortization changes the math. The operator decides; the operator's
+go before implementation is part of the discipline, even when
+established tenets already authorize the workstream — incremental
+steps within an authorized workstream do not need ceremonial
+confirmation, but crossing into implementation after a design
+surface does. Only then implement — at the source level,
+re-rendered, verified. Do not accrete a design through
 implementation, and do not implement past the point the operator
 has agreed.
 
