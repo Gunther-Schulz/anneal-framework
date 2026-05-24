@@ -567,6 +567,26 @@ is mode-absence-of-operator (`modules.md` §1.1, §1.2). An
 that depended on it reverts with it; the phase holds (§5.3)
 until re-formed.
 
+**Amendment of a [VERIFIED] or [AUTO-ACCEPTED] decision is
+contradiction.** Any change to a [VERIFIED] or [AUTO-ACCEPTED]
+decision's recorded **resolution** — its target naming, scope
+boundaries, completeness counts, or basis evidence-source — is,
+per §3.2, contradiction of the basis that supported the prior
+verification. The decision flips through [INVALIDATED] →
+[PENDING]; the phase holds at [NOT READY] (§5.3) until
+re-verification; the cycle-another recommendation is forced
+(§4.1.3) on the cycle that landed the amendment. A silent
+in-place edit to a [VERIFIED] decision's resolution — same
+status, different recorded resolution than its prior verification
+rested on — is a malformed artifact: the status-flip is the
+load-bearing record of the contradiction, and an unchanged
+[VERIFIED] tag alongside an amended resolution is the
+silent-substitution shape (§3.2). Basis-only refinement
+(`modules.md` §3.1 sub-annotation: same status, same summary,
+strengthened basis from further evidence grounding what previously
+rested on a weaker basis) is *not* amendment — the resolution is
+unchanged.
+
 A design decision's basis can be broken by another decision,
 not only by external evidence. When a decision is locked or its
 meaning changes, examine it against the run's other recorded
