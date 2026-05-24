@@ -145,65 +145,44 @@ basis — the evidence it rests on. The basis is the artifact itself
 (§3.1): a search result, a located read of the source. A free-text
 claim of having looked is not a basis.
 
-A basis that resolves to recall — "assumed," "inferred," "it is
-obviously so" — is not a basis but an assumption. An assumption does
-not ground a decision; the work is held short of [READY] until the
-assumption is converted to evidence.
+A basis that resolves to recall — "assumed," "inferred,"
+"obviously so" — is not a basis but an assumption. An assumption
+does not ground a decision; the work is held short of [READY]
+until the assumption is converted to evidence. The mechanical
+tell of a blind spot is the basis the AI cannot produce.
 
-The rule does not ask the AI to recognise its own blind spots. The
-mechanical tell of a blind spot is the basis the AI cannot produce —
-a missing or recall-only basis is the flag, whether or not the claim
-ever felt uncertain.
-
-The rule's specific bullets below reject one shape, named: **silent
-substitution** — missing or malformed evidence defaulted to a
-plausible proxy that propagates as if it were the basis. The proxy
-might be a recalled count where a search is needed, a free-text
-claim of having looked, a sampled subset where the whole set is the
-unit, a near-miss read short of the construct's close. Each is an
-instance of the same failure: substituting plausibility for evidence
-without surfacing the gap. The rule's discipline is to surface the
-gap, not substitute.
+The rule rejects **silent substitution**: missing or malformed
+evidence defaulted to a plausible proxy that propagates as if it
+were the basis. Surface the gap, do not substitute.
 
 The rule has two edges:
 
-- **Basis-naming.** Every load-bearing claim and design premise names
-  its basis or stands as an assumption. This reaches design premises
-  — such as the premise that an element is the work's alone to change
-  — not findings alone.
-- **True-unit basis.** A basis must cover the claim's true unit, not
-  a coarser proxy of it. A claim about a *complete set* — a scope, an
-  element's dependents, an input's value-classes, a flaw class's
-  instances — has the whole set as its unit; its basis is an
-  exhaustive search — not a declared scope, not one instance —
-  recorded as the **re-runnable search itself**, the executable
-  query, not the count it returned. A count detached from the search
-  that produced it reads identically whether the search ran or the
-  count was recalled; only the query, re-runnable, tells them apart.
-  The search's own reach is not exempt: a scope narrowed by where the
-members are assumed to live is a declared scope in a search's
-clothing — and a member co-located with the change is the one a
-search of "everywhere else" is built to miss. A claim
-  about a *construct* — a unit of the work product that must be taken
-  whole — has the whole construct as its unit; its basis is a read to
-  the construct's visible close, not a window that catches part of
-  it. "I sampled," "I read the artifact," "I declared the scope" are
-  proxies: each passes while the true unit goes unexamined.
+- **Basis-naming.** Every load-bearing claim and design premise
+  names its basis or stands as an assumption. This reaches design
+  premises (such as the premise that an element is the work's
+  alone to change), not findings alone.
+- **True-unit basis.** A basis must cover the claim's true unit,
+  not a coarser proxy. A claim about a *complete set* (a scope,
+  an element's dependents, an input's value-classes, a flaw
+  class's instances) has the whole set as its unit; its basis is
+  an exhaustive search recorded as the **re-runnable search
+  itself** — the executable query, not the count it returned. A
+  search narrowed by where the members are assumed to live is a
+  declared scope wearing a search's clothing. A claim about a
+  *construct* (a unit of the work product that must be taken
+  whole) has the whole construct as its unit; its basis is a
+  read to the construct's visible close.
 
-A design decision involving **replacement, removal, or amendment of
-an existing artifact** carries an implicit completeness claim: that
-all references to (and load-bearing behaviors of) the affected
-artifact have been accounted for. The basis must therefore include
-the re-runnable search enumerating references to the affected
-artifact, AND — for replacements introducing a successor — an
-explicit enumeration of behaviors preserved or dropped at the
-replacement. A delete/replace/amend decision whose basis is just "X
-is replaced by Y" without the references search and (where
-applicable) the behavioral-parity enumeration is missing its
-true-unit basis; it cannot reach [VERIFIED]. This is the forcing
-function for Coupled-change adherence: the lens's question becomes
-load-bearing on the decision's own basis artifact, not on a separate
-cycle's standardized pass alone.
+A design decision involving **replacement, removal, or amendment
+of an existing artifact** carries an implicit completeness claim:
+that all references to (and load-bearing behaviors of) the
+affected artifact have been accounted for. The basis must
+include the re-runnable search enumerating references AND — for
+replacements introducing a successor — an explicit enumeration
+of behaviors preserved or dropped. Without both where applicable,
+the decision is missing its true-unit basis and cannot reach
+[VERIFIED]. This is the forcing function for Coupled-change
+adherence.
 
 A secondary source — a sub-agent report, a prior session's notes, an
 audit summary — is not itself a basis. A direct citation it carries
@@ -269,39 +248,27 @@ last cycle's pass left no material finding; every design decision is
 no finding is left open. These are the status the tracker carries (§5.3) — a notebook of
 where each concern stands — not a mechanical check the run self-passes.
 
-The supporting facts above check that everything *recorded* is at
-terminal. The judgment must also test whether the recording is
-*complete* — would an implementer working from the tracker alone
-surface design decisions this cycle missed. The strongest single
-test is **fresh-session implementability**: would a session with
-only the tracker (no chat context, no current-session memory)
-implement the design without surfacing a new design decision? If
-not — because a contract change leaves the implementer's first lines
-of code unpinned (signature, types, error path), or a multi-step
-operation has no written failure contract, or an X×Y matrix has
-empty cells, or "consumers" in scope are grep hits not verified —
-another cycle is warranted, regardless of what statuses the tracker
-carries.
+The supporting facts above check that everything *recorded* is
+at terminal. The judgment must also test whether the recording is
+*complete*. The strongest single test is **fresh-session
+implementability**: would a session with only the tracker (no
+chat context, no current-session memory) implement the design
+without surfacing a new design decision? If not, another cycle is
+warranted regardless of recorded statuses.
 
-An extra cycle catches gaps before they harden into
-implement-loopback (materially larger — code written against the gap
-must be discarded or reworked). The AI recommends cycle-another
-whenever the fresh-session implementability test (above) fails, or a
-lens in scope was not applied in the cycle that touched its scope.
-Cost-asymmetry does not enter the AI's recommendation construction.
-Per §1: AI surfaces best; operator judges cost.
+The AI recommends cycle-another whenever the fresh-session
+implementability test fails, or a lens in scope was not applied
+in the cycle that touched its scope. Cost-asymmetry does not
+enter the recommendation; per §1, the operator judges cost.
 
 **[READY]'s judgment is artifact-produced.** The fresh-session
-implementability test above produces a named result line in the
-closed artifact at [READY] presentation: PASSED (with a one-line
-cited reason — "the design could be implemented from the tracker
-alone") or FAILED (with the specific gap identified). Without this
-artifact line, the closed-artifact form (`modules.md` §1.1) is
-malformed; the [READY] declaration is unenforced. The result line is
-the structural enforcement on the rule that the design is complete
-— operator review of the line at presentation in interactive mode
-is the catcher. In auto-battle (no closed-artifact presentation),
-the result line is recorded in the tracker for post-run review.
+implementability test produces a named result line in the closed
+artifact at [READY] presentation: PASSED (with a one-line cited
+reason) or FAILED (with the specific gap identified). Without
+this artifact line, the closed-artifact form (`modules.md` §1.1)
+is malformed; the [READY] declaration is unenforced. In
+auto-battle the result line is recorded in the tracker for
+post-run review.
 
 At [READY] the AI does not certify itself ready: it presents the
 design — the tracker, the recorded design decisions, and a
@@ -522,23 +489,17 @@ assumption cannot reach [VERIFIED]. It moves through:
 6. **[INVALIDATED]** — a [VERIFIED] or [AUTO-ACCEPTED] decision
    contradicted by later evidence.
 
-An [OUTLINED] decision becomes concrete as either [PENDING] or
-[CONDITIONAL]. [PENDING] and [CONDITIONAL] are the
-concrete-intermediate states, and a decision moves between them as
-investigation proceeds — a [PENDING] decision found to rest on an
-unverified assumption becomes [CONDITIONAL]; a [CONDITIONAL] decision
-becomes [VERIFIED] when its assumption is verified, and reverts to
-[PENDING] to be re-formed if the assumption is disproved. A
-[CONDITIONAL] decision still resting on its assumption when the
-design reaches [READY] becomes [AUTO-ACCEPTED] — the AI's committed
-recommendation taken as default. In interactive mode the operator's
-proceed-selection without override is the trigger; in auto-battle
-the absence of operator is the trigger (`modules.md` §1.1, §1.2).
-The recommendation stands; the assumption was not verified. An [INVALIDATED] decision reopens — it reverts to [PENDING],
-and any decision that depended on it reverts with it — and holds the
-phase (§5.3) until re-formed. Only a [VERIFIED] or [AUTO-ACCEPTED]
-decision becomes [INVALIDATED]; one contradicted before reaching
-either is simply revised.
+**Transitions between concrete states.** A [PENDING] decision
+found to rest on an unverified assumption becomes [CONDITIONAL];
+a [CONDITIONAL] decision becomes [VERIFIED] when its assumption
+is verified, and reverts to [PENDING] if the assumption is
+disproved. A [CONDITIONAL] decision still resting on its
+assumption at [READY] becomes [AUTO-ACCEPTED] — interactive
+trigger is operator proceed-without-override; auto-battle trigger
+is mode-absence-of-operator (`modules.md` §1.1, §1.2). An
+[INVALIDATED] decision reverts to [PENDING], and any decision
+that depended on it reverts with it; the phase holds (§5.3)
+until re-formed.
 
 A design decision's basis can be broken by another decision, not only
 by external evidence: a decision that removes, alters, or supersedes
