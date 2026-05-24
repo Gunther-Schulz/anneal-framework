@@ -165,8 +165,11 @@ The rule has two edges:
   decisions, completeness counts asserted as facts. Each
   embedded claim carries the basis-rule requirement *separately*
   from the surrounding statement: the surrounding claim's basis
-  does not cover the embedded one. An embedded claim with no
-  separate basis is an assumption and cannot reach [VERIFIED].
+  does not cover the embedded one. The basis is a re-runnable
+  artifact at decision-lock time (grep, file:line read, located
+  reference for a cited rule), not recall. An embedded claim
+  with no separate basis is an assumption and cannot reach
+  [VERIFIED].
 - **True-unit basis.** A basis must cover the claim's true unit,
   not a coarser proxy. A claim about a *complete set* (a scope,
   an element's dependents, an input's value-classes, a flaw
@@ -247,11 +250,11 @@ unestablished scope, at neither, holds the phase.
 **[READY]** is reached when the working context judges the design
 complete — every concern resolved, every design decision at its
 terminal, and the last cycle's standardized inspection pass producing
-no material finding. The supporting facts are recorded across the run:
+no load-bearing finding. The supporting facts are recorded across the run:
 the standardized lens set is accounted for whole — every lens applied
 in the cycle(s) where its scope was touched, or carrying a cited
 reason it was out of scope for the run, no lens silently absent; the
-last cycle's pass left no material finding; every design decision is
+last cycle's pass left no load-bearing finding; every design decision is
 [VERIFIED] or [AUTO-ACCEPTED] (§5.3) — both modes; **and every
 [VERIFIED] design decision's embedded target-naming and count
 premises carry a re-runnable basis** (per §3.2 basis-naming for
@@ -388,7 +391,7 @@ four-field result feeding the new cycle. The pattern mirrors
 verify's [ISSUES FOUND] return (§4.3, §6).
 
 **Checkpoint.** A dispatch unit's work product is committed on
-completion (instance-specific, e.g. a git commit for code) and the
+completion (instance-specific persistence artifact) and the
 orchestrator appends the commit reference to the tracker. The
 commit plus tracker line is the unit's persistence artifact: a run
 interrupted mid-implement resumes from the tracker — the
@@ -436,17 +439,14 @@ every standardized lens — applied where it is in scope, or given a
 cited reason it is not — either holds, recorded as a cited-clean
 line, or yields a divergence from the locked design or a lens issue;
 a failed run of the executable verification is likewise an issue.
-Any non-failure output the executable verification surfaces —
-warnings, deprecations, style notes from linters or type
-checkers — is also a finding unless the project has explicitly
-de-prioritized that output class. **De-prioritization** requires
-either: a project config artifact (linter ignore file,
-suppression comment with reason) naming the class; OR a tracker
-entry recording the class + reason. A loose "we don't worry
-about that" without an artifact is not a de-prioritization; the
-output is a finding. An unflagged warning treated as "context
-only" is the silent-substitution shape (§3.2) the rule rejects. Every divergence or issue is recorded as a
-**finding**, entering the finding track (§5.1) at [PENDING].
+Any non-failure output the executable verification surfaces is
+also a finding unless the project has explicitly de-prioritized
+that output class. **De-prioritization** requires an artifact:
+a project config naming the class, or a tracker entry recording
+the class + reason. De-prioritization without an artifact is
+the silent-substitution shape (§3.2) the rule rejects. Every
+divergence or issue is recorded as a **finding**, entering the
+finding track (§5.1) at [PENDING].
 
 verify's terminal result is **[PASSED]** — every check accounted for
 and no finding short of [VERIFIED] — or **[ISSUES FOUND]**.
@@ -543,19 +543,16 @@ is mode-absence-of-operator (`modules.md` §1.1, §1.2). An
 that depended on it reverts with it; the phase holds (§5.3)
 until re-formed.
 
-A design decision's basis can be broken by another decision, not only
-by external evidence: a decision that removes, alters, or supersedes
-what another decision's basis depends on contradicts that decision as
-disproving evidence would. So when a design decision is locked or its
-meaning changes, it is examined against the run's other recorded
-design decisions — does it break what any of their bases rests on. A
-decision whose basis it breaks is reopened by the rule above —
-[INVALIDATED] if it reached [VERIFIED] or [AUTO-ACCEPTED], otherwise
-revised — and this holds whether or not that decision's work product
-exists yet: the contradiction is between the decisions, not in the
-work product, so a search of the work product cannot surface it. The
-examination is incremental — the newly locked or changed decision
-against the run's existing decisions, not a re-scan of every pair.
+A design decision's basis can be broken by another decision,
+not only by external evidence. When a decision is locked or its
+meaning changes, examine it against the run's other recorded
+decisions — does it break what any of their bases rest on. A
+broken-basis decision is reopened per the rule above
+([INVALIDATED] or revised). The examination is incremental, not
+pairwise: the newly locked/changed decision against existing
+ones. This holds whether or not the affected decision's work
+product exists yet — the contradiction is between decisions,
+not in the work product.
 
 ### 5.3 Relationship to [READY]
 
