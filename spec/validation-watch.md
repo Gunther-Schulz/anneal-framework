@@ -209,7 +209,7 @@ implement-start works smoothly — is the dispatch-unit grouping
 intuitive from the locked design, is parallel-eligibility usefully
 identifiable, does the artifact feel useful or ceremonial. Difficulty
 here is also a downstream signal on [READY] quality (V-5): a tracker
-[READY]'d but not naturally yielding a clean impl plan suggests the
+[READY]'d but not yielding a well-formed impl plan suggests the
 design was incomplete. (2) Whether parallel dispatch actually
 parallelizes cleanly in practice (Unit 6 candidate, may not exercise
 it to full extent) — tracker write integration, return-state
