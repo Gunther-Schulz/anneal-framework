@@ -157,16 +157,16 @@ were the basis. Surface the gap, do not substitute.
 
 The rule has two edges:
 
-- **Basis-naming.** Every load-bearing claim and design premise
-  names its basis or stands as an assumption. This reaches
-  design premises, not findings alone. Design-decision premises
-  embed implicit claims: a decision naming a target (e.g., path,
-  filename, module) or asserting a completeness count carries
-  an implicit premise about that target's current state. The
-  implicit premise is load-bearing; its basis is a re-runnable
-  read or grep at decision-lock time, not at recall. A
-  target-naming or count claim with no negative-evidence basis
-  is missing its true-unit basis and cannot reach [VERIFIED].
+- **Basis-naming.** Every load-bearing claim and every design
+  premise names its basis or stands as an assumption. This
+  reaches design premises, not findings alone, AND it reaches
+  **claims embedded within larger statements** — implicit
+  premises in target-naming decisions, cited rules or prior
+  decisions, completeness counts asserted as facts. Each
+  embedded claim carries the basis-rule requirement *separately*
+  from the surrounding statement: the surrounding claim's basis
+  does not cover the embedded one. An embedded claim with no
+  separate basis is an assumption and cannot reach [VERIFIED].
 - **True-unit basis.** A basis must cover the claim's true unit,
   not a coarser proxy. A claim about a *complete set* (a scope,
   an element's dependents, an input's value-classes, a flaw
@@ -271,6 +271,11 @@ The AI recommends cycle-another whenever the fresh-session
 implementability test fails, or a lens in scope was not applied
 in the cycle that touched its scope. Cost-asymmetry does not
 enter the recommendation; per §1, the operator judges cost.
+**The recommendation's justification enumerates observations** —
+open findings, [PENDING] decisions, lens-applications still
+required, fresh-session-implementability gaps — not costs
+(effort, budget, time, "cheaper than"). A justification framed
+in cost comparison is malformed.
 
 **[READY]'s judgment is artifact-produced.** The fresh-session
 implementability test produces a named result line in the closed
