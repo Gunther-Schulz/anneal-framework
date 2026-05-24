@@ -457,9 +457,25 @@ divergence or issue is recorded as a **finding**, entering the
 finding track (§5.1) at [PENDING].
 
 verify's terminal result is **[PASSED]** — every check accounted for
-and no finding short of [VERIFIED] — or **[ISSUES FOUND]**.
+and no finding short of [VERIFIED] — or **[ISSUES FOUND]**. The
+terminal result is recorded as an **evidence-bearing artifact**
+(§3.1): the result line is paired with a **finding-status ledger**
+enumerating every recorded finding's current status ([VERIFIED] /
+[PENDING] / [INVALIDATED]). A [PASSED] declaration alongside any
+finding short of [VERIFIED] in the ledger is a malformed artifact —
+the contradiction is mechanically detectable at operator-review or
+by a checker. The ledger is not a summary; it is the load-bearing
+shape that prevents the rule from being read off prose alone.
+
 [ISSUES FOUND] returns the run to resolve those findings; verify then
-re-runs (§6).
+re-runs (§6). The re-run takes one of two shapes per the closing
+fix's classification at the orchestrator's re-dispatch boundary: a
+**fresh verify pass** (full re-attest of the three checks) when the
+fix changes load-bearing behavior, or a **delta verify** (confirm the
+named finding closed in the diff + minimal regression that nothing
+else moved) when the fix is **behavior-preserving** as defined by
+the instance. The classification is recorded in the tracker; an
+un-classified re-dispatch defaults to fresh verify pass.
 
 ---
 
