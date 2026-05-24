@@ -185,20 +185,15 @@ re-rendered, verified. Do not accrete a design through
 implementation, and do not implement past the point the operator
 has agreed.
 
-The prefer-proper-fix rule has a recurring violation shape worth
-naming: defaulting to cheap variants, deferral, or narrow option
-sets — even after acknowledging the rule earlier in the same
-session — and recovering only on operator pushback. Recognise it as
-a default tendency, not a one-off lapse. Catching requires explicit
-construction discipline: name the proper-fix option first, then
-weigh cheaper alternatives against it, not the other way around.
-Smell tests: heaviest option offered is still light; deferring real
-design work to "another session" on cost grounds; option set is all
-variants of one shape; reaching for "session length" or "bigger
-work" as deferral criterion on foundation work; crossing from
+The thorough-fix rule has a recurring violation shape: defaulting
+to cheap variants or deferral, recovering only on operator pushback.
+Catching requires explicit construction — name the thorough-fix
+option first; weigh cheaper alternatives against it, not the other
+way around. Smell tests: heaviest option offered still light;
+deferring real design work to "another session" on cost grounds;
+option set is all variants of one shape; crossing from
 design-surface into implementation without the operator's explicit
-go; asking for sign-off on every incremental step rather than on
-implementation specifically.
+go.
 
 ## The release loop
 
