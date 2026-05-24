@@ -117,6 +117,16 @@ Push back on an idea — including the operator's — when the reasoning
 warrants it. Do not over-build: no machinery for a hypothetical
 future need.
 
+**Foundation work** (framework spec, skill-craft, instance
+foundations, load-bearing discipline) is judged at full discipline
+— proportionality governs the details of an edit, not whether to
+do foundational work at all. Under-building the foundation trades
+a small near-term saving for a recurring downstream tax. When the
+same discipline could fire at either stage, design-time placement
+wins.
+
+### 8. Structural-form gate for fixes
+
 A failure surfacing invites a fix. The gate on the fix is its
 **structural form**, not its occurrence count. Per skill-craft's
 "Judgment calls as design risk", every rule the AI must follow
@@ -142,23 +152,15 @@ place now; the V-N entry, if written, records the observation
 that produced the fix, not the deferral of the fix. Distinguish:
 genuine uncertainty about a design choice's correctness =
 validation-watch material; classifiable fix whose form is
-already in hand = practice 7's n=1 commit material.
+already in hand = practice-8 n=1 commit material.
 
-**Foundation work** (framework spec, skill-craft, instance
-foundations, load-bearing discipline) is judged at full discipline
-— proportionality governs the details of an edit, not whether to
-do foundational work at all. Under-building the foundation trades
-a small near-term saving for a recurring downstream tax. When the
-same discipline could fire at either stage, design-time placement
-wins.
-
-### 8. Design, then decide, then implement
+### 9. Design, then decide, then implement
 
 Surface a design and its **genuine choices** and trade-offs before
 building. Genuine includes three things: (a) the **thorough-fix
 option** (per `core.md` §1) — name it, lead with it, weigh
 cheaper alternatives against it (not cheap-only menus); (b) for
-any new rule, its **mitigation classification** per practice 7
+any new rule, its **mitigation classification** per practice 8
 (mechanical criteria / structural enforcement / safety net per
 skill-craft's "Judgment calls as design risk"); (c) for any new
 terminology proposed, **terminology quality** per skill-craft's
