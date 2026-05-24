@@ -160,7 +160,17 @@ The rule has two edges:
 - **Basis-naming.** Every load-bearing claim and design premise
   names its basis or stands as an assumption. This reaches design
   premises (such as the premise that an element is the work's
-  alone to change), not findings alone.
+  alone to change), not findings alone. **Design-decision
+  premises embed implicit claims** — a decision naming a path,
+  filename, module, or completeness count ("move X to a NEW
+  file Y," "the 3 cross-reference sites are P, Q, R") carries
+  an implicit premise about that target's current state ("no
+  existing module at Y serves the purpose," "no fourth site
+  exists"). The implicit premise is load-bearing; its basis is
+  a re-runnable read or grep at decision-lock time, not at
+  recall. A path/name/count claim with no negative-evidence
+  basis is missing its true-unit basis and cannot reach
+  [VERIFIED].
 - **True-unit basis.** A basis must cover the claim's true unit,
   not a coarser proxy. A claim about a *complete set* (a scope,
   an element's dependents, an input's value-classes, a flaw
@@ -246,9 +256,12 @@ the standardized lens set is accounted for whole — every lens applied
 in the cycle(s) where its scope was touched, or carrying a cited
 reason it was out of scope for the run, no lens silently absent; the
 last cycle's pass left no material finding; every design decision is
-[VERIFIED] or [AUTO-ACCEPTED] (§5.3) — both modes;
-no finding is left open. These are the status the tracker carries (§5.3) — a notebook of
-where each concern stands — not a mechanical check the run self-passes.
+[VERIFIED] or [AUTO-ACCEPTED] (§5.3) — both modes; **and every
+[VERIFIED] design decision's embedded path/filename/module-name
+premises carry a re-runnable basis** (per §3.2 basis-naming for
+design-decision premises); no finding is left open. These are the
+status the tracker carries (§5.3) — a notebook of where each
+concern stands — not a mechanical check the run self-passes.
 
 The supporting facts above check that everything *recorded* is
 at terminal. The judgment must also test whether the recording is
