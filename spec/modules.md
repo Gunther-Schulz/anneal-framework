@@ -108,12 +108,9 @@ the finding observes the same gap the decision deferred — does not
 trigger loopback. The finding is appended to the tracker as a
 re-surfacing notation alongside the original [AUTO-ACCEPTED] tag,
 and the run completes; the AI's prior judgment to defer is preserved
-for the operator's post-run review. Without the explicit cross-
-reference, the finding is treated as a new gap and triggers loopback —
-the cross-reference is the artifact distinguishing the two cases,
-not the AI's judgment about whether the gaps "match." Other halt
-conditions — phases that genuinely cannot complete on causes other
-than [ISSUES FOUND] — remain a separate effort, not yet undertaken.
+for the operator's post-run review. Other halt conditions — phases
+that genuinely cannot complete on causes other than [ISSUES FOUND] —
+remain a separate effort, not yet undertaken.
 
 ## 2. The standardized lens set
 
