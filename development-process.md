@@ -92,11 +92,13 @@ the class, and where else does it live."
 artifact: (a) the search patterns used (each grep query verbatim);
 (b) the matches found (file:line per match); (c) the resolution
 per match (updated / unchanged-with-cited-reason); (d) the
-contract's reference *class* named — what kinds of references it
-has (literal name, identifier shorthand, prose paraphrase,
-cross-section anchor) — with confirmation that the patterns cover
-each class. A practice-4 audit citing only "grep done" without the
-artifact is incomplete; per Step 5 the discharge requires evidence.
+contract's reference *class(es)* named — one or more of: literal
+name, identifier shorthand, prose paraphrase, cross-section anchor
+(or a named new class with rationale; the enumeration is closed
+unless extension is explicit) — with confirmation that the patterns
+cover each class. A practice-4 audit citing only "grep done"
+without the artifact is incomplete; per Step 5 the discharge
+requires evidence.
 
 ### 5. Ground before asserting or editing
 
@@ -299,11 +301,13 @@ A change runs the same loop:
    for practice-6 whole-document coherence requires citing:
    (a) the section-heading hierarchy before/after the edit
    (confirms no orphan sections, no broken section order); and
-   (b) the first sentence of each section adjacent to the edit
-   before/after (confirms argument flow holds across the change).
-   Prose self-attestation ("section flows", "no seams", "reads
-   coherent") without these citations is insufficient — that's
-   self-attest, not an artifact.
+   (b) the first sentence of each of the **section containing the
+   edit + its immediate-preceding and immediate-following sibling
+   sections at the same heading level** (this neighborhood is
+   mechanical, not judgment) before/after (confirms argument flow
+   holds across the change). Prose self-attestation ("section
+   flows", "no seams", "reads coherent") without these citations
+   is insufficient — that's self-attest, not an artifact.
 
    Checks:
    - the render against its source (practice 2);
