@@ -88,6 +88,16 @@ intra-repo dependent is the easiest to miss. A found instance is the
 *start* of the audit, not the end; the question is always "what is
 the class, and where else does it live."
 
+**Audit artifact required.** The audit produces an explicit
+artifact: (a) the search patterns used (each grep query verbatim);
+(b) the matches found (file:line per match); (c) the resolution
+per match (updated / unchanged-with-cited-reason); (d) the
+contract's reference *class* named — what kinds of references it
+has (literal name, identifier shorthand, prose paraphrase,
+cross-section anchor) — with confirmation that the patterns cover
+each class. A practice-4 audit citing only "grep done" without the
+artifact is incomplete; per Step 5 the discharge requires evidence.
+
 ### 5. Ground before asserting or editing
 
 Re-read the exact current text of a passage before editing it —
@@ -275,6 +285,25 @@ A change runs the same loop:
    N/A indicates the check applies; dispatch it. The N/A escape
    exists to skip checks that are *observably* inapplicable, not
    to compress effort on checks that are arguably-applicable.
+
+   **Doubt-voicing about whether a check applies is itself evidence
+   the check applies — dispatch it.** Rationalizations the AI
+   constructs for not dispatching ("this is a small change," "prior
+   reviewer covers this," "the change is well-grounded," "in-
+   context should be enough here") are the very signal that the
+   check is in scope. The doubt IS the evidence. This pattern is
+   the recurring failure shape behind partial Step-5 discharge.
+
+   **In-context check artifact (practice-6 specific).** The
+   "[in-context check cited]" option in the discharge artifact
+   for practice-6 whole-document coherence requires citing:
+   (a) the section-heading hierarchy before/after the edit
+   (confirms no orphan sections, no broken section order); and
+   (b) the first sentence of each section adjacent to the edit
+   before/after (confirms argument flow holds across the change).
+   Prose self-attestation ("section flows", "no seams", "reads
+   coherent") without these citations is insufficient — that's
+   self-attest, not an artifact.
 
    Checks:
    - the render against its source (practice 2);
