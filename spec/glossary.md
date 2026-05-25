@@ -42,10 +42,10 @@ inspection differs only by where the lens comes from. Two sources:
 search result, a located read of the source — the artifact itself.
 The basis rule is specified in `core.md` §3.2.
 
-**Assumption** — a basis that resolves to recall — "assumed,"
-"inferred" — rather than evidence. An assumption does not ground a
-decision; how it holds a run short of [READY] is specified in
-`core.md`.
+**Assumption** — a basis that resolves to recall ("assumed,"
+"inferred") or to deferral ("will verify in cycle N," "TBD")
+rather than evidence. An assumption does not ground a decision;
+how it holds a run short of [READY] is specified in `core.md`.
 
 **Load-bearing** — descriptive of a claim or premise that a design
 decision, a recommendation, or [READY] rests on. Only load-bearing
