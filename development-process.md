@@ -97,7 +97,11 @@ Never assert current state from memory or from a document written
 earlier; verify against the live source. This applies to the
 process itself **per edit cycle**, not per session: a system
 reminder noting an earlier-turn skill invocation does not
-discharge a rule-corpus hook for a new edit.
+discharge a rule-corpus hook for a new edit. An **edit cycle** is
+one scope of change — framework-spec edit + its renders + the
+checks that discharge step 5 for that scope; a new scope (a
+different finding, a different rule, a different fix target) is
+a new cycle, regardless of response boundaries.
 
 ### 6. Integrate, don't insert
 
