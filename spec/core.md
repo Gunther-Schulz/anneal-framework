@@ -332,7 +332,7 @@ tracker; the unit proceeds. No work is lost when loopback fires.
 design's decisions grouped into **dispatch units**, dependency-
 ordered, with a parallel-eligibility marker on each — a planning
 artifact, not a new tracker construct. Parallel-eligibility is a
-load-bearing claim per §3.2: a unit's file and contract scopes are
+load-bearing claim per §3.2: a unit's element and contract scopes are
 listed and the disjointness from sibling units' scopes established
 by the re-runnable search behind the claim, not by recall. A unit
 whose disjointness is not search-established is sequential. The
