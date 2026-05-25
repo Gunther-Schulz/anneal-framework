@@ -62,7 +62,9 @@ out-of-order sections make the artifact malformed:
    (`core.md` §5.2). Operator's free-form override against the
    tracker is available in either mode (`core.md` §1).
 5. **Menu** — continue / proceed only; plain; no inline
-   annotations.
+   annotations except a single `← recommended` tag on the
+   option matching section 4's recommendation. The tag is
+   mandatory: every menu has exactly one tagged option.
 
 **Presentation.** Search commands, file paths, tracker citations
 are presented as code, not buried in prose.
