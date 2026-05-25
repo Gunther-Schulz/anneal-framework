@@ -381,10 +381,13 @@ unit.
 A dispatched subagent does not write directly; on completion or
 halt it returns state — findings, the unit's commit reference, a
 loopback signal where applicable — and the orchestrator appends in
-deterministic order. Subagent return-state findings carry no
-identifier; the orchestrator assigns identifiers at append time, and
-cross-references between findings within a return batch are by
-content, not by identifier (which is not yet assigned). The
+deterministic order. Subagent return-state findings carry **batch-
+local identifiers** (`F-batch-1`, `F-batch-2`, … sequential within
+the return); intra-batch cross-references use these batch-local
+forms. The orchestrator maps batch-local to run-global identifiers
+at append, re-targeting intra-batch cross-references. A return-
+state finding carrying a run-global identifier is a malformed
+artifact — return-state cannot know the run-global namespace. The
 append-only model (`modules.md` §3.1) is preserved without
 concurrency machinery.
 
@@ -403,18 +406,27 @@ four fields:
 
 On receiving it, the orchestrator halts other in-flight parallel
 subagents and audits the work-state at halt. **Parallel-completed
-units** (committed before the halt arrived) are audited against the
-new finding's `affected_decisions` and `scope`: a unit whose scope
-does not intersect the new finding's invalidated scope preserves its
-commit and tracker entry; a unit whose scope does intersect reverts
-(commit dropped, tracker entry moved to [INVALIDATED]). **Halted
-subagents' uncommitted work** in the working tree is preserved for
-redo inheritance — the new investigate-design cycle reads it
-alongside the tracker, and the redesign may incorporate, audit, or
-discard. Tracker state is preserved across all cases. The run
-returns to investigate-design with the four-field result feeding the
-new cycle. The pattern mirrors verify's [ISSUES FOUND] return (§4.3,
-§6).
+units** (committed before the halt arrived) are audited by
+**enumerated set intersection** against the new finding:
+
+- **decision intersection** — does the unit's implemented decision
+  set (D# identifiers cited by its impl plan entry, `modules.md`
+  §3.3) overlap the new finding's `affected_decisions`?
+- **element/contract intersection** — does the unit's listed
+  element + contract scope (from its impl plan entry's parallel-
+  eligibility scope, §4.2 above) overlap the new finding's `scope`
+  field (named elements, contracts, or behaviors — a behavior
+  resolves to its implementing element)?
+
+Empty intersection on both → preserve commit and tracker entry.
+Non-empty intersection on either → revert (commit dropped, tracker
+entry moved to [INVALIDATED]). **Halted subagents' uncommitted
+work** in the working tree is preserved for redo inheritance —
+the new investigate-design cycle reads it alongside the tracker,
+and the redesign may incorporate, audit, or discard. Tracker state
+is preserved across all cases. The run returns to investigate-
+design with the four-field result feeding the new cycle. The
+pattern mirrors verify's [ISSUES FOUND] return (§4.3, §6).
 
 **Checkpoint.** A dispatch unit's work product is committed on
 completion (instance-specific persistence artifact) and the
