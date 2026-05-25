@@ -332,9 +332,11 @@ amendments to existing ones).
 A convergence cycle is a full cycle (investigation pass +
 standardized inspection pass), not a final lens application on
 accumulated state. Its investigation pass must enumerate **new
-surfaces investigated this cycle**, not merely re-attest prior
-findings; a convergence cycle that only re-attests is a malformed
-artifact.
+surfaces investigated this cycle**, where each surface is cited
+as a file:line range or grep query that did not appear in any
+prior cycle's investigation-pass artifact this run. A
+convergence cycle that produces no new-surface citations (only
+re-attestations of prior surfaces) is a malformed artifact.
 
 If the convergence cycle surfaces D-track deltas (new decisions
 or amendments), the design is not [READY]: the deltas feed into

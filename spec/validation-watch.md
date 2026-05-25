@@ -194,7 +194,7 @@ return.
 
 ## V-5. [READY] self-assessment vs external check
 
-**Status: FIX-SHIPPED (2026-05-25, commit pending).** The recurrence
+**Status: FIX-SHIPPED (2026-05-25, commit e18bca1).** The recurrence
 the production-signal watched for was observed in the unit-14 run
 (beat-the-books project): cycle 3 declared [READY], operator chose
 Continue, cycle 4 surfaced material design corrections (F31-F36 +
