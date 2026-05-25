@@ -169,22 +169,17 @@ their own entry or live elsewhere.
 ### 9. Design, then decide, then implement
 
 Surface a design and its **genuine choices** and trade-offs before
-building. Genuine includes four things: (a) the **thorough-fix
-option** (per `core.md` §1) — name it, lead with it, weigh
-cheaper alternatives against it (not cheap-only menus); (b) for
-any new rule, its **mitigation classification** per practice 8
-(mechanical criteria / structural enforcement / safety net per
-skill-craft's "Judgment calls as design risk"); (c) for any new
-terminology proposed, **terminology quality** per skill-craft's
-"Naked judgment in rule statements" anti-pattern — no term whose
-meaning rests on AI judgment rather than observable property;
-framework vocabulary collisions are flagged and replaced; (d) the
-**amendment-discipline decision sequence** per skill-craft
-PROCEDURE.md ("Amendment discipline"): existing rule already
-addresses → revise in place; existing content becomes redundant
-or mergeable → reduce / merge; absorbable by extending → extend;
-only if none → add new. A design that proposes a new
-clause without surfacing this sequence is malformed.
+building. Genuine includes four things:
+
+- (a) **thorough-fix option** (`core.md` §1): name it, lead with it;
+  not cheap-only menus
+- (b) **mitigation classification** for any new rule (practice 8)
+- (c) **terminology quality** for any new terms (skill-craft's
+  "Naked judgment in rule statements")
+- (d) **amendment-discipline decision sequence** (skill-craft
+  PROCEDURE.md "Amendment discipline")
+
+A design surface omitting any of (a)-(d) is malformed.
 
 **AI-tightness** per skill-craft "Procedure drift" anti-pattern
 (AI-tightness check sub-clause). Applies per-edit.
