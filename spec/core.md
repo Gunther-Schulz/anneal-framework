@@ -143,10 +143,12 @@ basis — the evidence it rests on. The basis is the artifact itself
 claim of having looked is not a basis.
 
 A basis that resolves to recall — "assumed," "inferred,"
-"obviously so" — is not a basis but an assumption. An assumption
-does not ground a decision; the work is held short of [READY]
-until the assumption is converted to evidence. The mechanical
-tell of a blind spot is the basis the AI cannot produce.
+"obviously so" — or to deferral — "will verify in cycle N,"
+"impl-phase will produce," "TBD" — is not a basis but an
+assumption. An assumption does not ground a decision; the work
+is held short of [READY] until the assumption is converted to
+evidence. The mechanical tell of a blind spot is the basis the
+AI cannot produce.
 
 The rule rejects **silent substitution**: missing or malformed
 evidence defaulted to a plausible proxy that propagates as if it
