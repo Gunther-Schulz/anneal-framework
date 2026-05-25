@@ -319,18 +319,22 @@ A change runs the same loop:
      `development-process.md`) against skill-craft's self-review
      mandate, with Check #1's canonical-rules iteration restricted
      to Layer 2 + Layer 4 + anti-patterns (Layer 1 skill-structure
-     checks excluded). After commit:
+     checks excluded). **Before commit** (per skill-craft Layer 4
+     mandate — review against proposed changes, not against a
+     committed SHA):
      ```
-     - [ ] Subagent dispatched with: commit SHA, changed-file list,
-           instruction to load SKILL.md + PROCEDURE.md +
-           references/anti-patterns.md from
+     - [ ] Subagent dispatched with: proposed changes (working
+           tree, staged diff, or inline-described in brief),
+           changed-file list, instruction to load SKILL.md +
+           PROCEDURE.md + references/anti-patterns.md from
            `skill-craft/plugin/skills/skill-craft/`?
-       - NO → CANNOT proceed.
+       - NO → CANNOT commit.
        - YES → Evidence: [loaded-references manifest from subagent]
      ```
-     Recovery: blocking → revert; notable → operator amend
-     decision (next-commit fix or accept-with-rationale); nit →
-     surface for optional address.
+     Recovery: blocking → don't commit; fix the change first
+     (re-dispatch review on the fix). Notable → operator amend
+     decision before commit. Nit → operator decides whether to
+     address before commit.
    - the whole document a substantive edit touched, for coherence
      (practice 6);
    - **cross-spec coherence** per skill-craft "Amendment discipline"
