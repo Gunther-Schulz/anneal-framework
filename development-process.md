@@ -225,6 +225,13 @@ skill-craft or other framework-adjacent corpora may either be
 defined locally (when usage is framework-specific) or
 cross-referenced (when the canonical definition lives there).
 
+This rule classifies as **structural enforcement** per practice 8:
+the glossary entry itself is the un-fakeable artifact — its
+presence in the commit is the check. The audit-direction
+sub-clause provides a **mechanical** secondary criterion (grep
+the diff for capitalized or hyphenated multi-word phrases in
+noun position; cross-check against glossary).
+
 ## The release loop
 
 A change runs the same loop:

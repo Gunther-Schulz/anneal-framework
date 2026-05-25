@@ -244,7 +244,10 @@ pre-mitigation protocol (`validation-watch.md` preamble Entry
 lifecycle). The positive-evidence criterion for FIX-SHIPPED →
 RESOLVED transitions — distinct from absence-of-recurrence
 (which is indistinguishable from "failure shape didn't surface
-this run").
+this run"). Distinct from the **Load-bearing** descriptor above
+(an adjective describing claims/premises that design decisions
+rest on); here, "load-bearing" modifies *instance* in a specific
+sense — the instance carries the V-N's positive validation.
 
 **Recall pool** — the working context's accumulated set of
 already-recorded findings and design decisions when answering a
