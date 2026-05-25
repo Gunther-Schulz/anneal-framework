@@ -9,10 +9,24 @@ post-analysis loop. This file specifies how the review is conducted.
 
 ## When to run
 
-After any genuine run of the instance, at the operator's discretion
-— especially after a release that changed instance behavior (the
-run is the change's empirical test). The operator decides whether
-this run warrants a review; the instance does not prompt for one.
+**At any point during or after a run, at the operator's
+discretion** — at completion (verify [PASSED]), mid-run after a
+[READY] presentation, after a verify result, after a cycle that
+surfaced unexpected findings, or after an interruption. The
+post-run review is an analysis tool for the *protocol's
+execution*, not a phase-gated artifact — invocable at any state
+the operator wants to inspect.
+
+Especially valuable after a release that changed instance
+behavior (the run is the change's empirical test) and after
+runs where the operator overrode a phase transition (e.g.,
+selected Continue at [READY]) — the override itself is data.
+
+Q's that depend on a phase not yet reached (e.g., Q6 verify-
+phase audit before verify has fired) classify as **not yet
+applicable to this run state** rather than skipped silently. The
+operator decides when a run (in progress or complete) warrants
+the analysis; the instance does not prompt for one.
 
 ## The output
 

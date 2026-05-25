@@ -122,6 +122,16 @@ best, operator judges cost* (`core.md` §1).
 findings, design decisions, and their status.
 The primary state of the investigate-design phase.
 
+**F-track / D-track** — shorthand for the tracker's two tracks
+(`core.md` §5): the **F-track** is the finding track (observations
+from inspection); the **D-track** is the design-decision track
+(committed positions on what to build). The instance specifies
+whether the D-track holds only design decisions (Clippy) or also
+other forms of committed positions (e.g., hypothesis verdicts in
+Daneel). Used where deltas between cycles are compared per-track —
+e.g., the convergence cycle test (`core.md` §4.1.4) gates [READY]
+on zero D-track delta.
+
 **Finding** — a discrete observation recorded in the tracker, carrying
 a status tag.
 
