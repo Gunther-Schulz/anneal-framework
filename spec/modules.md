@@ -181,15 +181,19 @@ optional — fabricating alternatives degrades the ledger. Use it
 where alternatives were genuinely weighed and naming them informs a
 later reader (the operator at [READY] or post-hoc debugging).
 
-The tracker is **append-only**. A new entry, and every later change
-to an entry — a new status, a corrected summary — is a new ledger
-line appended to the tracker; existing lines are never edited. Each
+The tracker is **append-only** at the **ledger** layer. A new entry,
+and every later change to an entry — a new status, a corrected
+summary — is a new ledger line appended to the tracker; existing
+ledger lines are never edited. Instance renders may carry a header
+above the ledger (run identifier, current phase, terminal status) —
+the header is mutable run-state distinct from the append-only ledger;
+updating header fields is not an edit to ledger lines. Each ledger
 line carries its entry's identifier, and an entry's current state is
 its latest line: where current state is needed — at [READY], a
 resume, the closed artifact — it is the tracker reduced to the latest
 line per entry. The append-only history is the run's audit trail;
-because no line is ever rewritten, no past entry can be silently
-altered.
+because no ledger line is ever rewritten, no past entry can be
+silently altered.
 
 A **basis-only refinement** on a terminal-status entry
 ([VERIFIED], or [AUTO-ACCEPTED] for an auto-battle design

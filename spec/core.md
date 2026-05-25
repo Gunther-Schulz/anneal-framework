@@ -235,6 +235,11 @@ design recorded in the tracker. It ends at [READY].
 
 The standardized inspection pass runs every cycle.
 
+**Cycle numbering** is continuous across the run — a loopback from
+a downstream phase (implement major-new-scope, verify [ISSUES
+FOUND]) returns to investigate-design at the next cycle number,
+not at cycle 1. Each cycle number is unique within the run.
+
 **Design.** Across the cycle the AI forms and updates design decisions
 (§5.2) from the cycle's findings — the design-formation the phase is
 named for, §1's synthesis into the evolving design. The locked design
@@ -376,8 +381,12 @@ unit.
 A dispatched subagent does not write directly; on completion or
 halt it returns state — findings, the unit's commit reference, a
 loopback signal where applicable — and the orchestrator appends in
-deterministic order. The append-only model (`modules.md` §3.1) is
-preserved without concurrency machinery.
+deterministic order. Subagent return-state findings carry no
+identifier; the orchestrator assigns identifiers at append time, and
+cross-references between findings within a return batch are by
+content, not by identifier (which is not yet assigned). The
+append-only model (`modules.md` §3.1) is preserved without
+concurrency machinery.
 
 **Loopback across the subagent boundary.** A subagent finding
 major new scope halts and returns a loopback-required result with
@@ -393,11 +402,19 @@ four fields:
   extended (cited by §5.2 identifier)
 
 On receiving it, the orchestrator halts other in-flight parallel
-subagents (their work may rest on the disjoint-scope claim the
-new finding contradicts), preserves committed work and tracker
-state, and returns the run to investigate-design with the
-four-field result feeding the new cycle. The pattern mirrors
-verify's [ISSUES FOUND] return (§4.3, §6).
+subagents and audits the work-state at halt. **Parallel-completed
+units** (committed before the halt arrived) are audited against the
+new finding's `affected_decisions` and `scope`: a unit whose scope
+does not intersect the new finding's invalidated scope preserves its
+commit and tracker entry; a unit whose scope does intersect reverts
+(commit dropped, tracker entry moved to [INVALIDATED]). **Halted
+subagents' uncommitted work** in the working tree is preserved for
+redo inheritance — the new investigate-design cycle reads it
+alongside the tracker, and the redesign may incorporate, audit, or
+discard. Tracker state is preserved across all cases. The run
+returns to investigate-design with the four-field result feeding the
+new cycle. The pattern mirrors verify's [ISSUES FOUND] return (§4.3,
+§6).
 
 **Checkpoint.** A dispatch unit's work product is committed on
 completion (instance-specific persistence artifact) and the
