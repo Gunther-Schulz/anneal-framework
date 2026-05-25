@@ -44,9 +44,12 @@ out-of-order sections make the artifact malformed:
    counts (findings + decisions by status), the last cycle's
    standardized-pass status (clean or line items), the
    fresh-session implementability result line (PASSED / FAILED
-   per `core.md` §4.1), named blockers preventing [READY] (open
-   [PENDING] decisions and weak-basis ledger entries).
-   Decision-relevant content first; detail follows.
+   per `core.md` §4.1), **the convergence-cycle status** when at
+   [READY] (the convergence cycle's investigation-pass artifact
+   citation + zero-D-delta confirmation per `core.md` §4.1.4),
+   named blockers preventing [READY] (open [PENDING] decisions
+   and weak-basis ledger entries). Decision-relevant content
+   first; detail follows.
 2. **Inventories** — findings and decisions as scannable
    one-per-line ledger entries with status tag and identifier at
    start; not paragraph-prose summaries.
@@ -246,17 +249,27 @@ locked design.
 
 ## 4. Post-run review
 
-An optional final step after verify reports [PASSED]: surface what
-the protocol missed or got wrong in this run, to inform the next
-iteration. This is the framework's empirical-validation procedure —
-the input that drives the next amendment cycle
-(`development-process.md`).
+An optional analysis step: surface what the protocol missed or got
+wrong in this run, to inform the next iteration. This is the
+framework's empirical-validation procedure — the input that drives
+the next amendment cycle (`development-process.md`).
+
+This section specifies the minimum shape (when, output discipline,
+question dimensions). The full procedure — the standing questions
+themselves and their state-aware Q7 walk — lives in framework-root
+`post-run-review.md` and is rendered to instance `references/
+post-run-review.md`. The spec carries the minimum; the procedure
+carries the operative detail.
 
 ### 4.1 When and how
 
-After verify reports [PASSED] the run is complete. The operator
-**may** request a post-run review. The AI does not prompt for it;
-the operator decides when a run warrants the analysis.
+**At any point during or after a run, at the operator's
+discretion** — at completion (verify [PASSED]), mid-run after a
+[READY] presentation, after a verify result, after a cycle that
+surfaced unexpected findings, or after an interruption. The
+post-run review is an analysis tool for the *protocol's
+execution*, not a phase-gated artifact. The operator **may**
+request a review; the AI does not prompt for one.
 
 ### 4.2 Output, no persistence
 
