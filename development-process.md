@@ -245,14 +245,41 @@ A change runs the same loop:
 4. **Re-render** the affected instance files from the corrected spec
    — faithfully, clause by clause.
 5. **Verify** — each check below is dispatched (separate context
-   where required); discharge before step 6:
+   where required); discharge before step 6 via an **explicit
+   discharge artifact visible to the operator before push** — in
+   the commit message body, in the session response, or as a
+   separate file. A mental check is not discharge; the artifact
+   is. A prose claim ("Step 5 done") answered from memory of
+   "what I usually do" is the same recall-pool failure shape
+   that `core.md` §4.1.4 and V-5 close at the framework level —
+   the convergence-cycle's "force fresh investigation, not
+   self-attest" applies recursively here: force the artifact, not
+   self-attest. Per practice 8: structural enforcement
+   classification (the artifact IS the un-fakeable thing).
+
+   The discharge artifact form, per commit:
 
    ```
-   - [ ] All applicable checks below dispatched, with evidence
-         (subagent ID or "N/A: reason") recorded?
+   Step-5 discharge for commit <SHA or "pending">:
+   - [✓] All applicable checks below dispatched, with evidence
+         (subagent ID, grep cite, or "N/A: reason") recorded?
      - NO → CANNOT proceed to step 6.
-     - YES → Evidence: [per-check]
+     - YES → Evidence: [per-check below]
+
+   Per-check:
+   - Render fidelity (practice 2) → [subagent ID, verdict] OR [N/A: no instance render]
+   - Practice-4 dependent audit → [grep evidence cited] OR [N/A: no contract change]
+   - Skill-craft full review on changed skill files → [subagent ID, verdict] OR [N/A: no skill files changed]
+   - Skill-craft self-review on framework-spec section → [subagent ID, verdict] OR [N/A: no framework-spec change]
+   - Practice-6 whole-document coherence → [subagent ID, verdict] OR [in-context check cited] OR [N/A]
+   - Cross-spec multi-file coherence → [subagent ID, verdict] OR [N/A: single home]
    ```
+
+   The push to step 6 produces this artifact as part of the
+   work product. A push without the artifact is malformed.
+   Recurring partial discharge — claiming "Step 5 done" without
+   the artifact and proceeding to push — is the recurring
+   adherence gap the artifact-requirement closes.
 
    Checks:
    - the render against its source (practice 2);
