@@ -20,7 +20,7 @@ the operator wants to inspect.
 Especially valuable after a release that changed instance
 behavior (the run is the change's empirical test) and after
 runs where the operator overrode a phase transition (e.g.,
-selected Continue at [READY]) — the override itself is data.
+selected `another cycle` at [READY]) — the override itself is data.
 
 Q's that depend on a phase not yet reached (e.g., Q6 verify-
 phase audit before verify has fired) classify as **not yet

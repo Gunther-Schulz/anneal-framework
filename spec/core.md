@@ -32,7 +32,7 @@ A run proceeds through three phases in sequence:
 1. **investigate-design** — a loop of cycles that builds
    understanding of the task and the problem space and produces a
    locked design. Ends at [READY], when the operator, presented the
-   design, decides to proceed.
+   design, selects `next phase`.
 2. **implement** — carries out the locked design, producing the work.
 3. **verify** — checks the produced work against the locked design
    and the standardized lenses.
@@ -317,7 +317,7 @@ design — the tracker, the recorded design decisions, and a
 recommendation — for the operator's judgment. The cycle-history
 facts (the standardized lens set accounted for whole; the last
 cycle's pass clean) are part of what is presented and weighed,
-not a self-passed gate. The operator's decision to proceed is
+not a self-passed gate. The operator's selection of `next phase` is
 the transition to implement; until the operator proceeds, the
 phase continues and the loop may run further cycles.
 
@@ -620,7 +620,7 @@ assumption cannot reach [VERIFIED]. It moves through:
    new design decision.
 5. **[AUTO-ACCEPTED]** — a [CONDITIONAL] decision the AI's committed
    recommendation was taken as default when the operator did not
-   override: in interactive mode, by the operator selecting proceed at
+   override: in interactive mode, by the operator selecting `next phase` at
    the closed-artifact presentation without overriding any open
    [CONDITIONAL] (`modules.md` §1.1); in auto-battle mode, by the
    absence of an operator (`modules.md` §1.2). The recommendation
@@ -691,7 +691,7 @@ the run are specified in `modules.md` §1.
 investigate-design → implement → verify, entering a phase only when
 its predecessor has reported completion. The investigate-design →
 implement transition is [READY] (§4.1, §5.3): implement is not entered
-until the operator, presented the design, decides to proceed. The
+until the operator, presented the design, selects `next phase`. The
 orchestrator establishes verify in a context isolated from the one
 that ran the work, each time verify is conducted — on first reaching
 it, and on each re-run after [ISSUES FOUND] (§4.3).

@@ -21,8 +21,9 @@ the tracker (its findings and recorded design decisions), a
 recommendation, and the menu — and nothing else. Design decisions are
 recorded in the tracker; they are never posed to the operator as
 questions or choices (`core.md` §1, §5.2). The **menu** carries only
-loop control: the operator selects an option — continue the loop, or
-proceed to the next phase. The operator's input on a design decision
+loop control: the operator selects an option — `another cycle` (run
+the loop again) or `next phase` (transition). The operator's input
+on a design decision
 is free-form override against the recorded tracker (`core.md` §1) —
 never an answer to a posed choice. The AI may suggest *example*
 wording the operator could use — lowering friction without
@@ -31,7 +32,8 @@ the line: it constrains the operator's input to selected options and
 is not permitted.
 
 The menu **persists**. It is the last element of every response until
-the operator selects continue or proceed. The operator may interject
+the operator selects `another cycle` or `next phase`. The operator
+may interject
 free-form instead of selecting — a question, a comment, an override;
 the AI answers the question or applies the override, and then
 re-presents the menu. The operator never loses the advance choice.
@@ -63,10 +65,11 @@ out-of-order sections make the artifact malformed:
    recommended because…" callouts in this section. **For each
    open [CONDITIONAL] decision, the AI's committed default
    surfaces crisply** — what the operator accepts by selecting
-   proceed; the [CONDITIONAL] then records [AUTO-ACCEPTED]
+   `next phase`; the [CONDITIONAL] then records [AUTO-ACCEPTED]
    (`core.md` §5.2). Operator's free-form override against the
    tracker is available in either mode (`core.md` §1).
-5. **Menu** — continue / proceed only; plain; no inline
+5. **Menu** — `(a)nother cycle` / `(n)ext phase` only; accept
+   `a` or `n` as menu selection; plain otherwise; no inline
    annotations except a single `← recommended` tag on the
    option matching section 4's recommendation. The tag is
    mandatory: every menu has exactly one tagged option.
@@ -87,15 +90,15 @@ behavior — cycle loop, lens application, basis-rule discipline,
 tracker shape, dispatch self-check (`core.md` §4.2), verify
 isolation (`core.md` §4.3), [CONDITIONAL] handling — is identical to
 interactive mode. The single difference is the operator slot at
-decision moments: in interactive, an operator selects continue or
-proceed at the closed-artifact presentation; in auto-battle, no
+decision moments: in interactive, an operator selects `another cycle`
+or `next phase` at the closed-artifact presentation; in auto-battle, no
 operator is present, so the AI's committed recommendation is taken
 as default automatically.
 
 The loop self-advances without per-cycle operator input. Cycles run
 until the working context judges the design complete (`core.md` §4.1,
 [READY]). At [READY], where interactive presents the closed artifact
-and waits for the operator's proceed-selection, auto-battle skips
+and waits for the operator's next-phase selection, auto-battle skips
 the presentation and proceeds directly — the same default-take of
 the AI's recommendation, just without the operator-present-to-attest.
 

@@ -193,7 +193,8 @@ Transitions and per-tag rules specified in `core.md` §5.
 
 **[READY] / [NOT READY]** — the terminal state of the
 investigate-design phase: [READY] is the design judged complete and
-presented for the decision to proceed; [NOT READY] precedes it. How
+presented for the operator's selection of `next phase`; [NOT READY]
+precedes it. How
 [READY] is determined is specified in `core.md`.
 
 **[PASSED] / [ISSUES FOUND]** — verify's terminal result: [PASSED]
@@ -261,7 +262,7 @@ at the self-test moment.
 
 **False-[READY]** — a [READY] declaration that subsequent work
 surfaces material design gaps for (`validation-watch.md` V-5).
-Caught by operator at the closed-artifact review (Continue
+Caught by operator at the closed-artifact review (`another cycle`
 override), by the convergence cycle (§4.1.4), or — when both
 miss — by implement-loopback or verify [ISSUES FOUND].
 
@@ -285,8 +286,9 @@ finding triggers loopback as a new gap.
 
 **Menu** — interactive mode's advance point: the AI presents the
 tracker and a recommendation, and the operator selects an option —
-continue, or proceed to the next phase — or free-form overrides.
-Specified in `modules.md` §1.1.
+`another cycle` or `next phase` — or free-form overrides. Rendered
+with the first-letter typeable shortcut (`(a)nother cycle` /
+`(n)ext phase`). Specified in `modules.md` §1.1.
 
 ## Triage and review classifications
 
