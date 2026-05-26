@@ -51,9 +51,13 @@ out-of-order sections make the artifact malformed:
    citation + zero-D-delta confirmation per `core.md` §4.1.4),
    named blockers preventing [READY] (open [PENDING] decisions
    and weak-basis ledger entries), **impl plan preview at
-   [READY]** (unit count + sequential or
-   parallel-eligible-by-disjointness, per `core.md` §4.2).
-   Decision-relevant content first; detail follows.
+   [READY]** — header line with unit count + run-level
+   sequential-vs-parallel summary + the disjointness basis
+   citation; followed by one line per dispatch unit naming
+   dependencies (after which units, or "first" if none) and
+   parallelism (parallel with which units, or "sequential"),
+   per `core.md` §4.2. Decision-relevant content first; detail
+   follows.
 2. **Inventories** — findings and decisions as scannable
    one-per-line ledger entries with status tag and identifier at
    start; not paragraph-prose summaries.
