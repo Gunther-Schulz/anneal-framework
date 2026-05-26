@@ -187,10 +187,18 @@ later reader (the operator at [READY] or post-hoc debugging).
 The tracker is **append-only** at the **ledger** layer. A new entry,
 and every later change to an entry — a new status, a corrected
 summary — is a new ledger line appended to the tracker; existing
-ledger lines are never edited. Instance renders may carry a header
-above the ledger (run identifier, current phase, terminal status) —
-the header is mutable run-state distinct from the append-only ledger;
-updating header fields is not an edit to ledger lines. Each ledger
+ledger lines are never edited. Instance renders carry a header above
+the ledger with the run identifier, status (an instance-defined
+closed enum), current phase (an instance-defined closed enum),
+mode, and a one-line task summary. The header is mutable
+run-state distinct from the append-only ledger; updating header
+fields is not an edit to ledger lines. Instances enumerate their
+Status and Phase values in their tracker reference doc. Two
+malformed annotation shapes: within-field qualifier on a bare
+enum value (e.g. "PASSED (1st pass)" — the common-word-qualifier
+symptom, `skill-craft/references/anti-patterns.md`); and
+cross-field conflation (e.g. "verify [PASSED]" — embedding the
+Status value inside the Phase field, or vice versa). Each ledger
 line carries its entry's identifier, and an entry's current state is
 its latest line: where current state is needed — at [READY], a
 resume, the closed artifact — it is the tracker reduced to the latest
