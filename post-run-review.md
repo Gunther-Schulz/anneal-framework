@@ -42,6 +42,15 @@ operator's retention of the answers.
 
 ## Standing questions
 
+Questions **surface observable artifacts** (counts,
+classifications, quotes, walks, named symptoms); they do **not**
+prescribe actions on those artifacts. Action emerges from
+operator+AI judgment in the session, applying the framework's
+existing disciplines (`development-process.md` practice 1 triage,
+practice 8 structural-form enumeration). A Q that prescribes
+"ship X" / "observe Y" over-reaches the review's purpose — the
+session decides.
+
 Phrase each question **artifact-forcing** — "quote it verbatim,"
 "give the count," "classify into one of N," "diff against the
 retained tracker of run X." Generic "did it help" yields
