@@ -146,13 +146,16 @@ wins.
 
 ### 8. Structural-form gate for fixes
 
-A failure surfacing invites a fix. The gate on the fix is its
-**structural form**, not its occurrence count. Per skill-craft's
-"Judgment calls as design risk", every rule the AI must follow
-has one of three forms: **mechanical criteria** (computed from
-observable evidence), **structural enforcement** (artifact-shape
-forcing function), or **safety net** (accept the AI will sometimes
-fail; catch downstream). A fix in pure prose form is malformed —
+A failure surfacing invites a fix. First apply skill-craft's
+"Iterative narrowing of rule or mechanism proposals" — a fix
+absorbing into an existing rule/mechanism does not earn
+separate classification. For novel additions, the gate is the
+fix's **structural form**, not its occurrence count. Per
+skill-craft's "Judgment calls as design risk", every rule the
+AI must follow has one of three forms: **mechanical criteria**
+(computed from observable evidence), **structural enforcement**
+(artifact-shape forcing function), or **safety net** (accept
+the AI will sometimes fail; catch downstream). A fix in pure prose form is malformed —
 it adds an unenforced suggestion. Both new mechanisms and fixes
 to existing rules are gated by this classification: if classifiable
 as one of the three, it earns its place at n=1; if not, keep
@@ -337,6 +340,17 @@ A change runs the same loop:
         recommendation; operator decides per finding (fix-now /
         accept-with-rationale / defer-to-observations); AI applies.
 
+     **Discipline-citation in recommendations.** When a reviewer
+     finding cites a discipline (practice 8 / basis rule /
+     no-theater / skip-rationalization / etc.), the AI's
+     recommendation cites the discipline and names its verdict.
+     If practice 8 names a classifiable structural-enforcement
+     candidate → ship-now (n=1). If no-theater says the
+     alternative is undefendable → cut. A proposed AI deviation
+     produces an additional `operator-decision-required` line
+     citing the alternative — the deviation surfaces explicitly,
+     not as an equal-weight option.
+
      Accept-with-rationale records as an `Accepted-finding:` line
      in the commit message body citing the finding's file:line
      and the operator's reason; commit-body-only because the
@@ -351,18 +365,21 @@ A change runs the same loop:
      2+ spec files OR instance render makes a rule visible in more
      than one home.
 6. **Release the instance** — version-bump the plugin, commit and
-   push to remote, then **pull the marketplace clone for each
-   affected instance** so the local Claude install reads the new
-   version:
+   push to remote, then for each affected instance **pull the
+   marketplace clone and run `claude plugin update`**:
    ```
    cd ~/.claude/plugins/marketplaces/<instance>/ && git pull --ff-only
+   claude plugin update <plugin>@<marketplace>
    ```
    Repeat for every affected instance (clippy / daneel /
-   campaign-craft / ...). The operator's `/reload-plugins` is the
-   sole activation action; an un-pulled marketplace clone means
-   `/reload-plugins` reads the stale version — the release is
-   committed and pushed but not actually deployed locally. The AI
-   completes the pull as part of the release, not as an operator
-   handoff step.
+   campaign-craft / ...). **A session restart is required to
+   activate a new version** — `/reload-plugins` suffices only
+   for same-version skill/hook/setting changes (see skill-craft
+   `references/plugin-engineering.md` "Activation" for the
+   two-pin model). Without these steps the release is committed
+   and pushed but not deployed locally. The AI completes pull +
+   plugin-update as part of the release and surfaces the
+   restart-required state to the operator — restart is the only
+   operator handoff.
 7. **Persist outcomes** — real-run findings and deferred ideas in the
    instance's status log; process changes back into this document.

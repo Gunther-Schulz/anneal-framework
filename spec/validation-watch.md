@@ -532,3 +532,155 @@ decisions, or to add an F-track materiality classifier.
 Absence-of-recurrence does not close this; only positive
 load-bearing evidence per the lifecycle (or refutation evidence
 that proxy misses) updates state.
+
+---
+
+## V-11. §4.1.2 per-step external evidence — independence from §4.1.4 convergence cycle
+
+**Status: WATCHING.**
+
+**Decision (`core.md` §4.1.2, §4.1.4).** V-5's false-[READY] failure
+shape was closed in commit e18bca1 with two layered mitigations:
+§4.1.2 requires per-implementer-step external evidence (file:line /
+grep) in the [READY] artifact, and §4.1.4 requires a convergence
+cycle producing zero D-track deltas. §4.1.4 fires after §4.1.2
+produces PASSED.
+
+**Why uncertain.** Both shipped in the same commit and have not been
+separately validated. The unit-14 continuation (the first run under
+the new protocol) showed §4.1.4 paying for itself — cycles 5–7
+surfaced material findings (production performance bug, cycle-1
+basis-rule violation in F31/F32, pattern catches) before convergence
+at cycle 8. But every catch was an investigation-pass finding, not
+an implementer-walkthrough artifact. §4.1.2 fires at [READY] *after*
+§4.1.4 — by which point the investigation has already surfaced the
+gaps.
+
+The failure shape §4.1.2 specifically targets — *design decisions
+that look complete but don't cash out to clear implementer steps*
+(translation gap) — is distinct from §4.1.4's target shape
+(incomplete investigation, missed surfaces). Plausible: a decision
+whose surfaces are settled but whose per-step implementer
+walkthrough exposes a gap not visible as a new investigation
+surface. Not yet observed in the field.
+
+In unit-14, §4.1.2 was delivered in *cheap variant* — paraphrased
+prior tracker citations rather than re-read source — which is
+recall-pool-equivalent and doesn't independently validate against
+§4.1.4. The §4.1.2 sharpening (commit [pending]) closes the cheap
+loophole by inheriting §3.2's basis form (verbatim content for a
+read; executable query with output for a search) — cheap can no
+longer satisfy structurally. Independence vs §4.1.4 becomes
+testable with strict-by-construction data on next runs.
+
+**Production signal to watch.** A run where §4.1.2's per-step
+external-evidence artifact catches a citation failure (file:line
+mismatch, decision-to-step translation gap) that §4.1.4's
+convergence cycle did not catch. If observed: §4.1.2 is
+independently load-bearing.
+
+The contrary signal: three consecutive runs where §4.1.4's
+convergence cycles produce non-zero D-track deltas (catches) and
+§4.1.2 runs clean on the resulting trackers. In that case, §4.1.2
+is redundancy candidate; the spec-change shape is designed at
+observation time per practice 8.
+
+**Closing criterion (WATCHING → RESOLVED).** A post-run review
+identifies a run where §4.1.2 surfaced a translation-gap catch
+§4.1.4's convergence cycle did not. One observed instance is
+sufficient.
+
+Alternative closure (WATCHING → INVALIDATED): three consecutive
+runs where §4.1.4's convergence cycles produced non-zero D-track
+deltas and §4.1.2 ran clean on the resulting trackers.
+
+---
+
+## V-12. Basis-rule artifact form for file:line citations
+
+**Status: FIX-SHIPPED (2026-05-26, commit [pending]).** §3.2 lead
+sharpened to require the artifact form for any basis: a search
+result with its executable query, OR a located read with the
+verbatim content. Paraphrase, summary, or free-text claim of
+having looked is explicitly not a basis. Converts §3.2 from
+naked-judgment-shaped (the AI judges whether its cited basis is
+sufficient) to artifact-bearing-shaped (the basis record includes
+the un-fakeable content). Extends V-7's prior basis-rule sharpening
+(`spec/core.md` §3.2.1 embedded-claims rule, commit c5e7ad9) along
+a different axis — V-7 widened *which claims* carry the rule; V-12
+sharpens *what counts as the artifact*.
+
+**Closing criterion (FIX-SHIPPED → RESOLVED).** A post-run review
+identifies a run where the artifact-form requirement was
+load-bearing — caught a paraphrase-shape finding at finding-record
+time that would have forced cascade convergence cycles to correct
+under the pre-fix protocol. One observed instance is sufficient.
+
+**Original observation preserved below for audit trail.**
+
+---
+
+The unit-14 run (beat-the-books continuation) had F31/F32 in cycle
+1 citing paraphrased line ranges (`bets.py:359-425` was
+approximated from recall rather than re-read). The wrong class was
+implicit in the cited range; cycles 5 and 6 ran on the inaccurate
+tracker; cycle 7 caught the discrepancy. The producing AI's
+diagnosis: *"a tighter first cycle (actually read every cited
+file:line, don't recall) would have cut probably 2 of the 8
+cycles."*
+
+§3.2 named the re-runnable basis requirement; compliance was
+naked-judgment — the AI judged whether its cited basis satisfied
+"located read of source" without producing the un-fakeable
+artifact. The sharpening converts naked-judgment to artifact-
+bearing: basis records include either the verbatim content at the
+citation OR the executable search query and its output. Paraphrase
+is no longer satisfiable as basis.
+
+---
+
+## V-13. Minimal verbatim content scope — sufficient or polluting?
+
+**Status: WATCHING.**
+
+**Decision (`core.md` §3.2).** The basis form for a located read
+is *"minimal verbatim content from the cited range that grounds
+the claim"* — the load-bearing excerpt, not the entire range.
+Adopted to avoid tracker pollution from full-range citations
+(e.g., 59-line class bodies pasted as basis records).
+
+**Why uncertain.** The "minimal" qualifier introduces bounded
+judgment: the AI selects which lines from the cited range
+ground the claim. The selection is artifact-checkable (does
+the cited verbatim match source at the cited location, and
+does it ground the stated claim?), but the selection moment
+is naked-judgment. Three possible failure shapes:
+
+- *Under-grounding*: AI cites too little; the excerpt doesn't
+  actually contain enough text to verify the claim. Operator
+  catch or downstream verify catch.
+- *Pollution*: AI cites too much; basis bloats with surrounding
+  context that doesn't ground the specific claim. Tracker
+  becomes dominated by code bulk rather than analysis.
+- *Right-sized*: AI cites the load-bearing excerpt at the
+  intended scope. The target case.
+
+**Production signal to watch.** Tracker review after runs:
+- Pollution flag: any single point claim's basis exceeds ~5
+  lines of verbatim, OR the tracker becomes dominated by
+  code-quote bulk
+- Under-grounding flag: any finding whose basis doesn't contain
+  enough verbatim text to verify the stated claim
+
+**Closing criterion (WATCHING → RESOLVED).** Three consecutive
+runs produce tracker-clean, sufficiently-grounded basis records
+with no under-grounding catches and no pollution flags. The
+minimal-text qualifier is empirically sufficient.
+
+**Alternative closure (WATCHING → SHARPENED).** A run shows
+either consistent under-grounding (operator catches insufficient
+basis repeatedly) or consistent pollution (tracker becomes
+unwieldy with verbatim bulk). Sharpen §3.2 — either toward
+fuller citation (accept pollution as the price of safety) or
+toward a more mechanical scope criterion (e.g., "cite N lines
+max around the load-bearing point").

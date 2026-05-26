@@ -139,8 +139,11 @@ produces none.
 
 Every load-bearing claim and every design premise carries a named
 basis — the evidence it rests on. The basis is the artifact itself
-(§3.1): a search result, a located read of the source. A free-text
-claim of having looked is not a basis.
+(§3.1): a search result with its executable query, or a located
+read with the minimal verbatim content from the cited range that
+grounds the claim. A free-text claim of having looked, a
+paraphrase of what was read, or a summary in lieu of the content
+is not a basis.
 
 A basis that resolves to recall — "assumed," "inferred,"
 "obviously so" — or to deferral — "will verify in cycle N,"
@@ -164,10 +167,8 @@ were the basis. Surface the gap, do not substitute.
   decisions, completeness counts asserted as facts. Each
   embedded claim carries the basis-rule requirement *separately*
   from the surrounding statement: the surrounding claim's basis
-  does not cover the embedded one. The basis is a re-runnable
-  artifact at decision-lock time (§3.2), not recall. An embedded
-  claim with no separate basis is an assumption and cannot reach
-  [VERIFIED].
+  does not cover the embedded one. An embedded claim with no
+  separate basis is an assumption and cannot reach [VERIFIED].
 - **True-unit basis.** A basis must cover the claim's true unit,
   not a coarser proxy. A claim about a *complete set* (a scope,
   an element's dependents, an input's value-classes, a flaw
@@ -287,17 +288,17 @@ warranted regardless of recorded statuses.
 implementability test produces a named result line in the closed
 artifact at [READY] presentation: PASSED with **per-implementer-
 step external evidence** — for each step a fresh implementer
-would take to carry out the locked design, cite the file:line or
-grep output that grounds the step, drawn from re-reading source
-rather than paraphrasing the tracker — or FAILED with the
-specific gap identified. PASSED without per-step external
+would take to carry out the locked design, cite the basis per
+§3.2 form (verbatim content for a read; executable query with
+output for a search) — or FAILED with the specific gap
+identified. PASSED without per-step external
 citation is a malformed artifact: the test answers from the
 recall pool that wrote the design rather than from external
 evidence, which is the failure shape that allows false-[READY]s
 (V-5). Without the result line itself, the closed-artifact form
 (`modules.md` §1.1) is also malformed and the [READY] declaration
-unenforced. In auto-battle the result line is recorded in the
-tracker for post-run review.
+unenforced. The result line is recorded in the tracker for
+post-run review in both modes.
 
 #### 4.1.3 [READY] — cycle-another recommendation
 
@@ -332,11 +333,14 @@ amendments to existing ones).
 A convergence cycle is a full cycle (investigation pass +
 standardized inspection pass), not a final lens application on
 accumulated state. Its investigation pass must enumerate **new
-surfaces investigated this cycle**, where each surface is cited
-as a file:line range or grep query that did not appear in any
-prior cycle's investigation-pass artifact this run. A
-convergence cycle that produces no new-surface citations (only
-re-attestations of prior surfaces) is a malformed artifact.
+surfaces investigated this cycle**, where each surface is
+**new** by at least one of: (a) cites a file path not in any
+prior cycle's artifact this run; (b) cites a grep query whose
+query string differs verbatim from every prior cycle's; (c)
+cites a file:line range with at least one line not covered by
+any prior cycle's same-file citation. A convergence cycle that
+produces no new-surface citations (only re-attestations of
+prior surfaces) is a malformed artifact.
 
 If the convergence cycle surfaces D-track deltas (new decisions
 or amendments), the design is not [READY]: the deltas feed into
