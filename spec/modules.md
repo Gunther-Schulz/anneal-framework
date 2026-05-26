@@ -216,6 +216,18 @@ property holds — sub-annotations are themselves appended, no
 past line is rewritten — without the duplicate-line tax of
 re-emitting peer-level lines for evidence-only updates.
 
+**Sub-annotations are scoped to basis-only refinement of the
+parent entry's own claim** (same status, same summary,
+strengthened basis). Cross-unit observations, recurrence-
+confirmations (e.g. "the pattern observed in F-N also appears
+in Unit X's data"), and any findings that surface a new claim —
+even one related to or confirming a prior entry — appear as
+peer-level F-entries with their own basis, not as sub-annotations
+under the related entry. The discriminator: does the new evidence
+strengthen the parent's own claim verbatim, or does it constitute
+its own observation? Verbatim-strengthening → sub-annotation;
+new observation → peer-level entry.
+
 ### 3.2 The standardized-pass findings artifact
 
 Each cycle's standardized inspection pass emits a findings artifact
