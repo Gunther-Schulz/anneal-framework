@@ -150,11 +150,14 @@ produces none.
 
 Every load-bearing claim and every design premise carries a named
 basis — the evidence it rests on. The basis is the artifact itself
-(§3.1): a search result with its executable query, or a located
-read with the minimal verbatim content from the cited range that
-grounds the claim. A free-text claim of having looked, a
-paraphrase of what was read, or a summary in lieu of the content
-is not a basis.
+(§3.1): (a) a search result with its executable query, OR (b) a
+file:line range citation paired with **one observable fact** about
+the cited range (count, identifier, type) that
+the citation grounds. Verifiers (§4.3) and convergence cycles
+(§4.1.4) re-open the citation to verify both the location AND the
+observable fact. A free-text claim of having looked, a paraphrase
+of what was read, or a summary without an observable fact is not a
+basis.
 
 A basis that resolves to recall — "assumed," "inferred,"
 "obviously so" — or to deferral — "will verify in cycle N,"
@@ -211,10 +214,10 @@ adherence.
 
 A secondary source — a sub-agent report, a prior session's notes, an
 audit summary — is not itself a basis. A direct citation it carries
-(the located artifact with its verbatim content) relays the artifact
-and can stand as a basis; its interpretation, synthesis, or
-recommendation cannot, and is re-grounded against the actual artifact
-before anything rests on it.
+(the located artifact's file:line range with an observable fact)
+relays the artifact and can stand as a basis; its interpretation,
+synthesis, or recommendation cannot, and is re-grounded against the
+actual artifact before anything rests on it.
 
 #### 3.2.4 Scope: load-bearing only
 
@@ -299,8 +302,8 @@ implementability test produces a named result line in the closed
 artifact at [READY] presentation: PASSED with **per-implementer-
 step external evidence** — for each step a fresh implementer
 would take to carry out the locked design, cite the basis per
-§3.2 form (verbatim content for a read; executable query with
-output for a search) — or FAILED with the specific gap
+§3.2 form (citation + observable fact for a read; executable query
+with output for a search) — or FAILED with the specific gap
 identified. PASSED without per-step external
 citation is a malformed artifact: the test answers from the
 recall pool that wrote the design rather than from external
@@ -636,7 +639,24 @@ decision the operator could resolve is recorded [CONDITIONAL] — the
 AI's committed recommendation carrying the operator-resolvable
 assumption — never a posed choice; the operator overrides it from the
 tracker (§1). The basis is mandatory; a decision whose basis is an
-assumption cannot reach [VERIFIED]. It moves through:
+assumption cannot reach [VERIFIED].
+
+**Body shape.** A design decision body specifies: (a) the **target** —
+the named element being committed (file, function, type, behavior);
+(b) the **shape** — for new code: the contract surface (signature,
+types, error patterns) in inline backticks; for amendment to existing
+code: the change as a delta against current state; (c) the
+**acceptance criteria** — observable conditions for the decision to
+count as implemented; (d) the **side effects and failure modes** —
+what's observable on success and at boundaries; (e) the **basis** per
+§3.2 (for amendment decisions, (e) carries the §3.2.2
+completeness enumeration of references + behaviors preserved/
+dropped; (b) carries the shape of the delta). Multi-statement
+function bodies, validator internals, and
+migration SQL bodies are implementation outputs, not design content —
+they belong at impl phase, not in the design decision body.
+
+It moves through:
 
 1. **[OUTLINED]** — a committed direction; concrete detail not yet
    investigated.

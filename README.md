@@ -17,8 +17,9 @@ to build a new instance for your domain, start with
 Two invariants every instance inherits:
 
 1. **Grounded claims.** Every load-bearing claim carries a *basis* —
-   a search result, a `file:line` read with the verbatim content — or
-   is marked as an assumption. AI confidence is not evidence.
+   a search result, or a `file:line` citation with an observable fact
+   about what's there — or is marked as an assumption. AI confidence
+   is not evidence.
 2. **A coherent picture.** Every concern carries a status in the
    tracker. Nothing is silently dropped; the view does not narrow or
    circle. The design is held whole, not in working memory.

@@ -568,9 +568,10 @@ In unit-14, §4.1.2 was delivered in *cheap variant* — paraphrased
 prior tracker citations rather than re-read source — which is
 recall-pool-equivalent and doesn't independently validate against
 §4.1.4. The §4.1.2 sharpening (commit [pending]) closes the cheap
-loophole by inheriting §3.2's basis form (verbatim content for a
-read; executable query with output for a search) — cheap can no
-longer satisfy structurally. Independence vs §4.1.4 becomes
+loophole by inheriting §3.2's basis form (citation + observable
+fact for a read; executable query with output for a search — see
+V-13 below for the verbatim-content drop) — cheap can no longer
+satisfy structurally. Independence vs §4.1.4 becomes
 testable with strict-by-construction data on next runs.
 
 **Production signal to watch.** A run where §4.1.2's per-step
@@ -641,10 +642,36 @@ is no longer satisfiable as basis.
 
 ## V-13. Minimal verbatim content scope — sufficient or polluting?
 
-**Status: WATCHING.**
+**Status: FIX-SHIPPED (2026-05-27, commit [pending]).** Basis form
+revised — verbatim content dropped entirely. Basis is now (a) a
+re-runnable executable query OR (b) a file:line range citation
+paired with one observable fact (count, identifier, type,
+structural shape). Un-fakeability shifts to verifier-side: verify
+(`core.md` §4.3) and convergence cycles (`core.md` §4.1.4) re-open
+citations to check both location AND observable fact. The
+"minimal" naked qualifier — flagged as Naked-judgment per
+skill-craft `anti-patterns.md` — is gone; the operational form
+(citation + one fact) replaces it. Trackers no longer contain
+code-shaped content as basis.
+
+**Production signal that triggered the fix.** Unit-11
+dynamic-bet-sizing tracker (beat-the-books, 2026-05-26):
+8.6% of tracker lines exceed 500 chars; basis records quote 5-15+
+lines of Python/SQL per claim; tracker bulk dominated by code-
+quote rather than analysis. Pollution flag tripped clearly.
+
+**Closing criterion (FIX-SHIPPED → RESOLVED).** A post-run review
+identifies a run where the new basis form was load-bearing —
+either grounded a claim cleanly without producing code-quote
+pollution, OR verify/convergence caught a fabricated citation
+under the new form. One observed instance is sufficient.
+
+**Original observation preserved below for audit trail.**
+
+---
 
 **Decision (`core.md` §3.2).** The basis form for a located read
-is *"minimal verbatim content from the cited range that grounds
+was *"minimal verbatim content from the cited range that grounds
 the claim"* — the load-bearing excerpt, not the entire range.
 Adopted to avoid tracker pollution from full-range citations
 (e.g., 59-line class bodies pasted as basis records).
@@ -853,11 +880,12 @@ disconnected." Existing partial coverage:
 
 - Basis rule's embedded-claim edge (`core.md` §3.2) — catches
   HOLLOW when the design decision makes any claim about the
-  artifact's current behavior (verbatim content covers the
-  construct's visible close, exposing stub-shape)
+  artifact's current behavior (the observable fact at the cited
+  range — e.g., terminal statement, return type — exposes
+  stub-shape)
 - Basis rule's true-unit basis (`core.md` §3.2) — a claim about
-  a construct's behavior requires a read to the construct's
-  visible close
+  a construct's behavior requires a citation to the construct's
+  visible close paired with an observable fact about it
 - Executable-verification artifact (`core.md` §4.3) — a stub or
   wired-but-disconnected artifact fails the project's test/build
   suite when the implementation exercises the wiring chain
