@@ -9,6 +9,16 @@ post-analysis loop. This file specifies how the review is conducted.
 
 ## When to run
 
+**Post-run review is a debugging tool, not a routine check.**
+Normal interactive runs and auto-battle runs do not invoke it.
+The operator invokes it only when investigating a specific
+issue, auditing a release's behavior, or empirically validating
+spec changes. The Q-set therefore does not need to fire on every
+run — it fires on suspicion. Mechanisms that need to fire on
+every run (e.g., catching ad-hoc impl decisions via the verify-
+phase design-completeness audit, `core.md` §4.3) belong in-phase,
+not here.
+
 **At any point during or after a run, at the operator's
 discretion** — at completion (verify [PASSED]), mid-run after a
 [READY] presentation, after a verify result, after a cycle that
@@ -128,7 +138,9 @@ spec gap.
 
 > For this run's verify: was the recorded context "isolated"
 > (quote the result line's context tag); were all three checks
-> accounted for — planned-vs-actual, standardized lenses,
+> accounted for — planned-vs-actual (decision-matching AND
+> design-completeness audit per `spec/core.md` §4.3),
+> standardized lenses,
 > executable verification — with no check silently absent (cite
 > each); on [ISSUES FOUND], did the loopback route to
 > investigate-design (quote the next-cycle entry); if in

@@ -513,7 +513,17 @@ result records that — an un-isolated verify is never silently taken
 as though it were independent.
 
 - **Planned vs actual** — every locked design decision is checked
-  against what the work actually does.
+  against what the work actually does. **The work is also checked
+  for material elements not covered by any locked decision**
+  (design-completeness audit): a material element surfaces as a
+  finding classifying why it wasn't surfaced at design time
+  (judged-non-material, forgotten, scope-overflow, missed-pattern,
+  or cited-other). "Material" means a reasonable alternative
+  would have produced different observable behavior — external
+  contract, error pattern, API-surface naming, persisted
+  behavior. Impl-detail (variable naming, internal organization,
+  test fixture choice) is not material unless it affects
+  observable behavior.
 - **Standardized lenses** — the standardized lens set is applied to
   the produced work.
 - **Executing the verification** — the domain's executable
