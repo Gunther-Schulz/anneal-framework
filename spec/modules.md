@@ -261,13 +261,15 @@ identifiers).
 
 Parallel-eligibility is a load-bearing claim per `core.md` §3.2: the
 unit's element and contract scopes are listed, and the disjointness
-from sibling units' scopes is established by the re-runnable search
-behind the claim — the executable query, not the asserted
-disjointness or a recalled enumeration. A unit whose disjointness is
-not search-established is sequential by default. The basis-rule
-discipline that governs decision bases (`core.md` §3.2) applies here
-in the same form: a recalled disjointness is not a basis; the search
-is.
+from any in-flight unit's scope is established by the re-runnable
+search behind the claim — the executable query, not the asserted
+disjointness or a recalled enumeration. The scope listing is the
+per-unit artifact the orchestrator uses at runtime (`core.md` §4.2
+Dispatch) to check disjointness against the in-flight set before each
+dispatch. A unit whose disjointness is not search-established is
+sequential by default. The basis-rule discipline that governs
+decision bases (`core.md` §3.2) applies here in the same form: a
+recalled disjointness is not a basis; the search is.
 
 The plan is persisted alongside the tracker — a phase-start artifact,
 kept for the run's history and for resume. Like the standardized-pass

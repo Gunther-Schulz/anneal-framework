@@ -399,7 +399,7 @@ unit list at the decision moment (`modules.md` §1.1 State
 summary). A planning artifact, not a new tracker construct.
 Parallel-eligibility is a load-bearing claim per §3.2: a unit's
 element and contract scopes are listed and the disjointness from
-sibling units' scopes established by the re-runnable search
+any in-flight unit's scope established by the re-runnable search
 behind the claim, not by recall. A unit whose disjointness is
 not search-established is sequential. The plan is persisted
 alongside the tracker (`modules.md` §3.3).
@@ -416,7 +416,16 @@ permitted only when the orchestrator cites a concrete cause
 recorded as the basis (§3.2) for the reduction. It implements the in-scope
 decisions; it does not design — major new scope halts it (below).
 Parallel-eligible units may be dispatched concurrently; the
-disjointness basis makes that safe.
+disjointness basis makes that safe. **Dispatch is continuous,
+not wave-batched.** The orchestrator maintains a
+**dispatchable set** — the not-yet-dispatched units whose
+dependencies are all completed AND whose listed element and
+contract scopes are disjoint from every in-flight unit. After
+each subagent completion, the orchestrator recomputes the
+dispatchable set and fires every newly-eligible unit. A unit
+fires when it becomes dispatchable, not when a "wave" is
+reached; the disjointness check uses the same scope basis the
+impl plan declared at [READY].
 
 **Self-check at dispatch boundary.** Before returning state, the
 dispatched subagent (and the working context, for a single-unit
