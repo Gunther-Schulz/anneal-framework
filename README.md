@@ -1,42 +1,94 @@
 # Diligence Framework
 
-## Iterate on understanding, not output.
+> Convert AI confidence into AI evidence.
 
-A structured method for taking a complex, open-ended task to a
-verified outcome — converting AI confidence into AI evidence.
+A domain-agnostic methodology for taking an AI through an open-ended
+task to a verified outcome. Bound to a domain in an **instance** like
+[Clippy](https://github.com/Gunther-Schulz/coding-clippy) (building
+software) or [DANEEL](https://github.com/Gunther-Schulz/daneel)
+(debugging it).
 
-The framework self-discovers the issues and gaps in the work —
-including ones neither the operator nor the AI named up front — and
-auto-resolves them, looping until none material remain. Throughout,
-the AI synthesizes its inputs — the original task, the investigation
-findings, the standardized lens results — into an evolving design the
-loop drives to a verified-ready state. "Done" is derived from
-evidence, not asserted.
+If you use Clippy or DANEEL, this is what's under them. If you want
+to build a new instance for your domain, start with
+[`instantiation-guide.md`](./instantiation-guide.md).
 
-The framework is domain-agnostic, and *instantiated* for a domain:
-Clippy is the Diligence framework bound to software engineering; a
-sibling instance could bind it to another domain.
+## What it holds
+
+Two invariants every instance inherits:
+
+1. **Grounded claims.** Every load-bearing claim carries a *basis* —
+   a search result, a `file:line` read with the verbatim content — or
+   is marked as an assumption. AI confidence is not evidence.
+2. **A coherent picture.** Every concern carries a status in the
+   tracker. Nothing is silently dropped; the view does not narrow or
+   circle. The design is held whole, not in working memory.
 
 ## How a cycle works
 
-Each cycle has two passes — investigation (the AI looks at
-relevant surfaces with task-derived lenses) and standardized
-inspection (the pre-written lens set applied to what the cycle's
-work touched). Design work — committing positions on what to
-build — interleaves within the cycle, not as a separate pass.
-Findings land in the F-track; design decisions in the D-track.
-The cycle ends when both tracks settle and the standardized
-pass is clean; otherwise the AI recommends another cycle,
-justified by what's still open (findings, pending decisions,
-lens-applications still required). Cost is the operator's
-judgment, not the AI's.
+Each cycle has two passes — **investigation** (the AI looks at
+relevant surfaces with task-derived lenses) and **standardized
+inspection** (the pre-written lens set applied to what the cycle's
+work touched). Design work — committing positions on what to build
+— interleaves within the cycle, not as a separate pass. Findings
+land in the **F-track**; design decisions in the **D-track**. The
+cycle ends when both tracks settle and the standardized pass is
+clean; otherwise the AI recommends another cycle, justified by
+what's still open. Cost is the operator's judgment, not the AI's.
+
+## A tracker excerpt
+
+What the framework actually produces — every line evidence-grounded:
+
+```
+F12 [VERIFIED] handleSubmit lacks input validation
+  Basis: form.tsx:42 (read) —
+    `const handleSubmit = (e) => { e.preventDefault(); onSubmit(data) }`
+
+D5 [VERIFIED] Add validation to handleSubmit before onSubmit
+  Basis: F12 + signup.tsx:67-82 (read) showing the project's
+         established validation pattern
+```
+
+A claim without a basis is held as an assumption until grounded —
+it does not advance the run.
+
+## Architecture
+
+```
+       Diligence framework (spec/)
+                  ↓
+            renders to
+                  ↓
+      ┌───────────┴───────────┐
+      ↓                       ↓
+ ┌────────┐              ┌────────┐
+ │ Clippy │              │ DANEEL │
+ │ build  │              │ debug  │
+ └────────┘              └────────┘
+            ↓        ↓
+         coding (domain)
+```
+
+Both instances inherit the framework's structural discipline (basis
+rule, status-state machine, phase pipeline). They differ in domain
+binding and lens set.
+
+## Available instances
+
+| Instance | Domain | Repo |
+|---|---|---|
+| **Clippy** | Building software | [coding-clippy](https://github.com/Gunther-Schulz/coding-clippy) |
+| **DANEEL** | Debugging wrong behavior | [daneel](https://github.com/Gunther-Schulz/daneel) |
 
 ## This repo
 
-- `spec/` — the Diligence-framework specification: the domain-agnostic
-  method, the source of truth an instance is generated from.
-- `instantiation-guide.md` — how to derive a new Diligence-based
-  plugin for a domain.
+- [`spec/`](./spec/) — the framework specification. The domain-
+  agnostic source of truth instances are rendered from.
+- [`instantiation-guide.md`](./instantiation-guide.md) — how to
+  derive a new Diligence-based plugin for your domain.
+- [`development-process.md`](./development-process.md) — how this
+  repo and its instances evolve.
 
-Extracted from the Clippy spec effort, 2026-05 (in progress — see the
-`coding-clippy` repo's `docs/spec/STATUS.md`).
+## License
+
+MIT
