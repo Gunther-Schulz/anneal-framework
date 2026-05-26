@@ -291,11 +291,13 @@ instructions** — the orchestrator's skill files to read; (b)
 this unit implements (by tracker identifier), plus the unit's
 element and contract scopes; (d) **return-state expectations** —
 the fixed-shape ledger lines for new findings (§3.1), the unit's
-commit reference, and any loopback signal. Section (a) is uniform
-across dispatches within a run and lives in the instance's
-`phases/implement.md` as a reusable template the subagent loads
-on dispatch; sections (b)/(c)/(d) carry per-unit parameters
-written into each brief.
+commit reference, and any loopback signal. Sections (a) AND (d)
+are uniform across dispatches within a run and live in the
+instance's `phases/implement.md` as a reusable template the
+subagent loads on dispatch; only sections (b) and (c) carry
+per-unit parameters written into each brief. The brief MUST NOT
+restate (a) or (d) content — those live in the template only;
+the brief references them by section letter.
 
 ## 4. Post-run review
 
