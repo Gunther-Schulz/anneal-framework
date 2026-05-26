@@ -217,9 +217,10 @@ building. Genuine includes four things:
   PROCEDURE.md "Amendment discipline")
 - (e) **no-ship test** (additive changes only) — surface what
   happens without this addition: an existing mechanism that
-  covers the case, acceptance as known gap, or acceptance of
-  the current burden as functional. Weigh the cost of NOT
-  shipping against shipping (skill-craft anti-patterns
+  covers the case, acceptance as known gap, acceptance of
+  the current burden as functional, or log to `spec/validation-
+  watch.md` as a legitimate V-N entry per practice 8. Weigh the
+  cost of NOT shipping against shipping (skill-craft anti-patterns
   "Additive reflex").
 
 A design surface omitting any of (a)-(d) is malformed. For
