@@ -118,7 +118,7 @@ as returning the run rather than proceeding within the current
 unit's locked design. Closed four-clause definition (`core.md`
 §4.2): (1) touches an element or contract not in the unit's
 listed scope; (2) changes a locked contract's members; (3)
-introduces a new design decision; (4) crosses a sibling unit's
+introduces a new design decision; (4) crosses another unit's
 scope. Otherwise a local clarification (recorded; unit proceeds).
 
 **Self-check (at dispatch boundary)** — a check the dispatched

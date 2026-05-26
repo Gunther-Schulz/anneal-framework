@@ -386,7 +386,7 @@ any of:
 1. Touches an element or contract not in the unit's listed scope
 2. Changes a locked contract's members (the instance defines what counts)
 3. Introduces a new design decision (per §5.2)
-4. Crosses a sibling unit's scope (breaks the disjointness basis)
+4. Crosses another unit's scope (breaks the disjointness basis)
 
 Otherwise it is a **local clarification** — recorded in the
 tracker; the unit proceeds. No work is lost when loopback fires.
