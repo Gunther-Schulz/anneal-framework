@@ -13,6 +13,14 @@ of contract 3's "instance domain-binding scope".
 
 ## The process — spec-first
 
+**Start by copying** `anneal-framework/instance-template/` into
+your new instance repo as the seed. The template scaffolds a
+placeholder file for every slot the framework recognises —
+required slots ready to fill, optional slots marked "delete if
+not used." This makes the framework's closed slot set visible as
+files at bootstrap time rather than as prose you have to
+remember. Then proceed:
+
 1. **Write the instance spec.** Bind the framework to the domain
    (§§1–4 below). The instance spec is small: it references the
    framework spec (`spec/`) for the method, and supplies only the
@@ -332,6 +340,19 @@ apply:
    commit-vs-gitignore; the namespace inherits uniqueness from the
    plugin manifest's skill-name uniqueness.
 
+**Project init.** When an instance runs in a project for the
+first time, it bootstraps placeholder files at every
+operator-editable artifact location declared in its spec — the
+enable mechanism file above, the lens-supplement file (§4), and
+any future operator-editable instance-side artifact. Placeholders
+are committed (tracked under git); the runtime-state directory is
+added to `.gitignore` by the instance on the same first-run. This
+makes the operator's edit surface visible at first-use, not
+buried in spec-prose the operator has to discover. (Distinct
+from the developer-time template-copy at the top of "The
+process — spec-first", which scaffolds the instance repo
+itself.)
+
 ### Declaration shape
 
 An extension declaration carries: the point it hooks, the action it
@@ -385,15 +406,17 @@ the instance's name and `<skill-dir>` to its skill directory:
 <Instance> is an *instance* of the Anneal framework. The skill
 files — `<skill-dir>/SKILL.md`, `phases/`, and `references/` — are
 **rendered** from the framework spec (the `anneal-framework`
-repo, `spec/`). They are not authored here, and are never where a
-behavior change originates.
+repo, `spec/`) and from this instance's `spec/` folder. They are
+not authored here, and are never where a behavior change
+originates.
 
-A change to how <Instance> behaves goes to the framework spec first:
-committed there, then re-rendered into these files and verified in a
-separate context — the procedure is `development-process.md` in the
-`anneal-framework` repo. Hand-editing a skill file as if it were
-source breaks re-derivability: the spec and the instance drift, and
-the change cannot be reproduced for another instance.
+A change to how <Instance> behaves goes to the framework spec or
+the instance spec first: committed there, then re-rendered into
+these files and verified in a separate context — the procedure is
+`development-process.md` in the `anneal-framework` repo. Hand-
+editing a skill file as if it were source breaks re-derivability:
+the spec and the instance drift, and the change cannot be
+reproduced for another instance.
 
 This rule covers the skill *content*. The plugin's packaging — this
 file, the READMEs, `plugin.json`, and the like — is repo-local,

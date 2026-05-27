@@ -92,6 +92,10 @@ binding and lens set.
   domain-agnostic source of truth instances are rendered from.
 - [`instantiation-guide.md`](./instantiation-guide.md) — how to
   derive a new Anneal-based plugin for your domain.
+- [`instance-template/`](./instance-template/) — starter scaffold
+  for a new instance. One placeholder file per slot the framework
+  recognises; copy as the seed for a new instance repo and fill /
+  delete per the instantiation guide.
 - [`development-process.md`](./development-process.md) — how this
   repo and its instances evolve. Codifies the architectural
   foundation (framework / render / instance contracts), the
