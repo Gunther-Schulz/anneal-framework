@@ -48,7 +48,8 @@ out-of-order sections make the artifact malformed:
    fresh-session implementability result line (PASSED / FAILED
    per `core.md` §4.1), **the convergence-cycle status** when at
    [READY] (the convergence cycle's investigation-pass artifact
-   citation + zero-D-delta confirmation per `core.md` §4.1.4),
+   citation + falsification-pass artifact citation + zero-D-delta
+   confirmation per `core.md` §4.1.4),
    named blockers preventing [READY] (open [PENDING] decisions
    and weak-basis ledger entries), **impl plan preview at
    [READY]** — header line with unit count + run-level
@@ -299,6 +300,39 @@ subagent loads on dispatch; only sections (b) and (c) carry
 per-unit parameters written into each brief. The brief MUST NOT
 restate (a) or (d) content — those live in the template only;
 the brief references them by section letter.
+
+### 3.4 The falsification-pass artifact
+
+The convergence cycle's falsification pass (`core.md` §4.1.4)
+emits a per-decision artifact: one line per [VERIFIED] D-entry
+at the start of the convergence cycle, in the shape
+`{decision-ID, falsification-candidate, result, holds-or-falsified}`.
+
+- **decision-ID** — the D# being attempted.
+- **falsification-candidate** — an executable query (grep,
+  search) or located read (file:line) whose positive result
+  would invalidate the entry's basis. Form follows §3.2 — the
+  candidate is a search-established artifact, not a recalled
+  hypothesis. A candidate whose negative result would not
+  invalidate the basis is malformed: the candidate must be
+  capable of returning falsifying evidence if the basis is
+  wrong.
+- **result** — the actual output of running the candidate:
+  cited matches (file:line) for a search, content for a read.
+- **holds-or-falsified** — binary, computed from the result:
+  `holds` if no falsifying evidence returned; `falsified`
+  otherwise. `falsified` flips the entry through
+  [INVALIDATED]→[PENDING] (per `core.md` §5.2).
+
+A [VERIFIED] entry without a falsification-pass line at the
+convergence cycle is a malformed artifact — the [READY]
+declaration requires the pass complete across all [VERIFIED]
+entries (`core.md` §4.1.4).
+
+The artifact is per-cycle, fired only at the convergence cycle
+(not at every cycle's standardized pass). Persisted alongside
+the cycle's standardized-pass findings (§3.2); instances supply
+the file location per their run-artifact persistence mechanism.
 
 ## 4. Post-run review
 

@@ -344,8 +344,9 @@ produce **zero D-track deltas** (no new design decisions, no
 amendments to existing ones).
 
 A convergence cycle is a full cycle (investigation pass +
-standardized inspection pass), not a final lens application on
-accumulated state. Its investigation pass must enumerate **new
+standardized inspection pass + falsification pass over
+[VERIFIED] decisions; see `modules.md` §3.4), not a final lens
+application on accumulated state. Its investigation pass must enumerate **new
 surfaces investigated this cycle**, where each surface is
 **new** by at least one of: (a) cites a file path not in any
 prior cycle's artifact this run; (b) cites a grep query whose
@@ -355,13 +356,29 @@ any prior cycle's same-file citation. A convergence cycle that
 produces no new-surface citations (only re-attestations of
 prior surfaces) is a malformed artifact.
 
+The **falsification pass** iterates each [VERIFIED] D-entry at
+the convergence cycle's start: for each, the working context
+names a search or read whose positive result would invalidate
+the entry's basis, runs it, and cites the result. The pass
+produces a per-decision artifact (`modules.md` §3.4): one line
+per [VERIFIED] entry in `{decision-ID, falsification-candidate,
+result, holds-or-falsified}` shape. A falsification candidate
+whose negative result would not invalidate the basis is
+malformed — the candidate must be capable of returning
+falsifying evidence if the basis is wrong (the basis rule's
+search-establishment shape applied to the candidate, per §3.2).
+A [VERIFIED] entry whose candidate finds positive falsifying
+evidence is **falsified**: the entry flips through
+[INVALIDATED]→[PENDING] (per §5.2) and the cycle continues.
+
 If the convergence cycle surfaces D-track deltas (new decisions
-or amendments), the design is not [READY]: the deltas feed into
-the next cycle and the loop continues. [READY] is presented only
-after a convergence cycle is observed clean. **The convergence
-cycle's outputs (investigation pass artifact + zero-D-delta
-status) form part of the [READY] artifact** alongside §4.1.2's
-fresh-session result line.
+or amendments, or falsified [VERIFIED] entries reopened), the
+design is not [READY]: the deltas feed into the next cycle and
+the loop continues. [READY] is presented only after a
+convergence cycle is observed clean. **The convergence cycle's
+outputs (investigation pass artifact + falsification pass
+artifact + zero-D-delta status) form part of the [READY]
+artifact** alongside §4.1.2's fresh-session result line.
 
 Per V-5 (`dev-notes/validation-watch.md`) — the mechanism breaks the
 recall-pool failure shape that allows false-[READY]s, by switching

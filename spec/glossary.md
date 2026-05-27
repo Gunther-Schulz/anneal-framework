@@ -96,14 +96,29 @@ the first cycle to [READY].
 **Cycle** — one iteration of the investigate-design loop.
 
 **Convergence cycle** — a full cycle (investigation pass +
-standardized inspection pass) run after the working context judges
-the §4.1.1 supporting facts met and the §4.1.2 fresh-session test
-PASSED. [READY] requires the convergence cycle to produce zero
-D-track deltas (`core.md` §4.1.4). The investigation pass must
-enumerate new surfaces investigated this cycle, cited as file:line
-or grep queries not present in any prior cycle's investigation-
-pass artifact this run; a convergence cycle that only re-attests
-prior findings is malformed.
+standardized inspection pass + falsification pass over [VERIFIED]
+decisions) run after the working context judges the §4.1.1
+supporting facts met and the §4.1.2 fresh-session test PASSED.
+[READY] requires the convergence cycle to produce zero D-track
+deltas (`core.md` §4.1.4). The investigation pass must enumerate
+new surfaces investigated this cycle, cited as file:line or grep
+queries not present in any prior cycle's investigation-pass
+artifact this run; a convergence cycle that only re-attests prior
+findings is malformed.
+
+**Falsification pass** — the per-decision pass at the convergence
+cycle attempting to invalidate each [VERIFIED] D-entry's basis
+(`core.md` §4.1.4). For each entry, the working context produces
+a falsification candidate, runs it, and cites the result as
+holds-or-falsified. A candidate finding positive falsifying
+evidence reopens the entry to [PENDING] (`modules.md` §3.4).
+
+**Falsification candidate** — an executable query or located
+read whose positive result would invalidate a [VERIFIED] D-entry's
+basis (`modules.md` §3.4). Form follows the basis rule (`core.md`
+§3.2): the candidate is search-established, not recalled, and
+must be capable of returning falsifying evidence if the basis is
+wrong.
 
 **Cycle-another (recommendation)** — the AI's recommendation to
 run another investigate-design cycle rather than transition to
