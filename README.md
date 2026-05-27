@@ -83,12 +83,27 @@ binding and lens set.
 
 ## This repo
 
-- [`spec/`](./spec/) — the framework specification. The domain-
-  agnostic source of truth instances are rendered from.
+- [`spec/`](./spec/) — the framework specification. The
+  domain-agnostic source of truth instances are rendered from.
 - [`instantiation-guide.md`](./instantiation-guide.md) — how to
   derive a new Anneal-based plugin for your domain.
 - [`development-process.md`](./development-process.md) — how this
-  repo and its instances evolve.
+  repo and its instances evolve. Codifies the architectural
+  foundation (framework / render / instance contracts), the
+  development practices, and the release loop with its
+  step-5 discharge artifact.
+- [`post-run-review.md`](./post-run-review.md) — the framework's
+  empirical-validation procedure (the Q-set for analyzing a real
+  run against the spec; rendered into each instance's
+  `references/post-run-review.md`).
+- [`hooks/`](./hooks/) — git hooks that enforce the development
+  process at commit-time. The `commit-msg` hook validates the
+  step-5 discharge artifact for rule-corpus commits (rejects
+  commits missing required check labels or carrying fold-into
+  rationalizations). A PreToolUse hook (configured in user
+  settings) fires on edits to skill-craft, framework spec, or
+  instance skill files — reminds the AI to invoke skill-craft
+  before editing rule-corpus content.
 
 ## License
 
