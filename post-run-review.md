@@ -222,7 +222,7 @@ hit-rate (Q2).
 - **A signal informing a `validation-watch.md` entry** — append to
   or amend the relevant V-N (the watchlist).
 - **An instance-level F-finding** — if the instance has an
-  F-finding record (e.g. coding-clippy's `docs/spec/STATUS.md`),
+  F-finding record (e.g. coding-clippy's `spec/STATUS.md`),
   record there.
 
 ## What it is not

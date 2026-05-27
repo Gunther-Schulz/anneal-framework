@@ -75,7 +75,7 @@ three levels") and practice 5 "Spec-origin grounding for plugin
 edits", before editing surface which spec clause this edit
 originates from:
   → framework spec section (anneal-framework/spec/*.md), OR
-  → instance spec slot (e.g., coding-clippy/docs/spec/*.md), OR
+  → instance spec slot (e.g., coding-clippy/spec/*.md), OR
   → `cosmetic-no-spec-origin` exemption with sources considered.
 
 The citation IS the artifact; a plugin edit without a cited spec
