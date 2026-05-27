@@ -174,13 +174,18 @@ in a context separate from the one that produced the work. The
 working context judges design completeness at [READY] (`core.md`
 §4.1).
 
-**Operator** — the human directing the run. In interactive mode,
-advances the loop via the menu (`modules.md` §1.1), resolves
-[CONDITIONAL] decisions via free-form override against the tracker,
-and decides at [READY]. In auto-battle mode, absent during the run;
-reviews the completed run's tracker (including [AUTO-ACCEPTED]
-tags). The framework's role-separation principle is *AI surfaces
-best, operator judges cost* (`core.md` §1).
+**Operator** — the human directing the run. **Structured role
+boundaries: (a)** menu selection at cycle-end / [READY] decision
+moments (advances the loop or transitions phases per `modules.md`
+§1.1), and **(b)** free-form override against the tracker at any
+moment (including resolving [CONDITIONAL] decisions). The operator
+is **never** posed a choice between design alternatives or asked
+to decide design content — design decisions are AI commitments
+recorded in the tracker, not questions to the operator (`core.md`
+§1, §5.2; `modules.md` §1.1). In auto-battle mode, absent during
+the run; reviews the completed run's tracker (including
+[AUTO-ACCEPTED] tags). The framework's role-separation principle
+is *AI surfaces best, operator judges cost* (`core.md` §1).
 
 ## State
 
