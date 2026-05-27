@@ -135,6 +135,19 @@ checks that discharge step 4 for that scope; a new scope (a
 different finding, a different rule, a different fix target) is
 a new cycle, regardless of response boundaries.
 
+**Skill-craft invocation at edit-cycle start.** Before drafting
+any edit in a new rule-corpus cycle (skill-craft canonical,
+anneal-framework spec, instance spec, or `plugin/skills/*/`),
+invoke skill-craft via the Skill tool. The invocation reloads
+PROCEDURE.md + anti-patterns.md so the disciplines (Form-choice,
+Edit-as-Pareto, Naked-judgment, Skip-rationalization,
+Soft-load-pointers, Additive-reflex, Amendment) are active at
+DRAFTING, not just at post-hoc validation. Per-edit-cycle, not
+per-session — session-level invocation does not discharge a new
+cycle's grounding. The PreToolUse hook surfaces this reminder;
+the rule is to comply proactively at cycle-start, not reactively
+at the hook.
+
 **Spec-origin grounding for plugin edits.** Before editing any
 file under `plugin/skills/*/`, surface which spec clause the
 edit originates from — a framework spec section (`spec/*.md`)
