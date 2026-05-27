@@ -276,8 +276,8 @@ When a subagent returns ranked findings with severity
 classifications on a rule-corpus edit, present them to the
 operator as a ranked table — not narrated in prose. The AI is
 the **first judge** (applies disposition per skill-craft
-"Discipline-citation in recommendations" — cites the Concern-
-named discipline and names observable evidence); the operator
+"Discipline-citation in recommendations" — cites a discipline-
+test applied and names observable evidence); the operator
 is the **second judge** (override authority). The subagent
 detects; the AI re-derives against the cited discipline; the
 operator audits the disposition. Two failure shapes this
@@ -296,8 +296,10 @@ Required columns:
   invokes that anti-pattern). Discipline-citation collapses into
   the Concern wording, not a separate column.
 - **First-judge disposition** — fix-now / keep-as-is /
-  observation-only + one-line reasoning citing the discipline
-  named in Concern + the observable evidence supporting the
+  observation-only + one-line reasoning citing the discipline-
+  test applied (Concern-named OR AI scan of skill-craft's
+  candidate set OR `cosmetic-no-discipline-applies` exemption
+  per skill-craft) + the observable evidence supporting the
   disposition
 
 Operator's second-judge happens in conversation flow — the
