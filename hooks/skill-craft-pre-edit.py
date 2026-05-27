@@ -22,19 +22,25 @@ import json
 import re
 import sys
 
-# Skill canonical paths + framework-spec paths.
-# Matched against absolute paths in tool_input.file_path.
-SKILL_PATH_PATTERNS = [
-    # Skill canonical files (any plugin's skill directory)
+# Plugin render paths (instance plugin files — rendered from spec).
+PLUGIN_RENDER_PATTERNS = [
     re.compile(r"/plugin/skills/[^/]+/(SKILL|PROCEDURE)\.md$"),
     re.compile(r"/plugin/skills/[^/]+/references/[^/]+\.md$"),
     re.compile(r"/plugin/skills/[^/]+/phases/[^/]+\.md$"),
-    # Framework-spec paths
+]
+
+# Framework-spec / dev-process paths (source files — canonical content).
+SPEC_SOURCE_PATTERNS = [
     re.compile(r"/spec/.+\.md$"),
     re.compile(r"/development-process\.md$"),
 ]
 
-REMINDER_TEMPLATE = """Skill canonical-file edit detected: {file_path}
+# Skill-craft canonical exemption — skill-craft is a meta-plugin where
+# canonical files ARE the source (no upstream render). Spec-origin
+# discipline doesn't apply.
+SKILL_CRAFT_CANONICAL = re.compile(r"/skill-craft/plugin/skills/skill-craft/")
+
+REMINDER_BASE = """Skill canonical-file edit detected: {file_path}
 
 This file is in skill-craft scope — per anneal-framework
 development-process.md practice 5, skill-craft must be invoked
@@ -61,6 +67,22 @@ plugin.json version-only bump) rather than rule-corpus content:
   → Skill-craft does not apply. Proceed.
 """
 
+REMINDER_SPEC_ORIGIN = """
+
+ADDITIONAL: this is a plugin render file (under plugin/skills/).
+Per contract 2 (anneal-framework development-process.md "The
+three levels") and practice 5 "Spec-origin grounding for plugin
+edits", before editing surface which spec clause this edit
+originates from:
+  → framework spec section (anneal-framework/spec/*.md), OR
+  → instance spec slot (e.g., coding-clippy/docs/spec/*.md), OR
+  → `cosmetic-no-spec-origin` exemption with sources considered.
+
+The citation IS the artifact; a plugin edit without a cited spec
+origin is drift (Edit-without-spec-origin anti-pattern,
+skill-craft references/anti-patterns.md).
+"""
+
 
 def main() -> int:
     try:
@@ -75,12 +97,18 @@ def main() -> int:
     if not file_path:
         return 0
 
-    is_skill_file = any(p.search(file_path) for p in SKILL_PATH_PATTERNS)
+    is_plugin_render = any(p.search(file_path) for p in PLUGIN_RENDER_PATTERNS)
+    is_spec_source = any(p.search(file_path) for p in SPEC_SOURCE_PATTERNS)
+    is_sc_canonical = bool(SKILL_CRAFT_CANONICAL.search(file_path))
 
-    if not is_skill_file:
+    if not (is_plugin_render or is_spec_source):
         return 0
 
-    reminder = REMINDER_TEMPLATE.format(file_path=file_path)
+    reminder = REMINDER_BASE.format(file_path=file_path)
+    # Spec-origin reminder fires for plugin render edits, except skill-craft
+    # canonical (which IS source, not render).
+    if is_plugin_render and not is_sc_canonical:
+        reminder += REMINDER_SPEC_ORIGIN
     output = {
         "hookSpecificOutput": {
             "hookEventName": "PreToolUse",

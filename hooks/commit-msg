@@ -26,6 +26,12 @@ RULE_CORPUS_PATTERN = re.compile(
     r"\.claude-plugin/.+|plugin/\.claude-plugin/.+)$"
 )
 
+# Instance plugin render path — plugin/skills/<not-skill-craft>/*.
+# Skill-craft canonical (plugin/skills/skill-craft/) is exempt because
+# skill-craft IS source, not render (meta-plugin where canonical files
+# are the source).
+INSTANCE_PLUGIN_PATTERN = re.compile(r"^plugin/skills/(?!skill-craft/)[^/]+/.+\.md$")
+
 REQUIRED_CHECKS = [
     "Render fidelity",
     "Practice-4 dependent audit",
@@ -35,6 +41,11 @@ REQUIRED_CHECKS = [
     "Practice-6 whole-document coherence",
     "Cross-spec multi-file coherence",
 ]
+
+# Required only when commit touches instance plugin renders (per
+# development-process.md practice 5 "Spec-origin grounding for plugin
+# edits" + contract 2 "Render completeness").
+SPEC_ORIGIN_CHECK = "Spec-origin trace"
 
 FOLD_INTO_PATTERNS = [
     re.compile(r"folded into", re.IGNORECASE),
@@ -88,6 +99,12 @@ def is_rule_corpus_commit(files: list[str]) -> tuple[bool, list[str]]:
     return bool(matching), matching
 
 
+def has_instance_plugin_files(files: list[str]) -> tuple[bool, list[str]]:
+    """True if any file is an instance plugin render (excluding skill-craft canonical)."""
+    matching = [f for f in files if INSTANCE_PLUGIN_PATTERN.match(f)]
+    return bool(matching), matching
+
+
 def validate_discharge(msg: str) -> list[str]:
     """Run all discharge-artifact validations. Returns list of error messages."""
     errors = []
@@ -110,6 +127,23 @@ def validate_discharge(msg: str) -> list[str]:
             f"Discharge artifact missing required checks:\n"
             + "\n".join(f"    - {c}" for c in missing_checks)
         )
+
+    # 2a. Spec-origin trace required for instance plugin commits
+    # (per development-process.md practice 5 + contract 2).
+    if SPEC_ORIGIN_CHECK not in msg:
+        # Re-check files: this validation only fires when instance plugin
+        # files are in the diff.
+        changed = get_changed_files()
+        has_plugin, plugin_files = has_instance_plugin_files(changed)
+        if has_plugin:
+            errors.append(
+                f"Commit touches instance plugin render files:\n"
+                + "\n".join(f"    - {f}" for f in plugin_files)
+                + "\n  Discharge artifact missing required check:\n"
+                f"    - {SPEC_ORIGIN_CHECK} (per development-process.md\n"
+                f"      practice 5 'Spec-origin grounding for plugin edits'\n"
+                f"      and contract 2 'Render completeness')."
+            )
 
     # 3. No fold-into rationalizations
     fold_into_hits = []
