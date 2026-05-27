@@ -274,12 +274,16 @@ noun position; cross-check against glossary).
 
 When a subagent returns ranked findings with severity
 classifications on a rule-corpus edit, present them to the
-operator as a ranked table — not narrated in prose. The AI is the
-**first judge** (applies disposition with reasoning); the operator
+operator as a ranked table — not narrated in prose. The AI is
+the **first judge** (applies disposition per skill-craft
+"Discipline-citation in recommendations" — cites the Concern-
+named discipline and names observable evidence); the operator
 is the **second judge** (override authority). The subagent
-detects; the AI disposes; the operator audits the disposition.
-Operator-catch as the *detection* mechanism is the failure shape
-this practice forecloses, not introduces.
+detects; the AI re-derives against the cited discipline; the
+operator audits the disposition. Two failure shapes this
+practice forecloses: operator-catch as the *detection* mechanism;
+echoing the subagent's severity ("subagent said observation, so
+keep-as-is") rather than re-deriving against the cited discipline.
 
 Required columns:
 
@@ -292,7 +296,9 @@ Required columns:
   invokes that anti-pattern). Discipline-citation collapses into
   the Concern wording, not a separate column.
 - **First-judge disposition** — fix-now / keep-as-is /
-  observation-only + one-line reasoning
+  observation-only + one-line reasoning citing the discipline
+  named in Concern + the observable evidence supporting the
+  disposition
 
 Operator's second-judge happens in conversation flow — the
 operator's next message overrides any disposition (per-row,
@@ -309,6 +315,14 @@ second judge intervene. Narrating "subagent PASS with one nit
 (handled)" loses the operator's check on whether the nit was
 correctly disposed.
 
+**Plain-English summary after the table.** A one-paragraph
+summary follows the table — one sentence per finding mapping
+severity + disposition to language that uses no skill-craft
+anti-pattern names and no discipline shorthand (describe the
+failure shape in domain words). The table carries the structured
+audit; the summary carries the load for fast operator
+second-judge. Both required; neither substitutes for the other.
+
 Scope: subagents whose output shape is **ranked findings with
 severity classifications** (skill-craft self-review, cross-spec
 coherence review, render-fidelity review, etc.). General-purpose
@@ -321,10 +335,13 @@ the table itself is the un-fakeable artifact — its presence in
 the response is the check. A secondary **mechanical** criterion
 applies — the required-columns enumeration is computed from the
 findings (every finding produces exactly those columns; missing
-columns are observable). Same shape as practice 10: structural
-(table presence) primary, mechanical (column completeness)
-secondary. Prose-only presentation of findings is the failure
-shape this rule forecloses.
+columns are observable); the disposition cell's discipline-cite
+and observable-evidence are observable from the cell contents.
+Same shape as practice 10: structural (table + summary presence)
+primary, mechanical (column + disposition-cell completeness)
+secondary. Prose-only presentation, table-without-summary, and
+echo-only disposition ("subagent said X, so X") are the failure
+shapes this rule forecloses.
 
 ## The release loop
 
@@ -426,16 +443,13 @@ A change runs the same loop:
         recommendation; operator decides per finding (fix-now /
         accept-with-rationale / defer-to-observations); AI applies.
 
-     **Discipline-citation in recommendations.** When a reviewer
-     finding cites a discipline (practice 8 / basis rule /
-     no-theater / skip-rationalization / etc.), the AI's
-     recommendation cites the discipline and names its verdict.
-     If practice 8 names a classifiable structural-enforcement
-     candidate → ship-now (n=1). If no-theater says the
-     alternative is undefendable → cut. A proposed AI deviation
-     produces an additional `operator-decision-required` line
-     citing the alternative — the deviation surfaces explicitly,
-     not as an equal-weight option.
+     **Discipline-citation in recommendations** (skill-craft
+     PROCEDURE.md Layer 4). Framework-side discipline examples
+     for the rule: practice 8 / basis rule / no-theater /
+     skip-rationalization. Framework-specific application: a
+     practice-8 classifiable structural-enforcement candidate →
+     ship-now (n=1); undefendable alternative per no-theater →
+     cut.
 
      Accept-with-rationale records as an `Accepted-finding:` line
      in the commit message body citing the finding's file:line
