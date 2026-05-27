@@ -11,7 +11,36 @@ adopt it before doing development work here.
 
 ## The three levels
 
-Three repositories, three levels of abstraction:
+Three contracts hold the architecture:
+
+1. **Framework arbitrariness.** The anneal-framework spec is
+   domain-agnostic by construction; it must instantiate equally
+   well for any domain — software engineering, debugging,
+   marketing, research, or any other. A rule that leaks domain
+   assumptions (specific languages, tooling, problem-domain
+   vocabulary) is malformed at framework level. Test: would this
+   rule still apply rendered into an instance for an unrelated
+   domain? Operationalized: skill-craft PROCEDURE.md
+   "Domain-independence check"; triaged: practice 1.
+
+2. **Render completeness.** A render from framework spec to
+   instance plugin preserves every load-bearing clause of the
+   source; structural mechanisms (closed enums, gated checks,
+   "must" verbs, un-fakeable artifacts) survive as structural in
+   the render, not flattened to prose. The renderer is blind to
+   its own flattening; render fidelity is verified by a separate
+   context (practice 2).
+
+3. **Instance domain-binding scope.** Instances legitimately carry
+   operational details with no upstream home — file-path naming
+   (`.clippy/runs/<run>.md`), what "executable verification" means
+   in the domain (pytest for software, debugger trace for
+   debugging), domain-specific lens shapes, dispatch-orchestration
+   mechanics. The architecture's instance slot, not framework gaps.
+   The "genuine domain binding" classification in practice 1 names
+   this category.
+
+The contracts fill across three repositories:
 
 - **skill-craft** — how to build and review any Claude Code skill:
   structural-enforcement mechanisms (forcing functions, blocking
