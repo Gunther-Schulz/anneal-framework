@@ -160,6 +160,17 @@ checks that discharge step 5 for that scope; a new scope (a
 different finding, a different rule, a different fix target) is
 a new cycle, regardless of response boundaries.
 
+**Spec-origin grounding for plugin edits.** Before editing any
+file under `plugin/skills/*/`, surface which spec clause the
+edit originates from — a framework spec section (`spec/*.md`)
+or an instance spec slot (`<instance-repo>/spec/*.md`). The
+citation IS the artifact; a plugin edit without a cited spec
+origin is drift (contract 2). Plugin packaging files
+(`README.md`, `plugin.json`, `CLAUDE.md` and similar repo-local
+files outside `plugin/skills/*/`) are exempt per the
+instantiation-guide carve-out — packaging is repo-local, not
+rendered from spec.
+
 ### 6. Integrate, don't insert
 
 An edit integrates a change into a document that must stay coherent
@@ -401,6 +412,7 @@ A change runs the same loop:
    ```
    Step-5 discharge for commit <SHA or "pending">:
    - Render fidelity (practice 2) → [subagent ID, verdict] OR [N/A: cited reason]
+   - Spec-origin trace (per contract 2; for commits touching `plugin/skills/*/`) → [<plugin-file>:<spec-clause> per touched plugin file] OR [N/A: no plugin/skills/* files in diff]
    - Practice-4 dependent audit → [grep evidence cited] OR [N/A: cited reason]
    - Skill-craft full review on changed skill files → [subagent ID, verdict] OR [N/A: cited reason]
    - Skill-craft self-review on framework-spec section → [subagent ID, verdict] OR [N/A: cited reason]
