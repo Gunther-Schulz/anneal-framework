@@ -23,13 +23,15 @@ Three contracts hold the architecture:
    domain? Operationalized: skill-craft PROCEDURE.md
    "Domain-independence check"; triaged: practice 1.
 
-2. **Render completeness.** A render from framework spec to
-   instance plugin preserves every load-bearing clause of the
-   source; structural mechanisms (closed enums, gated checks,
-   "must" verbs, un-fakeable artifacts) survive as structural in
-   the render, not flattened to prose. The renderer is blind to
-   its own flattening; render fidelity is verified by a separate
-   context (practice 2).
+2. **Render completeness.** Every load-bearing rule in the
+   plugin originates in one of two specs: the framework spec
+   (the methodology) or the instance spec (the domain bindings).
+   The plugin is the rendered output of these two specs;
+   structural mechanisms (closed enums, gated checks, "must"
+   verbs, un-fakeable artifacts) survive as structural, not
+   flattened to prose. A plugin clause with no spec origin is
+   drift. The renderer is blind to its own flattening; render
+   fidelity is verified by a separate context (practice 2).
 
 3. **Instance domain-binding scope.** Instances legitimately carry
    operational details with no upstream home — file-path naming
