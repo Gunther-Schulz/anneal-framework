@@ -1,7 +1,14 @@
 # <Instance> Specification — Lifecycle extensions
 
-**OPTIONAL — delete this file if your instance does not declare
-any lifecycle extensions.**
+**REQUIRED — every instance declares the enable mechanism here,
+even when no specific extensions are declared yet.** This is the
+always-ready principle (`anneal-framework/instantiation-guide.md`
+§5 Project-init): with the mechanism declared, Project-init
+bootstraps the placeholder file in fresh projects so operators
+see the slot is available. Declaring specific extensions is
+separate — those land below as items hook the framework's
+extension points. Concretely: the `## Enable mechanism`
+subsection below is filled; the items list may be empty.
 
 Lifecycle extensions are instance-declared behaviors that fire
 at framework-defined points in the cycle. The framework defines

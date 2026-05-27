@@ -4,7 +4,8 @@ commit-msg hook — validates the Step-4 discharge artifact for rule-corpus comm
 
 Per anneal-framework development-process.md step 4 (release loop):
 - Detects if the commit touches rule-corpus files (spec/, development-process.md,
-  plugin/skills/, references/*.md)
+  instantiation-guide.md, foundation.md, post-run-review.md, plugin/skills/,
+  instance-template/)
 - If so, requires a Step-4 discharge artifact in the commit message
 - Validates each of the 7 required checks is present
 - Pattern-fails on rationalize-away-as-covered shapes ("folded into",
@@ -24,6 +25,7 @@ from pathlib import Path
 RULE_CORPUS_PATTERN = re.compile(
     r"^(spec/.+\.md|development-process\.md|post-run-review\.md|"
     r"instantiation-guide\.md|foundation\.md|plugin/skills/.+\.md|"
+    r"instance-template/.+\.md|"
     r"\.claude-plugin/.+|plugin/\.claude-plugin/.+)$"
 )
 

@@ -30,17 +30,23 @@ usable):
 - `spec/lens-set.md` — the domain's standardized lens set: the
   recurring blind-spots an expert watches for.
 
+**Required-mechanism slots** (each declares its mechanism even
+when no specific items are declared yet — per the always-ready
+principle in `anneal-framework/instantiation-guide.md` §5
+Project-init):
+
+- `spec/extensions.md` — lifecycle extensions (the enable
+  mechanism location; specific extensions optional).
+- `spec/lens-supplement.md` — the lens-supplement mechanism
+  declaration (the supplement file location; specific
+  supplements are project-supplied later).
+
 **Optional slots** (each placeholder file starts with
 "OPTIONAL — delete this file if your instance does not declare
 this slot"):
 
 - `spec/presentation.md` — instance branding, menu wording,
   visual flourish.
-- `spec/extensions.md` — lifecycle extensions (declared
-  behaviors at framework-defined cycle events).
-- `spec/lens-supplement.md` — the lens-supplement mechanism
-  declaration (where projects supply additional lenses, how
-  they are loaded).
 
 ## After instantiation
 

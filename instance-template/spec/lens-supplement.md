@@ -1,7 +1,15 @@
 # <Instance> Specification — Lens-supplement mechanism
 
-**OPTIONAL — delete this file if your instance does not declare
-a lens-supplement mechanism.**
+**REQUIRED — every instance declares the supplement mechanism
+here, even when no specific supplements are declared yet.** This
+is the always-ready principle
+(`anneal-framework/instantiation-guide.md` §5 Project-init): with
+the mechanism declared, Project-init bootstraps the placeholder
+file in fresh projects so operators see the slot is available.
+Specific supplemental lenses are project-supplied later in the
+operator's `<plugin-skill-name>.config/lenses.md`. Concretely:
+the `## <Instance>'s supplement mechanism` subsection below is
+filled; specific supplements are project-supplied later.
 
 The lens-set slot may extend with a project-supplement
 mechanism — a way for projects using <Instance> to add their
