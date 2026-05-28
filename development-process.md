@@ -413,6 +413,71 @@ secondary. Prose-only presentation, table-without-summary, and
 echo-only disposition ("subagent said X, so X") are the failure
 shapes this rule forecloses.
 
+### 12. Periodic coherence audit on the rule corpus
+
+Per-edit (practice 6 "Integrate, don't insert") and per-commit
+(release loop step 4 "Cross-spec multi-file coherence") checks
+catch within-document and single-diff-cross-file drift. Neither
+catches **set-level drift across many commits** — primitives that
+no longer cohere as a set, vocabulary clashes accreted across
+cycles, foundation-grounding faded entries, redundant entries
+that earned their place individually but now overlap. The third
+scale of coherence check — whole-corpus, 10-lens audit — has a
+dedicated skill (`coherence-audit`) and needs a process-level
+trigger.
+
+**Trigger (mechanical).** After every **N cycles closed since
+the last coherence-audit handoff** — where a cycle is one scope
+of change per practice 5, observable in `git log` as
+push-completed commits to spec/* or plugin/skills/*/ — the next
+cycle's design surface (practice 9) includes a coherence-audit
+dispatch as a pre-cycle hygiene step. The cycle count is
+computed from the corpus's git history: commits between the
+last `Coherence-audit-handoff:` commit-message marker and HEAD.
+If no prior marker exists (no audit has run), the count is from
+the corpus's initial commit. **N is initial calibration**
+(starting value 5; refined via `spec/validation-watch.md` V-21
+as drift-cadence observations accumulate). The mechanical SHAPE
+(cycle-count threshold + git-log observable + marker artifact)
+is fixed; only the number is open.
+
+**Trigger (batch-boundary, judgment-acceptable).** When a
+logical cluster of related fixes closes (e.g., a multi-cycle
+audit follow-up batch completes), the operator may invoke a
+coherence-audit before moving to the next cluster. This
+trigger is judgment-shaped and complements — does not replace —
+the mechanical cycle-count trigger. **The mechanical trigger
+binds: the batch-boundary trigger can fire EARLIER than the
+cycle-N threshold but never DEFERS it.** "I'll wait for the
+next batch boundary" past cycle-N is the Skip-rationalization
+shape this clause forecloses.
+
+**Audit dispatch.** The audit runs the standalone
+`coherence-audit` skill (10 lenses, audit-deltas / cluster-
+compression / sampling-representatives / full-systematic
+strategy per the skill's procedure). Audit findings enter the
+practice-11 findings-table surfacing flow; per-finding
+dispositions follow practice-11 + release loop step 4 recovery.
+
+**Handoff artifact.** Every coherence-audit run produces a
+commit (either standalone for clean audits, or part of the next
+cycle that fixes findings) carrying a `Coherence-audit-handoff:
+<subagent-id>` line in the commit message body. **The AI MUST
+emit the marker on any commit completing or containing audit
+work.** A claimed audit without the marker on the audit-bearing
+commit is malformed — the marker IS the un-fakeable artifact:
+`git log --grep "Coherence-audit-handoff:"` finds the last
+audit reference; subsequent cycle-counting starts from it.
+Absence of marker after a claimed audit is operator-detectable
+via the same grep.
+
+This rule classifies as **mechanical criteria** (cycle count +
+git-log observable) + **structural enforcement** (audit
+dispatch produces findings artifact + handoff marker in commit
+message). Per practice 8, classifiable at both primary
+(mechanical) and secondary (structural) tiers — earns its
+place at n=1.
+
 ## The release loop
 
 A change runs the same loop:
@@ -556,6 +621,12 @@ A change runs the same loop:
    discharge artifact's job is to enumerate the checks ran +
    their mechanically-verifiable verdicts, not to retell the
    per-finding analysis.
+
+   **Coherence-audit handoff marker.** If the cycle included a
+   coherence-audit dispatch (per practice 12), the commit body
+   carries a `Coherence-audit-handoff: <subagent-id>` line. The
+   marker grounds practice 12's mechanical cycle-counting; its
+   absence on an audit-bearing commit is malformed.
 6. **Release the instance** — version-bump the plugin, commit and
    push to remote, then for each affected instance **pull the
    marketplace clone and run `claude plugin update`**:
