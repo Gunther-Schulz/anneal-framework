@@ -786,6 +786,17 @@ the emergent field set drifted (different fields, different
 semantics) from the prior emergence — accept instance freedom as
 design intent; document as observation, no codification.
 
+**Operator-pull codification (2026-05-28).** `Implementation
+model` added to clippy's `references/tracker.md` ahead of V-14's
+emergence-trigger — operator-empirical motivation (Sonnet vs
+Opus impl quality comparison), not cross-instance recurrence.
+The methodology already produces comparable artifacts
+(verify-terminal Status, loopback count, verify cycles to
+PASSED); stamping the impl model closes the comparison loop.
+Codified at instance-level per V-14's preferred path. V-14
+remains WATCHING for the original Protocol + Cycles-complete
+question; this codification is recorded as observation.
+
 ---
 
 ## V-15. Standardized-pass lens noise on methodology-design tasks — collapse or accept?
