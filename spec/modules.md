@@ -317,7 +317,7 @@ at the start of the convergence cycle, carrying a **candidate
 set** — one candidate per coupling shape the basis depends on
 (`glossary.md` Coupling shape). Line shape:
 
-`{decision-ID, [{shape, candidate, result, holds-or-falsified}, …], aggregate-holds-or-falsified}`
+`{decision-ID, [{shape, candidate, falsification-predicate, result, holds-or-falsified}, …], aggregate-holds-or-falsified}`
 
 Produced by the fresh-context falsification subagent dispatched
 per `core.md` §4.1.4; the orchestrator coverage-checks the
@@ -328,18 +328,43 @@ returned artifact on return (`core.md` §4.1.4 Coverage check).
   `target-behavior` (closed set per `glossary.md` Coupling
   shape).
 - **candidate** — an executable query (grep, search) or
-  located read (file:line) whose positive result would
-  invalidate the entry's basis on this shape. Form follows
-  §3.2 — the candidate is a search-established artifact, not
-  a recalled hypothesis. A candidate whose negative result
-  would not invalidate the basis on its tagged shape is
-  malformed: the candidate must be capable of returning
-  falsifying evidence on its shape if the basis is wrong.
+  located read (file:line) whose positive result, applied
+  through the falsification predicate, would invalidate the
+  entry's basis on this shape. Form follows §3.2 — the
+  candidate is a search-established artifact, not a recalled
+  hypothesis.
+- **falsification-predicate** — the rule the orchestrator
+  applies to the candidate's result to compute
+  holds-or-falsified (`glossary.md` Falsification predicate).
+  Closed set:
+    - `any-match` — any non-empty positive result on the
+      candidate is falsifying.
+    - `any-outside-scope:<scope>` — any result line outside
+      the named `<scope>` (a file path, glob, or directory)
+      is falsifying.
+    - `expected-match:<pattern>` — the result LACKING
+      `<pattern>` is falsifying (used when the basis claims
+      something present; absence falsifies). `<pattern>` is
+      either a literal substring (default) or a regular
+      expression marked with a `regex:` prefix
+      (`regex:<expr>`); the orchestrator applies literal-
+      substring containment or regex match accordingly.
+  Shape-coherence rule: the predicate's variant suits the
+  candidate's tagged shape — `target-uses` candidates use
+  `any-match` or `any-outside-scope`; `target-shape` and
+  `target-behavior` candidates use `expected-match` (the
+  basis claims a property present; the predicate names what
+  must be in the result for the property to hold). A
+  predicate not from the closed set, or shape-incoherent for
+  its tagged shape, is malformed.
 - **result** — the actual output of running the candidate:
   cited matches (file:line) for a search, content for a read.
-- **holds-or-falsified** — binary per-candidate, computed
-  from the result: `holds` if no falsifying evidence
-  returned; `falsified` otherwise.
+- **holds-or-falsified** — binary per-candidate, **computed
+  by the orchestrator** by applying the falsification-
+  predicate to the result: `holds` if the predicate yields no
+  falsifying evidence; `falsified` otherwise. The subagent
+  declares the candidate and predicate; the orchestrator
+  computes holds-or-falsified (no subagent judgment).
 - **aggregate-holds-or-falsified** — binary per-line,
   computed from the candidate set: `holds` if every per-shape
   candidate holds; `falsified` otherwise. `falsified` flips

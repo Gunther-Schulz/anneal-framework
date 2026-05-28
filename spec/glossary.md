@@ -140,14 +140,28 @@ aggregate-falsified entry reopens to [PENDING] (`modules.md`
 §3.4).
 
 **Falsification candidate** — a per-shape executable query or
-located read whose positive result would invalidate a
-[VERIFIED] D-entry's basis on the candidate's tagged coupling
-shape (`modules.md` §3.4). Form follows the basis rule (`core.md`
-§3.2): the candidate is search-established, not recalled, and
-must be capable of returning falsifying evidence on its tagged
-shape if the basis is wrong on that shape. Candidates compose
-into a candidate set covering every shape the basis depends on
-(see Coupling shape above).
+located read whose result, applied through its falsification
+predicate, would invalidate a [VERIFIED] D-entry's basis on
+the candidate's tagged coupling shape (`modules.md` §3.4).
+Form follows the basis rule (`core.md` §3.2): the candidate
+is search-established, not recalled. Falsifying capability is
+mechanical — the candidate's predicate (see Falsification
+predicate below) is the rule the orchestrator applies to the
+result to compute holds-or-falsified; no subagent judgment.
+Candidates compose into a candidate set covering every shape
+the basis depends on (see Coupling shape above).
+
+**Falsification predicate** — the rule the orchestrator applies
+to a falsification candidate's result to compute
+holds-or-falsified (`modules.md` §3.4). Closed set:
+`any-match` (any non-empty positive result falsifies),
+`any-outside-scope:<scope>` (any result line outside the named
+scope falsifies), `expected-match:<pattern>` (result lacking
+the pattern falsifies — used when the basis claims a property
+present). The predicate's variant must suit the candidate's
+tagged coupling shape (`modules.md` §3.4 shape-coherence rule).
+Lifts per-candidate falsifying capability from subagent
+judgment to orchestrator computation.
 
 **Cycle-another (recommendation)** — the AI's recommendation to
 run another investigate-design cycle rather than transition to

@@ -373,15 +373,22 @@ one line per [VERIFIED] entry carrying a **candidate set** —
 one candidate per coupling shape the basis depends on
 (`glossary.md` Coupling shape; closed set: target-shape /
 target-uses / target-behavior). Each candidate is tagged with
-its shape; the line aggregates to `holds` only if every
-per-shape candidate holds. A candidate whose negative result
-would not invalidate the basis on its tagged shape is
-malformed — each candidate must be capable of returning
-falsifying evidence on its shape if the basis is wrong (the
-basis rule's search-establishment shape applied to the
-candidate, per §3.2). A candidate set whose shape coverage
-does not include every shape the basis claims is also
-malformed. A [VERIFIED] entry whose aggregate-holds-or-
+its shape and carries a **falsification predicate** — the rule
+the orchestrator applies to the candidate's result to compute
+holds-or-falsified (closed set per `modules.md` §3.4:
+`any-match` / `any-outside-scope:<scope>` /
+`expected-match:<pattern>`). The line aggregates to `holds`
+only if every per-shape candidate holds. The candidate's
+falsifying-capability check is mechanical: the predicate
+specifies what positive result on this candidate falsifies the
+basis on the tagged shape; the orchestrator applies the
+predicate to the result and computes holds-or-falsified
+(`glossary.md` Falsification predicate). A candidate with a
+malformed predicate (not from the closed set, or shape-
+incoherent — e.g., a target-uses candidate with a predicate
+referencing no scope) is malformed. A candidate set whose
+shape coverage does not include every shape the basis claims
+is also malformed. A [VERIFIED] entry whose aggregate-holds-or-
 falsified is `falsified` flips through [INVALIDATED]→[PENDING]
 (per §5.2) and the cycle continues.
 
@@ -391,18 +398,22 @@ the convergence cycle's start AND checks each line's mechanical
 form: (i) candidate set non-empty, (ii) each candidate carries
 a shape tag from the closed set (`glossary.md` Coupling shape),
 a candidate field (file:line or re-runnable query per §3.2), a
-result field, and a per-candidate holds-or-falsified value;
-(iii) the line's aggregate-holds-or-falsified equals the
+falsification-predicate from the closed set (`modules.md` §3.4;
+shape-coherent for the candidate's tagged shape), a result
+field, and a per-candidate holds-or-falsified value; (iii) the
+orchestrator computes the per-candidate holds-or-falsified by
+applying the predicate to the result, and the returned value
+must match the computed value (a mismatch is a malformed line);
+(iv) the line's aggregate-holds-or-falsified equals the
 conjunction of per-candidate holds. A missing line OR a
 mechanically-malformed line is a malformed return; the
 orchestrator re-dispatches with the gap's D-entry IDs explicit,
 and the subagent fills the gap. All checks are computed from
-the artifact. **Semantic capability** — whether each candidate
-is capable of returning falsifying evidence on its tagged
-shape, AND whether the candidate set's shape coverage matches
-the basis's claimed shapes (`modules.md` §3.4) — is the
-subagent's responsibility per the brief (d), not the
-orchestrator's.
+the artifact. **Residual delegation** — whether the candidate
+set's shape coverage matches the basis's claimed shapes
+(`modules.md` §3.4) — is the subagent's responsibility per the
+brief (d); per-candidate falsifying capability is now mechanical
+(predicate-applied-to-result; no subagent judgment).
 
 **Isolation fallback.** If an isolated context cannot be
 established (subagent spawn fails), the falsification pass is
