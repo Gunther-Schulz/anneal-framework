@@ -773,13 +773,12 @@ what's observable on success and at boundaries; (e) the **basis** per
 §3.2 (for amendment decisions, (e) carries the §3.2.2
 completeness enumeration of references + behaviors preserved/
 dropped; (b) carries the shape of the delta). **Brevity discipline:**
-the body is the minimum a fresh session needs to implement the
-decision — contract surface + acceptance criteria + boundaries +
-basis, no implementation pseudo-code beyond what the contract and
-file:line citations already convey. Multi-statement function bodies,
-validator internals, and migration SQL bodies are implementation
-outputs, not design content — they belong at impl phase, not in the
-design decision body.
+the body covers exactly (a)-(e) above — what a fresh session needs
+to implement the decision — and no implementation pseudo-code
+beyond what the contract and file:line citations already convey.
+Multi-statement function bodies, validator internals, and
+migration SQL bodies are implementation outputs, not design content —
+they belong at impl phase, not in the design decision body.
 
 It moves through:
 
