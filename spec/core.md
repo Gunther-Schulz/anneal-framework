@@ -677,10 +677,14 @@ A finding — an observation recorded by inspection — moves through:
    - **non-issue** — basis cites (a) a re-runnable search whose
      result is empty, or (b) a file:line + observable fact
      contradicting the finding's premise (§3.1).
-   - **deferred** — re-observes a gap an existing [AUTO-ACCEPTED]
-     decision deferred; basis cites that decision's tracker ID,
-     and the finding is appended as a re-surfacing notation
-     alongside the original [AUTO-ACCEPTED] tag.
+   - **deferred** — one of: (a) re-observes a gap an existing
+     [AUTO-ACCEPTED] decision deferred (basis cites that
+     decision's tracker ID; the finding is appended as a
+     re-surfacing notation alongside the original
+     [AUTO-ACCEPTED] tag); or (b) operator-pull defer of a
+     load-bearing finding the operator chooses not to act on
+     now (basis cites an explicit trigger condition that would
+     warrant re-acting; defer-without-trigger is malformed).
 
    The disposition is cited as a tagged suffix on the status line:
    `[VERIFIED — <disposition>]`. A [VERIFIED] without a cited
@@ -699,6 +703,15 @@ A [VERIFIED] finding can then be invalidated:
    [PENDING] for re-verification — and holds the phase (§5.3) until
    it does. Only a [VERIFIED] finding becomes [INVALIDATED]; one
    contradicted before [VERIFIED] is simply corrected.
+
+**F-entry resolution closure.** F-entries resolve through
+exactly four paths: one of the three [VERIFIED — disposition]
+cases above, or [ISSUES FOUND] → loopback (§4.3). Inline-fix —
+modifying code or fixtures to address a finding without one of
+the four resolutions — is not a path; attempting one is
+malformed (§3.1). The closure applies to F-entries from any
+source: verify findings, impl-phase self-check findings,
+investigation-pass findings.
 
 ### 5.2 Design-decision states
 
