@@ -258,7 +258,7 @@ design recorded in the tracker. It ends at [READY].
 The standardized inspection pass runs every cycle.
 
 **Cycle numbering** is continuous across the run — a loopback from
-a downstream phase (implement major-new-scope, verify [ISSUES
+a downstream phase (implement actioned-finding, verify [ISSUES
 FOUND]) returns to investigate-design at the next cycle number,
 not at cycle 1. Each cycle number is unique within the run.
 
@@ -457,28 +457,25 @@ surrounding conventions are context, not authority — where they
 diverge from the locked design, the design governs. The work is derived from the
 design first; existing patterns are evaluated for fit afterward.
 
-implement makes no design decisions. A new finding during
-implementation is **major new scope** (and triggers loopback) if
-any of:
+implement makes no design decisions. Any finding surfaced during
+implementation routes through exactly two paths: **loopback** to
+investigate-design (when the finding needs action), or
+**[VERIFIED — deferred]** (when the operator chooses not to act
+now, basis cites the explicit trigger condition per §5.1).
+Inline-fix is not a path; attempting to address a finding within
+the impl phase by editing code is malformed. Local-clarification-
+and-continue is not a path; the impl phase does not absorb new
+findings into the unit's in-flight work.
 
-1. **Touches** — the unit's commit diff adds, modifies, or
-   deletes a line referencing any element or contract identifier
-   not in the unit's listed scope (`modules.md` §3.3 The impl
-   plan; per-unit listed-scope artifact). Mechanical check:
-   diff-referenced identifiers ∖ listed scope ≠ ∅.
-2. **Changes a locked contract's members** — the diff modifies
-   any item in the contract's listed-members enumeration
-   (signatures, fields, error variants, schema items; the
-   instance specifies the artifact carrying the enumeration —
-   type declaration file, schema file, API spec). Mechanical
-   check: diff intersects any line of the listed-members
-   artifact.
-3. Introduces a new design decision (per §5.2)
-4. Crosses another unit's scope (breaks the disjointness basis
-   per §3.2)
-
-Otherwise it is a **local clarification** — recorded in the
-tracker; the unit proceeds. No work is lost when loopback fires.
+The choice between loopback and defer is the operator's per §5.1
+(b); the AI's first-judge recommendation surfaces with the
+finding. The pre-classification judgment ("is this finding
+major-new-scope or local?") is eliminated — every actioned
+finding loops back. The loopback cost (one investigate-design
+cycle) is the designed trade for eliminating the
+inline-misjudgment cost (partial-state commit, scope creep,
+tracker drift; see `dev-notes/validation-watch.md` V-24). No
+work is lost when loopback fires.
 
 **The impl plan.** The impl plan is produced at [READY]
 presentation — the locked design's decisions grouped into
@@ -503,7 +500,7 @@ full tracker; reduction to the unit's in-scope decisions is
 permitted only when the orchestrator cites a concrete cause
 (e.g., tracker size exceeds the subagent's context budget),
 recorded as the basis (§3.2) for the reduction. It implements the in-scope
-decisions; it does not design — major new scope halts it (below).
+decisions; it does not design — any actioned finding halts it (below).
 Parallel-eligible units may be dispatched concurrently; the
 disjointness basis makes that safe. **Dispatch is continuous,
 not wave-batched.** The orchestrator maintains a
@@ -530,9 +527,8 @@ behaviors introduced post-design (new docstrings, new branches, new
 failure modes the unit's diff introduces). The check is
 unconditional — applied at every dispatch boundary, and by the
 working context for a single-unit plan. A self-check finding
-of major-new-scope shape triggers the loopback below; an in-scope
-concern is appended for verify's later sweep but does not halt the
-unit.
+triggers the loopback below (or [VERIFIED — deferred] per the
+operator's first-judge recommendation, §5.1 (b)).
 
 **Tracker writes.** The orchestrator (§6) owns the tracker append.
 A dispatched subagent does not write directly; on completion or
@@ -548,9 +544,9 @@ artifact — return-state cannot know the run-global namespace. The
 append-only model (`modules.md` §3.1) is preserved without
 concurrency machinery.
 
-**Loopback across the subagent boundary.** A subagent finding
-major new scope halts and returns a loopback-required result with
-four fields:
+**Loopback across the subagent boundary.** A subagent surfacing
+any actioned finding halts and returns a loopback-required result
+with four fields:
 
 - **trigger** — the artifact, code site, or signal the subagent
   encountered
@@ -878,8 +874,8 @@ mechanics live in §4.2.
 **Loopbacks.** A phase may return the run to an earlier phase; the
 orchestrator honors the return rather than proceeding. The specific
 returns are specified at their source: implement → investigate-design
-on major new scope (§4.2, including the dispatched-subagent boundary
-case); [INVALIDATED] finding or design decision reopens design work
+on any actioned finding (§4.2, including the dispatched-subagent
+boundary case); [INVALIDATED] finding or design decision reopens design work
 (§5); verify ending [ISSUES FOUND] returns the run to
 investigate-design — the single locus for fix resolution; the fix
 runs through the full procedure before verify re-runs (§4.3).

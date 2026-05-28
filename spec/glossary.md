@@ -182,24 +182,11 @@ not by cost comparison.
 
 **Loopback** — a phase returning the run to an earlier phase
 rather than proceeding (`core.md` §6 Loopbacks). Three trigger
-points: implement → investigate-design on major new scope (§4.2);
-verify [ISSUES FOUND] → investigate-design (§4.3); an
+points: implement → investigate-design on any actioned finding
+(§4.2); verify [ISSUES FOUND] → investigate-design (§4.3); an
 [INVALIDATED] finding or design decision reopens design work
 (§5). Each carries a defined return-shape; the orchestrator
 honors the return rather than proceeding.
-
-**Major new scope** — an implementation-phase finding classified
-as returning the run rather than proceeding within the current
-unit's locked design. Closed four-clause definition (`core.md`
-§4.2), each clause mechanically computable from the unit's
-commit diff: (1) **touches** — diff references identifier not
-in unit's listed scope (`modules.md` §3.3); (2) **changes
-locked contract's members** — diff intersects the contract's
-listed-members artifact (instance-specified, e.g., type
-declaration, schema, API spec); (3) introduces a new design
-decision (per §5.2); (4) crosses another unit's scope (breaks
-the disjointness basis per §3.2). Otherwise a local
-clarification (recorded; unit proceeds).
 
 **Self-check (at dispatch boundary)** — a check the dispatched
 impl-phase subagent (and the working context, for a single-unit
@@ -207,7 +194,8 @@ plan) applies to its own diff before returning state, using the
 instance's standardized lenses most relevant to write-time issues
 (`core.md` §4.2). Compounds with the design-time forcing function
 (§3.2); catches references and behaviors introduced post-design.
-A self-check finding of major-new-scope shape triggers loopback.
+A self-check finding triggers loopback (or [VERIFIED — deferred]
+per operator's first-judge recommendation).
 
 **Pass** — one of the two activities within a cycle. Every cycle has
 exactly two, in order:
