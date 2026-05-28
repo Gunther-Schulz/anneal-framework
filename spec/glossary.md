@@ -67,6 +67,15 @@ load-bearing claims carry the basis apparatus (`core.md` §3.2).
 element's dependents, an input's value-classes, a flaw class's
 instances. Its basis is a mechanical search (`core.md` §3.2).
 
+**Basis cardinality** — the count of observable facts per
+citation in a basis. The rule (`core.md` §3.2): exactly one
+fact per citation; a basis may contain multiple per-citation
+pairs when the claim rests on multiple facts. Enforced
+through verifiers (`core.md` §4.3) and convergence cycles
+(`core.md` §4.1.4) that re-open each citation, and by
+instance-side lenses (`modules.md` §2.2) where the domain
+specifies a basis-cardinality check.
+
 **Coupling shape** — a category of dependency that a [VERIFIED]
 D-entry's basis claims to rest on. Closed set of three:
 

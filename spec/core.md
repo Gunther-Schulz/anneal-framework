@@ -151,13 +151,21 @@ produces none.
 Every load-bearing claim and every design premise carries a named
 basis — the evidence it rests on. The basis is the artifact itself
 (§3.1): (a) a search result with its executable query, OR (b) a
-file:line range citation paired with **one observable fact** about
-the cited range (count, identifier, type) that
-the citation grounds. Verifiers (§4.3) and convergence cycles
-(§4.1.4) re-open the citation to verify both the location AND the
-observable fact. A free-text claim of having looked, a paraphrase
-of what was read, or a summary without an observable fact is not a
-basis.
+file:line range citation paired with **exactly one observable
+fact** about the cited range (count, identifier, type) that the
+citation grounds. **Cardinality is one per citation** — a
+citation paired with multiple stacked facts is malformed. A basis
+may contain multiple per-citation pairs when the claim genuinely
+rests on multiple facts (each pair one fact per citation); the
+basis as a whole stays on one entry. A stacked-fact citation is
+audited first for over-statement — rationale, cross-references,
+or summaries dressed as facts — and reduced to the actual facts;
+entry-splitting is required only when multi-fact analysis reveals
+multi-claim structure (each fact supports a different independent
+claim). Verifiers (§4.3) and convergence cycles (§4.1.4) re-open
+each citation to verify both the location AND the observable
+fact. A free-text claim of having looked, a paraphrase of what
+was read, or a summary without an observable fact is not a basis.
 
 A basis that resolves to recall — "assumed," "inferred,"
 "obviously so" — or to deferral — "will verify in cycle N,"
@@ -764,10 +772,14 @@ count as implemented; (d) the **side effects and failure modes** —
 what's observable on success and at boundaries; (e) the **basis** per
 §3.2 (for amendment decisions, (e) carries the §3.2.2
 completeness enumeration of references + behaviors preserved/
-dropped; (b) carries the shape of the delta). Multi-statement
-function bodies, validator internals, and
-migration SQL bodies are implementation outputs, not design content —
-they belong at impl phase, not in the design decision body.
+dropped; (b) carries the shape of the delta). **Brevity discipline:**
+the body is the minimum a fresh session needs to implement the
+decision — contract surface + acceptance criteria + boundaries +
+basis, no implementation pseudo-code beyond what the contract and
+file:line citations already convey. Multi-statement function bodies,
+validator internals, and migration SQL bodies are implementation
+outputs, not design content — they belong at impl phase, not in the
+design decision body.
 
 It moves through:
 
