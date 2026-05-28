@@ -600,12 +600,13 @@ as though it were independent.
   (design-completeness audit): a material element surfaces as a
   finding classifying why it wasn't surfaced at design time
   (judged-non-material, forgotten, scope-overflow, missed-pattern,
-  or cited-other). "Material" means a reasonable alternative
-  would have produced different observable behavior — external
-  contract, error pattern, API-surface naming, persisted
-  behavior. Impl-detail (variable naming, internal organization,
-  test fixture choice) is not material unless it affects
-  observable behavior.
+  or cited-other). "Material" means: implementing the same locked
+  decision in a way that yields a different value at a named
+  consumer-observable surface (instance-defined; canonical
+  surfaces: external contract, error pattern, API-surface naming,
+  persisted behavior). Impl-detail (variable naming, internal
+  organization, test fixture choice) does not yield such a
+  value-change.
 - **Standardized lenses** — the standardized lens set is applied to
   the produced work.
 - **Executing the verification** — the domain's executable
@@ -637,12 +638,11 @@ short of [VERIFIED] is a malformed artifact.
 The fix runs through the full procedure: investigate-design →
 implement → verify. There is no in-place shortcut at verify-terminal
 — no fix-in-implement bypass and no accept-as-followup at the
-verify boundary in either mode. The re-run is either a **fresh
-verify pass** (full re-attest) when the fix changes load-bearing
-behavior, or a **delta verify** (confirm finding closed + minimal
-regression) when the fix is **behavior-preserving** (instance-
-defined). Classification recorded in tracker; un-classified defaults
-to fresh.
+verify boundary in either mode. The re-run is a **delta
+verify** (confirm finding closed + minimal regression) when the
+fix is **behavior-preserving** (instance-defined); otherwise a
+**fresh verify pass** (full re-attest). Classification recorded
+in tracker; un-classified defaults to fresh.
 
 ---
 
@@ -683,8 +683,12 @@ A finding — an observation recorded by inspection — moves through:
      re-surfacing notation alongside the original
      [AUTO-ACCEPTED] tag); or (b) operator-pull defer of a
      load-bearing finding the operator chooses not to act on
-     now (basis cites an explicit trigger condition that would
-     warrant re-acting; defer-without-trigger is malformed).
+     now (basis cites an explicit trigger condition — a named
+     observable event class, instance-defined; canonical
+     classes: a file change, an executable-verification output
+     class, a named dependency change — that would re-fire on
+     the deferred finding; defer-without-trigger or
+     trigger-without-observable-class is malformed).
 
    The disposition is cited as a tagged suffix on the status line:
    `[VERIFIED — <disposition>]`. A [VERIFIED] without a cited

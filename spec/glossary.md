@@ -56,8 +56,12 @@ rather than evidence. An assumption does not ground a decision;
 how it holds a run short of [READY] is specified in `core.md`.
 
 **Load-bearing** — descriptive of a claim or premise that a design
-decision, a recommendation, or [READY] rests on. Only load-bearing
-claims carry the basis apparatus (`core.md` §3.2).
+decision, a recommendation, or [READY] rests on. **Operational
+test:** the claim is load-bearing if, were it false, a [VERIFIED]
+design decision OR the [READY] declaration changes — testable by
+naming which D-entry or which §4.1.1 supporting fact the claim
+feeds. A claim with no namable feeder is not load-bearing. Only
+load-bearing claims carry the basis apparatus (`core.md` §3.2).
 
 **Completeness claim** — a claim about a complete set: a scope, an
 element's dependents, an input's value-classes, a flaw class's
