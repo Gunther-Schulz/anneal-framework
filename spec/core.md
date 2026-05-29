@@ -538,12 +538,19 @@ and surfaces. **Integration:** after the subagent's commit is
 verified clean (self-check passed, HEAD unchanged), the
 orchestrator integrates the worktree's commit onto the operator's
 main via **cherry-pick** (not merge) — clean data flow, no
-worktree-branch leakage into operator's history. **Bootstrap is
-out of scope:** what the project needs to be runnable in the
-isolated tree (deps, venv, etc.) is the project's concern, not
-the framework's — instances may delegate to operator conventions
-(`make bootstrap` or equivalent) without the framework specifying
-the mechanism.
+worktree-branch leakage into operator's history. **Provisioning vs bootstrap:** `git worktree add <head-commit>`
+carries tracked-HEAD content only, so run state the instance
+persists outside it (e.g., gitignored run artifacts) is absent
+from the isolated tree. Beyond the tracker the brief carries, the
+orchestrator **provisions** the instance-declared non-tracked
+run-inputs a dispatched unit reads into the isolated tree before
+dispatch (the instance names the set and its location); provisioned
+inputs must not enter the unit's commit — the instance ensures
+they are excluded from integration. Project
+bootstrap — what the project needs merely to be runnable (deps,
+venv, etc.) — stays out of scope, the project's concern, not the
+framework's; instances may delegate to operator conventions
+(`make bootstrap` or equivalent).
 
 **Self-check at dispatch boundary.** Before returning state, the
 dispatched subagent (and the working context, for a single-unit
