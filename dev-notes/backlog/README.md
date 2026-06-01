@@ -1,63 +1,61 @@
-# Backlog — carry-forward items for the anneal-framework project
+# Backlog — open items for the anneal-framework project
 
-The persistence system for things to remember across sessions. **The
-folder IS the index:** each open item is one file here, so `ls` shows
-the live backlog. Done items move to `archive/`.
+The carry-across-sessions list of framework work. **The folder IS the
+index:** every open item is one file here, so `ls` shows the live backlog.
+Closed items move to `archive/`.
 
 ## Convention (the process)
 
 - **Relate before add — never blindly append.** Check a new item against
   the existing ones *first*: does it **fold into** one (same canonical
-  referent → merge, don't duplicate)? Does it **inform** existing items,
-  or do they **inform** it (→ revise the affected ones)? The backlog is a
-  corpus too — it fragments if you just append. This is the
-  coherence-audit's merge discipline applied to the backlog itself, and
-  the same "relate-before-add" the anti-decay effort generalizes
-  corpus-wide. FB-5 is the cautionary tale: a principle that fragmented
-  across homes before anyone consolidated it.
-- **One item per file.** Name `fb-N-<slug>.md` for findings, or
-  `<slug>.md` for anything else to carry forward. Each file is either
-  self-contained or a short stub pointing to a bigger dedicated doc.
-- **Each item states:** what it is, status, where the detail lives (if
-  elsewhere), and the next action.
-- **When an item ships / closes:** `git mv` its file into `archive/`.
-  The folder root is the live backlog; `archive/` is history.
-- **Memory:** one pointer ([[project-framework-backlog]]) auto-loads and
-  says "read `dev-notes/backlog/`." Update it only when the *structure*
-  changes, not per item.
-- **Big efforts** keep their own dedicated dev-note (too large for one
-  backlog file); they're listed below as pointers, not duplicated here.
+  referent → merge, don't duplicate)? Does it **inform** existing items, or
+  do they **inform** it (→ revise the affected ones)? The backlog is a
+  corpus too — it fragments if you just append. This is the coherence-audit's
+  merge discipline applied to the backlog itself. The verified-integrity
+  consolidation is the cautionary tale: a principle that fragmented across
+  homes before anyone consolidated it.
+- **One file per item, one naming scheme: `<slug>.md`.** Name it for what the
+  item *is* (a stable identity), not its type. There's no finding/effort
+  prefix — that split is a size/stage difference, not a kind, and stage
+  changes (a finding grows into a designed effort) without the file's
+  identity changing.
+- **Status lives in the file, not the name.** Each item's first lines state
+  what it is, its status/stage, where deeper detail lives, and the next
+  action. A small item is a short file; a big one (with its own design
+  surface) is a long file — same folder, same scheme.
+- **When an item ships / closes:** `git mv` it into `archive/`. The folder
+  root is the live backlog; `archive/` is history.
+- **Memory:** one pointer ([[project-framework-backlog]]) auto-loads and says
+  "read `dev-notes/backlog/`." Update it only when the *structure* changes,
+  not per item.
 
-## Open findings (files in this folder)
+## Open items (`ls` = this list)
 
-- `fb-1-surface-non-task-observations.md` — no channel for what the
-  agent notices outside the task (code observations + protocol-tensions).
-- `fb-2-verify-vs-original-requirements.md` — verify checks the locked
-  design, not the original ask.
-- `fb-3-cite-glossary-not-section-numbers.md` — instance specs cite
-  framework §-numbers, not glossary terms.
-- `fb-4-clippy-greenfield-tolerance.md` — clippy's `verify` (and likely
-  other bindings) assume existing code; instance-level greenfield
-  hardening, low-priority.
-- `fb-5-verified-integrity-consolidation.md` — consolidate the
-  "[VERIFIED] claims more than was checked" family (Cycle 3 static +
-  V-25 un-run + new sample-bias face) under one umbrella principle; a
-  consolidation cycle.
-
-## Deferred / in-flight efforts (detail in their own docs)
-
-- **Framework-dev as an anneal instance** (**foundational, recommended
-  first**) → `development-process.md` is already a *shadow-anneal* (its
-  practices restate the basis rule / design↔impl / verify / lenses); make
-  framework-dev a real anneal instance so the rigor — and the anti-decay
-  forcing-functions — come built-in. Bolt-on anti-decay is the fallback.
-  Outputs: SKILL.md de-bloat, FB-5 consolidation, coherence-audit (the
-  first dogfooding). → `../framework-dev-as-anneal.md`
-- **Contract-1 de-pollution cluster** (3 cycles — high-value, adjacent to
-  the audit above) → `../contract1-depollution-cluster.md`
-- **Cycle 2.5 — bindings.md slot-collapse** → deferred to the planner
-  derivation → `../clippy-run-findings-dispatch-coupling.md` +
-  `../planner-instance-exploration.md` finding 3
-- **Coherence-audit deep-sweep** (§4.4 / §5.1 / mode mechanics not yet
-  swept) → `../clippy-run-findings-dispatch-coupling.md`
-- **Planner instance build** → `../planner-instance-exploration.md`
+- `surface-non-task-observations.md` — no channel for what the agent notices
+  outside the task (code observations + protocol tensions).
+- `verify-vs-original-requirements.md` — verify checks the locked design, not
+  the original ask.
+- `cite-glossary-not-section-numbers.md` — instance specs cite framework
+  §-numbers, not glossary terms.
+- `clippy-greenfield-tolerance.md` — clippy's `verify` (and likely other
+  bindings) assume existing code; instance-level greenfield hardening,
+  low-priority.
+- `verified-integrity-consolidation.md` — consolidate the "[VERIFIED] claims
+  more than was checked" family (Cycle 3 static + V-25 un-run + sample-bias)
+  under one umbrella principle; a consolidation cycle.
+- `framework-dev-as-anneal.md` — **foundational, recommended first.**
+  `development-process.md` is already a *shadow-anneal*; make framework-dev a
+  real anneal instance so the rigor + anti-decay forcing-functions come
+  built-in (bolt-on anti-decay is the fallback). First dogfooding outputs:
+  SKILL.md de-bloat, the consolidation above, the coherence-audit.
+- `contract1-depollution-cluster.md` — de-code-ify 3 domain leaks in the
+  agnostic core (§5.2b / §4.2 / §4.1.4); a 3-cycle cluster, high-value,
+  adjacent to the coherence-audit.
+- `planner-instance-exploration.md` — the planner instance build + the
+  framework findings (1–5) seeding several items above; also holds the
+  **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner
+  derivation, finding 3).
+- `clippy-run-findings-dispatch-coupling.md` — the azuro dispatch/coupling
+  record: shipped Cycles 1–3 + G (clippy ≤v0.9.93); **still open:** Cycle 2.5
+  (above) + the **coherence-audit deep-sweep** (§4.4 / §5.1 / mode mechanics
+  not yet swept). Archives whole when those close.

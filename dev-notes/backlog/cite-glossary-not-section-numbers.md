@@ -1,6 +1,6 @@
 # FB-3. Instance specs should cite framework glossary terms, not section-numbers
 
-**Status:** open finding — parked. Detail: `../planner-instance-exploration.md` finding 4. (Sibling of the slot-collapse fork; both informed by the planner derivation.)
+**Status:** open finding — parked. Detail: `planner-instance-exploration.md` finding 4. (Sibling of the slot-collapse fork; both informed by the planner derivation.)
 
 **Gap.** Instance specs (clippy) reference framework **section numbers**
 (`core.md §3.2`, `§4.1.4`) and re-explain internal mechanisms — brittle

@@ -1,6 +1,6 @@
 # FB-4. Clippy greenfield tolerance — verify (and maybe other bindings) assume existing code
 
-**Status:** open finding — instance-level (clippy), low-priority / parked. Origin: `../planner-instance-exploration.md` finding 1.
+**Status:** open finding — instance-level (clippy), low-priority / parked. Origin: `planner-instance-exploration.md` finding 1.
 
 **Gap.** Clippy assumes a *brownfield* project (existing code to ground
 against). The assumption is concentrated in `verify.md:50` — "run the

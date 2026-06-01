@@ -1,6 +1,6 @@
 # FB-2. Verify checks the locked design, not the original task requirements
 
-**Status:** open finding — needs a practice-9 design surface. Detail + steelman: `../planner-instance-exploration.md` finding 5. Memory: [[project-verify-requirements-coverage-gap]].
+**Status:** open finding — needs a practice-9 design surface. Detail + steelman: `planner-instance-exploration.md` finding 5. Memory: [[project-verify-requirements-coverage-gap]].
 
 **Gap.** A requirement dropped at investigate-design escapes: verify
 checks work-vs-locked-design + standardized lenses + executable
