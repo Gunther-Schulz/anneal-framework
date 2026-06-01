@@ -49,10 +49,12 @@ Closed items move to `archive/`.
   `3a2245b` + `8bf4d47`); **resume at Cycle c (Leak 3, §4.1.4) in
   `contract1-depollution-cluster.md`**, before finalizing the instance.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the
-  agnostic core (§5.2b / §4.2 / §4.1.4). **Cycles a (§4.2) + b (§5.2b) DONE**
-  (commits `3a2245b` + `8bf4d47`; + a folded 4th instance-naming leak); **next:
-  Cycle c (Leak 3, §4.1.4)** — now also absorbing adjacent code-vocab Cycle b
-  surfaced. Critical-path-first step of the framework-dev effort.
+  agnostic core. **Cycles a (§4.2) + b (§5.2b) DONE** (commits `3a2245b` +
+  `8bf4d47`; + a folded 4th instance-naming leak). **Cycle c reframed by a
+  bildhauer pass** into a safe de-code sweep (do now) + a parked completeness
+  call (closed-vs-open, settle vs a non-code instance); an inventory surfaced 2
+  tail leaks (T1 `file:line` citation form, T2 `code`-as-work-product). Next:
+  the safe sweep.
 - `clippy-isolation-render-release.md` — deferred clippy re-render + release:
   isolation section (Cycle a, in-place/integrity-check vocab) + §5.2 body-shape
   (Cycle b, verbatim-stale `tracker.md`) → new framework vocab, then release.

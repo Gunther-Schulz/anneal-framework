@@ -8,12 +8,14 @@ inherits the reasoning, not a thin summary. Found via a cross-session
 analysis + confirmed by the first whole-corpus coherence-audit
 (handoff `aba2b1b2b9b2c515b`, Lens 8). Not spec.
 
-Resume: **Cycles a + b DONE** (2026-06-01, commits `3a2245b` + `8bf4d47`) —
-next is **Cycle c** (Leak 3, §4.1.4 falsification), now also absorbing the
-adjacent code-vocab Cycle b's review surfaced (glossary Coupling-shape
-`contract surface` gloss, §4.3 `consumer-observable surface` synonym, §5.1
-`file/symbol`). Read this + `foundation.md` (contract 1) + the §4.1.4 +
-Coupling-shape text, then open a practice-9 design surface for Leak 3.
+Resume: **Cycles a + b DONE** (2026-06-01, commits `3a2245b` + `8bf4d47`).
+**Cycle c reframed by a bildhauer pass (2026-06-02)** — see Sequencing item 3:
+it splits into a **safe de-code-ification sweep** (do now, a/b-style) and a
+**parked completeness call** (closed-vs-open predicate enum — settle against a
+built non-code instance, not now). A code-vocab inventory also surfaced two
+**tail leaks the 3-leak framing missed** — T1 `file:line` citation form
+(pervasive, safe) and T2 `code`/`fixtures` as work-product. Next action: the
+safe sweep (item 3) with the inventory scope below; keep the enum closed.
 
 ## The framing that matters (don't lose this)
 
@@ -286,12 +288,40 @@ Recommended order **a → b → c** (clearest → hardest):
    body-shape, verbatim-stale `tracker.md`) folds into
    [[clippy-isolation-render-release]]. Review surfaced the term recurs
    code-flavored beyond §5.2b → Cycle c.
-3. **Cycle c — Leak 3 (§4.1.4 falsification).** Hardest (closed-enum +
-   intricate machinery); interacts with Cycle 3. Absorbs F3. **Now also absorbs**
-   the code-vocab Cycle b's review surfaced (all §4.1.4 cousins): glossary
-   Coupling-shape `contract surface (signature, type, decorator…)` → align with
-   the canonical Contract-surface entry; §4.3 `consumer-observable surface` →
-   reconcile (same referent); §5.1 `file/symbol`. Do last, with the most care.
+3. **Cycle c — Leak 3 (§4.1.4 falsification). REFRAMED by a bildhauer pass
+   (2026-06-02)** into two parts:
+   - **(c-safe) de-code-ification sweep — do now, a/b-style, low-risk.** Abstract
+     the coupling-shape *glosses* (signature/type/decorator → contract surface;
+     call-sites/imports → dependents; runtime behavior) and the predicate
+     *grep-semantics* (`result line`/`glob`/`directory`/`regex:` → "the
+     candidate's evidence"); state **F3** (the [CONDITIONAL]/[AUTO-ACCEPTED]→verify
+     handoff — falsification covers [VERIFIED] only); reconcile §4.3
+     `consumer-observable surface` with `contract surface`; §5.1 `file/symbol`.
+     **Keep the predicate/coupling enums CLOSED** (current behavior preserved).
+   - **(c-parked) the completeness call — DEFER to a built non-code instance.**
+     Whether the 3 predicate types are domain-*complete* can't be settled without
+     a non-code instance exercising falsification (planner / anneal-dev). Do NOT
+     lock completeness; do NOT build a speculative open enum. When c-safe ships
+     with the enum closed, register a `validation-watch` entry to watch the first
+     non-code falsification. **Retracted overclaim:** "3 types are logically
+     complete" — unverifiable; honest frame is "current-best, amend if a real
+     domain proves a 4th needed; that amendment is the accepted trade vs a
+     premature open enum." If 3 is wrong, we recreate the contract-1 failure one
+     level up — known and accepted.
+   - **Watch during c-safe: paraphrase-drift dependents** — a paraphrased
+     restatement invisible to verbatim grep (e.g. a rendered plugin clause) may
+     have NO existing evidence-binding — the one place "no new binding" could
+     break. Verify when abstracting `target-dependents`.
+
+**Tail leaks (code-vocab inventory, 2026-06-02 — the 3-leak framing undercounted):**
+- **T1 — `file:line` citation form (~10+ sites: §3.2 / §4.1 / §5.1 / modules).**
+  Core hardcodes `file:line` for "a located citation" (a document cites
+  `section:¶`). SAFE: "a located read of the source" is already a bound term;
+  mechanical sweep → "a located citation." Not speculative.
+- **T2 — `code`/`fixtures` as work-product (core:475, 817).** §4.2/§5.1 say
+  "editing code" / "code or fixtures" for "the work product." Two sites, mechanical.
+- Benign (verified, leave): `runtime` (general), `result line` in the §4.1.2
+  record sense, generic `file` persistence locations, "presented as code" (markdown).
 
 Each is a full framework cycle: practice-9 design surface (the
 domain-general vocabulary IS the design work) → skill-craft gate →
@@ -308,9 +338,13 @@ that the abstraction worked.
   guardrail: each abstract form must still let clippy *render* the exact
   current behavior. If clippy can't render it back, the abstraction lost
   content.
-- **Closed-enum (leak 3):** the genuinely-hard one; may surface that the
-  enum needs to open, which is a bigger change. Flag at its design
-  surface.
+- **Closed-enum (leak 3):** the genuinely-hard one. **Bildhauer resolution
+  (2026-06-02):** keep closed-but-abstract as the default — opening the enum is
+  the *premature* move (extensibility for domains that don't exist). Don't claim
+  completeness; accept that if a real non-code domain needs a 4th predicate type,
+  that's a framework amendment (the contract-1 failure recreated one level up) —
+  the correct trade. Settle empirically against the first non-code instance, not
+  by assertion now.
 - **Validation gap:** without a second (non-code) instance, "is it
   *really* domain-general now?" stays partly unproven — the planner
   build (parked, pre-build) is the test. Note this in each cycle's
