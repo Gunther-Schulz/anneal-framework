@@ -225,4 +225,67 @@ both fixed by a coherent paragraph rewrite.
 
 **Follow-on:** wrap-tolerant practice-4 grep → `development-process.md`
 (separate cycle — a line-grep missed the wrapped remnant; only a
-newline-flattened scan caught it).
+newline-flattened scan caught it). ✓ DONE (c8c694a).
+
+## Coherence-audit (2026-06-01) + contract-1 domain-pollution finding
+
+First whole-corpus coherence-audit (practice 12; no prior handoff —
+`a9ed026` only codified the trigger; 8 spec cycles since). Subagent
+`aba2b1b2b9b2c515b`; load-bearing lenses fired (Lens 1+8+9 REVISION
+count = 3, not suppressed). Deep on the session's churned clusters +
+load-bearing lenses corpus-wide; `§4.4`/`§5.1`/mode-mechanics
+read-not-deep-swept (future full pass).
+
+**Dispositions:** F4 (`modules.md` §1.2 dispatch-self-check) + F5 (§6
+summary) = **keep** — F4 re-derived an over-call (the line cites §4.2 +
+lists mode-invariant behavior; no impl-in-working-context implication);
+F5 defers to §4.2. F1 (git in §4.2) + F2 (glossary terms
+Main-tree-integrity / spawn-fallback) + F3 (§4.1.4 [CONDITIONAL]→verify
+handoff) → **folded into the domain-pollution cluster below** (all live
+in §4.2/§4.1.4 which that cluster rewrites; F2 would add git-flavored
+entries to the currently-clean glossary right before a cleanup).
+
+### Contract-1 domain-pollution — framework leaks coding shapes (NEXT, operator-prioritized)
+
+Cross-session finding, confirmed by the audit's Lens 8. The framework
+**architecture** is domain-independent (two invariants, three phases,
+two-track tracker, status machine, basis rule, inspection-via-lens,
+design↔impl split; work-product / lens-set / executable-verification
+are instance slots). But **three mechanism renderings** hard-code the
+coding instance's shapes into the agnostic core — foundation contract-1
+failure (would not render into legal / research / marketing):
+
+1. **§5.2(b) design-decision shape** — code vocab as the *primary*
+   definition ("contract surface: signature, types, error patterns";
+   brevity examples "function bodies, validator internals, migration
+   SQL"). Abstract: contract surface = what's observable from outside
+   the unit, not the realization output (code: signature vs body;
+   document: a section's claim-set + bases + acceptance-criteria vs
+   prose; campaign: message+audience+claim-set+evidence vs copy).
+2. **§4.2 isolation** — git worktree / branch / cherry-pick /
+   rev-parse / venv (= audit F1, Lens 8). Abstract: per-unit isolated
+   copy of the work product + integration after an integrity check;
+   instance binds the tooling (clippy: git worktree+cherry-pick), as
+   the path already is. F2's glossary terms land here.
+3. **§4.1.4 + modules §3.4 falsification** — coupling shapes
+   (target-shape/uses/behavior) assume a code symbol with
+   signature/callers/runtime-behavior; predicates
+   (any-match/any-outside-scope/expected-match) are grep-line
+   semantics; CLOSED ENUM (can't reinterpret per-domain without
+   amending). Abstract: domain-general claim-coupling categories +
+   predicate forms; instance binds the concrete search/exercise. F3's
+   handoff note lands here.
+
+**Empirical tell (other session):** running anneal on a writing task
+required dropping §4.2 isolation, reinterpreting §4.1.4 falsification,
+re-reading §5.2(b) — exactly these three. Triage: spec gap (clippy
+faithfully inherits the code shapes; the framework baked them in);
+practice-1 fix-at-source, push concretions into the instance slot.
+
+**Shape:** a cluster of 3 cycles (one per leak — each a mechanism
+abstraction + instance delegation + clippy re-render, sharing one
+pattern; the domain-general vocabulary is the design work). §4.2 (leak
+2) fresh from Cycle G; §4.1.4 (leak 3) interacts with Cycle 3. Each
+needs its own practice-9 design surface.
+
+Coherence-audit-handoff: aba2b1b2b9b2c515b
