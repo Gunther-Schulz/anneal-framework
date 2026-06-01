@@ -100,7 +100,7 @@ just fall back to main-tree.
   sibling is concurrently in flight → can't cover the parallel case.
   Partial, not a replacement.
 
-## Finding 3 — design-phase grounding is static-blind to behavioral coupling (OPEN, highest severity)
+## Finding 3 — design-phase grounding is static-blind to behavioral coupling (RELEASED — framework Cycle F3 + clippy v0.9.92)
 
 **Gap.** `target-behavior` is a real coupling shape (`glossary.md`:
 "the target's behavior under input classes") — but every discharge
@@ -173,14 +173,25 @@ invocation before edits (gate).
    ✓ RELEASED framework Cycle F2 + clippy v0.9.91; step-4 F1/F2
    applied (source integration-safety guarantee; accurate gitignore
    mechanism in renders).
-2.5. **Cycle 2.5 — bindings.md slot-collapse** (clippy spec hygiene;
-   planner-exploration finding 3). Lean §Dispatch isolation — and the
-   other collapsed sections — to a value-binding table, mechanism in
-   `core.md` + render; fix `implement.md` stale citation to a
-   non-existent `anneal-framework/spec/bindings.md`. Surfaced at
-   Cycle 2 step-4 F3; operator-approved uniform lean (not piecemeal).
-3. **Cycle 3 — Finding 3** (framework §3.2/§4.1.4/glossary + lens +
-   render; highest severity). Resolve F3a/F3b at its design surface.
+2.5. **Cycle 2.5 — bindings.md slot-collapse** — ⏸️ DEFERRED (operator,
+   2026-06-01) into the planner-exploration **finding-3/finding-4
+   cleanup cycle, post-derivation**. Grounding (Cycle 2 step-4 F3
+   follow-up) found this is not hygiene but an open fork — finding 3:
+   template over-split vs clippy drift — which the dev-note itself
+   defers to the planner derivation (still pre-build); leaning now
+   pre-empts it and risks a revert. Parked with it: the `implement.md`
+   stale citation to a non-existent `anneal-framework/spec/bindings.md`
+   (fix-direction touches finding 4's glossary-interface principle).
+3. **Cycle 3 — Finding 3** (framework §3.2.2 + glossary + render;
+   highest severity). ✓ RELEASED framework Cycle F3 + clippy v0.9.92.
+   Adopted neither F3a nor F3b literally — the refined
+   **guard-caught-by-verify**: the instance trigger (target has
+   subtypes/implementors) forces the behavioral-parity claim to
+   [CONDITIONAL] (design flags, no execution); basis = a guard
+   exercising each subtype's construction site, run by verify's
+   existing executable verification; fallback = [AUTO-ACCEPTED]
+   residual. Tighter than scoped (no §4.1.4/predicate change). Step-4
+   F1 cross-reference applied (glossary target-behavior → §3.2.2).
 
 Independence: F3b (no design execution) keeps Cycles 2 and 3
 independent. If F3a is chosen, Cycle 3 depends on Cycle 2's worktree

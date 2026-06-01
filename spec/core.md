@@ -218,6 +218,15 @@ the decision is missing its true-unit basis and cannot reach
 [VERIFIED]. This is the forcing function for Coupled-change
 adherence.
 
+A preserved-behavior claim a read cannot exhibit — because the
+behavior resolves at runtime through a dependent the reference-
+search does not surface (the instance supplies the mechanical
+trigger for this case) — is not statically dischargeable: it is
+recorded [CONDITIONAL], its basis the affected behavior exercised
+by the domain's executable verification (verify, §4.3), not a
+read. A static enumeration substituted for it is the silent
+substitution the basis rule forbids (§3.2).
+
 #### 3.2.3 Secondary sources
 
 A secondary source — a sub-agent report, a prior session's notes, an

@@ -46,9 +46,12 @@ additive-only (supplements cannot disable or override core lenses).
 
 ## Basis and evidence
 
-**Basis** — the evidence a claim or design decision rests on: a
-search result, a located read of the source — the artifact itself.
-The basis rule is specified in `core.md` §3.2.
+**Basis** — the evidence a claim or design decision rests on — the
+artifact itself: a search result, a located read of the source, or
+— for a behavior a read cannot exhibit, resolved at runtime — that
+behavior exercised by the domain's executable verification
+(`core.md` §3.2.2, §4.3). The basis rule is specified in `core.md`
+§3.2.
 
 **Assumption** — a basis that resolves to recall ("assumed,"
 "inferred") or to deferral ("will verify in cycle N," "TBD")
@@ -88,7 +91,11 @@ D-entry's basis claims to rest on. Closed set of three:
   target-uses candidate re-runs §3.2.2's reference
   enumeration as its search.
 - **target-behavior** — the target's behavior under input
-  classes (branches, error paths, contracts honored).
+  classes (branches, error paths, contracts honored). A
+  target-behavior claim a read cannot exhibit (resolved at
+  runtime) is [CONDITIONAL] per `core.md` §3.2.2 — basis the
+  behavior exercised by executable verification, not falsified
+  textually here.
 
 The convergence-cycle falsification pass (`core.md` §4.1.4)
 must cover every shape the basis depends on with a candidate
