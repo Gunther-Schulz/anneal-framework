@@ -1,6 +1,6 @@
 # skill-craft-pre-edit hook — over-broad path match + bypassable + subagent-reliability
 
-**Status:** Finding 1 **DONE** (2026-06-01); Findings 2 + 3 open. Surfaced
+**Status:** Finding 1 **DONE** (2026-06-01); Findings 2 + 3 open, + Finding 4 (2026-06-02). Surfaced
 2026-06-01 by the anneal-dev pass-1 subagent (which tripped the gate writing
 draft spec files and routed around it). The path-narrowing (Finding 1) is done,
 so the de-pollution cycles' `spec/*.md` edits gate correctly without
@@ -10,7 +10,7 @@ Relates to `framework-dev-as-anneal.md`, `contract1-depollution-cluster.md`.
 The hook is `hooks/skill-craft-pre-edit.py` (development-process.md practice 5:
 gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).
 
-## Three findings (ranked)
+## Findings (ranked)
 
 1. **Over-broad path pattern — DONE (2026-06-01).** The gate matched
    `/spec/.+\.md$`, which caught `dev-notes/derivation-pass1/spec/` — a scratch
@@ -31,3 +31,14 @@ gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).
    gate — either the transcript scan doesn't register a subagent's Skill
    `tool_use`, or a flush-timing race. Confirm the gate behaves correctly when
    the editor is a subagent, before the de-pollution cycles lean on it.
+4. **Spec-origin-trace fires on non-anneal-instance skills (over-match,
+   2026-06-02).** The PreToolUse spec-origin-trace demand (practice 5
+   "spec-origin grounding for plugin edits") matched a `plugin/skills/*/` edit
+   in a **sibling repo** (`bildhauer`), demanding an anneal framework/instance
+   spec-origin that cannot apply — bildhauer is a standalone skill, not an
+   anneal-rendered plugin. The skill-craft *invocation* gate firing there is
+   arguably correct (any skill edit should route through skill-craft); the
+   **spec-origin-trace** half is the over-match (same path-scoping class as
+   Finding 1). Scope the spec-origin-trace to anneal-instance plugin paths
+   (clippy / daneel / … renders), not every `plugin/skills/*/` on disk.
+   Surfaced editing bildhauer C6.
