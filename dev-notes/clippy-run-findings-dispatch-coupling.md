@@ -211,6 +211,16 @@ integrity check** (clean-at-dispatch precondition + HEAD-exact/
 clean-tree detect + restore-to-snapshot recover); **spawn failure →
 working-context fallback** ("without isolation", mirrors verify).
 
+**Rationale (3rd, added 2026-06-01).** Beyond cost/model and
+context-hygiene: "every unit → subagent" is a **discipline forcing
+function** — the orchestrator never holds impl in its own context, so
+it structurally can't drop into "let me fix this quickly" mode (the
+working-context ad-hoc fix that, in the azuro F18 episode, shipped an
+over-constrained-sort bug AND fabricated tracker tags). The
+spawn-fallback is *involuntary* (mechanical spawn failure, surfaced) —
+not an agent-choosable shortcut — so it doesn't reopen that door. The
+separate tag-fabrication risk → `validation-watch` V-25.
+
 **Revises shipped cycles** (coherently, removing their root causes):
 Cycle 1 — selector now applies to **all** units (single-unit→parent
 special case dissolves); Cycle 2 — provisioning scoped to **parallel
