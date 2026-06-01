@@ -90,6 +90,13 @@ fork, not an instance.
   (`spec/modules.md` §3.3); the instance supplies the concrete
   mechanism — where these artifacts live, how an in-progress run is
   found and resumed. Clippy's `bindings.md` is the worked example.
+- the **isolation mechanism** — the framework fixes the isolation
+  guarantees (`spec/core.md` §4.2) and requires them to hold; the
+  instance supplies the concrete mechanism — how a separate copy is
+  made and made escape-resistant, the unit identifier, the state
+  marker the integrity check reads, the restore mechanism, and which
+  non-tracked run-inputs are provisioned into the copy. Clippy's
+  `bindings.md` §Dispatch isolation is the worked example.
 
 "Only this" bounds the *method* — an instance binds the framework to
 a domain, it does not extend or revise the method. It does not bound
@@ -118,7 +125,7 @@ boundary, the declaration shape, and the enable mechanism.
 
 Together these are the instance spec's **slots** — its
 render-consumed kinds of content, each with a framework-defined
-meaning: the three required above (the lens-set slot optionally
+meaning: the four required above (the lens-set slot optionally
 extends with a supplement mechanism, §4 "Optional:
 project-supplemental lenses"), and the two optional sections
 (presentation and lifecycle extensions, §5). The set is **closed**.

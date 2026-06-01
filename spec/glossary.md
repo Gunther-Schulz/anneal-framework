@@ -115,7 +115,9 @@ phases conducted from request to a verified outcome.
 
 **Work product** — what a run produces; what implement carries the
 locked design out into (also: "the work"). An instance binds it to
-its domain — code, for Clippy.
+its domain. A work product may span multiple
+independently-isolable **containers**; §4.2 isolation and the
+integrity check operate per container.
 
 **Phase** — a top-level stage of the protocol. The framework has
 three, run in sequence:
@@ -197,12 +199,30 @@ honors the return rather than proceeding.
 
 **Self-check (at dispatch boundary)** — a check the dispatched
 impl-phase subagent (or the working context, on the spawn-fallback
-path) applies to its own diff before returning state, using the
+path) applies to its own change-set before returning state, using the
 instance's standardized lenses most relevant to write-time issues
 (`core.md` §4.2). Compounds with the design-time forcing function
 (§3.2); catches references and behaviors introduced post-design.
 A self-check finding triggers loopback (or [VERIFIED — deferred]
 per operator's first-judge recommendation).
+
+**Integrity check** — the orchestrator's verification that the
+operator's work product changed in exactly the authorized way and
+no more, run per touched container against an instance-bound state
+marker (`core.md` §4.2). Two forms by dispatch path: for an
+**isolated** (parallel-eligible) unit, each touched container was
+untouched (the unit worked on its separate copy); for an
+**in-place** (sequential/single) unit, the container advanced by
+exactly the unit's intended change from a clean precondition.
+Mismatch → in-place: restore, halt, surface; isolated: halt and
+surface (cause uncertain, no auto-restore).
+
+**Spawn-fallback** — the degraded implement path when the
+orchestrator cannot spawn a subagent for a unit: it implements the
+unit in the working context and surfaces "without isolation"
+(`core.md` §4.2). The isolation guarantee (separate copy,
+escape-resistance, integrity check) is **waived** on this path —
+hence surfaced, not silent. Mirrors verify's degraded path (§4.3).
 
 **Pass** — one of the two activities within a cycle. Every cycle has
 exactly two, in order:
@@ -250,9 +270,9 @@ The primary state of the investigate-design phase.
 (`core.md` §5): the **F-track** is the finding track (observations
 from inspection); the **D-track** is the design-decision track
 (committed positions on what to build). The instance specifies
-whether the D-track holds only design decisions (Clippy) or also
-other forms of committed positions (e.g., hypothesis verdicts in
-Daneel). Used where deltas between cycles are compared per-track —
+whether the D-track holds only design decisions or also other
+forms of committed positions (e.g., hypothesis verdicts). Used
+where deltas between cycles are compared per-track —
 e.g., the convergence cycle test (`core.md` §4.1.4) gates [READY]
 on zero D-track delta.
 

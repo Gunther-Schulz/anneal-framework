@@ -147,7 +147,7 @@ content: the recurring blind-spots of the domain, each filling the
 requires the set be closed — a lens is in it or not. Completeness
 for the domain is the aim, not a checkable property: it is approached
 as real use surfaces missing lenses (see `../instantiation-guide.md`).
-Clippy's coding lens set is an example instance.
+A coding lens set is an example.
 
 ## 3. Artifact formats
 
@@ -275,8 +275,8 @@ artifact (§3.2), it is a per-phase artifact persisted alongside the
 tracker, not filed into it.
 
 The plan is immutable across the impl phase: completion lives on
-the tracker via each dispatch unit's commit reference (`core.md`
-§4.2), not in the plan itself. Only a loopback to investigate-design
+the tracker via each dispatch unit's persistence reference
+(`core.md` §4.2), not in the plan itself. Only a loopback to investigate-design
 (`core.md` §4.2, §6) invalidates the plan, in which case a new plan
 is produced after the next [READY], reflecting any changes to the
 locked design.
@@ -297,7 +297,7 @@ and contract scopes; at convergence-falsification dispatch,
 the [VERIFIED] D-entry set at the convergence cycle's start
 (by tracker identifier); (d) **return-state expectations** —
 at implement dispatch, the fixed-shape ledger lines for new
-findings (§3.1), the unit's commit reference, and any
+findings (§3.1), the unit's persistence reference, and any
 loopback signal; at convergence-falsification dispatch, the
 §3.4 per-decision artifact — one line per [VERIFIED] entry,
 coverage-checked by the orchestrator on return (`core.md`

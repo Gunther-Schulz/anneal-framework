@@ -482,7 +482,7 @@ finding. The pre-classification judgment ("is this finding
 major-new-scope or local?") is eliminated — every actioned
 finding loops back. The loopback cost (one investigate-design
 cycle) is the designed trade for eliminating the
-inline-misjudgment cost (partial-state commit, scope creep,
+inline-misjudgment cost (partial-state save, scope creep,
 tracker drift; see `dev-notes/validation-watch.md` V-24). No
 work is lost when loopback fires.
 
@@ -502,13 +502,14 @@ alongside the tracker (`modules.md` §3.3).
 **Dispatch.** Every unit is dispatched to a subagent — the
 orchestrator does not implement in its own context. A
 parallel-eligible unit (its disjointness search-established above)
-is isolated in a worktree per the Isolation mechanism below; a
+works on a separate copy per the Isolation mechanism below; a
 strictly-sequential unit — including the single unit of a one-unit
-plan — runs in a subagent against the operator's main tree under
-the Main-tree integrity check below. If a subagent cannot be
+plan — runs in a subagent against the operator's work product in
+place under the Integrity check below. If a subagent cannot be
 spawned, the orchestrator implements that unit in the working
-context and surfaces "without isolation" — the degraded fallback,
-mirroring verify (§4.3). The subagent is briefed
+context and surfaces "without isolation" — the **spawn-fallback**, a
+degraded path that waives the isolation guarantee, mirroring
+verify (§4.3). The subagent is briefed
 artifact-driven, mirroring verify (§4.3): it loads the
 orchestrator's skill files and receives the tracker plus the
 locked contracts the unit honors. The default is the full
@@ -531,71 +532,75 @@ reached; the disjointness check uses the same scope basis the
 impl plan declared at [READY].
 
 **Isolation mechanism (parallel-eligible units).** A
-parallel-eligible unit's subagent is isolated in a per-unit
-**git worktree** at an **instance-specified path** (the instance
-declares the path convention; canonical: a top-level path outside
-the operator's main repository tree — e.g., under `/tmp/` — so
-defensive cwd-resilience by the subagent cannot land in the
-operator's main). The orchestrator creates the worktree on a
-**unique branch** (instance-specified naming, e.g., per-run +
-per-unit identifiers) so the subagent's commits land on a branch
-the operator can audit and integrate. **Strip remotes:** the
-orchestrator removes the worktree's git remotes after creation,
-denying the subagent discovery of the operator's main path via
-`git remote -v` metadata. **Brief discipline:** all paths in the
-subagent's brief are cwd-relative (`./src/...`, `./tests/...`),
-never absolute paths into the operator's main tree — denies the
-subagent knowledge of the operator's main path, not just access.
-**Pre/post HEAD verification:** the orchestrator snapshots
-`git rev-parse HEAD` on the operator's main before dispatch and
-verifies it unchanged after dispatch; a moved HEAD means the
-subagent contaminated the operator's main, which halts the run
-and surfaces. **Integration:** after the subagent's commit is
-verified clean (self-check passed, HEAD unchanged), the
-orchestrator integrates the worktree's commit onto the operator's
-main via **cherry-pick** (not merge) — clean data flow, no
-worktree-branch leakage into operator's history. **Provisioning vs bootstrap:** `git worktree add <head-commit>`
-carries tracked-HEAD content only, so run state the instance
-persists outside it (e.g., gitignored run artifacts) is absent
-from the isolated tree. Beyond the tracker the brief carries, the
-orchestrator **provisions** the instance-declared non-tracked
-run-inputs a dispatched unit reads into the isolated tree before
-dispatch (the instance names the set and its location); provisioned
-inputs must not enter the unit's commit — the instance ensures
-they are excluded from integration. Project
-bootstrap — what the project needs merely to be runnable (deps,
-venv, etc.) — stays out of scope, the project's concern, not the
-framework's; instances may delegate to operator conventions
-(`make bootstrap` or equivalent).
+parallel-eligible unit's subagent works on a **separate copy** of
+the work product the unit touches, so concurrent units cannot clash
+and the unit's changes reach the operator's work product only
+through Integration below — never directly. The separate copy is
+**escape-resistant**: the subagent is denied both access to and
+knowledge of the operator's work product's location, so a defensive
+traversal cannot reach it. The unit's changes are
+recorded under a **unit identifier** the operator can audit and
+integrate. The framework requires these guarantees; the instance
+binds the concrete mechanism — the **isolation slot**
+(`instantiation-guide.md` §2) — which carries copy creation, the
+identifier, escape-resistance, the **state marker** the Integrity
+check reads, the restore mechanism, and which non-tracked run-inputs
+are provisioned. **Provisioning:** run-inputs a dispatched unit
+reads that are not part of the tracked work product (named in the
+isolation slot) are provisioned into the separate copy before
+dispatch and excluded from integration; project bootstrap — what the
+project needs merely to be runnable — stays out of scope, the
+project's concern, not the framework's. **Integration:** after the
+unit's changes are verified clean (self-check passed and the
+Integrity check confirms no contamination), the orchestrator
+integrates **only the unit's changes** into the operator's work
+product — no copy-side metadata crosses over.
 
-**Main-tree integrity check (sequential/single units).** A
-sequential or single unit's subagent runs against the operator's
-main tree — no worktree, so it reads the run's state and runnable
-environment natively (no provisioning needed). The orchestrator
-verifies the main tree is clean before dispatch (refuse and
-surface if not), snapshots HEAD, and after the subagent returns
-confirms HEAD advanced by exactly the unit's expected commit with
-a clean tree. On any mismatch it restores the snapshot (discarding
-the subagent's writes) and halts and surfaces — contamination is
-contained, not merely detected.
+**Integrity check.** The orchestrator verifies that the operator's
+work product changed in exactly the authorized way and no more. A
+work product may span **multiple containers** (a repository, a
+document set, a dataset) that are independently isolable; each
+container the unit touches is checked independently against the
+**state marker** the instance binds (the isolation slot). The check
+takes two forms by dispatch path:
+
+- **Isolated (parallel-eligible) units** — each touched container
+  was **untouched** during the unit's work (the unit worked on its
+  separate copy). The orchestrator snapshots the marker before
+  dispatch and confirms it unchanged after; a changed marker means
+  the unit escaped isolation and contaminated the operator's work
+  product — halt and surface (cause uncertain, so the state is not
+  auto-restored).
+- **In-place (sequential/single) units** — the subagent runs
+  against the operator's work product directly, reading run state
+  and the runnable environment natively (no provisioning). The
+  orchestrator confirms each touched container is **clean before
+  dispatch** (refuse and surface if not), snapshots the marker, and
+  after the subagent returns confirms the container advanced by
+  **exactly the unit's intended change** and no other modification.
+  On mismatch it **restores** the pre-dispatch state (discarding the
+  subagent's writes) and halts and surfaces — contamination is
+  contained, not merely detected.
 
 **Self-check at dispatch boundary.** Before returning state, the
 dispatched subagent (or the working context, on the spawn-fallback
 path) applies the standardized lenses most relevant to write-time
 issues — the instance specifies which ones (`modules.md` §2.2) —
-to its diff against the unit's in-scope locked design decisions.
-**Diff-vs-listed-scope check:** the subagent additionally verifies
-its diff stays within the unit's listed scope (`modules.md` §3.3;
-diff-referenced identifiers ∖ listed scope = ∅). A diff line
-referencing identifiers outside the unit's listed scope is an
-actioned finding (per the always-loopback rule above). Findings
+to its change-set against the unit's in-scope locked design
+decisions. **Change-set-vs-listed-scope check:** the subagent
+additionally verifies its change-set stays within the unit's listed
+scope (`modules.md` §3.3; change-set-referenced identifiers ∖ listed
+scope = ∅). A change-set entry referencing identifiers outside the
+unit's listed scope is an actioned finding (per the always-loopback
+rule above). Findings
 are entered as fixed-shape ledger lines (`modules.md` §3.1) and
 returned with state; the orchestrator appends per Tracker writes
 below. The self-check compounds with the design-time forcing
 function for delete/replace/amend decisions (§3.2): the basis
 enumerates references as of [READY]; the self-check catches
-references and behaviors introduced post-design (new docstrings,
-new branches, new failure modes the unit's diff introduces). The
+references and behaviors introduced post-design (new content,
+new control paths, new failure modes the unit's change-set
+introduces). The
 check is unconditional — applied at every dispatch boundary (and
 by the working context on the spawn-fallback path). A self-check
 finding triggers the loopback below (or [VERIFIED — deferred] per
@@ -603,7 +608,7 @@ the operator's first-judge recommendation, §5.1 (b)).
 
 **Tracker writes.** The orchestrator (§6) owns the tracker append.
 A dispatched subagent does not write directly; on completion or
-halt it returns state — findings, the unit's commit reference, a
+halt it returns state — findings, the unit's persistence reference, a
 loopback signal where applicable — and the orchestrator appends in
 deterministic order. Subagent return-state findings carry **batch-
 local identifiers** (`F-batch-1`, `F-batch-2`, … sequential within
@@ -619,7 +624,7 @@ concurrency machinery.
 any actioned finding halts and returns a loopback-required result
 with four fields:
 
-- **trigger** — the artifact, code site, or signal the subagent
+- **trigger** — the artifact, site, or signal the subagent
   encountered
 - **scope** — what's outside the locked design (specific element,
   contract, or behavior)
@@ -630,7 +635,7 @@ with four fields:
 
 On receiving it, the orchestrator halts other in-flight parallel
 subagents and audits the work-state at halt. **Parallel-completed
-units** (committed before the halt arrived) are audited by
+units** (saved before the halt arrived) are audited by
 **enumerated set intersection** against the new finding:
 
 - **decision intersection** — does the unit's implemented decision
@@ -642,24 +647,25 @@ units** (committed before the halt arrived) are audited by
   field (named elements, contracts, or behaviors — a behavior
   resolves to its implementing element)?
 
-Empty intersection on both → preserve commit and tracker entry.
-Non-empty intersection on either → revert (commit dropped, tracker
-entry moved to [INVALIDATED]). **Halted subagents' uncommitted
-work** in the working tree is preserved for redo inheritance —
+Empty intersection on both → preserve the save and tracker entry.
+Non-empty intersection on either → revert (the save discarded,
+tracker entry moved to [INVALIDATED]). **Halted subagents' unsaved
+work** in their working copy is preserved for redo inheritance —
 the new investigate-design cycle reads it alongside the tracker,
 and the redesign may incorporate, audit, or discard. Tracker state
 is preserved across all cases. The run returns to investigate-
 design with the four-field result feeding the new cycle. The
 pattern mirrors verify's [ISSUES FOUND] return (§4.3, §6).
 
-**Checkpoint.** A dispatch unit's work product is committed on
-completion (instance-specific persistence artifact) and the
-orchestrator appends the commit reference to the tracker. The
-commit plus tracker line is the unit's persistence artifact: a run
-interrupted mid-implement resumes from the tracker — the
-last-completed unit, the next per the impl plan (§6, Run
-lifecycle). Without per-unit commits, resume must re-derive from
-work-product state — a silent-substitution shape this rule closes.
+**Checkpoint.** On completion a dispatch unit's work product is
+durably **saved** as an instance-specific persistence artifact, and
+the orchestrator appends its **persistence reference** to the
+tracker. The save plus tracker line is the unit's persistence
+artifact: a run interrupted mid-implement resumes from the tracker
+— the last-completed unit, the next per the impl plan (§6, Run
+lifecycle). Without a per-unit save-point, resume must re-derive
+from work-product state — a silent-substitution shape this rule
+closes.
 
 implement reports completion when every unit in the impl plan is
 completed. The implement→verify transition is not gated: verify
@@ -938,8 +944,8 @@ it, and on each re-run after [ISSUES FOUND] (§4.3).
 
 **Dispatch in implement.** The orchestrator carries out the impl-phase
 dispatch protocol specified in §4.2: dispatching every unit to a
-subagent (worktree-isolated when parallel-eligible, main tree
-otherwise), owning the tracker append,
+subagent (isolated on a separate copy when parallel-eligible, in
+place otherwise), owning the tracker append,
 honoring the loopback shape across the subagent boundary. The
 mechanics live in §4.2.
 
@@ -954,8 +960,10 @@ runs through the full procedure before verify re-runs (§4.3).
 
 **Run lifecycle.** A run starts at investigate-design and ends when
 verify reports [PASSED]. A run's state — the tracker (§5) and the
-phase it is in — persists across interruptions; a run interrupted
-mid-flight resumes from that state rather than restarting.
+phase it is in — persists across interruptions in an instance-bound
+location, not assumed to share a container with the work product; a
+run interrupted mid-flight resumes from that state rather than
+restarting.
 
 **Halt and surface.** When the orchestrator cannot advance — a phase
 cannot complete — it halts the run and surfaces the reason; it does
