@@ -5,9 +5,9 @@
 adapted with anneal's own anchors (foundation contracts / practice 9 /
 validation-watch) substituting the skill's PBS-internal apparatus.
 **Pass-1 forward-derivation DONE** 2026-06-01 (isolated subagent; draft in
-`dev-notes/derivation-pass1/`). **Next:** de-pollute the core
-(`contract1-depollution-cluster`, Cycle a) — the re-sequence pass-1 forced (see
-Sequencing below); the instance is finalized AFTER, on the cleaned core.
+`dev-notes/derivation-pass1/`). **Next:** continue de-polluting the core — **Cycle a DONE**
+(`contract1-depollution-cluster`, commit `3a2245b`, 2026-06-01); **resume at
+Cycle b (Leak 1, §5.2b)**. The instance is finalized AFTER, on the cleaned core.
 Not spec — this is the durable design handoff.
 
 ## High-level description
@@ -91,8 +91,8 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
    and corroborated the `contract1-depollution-cluster` leaks (see that file's
    Pass-1 corroboration).
 3. **De-pollute the core FIRST** (`contract1-depollution-cluster`, Cycles
-   a→b→c) — **before** finalizing the instance. Two locked principles force this
-   order: (i) *clean foundation* — the instance renders FROM the core; pass-1's
+   a→b→c; **Cycle a DONE 2026-06-01, commit `3a2245b`**) — **before** finalizing
+   the instance. Two locked principles force this order: (i) *clean foundation* — the instance renders FROM the core; pass-1's
    draft already carries scar-tissue workarounds for the core's leaks
    (single-tree, code-shaped coupling enum), so finalizing on the un-de-polluted
    core bakes them in + forces re-derivation; (ii) the *bootstrap rule* —

@@ -45,15 +45,20 @@ Closed items move to `archive/`.
   under one umbrella principle; a consolidation cycle.
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance. Pass-1
-  forward-derivation **DONE** (arbitrariness test passed — see the file).
-  **Resume at Sequencing step 3 = Cycle a in `contract1-depollution-cluster.md`**
-  (de-pollute the core *first*, before finalizing the instance). Read the
-  file's High-level description + Sequencing to orient.
+  forward-derivation **DONE**. **De-pollution Cycle a DONE** (commit `3a2245b`);
+  **resume at Cycle b (Leak 1, §5.2b) in `contract1-depollution-cluster.md`**,
+  before finalizing the instance.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the
-  agnostic core (§5.2b / §4.2 / §4.1.4; pass-1 expanded §4.2 to multi-tree +
-  added §4.3/§3.2 notes). **Now the critical-path-first step** of the
-  framework-dev effort (de-pollute before finalizing the instance);
-  corroborated by the anneal-dev pass-1.
+  agnostic core (§5.2b / §4.2 / §4.1.4). **Cycle a (§4.2 isolation) DONE**
+  (commit `3a2245b`; + a folded 4th instance-naming leak); **next: Cycle b
+  (Leak 1, §5.2b)**. Critical-path-first step of the framework-dev effort.
+- `clippy-isolation-render-release.md` — deferred from Cycle a: re-render
+  clippy's plugin isolation section to the new in-place / integrity-check
+  vocabulary + release clippy. Clippy spec/plugin edits uncommitted pending.
+- `instance-template-slot-scaffolding.md` — Cycle-a finding: the
+  instance-template doesn't scaffold placeholder sections for the mechanism
+  slots (persistence, isolation), despite the guide's "placeholder per slot"
+  claim. Slot-as-file vs slot-as-section to settle.
 - `planner-instance-exploration.md` — the planner instance build + the
   framework findings (1–5) seeding several items above; also holds the
   **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner

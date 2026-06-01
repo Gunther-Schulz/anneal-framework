@@ -8,8 +8,9 @@ inherits the reasoning, not a thin summary. Found via a cross-session
 analysis + confirmed by the first whole-corpus coherence-audit
 (handoff `aba2b1b2b9b2c515b`, Lens 8). Not spec.
 
-Resume: read this + `foundation.md` (contract 1) + the three cited spec
-sections, then open a practice-9 design surface per leak.
+Resume: **Cycle a DONE** (2026-06-01, commit `3a2245b`) — next is **Cycle b
+(Leak 1, §5.2b)**. Read this + `foundation.md` (contract 1) + the cited §5.2b
+text, then open a practice-9 design surface for Leak 1.
 
 ## The framing that matters (don't lose this)
 
@@ -264,9 +265,16 @@ form renders cleanly into a non-code domain.
 
 Recommended order **a → b → c** (clearest → hardest):
 
-1. **Cycle a — Leak 2 (§4.2 isolation).** Freshest (Cycle G), clearest
-   abstraction (isolated-copy + integrity-check + delegate tooling),
-   clippy binding already carries the concretion. Absorbs F1 + F2.
+1. **Cycle a — Leak 2 (§4.2 isolation). DONE 2026-06-01 (commit `3a2245b`).**
+   De-code-ified §4.2 to guarantees + delegated git to a declared instance
+   **isolation slot**; consolidated the **Integrity check** (two forms, in-place
+   restores / isolated halts-without-restore); made the work product
+   **multi-container** (pulled the single-tree assumption from §4.2/§6);
+   absorbed F1 + F2 (glossary entries Integrity check + Spawn-fallback).
+   **Folded in a 4th leak:** dropped instance-name illustrations (Clippy/Daneel)
+   from the spec proper. Clippy spec conformed; plugin re-render + release
+   deferred → [[clippy-isolation-render-release]]. Surfaced →
+   [[instance-template-slot-scaffolding]].
 2. **Cycle b — Leak 1 (§5.2b design-shape).** Foundational; the
    "contract surface vs realization output" abstraction is the spine.
    Independent of the others.
