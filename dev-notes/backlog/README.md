@@ -59,3 +59,11 @@ Closed items move to `archive/`.
   record: shipped Cycles 1–3 + G (clippy ≤v0.9.93); **still open:** Cycle 2.5
   (above) + the **coherence-audit deep-sweep** (§4.4 / §5.1 / mode mechanics
   not yet swept). Archives whole when those close.
+- `generalize-sharpening-skill.md` — the sharpening family (`sharpen` /
+  `decision-design-sharpening` / `pre-implementation-sharpening`) is still
+  PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
+  extraction; low-priority. Relates to `framework-dev-as-anneal.md`.
+- `skill-craft-pre-edit-hook-findings.md` — the practice-5 gate hook matches
+  `/spec/.+\.md$` (over-broad: catches `dev-notes/**/spec/`), is `mv`-bypassable,
+  and may not register subagent skill-craft invocations. Narrow the path before
+  the de-pollution cycles.

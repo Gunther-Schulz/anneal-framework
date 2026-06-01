@@ -150,6 +150,11 @@ re-abstracting = churn, and it'd pollute the currently-clean glossary).
   work product can be copied + merged (separate drafts, separate
   campaign-artifact copies). The VCS is just the coding *binding* of
   copy+merge. So the abstraction holds.
+- **Multi-tree work product (from anneal-dev pass-1):** the corpus is
+  multi-repo, so the abstraction must not assume the run's work product
+  lives in ONE tree — isolation, integration-integrity, and §6 run-state
+  all currently inherit a single-tree assumption. See the Pass-1
+  corroboration section below.
 
 **Interactions:** freshest leak (Cycle G just rebuilt this whole
 section — dispatch decomposition, Main-tree integrity, spawn-fallback).
@@ -214,6 +219,46 @@ has to amend the framework. That's the contract-1 failure with teeth.
 `lenses.md` + the falsification render in `investigate-design.md`.
 
 ---
+
+## Pass-1 (anneal-dev) corroboration — 2026-06-01
+
+The first forward-derivation of the **anneal-dev** instance (anneal bound
+to corpus-evolution; `dev-notes/derivation-pass1/`) independently hit these
+leaks from a fresh angle — strong corroboration, plus one expansion, one
+test-case, and one downgrade. anneal-dev is now a **second non-code
+validation instance** alongside the (parked) planner, partly filling the
+validation gap below: its bindings are the test of whether each abstract
+form renders cleanly into a non-code domain.
+
+- **Leak 2 (§4.2) — EXPANDED: drop the single-*tree* assumption, not just
+  the git tooling.** The corpus is **multi-repo**; a run's work product can
+  span trees (change a framework rule AND re-render it into its instance
+  plugin = two repos). The current abstract form ("each unit works on a
+  separate copy of *the* work product") still implicitly assumes ONE
+  work-product tree, and run-state (**§6** run lifecycle) + isolation +
+  integration-integrity all inherit it. Cycle a's abstraction must make "the
+  work product" potentially multi-tree: isolation, integrity, and run-state
+  must not assume work product and run-state share one tree. anneal-dev had
+  to bind cross-repo units sequential-by-default + anchor-repo run-state as a
+  workaround — scar tissue Cycle a should dissolve. **Pulls §6 into Leak 2.**
+- **Leak 3 (§4.1.4) — CORROBORATED + concrete test case.** A corpus
+  dependent the closed code-shaped coupling enum can't express: a
+  **paraphrased restatement elsewhere** / a **rendered (paraphrased) plugin
+  clause** — invisible to a verbatim grep, forced into `target-uses` +
+  [CONDITIONAL]. Exactly the closed-enum-with-teeth failure Leak 3 names;
+  validate that the proposed **target-dependents** abstraction covers
+  "paraphrase drift" as a first-class dependent shape.
+- **§4.3 executable-verification — DOWNGRADED to an examples nit (not a new
+  leak).** Pass-1 first flagged §4.3's singular noun + program-shaped
+  examples (pytest/build/debugger) as straining against corpus-evolution's
+  4-check, partly-human, partly-recursive verification *battery*. But this
+  file already counts executable-verification among the **already-abstracted**
+  mechanisms ("the domain's executable verification", not "pytest"). The
+  abstraction holds; only the *illustrative examples* lean program-shaped —
+  light touch when a nearby cycle is open, not its own leak.
+- **§3.2 "visible close" (minor) + render-fidelity isolation-boundary
+  (near-miss)** — observations only; anneal-dev bound both. Logged so they're
+  not re-discovered, not scoped as cycles.
 
 ## Sequencing
 

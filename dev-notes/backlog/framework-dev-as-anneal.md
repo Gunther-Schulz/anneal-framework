@@ -1,120 +1,122 @@
-# Framework-dev as an anneal instance (vs bolt-on anti-decay) — effort design capture
+# Framework-dev as an anneal instance — locked decision + derivation reasoning
 
-Durable design artifact for the most **foundational + reflexive** framework
-effort: how to make working on the framework rigorous and non-decaying.
-The deep proposal — **make framework-dev itself an anneal instance** —
-with the shallower "bolt anti-decay forcing-functions onto the ad-hoc
-process" as the fallback. Written in-context 2026-06-01; **start fresh**
-(foundational, reflexive, decision-heavy — the wrong thing to rush).
-Not spec.
+**Status:** **DECISION LOCKED 2026-06-01 (reframed-A).** Via
+`pbs:decision-design-sharpening` (2 rounds: full-monty + 1 user-triggered),
+adapted with anneal's own anchors (foundation contracts / practice 9 /
+validation-watch) substituting the skill's PBS-internal apparatus.
+**Pass-1 forward-derivation DONE** 2026-06-01 (isolated subagent; draft in
+`dev-notes/derivation-pass1/`). **Next:** de-pollute the core
+(`contract1-depollution-cluster`, Cycle a) — the re-sequence pass-1 forced (see
+Sequencing below); the instance is finalized AFTER, on the cleaned core.
+Not spec — this is the durable design handoff.
 
-## The symptom: corpus structural decay
+## High-level description
 
-Working on the framework keeps producing the same mess:
-- **Bloat** — files accrete walls of text (clippy `SKILL.md`).
-- **Fragmentation** — one principle restated across N homes (FB-5 the
-  `[VERIFIED]`-family; the slot-collapse).
-- **Leakage** — domain concretions in domain-general homes (the
-  contract-1 de-pollution).
+**The problem.** Every time we work on the framework, the corpus decays the
+same three ways: files bloat, one principle gets restated in many places and the
+copies drift apart, and domain-specific details leak into the domain-general
+core. We have disciplines meant to prevent this — but they're advisory, so they
+don't reliably fire.
 
-## The deeper diagnosis: `development-process.md` is a shadow-anneal
+**The root cause.** The document governing how we develop the framework
+(`development-process.md`) is secretly a hand-written *copy* of the framework's
+own method. Its practices are anneal's concepts restated ad-hoc — "ground before
+asserting" is the basis rule, "design → implement → verify" is anneal's core
+split, the pre-commit review is anneal's verify. So our development process is
+the single worst case of the very fragmentation we keep fighting: anneal's
+method, duplicated at the highest level, quietly drifting from the real thing.
 
-The dev-process's practices are **anneal concepts re-stated ad-hoc**:
-- practice 5 (ground before asserting) = **the basis rule**
-- practice 9 (design → decide → implement) = **the design↔impl split**
-- release-loop step 4 (separate-context render/coherence/skill-craft review) = **verify**
-- practice 6 (integrate, don't insert) = **lens-based coherence**
-- practice 12 (periodic coherence-audit) = **inspection at set scale**
+**The decision.** Stop maintaining a shadow copy. Make framework development a
+real **anneal instance** — just as Clippy is "anneal applied to coding" and
+Daneel is "anneal applied to debugging," build a sibling that is "anneal applied
+to evolving the rule-corpus itself." The development process then becomes
+"anneal + a small set of corpus-specific bindings," and the duplication
+disappears. The rigor we wanted comes built in: anneal's machinery (grounding,
+coherence checks, verification, lens inspection) *is* a set of per-cycle forcing
+functions — we inherit them instead of bolting them on.
 
-So the current setup is **FB-5 fragmentation at the highest possible
-level** — anneal's own method, duplicated and drifting. And the
-anti-decay disciplines (skill-craft's Amendment/Edit-as-Pareto/
-domain-independence) are **advisory, so they don't fire** (practice-8
-violation). Both are symptoms of *not using the methodology that has the
-rigor built in.*
+**The honest cost.** This is foundational and maximally self-referential —
+skill-craft improving skill-craft, the process rewriting the process — so it
+carries the highest self-validation risk we have; separate-context review is
+non-negotiable. It also adds some real per-cycle ceremony (the development
+process now gets re-rendered and fidelity-checked like any other instance). The
+bet: that ceremony replaces a worse, invisible cost we're already paying as
+drift.
 
-## Option A (foundational, recommended): make framework-dev an anneal instance
+## The locked shape (what the sharpening settled)
 
-Re-derive the dev-process **as anneal bound to the corpus-evolution
-domain** (a sibling of clippy / daneel / campaign-craft).
-
-- **Domain fit is clean:** investigate-design = ground claims about the
-  corpus (where does X live, what's the contract) + lock the rule change;
-  implement = edit the rule-corpus; verify = skill-craft self-review +
-  render-fidelity + coherence (= what step-4 already does). "The domain's
-  executable verification" binds to those separate-context checks.
-- **Corpus-specific bits → instance bindings** (like clippy's git):
-  release/version-bump/plugin-update mechanics, the coherence-audit
-  cadence, the `Coherence-audit-handoff` marker, the skill-craft gate.
-- **Inherits the rigor for free:** the basis rule, convergence cycle,
-  evidence-bearing artifacts, and lens inspection **are** the per-cycle
-  forcing functions we wanted from anti-decay. You don't bolt them on —
-  they come with the methodology.
-- **Ultimate dogfooding + arbitrariness test** (foundation contract 1):
-  if anneal can develop anneal, that's the strongest domain-generality
-  evidence there is; if it *can't*, that's a smell worth finding.
-
-**Caveats:**
-1. **Self-hosting / bootstrap.** You'd edit the methodology *using* the
-   methodology. Manageable — the process runs the **last-committed**
-   framework version while you edit the spec; the edit takes effect the
-   *next* cycle (exactly how clippy runs a pinned version while you change
-   its spec). But it needs an explicit "**the process uses the stable
-   version, not the in-flight edit**" rule, or you saw off the branch
-   you're sitting on.
-2. **Big, foundational re-derivation** — highest leverage *and* highest
-   risk.
-3. **Even A needs an internal escape hatch** — a light / manual path for
-   trivial edits and bootstrap-blocked moments (mirroring clippy's
-   spawn-fallback + anneal's single-unit lightness). The fallback is
-   **fractal**: B backs up A, and A backs up itself.
-
-## Option B (fallback, shallow): bolt anti-decay forcing-functions on
-
-If A proves too big, the cheaper partial: convert skill-craft's advisory
-anti-decay disciplines into **artifact-producing forcing functions**
-(Amendment's all-homes scan → required artifact; Edit-as-Pareto's
-"name what was removed" → required line; domain-independence → a
-domain-term grep artifact; word-count → a budget gate), then **wire a
-cheap per-cycle structural-hygiene check into dev-process step-4** (three
-diff-computed checks: bloat = size/structure delta; leakage = domain-term
-grep; fragmentation = the forced all-homes scan). Keep it **cheap** or it
-becomes the ceremony it fights.
-
-**A subsumes B's process-mechanism** — anneal's apparatus *is* those
-forcing functions. B is the shallow version of the same goal — but
-**keep B genuinely buildable, not a discarded alternative.** A's
-self-hosting bootstrap is a real failure mode; if A stalls, the bolt-on
-is the parachute. Commit to A, keep B in reach.
-
-## What neither subsumes: the cleanup (do it regardless)
-
-`SKILL.md` de-bloat, FB-5 consolidation, the de-pollution cluster are
-**dirty corpus, not process** — they need fixing either way. Nicely,
-they become the **first dogfooding tasks** of the anneal-ified process:
-use the new instance to clean the corpus, and you've validated it on
-real work.
+- **Surgical, not wholesale.** The duplication is interleaved clause-by-clause
+  inside the practices, not separable practice-by-practice — so this is careful
+  extraction (pull the anneal kernel out of each practice, leave the
+  corpus-specific mechanics as bindings), not a rewrite.
+- **The instance never governs its own foundation.** It governs editing the
+  *corpora* (skill-craft, the framework spec, instance specs, the rendered
+  plugins) — but editing anneal's *kernel*, the thing the instance is built
+  from, stays one layer up with independent review. That's the answer to "won't
+  you saw off the branch you're sitting on?": you never use the instance to edit
+  its own foundation. (Already how framework-spec edits work; we preserve it,
+  not invent it.)
+- **The "bolt-on hygiene checks" fallback isn't a competing plan — it splits.**
+  The actual disciplines (name what you removed, keep the core domain-agnostic,
+  don't let files bloat) are general skill-quality rules that belong in
+  skill-craft — and some of that hardening is worth doing now regardless. The
+  per-cycle enforcement mechanics become bindings in the new instance. What's
+  left of the fallback is a genuine parachute if the big effort stalls.
+- **Start small.** First build the instance skeleton and run *one small real
+  cleanup* through it as a bootstrap test. Works → continue; stalls → fall back.
+  Keeps the effort from silently swallowing weeks.
+- **The cleanups become the proof.** The corpus messes we already need to fix
+  (the bloated `SKILL.md`, the scattered `[VERIFIED]` principle, the domain
+  leaks in the core) are needed either way — and they become the first real work
+  the new instance does. Cleaning the corpus *with* the anneal-ified process is
+  how we validate it on real work.
 
 ## Reflexivity caveat — non-negotiable
 
-This is skill-craft improving skill-craft + dev-process improving (or
-replacing) dev-process — **maximal self-validation risk** (`CLAUDE.md`:
-"rule-edit subagent PASS may self-validate — pause + re-read before
-push"). Separate-context review is the whole ballgame.
+This is skill-craft improving skill-craft + dev-process improving (or replacing)
+dev-process — **maximal self-validation risk** (`CLAUDE.md`: "rule-edit subagent
+PASS may self-validate — pause + re-read before push"). Separate-context review
+is the whole ballgame. This is why the first derivation pass is a strong
+candidate for isolation (an uncontaminated subagent), per the planner precedent.
 
 ## Sequencing
 
-1. **Decide A vs B** — a real decision-design question; give it a proper
-   design surface (it's exactly the kind of thing the
-   `decision-design-sharpening` skill is for).
-2. **If A:** derive the corpus-evolution anneal instance (its bindings +
-   the self-hosting rule); the old `development-process.md` collapses into
-   "anneal + these bindings," shedding its shadow-anneal duplication.
-   **If B:** sharpen skill-craft + wire the step-4 hygiene check.
-3. **Coherence-audit + the cleanups** (SKILL.md, FB-5) as the first real
-   work — and, under A, the first dogfooding.
+1. **Decide A vs B** — **DONE** (reframed-A locked, 2026-06-01).
+2. **Pass-1 forward-derivation (anneal-dev)** — **DONE** (2026-06-01, isolated
+   subagent; draft `dev-notes/derivation-pass1/`). Result: **arbitrariness test
+   passes** — the clean-room derivation independently regenerated dev-process
+   practices 2/4/8/10 + the FB-5 principle as lenses/bindings WITHOUT seeing
+   `development-process.md`, empirically confirming the shadow-anneal diagnosis.
+   It found one gap dev-process lacks (a **Bloat** lens — the anti-decay check)
+   and corroborated the `contract1-depollution-cluster` leaks (see that file's
+   Pass-1 corroboration).
+3. **De-pollute the core FIRST** (`contract1-depollution-cluster`, Cycles
+   a→b→c) — **before** finalizing the instance. Two locked principles force this
+   order: (i) *clean foundation* — the instance renders FROM the core; pass-1's
+   draft already carries scar-tissue workarounds for the core's leaks
+   (single-tree, code-shaped coupling enum), so finalizing on the un-de-polluted
+   core bakes them in + forces re-derivation; (ii) the *bootstrap rule* —
+   de-pollution edits the anneal kernel = the instance's own foundation, which
+   the instance never governs → framework-layer work, current stable process,
+   separate-context review.
+4. **Finalize the anneal-dev derivation** on the cleaned core — bindings derived
+   once, no scar tissue. The clean derivation is itself a second non-code
+   validation that the de-pollution abstractions worked.
+5. **Dogfood** the finalized instance on an *instance-corpus* cleanup (clippy
+   `SKILL.md` de-bloat / open clippy cycles) — corpus-evolution work that is NOT
+   the instance's own foundation, so fully instance-governable (genuine
+   self-hosting validation, no bootstrap conflict). Kernel/foundation cleanups
+   (FB-5, the de-pollution itself) stay framework-layer, not dogfooded.
 
-## Why start fresh
-Foundational (governs how *all* future framework work goes), maximally
-reflexive (self-validation), multi-corpus, and decision-heavy. This doc
-is the durable handoff.
+## Open / deferred to the derivation cycle
+
+- **Instance name + domain framing** — "framework-dev" undersells it; "corpus-
+  evolution" vs "rule-corpus-maintenance" vs "methodology-development" affects
+  the bindings. (Mirrors the planner's naming defer.)
+- **Contract-2 render-ceremony cost** — register as a `validation-watch` entry
+  during the derivation cycle: watch whether the per-cycle re-render + fidelity
+  check on the dev-process-as-instance justifies itself, or whether the shared
+  kernel changes rarely enough to make it cheap.
+- **B's skill-craft-hardening ship-order** — whether to harden skill-craft's
+  advisory anti-decay disciplines into forcing functions *before* A (low-rework,
+  early value) is a Phase-2 (pre-implementation) sequencing call.

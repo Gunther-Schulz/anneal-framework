@@ -29,7 +29,10 @@ change within one operator response are not mechanically separated).
 
 Housekeeping carve-out: files outside the rule-corpus patterns
 (README.md, .gitignore, plugin.json version bumps) pass without
-gating.
+gating. Working-area carve-out: paths under non-corpus working
+areas (dev-notes/) pass without gating even if they contain a
+spec-shaped segment (e.g. a draft instance spec under
+dev-notes/derivation-pass1/spec/) — dev-notes is "not the spec".
 """
 
 import json
@@ -50,6 +53,15 @@ SPEC_SOURCE_PATTERNS = [
     re.compile(r"/post-run-review\.md$"),
     re.compile(r"/instantiation-guide\.md$"),
     re.compile(r"/foundation\.md$"),
+]
+
+# Non-corpus working areas — scratch/notes/draft copies that may contain
+# spec-shaped paths but are NOT canonical rule-corpus (e.g. a draft instance
+# spec under dev-notes/derivation-pass1/spec/). dev-notes is the repo's
+# designated working-notes area (dev-notes/README.md: "not the spec").
+# Checked before corpus classification so an excluded path never gates.
+NON_CORPUS_PATTERNS = [
+    re.compile(r"/dev-notes/"),
 ]
 
 # Skill-craft canonical exemption — skill-craft is a meta-plugin where
@@ -221,6 +233,11 @@ def main() -> int:
     transcript_path = payload.get("transcript_path", "")
 
     if not file_path:
+        return 0
+
+    if any(p.search(file_path) for p in NON_CORPUS_PATTERNS):
+        # Working/scratch area (e.g. dev-notes/) — not canonical
+        # rule-corpus even if the path contains a spec-shaped segment.
         return 0
 
     is_plugin_render = any(p.search(file_path) for p in PLUGIN_RENDER_PATTERNS)
