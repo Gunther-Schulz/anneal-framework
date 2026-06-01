@@ -1,9 +1,15 @@
 # Clippy — re-render to new framework vocab + release
 
-**Status:** OPEN, deferred from Cycle a (framework de-pollution, commit
-`3a2245b`, 2026-06-01). The framework spec now states implement-isolation as
-domain-general guarantees; clippy's instance spec was conformed, but its
-PLUGIN render and the release are pending.
+**Status:** **NEXT — locked 2026-06-02 (do this BEFORE Cycle c-safe).** The a+b
+render (isolation + design-shape vocab) does NOT touch clippy's intricate
+*falsification* render, so it's a small, low-risk catch-up + release now. Cycle
+c-safe (which cleans the falsification machinery) then gets its own *focused*
+c-only clippy-sync — the delicate falsification re-render stays isolated, not
+batched into a big a+b+c sync. (Decision via the practice-9 (f) gap-pass run on
+the sequencing itself: c-safe makes the eventual sync's hardest piece, so sync
+the easy rounds first.) The framework spec already states implement-isolation as
+domain-general guarantees; clippy's instance spec was conformed; its PLUGIN
+render + release are pending.
 
 ## Done (uncommitted in the coding-clippy repo)
 - `spec/bindings.md` §Dispatch isolation — intro reframed to "fills the

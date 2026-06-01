@@ -14,8 +14,11 @@ it splits into a **safe de-code-ification sweep** (do now, a/b-style) and a
 **parked completeness call** (closed-vs-open predicate enum — settle against a
 built non-code instance, not now). A code-vocab inventory also surfaced two
 **tail leaks the 3-leak framing missed** — T1 `file:line` citation form
-(pervasive, safe) and T2 `code`/`fixtures` as work-product. Next action: the
-safe sweep (item 3) with the inventory scope below; keep the enum closed.
+(pervasive, safe) and T2 `code`/`fixtures` as work-product. Next action
+(**locked order, 2026-06-02**): (1) **clippy-sync the a+b vocab**
+([[clippy-isolation-render-release]]) — small, before c-safe touches the
+intricate falsification render; (2) **Cycle c-safe** (item 3 below; enum stays
+closed); (3) a **focused c-only clippy-sync**.
 
 ## The framing that matters (don't lose this)
 

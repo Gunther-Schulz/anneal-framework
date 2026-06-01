@@ -53,12 +53,12 @@ Closed items move to `archive/`.
   `8bf4d47`; + a folded 4th instance-naming leak). **Cycle c reframed by a
   bildhauer pass** into a safe de-code sweep (do now) + a parked completeness
   call (closed-vs-open, settle vs a non-code instance); an inventory surfaced 2
-  tail leaks (T1 `file:line` citation form, T2 `code`-as-work-product). Next:
-  the safe sweep.
-- `clippy-isolation-render-release.md` — deferred clippy re-render + release:
-  isolation section (Cycle a, in-place/integrity-check vocab) + §5.2 body-shape
-  (Cycle b, verbatim-stale `tracker.md`) → new framework vocab, then release.
-  Clippy spec/plugin edits uncommitted pending.
+  tail leaks (T1 `file:line` citation form, T2 `code`-as-work-product). **Locked
+  next (2026-06-02):** clippy-sync a+b → Cycle c-safe → focused c-only clippy-sync.
+- `clippy-isolation-render-release.md` — **NEXT (locked 2026-06-02):** clippy-sync
+  the a+b vocab (isolation + design-shape) + release, *before* Cycle c-safe — keeps
+  the intricate falsification re-render out of it (a focused c-only sync follows
+  c-safe). Clippy spec/plugin edits uncommitted pending.
 - `instance-template-slot-scaffolding.md` — Cycle-a finding: the
   instance-template doesn't scaffold placeholder sections for the mechanism
   slots (persistence, isolation), despite the guide's "placeholder per slot"
