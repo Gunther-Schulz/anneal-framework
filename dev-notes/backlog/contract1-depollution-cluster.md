@@ -8,9 +8,12 @@ inherits the reasoning, not a thin summary. Found via a cross-session
 analysis + confirmed by the first whole-corpus coherence-audit
 (handoff `aba2b1b2b9b2c515b`, Lens 8). Not spec.
 
-Resume: **Cycle a DONE** (2026-06-01, commit `3a2245b`) — next is **Cycle b
-(Leak 1, §5.2b)**. Read this + `foundation.md` (contract 1) + the cited §5.2b
-text, then open a practice-9 design surface for Leak 1.
+Resume: **Cycles a + b DONE** (2026-06-01, commits `3a2245b` + `8bf4d47`) —
+next is **Cycle c** (Leak 3, §4.1.4 falsification), now also absorbing the
+adjacent code-vocab Cycle b's review surfaced (glossary Coupling-shape
+`contract surface` gloss, §4.3 `consumer-observable surface` synonym, §5.1
+`file/symbol`). Read this + `foundation.md` (contract 1) + the §4.1.4 +
+Coupling-shape text, then open a practice-9 design surface for Leak 3.
 
 ## The framing that matters (don't lose this)
 
@@ -275,12 +278,20 @@ Recommended order **a → b → c** (clearest → hardest):
    from the spec proper. Clippy spec conformed; plugin re-render + release
    deferred → [[clippy-isolation-render-release]]. Surfaced →
    [[instance-template-slot-scaffolding]].
-2. **Cycle b — Leak 1 (§5.2b design-shape).** Foundational; the
-   "contract surface vs realization output" abstraction is the spine.
-   Independent of the others.
+2. **Cycle b — Leak 1 (§5.2b design-shape). DONE 2026-06-01 (commit `8bf4d47`).**
+   §5.2(b) now records the **contract surface** (observable from outside the
+   element) vs the **realization output** (internal content); kept "behavior" as a
+   target; canonical glossary **Contract surface** entry. **Define+derive — NO new
+   binding term** (avoided a cross-instance ripple). Clippy plugin re-render (§5.2
+   body-shape, verbatim-stale `tracker.md`) folds into
+   [[clippy-isolation-render-release]]. Review surfaced the term recurs
+   code-flavored beyond §5.2b → Cycle c.
 3. **Cycle c — Leak 3 (§4.1.4 falsification).** Hardest (closed-enum +
-   intricate machinery); interacts with Cycle 3. Absorbs F3. Do last,
-   with the most care.
+   intricate machinery); interacts with Cycle 3. Absorbs F3. **Now also absorbs**
+   the code-vocab Cycle b's review surfaced (all §4.1.4 cousins): glossary
+   Coupling-shape `contract surface (signature, type, decorator…)` → align with
+   the canonical Contract-surface entry; §4.3 `consumer-observable surface` →
+   reconcile (same referent); §5.1 `file/symbol`. Do last, with the most care.
 
 Each is a full framework cycle: practice-9 design surface (the
 domain-general vocabulary IS the design work) → skill-craft gate →

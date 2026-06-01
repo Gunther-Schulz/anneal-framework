@@ -45,16 +45,18 @@ Closed items move to `archive/`.
   under one umbrella principle; a consolidation cycle.
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance. Pass-1
-  forward-derivation **DONE**. **De-pollution Cycle a DONE** (commit `3a2245b`);
-  **resume at Cycle b (Leak 1, §5.2b) in `contract1-depollution-cluster.md`**,
-  before finalizing the instance.
+  forward-derivation **DONE**. **De-pollution Cycles a + b DONE** (commits
+  `3a2245b` + `8bf4d47`); **resume at Cycle c (Leak 3, §4.1.4) in
+  `contract1-depollution-cluster.md`**, before finalizing the instance.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the
-  agnostic core (§5.2b / §4.2 / §4.1.4). **Cycle a (§4.2 isolation) DONE**
-  (commit `3a2245b`; + a folded 4th instance-naming leak); **next: Cycle b
-  (Leak 1, §5.2b)**. Critical-path-first step of the framework-dev effort.
-- `clippy-isolation-render-release.md` — deferred from Cycle a: re-render
-  clippy's plugin isolation section to the new in-place / integrity-check
-  vocabulary + release clippy. Clippy spec/plugin edits uncommitted pending.
+  agnostic core (§5.2b / §4.2 / §4.1.4). **Cycles a (§4.2) + b (§5.2b) DONE**
+  (commits `3a2245b` + `8bf4d47`; + a folded 4th instance-naming leak); **next:
+  Cycle c (Leak 3, §4.1.4)** — now also absorbing adjacent code-vocab Cycle b
+  surfaced. Critical-path-first step of the framework-dev effort.
+- `clippy-isolation-render-release.md` — deferred clippy re-render + release:
+  isolation section (Cycle a, in-place/integrity-check vocab) + §5.2 body-shape
+  (Cycle b, verbatim-stale `tracker.md`) → new framework vocab, then release.
+  Clippy spec/plugin edits uncommitted pending.
 - `instance-template-slot-scaffolding.md` — Cycle-a finding: the
   instance-template doesn't scaffold placeholder sections for the mechanism
   slots (persistence, isolation), despite the guide's "placeholder per slot"

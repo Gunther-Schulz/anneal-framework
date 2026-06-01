@@ -5,9 +5,9 @@
 adapted with anneal's own anchors (foundation contracts / practice 9 /
 validation-watch) substituting the skill's PBS-internal apparatus.
 **Pass-1 forward-derivation DONE** 2026-06-01 (isolated subagent; draft in
-`dev-notes/derivation-pass1/`). **Next:** continue de-polluting the core — **Cycle a DONE**
-(`contract1-depollution-cluster`, commit `3a2245b`, 2026-06-01); **resume at
-Cycle b (Leak 1, §5.2b)**. The instance is finalized AFTER, on the cleaned core.
+`dev-notes/derivation-pass1/`). **Next:** continue de-polluting the core — **Cycles a + b DONE**
+(`contract1-depollution-cluster`, commits `3a2245b` + `8bf4d47`); **resume at
+Cycle c (Leak 3, §4.1.4)**. The instance is finalized AFTER, on the cleaned core.
 Not spec — this is the durable design handoff.
 
 ## High-level description
@@ -91,7 +91,7 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
    and corroborated the `contract1-depollution-cluster` leaks (see that file's
    Pass-1 corroboration).
 3. **De-pollute the core FIRST** (`contract1-depollution-cluster`, Cycles
-   a→b→c; **Cycle a DONE 2026-06-01, commit `3a2245b`**) — **before** finalizing
+   a→b→c; **Cycles a + b DONE; Cycle c next**) — **before** finalizing
    the instance. Two locked principles force this order: (i) *clean foundation* — the instance renders FROM the core; pass-1's
    draft already carries scar-tissue workarounds for the core's leaks
    (single-tree, code-shaped coupling enum), so finalizing on the un-de-polluted
@@ -120,3 +120,8 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
 - **B's skill-craft-hardening ship-order** — whether to harden skill-craft's
   advisory anti-decay disciplines into forcing functions *before* A (low-rework,
   early value) is a Phase-2 (pre-implementation) sequencing call.
+- **Design-decision body-shape vs non-build committed positions** (surfaced
+  Cycle b) — §5.2(b)'s target / contract-surface / acceptance-criteria assume a
+  "what to build" decision; the D-track can also hold verdicts (a debugging
+  instance's hypothesis verdicts). Whether the body-shape generalizes to verdicts
+  is an open design surface; relates to D-track-content variation in the planner work.
