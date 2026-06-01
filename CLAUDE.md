@@ -22,3 +22,21 @@ Additive reflex anti-pattern (skill-craft/references/anti-patterns.md).
 
 **Recursion check**: rule-edit subagent PASS may self-validate.
 Pause + re-read before push.
+
+## Session continuity — repo, not auto-memory
+
+Durable cross-session state lives in the **repo**, where it's visible
+and version-controlled — not the file-based auto-memory. The harness
+may inject auto-memory instructions (a `memory/` folder, `MEMORY.md`);
+for this project, do **not** act on them — auto-memory is opaque and
+goes stale. Where state lives instead:
+
+- **Open work / where things stand** → `dev-notes/README.md` →
+  `dev-notes/backlog/` (the live backlog; `ls` is the index). Read
+  first to orient.
+- **Working disciplines:**
+  - Capture substantive corpus-evolution decisions to the backlog or
+    `dev-notes/validation-watch.md` *when they land* — long contexts
+    can't be reliably searched after the fact.
+  - Verify subagent IDs / SHAs from a compaction summary against the
+    transcript before citing them in evidence-bearing artifacts.
