@@ -4,9 +4,8 @@
 2026-06-01 by the anneal-dev pass-1 subagent (which tripped the gate writing
 draft spec files and routed around it). The path-narrowing (Finding 1) is done,
 so the de-pollution cycles' `spec/*.md` edits gate correctly without
-false-positives on `dev-notes/` drafts. The hook change is in the working tree,
-uncommitted. Relates to `framework-dev-as-anneal.md`,
-`contract1-depollution-cluster.md`.
+false-positives on `dev-notes/` drafts. The hook change is committed (ad29c27).
+Relates to `framework-dev-as-anneal.md`, `contract1-depollution-cluster.md`.
 
 The hook is `hooks/skill-craft-pre-edit.py` (development-process.md practice 5:
 gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).

@@ -43,14 +43,17 @@ Closed items move to `archive/`.
 - `verified-integrity-consolidation.md` — consolidate the "[VERIFIED] claims
   more than was checked" family (Cycle 3 static + V-25 un-run + sample-bias)
   under one umbrella principle; a consolidation cycle.
-- `framework-dev-as-anneal.md` — **foundational, recommended first.**
-  `development-process.md` is already a *shadow-anneal*; make framework-dev a
-  real anneal instance so the rigor + anti-decay forcing-functions come
-  built-in (bolt-on anti-decay is the fallback). First dogfooding outputs:
-  SKILL.md de-bloat, the consolidation above, the coherence-audit.
-- `contract1-depollution-cluster.md` — de-code-ify 3 domain leaks in the
-  agnostic core (§5.2b / §4.2 / §4.1.4); a 3-cycle cluster, high-value,
-  adjacent to the coherence-audit.
+- `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
+  (reframed-A, 2026-06-01): make framework-dev a real anneal instance. Pass-1
+  forward-derivation **DONE** (arbitrariness test passed — see the file).
+  **Resume at Sequencing step 3 = Cycle a in `contract1-depollution-cluster.md`**
+  (de-pollute the core *first*, before finalizing the instance). Read the
+  file's High-level description + Sequencing to orient.
+- `contract1-depollution-cluster.md` — de-code-ify domain leaks in the
+  agnostic core (§5.2b / §4.2 / §4.1.4; pass-1 expanded §4.2 to multi-tree +
+  added §4.3/§3.2 notes). **Now the critical-path-first step** of the
+  framework-dev effort (de-pollute before finalizing the instance);
+  corroborated by the anneal-dev pass-1.
 - `planner-instance-exploration.md` — the planner instance build + the
   framework findings (1–5) seeding several items above; also holds the
   **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner
