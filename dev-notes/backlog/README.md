@@ -6,6 +6,15 @@ the live backlog. Done items move to `archive/`.
 
 ## Convention (the process)
 
+- **Relate before add — never blindly append.** Check a new item against
+  the existing ones *first*: does it **fold into** one (same canonical
+  referent → merge, don't duplicate)? Does it **inform** existing items,
+  or do they **inform** it (→ revise the affected ones)? The backlog is a
+  corpus too — it fragments if you just append. This is the
+  coherence-audit's merge discipline applied to the backlog itself, and
+  the same "relate-before-add" the anti-decay effort generalizes
+  corpus-wide. FB-5 is the cautionary tale: a principle that fragmented
+  across homes before anyone consolidated it.
 - **One item per file.** Name `fb-N-<slug>.md` for findings, or
   `<slug>.md` for anything else to carry forward. Each file is either
   self-contained or a short stub pointing to a bigger dedicated doc.
@@ -37,8 +46,13 @@ the live backlog. Done items move to `archive/`.
 
 ## Deferred / in-flight efforts (detail in their own docs)
 
-- **Contract-1 de-pollution cluster** (3 cycles — highest-value next)
-  → `../contract1-depollution-cluster.md`
+- **Anti-decay forcing functions** (skill-craft + dev-process —
+  **foundational, recommended first**) → stop corpus structural decay
+  (bloat / fragmentation / leakage) by forcing the anti-decay disciplines
+  per-cycle. Outputs: SKILL.md de-bloat, FB-5 consolidation, a thorough
+  coherence-audit. → `../anti-decay-forcing-functions.md`
+- **Contract-1 de-pollution cluster** (3 cycles — high-value, adjacent to
+  the audit above) → `../contract1-depollution-cluster.md`
 - **Cycle 2.5 — bindings.md slot-collapse** → deferred to the planner
   derivation → `../clippy-run-findings-dispatch-coupling.md` +
   `../planner-instance-exploration.md` finding 3
