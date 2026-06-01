@@ -30,6 +30,10 @@ the live backlog. Done items move to `archive/`.
 - `fb-4-clippy-greenfield-tolerance.md` — clippy's `verify` (and likely
   other bindings) assume existing code; instance-level greenfield
   hardening, low-priority.
+- `fb-5-verified-integrity-consolidation.md` — consolidate the
+  "[VERIFIED] claims more than was checked" family (Cycle 3 static +
+  V-25 un-run + new sample-bias face) under one umbrella principle; a
+  consolidation cycle.
 
 ## Deferred / in-flight efforts (detail in their own docs)
 
