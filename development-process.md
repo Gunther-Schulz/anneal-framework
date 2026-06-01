@@ -271,7 +271,7 @@ their own entry or live elsewhere.
 ### 9. Design, then decide, then implement
 
 Surface a design and its **genuine choices** and trade-offs before
-building. Genuine includes four things:
+building. Genuine includes:
 
 - (a) **thorough-fix option** (`spec/core.md` §1): name it, lead with
   it, weigh cheaper alternatives against it; not cheap-only menus
@@ -287,17 +287,26 @@ building. Genuine includes four things:
   watch.md` as a legitimate V-N entry per practice 8. Weigh the
   cost of NOT shipping against shipping (skill-craft anti-patterns
   "Additive reflex").
+- (f) **delegation + coupling gap-pass** — before presenting, name
+  (i) the home of any responsibility the design delegates (an
+  instance slot, a spec section, a downstream consumer) and confirm
+  the home is **declared**, not merely fillable (a slot is a member
+  of the instantiation-guide's closed slot set; the named home is
+  then a practice-4 dependent); (ii) any **coupling** among the
+  presented choices (one's resolution undermining another's). The
+  enumeration is the artifact — mechanical home-check + structural
+  coupling-enumeration (practice 8).
 
-A design surface omitting any of (a)-(d) is malformed. For
-additive changes, omitting (e) is malformed.
+A design surface omitting any of (a)-(d) is malformed. For additive
+changes, omitting (e) is malformed; when the design delegates a
+responsibility or presents multiple choices, omitting (f) is malformed.
 
 **AI-tightness** per skill-craft "Procedure drift" anti-pattern
 (AI-tightness check sub-clause). Applies per-edit.
 
 The AI takes operator wording as intent, not literal text;
-improves where the intent supports a better expression. A design
-surface omitting any of (a)-(d) — or (e), for additive changes —
-is malformed. Incremental steps within an authorized workstream
+improves where the intent supports a better expression.
+Incremental steps within an authorized workstream
 do not need ceremonial confirmation, but crossing into
 implementation after a design surface does. Only then implement —
 at the source level, re-rendered, verified.
