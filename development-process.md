@@ -109,7 +109,12 @@ intra-repo dependent is the easiest to miss. A found instance is the
 the class, and where else does it live."
 
 **Audit artifact required.** The audit produces an explicit
-artifact: (a) the search patterns used (each grep query verbatim);
+artifact: (a) the search patterns used (each grep query
+verbatim), made **wrap-tolerant** — the corpus wraps prose, so a
+multi-word pattern can split across a newline and evade a line
+grep; use a distinctive single token or flatten newlines before
+matching (a bare multi-word line-grep is an incomplete audit), and
+dispatched audit subagents carry the same;
 (b) the matches found (file:line per match); (c) the resolution
 per match (updated / unchanged-with-cited-reason); (d) the
 contract's reference *class(es)* named — one or more of: literal
