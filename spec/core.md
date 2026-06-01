@@ -499,10 +499,16 @@ behind the claim, not by recall. A unit whose disjointness is
 not search-established is sequential. The plan is persisted
 alongside the tracker (`modules.md` §3.3).
 
-**Dispatch.** When the impl plan has two or more units, each unit's
-work is dispatched to a subagent isolated from the run's working
-context per the Isolation mechanism below; a single-unit plan is
-implemented in the working context. The subagent is briefed
+**Dispatch.** Every unit is dispatched to a subagent — the
+orchestrator does not implement in its own context. A
+parallel-eligible unit (its disjointness search-established above)
+is isolated in a worktree per the Isolation mechanism below; a
+strictly-sequential unit — including the single unit of a one-unit
+plan — runs in a subagent against the operator's main tree under
+the Main-tree integrity check below. If a subagent cannot be
+spawned, the orchestrator implements that unit in the working
+context and surfaces "without isolation" — the degraded fallback,
+mirroring verify (§4.3). The subagent is briefed
 artifact-driven, mirroring verify (§4.3): it loads the
 orchestrator's skill files and receives the tracker plus the
 locked contracts the unit honors. The default is the full
@@ -524,7 +530,8 @@ fires when it becomes dispatchable, not when a "wave" is
 reached; the disjointness check uses the same scope basis the
 impl plan declared at [READY].
 
-**Isolation mechanism.** Subagent isolation rests on a per-unit
+**Isolation mechanism (parallel-eligible units).** A
+parallel-eligible unit's subagent is isolated in a per-unit
 **git worktree** at an **instance-specified path** (the instance
 declares the path convention; canonical: a top-level path outside
 the operator's main repository tree — e.g., under `/tmp/` — so
@@ -561,9 +568,20 @@ venv, etc.) — stays out of scope, the project's concern, not the
 framework's; instances may delegate to operator conventions
 (`make bootstrap` or equivalent).
 
+**Main-tree integrity check (sequential/single units).** A
+sequential or single unit's subagent runs against the operator's
+main tree — no worktree, so it reads the run's state and runnable
+environment natively (no provisioning needed). The orchestrator
+verifies the main tree is clean before dispatch (refuse and
+surface if not), snapshots HEAD, and after the subagent returns
+confirms HEAD advanced by exactly the unit's expected commit with
+a clean tree. On any mismatch it restores the snapshot (discarding
+the subagent's writes) and halts and surfaces — contamination is
+contained, not merely detected.
+
 **Self-check at dispatch boundary.** Before returning state, the
-dispatched subagent (and the working context, for a single-unit
-plan) applies the standardized lenses most relevant to write-time
+dispatched subagent (or the working context, on the spawn-fallback
+path) applies the standardized lenses most relevant to write-time
 issues — the instance specifies which ones (`modules.md` §2.2) —
 to its diff against the unit's in-scope locked design decisions.
 **Diff-vs-listed-scope check:** the subagent additionally verifies
@@ -578,8 +596,8 @@ function for delete/replace/amend decisions (§3.2): the basis
 enumerates references as of [READY]; the self-check catches
 references and behaviors introduced post-design (new docstrings,
 new branches, new failure modes the unit's diff introduces). The
-check is unconditional — applied at every dispatch boundary, and
-by the working context for a single-unit plan. A self-check
+check is unconditional — applied at every dispatch boundary (and
+by the working context on the spawn-fallback path). A self-check
 finding triggers the loopback below (or [VERIFIED — deferred] per
 the operator's first-judge recommendation, §5.1 (b)).
 
@@ -919,8 +937,9 @@ that ran the work, each time verify is conducted — on first reaching
 it, and on each re-run after [ISSUES FOUND] (§4.3).
 
 **Dispatch in implement.** The orchestrator carries out the impl-phase
-dispatch protocol specified in §4.2: dispatching units to subagents
-when the impl plan has two or more units, owning the tracker append,
+dispatch protocol specified in §4.2: dispatching every unit to a
+subagent (worktree-isolated when parallel-eligible, main tree
+otherwise), owning the tracker append,
 honoring the loopback shape across the subagent boundary. The
 mechanics live in §4.2.
 

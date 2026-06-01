@@ -181,7 +181,9 @@ invocation before edits (gate).
    defers to the planner derivation (still pre-build); leaning now
    pre-empts it and risks a revert. Parked with it: the `implement.md`
    stale citation to a non-existent `anneal-framework/spec/bindings.md`
-   (fix-direction touches finding 4's glossary-interface principle).
+   (fix-direction touches finding 4's glossary-interface principle) —
+   **citation half fixed in Cycle G** (→ `core.md` §4.2); the
+   slot-collapse half stays deferred.
 3. **Cycle 3 — Finding 3** (framework §3.2.2 + glossary + render;
    highest severity). ✓ RELEASED framework Cycle F3 + clippy v0.9.92.
    Adopted neither F3a nor F3b literally — the refined
@@ -196,3 +198,31 @@ invocation before edits (gate).
 Independence: F3b (no design execution) keeps Cycles 2 and 3
 independent. If F3a is chosen, Cycle 3 depends on Cycle 2's worktree
 resolution (design-phase env).
+
+## Cycle G — dispatch-model decomposition (RELEASED — framework Cycle G + clippy v0.9.93)
+
+Operator-raised after the cluster shipped: the §4.2 dispatch rule
+fused two decisions on unit-count (≥2 → subagent+worktree; 1 →
+working context). **Decomposed:** every unit → a subagent (the
+orchestrator never does impl in its own context); **worktree iff
+parallel-eligible** (reuse the existing marker); sequential/single →
+subagent in the operator's **main tree** under a **Main-tree
+integrity check** (clean-at-dispatch precondition + HEAD-exact/
+clean-tree detect + restore-to-snapshot recover); **spawn failure →
+working-context fallback** ("without isolation", mirrors verify).
+
+**Revises shipped cycles** (coherently, removing their root causes):
+Cycle 1 — selector now applies to **all** units (single-unit→parent
+special case dissolves); Cycle 2 — provisioning scoped to **parallel
+worktrees** only (main-tree units read `.clippy/runs/` + venv
+natively, so the azuro worktree-friction class can't arise for
+single/sequential). Closed the Cycle 2.5 **citation** half.
+
+**Homes:** core.md §4.2 + §6 + glossary (Self-check, Working context)
++ clippy implement.md + SKILL.md + bindings.md. Step-4: 1 blocking
+(SKILL.md stale ≥2-trigger remnant, line-wrap-hidden) + 1 notable,
+both fixed by a coherent paragraph rewrite.
+
+**Follow-on:** wrap-tolerant practice-4 grep → `development-process.md`
+(separate cycle — a line-grep missed the wrapped remnant; only a
+newline-flattened scan caught it).

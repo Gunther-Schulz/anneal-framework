@@ -196,8 +196,8 @@ points: implement → investigate-design on any actioned finding
 honors the return rather than proceeding.
 
 **Self-check (at dispatch boundary)** — a check the dispatched
-impl-phase subagent (and the working context, for a single-unit
-plan) applies to its own diff before returning state, using the
+impl-phase subagent (or the working context, on the spawn-fallback
+path) applies to its own diff before returning state, using the
 instance's standardized lenses most relevant to write-time issues
 (`core.md` §4.2). Compounds with the design-time forcing function
 (§3.2); catches references and behaviors introduced post-design.
@@ -220,8 +220,9 @@ mode, conducts the phase pipeline through its transitions, and
 manages the run lifecycle. Specified in `core.md` §6.
 
 **Working context** — the AI's context that conducts
-investigate-design and implement. Distinct from verify's isolated
-context (`core.md` §4.3) — verify is established by the orchestrator
+investigate-design. Implement is dispatched to subagents; the
+working context runs impl only on the spawn-fallback path
+(`core.md` §4.2). Distinct from verify's isolated context (`core.md` §4.3) — verify is established by the orchestrator
 in a context separate from the one that produced the work. The
 working context judges design completeness at [READY] (`core.md`
 §4.1).
