@@ -46,11 +46,13 @@ the live backlog. Done items move to `archive/`.
 
 ## Deferred / in-flight efforts (detail in their own docs)
 
-- **Anti-decay forcing functions** (skill-craft + dev-process —
-  **foundational, recommended first**) → stop corpus structural decay
-  (bloat / fragmentation / leakage) by forcing the anti-decay disciplines
-  per-cycle. Outputs: SKILL.md de-bloat, FB-5 consolidation, a thorough
-  coherence-audit. → `../anti-decay-forcing-functions.md`
+- **Framework-dev as an anneal instance** (**foundational, recommended
+  first**) → `development-process.md` is already a *shadow-anneal* (its
+  practices restate the basis rule / design↔impl / verify / lenses); make
+  framework-dev a real anneal instance so the rigor — and the anti-decay
+  forcing-functions — come built-in. Bolt-on anti-decay is the fallback.
+  Outputs: SKILL.md de-bloat, FB-5 consolidation, coherence-audit (the
+  first dogfooding). → `../framework-dev-as-anneal.md`
 - **Contract-1 de-pollution cluster** (3 cycles — high-value, adjacent to
   the audit above) → `../contract1-depollution-cluster.md`
 - **Cycle 2.5 — bindings.md slot-collapse** → deferred to the planner
