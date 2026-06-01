@@ -27,6 +27,9 @@ the live backlog. Done items move to `archive/`.
   design, not the original ask.
 - `fb-3-cite-glossary-not-section-numbers.md` — instance specs cite
   framework §-numbers, not glossary terms.
+- `fb-4-clippy-greenfield-tolerance.md` — clippy's `verify` (and likely
+  other bindings) assume existing code; instance-level greenfield
+  hardening, low-priority.
 
 ## Deferred / in-flight efforts (detail in their own docs)
 
