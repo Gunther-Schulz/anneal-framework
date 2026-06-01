@@ -314,6 +314,13 @@ when every check is accounted for and no finding is short of
 choice about what to build, including a choice to defer or exclude.
 Its shape, states, and rules are specified in `core.md` §5.2.
 
+**Contract surface** — what is observable from outside an element of
+the work product, as opposed to the element's internal **realization
+output**. A design decision's (b) shape records the contract surface,
+not the realization output (`core.md` §5.2); the realization output
+is produced at impl (`core.md` §4.2). Each instance applies it to its
+element kind.
+
 **Scope** — the set of elements a run's work will modify; the
 foundational design decision, established by search. Specified in
 `core.md` §4.1.

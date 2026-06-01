@@ -836,10 +836,10 @@ tracker (§1). The basis is mandatory; a decision whose basis is an
 assumption cannot reach [VERIFIED].
 
 **Body shape.** A design decision body specifies: (a) the **target** —
-the named element being committed (file, function, type, behavior);
-(b) the **shape** — for new code: the contract surface (signature,
-types, error patterns) in inline backticks; for amendment to existing
-code: the change as a delta against current state; (c) the
+the element of the work product being committed, or a behavior of one;
+(b) the **shape** — for a new element, its **contract surface** (what's
+observable from outside the element); for an amendment to an existing
+element, the change as a delta against current state; (c) the
 **acceptance criteria** — observable conditions for the decision to
 count as implemented; (d) the **side effects and failure modes** —
 what's observable on success and at boundaries; (e) the **basis** per
@@ -847,11 +847,10 @@ what's observable on success and at boundaries; (e) the **basis** per
 completeness enumeration of references + behaviors preserved/
 dropped; (b) carries the shape of the delta). **Brevity discipline:**
 the body covers exactly (a)-(e) above — what a fresh session needs
-to implement the decision — and no implementation pseudo-code
-beyond what the contract and file:line citations already convey.
-Multi-statement function bodies, validator internals, and
-migration SQL bodies are implementation outputs, not design content —
-they belong at impl phase, not in the design decision body.
+to implement the decision — and no realization output beyond what the
+contract surface and its cited sources already convey. The
+**realization output** — the element's internal content — is produced
+at impl, not recorded in the design decision body.
 
 It moves through:
 
