@@ -288,4 +288,8 @@ pattern; the domain-general vocabulary is the design work). §4.2 (leak
 2) fresh from Cycle G; §4.1.4 (leak 3) interacts with Cycle 3. Each
 needs its own practice-9 design surface.
 
+**Full per-leak design capture (current text → abstract form →
+delegation → edge cases → sequencing → risks):
+`dev-notes/contract1-depollution-cluster.md`.**
+
 Coherence-audit-handoff: aba2b1b2b9b2c515b

@@ -1,0 +1,253 @@
+# Contract-1 de-pollution cluster — design capture
+
+Durable design artifact for the **next framework effort**: removing
+the three coding-domain leaks from the anneal-framework core so the
+spec is domain-independent at the *mechanism* level, not just the
+architecture level. Written in-context (2026-06-01) so a fresh session
+inherits the reasoning, not a thin summary. Found via a cross-session
+analysis + confirmed by the first whole-corpus coherence-audit
+(handoff `aba2b1b2b9b2c515b`, Lens 8). Not spec.
+
+Resume: read this + `foundation.md` (contract 1) + the three cited spec
+sections, then open a practice-9 design surface per leak.
+
+## The framing that matters (don't lose this)
+
+The framework's **architecture is already domain-independent**: the two
+invariants (grounded claims + coherent picture), the three phases, the
+two-track tracker, the status-state machine, the basis rule,
+inspection-via-lens, and the design↔impl split itself. And it already
+**knows how to abstract** — three mechanisms are cleanly pushed into
+**instance slots**:
+
+- **work product** — glossary: "an instance binds it — code, for Clippy"
+- **executable verification** — "the domain's executable verification" (not "pytest")
+- **lens set** — instance-supplied (`modules.md` §2.2)
+
+The bug is **non-uniform application of its own discipline**: three
+*other* mechanism specs were written by reaching for the software
+instance's concrete shapes instead of abstracting them + delegating to
+an instance slot the way work-product / lens-set / executable-verification
+already are. It's not that the framework *can't* abstract these — it
+*didn't*, uniformly.
+
+**The fix pattern (same for all three):** state the mechanism
+domain-generally in core; push the code concretion into the instance
+slot (clippy's `bindings.md` / `lens-set.md` — which for some of these
+already carries the concretion). This is a **spec gap, not a render
+gap** — clippy faithfully inherits the code shapes; the framework baked
+them in (practice 1 → fix at source). The `foundation.md` contract-1
+test — "would this rule still apply rendered into an unrelated domain
+(legal / research / marketing)?" — **fails** on all three.
+
+**Empirical tell (the strongest evidence):** another session ran anneal
+on a *writing* task and had to **drop / reinterpret exactly these
+three** — dropped §4.2's git isolation, reinterpreted §4.1.4's
+falsification ("re-open each cited fact and try to falsify it"),
+re-read §5.2(b) "signature/types" as "the section's claim-set +
+acceptance criteria." A clean writing *instance* would **render** them
+(the way clippy renders the coding one) if they were abstract. The
+reinterpretation *was* the leak surfacing.
+
+---
+
+## Leak 1 — §5.2(b) design-decision "shape" (core.md:832-848)
+
+**Current (code vocab as the *primary* definition, not illustration):**
+- (a) target — "the named element being committed (**file, function,
+  type**, behavior)"
+- (b) shape — "for **new code**: the contract surface (**signature,
+  types, error patterns**) in inline backticks; for amendment to
+  existing **code**: the change as a delta"
+- brevity — "Multi-statement **function bodies, validator internals,
+  and migration SQL bodies** are implementation outputs…"
+
+**Why it leaks:** a document or campaign work product has no signature /
+function body / migration SQL. The definition reaches for code shapes.
+
+**Abstract target form** (from the other session — preserve verbatim,
+it's good):
+> design carries the **contract surface — what's observable from
+> outside the unit — not the realization output.**
+> - code (clippy): signature / types / error patterns **vs** the function body
+> - document: the claims a section asserts + their grounded bases + acceptance criteria **vs** the prose
+> - campaign: message + audience + claim-set + evidence **vs** the copy
+
+And the de-code-ified design↔impl sentence:
+> impl realizes the design's committed contract into the work product,
+> re-opening the cited sources to render them; it does not re-open the
+> decision or discover new grounding.
+
+**Instance delegation:** "contract surface" becomes a per-domain
+binding (clippy: signature/types/error-patterns), parallel to the
+existing work-product binding. (a) target = "an element of the work
+product" (instance binds: file/function/type for code; section/claim
+for a document). Brevity examples → "the realization output (the unit's
+internal content) belongs at impl, not the design body"; concrete
+examples instance-delegated or dropped.
+
+**Edge cases / design questions:**
+- This is the most *foundational* leak — every domain's design
+  decisions use this shape. Get the "contract surface vs realization
+  output" abstraction exactly right; it's the spine.
+- "amendment: the change as a delta against current state" is already
+  fairly general — keep.
+- (c) acceptance criteria, (d) side-effects/failure-modes, (e) basis
+  are already domain-general — leak is concentrated in (a) + (b) + the
+  brevity examples.
+
+**Interactions:** none hard; touches every design decision so it's the
+cleanest standalone abstraction.
+
+---
+
+## Leak 2 — §4.2 implement isolation (core.md ~527-573)
+
+**Current (VCS/filesystem mechanism):** "per-unit **git worktree**",
+"unique **branch**", "strip remotes (`git remote -v`)", "pre/post
+**`git rev-parse HEAD`** verification", "**cherry-pick** integration",
+"`git worktree add`" (provisioning), "**venv**" (bootstrap). Plus the
+Cycle-G additions: Main-tree integrity check (`git status --porcelain`,
+`git reset --hard`) + spawn-fallback. = coherence-audit **F1** (Lens 8).
+
+**Why it leaks:** git/VCS/filesystem-specific; meaningless for a
+non-code work product. The *mechanism* (isolate concurrent units +
+integrate after an integrity check) is general; the *tooling* is coding.
+
+**Abstract target form:** core states the **principle + guarantees**,
+not the tooling:
+- parallel-eligible units are **isolated** — each works on a **separate
+  copy** of the operator's work product so concurrent edits don't clash;
+- after a unit completes, the orchestrator **integrates** its changes
+  into the operator's main work product after an **integrity check**
+  (the unit changed only its scope; the main wasn't contaminated);
+- sequential/single units may work **in place** (on the main work
+  product) under an in-place integrity check (clean precondition +
+  changed-by-exactly-this-unit detect + restore-on-mismatch);
+- spawn-failure → working-context fallback, surfaced.
+- the instance binds the **concrete** isolation + integration mechanism.
+
+**Instance delegation:** clippy's `bindings.md` §Dispatch isolation
+**already carries** the git slot values (worktree path, branch,
+creation/strip/cherry-pick/HEAD commands). So most of the work is
+**removing** the git vocab from core.md (abstract it) + verifying
+clippy's binding carries everything core drops. The folded audit **F2**
+(glossary entries for "Main-tree integrity check" + "spawn-fallback")
+lands here — **define them with the abstract vocab**, not git-flavored
+(that's why F2 was folded: defining them git-flavored now then
+re-abstracting = churn, and it'd pollute the currently-clean glossary).
+
+**Edge cases / design questions:**
+- "integration" (cherry-pick) → "merge the unit's changes into the
+  main work product"; "integrity check" (HEAD + clean tree) →
+  "verify the unit changed only its scope + main uncontaminated."
+- **Open:** does the framework even specify isolation at the *mechanism*
+  level, or just the *principle* (no cross-unit clash, no main
+  contamination, clean integration) + delegate the whole mechanism?
+  Leaner = state guarantees, delegate mechanism entirely. Decide at the
+  design surface.
+- Is "separate copy + merge" meaningful for non-code domains? Yes — any
+  work product can be copied + merged (separate drafts, separate
+  campaign-artifact copies). The VCS is just the coding *binding* of
+  copy+merge. So the abstraction holds.
+
+**Interactions:** freshest leak (Cycle G just rebuilt this whole
+section — dispatch decomposition, Main-tree integrity, spawn-fallback).
+Context is warm. Render impact: clippy `implement.md` Isolation +
+`bindings.md` §Dispatch isolation **keep** the git specifics (correct
+instance binding); core de-git-ifies; re-render implement.md from
+abstracted core.
+
+---
+
+## Leak 3 — §4.1.4 + modules.md §3.4 + glossary falsification (HARDEST)
+
+**Current (assumes a code target + grep semantics; CLOSED ENUM):**
+- **Coupling shapes** (glossary, closed set of 3): target-shape /
+  target-uses / target-behavior — assume the target is a **code symbol**
+  with a **signature, callers, and runtime behavior**.
+- **Falsification predicates** (closed set of 3): `any-match` /
+  `any-outside-scope:<scope>` / `expected-match:<pattern>` — defined in
+  **grep-result-line semantics**.
+- Both are **closed enums** — can't be reinterpreted per-domain without
+  amending the spec (unlike work-product, which an instance just binds).
+
+**Why it leaks:** a document's "decision" has no callers / runtime
+behavior; the predicates are search-result semantics. And the
+closed-enum-ness means a non-code instance *can't* bind around it — it
+has to amend the framework. That's the contract-1 failure with teeth.
+
+**Abstract target form:**
+- Coupling shapes → domain-general categories of how a claim couples to
+  the rest of the work: **target-existence** (the target exists with
+  its claimed surface), **target-dependents** (what depends on / uses
+  it), **target-behavior** (its behavior/effect under inputs). The
+  3-category *structure* may largely survive; the **code glosses**
+  ("signature / callers / runtime-behavior") get abstracted +
+  instance-bound.
+- Falsification predicates → the predicate computes holds-or-falsified
+  from the candidate's **evidence** (a search / read / exercise result).
+  The predicate *types* are general — "any positive result falsifies",
+  "any result outside the named scope falsifies", "missing expected
+  property falsifies." The instance binds the concrete **evidence form**
+  (clippy: grep result lines). Keep the enum closed but **domain-general
+  at the type level**, concrete-search instance-bound.
+
+**Edge cases / design questions:**
+- This is the **most intricate** mechanism (coupling shapes feed the
+  convergence-cycle falsification pass + the candidate-set coverage
+  check + the predicate-shape-coherence rules). Abstract without
+  breaking the machinery — go slow, lean on a design surface + heavy
+  step-4.
+- **Open:** can the closed enum stay closed once abstracted, or does
+  domain-generality require an open/extensible predicate set? Lean:
+  closed-but-abstract (predicate *types* general; evidence
+  instance-bound) — but verify against a non-grep instance mentally.
+- The Cycle-3 work already started here: glossary `target-behavior`
+  carries the runtime-resolved [CONDITIONAL] cross-ref to §3.2.2. The
+  folded audit **F3** (the [CONDITIONAL]→[AUTO-ACCEPTED]→verify handoff
+  is implicit; falsification covers [VERIFIED] only) lands here — state
+  the handoff explicitly when this section is rewritten.
+
+**Interactions:** Cycle 3 (behavioral-coupling) touched `target-behavior`
++ the executable-basis routing. Render impact: clippy `lens-set.md` /
+`lenses.md` + the falsification render in `investigate-design.md`.
+
+---
+
+## Sequencing
+
+Recommended order **a → b → c** (clearest → hardest):
+
+1. **Cycle a — Leak 2 (§4.2 isolation).** Freshest (Cycle G), clearest
+   abstraction (isolated-copy + integrity-check + delegate tooling),
+   clippy binding already carries the concretion. Absorbs F1 + F2.
+2. **Cycle b — Leak 1 (§5.2b design-shape).** Foundational; the
+   "contract surface vs realization output" abstraction is the spine.
+   Independent of the others.
+3. **Cycle c — Leak 3 (§4.1.4 falsification).** Hardest (closed-enum +
+   intricate machinery); interacts with Cycle 3. Absorbs F3. Do last,
+   with the most care.
+
+Each is a full framework cycle: practice-9 design surface (the
+domain-general vocabulary IS the design work) → skill-craft gate →
+abstract core + delegate to instance slot → re-render clippy → step-4
+(framework-spec self-review + render fidelity + practice-4 contract
+audit — **wrap-tolerant** per the new practice-4 rule). A non-code
+instance derivation (the planner, when built) is the real validation
+that the abstraction worked.
+
+## Risks
+
+- **Over-abstraction:** stripping so much that the mechanism stops being
+  load-bearing (practice 7 foundation-work full-discipline). The
+  guardrail: each abstract form must still let clippy *render* the exact
+  current behavior. If clippy can't render it back, the abstraction lost
+  content.
+- **Closed-enum (leak 3):** the genuinely-hard one; may surface that the
+  enum needs to open, which is a bigger change. Flag at its design
+  surface.
+- **Validation gap:** without a second (non-code) instance, "is it
+  *really* domain-general now?" stays partly unproven — the planner
+  build (parked, pre-build) is the test. Note this in each cycle's
+  validation-watch.
