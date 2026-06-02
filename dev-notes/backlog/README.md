@@ -100,10 +100,10 @@ so it lives here in the index, not in the names.)
 - `anneal-dev-packaging.md` — **DONE 2026-06-02** — installed `anneal-dev@anneal-dev`
   0.1.0 (marketplace add + plugin install); pending operator `/reload-plugins` to
   activate in-session.
-- `anneal-dev-impl-skillcraft-gate.md` — anneal-dev's impl dispatch must invoke
-  skill-craft (Skill tool) before gated rule-corpus edits (it loads refs but doesn't
-  invoke it now → a dispatched edit blocks → spawn-fallback). Method-kernel edit
-  (`anneal-dev/spec`); runs through anneal-dev. From the Finding-3 re-grounding.
+- `archive/anneal-dev-impl-skillcraft-gate.md` — **DONE 2026-06-02** — shipped via
+  the first method-kernel self-hosting anneal-dev run (anneal-dev `ee9e2e6`, verify
+  [PASSED]); the convergence falsification caught a missed 3rd render + the
+  spawn-fallback edit path, both fixed.
 - `planner-instance-exploration.md` — the planner instance build + the
   framework findings (1–5) seeding several items above; also holds the
   **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner
