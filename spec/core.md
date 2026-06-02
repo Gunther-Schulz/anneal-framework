@@ -366,7 +366,7 @@ standardized inspection pass + falsification pass over
 application on accumulated state. Its investigation pass must enumerate **new
 surfaces investigated this cycle**, where each surface is
 **new** by at least one of: (a) cites a file path not in any
-prior cycle's artifact this run; (b) cites a grep query whose
+prior cycle's artifact this run; (b) cites a search query whose
 query string differs verbatim from every prior cycle's; (c)
 cites a located read covering at least one location not covered
 by any prior cycle's citation of the same source. A convergence cycle that
@@ -475,7 +475,7 @@ investigate-design (when the finding needs action), or
 **[VERIFIED — deferred]** (when the operator chooses not to act
 now, basis cites the explicit trigger condition per §5.1).
 Inline-fix is not a path; attempting to address a finding within
-the impl phase by editing code is malformed. Local-clarification-
+the impl phase by editing the work product is malformed. Local-clarification-
 and-continue is not a path; the impl phase does not absorb new
 findings into the unit's in-flight work.
 
@@ -818,7 +818,7 @@ A [VERIFIED] finding can then be invalidated:
 **F-entry resolution closure.** F-entries resolve through
 exactly four paths: one of the three [VERIFIED — disposition]
 cases above, or [ISSUES FOUND] → loopback (§4.3). Inline-fix —
-modifying code or fixtures to address a finding without one of
+modifying the work product to address a finding without one of
 the four resolutions — is not a path; attempting one is
 malformed (§3.1). The closure applies to F-entries from any
 source: verify findings, impl-phase self-check findings,

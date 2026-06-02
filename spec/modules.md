@@ -242,7 +242,7 @@ Each cycle's standardized inspection pass emits a findings artifact
 — a finding, or a cited-clean reason. **Each line cites this-cycle
 basis: a this-cycle tracker entry (F# from this cycle's investigation
 pass, or D# from this cycle's design work) or a surface (a located
-read, grep query) introduced in this cycle. A line whose only basis is
+read, search query) introduced in this cycle. A line whose only basis is
 prior-cycle entries is malformed — its lens was not touched this
 cycle.** A lens out of scope that cycle is not
 lined; the standardized set is accounted for whole once, at [READY]
@@ -327,7 +327,7 @@ returned artifact on return (`core.md` §4.1.4 Coverage check).
 - **shape** — one of: `target-existence`, `target-dependents`,
   `target-behavior` (closed set per `glossary.md` Coupling
   shape).
-- **candidate** — an executable query (grep, search) or
+- **candidate** — an executable query or
   located read whose positive result, applied
   through the falsification predicate, would invalidate the
   entry's basis on this shape. Form follows §3.2 — the
@@ -470,6 +470,6 @@ framework's triage applies (`development-process.md` practice 1):
 
 ### 4.6 What this is not
 
-A general code review. A confidence check. A graded report. The
+A general review. A confidence check. A graded report. The
 review's only job is to surface what the *protocol* missed or got
 wrong, in a form the operator can act on.
