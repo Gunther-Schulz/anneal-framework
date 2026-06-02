@@ -7,15 +7,17 @@ so the de-pollution cycles' `spec/*.md` edits gate correctly without
 false-positives on `dev-notes/` drafts. The hook change is committed (ad29c27).
 Relates to `framework-dev-as-anneal.md`, `contract1-depollution-cluster.md`.
 
-> **Finding 3's "MOOT — boundary detector handles the current harness shape
-> correctly" is CONTRADICTED (2026-06-02).** The `framework-spec-cleanup-pipeline`
-> run's impl Unit-1 subagent got 5/5 `spec/core.md` Edit denials; reading the hook
-> confirmed the subagent-path boundary detection misfires (Skill-result `user`
-> events lack `isMeta=True`). The subagent-reliability concern is REAL, not moot —
-> tracked now as the dedicated next-up item
-> `skill-craft-hook-subagent-dispatch-block.md`, which also carries the
-> reconciliation with the archived `impl-skillcraft-gate` "satisfiable from a
-> subagent" conclusion.
+> **Finding 3 — REAL, now FIXED (2026-06-02), and its isMeta root cause was
+> WRONG.** The `framework-spec-cleanup-pipeline` run's impl subagent got 5/5
+> `spec/core.md` denials. Both the original root-cause here AND the
+> "MOOT/re-grounded" rebuttal were wrong: the actual bug is that the PreToolUse
+> hook is handed the **parent** session `transcript_path` (not the subagent's
+> sidechain transcript), so the subagent's own skill-craft invocation is never
+> scanned — nothing to do with `isMeta`. The "MOOT" test ran the inner function
+> against a subagent transcript by hand, which the hook never actually receives.
+> Fixed by resolving the scan to `.../subagents/agent-<agent_id>.jsonl` via the
+> payload's `agent_id`. Full diagnosis + fix + regression test:
+> `skill-craft-hook-subagent-dispatch-block.md` (**DONE**).
 
 The hook is `hooks/skill-craft-pre-edit.py` (development-process.md practice 5:
 gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).

@@ -48,13 +48,16 @@ so it lives here in the index, not in the names.)
   (coherence-audit `ac1856832b8712fda`; debt-checklist in the item). **Next run:
   re-derive `core.md`'s phase pipeline (§4) from primitives.** Method-kernel;
   FOUNDATIONAL; multi-session.
-- `skill-craft-hook-subagent-dispatch-block.md` — **operator-flagged NEXT-UP (2026-06-02).**
-  The `skill-craft-pre-edit.py` hook denies `spec/*` edits from a dispatched subagent
-  (boundary-detection misfire in the sidechain path) → anneal-dev's subagent-dispatch
-  impl model is blocked for method-kernel edits; method-kernel impl currently runs via
-  spawn-fallback. Surfaced as F10 in the `framework-spec-cleanup` run. **Contradicts the
-  archived `impl-skillcraft-gate` "gate IS satisfiable from a subagent" conclusion —
-  reconcile.** Fix is hook-machinery (not rule-corpus-gated).
+- `archive/skill-craft-hook-subagent-dispatch-block.md` — **DONE 2026-06-02.** The
+  `skill-craft-pre-edit.py` hook denied `spec/*` edits from a dispatched subagent —
+  root cause (empirically captured, *not* the first isMeta guess): the PreToolUse
+  payload hands the hook the *parent* session transcript, not the subagent's sidechain
+  transcript, so the subagent's own skill-craft invocation was never scanned. Fixed by
+  resolving the scan to `.../subagents/agent-<agent_id>.jsonl` via the payload's
+  `agent_id` (+ regression test); end-to-end verified. Un-blocks anneal-dev's
+  subagent-dispatch impl for method-kernel edits. Resolved the archived
+  `impl-skillcraft-gate` contradiction (the prior "satisfiable" conclusion tested the
+  inner function by hand, not the live hook payload).
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance.
   **Steps 1–5 DONE (2026-06-02).** Build + validate complete: pass-1/2 derivation

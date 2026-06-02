@@ -36,6 +36,7 @@ dev-notes/derivation-pass1/spec/) — dev-notes is "not the spec".
 """
 
 import json
+import os
 import re
 import sys
 
@@ -208,6 +209,24 @@ def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
     return False
 
 
+def resolve_scan_transcript(transcript_path: str, agent_id: str) -> str:
+    """Resolve which transcript the gate scans for the skill-craft invocation.
+
+    For a tool call made from a **subagent**, the PreToolUse payload carries
+    the PARENT session transcript_path AND the subagent's `agent_id` — but the
+    subagent's own skill-craft invocation lives in its sidechain transcript
+    (`<session>/subagents/agent-<agent_id>.jsonl`), never in the parent. The
+    subagent IS the drafting context for its rule-corpus edit, so the gate must
+    scan that transcript, not the parent (otherwise the gate can never discharge
+    from a subagent — the dispatched-subagent block). Main-session edits carry no
+    `agent_id` and keep scanning the parent. Falls back to the parent transcript
+    if the sidechain file is absent (preserve the gate; never fail-open here)."""
+    if not agent_id or not transcript_path.endswith(".jsonl"):
+        return transcript_path
+    sub_path = transcript_path[: -len(".jsonl")] + "/subagents/agent-" + agent_id + ".jsonl"
+    return sub_path if os.path.exists(sub_path) else transcript_path
+
+
 def deny(reason: str) -> None:
     """Emit deny payload and exit with code 2 (hard block)."""
     payload = {
@@ -254,7 +273,12 @@ def main() -> int:
         # Defensive: should not happen in normal operation.
         return 0
 
-    if not has_skill_craft_invocation_this_turn(transcript_path):
+    # A subagent's own skill-craft invocation lives in its sidechain
+    # transcript, not the parent the payload hands us — resolve to it via
+    # agent_id so the gate scans the actual drafting context.
+    scan_path = resolve_scan_transcript(transcript_path, payload.get("agent_id", ""))
+
+    if not has_skill_craft_invocation_this_turn(scan_path):
         deny(DENY_REASON)
         # Unreachable; deny() exits.
 
