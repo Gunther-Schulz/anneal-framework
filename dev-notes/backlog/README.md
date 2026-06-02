@@ -41,6 +41,13 @@ so it lives here in the index, not in the names.)
 
 ### Framework-core (leads)
 
+- `framework-spec-cleanup.md` — **THE NEXT MAJOR EFFORT (2026-06-02).** Re-derive
+  the chaotic `core.md` (978 ln) cleanly: **re-derive-and-reconcile** (top-down from
+  primitives → compare → reconcile), driven through anneal-dev (drive +
+  kernel-independent verify) — **NOT** incremental patching. **Mapping pass DONE**
+  (coherence-audit `ac1856832b8712fda`; debt-checklist in the item). **Next run:
+  re-derive `core.md`'s phase pipeline (§4) from primitives.** Method-kernel;
+  FOUNDATIONAL; multi-session.
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance.
   **Steps 1–5 DONE (2026-06-02).** Build + validate complete: pass-1/2 derivation
@@ -50,11 +57,11 @@ so it lives here in the index, not in the names.)
   shipped daneel `d85cff3`). **anneal-dev runs as a real instance.** **Adoption
   IMPLEMENTED 2026-06-02** (→ `dev-process-adoption.md`) — shadow-copy method
   retired surgically; bootstrap rule refined to *drive, don't self-certify*.
-  Remaining: package it (followed-in-context now → `anneal-dev-packaging.md`). V-27 has its n=1
+  Package DONE (`anneal-dev-packaging.md`: anneal-dev `0.1.1` installed + active).
+  **Next major effort → `framework-spec-cleanup.md`.** V-27 has its n=1
   ceremony-cost seed; four flow-back questions resolved →
   `archive/anneal-dev-framework-flowback.md`.
-- `dev-process-adoption.md` — **IMPLEMENTED 2026-06-02 (B1, surgical), pending
-  commit.** Retired `development-process.md`'s shadow-copy *method* (reframed to
+- `dev-process-adoption.md` — **IMPLEMENTED + COMMITTED 2026-06-02 (B1, surgical; `19dc1d8`).** Retired `development-process.md`'s shadow-copy *method* (reframed to
   "everything runs through anneal-dev"; only P2 + the three-levels prose thinned —
   the rest is genuine framework-dev machinery that stayed). Bootstrap rule refined
   to *drive, don't self-certify*; Decision-1 reversed (triage stays in P1). Spawned
@@ -98,8 +105,8 @@ so it lives here in the index, not in the names.)
   PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
   extraction; low-priority. Relates to `framework-dev-as-anneal.md`.
 - `anneal-dev-packaging.md` — **DONE 2026-06-02** — installed `anneal-dev@anneal-dev`
-  0.1.0 (marketplace add + plugin install); pending operator `/reload-plugins` to
-  activate in-session.
+  `0.1.1` (installed + **activated** via `/reload-plugins`; bumped from 0.1.0 by the
+  impl-skillcraft-gate fix). Fully done.
 - `archive/anneal-dev-impl-skillcraft-gate.md` — **DONE 2026-06-02** — shipped via
   the first method-kernel self-hosting anneal-dev run (anneal-dev `ee9e2e6`, verify
   [PASSED]); the convergence falsification caught a missed 3rd render + the
