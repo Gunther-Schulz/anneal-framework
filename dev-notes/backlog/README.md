@@ -115,6 +115,21 @@ so it lives here in the index, not in the names.)
   deep-sweep** (§4.4 / §5.1 / mode mechanics not yet swept). Open cycles are
   classified per-level. Archives whole when those close.
 
+**Cross-session dump triage (2026-06-02).** Git/dispatch findings from the tail
+of a saved other-session clippy dump. Already-handled, not re-filed:
+always-dispatch-impl = Cycle G above; fabricated-tracker-tags = V-25; sort-null
+incomplete-evidence = [[verified-integrity-consolidation]]. New items:
+
+- `worktree-isolation-and-integration.md` — parallel-worktree path: relocate the
+  worktree out of operator's main (escape hazard), verify the unit fully landed
+  after cherry-pick, fail-loud on a stale worktree base.
+- `dispatch-brief-one-source-of-truth.md` — "reference by letter" is
+  unenforceable for a context-less spawned agent; ship dedicated subagent types /
+  template / minimal bootstrap pointer.
+- `behavior-change-test-impact-enumeration.md` — a behavior-changing decision must
+  *executably* enumerate existing tests asserting the old behavior (grep-blind
+  sibling of dispatch-coupling Finding 3).
+
 ### Instance render-settlement (parked — framework's downstream tail, not a rival)
 
 Fix lands in the clippy/daneel render, not the core; *owed by* framework edits.
