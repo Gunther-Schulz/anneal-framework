@@ -374,7 +374,10 @@ produces no new-surface citations (only re-attestations of
 prior surfaces) is a malformed artifact.
 
 The **falsification pass** iterates each [VERIFIED] D-entry at
-the convergence cycle's start. It is **dispatched to a fresh-
+the convergence cycle's start. Entries still [CONDITIONAL] or
+[AUTO-ACCEPTED] rest on an unverified assumption and are **not**
+falsified textually here — that assumption is discharged by
+verify (§4.3) exercising the work, per §3.2.2. The pass is **dispatched to a fresh-
 context subagent**, applying §3.1's separate-checker
 requirement — an artifact produced and judged in the same
 context is not self-enforcing. The subagent is briefed per
@@ -388,8 +391,8 @@ returns the artifact and does not initiate further dispatches.
 The pass produces a per-decision artifact (`modules.md` §3.4):
 one line per [VERIFIED] entry carrying a **candidate set** —
 one candidate per coupling shape the basis depends on
-(`glossary.md` Coupling shape; closed set: target-shape /
-target-uses / target-behavior). Each candidate is tagged with
+(`glossary.md` Coupling shape; closed set: target-existence /
+target-dependents / target-behavior). Each candidate is tagged with
 its shape and carries a **falsification predicate** — the rule
 the orchestrator applies to the candidate's result to compute
 holds-or-falsified (closed set per `modules.md` §3.4:
@@ -402,7 +405,7 @@ basis on the tagged shape; the orchestrator applies the
 predicate to the result and computes holds-or-falsified
 (`glossary.md` Falsification predicate). A candidate with a
 malformed predicate (not from the closed set, or shape-
-incoherent — e.g., a target-uses candidate with a predicate
+incoherent — e.g., a target-dependents candidate with a predicate
 referencing no scope) is malformed. A candidate set whose
 shape coverage does not include every shape the basis claims
 is also malformed. A [VERIFIED] entry whose aggregate-holds-or-
@@ -705,8 +708,8 @@ as though it were independent.
   (judged-non-material, forgotten, scope-overflow, missed-pattern,
   or cited-other). "Material" means: implementing the same locked
   decision in a way that yields a different value at a named
-  consumer-observable surface (instance-defined; canonical
-  surfaces: external contract, error pattern, API-surface naming,
+  **contract surface** (`glossary.md`; instance-defined — for
+  code: external contract, error pattern, API-surface naming,
   persisted behavior). Impl-detail (variable naming, internal
   organization, test fixture choice) does not yield such a
   value-change.
@@ -775,8 +778,9 @@ A finding — an observation recorded by inspection — moves through:
    **disposition** naming which of three cases applies (closed enum):
 
    - **addressed** — the cited D# names the same observable
-     behavior the finding observes (file, symbol, or contract
-     surface); citation-equivalence is the check.
+     behavior the finding observes (an element of the work
+     product, or its contract surface); citation-equivalence is
+     the check.
    - **non-issue** — basis cites (a) a re-runnable search whose
      result is empty, or (b) a file:line + observable fact
      contradicting the finding's premise (§3.1).

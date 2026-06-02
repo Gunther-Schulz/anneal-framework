@@ -82,20 +82,19 @@ specifies a basis-cardinality check.
 **Coupling shape** — a category of dependency that a [VERIFIED]
 D-entry's basis claims to rest on. Closed set of three:
 
-- **target-shape** — the named target exists with its claimed
-  contract surface (signature, type, decorator, attribute,
-  structure).
-- **target-uses** — code that uses the target (call-sites,
-  imports, downstream consumers). Amendment decisions
-  (`core.md` §3.2.2) always include this shape; the
-  target-uses candidate re-runs §3.2.2's reference
-  enumeration as its search.
-- **target-behavior** — the target's behavior under input
-  classes (branches, error paths, contracts honored). A
-  target-behavior claim a read cannot exhibit (resolved at
-  runtime) is [CONDITIONAL] per `core.md` §3.2.2 — basis the
-  behavior exercised by executable verification, not falsified
-  textually here.
+- **target-existence** — the named target exists with its
+  claimed **contract surface** (what's observable from outside
+  it; `Contract surface`). The instance binds the concrete
+  surface form.
+- **target-dependents** — what depends on or uses the target.
+  Amendment decisions (`core.md` §3.2.2) always include this
+  shape; the target-dependents candidate re-runs §3.2.2's
+  reference enumeration as its search.
+- **target-behavior** — the target's behavior or effect under
+  input classes. A target-behavior claim a read cannot exhibit
+  (resolved at runtime) is [CONDITIONAL] per `core.md` §3.2.2 —
+  basis the behavior exercised by executable verification, not
+  falsified textually here.
 
 The convergence-cycle falsification pass (`core.md` §4.1.4)
 must cover every shape the basis depends on with a candidate
@@ -173,8 +172,8 @@ the basis depends on (see Coupling shape above).
 to a falsification candidate's result to compute
 holds-or-falsified (`modules.md` §3.4). Closed set:
 `any-match` (any non-empty positive result falsifies),
-`any-outside-scope:<scope>` (any result line outside the named
-scope falsifies), `expected-match:<pattern>` (result lacking
+`any-outside-scope:<scope>` (any evidence outside the named
+scope falsifies), `expected-match:<pattern>` (evidence lacking
 the pattern falsifies — used when the basis claims a property
 present). The predicate's variant must suit the candidate's
 tagged coupling shape (`modules.md` §3.4 shape-coherence rule).

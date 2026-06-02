@@ -324,7 +324,7 @@ per `core.md` §4.1.4; the orchestrator coverage-checks the
 returned artifact on return (`core.md` §4.1.4 Coverage check).
 
 - **decision-ID** — the D# being attempted.
-- **shape** — one of: `target-shape`, `target-uses`,
+- **shape** — one of: `target-existence`, `target-dependents`,
   `target-behavior` (closed set per `glossary.md` Coupling
   shape).
 - **candidate** — an executable query (grep, search) or
@@ -339,22 +339,22 @@ returned artifact on return (`core.md` §4.1.4 Coverage check).
   Closed set:
     - `any-match` — any non-empty positive result on the
       candidate is falsifying.
-    - `any-outside-scope:<scope>` — any result line outside
-      the named `<scope>` (a file path, glob, or directory)
-      is falsifying.
-    - `expected-match:<pattern>` — the result LACKING
+    - `any-outside-scope:<scope>` — any evidence outside the
+      named `<scope>` is falsifying; `<scope>` is the instance's
+      evidence-locator form (for code: a file path, glob, or
+      directory).
+    - `expected-match:<pattern>` — the evidence LACKING
       `<pattern>` is falsifying (used when the basis claims
-      something present; absence falsifies). `<pattern>` is
-      either a literal substring (default) or a regular
-      expression marked with a `regex:` prefix
-      (`regex:<expr>`); the orchestrator applies literal-
-      substring containment or regex match accordingly.
+      something present; absence falsifies). `<pattern>` is in
+      the instance's pattern form (for code: a literal substring,
+      default, or a regex marked `regex:<expr>`), matched
+      accordingly.
   Shape-coherence rule: the predicate's variant suits the
-  candidate's tagged shape — `target-uses` candidates use
-  `any-match` or `any-outside-scope`; `target-shape` and
+  candidate's tagged shape — `target-dependents` candidates use
+  `any-match` or `any-outside-scope`; `target-existence` and
   `target-behavior` candidates use `expected-match` (the
   basis claims a property present; the predicate names what
-  must be in the result for the property to hold). A
+  must be in the evidence for the property to hold). A
   predicate not from the closed set, or shape-incoherent for
   its tagged shape, is malformed.
 - **result** — the actual output of running the candidate:
@@ -375,9 +375,9 @@ A candidate set whose shape coverage does not include every
 shape the basis claims is a malformed line — the basis
 specifies its shape dependencies, the candidate set mirrors.
 Amendment decisions (`core.md` §3.2.2) always include
-target-uses in the basis's claimed shapes; the candidate set's
-target-uses candidate re-runs §3.2.2's reference enumeration
-as its search.
+target-dependents in the basis's claimed shapes; the candidate
+set's target-dependents candidate re-runs §3.2.2's reference
+enumeration as its search.
 
 A [VERIFIED] entry without a falsification-pass line at the
 convergence cycle is a malformed artifact — the [READY]
