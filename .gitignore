@@ -1,2 +1,6 @@
 # anneal-dev runtime run-state (dogfood)
 .anneal-dev/
+
+# Python bytecode cache (e.g. from importing hooks/ during testing)
+__pycache__/
+*.pyc
