@@ -25,9 +25,14 @@ from c-safe on, clippy went idle.)
     `references/tracker.md` carry the shape names; also check
     `references/lens-set.md` / `lenses.md`.
   - Behavior unchanged — vocabulary alignment, as the a+b sync was.
-- **T1 / T2 tail leaks** — NOT YET DONE in the framework core
-  ([[contract1-depollution-cluster]]). When they land, their clippy renders
-  batch into this same pass.
+- **T1 (`file:line` → "a located read of the source") — framework DONE**
+  (`f9fd5b4`). Clippy's render uses `file:line` directly — which is clippy's
+  **legitimate binding** of the framework's "located read," so the c-only sync
+  likely needs little/no change here; verify clippy presents `file:line` as its
+  binding, not as the framework concept.
+- **T2 / T3 tail leaks** — NOT YET DONE in the framework core
+  ([[contract1-depollution-cluster]]; T3 = `grep`→search). When they land,
+  their clippy renders batch into this same pass.
 
 ## Re-entry procedure (when clippy returns to active use)
 1. Diff clippy's render against the then-current framework core (c-safe + any

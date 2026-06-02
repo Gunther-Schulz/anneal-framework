@@ -18,9 +18,10 @@ built non-code instance, not now). A code-vocab inventory also surfaced two
 (**locked order, 2026-06-02**): (1) **clippy-sync the a+b vocab — DONE**
 (clippy v0.9.94, `56414d6`); (2) **Cycle c-safe — DONE** (spec `5f4ed74`; enum
 kept closed; V-26 registered); (3) the focused c-only clippy-sync is **PARKED**
-([[clippy-render-resync]] — operator 2026-06-02, clippy idle; batch with T1/T2
-when clippy resumes). **Framework head moves to the T1/T2 tail leaks** (no
-clippy-current dependency); the c-parked completeness call stays deferred (V-26).
+([[clippy-render-resync]] — operator 2026-06-02, clippy idle; batch with the
+tail leaks when clippy resumes). **Framework head: T2 + T3** (T1 DONE, spec
+`f9fd5b4`; no clippy-current dependency); the c-parked completeness call stays
+deferred (V-26).
 
 ## The framing that matters (don't lose this)
 
@@ -319,12 +320,15 @@ Recommended order **a → b → c** (clearest → hardest):
      break. Verify when abstracting `target-dependents`.
 
 **Tail leaks (code-vocab inventory, 2026-06-02 — the 3-leak framing undercounted):**
-- **T1 — `file:line` citation form (~10+ sites: §3.2 / §4.1 / §5.1 / modules).**
-  Core hardcodes `file:line` for "a located citation" (a document cites
-  `section:¶`). SAFE: "a located read of the source" is already a bound term;
-  mechanical sweep → "a located citation." Not speculative.
+- **T1 — `file:line` citation form — DONE** (spec `f9fd5b4`, 2026-06-02; 9 sites
+  → "a located read of the source", instance binds the locator; consolidated the
+  basis-rule §3.2(b) / glossary:50 split; `core:114` illustration left by design).
 - **T2 — `code`/`fixtures` as work-product (core:475, 817).** §4.2/§5.1 say
   "editing code" / "code or fixtures" for "the work product." Two sites, mechanical.
+- **T3 — `grep`/`grep query` as the search form (4 sites: core:369, glossary:143,
+  modules:245, modules:330).** Surfaced during T1 (the search-form sibling of the
+  `file:line` citation-form leak). Abstract → "search" / "search query"; instance
+  binds grep. Mechanical, small.
 - Benign (verified, leave): `runtime` (general), `result line` in the §4.1.2
   record sense, generic `file` persistence locations, "presented as code" (markdown).
 
