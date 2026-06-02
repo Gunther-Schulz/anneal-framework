@@ -81,11 +81,10 @@ so it lives here in the index, not in the names.)
   slots (persistence, isolation), despite the guide's "placeholder per slot"
   claim. Slot-as-file vs slot-as-section to settle.
 - `skill-craft-pre-edit-hook-findings.md` — the practice-5 gate hook. Finding 1
-  (over-broad path) DONE; **Finding 3 root-caused 2026-06-02, ELEVATED by adoption**
-  (now the dev-process's normal path, not a dogfood edge) (subagent
-  Skill-result misclassified as operator-prompt boundary → gate unsatisfiable from
-  a subagent; fix open — forced spawn-fallback in the step-5 dogfood); Findings 2
-  (Bash-bypass) + 4 (spec-origin over-match) open.
+  (over-broad path) DONE; **Finding 3 RE-GROUNDED 2026-06-02 → MOOT as a hook bug**
+  (re-confirmed empirically: the gate IS satisfiable from a subagent; the harness
+  transcript shape changed; residual reframed → `anneal-dev-impl-skillcraft-gate.md`);
+  Findings 2 (Bash-bypass) + 4 (spec-origin over-match) open.
 - `harness-tool-runstate-unsourced.md` — step-5 finding: the rendered instance
   `SKILL.md` (clippy + anneal-dev, verbatim) tells the AI not to use harness
   task-tools for run-state, but that half has no spec origin (contract-2 drift).
@@ -98,9 +97,13 @@ so it lives here in the index, not in the names.)
   `decision-design-sharpening` / `pre-implementation-sharpening`) is still
   PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
   extraction; low-priority. Relates to `framework-dev-as-anneal.md`.
-- `anneal-dev-packaging.md` — register + install anneal-dev (marketplace.json +
-  `claude plugin install`) so "run anneal-dev" is invocable by name, not just
-  followed-in-context. Mechanical Layer-1 work; filed by adoption.
+- `anneal-dev-packaging.md` — **DONE 2026-06-02** — installed `anneal-dev@anneal-dev`
+  0.1.0 (marketplace add + plugin install); pending operator `/reload-plugins` to
+  activate in-session.
+- `anneal-dev-impl-skillcraft-gate.md` — anneal-dev's impl dispatch must invoke
+  skill-craft (Skill tool) before gated rule-corpus edits (it loads refs but doesn't
+  invoke it now → a dispatched edit blocks → spawn-fallback). Method-kernel edit
+  (`anneal-dev/spec`); runs through anneal-dev. From the Finding-3 re-grounding.
 - `planner-instance-exploration.md` — the planner instance build + the
   framework findings (1–5) seeding several items above; also holds the
   **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner

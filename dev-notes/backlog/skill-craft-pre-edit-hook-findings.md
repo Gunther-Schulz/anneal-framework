@@ -1,6 +1,6 @@
 # skill-craft-pre-edit hook — over-broad path match + bypassable + subagent-reliability
 
-**Status:** Finding 1 **DONE** (2026-06-01); Finding 3 **root-caused** 2026-06-02 (fix open), **ELEVATED 2026-06-02** — adoption ([[dev-process-adoption]]) made anneal-dev the dev process, so subagent-dispatched rule-corpus edits are now the *normal* path, not a dogfood edge; the hook ↔ dispatch seam is load-bearing (a method-kernel edit run through anneal-dev hits it every time). Findings 2 + 4 open. Surfaced
+**Status:** Finding 1 **DONE** (2026-06-01); Finding 3 **RE-GROUNDED 2026-06-02 → MOOT as a hook bug** (the boundary detector handles the current harness shape correctly — empirical test below); residual reframed to [[anneal-dev-impl-skillcraft-gate]]. Findings 2 + 4 open. Surfaced
 2026-06-01 by the anneal-dev pass-1 subagent (which tripped the gate writing
 draft spec files and routed around it). The path-narrowing (Finding 1) is done,
 so the de-pollution cycles' `spec/*.md` edits gate correctly without
@@ -48,6 +48,21 @@ gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).
    ungated):** skip Skill/tool-result user events regardless of `isMeta`
    (detect the Skill-result / `tool_result` content shape and treat as
    non-prompt), rather than relying on the `isMeta=True` assumption.
+
+   **RE-GROUNDED 2026-06-02 (this session) — does NOT reproduce; MOOT as a hook
+   bug.** The root-cause above was flagged "not re-confirmed"; re-confirming
+   empirically (dispatched a subagent that invoked skill-craft via the Skill tool,
+   then ran the actual `has_skill_craft_invocation_this_turn` against its real
+   transcript) → the gate returns **True**. Current harness shape: a Skill *result*
+   is a `tool_result` block (`isMeta=None`, correctly NOT a text-prompt) and the
+   skill *content* is a separate `isMeta=True` event (correctly skipped); the task
+   message is the boundary at index 0. Across four real subagent transcripts: no
+   fail-opens, no false-positives, boundary correct every time. The harness
+   transcript shape changed since the dogfood, incidentally fixing the
+   misclassification — **there is no hook fix to make.** Residual (reframed):
+   anneal-dev's impl dispatch loads its references but does not *invoke* skill-craft
+   via the Skill tool, so a dispatched rule-corpus edit has no Skill `tool_use` and
+   the gate correctly blocks it → [[anneal-dev-impl-skillcraft-gate]].
 4. **Spec-origin-trace fires on non-anneal-instance skills (over-match,
    2026-06-02).** The PreToolUse spec-origin-trace demand (practice 5
    "spec-origin grounding for plugin edits") matched a `plugin/skills/*/` edit
