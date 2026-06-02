@@ -3,10 +3,24 @@
 ## Development process grounding
 
 Before any rule-corpus edit cycle on the triad (anneal-framework
-spec, skill-craft canonical, or instance renders), read
-`development-process.md` in full — per edit cycle, not per
-session. Practice 5 forecloses operating from summary or
-earlier-turn invocations; memory pointers are insufficient.
+spec, skill-craft canonical, or instance renders), re-ground in the
+governing process — per edit cycle, not per session, and never from
+summary or earlier-turn invocations (practice 5; memory pointers are
+insufficient):
+
+- **Corpus-evolution work** (instance / skill-craft / dev-process
+  machinery edits — anneal-dev renders from none of these) runs through
+  **anneal-dev**: invoke it; it loads its own foundations and lenses.
+- **Method-kernel edits** (the edited file is in anneal-dev's
+  render/foundation source: `anneal-framework/spec/*`, `foundation.md`,
+  `anneal-dev/spec/*`) — these run through anneal-dev too; the one rule
+  they add is the verify, which **must** include a review grounded
+  outside the anneal kernel — the skill-craft self-review (form) + the
+  operator (soundness; skill-craft checks skill-quality, not
+  methodology-correctness) — because anneal-dev never self-certifies its
+  own foundation. Read `development-process.md` for that discipline +
+  the shared release machinery.
+
 Doubt-voicing about whether re-grounding applies IS the evidence
 it applies.
 

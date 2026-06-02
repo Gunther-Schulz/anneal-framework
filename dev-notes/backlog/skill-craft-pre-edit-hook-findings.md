@@ -1,6 +1,6 @@
 # skill-craft-pre-edit hook — over-broad path match + bypassable + subagent-reliability
 
-**Status:** Finding 1 **DONE** (2026-06-01); Finding 3 **root-caused** 2026-06-02 (fix open); Findings 2 + 4 open. Surfaced
+**Status:** Finding 1 **DONE** (2026-06-01); Finding 3 **root-caused** 2026-06-02 (fix open), **ELEVATED 2026-06-02** — adoption ([[dev-process-adoption]]) made anneal-dev the dev process, so subagent-dispatched rule-corpus edits are now the *normal* path, not a dogfood edge; the hook ↔ dispatch seam is load-bearing (a method-kernel edit run through anneal-dev hits it every time). Findings 2 + 4 open. Surfaced
 2026-06-01 by the anneal-dev pass-1 subagent (which tripped the gate writing
 draft spec files and routed around it). The path-narrowing (Finding 1) is done,
 so the de-pollution cycles' `spec/*.md` edits gate correctly without

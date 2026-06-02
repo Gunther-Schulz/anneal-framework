@@ -97,10 +97,11 @@ binding and lens set.
   recognises; copy as the seed for a new instance repo and fill /
   delete per the instantiation guide.
 - [`development-process.md`](./development-process.md) — how this
-  repo and its instances evolve. Codifies the architectural
-  foundation (framework / render / instance contracts), the
-  development practices, and the release loop with its
-  step-5 discharge artifact.
+  repo and its instances evolve. Routes corpus-evolution work to the
+  **anneal-dev** instance (which carries the method) and is the home
+  of the framework-dev machinery: the development practices,
+  validation-watch governance, the coherence-audit cadence, and the
+  release loop with its discharge artifact.
 - [`post-run-review.md`](./post-run-review.md) — the framework's
   empirical-validation procedure (the Q-set for analyzing a real
   run against the spec; rendered into each instance's

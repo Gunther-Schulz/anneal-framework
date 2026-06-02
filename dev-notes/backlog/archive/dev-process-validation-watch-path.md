@@ -1,7 +1,9 @@
 # development-process.md — stale `spec/validation-watch.md` cross-ref
 
-**Status:** OPEN — surfaced 2026-06-02 during Cycle c-safe's step-4 (the V-26
-write put the live path in focus; confirmed by grep). **Trivial, not pressing.**
+**Status:** **DONE 2026-06-02** (closed by [[dev-process-adoption]]). Fixed — and the
+item *undercounted*: corpus-wide grep at fix time found **three** stale sites in
+`development-process.md` (the V-21 ref, plus two wrapped sites in practice 8 ¶3 and
+practice 9(e)), all corrected to `dev-notes/`. Archived.
 
 `development-process.md:453` (practice 12) cites `spec/validation-watch.md` for
 V-21, but the file lives at **`dev-notes/validation-watch.md`** (line 55 of the

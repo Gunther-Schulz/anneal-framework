@@ -401,12 +401,13 @@ deferred to runtime. The catch is the spec-origin audit
 
 With the spec settled — bindings, lens set, run-artifact persistence,
 optionally presentation and lifecycle extensions — the domain-specific
-work is done. From here the instance is built and
-evolved by the **development process** (`development-process.md`) —
-render, verify in a separate context, validate, and change. The first
-build is that process run once over the whole instance; every later
-change runs it over the affected parts. This guide does not restate
-it.
+work is done. From here the instance is built and evolved as
+**corpus-evolution work** — run through the **anneal-dev** instance,
+which carries the method (render, verify in a separate context,
+validate, change); `development-process.md` routes corpus work there
+and carries the release machinery. The first build is that process run
+once over the whole instance; every later change runs it over the
+affected parts. This guide does not restate it.
 
 Render the plugin files from the instance spec and the framework spec
 — faithfully, per skill-craft's rendering-fidelity rule (`Rendering
@@ -431,11 +432,13 @@ originates.
 
 A change to how <Instance> behaves goes to the framework spec or
 the instance spec first: committed there, then re-rendered into
-these files and verified in a separate context — the procedure is
-`development-process.md` in the `anneal-framework` repo. Hand-
-editing a skill file as if it were source breaks re-derivability:
-the spec and the instance drift, and the change cannot be
-reproduced for another instance.
+these files and verified in a separate context. Changing instance
+behavior is corpus-evolution work — run it through the **anneal-dev**
+instance (in the `anneal-framework` repo, `development-process.md`
+routes corpus work to anneal-dev and carries the release machinery).
+Hand-editing a skill file as if it were source breaks
+re-derivability: the spec and the instance drift, and the change
+cannot be reproduced for another instance.
 
 This rule covers the skill *content*. The plugin's packaging — this
 file, the READMEs, `plugin.json`, and the like — is repo-local,

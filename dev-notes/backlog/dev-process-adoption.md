@@ -1,11 +1,41 @@
 # Adoption: retire development-process.md's shadow-copy method, delegate to anneal-dev
 
-**Status:** OPEN — **B1 LOCKED 2026-06-02 (operator decision); implementation queued as its own dedicated cycle.** The
-adoption phase of [[framework-dev-as-anneal]] (its locked "next: adoption"). DESIGN
-ONLY so far — no edits made. **FOUNDATIONAL** (governs the dev-process itself) →
-bootstrap rule: this is **framework-layer** work, done with the **current** process
-+ **separate-context review**; anneal-dev does not govern its own foundation.
-Implement as its own cycle after the decision below.
+**Status:** **IMPLEMENTED 2026-06-02** — corpus change verify-clean (two
+separate-context reviews, PASS-with-fixes, fixes applied), pending operator commit
+approval at the step-4 discharge. The adoption phase of [[framework-dev-as-anneal]].
+**FOUNDATIONAL.**
+
+## Implemented (2026-06-02)
+
+**Shipped (6 corpus files):** `development-process.md` reframed (two-regime →
+one-process intro; "three levels" collapsed to a `foundation.md` pointer; practice 2
+thinned to its canonical homes; validation-watch path-fixes ×3; release-loop framing
+note) + process-pointers re-pointed to the model in `CLAUDE.md` (grounding gate),
+`instantiation-guide.md` (§6 + seed block), `instance-template/CLAUDE.md`,
+`README.md`, `spec/README.md`.
+
+**The B1 table over-scoped — the real reduction was surgical.** Most practices are
+genuine framework-dev machinery the bootstrap regime applies directly (this cycle
+*used* P3/P4/P9/P11). Only ad-hoc *method-paraphrase* thinned (P2, the three-levels
+prose). P1 + P3–P12 + the release machinery **stayed**.
+
+**Decision 1 reversed:** the render/spec/adherence triage **stays in P1** — moving it
+into the rendered `post-run-review.md` would multiply copies (the fragmentation the
+effort fights). Avoided re-pointing `post-run-review.md` / `modules.md` / `glossary.md`.
+
+**Bootstrap rule refined (operator-driven, mid-cycle) → [[framework-dev-as-anneal]].**
+Not "kernel work is hands-off anneal-dev." Accurate invariant: **everything runs
+through anneal-dev; a *method-kernel edit* (file in `anneal-framework/spec/*` /
+`foundation.md` / `anneal-dev/spec/*`) adds one rule — anneal-dev never self-certifies
+its own foundation, so verify adds a kernel-independent review = skill-craft (form) +
+operator (soundness).** Driving is never optional (no trivial-edit carve-out — that's
+the general V-27 ceremony question, not a kernel rule).
+
+**Follow-ups filed:** [[anneal-dev-packaging]] (install so "run anneal-dev" is
+invocable, not just followed-in-context); [[adoption-instance-settlement]] (re-point
+clippy/daneel/campaign CLAUDE.md seed blocks); [[skill-craft-pre-edit-hook-findings]]
+Finding 3 **elevated** (the hook ↔ anneal-dev subagent-dispatch seam is now the dev
+process's normal path, not a dogfood edge).
 
 ## What the classification found (subagent `aded70906aad5656f`, full citations there)
 

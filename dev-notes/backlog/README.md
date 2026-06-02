@@ -47,18 +47,19 @@ so it lives here in the index, not in the names.)
   → core de-pollution → skeleton render (`anneal-dev` repo `abf5290`,
   separate-context verify + skill-craft review PASS) → **step-5 dogfood PASSED**
   (drove `daneel-cycle-b-sync` through anneal-dev end-to-end, verify [PASSED],
-  shipped daneel `d85cff3`). **anneal-dev runs as a real instance.** **Next:
-  adoption** — promote it to the actual dev-process + reconcile
-  `development-process.md`; package it (followed-in-context now). V-27 has its n=1
+  shipped daneel `d85cff3`). **anneal-dev runs as a real instance.** **Adoption
+  IMPLEMENTED 2026-06-02** (→ `dev-process-adoption.md`) — shadow-copy method
+  retired surgically; bootstrap rule refined to *drive, don't self-certify*.
+  Remaining: package it (followed-in-context now → `anneal-dev-packaging.md`). V-27 has its n=1
   ceremony-cost seed; four flow-back questions resolved →
   `archive/anneal-dev-framework-flowback.md`.
-- `dev-process-adoption.md` — **the adoption phase of `framework-dev-as-anneal`
-  (design surfaced 2026-06-02, awaiting B1/B2 decision).** Retire
-  `development-process.md`'s shadow-copy *method* (delegate to anneal-dev), keep it
-  as the home of the residual framework-dev-process machinery (validation-watch
-  governance, the pre-edit gate, the release/marketplace loop, coherence-audit
-  cadence). Recommend **B1** (three-layer split) over B2 (migrate+retire — breaks
-  anneal-dev's closed-slot contract). FOUNDATIONAL; ~84 dependent sites.
+- `dev-process-adoption.md` — **IMPLEMENTED 2026-06-02 (B1, surgical), pending
+  commit.** Retired `development-process.md`'s shadow-copy *method* (reframed to
+  "everything runs through anneal-dev"; only P2 + the three-levels prose thinned —
+  the rest is genuine framework-dev machinery that stayed). Bootstrap rule refined
+  to *drive, don't self-certify*; Decision-1 reversed (triage stays in P1). Spawned
+  `anneal-dev-packaging.md` + `adoption-instance-settlement.md`; elevated
+  `skill-craft-pre-edit-hook-findings.md` Finding 3.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the agnostic
   core. **COMPLETE (2026-06-02):** full sweep a/b/c-safe/T1/T2+T3 (`3a2245b` …
   `c634ebf`) + a whole-corpus coherence-audit (handoff `a3a2adda5508d9cdf`,
@@ -80,7 +81,8 @@ so it lives here in the index, not in the names.)
   slots (persistence, isolation), despite the guide's "placeholder per slot"
   claim. Slot-as-file vs slot-as-section to settle.
 - `skill-craft-pre-edit-hook-findings.md` — the practice-5 gate hook. Finding 1
-  (over-broad path) DONE; **Finding 3 root-caused 2026-06-02** (subagent
+  (over-broad path) DONE; **Finding 3 root-caused 2026-06-02, ELEVATED by adoption**
+  (now the dev-process's normal path, not a dogfood edge) (subagent
   Skill-result misclassified as operator-prompt boundary → gate unsatisfiable from
   a subagent; fix open — forced spawn-fallback in the step-5 dogfood); Findings 2
   (Bash-bypass) + 4 (spec-origin over-match) open.
@@ -96,10 +98,9 @@ so it lives here in the index, not in the names.)
   `decision-design-sharpening` / `pre-implementation-sharpening`) is still
   PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
   extraction; low-priority. Relates to `framework-dev-as-anneal.md`.
-- `dev-process-validation-watch-path.md` — **trivial, not pressing.**
-  `development-process.md:453` cites `spec/validation-watch.md`; the file is at
-  `dev-notes/validation-watch.md` (one site). One-token fix; own micro-cycle or
-  fold into the next dev-process edit.
+- `anneal-dev-packaging.md` — register + install anneal-dev (marketplace.json +
+  `claude plugin install`) so "run anneal-dev" is invocable by name, not just
+  followed-in-context. Mechanical Layer-1 work; filed by adoption.
 - `planner-instance-exploration.md` — the planner instance build + the
   framework findings (1–5) seeding several items above; also holds the
   **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner
@@ -121,6 +122,11 @@ caveat in `clippy-render-resync.md`.**
 - `clippy-render-resync.md` — **PARKED** (clippy idle). The clippy render-debt
   owed for c-safe (+ future T1/T2), batched into one render pass to do when
   clippy returns to active use. Re-entry procedure recorded in the file.
+- `adoption-instance-settlement.md` — **PARKED** (instances idle). Re-point the
+  instance CLAUDE.md "rendered, not authored" seed blocks (clippy / daneel /
+  campaign-craft) from "the procedure is `development-process.md`" to the
+  anneal-dev model. campaign-craft also needs its source repo located (stale
+  `diligence-framework` name; only the marketplace clone exists). Filed by adoption.
 - `clippy-skill-de-bloat.md` — de-bloat clippy's `SKILL.md` (over the word budget;
   named in the `framework-dev-as-anneal` locked decision). *Structural* de-bloat,
   not vocab-debt — but clippy-local, so park-safe while clippy is idle. Candidate

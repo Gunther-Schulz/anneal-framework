@@ -9,8 +9,10 @@ originates.
 
 A change to how <Instance> behaves goes to the framework spec or
 the instance spec first: committed there, then re-rendered into
-these files and verified in a separate context — the procedure
-is `development-process.md` in the `anneal-framework` repo.
+these files and verified in a separate context. Changing instance
+behavior is corpus-evolution work — run it through the **anneal-dev**
+instance (in the `anneal-framework` repo, `development-process.md`
+routes corpus work to anneal-dev and carries the release machinery).
 Hand-editing a skill file as if it were source breaks
 re-derivability: the spec and the instance drift, and the change
 cannot be reproduced for another instance.

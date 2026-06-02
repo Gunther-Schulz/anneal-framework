@@ -1,40 +1,58 @@
 # Development process
 
-This document is the development process for evolving the
-**anneal-framework**, **skill-craft**, and the framework's
-**instances** (such as `coding-clippy`). It covers development work
-*on* these repos — distinct from `instantiation-guide.md`, which
-covers deriving a new instance from the framework.
+This document governs development work *on* the **anneal-framework**,
+**skill-craft**, and the framework's **instances** (such as
+`coding-clippy`) — distinct from `instantiation-guide.md`, which covers
+deriving a new instance.
 
-A fresh session does not hold this process by default. Read and
-adopt it before doing development work here.
+The generic anneal method this process once restated clause-by-clause
+now lives in **anneal-dev** — the framework instantiated for
+corpus-evolution (the `anneal-dev` repo, sibling to this one). So
+development runs through anneal-dev, with one added rule where an edit
+touches anneal-dev's own foundation:
+
+- **Corpus-evolution work** — editing an instance, skill-craft, or this
+  dev-process machinery (anneal-dev is rendered from none of these) —
+  **runs through anneal-dev**, which carries the phases, the basis
+  rule, render-verify, the lens set, and the verify battery. (Run
+  followed-in-context until anneal-dev is packaged for install.)
+- **Method-kernel edits** — the edited file is in anneal-dev's
+  render/foundation source: `anneal-framework/spec/*`, `foundation.md`,
+  or `anneal-dev/spec/*`; anything else is corpus-evolution. These
+  **run through anneal-dev too** — the rigor is not optional for the
+  foundation. The one rule they add: anneal-dev **never** certifies a
+  kernel edit alone (a checker built from the kernel shares its blind
+  spots), so verify **must** add a review grounded **outside** the
+  anneal kernel — the skill-craft self-review (catches form/discipline
+  regressions) **and** the operator (the kernel-independent judge of
+  whether the method change is *sound*; skill-craft checks
+  skill-quality, not methodology-correctness), recorded at release-loop
+  step 4. anneal-dev's own lens/coherence pass does not substitute. The
+  bootstrap rule, refined: drive freely; never self-certify the
+  foundation.
+
+This document is the home of the shared framework-dev machinery —
+validation-watch governance, the skill-craft pre-edit gate, the
+coherence-audit cadence, and the release/marketplace loop. A fresh
+session does not hold this process by default — read and adopt it
+before development work here.
 
 ## The three levels
 
-The architecture rests on three contracts (framework arbitrariness
-/ render completeness / instance domain-binding scope), specified
-in `foundation.md`. This document and `instantiation-guide.md`
-both operate within those contracts; the practices below
-operationalize them.
+The architecture rests on three contracts — framework arbitrariness,
+render completeness, instance domain-binding scope — specified in
+`foundation.md` and filled across three repos: **skill-craft** (how to
+build and review any Claude Code skill), **anneal-framework** (the one
+domain-general methodology — phases, tracker, status-state machine,
+basis rule, evidence-bearing-artifact rule), and **an instance** (the
+method bound to a domain and rendered into a plugin; `coding-clippy` is
+the software-engineering one). This document and `instantiation-guide.md`
+operate within those contracts.
 
-The contracts fill across three repositories:
-
-- **skill-craft** — how to build and review any Claude Code skill:
-  structural-enforcement mechanisms (forcing functions, blocking
-  gates, observable checkpoints, menus), protocol conventions, skill
-  architecture. Domain-agnostic and skill-agnostic.
-- **anneal-framework** — the one domain-general methodology: the
-  investigate-design / implement / verify phases, the tracker, the
-  status-state machine, the basis rule, the
-  evidence-bearing-artifact rule. Built *using* skill-craft's mechanisms.
-- **An instance** — the framework bound to a domain and rendered into
-  a working plugin. `coding-clippy` is the instance for software
-  engineering. An instance is *rendered* — paraphrased, with domain
-  bindings — from the framework spec.
-
-A change belongs at the highest level at which it is true. Work flows
-down: skill-craft informs the framework; the framework is rendered
-into instances.
+A change belongs at the highest level at which it is true, and work
+flows down — skill-craft informs the framework; the framework renders
+into instances. Diagnosing that level for a surfaced problem is
+practice 1.
 
 ## The practices
 
@@ -79,15 +97,13 @@ each with its cited failure-shape attribute — discharges to
 
 ### 2. Rendering is lossy — renderer ≠ verifier
 
-An instance is rendered from the framework spec by paraphrase.
-Paraphrase silently flattens structural rules into soft prose ("must"
-becomes "should") and drops clauses. The renderer cannot see its own
-flattening — it reads its output as faithful. So every render is
-verified by a **separate context** — a fresh subagent, or a different
-party — by clause-level diff against the source. The context that
-produced a render never verifies it. What "faithful" requires — the
-rendering-fidelity rule itself — is skill-craft's (`Rendering from a
-source`).
+Paraphrase silently flattens structural rules ("must" → "should") and
+drops clauses, and the renderer cannot see its own flattening — it
+reads its output as faithful. So a render is verified by a **separate
+context**, never the one that produced it, by clause-level diff against
+the source. The rendering-fidelity rule is skill-craft's (`Rendering
+from a source`); for corpus-evolution work, anneal-dev's
+render-fidelity battery (`verify`) is what runs it.
 
 ### 3. Subagents for context-heavy work
 
@@ -242,7 +258,7 @@ iterating on form, or — only via practice 1's three-form
 enumeration discharge with cited per-form failure reasons — accept
 the residual (recorded as observation, not as resolution).
 
-**Validation-watch is not a deferral journal.** `spec/validation-
+**Validation-watch is not a deferral journal.** `dev-notes/validation-
 watch.md` records observations about framework design choices
 made under *genuine uncertainty* — choices the framework
 couldn't classify cleanly at decision time. Writing a V-N entry
@@ -283,7 +299,7 @@ building. Genuine includes:
 - (e) **no-ship test** (additive changes only) — surface what
   happens without this addition: an existing mechanism that
   covers the case, acceptance as known gap, acceptance of
-  the current burden as functional, or log to `spec/validation-
+  the current burden as functional, or log to `dev-notes/validation-
   watch.md` as a legitimate V-N entry per practice 8. Weigh the
   cost of NOT shipping against shipping (skill-craft anti-patterns
   "Additive reflex").
@@ -450,7 +466,7 @@ computed from the corpus's git history: commits between the
 last `Coherence-audit-handoff:` commit-message marker and HEAD.
 If no prior marker exists (no audit has run), the count is from
 the corpus's initial commit. **N is initial calibration**
-(starting value 5; refined via `spec/validation-watch.md` V-21
+(starting value 5; refined via `dev-notes/validation-watch.md` V-21
 as drift-cadence observations accumulate). The mechanical SHAPE
 (cycle-count threshold + git-log observable + marker artifact)
 is fixed; only the number is open.
@@ -494,7 +510,11 @@ place at n=1.
 
 ## The release loop
 
-A change runs the same loop:
+A change runs the same loop — for corpus-evolution work, steps 1–4 are
+anneal-dev's run (investigate-design → implement → verify, whose
+battery is step 4's discharge) and steps 5–7 are the release it hands
+off to; a method-kernel edit also runs through anneal-dev, adding a
+kernel-independent review at verify:
 
 1. **Diagnose the level** — skill-craft, framework, or instance
    (practice 1).

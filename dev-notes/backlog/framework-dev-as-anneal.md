@@ -14,7 +14,7 @@ Surfaced four framework-core flow-back questions → [[anneal-dev-framework-flow
 skill-craft reviews PASS in separate contexts), then drove `daneel-cycle-b-sync`
 through it end-to-end — investigate-design → implement (spawn-fallback) → verify
 **[PASSED]** — shipping daneel `d85cff3`. **Bootstrap PASSED: anneal-dev runs as a
-real instance.** **Next: adoption** (→ [[dev-process-adoption]]; **B1 locked**, implementation queued) —
+real instance.** **Adoption IMPLEMENTED 2026-06-02** (→ [[dev-process-adoption]]) — shadow-copy method retired surgically; bootstrap rule refined to *drive, don't self-certify* —
 promote anneal-dev to the actual dev-process
 + reconcile `development-process.md` (the shadow copy this effort exists to retire);
 package anneal-dev (now followed-in-context, not installed); optional 2nd dogfood
@@ -67,6 +67,14 @@ drift.
   you saw off the branch you're sitting on?": you never use the instance to edit
   its own foundation. (Already how framework-spec edits work; we preserve it,
   not invent it.)
+
+  **Refined during adoption (2026-06-02, operator-driven).** "Never governs its
+  own foundation" was too blunt — it conflated *driving* with *certifying*. The
+  accurate rule: the instance **drives** kernel edits like any work (the rigor
+  helps), but **never self-certifies its own foundation** — verify adds a
+  kernel-independent review (skill-craft = form + operator = soundness). The
+  kernel set is observable: `anneal-framework/spec/*`, `foundation.md`,
+  `anneal-dev/spec/*`. `development-process.md` carries the operative form.
 - **The "bolt-on hygiene checks" fallback isn't a competing plan — it splits.**
   The actual disciplines (name what you removed, keep the core domain-agnostic,
   don't let files bloat) are general skill-quality rules that belong in
