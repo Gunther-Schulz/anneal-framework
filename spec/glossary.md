@@ -140,7 +140,7 @@ decisions) run after the working context judges the §4.1.1
 supporting facts met and the §4.1.2 fresh-session test PASSED.
 [READY] requires the convergence cycle to produce zero D-track
 deltas (`core.md` §4.1.4). The investigation pass must enumerate
-new surfaces investigated this cycle, cited as file:line or grep
+new surfaces investigated this cycle, cited as a located read or grep
 queries not present in any prior cycle's investigation-pass
 artifact this run; a convergence cycle that only re-attests prior
 findings is malformed.

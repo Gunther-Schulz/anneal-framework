@@ -151,7 +151,7 @@ produces none.
 Every load-bearing claim and every design premise carries a named
 basis — the evidence it rests on. The basis is the artifact itself
 (§3.1): (a) a search result with its executable query, OR (b) a
-file:line range citation paired with **exactly one observable
+located read of the source paired with **exactly one observable
 fact** about the cited range (count, identifier, type) that the
 citation grounds. **Cardinality is one per citation** — a
 citation paired with multiple stacked facts is malformed. A basis
@@ -231,7 +231,7 @@ substitution the basis rule forbids (§3.2).
 
 A secondary source — a sub-agent report, a prior session's notes, an
 audit summary — is not itself a basis. A direct citation it carries
-(the located artifact's file:line range with an observable fact)
+(the artifact's located read with an observable fact)
 relays the artifact and can stand as a basis; its interpretation,
 synthesis, or recommendation cannot, and is re-grounded against the
 actual artifact before anything rests on it.
@@ -368,8 +368,8 @@ surfaces investigated this cycle**, where each surface is
 **new** by at least one of: (a) cites a file path not in any
 prior cycle's artifact this run; (b) cites a grep query whose
 query string differs verbatim from every prior cycle's; (c)
-cites a file:line range with at least one line not covered by
-any prior cycle's same-file citation. A convergence cycle that
+cites a located read covering at least one location not covered
+by any prior cycle's citation of the same source. A convergence cycle that
 produces no new-surface citations (only re-attestations of
 prior surfaces) is a malformed artifact.
 
@@ -417,7 +417,7 @@ returned artifact's lines against the [VERIFIED] D-entry set at
 the convergence cycle's start AND checks each line's mechanical
 form: (i) candidate set non-empty, (ii) each candidate carries
 a shape tag from the closed set (`glossary.md` Coupling shape),
-a candidate field (file:line or re-runnable query per §3.2), a
+a candidate field (a located read or re-runnable query per §3.2), a
 falsification-predicate from the closed set (`modules.md` §3.4;
 shape-coherent for the candidate's tagged shape), a result
 field, and a per-candidate holds-or-falsified value; (iii) the
@@ -782,7 +782,7 @@ A finding — an observation recorded by inspection — moves through:
      product, or its contract surface); citation-equivalence is
      the check.
    - **non-issue** — basis cites (a) a re-runnable search whose
-     result is empty, or (b) a file:line + observable fact
+     result is empty, or (b) a located read + observable fact
      contradicting the finding's premise (§3.1).
    - **deferred** — one of: (a) re-observes a gap an existing
      [AUTO-ACCEPTED] decision deferred (basis cites that
