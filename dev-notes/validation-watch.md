@@ -1442,7 +1442,13 @@ closed-vs-open. **Specific watch:** `target-dependents` in a non-code
 domain includes a **paraphrased restatement** invisible to verbatim
 search (e.g. a rendered plugin clause) — which may have no existing
 evidence-binding; the one place the "no new binding" abstraction could
-break.
+break. [Update 2026-06-02 — R4 (`dev-notes/backlog/archive/anneal-dev-framework-flowback.md`):
+this sub-case DOES have a binding — a render-resolved paraphrase is the
+**target-behavior** runtime [CONDITIONAL] path (the rule's behavior
+resolving through an unsurfaced dependent, `core.md` §3.2.2), now
+documented at `glossary.md` Coupling shape. The broader watch — a
+genuinely new 4th coupling shape / predicate type for a non-code domain
+— remains open.]
 
 **n=1 (seed).** None yet — no non-code instance has run falsification.
 The anneal-dev / planner derivations (`framework-dev-as-anneal`,
@@ -1455,3 +1461,44 @@ uncertainty about a design choice's correctness (the closed enum's
 domain-completeness), to settle empirically against a real non-code
 domain — not deferral of a classifiable fix (no fix is in hand; opening
 the enum now would be the premature move).
+
+## V-27. Contract-2 render-ceremony cost on the dev-process-as-instance — does it justify itself?
+
+**Status: WATCHING.**
+
+**Decision (`framework-dev-as-anneal` locked decision; `foundation.md`
+contract 2; `development-process.md` practice 2 / release loop).** Making
+framework development a real anneal instance (anneal-dev) means the
+development process itself becomes "anneal + corpus-specific bindings,"
+rendered like any instance — so under contract 2 it incurs per-cycle
+render-ceremony: the dev-process-as-instance gets re-rendered from the
+shared kernel and fidelity-checked (separate context) like clippy/daneel.
+The locked bet (`framework-dev-as-anneal` "honest cost"): that ceremony
+replaces a worse, invisible cost already paid as drift.
+
+**Why uncertain.** Whether the per-cycle re-render + fidelity check on the
+dev-process-as-instance justifies itself cannot be settled until anneal-dev
+is operational (step 5 dogfood + promotion). Two ways it could go: (a) the
+shared kernel changes rarely enough that the ceremony is cheap and the
+drift-prevention wins; (b) the kernel churns and the re-render/fidelity
+overhead per cycle becomes a real burden disproportionate to the drift it
+prevents. Not judgeable ahead of operation.
+
+**Production signal to watch (n=1).** The first stretch of anneal-dev
+operating as the actual dev-process: a kernel change forces a
+dev-process-instance re-render + fidelity pass whose cost visibly exceeds
+the drift it caught — or, conversely, a re-render catches a drift the old
+advisory process would have missed. Either is n=1 evidence. **Specific
+watch:** the re-render/fidelity cost per cycle vs. the drift-catch rate.
+
+**n=1 (seed).** None yet — anneal-dev is finalized as a draft
+(`dev-notes/derivation-pass2/`, `framework-dev-as-anneal` step 4 done) but
+not operational; step 5 (dogfood) + promotion are the eventual tests.
+Registered now per the locked decision's instruction to file the contract-2
+ceremony cost as a validation-watch entry during the derivation cycle.
+
+Per `development-process.md` practice 8, this V-N is legitimate: genuine
+uncertainty about a design choice's correctness (whether the
+instance-ceremony cost is justified), to settle empirically once anneal-dev
+operates — not deferral of a classifiable fix (no fix is in hand; the
+ceremony is the locked design, watched for whether it pays off).

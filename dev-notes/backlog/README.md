@@ -47,13 +47,9 @@ so it lives here in the index, not in the names.)
   **pass-2 finalization (2026-06-02, `dev-notes/derivation-pass2/`; isolated
   derive + separate-context verify, PASS-with-fixes)**. **Next: step 5 —
   dogfood** on an instance-corpus cleanup. Surfaced four framework-core
-  questions → `anneal-dev-framework-flowback.md`.
-- `anneal-dev-framework-flowback.md` — the four framework-**core** questions the
-  anneal-dev pass-2 derivation surfaced (R1 §5.2(b) for prose work products; R2
-  singular "executable verification"; R3 human check inside isolated verify; R4
-  runtime-resolution path for `target-dependents`) + the owed contract-2
-  render-ceremony validation-watch entry. Framework-kernel decisions (independent
-  review per the bootstrap rule), spawned by `framework-dev-as-anneal.md`.
+  questions — **all resolved 2026-06-02** (R1 + R4 → kernel fixes; R2 + R3 →
+  no change, framework already handles them; contract-2 → V-27 WATCHING);
+  record at `archive/anneal-dev-framework-flowback.md`.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the agnostic
   core. **COMPLETE (2026-06-02):** full sweep a/b/c-safe/T1/T2+T3 (`3a2245b` …
   `c634ebf`) + a whole-corpus coherence-audit (handoff `a3a2adda5508d9cdf`,

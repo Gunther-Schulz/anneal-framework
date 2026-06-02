@@ -1,7 +1,8 @@
 # anneal-dev derivation — framework-core flow-back (R1–R4 + owed validation-watch)
 
-**Status:** open — **R1 + R4 RESOLVED 2026-06-02**; R2, R3 + the contract-2
-validation-watch entry remain. The framework-**core** questions the anneal-dev pass-2
+**Status:** **CLOSED 2026-06-02** — R1–R4 all resolved; the contract-2 ceremony
+cost filed as **V-27** (WATCHING, `dev-notes/validation-watch.md`). Archived
+record. The framework-**core** questions the anneal-dev pass-2
 derivation surfaced (`framework-dev-as-anneal` step 4, 2026-06-02). These are
 **framework-kernel** decisions: per the bootstrap rule, the anneal-dev instance
 never governs its own foundation, so each is decided framework-layer with
@@ -13,10 +14,12 @@ effort anticipated: forward-deriving the instance is how the framework gets
 tested for its own domain, and these are where the fixed method still strained
 *after* the contract-1 de-pollution.
 
-**Triage note (practice 8):** each is a *design question* (is a framework change
-warranted?), not yet a fix-in-hand — backlog material, not validation-watch
-(none is parked-for-empirical-watching) and not an n=1 commit (no fix form
-settled). Decide each on its own micro-cycle.
+**Triage note (practice 8):** each was a *design question* (is a framework change
+warranted?) — decided on its own micro-cycle. **Outcome:** R1 + R4 → framework
+fixes shipped; R2 + R3 → no framework change (the framework already handles them);
+contract-2 → genuine uncertainty, filed as V-27 (WATCHING). Two of four needed a
+kernel change; the other two dissolved on grounding — the forward-derivation's
+value was as much in what it ruled OUT as in what it fixed.
 
 ## The four questions
 
@@ -35,19 +38,25 @@ settled). Decide each on its own micro-cycle.
   verdicts" (D-track verdicts are the same §5.2(b) surface). Instance render-debt
   → [[clippy-render-resync]] + [[daneel-cycle-b-sync]].
 
-- **R2 — singular "the domain's executable verification."** `core.md` §4.3 +
-  `foundation.md` contract 3 frame verification as one runnable artifact
-  (pytest / debugger). Corpus-evolution's is a battery of four heterogeneous
-  checks (one a fresh-context dispatch, one a human act). Fits via
-  "dispatched/run, not asserted," but the singular noun + single-artifact
-  examples lean narrower. Question: acknowledge a multi-check battery shape, or
-  is the existing generalization sufficient framing?
+- **R2 — singular "the domain's executable verification." RESOLVED 2026-06-02 —
+  no framework change.** `core.md` §4.3 says "the domain's executable verification
+  is run and its output shown" — appropriately abstract (a *collective*; the
+  instance binds however many checks) and carries NO program examples. The
+  pytest/debugger examples live only in `foundation.md` contract 3, explicitly as
+  **instance-binding-scope** illustrations. anneal-dev bound a four-check battery
+  without the framework blocking it (`derivation-pass2` bindings Verification
+  battery) — the abstraction held (n=1). The singular noun reads as collective,
+  not single-artifact-forcing; adding "one or more checks" would be Additive-reflex
+  for a non-problem. Closed.
 
-- **R3 — a human check inside isolated verify.** Battery check (d) is operator
-  diff-approval — but verify runs isolated and §1 bounds operator action to
-  menu/interjection; the framework doesn't cleanly model a verify-internal check
-  that is an operator act rather than a dispatched/program-run one. Minor.
-  Question: should the framework name this?
+- **R3 — a human check inside isolated verify. RESOLVED 2026-06-02 — no framework
+  change.** Operator diff-approval is not a verify-internal check: it's the §1(a)
+  **menu-selection at a closed-artifact presentation** (post-verify [PASSED]) /
+  the release-loop commit gate. The framework already separates verify (isolated,
+  dispatched checks → [PASSED]) from operator approval (`core.md` §1(a)).
+  anneal-dev minorly mis-grouped operator approval under its verify battery as
+  check (d) — an instance presentation point, not a framework gap; noted for
+  anneal-dev's next touch (it is the operator gate, not a dispatched check). Closed.
 
 - **R4 — runtime-resolution for a search-unsurfaceable dependent. RESOLVED
   2026-06-02 — the premise was wrong; no mechanism was missing.** Grounding
@@ -68,12 +77,12 @@ settled). Decide each on its own micro-cycle.
 
 ## Also owed (same cycle origin)
 
-- **Contract-2 render-ceremony validation-watch entry** — register a
-  `validation-watch` V-N: watch whether the per-cycle re-render + fidelity check
-  on the dev-process-as-instance justifies itself, or whether the shared kernel
-  changes rarely enough to make it cheap. (Genuine design-uncertainty →
-  validation-watch material, unlike R1–R4. Deferred from
-  [[framework-dev-as-anneal]] step 4; its own micro-cycle.)
+- **Contract-2 render-ceremony — FILED as V-27 (WATCHING) 2026-06-02.**
+  Registered in `dev-notes/validation-watch.md` V-27: watch whether the per-cycle
+  re-render + fidelity check on the dev-process-as-instance justifies itself once
+  anneal-dev is operational, or whether the shared kernel changes rarely enough to
+  make it cheap. (Genuine design-uncertainty → validation-watch, unlike R1–R4.
+  Settles empirically at step 5 dogfood + promotion.)
 
 ## Relates
 [[framework-dev-as-anneal]] (origin), [[contract1-depollution-cluster]]
