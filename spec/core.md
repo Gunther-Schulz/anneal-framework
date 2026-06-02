@@ -111,7 +111,7 @@ output, a recorded design decision — must be **evidence-bearing**:
 producing it requires doing the work it represents, so a
 non-adherent AI cannot produce it by pattern alone. A bare claim —
 "checked all consumers" — is satisfiable whether or not the work
-happened; a located enumeration — "consumers: [file:line, …]" — is
+happened; a located enumeration — for code, "consumers: [file:line, …]" — is
 not.
 
 Evidence-bearing is a gradient, not an absolute — no artifact an AI
@@ -435,12 +435,12 @@ set's shape coverage matches the basis's claimed shapes
 brief (d); per-candidate falsifying capability is now mechanical
 (predicate-applied-to-result; no subagent judgment).
 
-**Isolation fallback.** If an isolated context cannot be
+**Spawn-fallback.** If an isolated context cannot be
 established (subagent spawn fails), the falsification pass is
 conducted in the working context per the rules above and the
-artifact records "without isolation"; an un-isolated
-falsification pass is never silently taken as though it were
-independent (parallel to §4.3 verify isolation).
+artifact records "without isolation" — the spawn-fallback
+(§4.2); an un-isolated falsification pass is never silently
+taken as though it were independent.
 
 If the convergence cycle surfaces D-track deltas (new decisions
 or amendments, or falsified [VERIFIED] entries reopened), the
@@ -696,9 +696,9 @@ The isolation is unconditional: that verify runs isolated is not a
 judgment the run makes per task. verify's recorded result names the
 context it was conducted in, so a [PASSED] carries whether the check
 was independent. If an isolated context genuinely cannot be
-established, verify is still conducted, without isolation, and its
-result records that — an un-isolated verify is never silently taken
-as though it were independent.
+established, verify is still conducted, without isolation — the
+spawn-fallback (§4.2) — and its result records that; an un-isolated
+verify is never silently taken as though it were independent.
 
 - **Planned vs actual** — every locked design decision is checked
   against what the work actually does. **The work is also checked

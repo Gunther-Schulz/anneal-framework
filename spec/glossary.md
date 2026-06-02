@@ -216,12 +216,14 @@ exactly the unit's intended change from a clean precondition.
 Mismatch → in-place: restore, halt, surface; isolated: halt and
 surface (cause uncertain, no auto-restore).
 
-**Spawn-fallback** — the degraded implement path when the
-orchestrator cannot spawn a subagent for a unit: it implements the
-unit in the working context and surfaces "without isolation"
-(`core.md` §4.2). The isolation guarantee (separate copy,
-escape-resistance, integrity check) is **waived** on this path —
-hence surfaced, not silent. Mirrors verify's degraded path (§4.3).
+**Spawn-fallback** — the degraded path taken when the orchestrator
+cannot spawn an isolated subagent for dispatched work: the work is
+conducted in the working context and surfaces "without isolation".
+Applies wherever the framework dispatches isolated work — an
+implement unit (`core.md` §4.2), the convergence-cycle falsification
+pass (§4.1.4), or verify (§4.3). The isolation guarantee (separate
+copy, escape-resistance, integrity check) is **waived** on this
+path — hence surfaced, not silent.
 
 **Pass** — one of the two activities within a cycle. Every cycle has
 exactly two, in order:
