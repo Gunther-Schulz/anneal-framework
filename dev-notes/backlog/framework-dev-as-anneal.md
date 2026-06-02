@@ -14,7 +14,8 @@ Surfaced four framework-core flow-back questions → [[anneal-dev-framework-flow
 skill-craft reviews PASS in separate contexts), then drove `daneel-cycle-b-sync`
 through it end-to-end — investigate-design → implement (spawn-fallback) → verify
 **[PASSED]** — shipping daneel `d85cff3`. **Bootstrap PASSED: anneal-dev runs as a
-real instance.** **Next: adoption** — promote anneal-dev to the actual dev-process
+real instance.** **Next: adoption** (design surfaced → [[dev-process-adoption]]; recommend B1) —
+promote anneal-dev to the actual dev-process
 + reconcile `development-process.md` (the shadow copy this effort exists to retire);
 package anneal-dev (now followed-in-context, not installed); optional 2nd dogfood
 (clippy `SKILL.md` de-bloat, accepting the clippy render-debt bundle).

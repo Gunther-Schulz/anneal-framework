@@ -1,0 +1,95 @@
+# Adoption: retire development-process.md's shadow-copy method, delegate to anneal-dev
+
+**Status:** OPEN — **design surfaced 2026-06-02, awaiting B1/B2 decision.** The
+adoption phase of [[framework-dev-as-anneal]] (its locked "next: adoption"). DESIGN
+ONLY so far — no edits made. **FOUNDATIONAL** (governs the dev-process itself) →
+bootstrap rule: this is **framework-layer** work, done with the **current** process
++ **separate-context review**; anneal-dev does not govern its own foundation.
+Implement as its own cycle after the decision below.
+
+## What the classification found (subagent `aded70906aad5656f`, full citations there)
+
+`development-process.md` (666 lines, 12 practices + release loop + "three levels")
+splits into **three layers**, not two:
+
+1. **Generic anneal method** → now carried by **anneal-dev** (the instance).
+   Practices 2, 3, 6, 9, 10, release-loop steps 1–4, and the method-halves of
+   1/4/5/7/8/11/12. These re-point to anneal-dev's phases / foundations / lenses /
+   verify battery.
+2. **Corpus-evolution domain bindings** → **already in `anneal-dev/spec/bindings.md`**:
+   the three-level architecture, the wrap-tolerant + multi-repo practice-4
+   search/scope, the lens set, the verify battery. (anneal-dev *has* slots for these.)
+3. **Framework-dev-PROCESS machinery** → has **NO anneal-dev slot** (correctly — it
+   is neither generic method nor corpus-evolution domain-binding; it is "how *this
+   team* ships changes to *these* repos"):
+   - validation-watch (V-N register) governance — practice 8 ¶3–4 + practice 12
+     trigger (the **most-cited** content: 18 `validation-watch.md` sites);
+   - the **skill-craft pre-edit hook gate** (practice 5) — operator-session
+     PreToolUse discipline, and it *collides* with anneal-dev's subagent dispatch
+     (forced spawn-fallback in the dogfood);
+   - the **release / marketplace loop** (steps 5–6: commit/push/version-bump/
+     `claude plugin update`/`/reload-plugins`) — post-verify operator-side packaging;
+   - the **coherence-audit cadence** (practice 12: N-cycles + `Coherence-audit-handoff:`
+     git marker) — cross-commit release-cadence;
+   - the **practice-11 findings-table** + **practice-4 audit-artifact** shapes —
+     operator-presentation/discharge conventions (anneal-dev presents via its closed
+     artifact, not these).
+
+## The decision (B1 vs B2)
+
+- **B1 — three-layer split (RECOMMENDED).** Delete the duplicated *method* from
+  development-process.md (re-point to anneal-dev); keep the doc as the **home of
+  layer-3** (the framework-dev-process machinery above), much slimmer. "Run
+  anneal-dev for dev work + these residual dev-process bindings."
+- **B2 — migrate layer-3 into anneal-dev + retire dev-process to a redirect stub.**
+  **Rejected:** layer-3 has no anneal-dev slot, and the instantiation-guide slot set
+  is **closed** (instances fill declared slots, don't invent). Forcing layer-3 in
+  either violates that contract or pollutes anneal-dev's clean per-run instance model
+  with cross-run / operator-session / release machinery that isn't its concern.
+
+**Recommendation: B1.** The shadow-copy *method* dies (the effort's goal); the
+genuinely-residual layer-3 stays where it belongs (a framework-dev doc), because
+it is not domain-binding and anneal-dev correctly has no home for it.
+
+## Practice-4 dependent scope (~84 sites / 28 files; full table in the subagent report)
+- **method-references (~22)** → re-point to anneal-dev (+ glossary/modules where the
+  triage already lives): the practice-1 render/spec/adherence-gap triage cluster.
+- **binding-references (~30, dominated by validation-watch's 18)** → re-point to the
+  residual dev-process layer-3 doc (or foundation.md for the three-level/contract refs).
+- **process-pointers (~32)** → re-point to the slimmed dev-process / dual-source.
+
+## Hard cases the implementation must resolve (condensed; full list in subagent report)
+1. **CLAUDE.md per-edit-cycle grounding gate assumes ONE governing doc** (`CLAUDE.md:7`;
+   instance-template + clippy/daneel CLAUDE.md "the procedure is development-process.md").
+   Must re-point to dual source (anneal-dev method + residual layer-3 doc), and
+   `instantiation-guide.md:435` seeds this into every future instance.
+2. **The pre-edit hook** cites "practice 5" + regex-matches `development-process.md` as
+   a gated path — update citations; decide if the gate survives as layer-3 (it has no
+   anneal-dev slot and collides with dispatch).
+3. **Release loop** is an M/B/P braid — steps 1–4 → anneal-dev; the operator-approval-
+   before-commit gate maps to anneal-dev's *downstream* commit gate (not a battery check);
+   steps 5–6 → layer-3 (at most the re-render+diff maps to the `on-verify-PASSED` extension).
+4. **Validation-watch governance** (18+ sites, spec-wired) → layer-3; re-point all.
+5. **Practice-1 triage** splits — its placement-rule is layer-3, its triage is already
+   M (glossary + modules §4 + rendered post-run-reviews); don't orphan the triage's
+   home of record.
+6. **Practice-11 table / practice-4 artifact shapes** — layer-3 presentation conventions
+   or dropped for anneal-dev's native artifacts.
+7. **Release-loop step 7's self-referential "process changes back into this document"** —
+   rewrite (method-changes → anneal-dev/spec; binding-changes → layer-3 doc) or it
+   instructs maintaining the shadow copy.
+8. Two micro-fix backlog items (`dev-process-validation-watch-path`, `backlog/README:89`
+   stale cross-ref) are absorbed/mooted by adoption — fold in, don't separately track.
+
+## Open sub-questions folded in (not separate efforts)
+- **Enforcement hook** ("always use anneal-dev for dev work") — decide here, not
+  reflexively. Lean: no new hook; existing gate + a CLAUDE.md "invoke anneal-dev"
+  discipline likely suffices (practice-8 mitigation-form decision).
+- **Packaging anneal-dev** for real install (marketplace.json + register) — sequence
+  with adoption (so promotion + install land together).
+
+## Next action
+Operator picks B1/B2 (recommend B1). Then a designed implementation cycle: re-ground
+in development-process.md, extract method → re-point dependents → reduce dev-process to
+layer-3 → separate-context review. Relates to [[framework-dev-as-anneal]],
+[[skill-craft-pre-edit-hook-findings]] (the hook re-citation), [[harness-tool-runstate-unsourced]].

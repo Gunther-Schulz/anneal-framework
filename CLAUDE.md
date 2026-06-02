@@ -38,5 +38,13 @@ goes stale. Where state lives instead:
   - Capture substantive corpus-evolution decisions to the backlog or
     `dev-notes/validation-watch.md` *when they land* — long contexts
     can't be reliably searched after the fact.
+  - **No silent deferral — file, don't defer.** When work won't be done
+    now (a follow-up, a "future cycle", a parked idea, a "we should also…"),
+    file it as a backlog item in `dev-notes/backlog/`, never a vague
+    "defer"/"later". The backlog folder is the index; a deferral that isn't
+    an item is invisible. Prefer over-capturing a small item to dropping it.
+    (Distinct from the framework's practice-8 anti-deferral, which is about
+    shipping *classifiable fixes* now; this is about making *any* not-now
+    work an explicit tracked item.)
   - Verify subagent IDs / SHAs from a compaction summary against the
     transcript before citing them in evidence-bearing artifacts.

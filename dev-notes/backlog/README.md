@@ -52,6 +52,13 @@ so it lives here in the index, not in the names.)
   `development-process.md`; package it (followed-in-context now). V-27 has its n=1
   ceremony-cost seed; four flow-back questions resolved →
   `archive/anneal-dev-framework-flowback.md`.
+- `dev-process-adoption.md` — **the adoption phase of `framework-dev-as-anneal`
+  (design surfaced 2026-06-02, awaiting B1/B2 decision).** Retire
+  `development-process.md`'s shadow-copy *method* (delegate to anneal-dev), keep it
+  as the home of the residual framework-dev-process machinery (validation-watch
+  governance, the pre-edit gate, the release/marketplace loop, coherence-audit
+  cadence). Recommend **B1** (three-layer split) over B2 (migrate+retire — breaks
+  anneal-dev's closed-slot contract). FOUNDATIONAL; ~84 dependent sites.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the agnostic
   core. **COMPLETE (2026-06-02):** full sweep a/b/c-safe/T1/T2+T3 (`3a2245b` …
   `c634ebf`) + a whole-corpus coherence-audit (handoff `a3a2adda5508d9cdf`,
@@ -81,6 +88,10 @@ so it lives here in the index, not in the names.)
   `SKILL.md` (clippy + anneal-dev, verbatim) tells the AI not to use harness
   task-tools for run-state, but that half has no spec origin (contract-2 drift).
   Corpus-wide; lean fix = an instantiation-guide render-time note.
+- `skill-craft-soft-load-pointer-discriminator.md` — small skill-craft canonical
+  edit: the Soft-load-pointer anti-pattern doesn't discriminate a provenance
+  citation (inline content) from a load-bearing pointer → a false-positive blocking
+  in the step-5 review. Add the discriminator. Path-1 grounded (OBSERVATIONS #26).
 - `generalize-sharpening-skill.md` — the sharpening family (`sharpen` /
   `decision-design-sharpening` / `pre-implementation-sharpening`) is still
   PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
@@ -110,6 +121,11 @@ caveat in `clippy-render-resync.md`.**
 - `clippy-render-resync.md` — **PARKED** (clippy idle). The clippy render-debt
   owed for c-safe (+ future T1/T2), batched into one render pass to do when
   clippy returns to active use. Re-entry procedure recorded in the file.
+- `clippy-skill-de-bloat.md` — de-bloat clippy's `SKILL.md` (over the word budget;
+  named in the `framework-dev-as-anneal` locked decision). *Structural* de-bloat,
+  not vocab-debt — but clippy-local, so park-safe while clippy is idle. Candidate
+  **2nd anneal-dev dogfood** (larger change → better V-27 datapoint), which would
+  re-activate clippy and bundle `clippy-render-resync`. Not pressing.
 - `daneel-cycle-b-sync.md` — **CLOSED 2026-06-02 → `archive/`.** Shipped daneel
   `d85cff3` (§5.2 vocab sync `implementation outputs`→`realization output`) as the
   step-5 anneal-dev dogfood; R1 resolved to a no-op. (clippy's render-sync shipped
