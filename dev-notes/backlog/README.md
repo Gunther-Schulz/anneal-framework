@@ -42,10 +42,18 @@ so it lives here in the index, not in the names.)
 ### Framework-core (leads)
 
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
-  (reframed-A, 2026-06-01): make framework-dev a real anneal instance. Pass-1
-  forward-derivation **DONE**. **De-pollution Cycles a + b DONE** (commits
-  `3a2245b` + `8bf4d47`); **resume at Cycle c (Leak 3, §4.1.4) in
-  `contract1-depollution-cluster.md`**, before finalizing the instance.
+  (reframed-A, 2026-06-01): make framework-dev a real anneal instance.
+  **Steps 1–4 DONE** — pass-1 derivation → core de-pollution (complete) →
+  **pass-2 finalization (2026-06-02, `dev-notes/derivation-pass2/`; isolated
+  derive + separate-context verify, PASS-with-fixes)**. **Next: step 5 —
+  dogfood** on an instance-corpus cleanup. Surfaced four framework-core
+  questions → `anneal-dev-framework-flowback.md`.
+- `anneal-dev-framework-flowback.md` — the four framework-**core** questions the
+  anneal-dev pass-2 derivation surfaced (R1 §5.2(b) for prose work products; R2
+  singular "executable verification"; R3 human check inside isolated verify; R4
+  runtime-resolution path for `target-dependents`) + the owed contract-2
+  render-ceremony validation-watch entry. Framework-kernel decisions (independent
+  review per the bootstrap rule), spawned by `framework-dev-as-anneal.md`.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the agnostic
   core. **COMPLETE (2026-06-02):** full sweep a/b/c-safe/T1/T2+T3 (`3a2245b` …
   `c634ebf`) + a whole-corpus coherence-audit (handoff `a3a2adda5508d9cdf`,

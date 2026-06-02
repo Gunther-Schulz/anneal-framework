@@ -4,10 +4,12 @@
 `pbs:decision-design-sharpening` (2 rounds: full-monty + 1 user-triggered),
 adapted with anneal's own anchors (foundation contracts / practice 9 /
 validation-watch) substituting the skill's PBS-internal apparatus.
-**Pass-1 forward-derivation DONE** 2026-06-01 (isolated subagent; draft in
-`dev-notes/derivation-pass1/`). **Next:** continue de-polluting the core — **Cycles a + b DONE**
-(`contract1-depollution-cluster`, commits `3a2245b` + `8bf4d47`); **resume at
-Cycle c (Leak 3, §4.1.4)**. The instance is finalized AFTER, on the cleaned core.
+**Steps 1–4 DONE.** Pass-1 forward-derivation (2026-06-01) → core de-pollution
+(`contract1-depollution-cluster`, COMPLETE) → **Pass-2 finalization DONE
+2026-06-02** (isolated derivation subagent `ab6a459e` + separate-context verify
+`ad3e3e3c`, PASS-with-fixes-applied; finalized draft `dev-notes/derivation-pass2/`).
+Surfaced four framework-core flow-back questions → [[anneal-dev-framework-flowback]].
+**Next: step 5 — dogfood** the finalized instance on an instance-corpus cleanup.
 Not spec — this is the durable design handoff.
 
 ## High-level description
@@ -101,7 +103,12 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
    separate-context review.
 4. **Finalize the anneal-dev derivation** on the cleaned core — bindings derived
    once, no scar tissue. The clean derivation is itself a second non-code
-   validation that the de-pollution abstractions worked.
+   validation that the de-pollution abstractions worked. **DONE 2026-06-02**
+   (`dev-notes/derivation-pass2/`): pass-2 re-derived against the de-polluted
+   core; the three pass-1 scar-tissue workarounds (single-tree, code-shaped
+   coupling, code vocab) dissolved — the validation held. Separate-context verify
+   confirmed faithful (the C1 multi-repo simplification cleared as safe) and
+   caught one buried over-claim, now flow-back R4 ([[anneal-dev-framework-flowback]]).
 5. **Dogfood** the finalized instance on an *instance-corpus* cleanup (clippy
    `SKILL.md` de-bloat / open clippy cycles) — corpus-evolution work that is NOT
    the instance's own foundation, so fully instance-governable (genuine
@@ -110,18 +117,20 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
 
 ## Open / deferred to the derivation cycle
 
-- **Instance name + domain framing** — "framework-dev" undersells it; "corpus-
-  evolution" vs "rule-corpus-maintenance" vs "methodology-development" affects
-  the bindings. (Mirrors the planner's naming defer.)
-- **Contract-2 render-ceremony cost** — register as a `validation-watch` entry
-  during the derivation cycle: watch whether the per-cycle re-render + fidelity
+- **Instance name + domain framing** — **RESOLVED:** ratified `anneal-dev` /
+  `corpus-evolution` (pass-2 derivation-rationale Naming verdict). The cleaned
+  core did not touch the domain boundary.
+- **Contract-2 render-ceremony cost** — **still owed:** register as a
+  `validation-watch` entry — watch whether the per-cycle re-render + fidelity
   check on the dev-process-as-instance justifies itself, or whether the shared
-  kernel changes rarely enough to make it cheap.
+  kernel changes rarely enough to make it cheap. (Own micro-cycle; tracked in
+  [[anneal-dev-framework-flowback]].)
 - **B's skill-craft-hardening ship-order** — whether to harden skill-craft's
   advisory anti-decay disciplines into forcing functions *before* A (low-rework,
-  early value) is a Phase-2 (pre-implementation) sequencing call.
+  early value) is a Phase-2 (pre-implementation) sequencing call. Still open.
 - **Design-decision body-shape vs non-build committed positions** (surfaced
-  Cycle b) — §5.2(b)'s target / contract-surface / acceptance-criteria assume a
-  "what to build" decision; the D-track can also hold verdicts (a debugging
-  instance's hypothesis verdicts). Whether the body-shape generalizes to verdicts
-  is an open design surface; relates to D-track-content variation in the planner work.
+  Cycle b) — **examined in pass-2 → flow-back R1** ([[anneal-dev-framework-flowback]]):
+  §5.2(b)'s contract-surface / acceptance-criteria "what to build" shape binds
+  for prose rules but strains (the contract/realization split blurs when the work
+  product IS prose). The verdict generalization (D-track verdicts) is the same
+  §5.2(b) surface, now framed as a framework-core question.
