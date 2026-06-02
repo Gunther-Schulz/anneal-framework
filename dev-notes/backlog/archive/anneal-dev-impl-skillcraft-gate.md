@@ -1,6 +1,11 @@
 # anneal-dev impl dispatch must invoke skill-craft for gated edits
 
-**Status:** OPEN — filed 2026-06-02 by the re-grounding of
+**Status:** **DONE 2026-06-02** — shipped via the **first method-kernel
+self-hosting anneal-dev run** (anneal-dev `ee9e2e6`, verify [PASSED] isolated; 4
+investigate-design cycles — the convergence falsification caught the author's
+cycle-1 under-scoping: a missed 3rd render + the spawn-fallback edit path, both
+fixed). The run's own implement phase exercised the gap (spawn-fallback), and its
+output is the fix that ends it. Filed 2026-06-02 by the re-grounding of
 [[skill-craft-pre-edit-hook-findings]] Finding 3. A **method-kernel edit** (touches
 `anneal-dev/spec/*` — the impl-phase dispatch brief), so it runs through anneal-dev
 (drive) + a kernel-independent verify (skill-craft + operator), per
