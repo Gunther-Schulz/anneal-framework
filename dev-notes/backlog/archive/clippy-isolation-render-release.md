@@ -1,15 +1,18 @@
 # Clippy — re-render to new framework vocab + release
 
-**Status:** **NEXT — locked 2026-06-02 (do this BEFORE Cycle c-safe).** The a+b
-render (isolation + design-shape vocab) does NOT touch clippy's intricate
-*falsification* render, so it's a small, low-risk catch-up + release now. Cycle
-c-safe (which cleans the falsification machinery) then gets its own *focused*
-c-only clippy-sync — the delicate falsification re-render stays isolated, not
-batched into a big a+b+c sync. (Decision via the practice-9 (f) gap-pass run on
-the sequencing itself: c-safe makes the eventual sync's hardest piece, so sync
-the easy rounds first.) The framework spec already states implement-isolation as
-domain-general guarantees; clippy's instance spec was conformed; its PLUGIN
-render + release are pending.
+**Status:** **DONE — shipped clippy v0.9.94 (coding-clippy `56414d6`),
+2026-06-02.** All three pending parts landed: implement.md isolation re-render
+(in-place / Integrity check), tracker.md §5.2 (contract surface / realization
+output), and release (commit + push + marketplace pull + `claude plugin
+update`; operator `/reload-plugins` to activate). Step-4 render-fidelity PASS via
+subagents `af5f269d1cc9a646f` + `af6207c67e8d1be71`; the practice-4 audit caught +
+fixed intra-repo dependent `SKILL.md:65` and spun out [[daneel-cycle-b-sync]]
+(daneel's §5.2 is still stale on the Cycle-b vocab). The a+b render (isolation +
+design-shape vocab) did NOT touch clippy's intricate *falsification* render, so
+it was the small, low-risk catch-up intended. Cycle c-safe (which cleans the
+falsification machinery) still gets its own *focused* c-only clippy-sync — the
+delicate falsification re-render stays isolated, not batched into a big a+b+c
+sync.
 
 ## Done (uncommitted in the coding-clippy repo)
 - `spec/bindings.md` §Dispatch isolation — intro reframed to "fills the

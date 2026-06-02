@@ -54,11 +54,8 @@ Closed items move to `archive/`.
   bildhauer pass** into a safe de-code sweep (do now) + a parked completeness
   call (closed-vs-open, settle vs a non-code instance); an inventory surfaced 2
   tail leaks (T1 `file:line` citation form, T2 `code`-as-work-product). **Locked
-  next (2026-06-02):** clippy-sync a+b → Cycle c-safe → focused c-only clippy-sync.
-- `clippy-isolation-render-release.md` — **NEXT (locked 2026-06-02):** clippy-sync
-  the a+b vocab (isolation + design-shape) + release, *before* Cycle c-safe — keeps
-  the intricate falsification re-render out of it (a focused c-only sync follows
-  c-safe). Clippy spec/plugin edits uncommitted pending.
+  next (2026-06-02):** clippy-sync a+b **DONE** (clippy v0.9.94) → **head: Cycle
+  c-safe** → focused c-only clippy-sync.
 - `instance-template-slot-scaffolding.md` — Cycle-a finding: the
   instance-template doesn't scaffold placeholder sections for the mechanism
   slots (persistence, isolation), despite the guide's "placeholder per slot"
@@ -79,3 +76,8 @@ Closed items move to `archive/`.
   `/spec/.+\.md$` (over-broad: catches `dev-notes/**/spec/`), is `mv`-bypassable,
   and may not register subagent skill-craft invocations. Narrow the path before
   the de-pollution cycles.
+- `daneel-cycle-b-sync.md` — **not pressing.** Practice-4 cross-repo dependent
+  surfaced by the clippy a+b sync: daneel's §5.2 is still stale on the Cycle-b
+  vocab ("implementation outputs" vs "realization output"). A separate daneel
+  render-sync cycle; sequence after the contract1 work unless pulled forward.
+  (clippy's render-sync shipped → `archive/clippy-isolation-render-release.md`.)
