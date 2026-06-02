@@ -48,14 +48,13 @@ Closed items move to `archive/`.
   forward-derivation **DONE**. **De-pollution Cycles a + b DONE** (commits
   `3a2245b` + `8bf4d47`); **resume at Cycle c (Leak 3, §4.1.4) in
   `contract1-depollution-cluster.md`**, before finalizing the instance.
-- `contract1-depollution-cluster.md` — de-code-ify domain leaks in the
-  agnostic core. **Cycles a (§4.2) + b (§5.2b) + c-safe (§4.1.4) + T1
-  (`file:line`) DONE** (`3a2245b` / `8bf4d47` / `5f4ed74` / `f9fd5b4`; enums
-  kept closed; V-26 watch). **Remaining:** T2 (`code`-as-work-product) + T3
-  (`grep` search-form, surfaced during T1); the c-parked completeness call
-  (settle vs a non-code instance). **Locked next (2026-06-02):** c-only
-  clippy-sync **PARKED** ([[clippy-render-resync]], clippy idle) → **head:
-  T2/T3 tail leaks**.
+- `contract1-depollution-cluster.md` — de-code-ify domain leaks in the agnostic
+  core. **COMPLETE (2026-06-02):** full sweep a/b/c-safe/T1/T2+T3 (`3a2245b` …
+  `c634ebf`) + a whole-corpus coherence-audit (handoff `a3a2adda5508d9cdf`,
+  2 findings fixed `8bfa20b`). Core is now domain-independent at the mechanism
+  level. **Deferred (not blocking):** c-parked completeness (V-26) + parked
+  clippy render-debt ([[clippy-render-resync]]). **Head →
+  `framework-dev-as-anneal` step 4.** (Keep open until V-26 + render-debt close.)
 - `clippy-render-resync.md` — **PARKED** (clippy idle). The clippy render-debt
   owed for c-safe (+ future T1/T2), batched into one render pass to do when
   clippy returns to active use. Re-entry procedure recorded in the file.

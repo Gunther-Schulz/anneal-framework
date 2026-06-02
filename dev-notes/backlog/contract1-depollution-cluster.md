@@ -14,14 +14,17 @@ it splits into a **safe de-code-ification sweep** (do now, a/b-style) and a
 **parked completeness call** (closed-vs-open predicate enum — settle against a
 built non-code instance, not now). A code-vocab inventory also surfaced two
 **tail leaks the 3-leak framing missed** — T1 `file:line` citation form
-(pervasive, safe) and T2 `code`/`fixtures` as work-product. Next action
-(**locked order, 2026-06-02**): (1) **clippy-sync the a+b vocab — DONE**
-(clippy v0.9.94, `56414d6`); (2) **Cycle c-safe — DONE** (spec `5f4ed74`; enum
-kept closed; V-26 registered); (3) the focused c-only clippy-sync is **PARKED**
-([[clippy-render-resync]] — operator 2026-06-02, clippy idle; batch with the
-tail leaks when clippy resumes). **Framework head: T2 + T3** (T1 DONE, spec
-`f9fd5b4`; no clippy-current dependency); the c-parked completeness call stays
-deferred (V-26).
+(pervasive, safe) and T2 `code`/`fixtures` as work-product. **DONE (2026-06-02): the full de-pollution sweep + audit.** All cycles shipped —
+a (`3a2245b`) · b (`8bf4d47`) · c-safe (`5f4ed74`) · T1 (`f9fd5b4`) · T2+T3
+(`c634ebf`); then a whole-corpus **coherence-audit** (handoff `a3a2adda5508d9cdf`;
+audit-deltas; load-bearing lenses run) surfaced 2 findings, both fixed (`8bfa20b`:
+spawn-fallback name unified across §4.2/§4.1.4/§4.3; §3.1 illustration marked "for
+code"). The agnostic core is now domain-independent at the mechanism level.
+**Remaining (both deferred, not blocking):** the c-parked completeness call
+(V-26 — settle the closed-enum domain-completeness against a built non-code
+instance) + the parked clippy render-debt ([[clippy-render-resync]]).
+**Framework head → `framework-dev-as-anneal` step 4** (finalize the anneal-dev
+instance on the now-clean core).
 
 ## The framing that matters (don't lose this)
 
