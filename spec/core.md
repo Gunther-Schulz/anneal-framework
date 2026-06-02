@@ -23,6 +23,10 @@ Human inspectability is a constraint, not a primary value:
 artifacts must stay cognitively palatable rather than bloating
 into detail too large to hold.
 
+These two goals operate within the framework's three architectural
+contracts (`../foundation.md`: framework arbitrariness, render
+completeness, instance domain-binding scope).
+
 ---
 
 ## 1. Model
@@ -250,7 +254,7 @@ claim of bounded, contained cost does not.
 investigate-design runs as a loop of cycles and produces a locked
 design recorded in the tracker. It ends at [READY].
 
-**A cycle** has two passes, in order:
+**A cycle** has two passes by default, in order:
 
 1. **Investigation pass.** The AI investigates the relevant surfaces
    — ad-hoc inspection, by its own task-derived method, not a
@@ -264,7 +268,9 @@ design recorded in the tracker. It ends at [READY].
    and citation requirements). The standardized lens set is
    specified by the domain instance.
 
-The standardized inspection pass runs every cycle.
+The standardized inspection pass runs every cycle. The convergence
+cycle (§4.1.4) adds a third pass — falsification — over its
+[VERIFIED] decisions.
 
 **Cycle numbering** is continuous across the run — a loopback from
 a downstream phase (implement actioned-finding, verify [ISSUES
@@ -284,7 +290,7 @@ problem space, not the AI's model of it. It is established first and
 reaches [VERIFIED] only when search-established. When a later cycle
 grows the set of intended targets, the scope decision re-opens and is
 re-searched. Because [READY] requires every design decision
-[VERIFIED] or [AUTO-ACCEPTED] (§5.3) — applies in both modes — an
+[VERIFIED] or [AUTO-ACCEPTED] (§5.2) — applies in both modes — an
 unestablished scope, at neither, holds the phase.
 
 #### 4.1.1 [READY] — judgment criteria
@@ -297,11 +303,11 @@ the standardized lens set is accounted for whole — every lens applied
 in the cycle(s) where its scope was touched, or carrying a cited
 reason it was out of scope for the run, no lens silently absent; the
 last cycle's pass left no load-bearing finding; every design decision is
-[VERIFIED] or [AUTO-ACCEPTED] (§5.3) — both modes; **and every
+[VERIFIED] or [AUTO-ACCEPTED] (§5.2) — both modes; **and every
 [VERIFIED] design decision's embedded target-naming and count
 premises carry a re-runnable basis** (per §3.2 basis-naming for
 design-decision premises); no finding is left open. These are the
-status the tracker carries (§5.3) — a notebook of where each
+status the tracker carries (§5.2) — a notebook of where each
 concern stands — not a mechanical check the run self-passes.
 
 The supporting facts above check that everything *recorded* is
@@ -324,8 +330,8 @@ with output for a search) — or FAILED with the specific gap
 identified. PASSED without per-step external
 citation is a malformed artifact: the test answers from the
 recall pool that wrote the design rather than from external
-evidence, which is the failure shape that allows false-[READY]s
-(V-5). Without the result line itself, the closed-artifact form
+evidence, which is the failure shape that allows false-[READY]s.
+Without the result line itself, the closed-artifact form
 (`modules.md` §1.1) is also malformed and the [READY] declaration
 unenforced. The result line is recorded in the tracker for
 post-run review in both modes.
@@ -388,29 +394,16 @@ iterates each [VERIFIED] D-entry. For each, the subagent names
 a search or read whose positive result would invalidate the
 entry's basis, runs it, and cites the result. The subagent
 returns the artifact and does not initiate further dispatches.
-The pass produces a per-decision artifact (`modules.md` §3.4):
-one line per [VERIFIED] entry carrying a **candidate set** —
-one candidate per coupling shape the basis depends on
-(`glossary.md` Coupling shape; closed set: target-existence /
-target-dependents / target-behavior). Each candidate is tagged with
-its shape and carries a **falsification predicate** — the rule
-the orchestrator applies to the candidate's result to compute
-holds-or-falsified (closed set per `modules.md` §3.4:
-`any-match` / `any-outside-scope:<scope>` /
-`expected-match:<pattern>`). The line aggregates to `holds`
-only if every per-shape candidate holds. The candidate's
-falsifying-capability check is mechanical: the predicate
-specifies what positive result on this candidate falsifies the
-basis on the tagged shape; the orchestrator applies the
-predicate to the result and computes holds-or-falsified
-(`glossary.md` Falsification predicate). A candidate with a
-malformed predicate (not from the closed set, or shape-
-incoherent — e.g., a target-dependents candidate with a predicate
-referencing no scope) is malformed. A candidate set whose
-shape coverage does not include every shape the basis claims
-is also malformed. A [VERIFIED] entry whose aggregate-holds-or-
-falsified is `falsified` flips through [INVALIDATED]→[PENDING]
-(per §5.2) and the cycle continues.
+The pass produces the per-decision falsification artifact
+(`modules.md` §3.4): a candidate set per [VERIFIED] entry — one
+candidate per coupling shape the basis depends on (`glossary.md`
+Coupling shape) — each carrying a **falsification predicate** the
+orchestrator applies to the candidate's result to compute
+holds-or-falsified. The artifact's line shape, the predicate
+closed set, and the malformed-line conditions are specified in
+`modules.md` §3.4. A [VERIFIED] entry whose aggregate is
+`falsified` flips through [INVALIDATED]→[PENDING] (§5.2) and the
+cycle continues.
 
 **Coverage check on return.** The orchestrator counts the
 returned artifact's lines against the [VERIFIED] D-entry set at
@@ -439,7 +432,7 @@ brief (d); per-candidate falsifying capability is now mechanical
 established (subagent spawn fails), the falsification pass is
 conducted in the working context per the rules above and the
 artifact records "without isolation" — the spawn-fallback
-(§4.2); an un-isolated falsification pass is never silently
+(§4.2.2); an un-isolated falsification pass is never silently
 taken as though it were independent.
 
 If the convergence cycle surfaces D-track deltas (new decisions
@@ -450,10 +443,6 @@ convergence cycle is observed clean. **The convergence cycle's
 outputs (investigation pass artifact + falsification pass
 artifact + zero-D-delta status) form part of the [READY]
 artifact** alongside §4.1.2's fresh-session result line.
-
-The convergence cycle's role in closing the false-[READY]
-failure shape is recorded in V-5
-(`dev-notes/validation-watch.md`).
 
 The convergence cycle fires in both modes (interactive and
 auto-battle). In auto-battle no operator override is available;
@@ -486,10 +475,12 @@ major-new-scope or local?") is eliminated — every actioned
 finding loops back. The loopback cost (one investigate-design
 cycle) is the designed trade for eliminating the
 inline-misjudgment cost (partial-state save, scope creep,
-tracker drift; see `dev-notes/validation-watch.md` V-24). No
+tracker drift). No
 work is lost when loopback fires.
 
-**The impl plan.** The impl plan is produced at [READY]
+#### 4.2.1 The impl plan
+
+The impl plan is produced at [READY]
 presentation — the locked design's decisions grouped into
 **dispatch units**, dependency-ordered, with a
 parallel-eligibility marker on each — so the operator sees the
@@ -502,13 +493,16 @@ behind the claim, not by recall. A unit whose disjointness is
 not search-established is sequential. The plan is persisted
 alongside the tracker (`modules.md` §3.3).
 
-**Dispatch.** Every unit is dispatched to a subagent — the
+#### 4.2.2 Dispatch
+
+Every unit is dispatched to a subagent — the
 orchestrator does not implement in its own context. A
-parallel-eligible unit (its disjointness search-established above)
-works on a separate copy per the Isolation mechanism below; a
+parallel-eligible unit (its disjointness search-established per
+§4.2.1) works on a separate copy per the Isolation mechanism
+(§4.2.3); a
 strictly-sequential unit — including the single unit of a one-unit
 plan — runs in a subagent against the operator's work product in
-place under the Integrity check below. If a subagent cannot be
+place under the Integrity check (§4.2.4). If a subagent cannot be
 spawned, the orchestrator implements that unit in the working
 context and surfaces "without isolation" — the **spawn-fallback**, a
 degraded path that waives the isolation guarantee, mirroring
@@ -534,8 +528,9 @@ fires when it becomes dispatchable, not when a "wave" is
 reached; the disjointness check uses the same scope basis the
 impl plan declared at [READY].
 
-**Isolation mechanism (parallel-eligible units).** A
-parallel-eligible unit's subagent works on a **separate copy** of
+#### 4.2.3 Isolation mechanism (parallel-eligible units)
+
+A parallel-eligible unit's subagent works on a **separate copy** of
 the work product the unit touches, so concurrent units cannot clash
 and the unit's changes reach the operator's work product only
 through Integration below — never directly. The separate copy is
@@ -559,7 +554,9 @@ Integrity check confirms no contamination), the orchestrator
 integrates **only the unit's changes** into the operator's work
 product — no copy-side metadata crosses over.
 
-**Integrity check.** The orchestrator verifies that the operator's
+#### 4.2.4 Integrity check
+
+The orchestrator verifies that the operator's
 work product changed in exactly the authorized way and no more. A
 work product may span **multiple containers** (a repository, a
 document set, a dataset) that are independently isolable; each
@@ -585,7 +582,9 @@ takes two forms by dispatch path:
   subagent's writes) and halts and surfaces — contamination is
   contained, not merely detected.
 
-**Self-check at dispatch boundary.** Before returning state, the
+#### 4.2.5 Self-check at dispatch boundary
+
+Before returning state, the
 dispatched subagent (or the working context, on the spawn-fallback
 path) applies the standardized lenses most relevant to write-time
 issues — the instance specifies which ones (`modules.md` §2.2) —
@@ -606,10 +605,12 @@ new control paths, new failure modes the unit's change-set
 introduces). The
 check is unconditional — applied at every dispatch boundary (and
 by the working context on the spawn-fallback path). A self-check
-finding triggers the loopback below (or [VERIFIED — deferred] per
+finding triggers the loopback (§4.2.7) (or [VERIFIED — deferred] per
 the operator's first-judge recommendation, §5.1 (b)).
 
-**Tracker writes.** The orchestrator (§6) owns the tracker append.
+#### 4.2.6 Tracker writes
+
+The orchestrator (§6) owns the tracker append.
 A dispatched subagent does not write directly; on completion or
 halt it returns state — findings, the unit's persistence reference, a
 loopback signal where applicable — and the orchestrator appends in
@@ -623,7 +624,9 @@ artifact — return-state cannot know the run-global namespace. The
 append-only model (`modules.md` §3.1) is preserved without
 concurrency machinery.
 
-**Loopback across the subagent boundary.** A subagent surfacing
+#### 4.2.7 Loopback across the subagent boundary
+
+A subagent surfacing
 any actioned finding halts and returns a loopback-required result
 with four fields:
 
@@ -646,7 +649,7 @@ units** (saved before the halt arrived) are audited by
   §3.3) overlap the new finding's `affected_decisions`?
 - **element/contract intersection** — does the unit's listed
   element + contract scope (from its impl plan entry's parallel-
-  eligibility scope, §4.2 above) overlap the new finding's `scope`
+  eligibility scope, §4.2.1) overlap the new finding's `scope`
   field (named elements, contracts, or behaviors — a behavior
   resolves to its implementing element)?
 
@@ -660,7 +663,9 @@ is preserved across all cases. The run returns to investigate-
 design with the four-field result feeding the new cycle. The
 pattern mirrors verify's [ISSUES FOUND] return (§4.3, §6).
 
-**Checkpoint.** On completion a dispatch unit's work product is
+#### 4.2.8 Checkpoint
+
+On completion a dispatch unit's work product is
 durably **saved** as an instance-specific persistence artifact, and
 the orchestrator appends its **persistence reference** to the
 tracker. The save plus tracker line is the unit's persistence
@@ -697,7 +702,7 @@ judgment the run makes per task. verify's recorded result names the
 context it was conducted in, so a [PASSED] carries whether the check
 was independent. If an isolated context genuinely cannot be
 established, verify is still conducted, without isolation — the
-spawn-fallback (§4.2) — and its result records that; an un-isolated
+spawn-fallback (§4.2.2) — and its result records that; an un-isolated
 verify is never silently taken as though it were independent.
 
 - **Planned vs actual** — every locked design decision is checked
@@ -909,19 +914,12 @@ not in the work product.
 
 ### 5.3 Relationship to [READY]
 
-[READY] (§4.1) is the point at which the working context judges the
-design complete. The tracker state it weighs in that judgment: no
-finding is [INVALIDATED], no load-bearing finding is left below
-[VERIFIED], and every design decision is [VERIFIED] or
-[AUTO-ACCEPTED] (§5.2 — triggers per §5.2 #5). An [INVALIDATED]
-finding, a load-bearing finding short of [VERIFIED], or a design
-decision short of that bar is an unresolved concern — the design is
-not complete, and the loop continues.
-
-These are the status the tracker carries — a notebook of where each
-concern stands — that the AI reads when it judges the design complete
-and presents it (§4.1). They are not gate-conditions a separate
-evaluation re-derives.
+The status tags gate [READY] (§4.1.1): an [INVALIDATED] finding, a
+load-bearing finding short of [VERIFIED], or a design decision short
+of [VERIFIED]/[AUTO-ACCEPTED] (§5.2) is an unresolved concern that
+holds the phase — the loop continues until it resolves. These are the
+status the tracker carries, read at the [READY] judgment (§4.1.1),
+not a gate a separate evaluation re-derives.
 
 ---
 
@@ -955,7 +953,7 @@ mechanics live in §4.2.
 **Loopbacks.** A phase may return the run to an earlier phase; the
 orchestrator honors the return rather than proceeding. The specific
 returns are specified at their source: implement → investigate-design
-on any actioned finding (§4.2, including the dispatched-subagent
+on any actioned finding (§4.2.7, including the dispatched-subagent
 boundary case); [INVALIDATED] finding or design decision reopens design work
 (§5); verify ending [ISSUES FOUND] returns the run to
 investigate-design — the single locus for fix resolution; the fix

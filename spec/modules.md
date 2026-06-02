@@ -57,7 +57,7 @@ out-of-order sections make the artifact malformed:
    citation; followed by one line per dispatch unit naming
    dependencies (after which units, or "first" if none) and
    parallelism (parallel with which units, or "sequential"),
-   per `core.md` §4.2. Decision-relevant content first; detail
+   per `core.md` §4.2.1. Decision-relevant content first; detail
    follows.
 2. **Inventories** — findings and decisions as scannable
    one-per-line ledger entries with status tag and identifier at
@@ -92,7 +92,7 @@ operator's review if and when invoked.
 
 Auto-battle is **interactive minus the operator**. Every protocol
 behavior — cycle loop, lens application, basis-rule discipline,
-tracker shape, dispatch self-check (`core.md` §4.2), verify
+tracker shape, dispatch self-check (`core.md` §4.2.5), verify
 isolation (`core.md` §4.3), [CONDITIONAL] handling — is identical to
 interactive mode. The single difference is the operator slot at
 decision moments: in interactive, an operator selects `another cycle`
@@ -250,7 +250,7 @@ lined; the standardized set is accounted for whole once, at [READY]
 
 ### 3.3 The impl plan
 
-implement-phase's planning artifact (`core.md` §4.2): a list of
+implement-phase's planning artifact (`core.md` §4.2.1): a list of
 **dispatch units** in dependency order, with a parallel-eligibility
 marker on each. A dispatch unit is a group of design decisions
 implemented together as one piece of work; the unit's entry cites
@@ -262,8 +262,8 @@ unit's element and contract scopes are listed, and the disjointness
 from any in-flight unit's scope is established by the re-runnable
 search behind the claim — the executable query, not the asserted
 disjointness or a recalled enumeration. The scope listing is the
-per-unit artifact the orchestrator uses at runtime (`core.md` §4.2
-Dispatch) to check disjointness against the in-flight set before each
+per-unit artifact the orchestrator uses at runtime (`core.md` §4.2.2)
+to check disjointness against the in-flight set before each
 dispatch. A unit whose disjointness is not search-established is
 sequential by default. The basis-rule discipline that governs
 decision bases (`core.md` §3.2) applies here in the same form: a
@@ -276,8 +276,8 @@ tracker, not filed into it.
 
 The plan is immutable across the impl phase: completion lives on
 the tracker via each dispatch unit's persistence reference
-(`core.md` §4.2), not in the plan itself. Only a loopback to investigate-design
-(`core.md` §4.2, §6) invalidates the plan, in which case a new plan
+(`core.md` §4.2.1), not in the plan itself. Only a loopback to investigate-design
+(`core.md` §4.2.7, §6) invalidates the plan, in which case a new plan
 is produced after the next [READY], reflecting any changes to the
 locked design.
 
@@ -285,7 +285,7 @@ locked design.
 subagent that follows a closed-section form: (a) **load
 instructions** — the orchestrator's skill files to read; (b)
 **tracker reference** — at implement dispatch, full tracker or
-the cited reduction (`core.md` §4.2); at verify dispatch
+the cited reduction (`core.md` §4.2.2); at verify dispatch
 (`core.md` §4.3) and convergence-falsification dispatch
 (`core.md` §4.1.4), the §3.1 reduced-to-latest projection —
 the orchestrator produces the projection before brief
