@@ -70,7 +70,9 @@ operator's work product in place under the Integrity check
 (`phases/implement.md`); the working context runs impl only on the
 spawn-fallback path (no subagent). Brief the subagent to load this
 skill's `references/foundations.md`, `references/tracker.md`, and
-`phases/implement.md`, and provide the tracker (in full, or reduced
+`phases/implement.md`, and to invoke skill-craft via the Skill tool
+before any rule-corpus edit (the working context too, on spawn-fallback;
+`bindings.md` Skill-craft invocation); and provide the tracker (in full, or reduced
 to the unit's in-scope decisions with a cited cause) plus the locked
 contracts the unit honors. The subagent implements the in-scope
 decisions; before returning state, it (or the working context, on the

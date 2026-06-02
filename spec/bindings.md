@@ -207,6 +207,17 @@ unit is implemented in the working context and surfaces "without
 isolation"; the isolation guarantee is waived, never silently
 taken as independent.
 
+**Skill-craft invocation (pre-edit).** Before any rule-corpus edit, the
+dispatched impl subagent — and the working context on the
+spawn-fallback path — invokes **skill-craft** via the Skill tool. This
+activates the skill-design drafting disciplines at the edit moment and
+satisfies the framework's per-turn pre-edit gate
+(`anneal-framework/development-process.md` practice 5; the
+`skill-craft-pre-edit.py` PreToolUse hook). Unconditional — every
+anneal-dev impl edit is a rule-corpus edit. The pre-edit counterpart to
+the write-time self-check below (which runs post-edit, before returning
+state).
+
 **Self-check lenses (write-time).** The framework
 (`core.md` §4.2, `modules.md` §2.2) has the dispatched impl subagent
 apply the standardized lenses most relevant to write-time issues to

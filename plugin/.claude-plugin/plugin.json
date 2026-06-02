@@ -1,6 +1,6 @@
 {
   "name": "anneal-dev",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Corpus-evolution for Claude Code: structured investigate-design / implement / verify over rule-corpus edits, with render-fidelity, coherence, and skill-quality checks.",
   "author": {
     "name": "Gunther Schulz"

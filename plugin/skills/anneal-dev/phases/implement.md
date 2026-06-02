@@ -75,7 +75,10 @@ path that waives the isolation guarantee, mirroring verify (`verify.md`).
 
 The subagent is briefed artifact-driven, mirroring verify (`verify.md`):
 brief it to load this skill's `references/foundations.md`,
-`references/tracker.md`, and this file; provide the tracker (default:
+`references/tracker.md`, and this file, and to **invoke skill-craft via
+the Skill tool before any rule-corpus edit** (the working context too,
+on the spawn-fallback path; `bindings.md` Skill-craft invocation);
+provide the tracker (default:
 full; reduction to the unit's in-scope decisions is permitted only with
 a cited cause — e.g., tracker size exceeds the subagent's context budget
 — recorded as the basis for the reduction per the basis rule,
@@ -169,7 +172,10 @@ letter only.
 
 **(a) Load instructions** (uniform across dispatches in this run): the
 dispatched subagent reads, in order, `references/foundations.md`,
-`references/tracker.md`, this file (`phases/implement.md`), and applies
+`references/tracker.md`, this file (`phases/implement.md`); **invokes
+skill-craft via the Skill tool before any rule-corpus edit** (the
+working context too, on the spawn-fallback path; `bindings.md`
+Skill-craft invocation); and applies
 the standardized lenses specified at "Self-check at dispatch boundary"
 below.
 
