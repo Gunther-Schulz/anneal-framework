@@ -114,23 +114,30 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
    the instance's own foundation, so fully instance-governable (genuine
    self-hosting validation, no bootstrap conflict). Kernel/foundation cleanups
    (FB-5, the de-pollution itself) stay framework-layer, not dogfooded.
+   **Entry (NOT started — next move on this effort):** step 5 is a *build* —
+   render pass-2 (`dev-notes/derivation-pass2/`) into a minimal runnable skeleton
+   (per "Start small" above), then drive one small cleanup through it. Two
+   sub-decisions at start: **skeleton scope** (how minimal is "enough to run one
+   cleanup") + **target**. **Caveat:** dogfooding *on clippy* re-activates clippy →
+   un-parks its batched render-debt ([[clippy-render-resync]], whose re-entry
+   trigger this is). Prefer a **contained** first target, or accept that the clippy
+   dogfood bundles the render-debt clearing.
 
 ## Open / deferred to the derivation cycle
 
 - **Instance name + domain framing** — **RESOLVED:** ratified `anneal-dev` /
   `corpus-evolution` (pass-2 derivation-rationale Naming verdict). The cleaned
   core did not touch the domain boundary.
-- **Contract-2 render-ceremony cost** — **still owed:** register as a
-  `validation-watch` entry — watch whether the per-cycle re-render + fidelity
-  check on the dev-process-as-instance justifies itself, or whether the shared
-  kernel changes rarely enough to make it cheap. (Own micro-cycle; tracked in
-  [[anneal-dev-framework-flowback]].)
+- **Contract-2 render-ceremony cost** — **DONE 2026-06-02:** filed as
+  `validation-watch` **V-27** (WATCHING) — watch whether the per-cycle re-render +
+  fidelity check on the dev-process-as-instance justifies itself once anneal-dev
+  is operational. Settles empirically at step 5.
 - **B's skill-craft-hardening ship-order** — whether to harden skill-craft's
   advisory anti-decay disciplines into forcing functions *before* A (low-rework,
   early value) is a Phase-2 (pre-implementation) sequencing call. Still open.
 - **Design-decision body-shape vs non-build committed positions** (surfaced
-  Cycle b) — **examined in pass-2 → flow-back R1** ([[anneal-dev-framework-flowback]]):
-  §5.2(b)'s contract-surface / acceptance-criteria "what to build" shape binds
-  for prose rules but strains (the contract/realization split blurs when the work
-  product IS prose). The verdict generalization (D-track verdicts) is the same
-  §5.2(b) surface, now framed as a framework-core question.
+  Cycle b) — **RESOLVED 2026-06-02 as flow-back R1** (kernel fix `287901d`):
+  §5.2(b)'s "what to build" shape strained for prose (the contract/realization
+  split blurred); the discriminator was abstracted to coupling-based. The verdict
+  generalization (D-track verdicts) was the same §5.2(b) surface, closed with it.
+  ([[anneal-dev-framework-flowback]], archived.)
