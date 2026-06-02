@@ -17,9 +17,10 @@ built non-code instance, not now). A code-vocab inventory also surfaced two
 (pervasive, safe) and T2 `code`/`fixtures` as work-product. Next action
 (**locked order, 2026-06-02**): (1) **clippy-sync the a+b vocab — DONE**
 (clippy v0.9.94, `56414d6`); (2) **Cycle c-safe — DONE** (spec `5f4ed74`; enum
-kept closed; V-26 registered); **head is now (3) the focused c-only clippy-sync**
-(the falsification re-render — clippy `investigate-design.md` / `lens-set.md` /
-`tracker.md`). The T1/T2 tail leaks + the c-parked completeness call remain after.
+kept closed; V-26 registered); (3) the focused c-only clippy-sync is **PARKED**
+([[clippy-render-resync]] — operator 2026-06-02, clippy idle; batch with T1/T2
+when clippy resumes). **Framework head moves to the T1/T2 tail leaks** (no
+clippy-current dependency); the c-parked completeness call stays deferred (V-26).
 
 ## The framing that matters (don't lose this)
 
