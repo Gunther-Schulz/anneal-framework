@@ -1,0 +1,8 @@
+# Enabled lifecycle extensions, one name per line; `#` comments.
+# Available in this anneal-dev version:
+#   render-and-open-diff — fires on verify-PASSED; re-renders affected
+#     plugin skill files from the verified spec and presents the diff
+#     (presentation only — does not commit the render).
+# Uncomment a name to enable.
+
+# render-and-open-diff
