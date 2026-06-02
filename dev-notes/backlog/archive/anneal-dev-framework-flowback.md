@@ -55,8 +55,10 @@ value was as much in what it ruled OUT as in what it fixed.
   the release-loop commit gate. The framework already separates verify (isolated,
   dispatched checks → [PASSED]) from operator approval (`core.md` §1(a)).
   anneal-dev minorly mis-grouped operator approval under its verify battery as
-  check (d) — an instance presentation point, not a framework gap; noted for
-  anneal-dev's next touch (it is the operator gate, not a dispatched check). Closed.
+  check (d) — an instance presentation point, not a framework gap. **Fixed in
+  pass-2 (2026-06-02):** operator approval moved out of the verify battery → the
+  §1(a) presentation / commit gate (`dev-notes/derivation-pass2/` bindings);
+  verify runs isolated from the operator, so it cannot run an operator check. Closed.
 
 - **R4 — runtime-resolution for a search-unsurfaceable dependent. RESOLVED
   2026-06-02 — the premise was wrong; no mechanism was missing.** Grounding

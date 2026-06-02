@@ -374,6 +374,14 @@ isolation-alignment worry (pass-1 Finding 4) is gone.
 
 ### R3 — operator approval as a verify "check" is a human act inside an isolated context
 
+> **RESOLVED 2026-06-02 — the binding was the issue, not the framework.** Operator
+> approval is not a verify check: verify runs isolated from the operator (`core.md`
+> §4.3), so diff-approval is the §1(a) presentation / commit gate downstream of
+> [PASSED]. pass-2's battery is corrected to three dispatched checks (`bindings.md`);
+> operator approval re-placed at the §1(a) gate. Live status in
+> `dev-notes/backlog/archive/anneal-dev-framework-flowback.md` R3. Kept below as the
+> original residual-strain framing.
+
 **Strains against:** `core.md` §4.3 (verify runs **isolated** from
 the working context; the operator-expected-action bound, §1).
 

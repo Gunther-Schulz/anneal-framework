@@ -31,7 +31,7 @@ corpus-evolution value:
 | Framework term | anneal-dev binding |
 |---|---|
 | the task | a corpus-evolution task — a change to the rules a corpus encodes (sharpen a rule, consolidate a fragmented principle, add a lens, re-render a softened clause) |
-| a verified outcome | a rule-text edit whose render-fidelity, coherence, and skill-quality checks are dispatched-and-run clean and whose diff the operator approves |
+| a verified outcome | a rule-text edit whose render-fidelity, coherence, and skill-quality checks are dispatched-and-run clean (verify [PASSED]); the operator's diff-approval is the downstream §1(a) / commit gate, not part of verify |
 | the problem space | the rule-corpus — a multi-repo body where rules encode contracts, cross-reference each other, and are RENDERED into shippable plugins |
 | the work; producing the work | rule-text — the prose and structure of spec/skill files; editing that prose and structure |
 | existing work | the rule-corpus as it currently stands — the prose, the structure, and the rendered plugins as currently shipped |
@@ -41,7 +41,7 @@ corpus-evolution value:
 | exhaustive search of an element's dependents | a **wrap-tolerant** text search across the whole corpus for every spot encoding or cross-referencing the contract — distinctive single tokens, or newline-flattened input, because prose wraps across lines and a multi-word pattern can split mid-match (the corpus-evolution binding of the framework's `search`, `core.md` §3.2) |
 | a located read of the source (`core.md` §3.2) | a located read of the rule-text — the clause read to its visible close (the full sentence/paragraph/section the rule lives in, not a fragment), paired with one observable fact (a count, an enumerated member, the cited identifier) |
 | a construct taken whole (`core.md` §3.2 true-unit basis) | a rule read to its visible close: the complete clause, the defining sentence of a term, the full enumeration of a closed set, or — for an amendment — the rule plus the cross-references that bind to it. The visible close of a prose construct is the syntactic close of the rule-bearing unit: the sentence's terminal punctuation, the paragraph's blank-line boundary, the section's next-heading boundary, or a closed set's final enumerated member |
-| the domain's executable verification | the dispatched-and-run check battery: (a) **render-fidelity** — the rendered plugin checked clause-by-clause against its source spec in a SEPARATE context; (b) **coherence** — whole-document, cross-file, and whole-corpus set-level inspection; (c) a **skill-quality review** of changed skill files; (d) **operator approval** of the resulting diff (see Verification battery below) |
+| the domain's executable verification | the dispatched-and-run check battery (three checks): (a) **render-fidelity** — the rendered plugin checked clause-by-clause against its source spec in a SEPARATE context; (b) **coherence** — whole-document, cross-file, and whole-corpus set-level inspection; (c) a **skill-quality review** of changed skill files (see Verification battery below). Operator diff-approval is **not** a battery check — verify runs isolated from the operator; it is the §1(a) presentation / commit gate, downstream of [PASSED] |
 | the standardized lens set | the corpus-evolution lens set (`lens-set.md`) |
 
 Record only the values that bind framework terms to
@@ -55,8 +55,8 @@ corpus-evolution. Free-form rationale lives in
 The framework's `verify` (`anneal-framework/spec/core.md` §4.3)
 runs the domain's executable verification and shows its output;
 "executable" means these checks are **dispatched/run, not
-asserted**. anneal-dev's battery has four checks. Each is the
-binding-row "executable verification" elaborated; this section is
+asserted**. anneal-dev's battery has three dispatched checks. Each is
+the binding-row "executable verification" elaborated; this section is
 a binding refinement, not a lifecycle extension
 (`instantiation-guide.md` §5 binding-refinement-vs-extension test —
 this refines the verification row of §3's table).
@@ -88,13 +88,16 @@ this refines the verification row of §3's table).
    plugin skills) is reviewed against the skill-design canonical
    guidance — the full canonical sweep for the changed files.
 
-4. **Operator approval of the diff.** The resulting rule-text diff
-   is presented for the operator's approval. This is the
-   consumer-observable terminal: the operator approving the diff
-   is the domain's analogue of a passing test run.
+**Operator approval is not a battery check.** verify runs **isolated
+from the operator** (`core.md` §4.3), so it cannot run an operator
+action. The resulting rule-text diff is approved by the operator at
+verify's presentation — the §1(a) menu-selection (`core.md` §1) /
+release-loop commit gate — **downstream** of verify's [PASSED]. It is
+the domain's analogue of shipping a green build, not a check the
+isolated verify context runs.
 
 A check is "run" only when it is dispatched and its output shown
-(checks 1–3) or the approval recorded (check 4). A "verified" claim
+(checks 1–3). A "verified" claim
 that asserts more than was actually dispatched-and-shown is the
 over-claimed-verification failure shape the lens set watches
 (`lens-set.md`); the battery closes it by making each check an
