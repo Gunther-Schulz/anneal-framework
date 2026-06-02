@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "anneal-dev",
+  "description": "Anneal applied to evolving the rule-corpus itself — corpus-evolution as a structured investigate-design / implement / verify run",
+  "owner": {
+    "name": "Gunther Schulz"
+  },
+  "plugins": [
+    {
+      "name": "anneal-dev",
+      "description": "Corpus-evolution for Claude Code: structured investigate-design / implement / verify over rule-corpus edits, with render-fidelity, coherence, and skill-quality checks.",
+      "source": "./plugin"
+    }
+  ]
+}
