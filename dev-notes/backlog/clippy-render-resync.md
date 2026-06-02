@@ -55,6 +55,13 @@ pull a render-validation forward to near when it lands, not into this batch.
   in `tracker.md`; the discriminator change folds into the same §5.2 render-sync —
   a marked `for code:` gloss is likely clippy's legitimate binding. See
   [[anneal-dev-framework-flowback]] R1.
+- **Coupling-shape glossary bridge (R4) — framework DONE** (this cycle, 2026-06-02):
+  the glossary `target-dependents` bullet now documents that a dependent the
+  reference-search cannot surface (resolved only at runtime, per the instance's
+  mechanical trigger) routes through the target-behavior [CONDITIONAL] path
+  (`glossary.md` Coupling shape). Clippy renders the coupling shapes (c-safe debt
+  above); fold this clarification into the same falsification/coupling render-sync
+  — clarification, behavior-unchanged. See [[anneal-dev-framework-flowback]] R4.
 
 ## Re-entry procedure (when clippy returns to active use)
 1. Diff clippy's render against the then-current framework core (c-safe + any

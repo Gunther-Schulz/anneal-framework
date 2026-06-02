@@ -394,6 +394,18 @@ R3 is about one check being human.)
 
 ### R4 — a render-resolved target-dependents dependent has no native runtime-resolution path (surfaced by the verify pass)
 
+> **RESOLVED 2026-06-02 — the title's premise was wrong.** Grounding `core.md`
+> §3.2.2 showed it already covers this: "a preserved-behavior claim … the
+> behavior resolves at runtime through a dependent the reference-search does not
+> surface … → [CONDITIONAL], basis exercised by executable verification." A
+> render-resolved paraphrase is exactly that, so it routes the **native**
+> target-behavior path — there was no missing mechanism and no "binding
+> extension" (this section's framing, and the C2 framing above, were both misled
+> by the glossary presenting dependents=search / behavior=runtime as a clean
+> split). Fix: a glossary bridge sentence (`glossary.md` Coupling shape).
+> Live status in `dev-notes/backlog/anneal-dev-framework-flowback.md` R4. Kept
+> below as the derivation's original (over-stated) finding.
+
 **Strains against:** `glossary.md` Coupling shape — the runtime-
 `[CONDITIONAL]` escape is scoped to **target-behavior**;
 **target-dependents** is defined as search-dischargeable ("re-runs

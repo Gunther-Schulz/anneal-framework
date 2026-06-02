@@ -88,7 +88,12 @@ D-entry's basis claims to rest on. Closed set of three:
 - **target-dependents** — what depends on or uses the target.
   Amendment decisions (`core.md` §3.2.2) always include this
   shape; the target-dependents candidate re-runs §3.2.2's
-  reference enumeration as its search.
+  reference enumeration as its search. A dependent the
+  reference-search cannot surface — one the instance's mechanical
+  trigger (`core.md` §3.2.2) shows resolves only at runtime, not one
+  merely unfound — is not a missing dependent but the
+  **target-behavior** runtime case below, carrying the [CONDITIONAL]
+  disposition stated there.
 - **target-behavior** — the target's behavior or effect under
   input classes. A target-behavior claim a read cannot exhibit
   (resolved at runtime) is [CONDITIONAL] per `core.md` §3.2.2 —

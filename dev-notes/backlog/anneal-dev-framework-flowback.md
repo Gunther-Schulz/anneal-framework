@@ -1,7 +1,7 @@
 # anneal-dev derivation — framework-core flow-back (R1–R4 + owed validation-watch)
 
-**Status:** open — **R1 RESOLVED 2026-06-02** (this cycle, Option B); R2–R4 +
-the contract-2 validation-watch entry remain. The framework-**core** questions the anneal-dev pass-2
+**Status:** open — **R1 + R4 RESOLVED 2026-06-02**; R2, R3 + the contract-2
+validation-watch entry remain. The framework-**core** questions the anneal-dev pass-2
 derivation surfaced (`framework-dev-as-anneal` step 4, 2026-06-02). These are
 **framework-kernel** decisions: per the bootstrap rule, the anneal-dev instance
 never governs its own foundation, so each is decided framework-layer with
@@ -49,18 +49,22 @@ settled). Decide each on its own micro-cycle.
   that is an operator act rather than a dispatched/program-run one. Minor.
   Question: should the framework name this?
 
-- **R4 — no native runtime-resolution path for `target-dependents`.** The
-  runtime-`[CONDITIONAL]` escape (`glossary.md` Coupling shape; `core.md`
-  §3.2.2) is scoped to **target-behavior**; **target-dependents** is
-  search-dischargeable. A render-resolved paraphrase dependent (a search cannot
-  exhibit it) is a target-dependents case with no native runtime path, so
-  anneal-dev binds it as an **extension** of the behavior-scoped path
-  (pass-2 lens-set Missed-dependents + rationale R4). The contract-1
-  de-pollution abstracted the coupling-shape *set* (Finding 5, dissolved) but
-  did not give target-dependents this path. **Surfaced by the separate-context
-  verify** catching a pass-2 over-claim — the reflexivity review earning its
-  keep. Question: give target-dependents a runtime-`[CONDITIONAL]` path
-  paralleling target-behavior?
+- **R4 — runtime-resolution for a search-unsurfaceable dependent. RESOLVED
+  2026-06-02 — the premise was wrong; no mechanism was missing.** Grounding
+  `core.md` §3.2.2 showed it already covers this: "a preserved-behavior claim …
+  the behavior resolves at runtime through **a dependent the reference-search
+  does not surface** … → [CONDITIONAL], basis exercised by executable
+  verification." A render-resolved paraphrase is exactly that — the rule's
+  behavior resolving through an unsurfaced dependent — so it routes the **native**
+  target-behavior runtime path, NOT a target-dependents extension. (The pass-2
+  "extension" framing, and the step-4 verify that prompted it, were both misled
+  by the glossary presenting "dependents = search / behavior = runtime" as a
+  clean split.) **Fix:** a glossary bridge sentence on the target-dependents
+  bullet documenting the route + a mechanical-trigger guard against the "merely
+  unfound → [CONDITIONAL]" dodge (`glossary.md` Coupling shape). No new
+  mechanism. Separate-context review `aa72bc8` PASS-with-fixes (applied);
+  corrected pass-2 framing (lens-set + rationale). Instance render-debt →
+  [[clippy-render-resync]].
 
 ## Also owed (same cycle origin)
 

@@ -123,10 +123,10 @@ cycle-applied lenses below.
   cannot exhibit because it resolves only through paraphrase at
   render-time is recorded [CONDITIONAL], its basis the dependent
   exercised by the render-fidelity / coherence checks (`core.md`
-  §3.2.2, §4.3; `bindings.md` Verification battery) — a binding
-  extension of §3.2.2's runtime path, which the glossary scopes to
-  **target-behavior**, onto a render-resolved **target-dependents**
-  case (residual strain R4, `derivation-rationale.md`).
+  §3.2.2, §4.3; `bindings.md` Verification battery) — the
+  **target-behavior** runtime case (the rule's behavior resolving
+  *through* that render-resolved dependent), §3.2.2's native path
+  (documented at `glossary.md` Coupling shape target-dependents).
 
 ### Unenforced-rule
 - **Question:** for a rule the cycle states or amends, is there an
