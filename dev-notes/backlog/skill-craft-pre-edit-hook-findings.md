@@ -7,6 +7,16 @@ so the de-pollution cycles' `spec/*.md` edits gate correctly without
 false-positives on `dev-notes/` drafts. The hook change is committed (ad29c27).
 Relates to `framework-dev-as-anneal.md`, `contract1-depollution-cluster.md`.
 
+> **Finding 3's "MOOT — boundary detector handles the current harness shape
+> correctly" is CONTRADICTED (2026-06-02).** The `framework-spec-cleanup-pipeline`
+> run's impl Unit-1 subagent got 5/5 `spec/core.md` Edit denials; reading the hook
+> confirmed the subagent-path boundary detection misfires (Skill-result `user`
+> events lack `isMeta=True`). The subagent-reliability concern is REAL, not moot —
+> tracked now as the dedicated next-up item
+> `skill-craft-hook-subagent-dispatch-block.md`, which also carries the
+> reconciliation with the archived `impl-skillcraft-gate` "satisfiable from a
+> subagent" conclusion.
+
 The hook is `hooks/skill-craft-pre-edit.py` (development-process.md practice 5:
 gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).
 
