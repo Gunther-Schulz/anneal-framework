@@ -31,18 +31,16 @@ Closed items move to `archive/`.
 
 ## Open items (`ls` = this list)
 
-- `surface-non-task-observations.md` — no channel for what the agent notices
-  outside the task (code observations + protocol tensions).
-- `verify-vs-original-requirements.md` — verify checks the locked design, not
-  the original ask.
-- `cite-glossary-not-section-numbers.md` — instance specs cite framework
-  §-numbers, not glossary terms.
-- `clippy-greenfield-tolerance.md` — clippy's `verify` (and likely other
-  bindings) assume existing code; instance-level greenfield hardening,
-  low-priority.
-- `verified-integrity-consolidation.md` — consolidate the "[VERIFIED] claims
-  more than was checked" family (Cycle 3 static + V-25 un-run + sample-bias)
-  under one umbrella principle; a consolidation cycle.
+**Sorted by where the fix lands — framework-core leads; instance work follows.**
+An item's group is set by *where its fix lands*, not where it was noticed: a
+framework gap surfaced during a clippy run is framework work; a render owed to
+clippy/daneel after a framework edit is instance-settlement — framework's
+downstream tail, not a rival workstream. (Filenames stay as the item's stable
+identity per the convention above; this framework/instance axis is a *category*,
+so it lives here in the index, not in the names.)
+
+### Framework-core (leads)
+
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance. Pass-1
   forward-derivation **DONE**. **De-pollution Cycles a + b DONE** (commits
@@ -55,35 +53,64 @@ Closed items move to `archive/`.
   level. **Deferred (not blocking):** c-parked completeness (V-26) + parked
   clippy render-debt ([[clippy-render-resync]]). **Head →
   `framework-dev-as-anneal` step 4.** (Keep open until V-26 + render-debt close.)
-- `clippy-render-resync.md` — **PARKED** (clippy idle). The clippy render-debt
-  owed for c-safe (+ future T1/T2), batched into one render pass to do when
-  clippy returns to active use. Re-entry procedure recorded in the file.
+- `verified-integrity-consolidation.md` — consolidate the "[VERIFIED] claims
+  more than was checked" family (Cycle 3 static + V-25 un-run + sample-bias)
+  under one umbrella principle; a consolidation cycle.
+- `surface-non-task-observations.md` — no channel for what the agent notices
+  outside the task (code observations + protocol tensions).
+- `verify-vs-original-requirements.md` — verify checks the locked design, not
+  the original ask.
+- `cite-glossary-not-section-numbers.md` — instance specs cite framework
+  §-numbers, not glossary terms.
 - `instance-template-slot-scaffolding.md` — Cycle-a finding: the
   instance-template doesn't scaffold placeholder sections for the mechanism
   slots (persistence, isolation), despite the guide's "placeholder per slot"
   claim. Slot-as-file vs slot-as-section to settle.
-- `planner-instance-exploration.md` — the planner instance build + the
-  framework findings (1–5) seeding several items above; also holds the
-  **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner
-  derivation, finding 3).
-- `clippy-run-findings-dispatch-coupling.md` — the azuro dispatch/coupling
-  record: shipped Cycles 1–3 + G (clippy ≤v0.9.93); **still open:** Cycle 2.5
-  (above) + the **coherence-audit deep-sweep** (§4.4 / §5.1 / mode mechanics
-  not yet swept). Archives whole when those close.
-- `generalize-sharpening-skill.md` — the sharpening family (`sharpen` /
-  `decision-design-sharpening` / `pre-implementation-sharpening`) is still
-  PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
-  extraction; low-priority. Relates to `framework-dev-as-anneal.md`.
 - `skill-craft-pre-edit-hook-findings.md` — the practice-5 gate hook matches
   `/spec/.+\.md$` (over-broad: catches `dev-notes/**/spec/`), is `mv`-bypassable,
   and may not register subagent skill-craft invocations. Narrow the path before
   the de-pollution cycles.
+- `generalize-sharpening-skill.md` — the sharpening family (`sharpen` /
+  `decision-design-sharpening` / `pre-implementation-sharpening`) is still
+  PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
+  extraction; low-priority. Relates to `framework-dev-as-anneal.md`.
 - `dev-process-validation-watch-path.md` — **trivial, not pressing.**
   `development-process.md:453` cites `spec/validation-watch.md`; the file is at
   `dev-notes/validation-watch.md` (one site). One-token fix; own micro-cycle or
   fold into the next dev-process edit.
+- `planner-instance-exploration.md` — the planner instance build + the
+  framework findings (1–5) seeding several items above; also holds the
+  **Cycle 2.5 bindings.md slot-collapse** fork (deferred to the planner
+  derivation, finding 3).
+- `clippy-run-findings-dispatch-coupling.md` — **framework/instance findings
+  surfaced *via* a clippy run** (azuro dispatch/coupling; clippy was the source,
+  the fixes are mostly framework-level): shipped Cycles 1–3 + G (clippy
+  ≤v0.9.93); **still open:** Cycle 2.5 (above) + the **coherence-audit
+  deep-sweep** (§4.4 / §5.1 / mode mechanics not yet swept). Open cycles are
+  classified per-level. Archives whole when those close.
+
+### Instance render-settlement (parked — framework's downstream tail, not a rival)
+
+Fix lands in the clippy/daneel render, not the core; *owed by* framework edits.
+Parked while those instances are idle (drift cost ~0), so they batch behind
+framework work by design — **but only for vocab-debt; see the vocab-vs-semantic
+caveat in `clippy-render-resync.md`.**
+
+- `clippy-render-resync.md` — **PARKED** (clippy idle). The clippy render-debt
+  owed for c-safe (+ future T1/T2), batched into one render pass to do when
+  clippy returns to active use. Re-entry procedure recorded in the file.
 - `daneel-cycle-b-sync.md` — **not pressing.** Practice-4 cross-repo dependent
   surfaced by the clippy a+b sync: daneel's §5.2 is still stale on the Cycle-b
   vocab ("implementation outputs" vs "realization output"). A separate daneel
   render-sync cycle; sequence after the contract1 work unless pulled forward.
   (clippy's render-sync shipped → `archive/clippy-isolation-render-release.md`.)
+
+### Genuinely instance-level (behind framework)
+
+Fix lands in the instance, and the file argues it must *not* become a framework
+change — framework-izing would re-leak the corpus-state distinction the
+de-pollution cluster just removed (contract-1).
+
+- `clippy-greenfield-tolerance.md` — clippy's `verify` (and likely other
+  bindings) assume existing code; instance-level greenfield hardening,
+  low-priority.

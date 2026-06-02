@@ -12,6 +12,16 @@ when clippy returns. (The a+b sync already shipped as clippy **v0.9.94** —
 [[clippy-isolation-render-release]], archived — because clippy was current then;
 from c-safe on, clippy went idle.)
 
+**This batching holds only for vocab-debt.** The drift cost is ~0 *because the
+de-pollution so far is vocabulary-alignment, behavior unchanged* — mechanical to
+batch and re-verify in one pass. A **semantic** framework change (one that alters
+instance behavior, not just naming — e.g. finalizing the framework-dev instance,
+or `verified-integrity-consolidation`) is partly *validated by being rendered
+into an instance*: deferring its render loses the per-change feedback loop and
+turns the eventual sync into risky archaeology rather than a clean diff. So
+vocab-debt batches freely into this parked pass; a **semantic** change should
+pull a render-validation forward to near when it lands, not into this batch.
+
 ## Render-debt owed (clippy lags the core by these cycles)
 - **Cycle c-safe (§4.1.4 falsification)** — framework `5f4ed74`. Clippy's
   falsification render still carries the OLD vocab:
