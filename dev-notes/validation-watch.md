@@ -1491,11 +1491,21 @@ the drift it caught — or, conversely, a re-render catches a drift the old
 advisory process would have missed. Either is n=1 evidence. **Specific
 watch:** the re-render/fidelity cost per cycle vs. the drift-catch rate.
 
-**n=1 (seed).** None yet — anneal-dev is finalized as a draft
-(`dev-notes/derivation-pass2/`, `framework-dev-as-anneal` step 4 done) but
-not operational; step 5 (dogfood) + promotion are the eventual tests.
-Registered now per the locked decision's instruction to file the contract-2
-ceremony cost as a validation-watch entry during the derivation cycle.
+**n=1 (seed, 2026-06-02 — step-5 dogfood).** anneal-dev's first real run
+(`daneel-cycle-b-sync`, run-state `.anneal-dev/runs/`) drove a **one-line,
+behavior-preserving vocab swap** through the full ceremony: investigate-design +
+standardized pass + convergence cycle + fresh-context falsification pass +
+isolated 3-check verify battery. **Cost side:** ceremony-to-change ratio was high
+(full convergence/falsification/isolated-battery for a 2-word swap). **Catch
+side:** no drift caught that the old advisory process would have missed *on this
+change* (it was trivially correct) — BUT the isolated verify *independently
+reproduced* the grep evidence (F1=1, F2=∅) rather than trusting the working
+context's claim, so the contract-2 separate-context discipline did real work even
+here. **Verdict: inconclusive at n=1** — the change was too small to stress
+ceiling case (b) (kernel churn forcing costly re-renders). Watch continues; the
+discriminating signal is a *larger* change, or a kernel change forcing a
+dev-process-instance re-render. NB this was an instance-corpus dogfood, not
+anneal-dev operating *as* the dev-process (the promotion case is still untested).
 
 Per `development-process.md` practice 8, this V-N is legitimate: genuine
 uncertainty about a design choice's correctness (whether the

@@ -1,6 +1,6 @@
 # skill-craft-pre-edit hook — over-broad path match + bypassable + subagent-reliability
 
-**Status:** Finding 1 **DONE** (2026-06-01); Findings 2 + 3 open, + Finding 4 (2026-06-02). Surfaced
+**Status:** Finding 1 **DONE** (2026-06-01); Finding 3 **root-caused** 2026-06-02 (fix open); Findings 2 + 4 open. Surfaced
 2026-06-01 by the anneal-dev pass-1 subagent (which tripped the gate writing
 draft spec files and routed around it). The path-narrowing (Finding 1) is done,
 so the de-pollution cycles' `spec/*.md` edits gate correctly without
@@ -26,11 +26,28 @@ gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).
    closing this is not cheap (can't gate all Bash without heavy friction) —
    record as a known limitation; the real backstop stays release-loop step 4
    (post-edit skill-craft review) + operator approval.
-3. **Subagent-context reliability (investigate before relying on it).** The
-   subagent reported two same-turn skill-craft invocations did not clear the
-   gate — either the transcript scan doesn't register a subagent's Skill
-   `tool_use`, or a flush-timing race. Confirm the gate behaves correctly when
-   the editor is a subagent, before the de-pollution cycles lean on it.
+3. **Subagent-context reliability — ROOT-CAUSED 2026-06-02 (fix open).**
+   Diagnosed by the anneal-dev step-5 render subagent (`ad0442118fb42bce8`),
+   which tripped it again. Root cause: the boundary detector
+   (`hooks/skill-craft-pre-edit.py:156-176`) skips Skill-output user events by
+   keying on `isMeta is True` (comment `:144-145`). In a **subagent**
+   transcript the Skill-tool result is recorded `role=user, isMeta=None,
+   origin=None, content=[{type:text}]` — so it is NOT skipped and IS classified
+   as the last operator-prompt boundary. Every same-turn skill-craft `Skill`
+   `tool_use` therefore lands BEFORE the boundary → the gate can never
+   discharge from a subagent. (Main context works because there Skill outputs
+   are `isMeta=True` and correctly skipped — why prior main-context spec edits
+   gated fine. Hook-source half verified against the file; the `isMeta=None`
+   runtime shape is the subagent's transcript replication, not re-confirmed
+   from main context.) **Consequence:** subagent-dispatched rule-corpus edits —
+   including the framework's own impl-phase dispatch (`core.md` §4.2) — cannot
+   satisfy the gate; route via the spawn-fallback (main-context edit, where the
+   gate works) or accept the Finding-2 Bash-bypass under the release-loop-step-4
+   backstop (the step-5 render did the latter, then ran the separate-context
+   verify). **Fix shape (own cycle; the hook is tooling, not rule-corpus, so
+   ungated):** skip Skill/tool-result user events regardless of `isMeta`
+   (detect the Skill-result / `tool_result` content shape and treat as
+   non-prompt), rather than relying on the `isMeta=True` assumption.
 4. **Spec-origin-trace fires on non-anneal-instance skills (over-match,
    2026-06-02).** The PreToolUse spec-origin-trace demand (practice 5
    "spec-origin grounding for plugin edits") matched a `plugin/skills/*/` edit

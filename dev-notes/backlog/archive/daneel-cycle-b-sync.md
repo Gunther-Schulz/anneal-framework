@@ -1,6 +1,12 @@
 # Daneel — re-render §5.2 to Cycle-b vocab (+ verify a/other drift)
 
-**Status:** OPEN — surfaced 2026-06-02 by the practice-4 cross-repo
+**Status:** CLOSED 2026-06-02 — shipped daneel `d85cff3` (§5.2 vocab fix
+`implementation outputs` → `realization output`) via the anneal-dev step-5 dogfood
+(run-state `.anneal-dev/runs/daneel-cycle-b-sync.md`); R1 resolved to a **no-op**
+(daneel's contract-surface binding already coupling-consistent; no old code-shaped
+definition present). Archived.
+
+_Original:_ OPEN — surfaced 2026-06-02 by the practice-4 cross-repo
 dependent audit during the clippy a+b sync ([[clippy-isolation-render-release]]).
 Daneel is the debugging instance; it renders the same framework §5.2
 contract clippy does, and Cycle b's render catch-up was only scoped to

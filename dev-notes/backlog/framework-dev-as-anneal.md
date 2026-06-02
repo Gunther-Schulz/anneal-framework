@@ -4,12 +4,20 @@
 `pbs:decision-design-sharpening` (2 rounds: full-monty + 1 user-triggered),
 adapted with anneal's own anchors (foundation contracts / practice 9 /
 validation-watch) substituting the skill's PBS-internal apparatus.
-**Steps 1–4 DONE.** Pass-1 forward-derivation (2026-06-01) → core de-pollution
+**Steps 1–5 DONE.** Pass-1 forward-derivation (2026-06-01) → core de-pollution
 (`contract1-depollution-cluster`, COMPLETE) → **Pass-2 finalization DONE
 2026-06-02** (isolated derivation subagent `ab6a459e` + separate-context verify
 `ad3e3e3c`, PASS-with-fixes-applied; finalized draft `dev-notes/derivation-pass2/`).
 Surfaced four framework-core flow-back questions → [[anneal-dev-framework-flowback]].
-**Next: step 5 — dogfood** the finalized instance on an instance-corpus cleanup.
+**Step 5 (dogfood) DONE 2026-06-02.** Rendered pass-2 into a runnable skeleton
+(`~/dev/Gunther-Schulz/anneal-dev`, committed `abf5290`; render-fidelity +
+skill-craft reviews PASS in separate contexts), then drove `daneel-cycle-b-sync`
+through it end-to-end — investigate-design → implement (spawn-fallback) → verify
+**[PASSED]** — shipping daneel `d85cff3`. **Bootstrap PASSED: anneal-dev runs as a
+real instance.** **Next: adoption** — promote anneal-dev to the actual dev-process
++ reconcile `development-process.md` (the shadow copy this effort exists to retire);
+package anneal-dev (now followed-in-context, not installed); optional 2nd dogfood
+(clippy `SKILL.md` de-bloat, accepting the clippy render-debt bundle).
 Not spec — this is the durable design handoff.
 
 ## High-level description
@@ -114,7 +122,12 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
    the instance's own foundation, so fully instance-governable (genuine
    self-hosting validation, no bootstrap conflict). Kernel/foundation cleanups
    (FB-5, the de-pollution itself) stay framework-layer, not dogfooded.
-   **Entry (NOT started — next move on this effort):** step 5 is a *build* —
+   **DONE 2026-06-02 — bootstrap PASSED** (skeleton `anneal-dev` `abf5290` +
+   contained dogfood `daneel-cycle-b-sync` → daneel `d85cff3`; verify [PASSED]
+   `a5850f3…`; frictions: Finding-3 subagent edit-gate forced spawn-fallback for
+   implement, + V-27 ceremony-cost n=1. Chose the contained daneel target over
+   clippy to avoid un-parking clippy's render-debt). The original entry plan, for
+   the record: step 5 was a *build* —
    render pass-2 (`dev-notes/derivation-pass2/`) into a minimal runnable skeleton
    (per "Start small" above), then drive one small cleanup through it. Two
    sub-decisions at start: **skeleton scope** (how minimal is "enough to run one
@@ -131,7 +144,8 @@ candidate for isolation (an uncontaminated subagent), per the planner precedent.
 - **Contract-2 render-ceremony cost** — **DONE 2026-06-02:** filed as
   `validation-watch` **V-27** (WATCHING) — watch whether the per-cycle re-render +
   fidelity check on the dev-process-as-instance justifies itself once anneal-dev
-  is operational. Settles empirically at step 5.
+  is operational. **n=1 seed logged 2026-06-02** (step-5 dogfood — inconclusive,
+  change too small to stress the ceiling case; see V-27).
 - **B's skill-craft-hardening ship-order** — whether to harden skill-craft's
   advisory anti-decay disciplines into forcing functions *before* A (low-rework,
   early value) is a Phase-2 (pre-implementation) sequencing call. Still open.

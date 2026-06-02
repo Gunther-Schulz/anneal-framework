@@ -43,13 +43,15 @@ so it lives here in the index, not in the names.)
 
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance.
-  **Steps 1–4 DONE** — pass-1 derivation → core de-pollution (complete) →
-  **pass-2 finalization (2026-06-02, `dev-notes/derivation-pass2/`; isolated
-  derive + separate-context verify, PASS-with-fixes)**. **Next: step 5 —
-  dogfood** on an instance-corpus cleanup. Surfaced four framework-core
-  questions — **all resolved 2026-06-02** (R1 + R4 → kernel fixes; R2 + R3 →
-  no change, framework already handles them; contract-2 → V-27 WATCHING);
-  record at `archive/anneal-dev-framework-flowback.md`.
+  **Steps 1–5 DONE (2026-06-02).** Build + validate complete: pass-1/2 derivation
+  → core de-pollution → skeleton render (`anneal-dev` repo `abf5290`,
+  separate-context verify + skill-craft review PASS) → **step-5 dogfood PASSED**
+  (drove `daneel-cycle-b-sync` through anneal-dev end-to-end, verify [PASSED],
+  shipped daneel `d85cff3`). **anneal-dev runs as a real instance.** **Next:
+  adoption** — promote it to the actual dev-process + reconcile
+  `development-process.md`; package it (followed-in-context now). V-27 has its n=1
+  ceremony-cost seed; four flow-back questions resolved →
+  `archive/anneal-dev-framework-flowback.md`.
 - `contract1-depollution-cluster.md` — de-code-ify domain leaks in the agnostic
   core. **COMPLETE (2026-06-02):** full sweep a/b/c-safe/T1/T2+T3 (`3a2245b` …
   `c634ebf`) + a whole-corpus coherence-audit (handoff `a3a2adda5508d9cdf`,
@@ -70,10 +72,15 @@ so it lives here in the index, not in the names.)
   instance-template doesn't scaffold placeholder sections for the mechanism
   slots (persistence, isolation), despite the guide's "placeholder per slot"
   claim. Slot-as-file vs slot-as-section to settle.
-- `skill-craft-pre-edit-hook-findings.md` — the practice-5 gate hook matches
-  `/spec/.+\.md$` (over-broad: catches `dev-notes/**/spec/`), is `mv`-bypassable,
-  and may not register subagent skill-craft invocations. Narrow the path before
-  the de-pollution cycles.
+- `skill-craft-pre-edit-hook-findings.md` — the practice-5 gate hook. Finding 1
+  (over-broad path) DONE; **Finding 3 root-caused 2026-06-02** (subagent
+  Skill-result misclassified as operator-prompt boundary → gate unsatisfiable from
+  a subagent; fix open — forced spawn-fallback in the step-5 dogfood); Findings 2
+  (Bash-bypass) + 4 (spec-origin over-match) open.
+- `harness-tool-runstate-unsourced.md` — step-5 finding: the rendered instance
+  `SKILL.md` (clippy + anneal-dev, verbatim) tells the AI not to use harness
+  task-tools for run-state, but that half has no spec origin (contract-2 drift).
+  Corpus-wide; lean fix = an instantiation-guide render-time note.
 - `generalize-sharpening-skill.md` — the sharpening family (`sharpen` /
   `decision-design-sharpening` / `pre-implementation-sharpening`) is still
   PBS-coupled, never extracted like `coherence-audit`. Cross-repo tooling
@@ -103,11 +110,10 @@ caveat in `clippy-render-resync.md`.**
 - `clippy-render-resync.md` — **PARKED** (clippy idle). The clippy render-debt
   owed for c-safe (+ future T1/T2), batched into one render pass to do when
   clippy returns to active use. Re-entry procedure recorded in the file.
-- `daneel-cycle-b-sync.md` — **not pressing.** Practice-4 cross-repo dependent
-  surfaced by the clippy a+b sync: daneel's §5.2 is still stale on the Cycle-b
-  vocab ("implementation outputs" vs "realization output"). A separate daneel
-  render-sync cycle; sequence after the contract1 work unless pulled forward.
-  (clippy's render-sync shipped → `archive/clippy-isolation-render-release.md`.)
+- `daneel-cycle-b-sync.md` — **CLOSED 2026-06-02 → `archive/`.** Shipped daneel
+  `d85cff3` (§5.2 vocab sync `implementation outputs`→`realization output`) as the
+  step-5 anneal-dev dogfood; R1 resolved to a no-op. (clippy's render-sync shipped
+  → `archive/clippy-isolation-render-release.md`.)
 
 ### Genuinely instance-level (behind framework)
 
