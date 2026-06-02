@@ -129,6 +129,9 @@ incomplete-evidence = [[verified-integrity-consolidation]]. New items:
 - `behavior-change-test-impact-enumeration.md` — a behavior-changing decision must
   *executably* enumerate existing tests asserting the old behavior (grep-blind
   sibling of dispatch-coupling Finding 3).
+- `impl-green-on-commit.md` — spec is silent on whether the impl commit must be
+  green ("committed on completion" ≠ "green on commit"); orchestrator fills it by
+  habit. Pick: mandate green-on-commit, or explicitly leave it to verify.
 
 ### Instance render-settlement (parked — framework's downstream tail, not a rival)
 
