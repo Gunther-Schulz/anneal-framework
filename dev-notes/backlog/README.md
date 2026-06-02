@@ -54,8 +54,8 @@ Closed items move to `archive/`.
   bildhauer pass** into a safe de-code sweep (do now) + a parked completeness
   call (closed-vs-open, settle vs a non-code instance); an inventory surfaced 2
   tail leaks (T1 `file:line` citation form, T2 `code`-as-work-product). **Locked
-  next (2026-06-02):** clippy-sync a+b **DONE** (clippy v0.9.94) → **head: Cycle
-  c-safe** → focused c-only clippy-sync.
+  next (2026-06-02):** clippy-sync a+b **DONE** + Cycle c-safe **DONE** (spec
+  `5f4ed74`) → **head: focused c-only clippy-sync** → T1/T2 tail leaks.
 - `instance-template-slot-scaffolding.md` — Cycle-a finding: the
   instance-template doesn't scaffold placeholder sections for the mechanism
   slots (persistence, isolation), despite the guide's "placeholder per slot"
@@ -76,6 +76,10 @@ Closed items move to `archive/`.
   `/spec/.+\.md$` (over-broad: catches `dev-notes/**/spec/`), is `mv`-bypassable,
   and may not register subagent skill-craft invocations. Narrow the path before
   the de-pollution cycles.
+- `dev-process-validation-watch-path.md` — **trivial, not pressing.**
+  `development-process.md:453` cites `spec/validation-watch.md`; the file is at
+  `dev-notes/validation-watch.md` (one site). One-token fix; own micro-cycle or
+  fold into the next dev-process edit.
 - `daneel-cycle-b-sync.md` — **not pressing.** Practice-4 cross-repo dependent
   surfaced by the clippy a+b sync: daneel's §5.2 is still stale on the Cycle-b
   vocab ("implementation outputs" vs "realization output"). A separate daneel
