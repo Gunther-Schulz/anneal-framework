@@ -15,6 +15,13 @@ clippy. Parallel to clippy's render-sync, one instance over.
   *realization output*). Same state clippy's `tracker.md` was in before
   this sync. Behavior likely faithful (verbatim-stale, as clippy's was);
   vocabulary alignment.
+- **§5.2 contract-surface discriminator (R1) — DEFINITION changed 2026-06-02.**
+  Beyond the vocab staleness above, the `Contract surface` definition itself was
+  abstracted (code-shaped "observable from outside" → coupling-based "what a
+  dependent would break if it silently changed"; `anneal-framework/spec/core.md`
+  §5.2(b) + glossary). Daneel's render of §5.2(b) / any contract-surface gloss
+  inherits this; fold into the same daneel render-sync. See
+  [[anneal-dev-framework-flowback]] R1.
 
 ## To verify before scoping the cycle
 - **Cycle a (§4.2 isolation) — likely N/A for daneel.** A grep found NO

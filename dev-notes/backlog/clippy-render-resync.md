@@ -47,6 +47,14 @@ pull a render-validation forward to near when it lands, not into this batch.
   name is now unified across implement/falsification/verify (§4.2/§4.1.4/§4.3).
   Clippy's degraded-path renders should adopt the single unified name. (The §3.1
   "for code" illustration marker adds NO clippy debt — clippy IS the code instance.)
+- **Contract-surface discriminator (R1) — framework DONE** (this cycle, 2026-06-02):
+  the `Contract surface` definition abstracted from code-shaped "observable from
+  outside" → coupling-based "what a dependent would break if it silently changed"
+  (`core.md` §5.2(b) + glossary Contract surface + target-existence). Clippy
+  renders §5.2 body-shape (already in the Cycle-b debt above) + uses contract-surface
+  in `tracker.md`; the discriminator change folds into the same §5.2 render-sync —
+  a marked `for code:` gloss is likely clippy's legitimate binding. See
+  [[anneal-dev-framework-flowback]] R1.
 
 ## Re-entry procedure (when clippy returns to active use)
 1. Diff clippy's render against the then-current framework core (c-safe + any

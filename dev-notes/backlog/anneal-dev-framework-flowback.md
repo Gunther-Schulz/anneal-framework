@@ -1,6 +1,7 @@
 # anneal-dev derivation — framework-core flow-back (R1–R4 + owed validation-watch)
 
-**Status:** open — the framework-**core** questions the anneal-dev pass-2
+**Status:** open — **R1 RESOLVED 2026-06-02** (this cycle, Option B); R2–R4 +
+the contract-2 validation-watch entry remain. The framework-**core** questions the anneal-dev pass-2
 derivation surfaced (`framework-dev-as-anneal` step 4, 2026-06-02). These are
 **framework-kernel** decisions: per the bootstrap rule, the anneal-dev instance
 never governs its own foundation, so each is decided framework-layer with
@@ -19,16 +20,20 @@ settled). Decide each on its own micro-cycle.
 
 ## The four questions
 
-- **R1 — §5.2(b) design-decision body-shape for prose work products.** The
-  contract-surface / realization-output split (`core.md` §5.2, `glossary.md`
-  Contract surface) is a "what to build" shape; it binds for corpus-evolution
-  but the split *blurs* when the work product IS prose (a rule's contract is
-  largely carried by its exact wording; how much wording is contract vs
-  realization has no mechanical line). The binding leans on (c) acceptance
-  criteria to compensate. **Subsumes** the prior standalone open item
-  "design-decision body-shape vs verdicts" (D-track verdicts are the same §5.2(b)
-  surface). Question: should the split carry an instance-binding hook for
-  prose-work-product domains?
+- **R1 — §5.2(b) design-decision body-shape for prose work products. RESOLVED
+  2026-06-02 (Option B).** Root cause: a code-shaped discriminator — "contract
+  surface = what's observable from outside the element" assumes the element hides
+  its internals, which only code reliably does; for prose nothing is hidden, so
+  the test failed to separate contract from realization. **Fix:** abstracted to a
+  coupling-based test — contract surface = "what a dependent would break if it
+  silently changed"; realization = "the content nothing outside depends on"
+  (`core.md` §5.2(b) + `glossary.md` Contract surface + target-existence), with
+  the contract/realization line now explicitly the instance's binding. The prose
+  case resolves cleanly (a rule's enforcement strength is on its contract surface
+  because dependents rely on it). Separate-context self-review `a594164` PASS.
+  **Subsumed** the prior standalone open item "design-decision body-shape vs
+  verdicts" (D-track verdicts are the same §5.2(b) surface). Instance render-debt
+  → [[clippy-render-resync]] + [[daneel-cycle-b-sync]].
 
 - **R2 — singular "the domain's executable verification."** `core.md` §4.3 +
   `foundation.md` contract 3 frame verification as one runnable artifact

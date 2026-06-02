@@ -83,9 +83,8 @@ specifies a basis-cardinality check.
 D-entry's basis claims to rest on. Closed set of three:
 
 - **target-existence** — the named target exists with its
-  claimed **contract surface** (what's observable from outside
-  it; `Contract surface`). The instance binds the concrete
-  surface form.
+  claimed **contract surface** (`Contract surface`). The instance
+  binds the concrete surface form.
 - **target-dependents** — what depends on or uses the target.
   Amendment decisions (`core.md` §3.2.2) always include this
   shape; the target-dependents candidate re-runs §3.2.2's
@@ -315,12 +314,15 @@ when every check is accounted for and no finding is short of
 choice about what to build, including a choice to defer or exclude.
 Its shape, states, and rules are specified in `core.md` §5.2.
 
-**Contract surface** — what is observable from outside an element of
-the work product, as opposed to the element's internal **realization
-output**. A design decision's (b) shape records the contract surface,
-not the realization output (`core.md` §5.2); the realization output
-is produced at impl (`core.md` §4.2). Each instance applies it to its
-element kind.
+**Contract surface** — the part of an element of the work product that
+anything outside it depends on — what a dependent would break if it
+silently changed — as opposed to the element's internal **realization
+output**, the content nothing outside depends on. A design decision's
+(b) shape records the contract surface, not the realization output
+(`core.md` §5.2); the realization output is produced at impl
+(`core.md` §4.2). Each instance applies it to its element kind
+— which content is depended-on commitment versus internal realization
+is the instance's binding.
 
 **Scope** — the set of elements a run's work will modify; the
 foundational design decision, established by search. Specified in

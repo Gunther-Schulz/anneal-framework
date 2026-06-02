@@ -841,9 +841,9 @@ assumption cannot reach [VERIFIED].
 
 **Body shape.** A design decision body specifies: (a) the **target** —
 the element of the work product being committed, or a behavior of one;
-(b) the **shape** — for a new element, its **contract surface** (what's
-observable from outside the element); for an amendment to an existing
-element, the change as a delta against current state; (c) the
+(b) the **shape** — for a new element, its **contract surface**
+(`glossary.md`); for an amendment to an existing element, the change as
+a delta against current state; (c) the
 **acceptance criteria** — observable conditions for the decision to
 count as implemented; (d) the **side effects and failure modes** —
 what's observable on success and at boundaries; (e) the **basis** per

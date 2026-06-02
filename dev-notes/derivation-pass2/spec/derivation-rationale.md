@@ -307,6 +307,11 @@ its own foundation).
 
 ### R1 — §5.2(b) design-decision body-shape for prose rules (the known open question)
 
+> **RESOLVED 2026-06-02** at the framework core (the "observable from outside"
+> discriminator was abstracted to a coupling-based test); live status +
+> resolution in `dev-notes/backlog/anneal-dev-framework-flowback.md` R1. Kept
+> below as the derivation's original finding.
+
 **Strains against:** `core.md` §5.2 Body shape (b)+(c) + the
 `Contract surface` / `realization output` split (`glossary.md`).
 
