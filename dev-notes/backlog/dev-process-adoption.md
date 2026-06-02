@@ -1,6 +1,6 @@
 # Adoption: retire development-process.md's shadow-copy method, delegate to anneal-dev
 
-**Status:** OPEN — **design surfaced 2026-06-02, awaiting B1/B2 decision.** The
+**Status:** OPEN — **B1 LOCKED 2026-06-02 (operator decision); implementation queued as its own dedicated cycle.** The
 adoption phase of [[framework-dev-as-anneal]] (its locked "next: adoption"). DESIGN
 ONLY so far — no edits made. **FOUNDATIONAL** (governs the dev-process itself) →
 bootstrap rule: this is **framework-layer** work, done with the **current** process
@@ -47,7 +47,7 @@ splits into **three layers**, not two:
   either violates that contract or pollutes anneal-dev's clean per-run instance model
   with cross-run / operator-session / release machinery that isn't its concern.
 
-**Recommendation: B1.** The shadow-copy *method* dies (the effort's goal); the
+**Decision: B1 — LOCKED 2026-06-02 (operator).** The shadow-copy *method* dies (the effort's goal); the
 genuinely-residual layer-3 stays where it belongs (a framework-dev doc), because
 it is not domain-binding and anneal-dev correctly has no home for it.
 
@@ -89,7 +89,9 @@ it is not domain-binding and anneal-dev correctly has no home for it.
   with adoption (so promotion + install land together).
 
 ## Next action
-Operator picks B1/B2 (recommend B1). Then a designed implementation cycle: re-ground
-in development-process.md, extract method → re-point dependents → reduce dev-process to
-layer-3 → separate-context review. Relates to [[framework-dev-as-anneal]],
+**B1 locked.** Next: a dedicated implementation cycle (its own focused session —
+foundational, high self-validation risk): re-ground in development-process.md (per
+edit cycle), extract the duplicated method → re-point the ~84 dependents → reduce
+dev-process to the layer-3 home → separate-context review. Resolve the 8 hard cases
+above; the enforcement-hook + anneal-dev packaging questions fold in here. Relates to [[framework-dev-as-anneal]],
 [[skill-craft-pre-edit-hook-findings]] (the hook re-citation), [[harness-tool-runstate-unsourced]].
