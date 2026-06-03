@@ -61,9 +61,13 @@ cross-container changes are integrated into each touched repo
 (`bindings.md` isolation slot Integration); the tracker records each
 unit's completion via its persistence reference (`core.md` §4.2
 Checkpoint) — the integrated changes' commit reference per touched
-container. Resume reads the tracker from the run-state repo and the
-recorded per-container references; it does not re-derive
-work-product state by scanning every repo.
+container. **Each checkpoint commit's first line carries the
+`anneal-checkpoint:` prefix** — marking it a working-progress save, not
+the release commit — so a deploying repo's release-discharge hook skips
+it (`anneal-framework/development-process.md`: checkpoint ≠
+release-commit). Resume reads the tracker from the run-state repo and the
+recorded per-container references; it does not re-derive work-product
+state by scanning every repo.
 
 ## How an in-progress run is found and resumed
 

@@ -305,7 +305,11 @@ the next [READY], reflecting any changes to the locked design.
 On completion a dispatch unit's integrated changes are durably **saved**
 per touched container, and the orchestrator appends its **persistence
 reference** (the integrated changes' commit reference per touched
-container) to the tracker. The save plus tracker line is the unit's
+container) to the tracker. Each checkpoint commit's first line carries
+the `anneal-checkpoint:` prefix — marking it a working-progress save, not
+the release commit — so a deploying repo's release-discharge hook skips
+it (`anneal-framework/development-process.md`, checkpoint ≠
+release-commit). The save plus tracker line is the unit's
 persistence artifact: a run interrupted mid-implement resumes from the
 tracker — the last-completed unit, the next per the impl plan (see
 `SKILL.md`, Run lifecycle). The tracker records each unit's completion
