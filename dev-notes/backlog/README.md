@@ -28,6 +28,30 @@ dependency order**, not priority within a phase. The arc: settle the *system*
 findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
 `main`.)
 
+### ▶ Where we are + ordered next steps (2026-06-03 session 2 — READ FIRST)
+
+This session landed three anneal-dev runs (all merged to local `main`, **not pushed**):
+`cite-glossary-not-section-numbers` (firewall convention, `b56f7d8`), `harness-tool-runstate-unsourced`
+(`8b8a4ac`), and the **keystone `anneal-dev-rerender`** (anneal-dev repo `cf71ec7`, version-bumped
+`0.1.2` at `66478d2`). Run detail: `.anneal-dev/runs/{cite-glossary-not-section-numbers,
+harness-tool-runstate-unsourced,anneal-dev-rerender}.md`. Two anneal-dev method findings surfaced +
+filed (kernel held — both are instance-level): `anneal-dev-impl-checkpoint-vs-discharge-hook` (→ folded
+into `corpus-flows-redesign` #3), `anneal-dev-rerender-changeset-by-source-delta`.
+
+**Ordered next steps:**
+1. **Repackage anneal-dev (FINISH #1)** — version bumped to `0.1.2`; the **reinstall is pending** (operator
+   `/plugin` action; the marketplace clone tracks GitHub at the old `ee9e2e6`, so the render `cf71ec7` is
+   local-only → either push anneal-dev + `/plugin marketplace update`, or reinstall from a local source).
+   Until reinstalled, the *running cache* (`0.1.1`) is still the stale render. **Highest immediate value.**
+2. **`corpus-flows-redesign`** (⭐ STRATEGY) — the next major lever; governs the rest; now informed by 3
+   dogfood sessions + holds the 2 dev-machinery method findings for its #3 (enforcement). The repo-merge
+   is the big open fork — deserves a fresh session with full attention.
+3. **`instance-template-slot-scaffolding`** — the last Phase-A convention (after the strategy clarifies instantiation routing).
+4. **Domain-instance re-renders** (Phase B `instance-reinstantiation`): clippy (heavy — de-bloat + render-resync)
+   → daneel → campaign-craft → bauleitplan. Now drivable through clean anneal-dev + the source-delta method.
+   Idle (drift ~0) → low urgency.
+5. **Phase C + D** — the coherence-audit method-findings campaign + exploratory. Independent, lowest priority.
+
 ### Near-done — stay open only for a live residual
 
 - `framework-spec-cleanup` — the core.md §4 re-derivation + S3; **audit debt fully
