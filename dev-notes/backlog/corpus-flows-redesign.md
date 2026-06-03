@@ -53,4 +53,5 @@ skill-craft review) can't be bypassed, and there's no future drift back into con
 - `dev-process-adoption.md` (archived) — established the two-regime "everything through anneal-dev" routing; this extends it to instantiation + render + enforcement.
 - `framework-dev-as-anneal.md` (archived) — made anneal-dev a real instance; this asks it to own all three paths.
 - `anneal-dev-extension-render-gate.md` — the render path's gating question (a piece of #3).
+- `anneal-dev-impl-checkpoint-vs-discharge-hook.md` — a concrete #3-enforcement coordination case: anneal-dev's impl-Checkpoint mandates a per-unit commit, but the dev-process rule-corpus discharge hook gates such commits on verify+operator. The two pieces of dev-machinery must be reconciled here (e.g. checkpoint-*save* ≠ release-*commit* for rule-corpus; or scope the hook to merges). Surfaced by the cite-glossary run (F9/D7), confirmed by the harness-tool run (avoided only via carried foreknowledge — i.e. unfixed at source).
 - `instantiation-guide.md` — the doc that would change most if instantiation routes through anneal-dev (#2).

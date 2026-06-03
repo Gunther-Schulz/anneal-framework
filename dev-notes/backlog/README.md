@@ -77,11 +77,11 @@ requirement — every item below is its own file (`ls` shows them), workable ind
 order, earlier than any audit if you want. The themes (the run-groupings within the campaign):
 
 - **C1 — verify/impl discipline** (gaps in what verify/impl must check; all touch `core.md` §4.2/§4.3 + `development-process.md`): `verify-vs-original-requirements`, `behavior-change-test-impact-enumeration`, `impl-green-on-commit`.
-- **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`, `anneal-dev-impl-checkpoint-vs-discharge-hook` (NEW 2026-06-03 — impl-Checkpoint mandates a per-unit commit, but the rule-corpus discharge hook needs verify+operator first; surfaced by the cite-glossary run).
+- **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`.
 - **C3 — under-enforced / fragmented disciplines** (soft-rule → structural; consolidate): `completeness-search-enforcement` (decide the open question first), `verified-integrity-consolidation`.
 - **C4 — skill-craft / gate-hook small fixes**: `skill-craft-soft-load-pointer-discriminator` (skill-craft canonical), `skill-craft-pre-edit-hook-findings` (Findings 2 Bash-bypass + 4 spec-origin over-match).
 - **Standalone:** `surface-non-task-observations` (a new channel — small, its own thing).
-- **Feeds the strategy, not its own run:** `anneal-dev-extension-render-gate` — the "does a mechanical re-render warrant the skill-craft gate?" question is answered *within* `corpus-flows-redesign` (#3 enforcement).
+- **Feeds the strategy, not its own run:** `anneal-dev-extension-render-gate` — the "does a mechanical re-render warrant the skill-craft gate?" question is answered *within* `corpus-flows-redesign` (#3 enforcement); `anneal-dev-impl-checkpoint-vs-discharge-hook` (NEW 2026-06-03) — anneal-dev's impl-Checkpoint per-unit-commit vs the dev-process rule-corpus discharge hook, reconciled within the same redesign (#3 enforcement).
 
 ### Phase D — instance-level / exploratory (no rush)
 

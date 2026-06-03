@@ -39,6 +39,9 @@ branch checkpoint commits. Decide which, then sharpen `implement.md` (and possib
 `development-process.md` release loop + the hook's scope).
 
 ## Relates to
+- `corpus-flows-redesign.md` — **DECISION VENUE** (operator-folded 2026-06-03): this is a
+  dev-machinery coordination case reconciled *within* the strategy redesign (#3 enforcement),
+  not as a standalone run. The three candidate resolutions above are the options it weighs.
 - `impl-green-on-commit.md` — sibling impl/commit-discipline item (different axis: green
   state vs discharge presence); check for fold/inform when either is worked.
 - `worktree-isolation-and-integration.md` — the parallel-unit integration path also assumes
