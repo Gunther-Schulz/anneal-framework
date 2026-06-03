@@ -42,18 +42,22 @@ resolved: `anneal-dev-impl-checkpoint-vs-discharge-hook` (→ D7/D12, archived);
 `anneal-dev-extension-render-gate` (→ D4 answered the question; **downgraded-open** on a residual).
 Run ledger: `.anneal-dev/runs/corpus-flows-redesign.md` (gitignored).
 
-**Dogfooding yield — 4 method-kernel findings filed (for future anneal-dev runs):**
+**Dogfooding yield — 5 method-kernel findings filed (for future anneal-dev runs):**
 `structural-change-dependent-enumeration` (**n=2, highest-leverage**: Missed-dependents misses
 non-content-reference dependent classes + the `[CONDITIONAL]`-falsification-exemption — the
 shared root of BOTH this run's loopbacks), `loopback-root-cause-triage` (bake the root-cause
 triage in vs operator-prompt), `release-commit-formation-from-checkpoints`,
-`instructional-files-streamline` (operator-raised clarity pass).
+`instructional-files-streamline` (operator-raised clarity pass), `commit-msg-hook-packaging-overmatch`
+(the commit-msg hook gates packaging manifests + disagrees with the pre-edit hook).
 
-**Release state:** anneal-framework `main` pushed to origin (session 3). Follow-ups —
-**C1b install re-point** (TODO, *not urgent*: the install runs on its cache; re-point when next
-updating anneal-dev — anneal-framework needs a root marketplace manifest → `anneal-dev/` subdir,
-then `claude plugin update` + `/reload-plugins`; companion infra); **C1c** standalone `anneal-dev`
-repo deprecation (note added; archive the GitHub remote at operator's discretion).
+**Release — ✅ DONE + verified live (all on remote).** anneal-framework `main` pushed to origin.
+**C1b install re-pointed**: anneal-framework is now the marketplace host (root manifest →
+`./anneal-dev/plugin`); the install switched to `anneal-dev@anneal-framework` → the merged clean
+0.1.2 (D12 present; firewall-clean — 0 framework §-citations vs the old 0.1.1's 5); old
+`@anneal-dev` install + marketplace removed; `/reload-plugins` confirmed the running session
+resolved the merged render — **F7 fully resolved**. **C1c**: standalone `anneal-dev` repo
+tombstoned (pushed) + **archived** on GitHub (read-only). Cosmetic leftover only: the orphaned
+`~/.claude/plugins/cache/anneal-dev/anneal-dev/0.1.1` dir (harmless, prunable).
 
 **Ordered next steps:**
 1. **`instance-template-slot-scaffolding`** — the last Phase-A convention; now unblocked (the
@@ -62,10 +66,18 @@ repo deprecation (note added; archive the GitHub remote at operator's discretion
 2. **Domain-instance re-renders** (Phase B `instance-reinstantiation`): clippy (heavy — de-bloat +
    render-resync) → daneel → campaign-craft → bauleitplan. anneal-dev's own render is now merged-in;
    drivable through the merged anneal-dev + the source-delta method. Idle (drift ~0) → low urgency.
-3. **Phase C — method-findings campaign** (coherence-audit-driven): now folds in the 4 NEW findings
+3. **Phase C — method-findings campaign** (coherence-audit-driven): folds in the 5 NEW findings
    above (structural-change-dependent + loopback-root-cause-triage are the high-value method-kernel
    fixes) alongside the prior C-cluster.
 4. **Phase D** — instance-level / exploratory. Lowest priority.
+
+**Ordering note (decide at pickup):** a **coherence-audit is cadence-due** (practice 12 + session-3's
+heavy cycle count) and is the home for the framework-spec **bloat/tightness** question — `core.md`
+(~7.2k words / 976 lines) is the weight; the call was **no de-bloat *rewrite*** (anneal-dev is clean
+spec-rendered lineage), **measure-then-cut via the audit's Bloat lens** instead, aimed at the shared
+framework spec. Strong case to **elevate the coherence-audit ahead of the re-renders** (clean the
+corpus before re-rendering instances *from* it — the same "settle conventions before renders" logic
+that ordered the phases). vs. the as-ordered `instance-template-slot-scaffolding` first.
 
 ### Near-done — stay open only for a live residual
 
