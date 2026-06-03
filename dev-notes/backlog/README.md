@@ -39,10 +39,12 @@ filed (kernel held — both are instance-level): `anneal-dev-impl-checkpoint-vs-
 into `corpus-flows-redesign` #3), `anneal-dev-rerender-changeset-by-source-delta`.
 
 **Ordered next steps:**
-1. **Repackage anneal-dev (FINISH #1)** — version bumped to `0.1.2`; the **reinstall is pending** (operator
-   `/plugin` action; the marketplace clone tracks GitHub at the old `ee9e2e6`, so the render `cf71ec7` is
-   local-only → either push anneal-dev + `/plugin marketplace update`, or reinstall from a local source).
-   Until reinstalled, the *running cache* (`0.1.1`) is still the stale render. **Highest immediate value.**
+1. ✅ **Repackage anneal-dev — DONE** (2026-06-03): version `0.1.2`; cache `…/anneal-dev/0.1.2/` created
+   from the clean render + `installed_plugins.json` repointed to it (verified clean: firewall + V-N empty,
+   pass-count reconciled). The clean render is LIVE on reload. **CAVEAT:** the marketplace clone still tracks
+   GitHub at the old `ee9e2e6` and the local commits (`cf71ec7`/`66478d2`) are **unpushed** — so do NOT
+   `/plugin update anneal-dev` until anneal-dev is pushed to GitHub, or it will offer `0.1.1` and downgrade.
+   (Rollback points: `0.1.1` cache intact + `/tmp/installed_plugins.json.bak`.)
 2. **`corpus-flows-redesign`** (⭐ STRATEGY) — the next major lever; governs the rest; now informed by 3
    dogfood sessions + holds the 2 dev-machinery method findings for its #3 (enforcement). The repo-merge
    is the big open fork — deserves a fresh session with full attention.
