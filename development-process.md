@@ -254,9 +254,10 @@ the AI will sometimes fail; catch downstream). A fix in pure prose form is malfo
 it adds an unenforced suggestion. Both new mechanisms and fixes
 to existing rules are gated by this classification: if classifiable
 as one of the three, it earns its place at n=1; if not, keep
-iterating on form, or — only via practice 1's three-form
-enumeration discharge with cited per-form failure reasons — accept
-the residual (recorded as observation, not as resolution).
+iterating on form, or — only via practice 1's enumeration of the
+three structural-enforcement forms (practice 8), discharged with
+cited per-form failure reasons — accept the residual (recorded as
+observation, not as resolution).
 
 **Validation-watch is not a deferral journal.** `dev-notes/validation-
 watch.md` records observations about framework design choices

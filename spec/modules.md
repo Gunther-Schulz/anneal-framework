@@ -464,9 +464,10 @@ framework's triage applies (`development-process.md` practice 1):
   still broke → a finding for the framework spec.
 - An **adherence gap** — a faithful render of an unambiguous,
   evidence-bearing rule, violated anyway → failure indicator
-  requiring practice 1's three-form structural-enforcement
-  enumeration; residual accepted only after enumeration shows all
-  three forms fail with cited per-form failure reasons.
+  requiring practice 1's enumeration of the three
+  structural-enforcement forms (practice 8); residual accepted only
+  after enumeration shows all three forms fail with cited per-form
+  failure reasons.
 
 ### 4.6 What this is not
 
