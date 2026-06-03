@@ -65,7 +65,10 @@ findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
 
 These are small spec/method fixes; one anneal-dev run per *theme* (not per item) amortizes the
 ceremony cost, and a **coherence audit** (practice 12 — mechanically triggered after N cycles) is
-the natural moment to sweep a batch, since it surfaces adjacent drift too. The batches:
+a natural moment to sweep a batch, since it surfaces adjacent drift too. **The batching is a
+cost-saving recommendation, not a requirement, and the audit is a floor not a gate** — every item
+below is still its own file (`ls` shows them), workable individually, in any order, whenever; do
+them earlier than any audit if you want. The themes (the suggested run-groupings):
 
 - **C1 — verify/impl discipline** (gaps in what verify/impl must check; all touch `core.md` §4.2/§4.3 + `development-process.md`): `verify-vs-original-requirements`, `behavior-change-test-impact-enumeration`, `impl-green-on-commit`.
 - **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`.
