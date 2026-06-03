@@ -195,7 +195,7 @@ not by cost comparison.
 **Loopback** — a phase returning the run to an earlier phase
 rather than proceeding (`core.md` §6 Loopbacks). Three trigger
 points: implement → investigate-design on any actioned finding
-(§4.2); verify [ISSUES FOUND] → investigate-design (§4.3); an
+(§4.2.7); verify [ISSUES FOUND] → investigate-design (§4.3); an
 [INVALIDATED] finding or design decision reopens design work
 (§5). Each carries a defined return-shape; the orchestrator
 honors the return rather than proceeding.
@@ -204,7 +204,7 @@ honors the return rather than proceeding.
 impl-phase subagent (or the working context, on the spawn-fallback
 path) applies to its own change-set before returning state, using the
 instance's standardized lenses most relevant to write-time issues
-(`core.md` §4.2). Compounds with the design-time forcing function
+(`core.md` §4.2.5). Compounds with the design-time forcing function
 (§3.2); catches references and behaviors introduced post-design.
 A self-check finding triggers loopback (or [VERIFIED — deferred]
 per operator's first-judge recommendation).
@@ -212,7 +212,7 @@ per operator's first-judge recommendation).
 **Integrity check** — the orchestrator's verification that the
 operator's work product changed in exactly the authorized way and
 no more, run per touched container against an instance-bound state
-marker (`core.md` §4.2). Two forms by dispatch path: for an
+marker (`core.md` §4.2.4). Two forms by dispatch path: for an
 **isolated** (parallel-eligible) unit, each touched container was
 untouched (the unit worked on its separate copy); for an
 **in-place** (sequential/single) unit, the container advanced by
@@ -224,13 +224,13 @@ surface (cause uncertain, no auto-restore).
 cannot spawn an isolated subagent for dispatched work: the work is
 conducted in the working context and surfaces "without isolation".
 Applies wherever the framework dispatches isolated work — an
-implement unit (`core.md` §4.2), the convergence-cycle falsification
+implement unit (`core.md` §4.2.2), the convergence-cycle falsification
 pass (§4.1.4), or verify (§4.3). The isolation guarantee (separate
 copy, escape-resistance, integrity check) is **waived** on this
 path — hence surfaced, not silent.
 
-**Pass** — one of the two activities within a cycle. Every cycle has
-exactly two, in order:
+**Pass** — one of the activities within a cycle. A cycle has two by
+default, in order:
 
 1. **Investigation pass** — the AI investigates the relevant surfaces
    with task-derived lenses. The default activity. (Analytic
@@ -240,6 +240,9 @@ exactly two, in order:
    investigation pass produced. Artifact shape and citation
    requirements per `modules.md` §3.2.
 
+The convergence cycle adds a third, the **falsification pass**
+(`core.md` §4.1.4).
+
 **Orchestrator** — the coordinating layer of a run: it detects the
 mode, conducts the phase pipeline through its transitions, and
 manages the run lifecycle. Specified in `core.md` §6.
@@ -247,7 +250,7 @@ manages the run lifecycle. Specified in `core.md` §6.
 **Working context** — the AI's context that conducts
 investigate-design. Implement is dispatched to subagents; the
 working context runs impl only on the spawn-fallback path
-(`core.md` §4.2). Distinct from verify's isolated context (`core.md` §4.3) — verify is established by the orchestrator
+(`core.md` §4.2.2). Distinct from verify's isolated context (`core.md` §4.3) — verify is established by the orchestrator
 in a context separate from the one that produced the work. The
 working context judges design completeness at [READY] (`core.md`
 §4.1).
@@ -335,12 +338,12 @@ foundational design decision, established by search. Specified in
 
 **Dispatch unit** — a group of design decisions implemented together
 as one piece of impl-phase work. Derived from the locked design at
-implement-phase start. Specified in `core.md` §4.2.
+implement-phase start. Specified in `core.md` §4.2.1.
 
 **Impl plan** — implement-phase's planning artifact: a list of
 dispatch units in dependency order, each carrying a
 parallel-eligibility marker. Produced at implement-phase start;
-persisted alongside the tracker. Specified in `core.md` §4.2 and
+persisted alongside the tracker. Specified in `core.md` §4.2.1 and
 `modules.md` §3.3.
 
 **Production signal** — a real-run observation that confirms or
@@ -376,7 +379,7 @@ sense — the instance carries the V-N's positive validation.
 
 **Recall pool** — the working context's accumulated set of
 already-recorded findings and design decisions when answering a
-self-test (`core.md` §4.1.4 + V-5). The failure shape that allows
+self-test (`core.md` §4.1.4). The failure shape that allows
 false-[READY]s: the AI answers the fresh-session implementability
 test from recall of what the tracker contains rather than from
 re-reading external evidence. The convergence cycle (§4.1.4)
@@ -385,9 +388,9 @@ breaks the recall pool by switching modes to fresh investigation;
 at the self-test moment.
 
 **False-[READY]** — a [READY] declaration that subsequent work
-surfaces material design gaps for (`validation-watch.md` V-5).
-Caught structurally by the convergence cycle (§4.1.4) and per-step
-external evidence (`core.md` §4.1.2); or — when both miss — by
+surfaces material design gaps. Caught structurally by the
+convergence cycle (§4.1.4) and per-step external evidence
+(`core.md` §4.1.2); or — when both miss — by
 implement-loopback or verify [ISSUES FOUND]. The operator's
 `another cycle` override at the closed-artifact review is a
 residual path (operator's free-form interjection), not the named
@@ -396,7 +399,7 @@ enforcement form.
 **Convergence exception (auto-battle verify [ISSUES FOUND])** —
 the rule that prevents auto-battle from infinite-looping on a
 finding the AI already chose to defer at investigate-design time
-(`modules.md` §1.2; V-9). Mechanism: the finding closes
+(`modules.md` §1.2). Mechanism: the finding closes
 [VERIFIED — deferred] per Finding disposition (`core.md` §5.1) —
 its disposition cites the existing [AUTO-ACCEPTED] decision's
 tracker ID. Without a citable deferred-disposition, the finding
@@ -427,8 +430,8 @@ the instance file not faithfully carrying the spec → re-render.
 A **spec gap** is the render faithful, the AI followed it, and
 it still broke → sharpen the spec. An **adherence gap** is a
 faithful render of an unambiguous evidence-bearing rule violated
-anyway — a failure indicator requiring practice 1's three-form
-structural-enforcement enumeration; residual accepted only after
+anyway — a failure indicator requiring practice 1's enumeration of the
+three structural-enforcement forms (practice 8); residual accepted only after
 enumeration shows all three forms fail with cited per-form failure
 reasons.
 

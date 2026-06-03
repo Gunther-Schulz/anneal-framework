@@ -91,7 +91,7 @@ fork, not an instance.
   mechanism — where these artifacts live, how an in-progress run is
   found and resumed. Clippy's `bindings.md` is the worked example.
 - the **isolation mechanism** — the framework fixes the isolation
-  guarantees (`spec/core.md` §4.2) and requires them to hold; the
+  guarantees (`spec/core.md` §4.2.3) and requires them to hold; the
   instance supplies the concrete mechanism — how a separate copy is
   made and made escape-resistant, the unit identifier, the state
   marker the integrity check reads, the restore mechanism, and which
