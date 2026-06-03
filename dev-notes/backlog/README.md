@@ -71,6 +71,10 @@ these phases.)**
 - **Phase D — instance-level / exploratory (no rush):** `clippy-greenfield-tolerance`,
   `clippy-run-findings-dispatch-coupling`, `planner-instance-exploration`,
   `generalize-sharpening-skill`.
+- **STRATEGY (own fresh session — governs the above):** `anneal-dev-as-standard-channel`
+  — lock down "all render + re-render + *instantiation* runs through anneal-dev" as the
+  enforced de-facto standard; includes the `anneal-dev`↔`anneal-framework` **repo-merge**
+  question. Shapes how Phases A/B are eventually done.
 
 ### Framework-core (leads)
 
