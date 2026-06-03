@@ -79,6 +79,15 @@ framework spec. Strong case to **elevate the coherence-audit ahead of the re-ren
 corpus before re-rendering instances *from* it — the same "settle conventions before renders" logic
 that ordered the phases). vs. the as-ordered `instance-template-slot-scaffolding` first.
 
+**Operator-flagged research thread (2026-06-03, separate from the ordered framework work above):**
+two captured items — (1) `anneal-placement-and-improvement-research.md`: place anneal in the
+agent-reliability landscape + honestly find-superior; carries a **ready sharpened `deep-research`
+question** + anneal-characterization + leads → run via the `deep-research` skill in a fresh/clean
+window. (2) `anneal-reliability-measurement.md`: **the operator's flagged next exploration** —
+anneal's soundness claim is *asserted, not measured*; design a credible measurement/proxy (possibly
+extending `validation-watch.md`). Preliminary placement: anneal = the **process-discipline layer**
+(above agent patterns; orthogonal to formal-verification); **biggest real gap = measurement.**
+
 ### Near-done — stay open only for a live residual
 
 - `framework-spec-cleanup` — the core.md §4 re-derivation + S3; **audit debt fully
