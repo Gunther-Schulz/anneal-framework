@@ -13,6 +13,15 @@ Per anneal-framework development-process.md step 4 (release loop):
   shipped in commit df61abc
 - Pattern-warns on judgment-based N/A reasons without mechanical citation
 
+Checkpoint carve-out: a first-line prefix `anneal-checkpoint:` marks an
+anneal-dev per-unit IMPLEMENT checkpoint commit (a working-progress save
+for resume, per the framework Checkpoint discipline), NOT a release
+commit. The Step-4 discharge gates the RELEASE commit (operator-approved,
+pushed); checkpoint commits skip it — the discharge cannot be honestly
+produced mid-implement (verify is downstream). Parallel to the
+Merge/Revert/fixup skip below. (development-process.md: checkpoint-save
+is not the release-commit the discharge gates.)
+
 Bypass: `git commit --no-verify` (visible in audit; explicit operator
 action required).
 """
@@ -198,9 +207,14 @@ def main() -> int:
     msg_file = Path(sys.argv[1])
     msg = msg_file.read_text()
 
-    # Skip merges, reverts, fixups
+    # Skip merges, reverts, fixups, and anneal-dev implement checkpoints.
+    # `anneal-checkpoint:` is a per-unit working-progress save (resume
+    # point), not the release commit the discharge gates — the discharge
+    # cannot be produced mid-implement (verify is downstream).
     first_line = msg.splitlines()[0] if msg.splitlines() else ""
-    if first_line.startswith(("Merge ", "Revert ", "fixup!", "squash!", "amend!")):
+    if first_line.startswith(
+        ("Merge ", "Revert ", "fixup!", "squash!", "amend!", "anneal-checkpoint:")
+    ):
         return 0
 
     changed = get_changed_files()
