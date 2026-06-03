@@ -13,28 +13,29 @@ progression conditions, (b) injects up-to-date docs / agent-rules, (c) corrects 
 productive territory. Sits in the established **neurosymbolic / deterministic-validation /
 "rules LLMs cannot bypass"** family (DEV.to/AWS guardrails series, neurosymbolic literature).
 
-## Relationship to anneal — same spine, different layer
-Both attack **model-recall-as-truth (hallucination)** with the same move: ground in **external,
-deterministic, re-checkable evidence/enforcement**, not model confidence. anneal's tagline
-("Convert AI confidence into AI evidence") IS the envoy philosophy, lifted from tool-layer to
-methodology-layer.
+## Relationship to anneal — adjacent, not aligned (REVISED after the deeper pass)
+**Initial framing ("anneal's hooks/basis-tools ARE envoys; same spine, different layers") was an
+over-claim** — pattern-matching on a broad shared principle. The concrete PostHog picture corrects it.
 
-- **Envoy = tool layer.** A reliable surface the agent calls for a real answer / a hard rule.
-- **anneal = methodology layer.** The **basis rule** (every load-bearing claim cites a re-runnable
-  search or located read, never recall) + phases + tracker + the coherent-complete-picture invariant.
+- **They share only the WIDE umbrella:** reject model-recall-as-truth, lean on deterministic/external
+  grounding. That tent also holds RAG, tool-use, guardrails, neurosymbolic — sharing it is weak
+  evidence of a deep relation. ("neurosymbolic" for anneal is a loose analogy, not a classification —
+  its "symbolic" half is deterministic *discipline*, not formal symbolic AI.)
+- **They are different KINDS of thing — orthogonal anti-hallucination strategies:**
+  - **Envoy = a DELEGATION tool.** Defined by *delegation + ground-truth-provision*: the agent hands a
+    domain task to a purpose-built CLI that *does it right* (fetches the real key, writes current SDK
+    code). It *substitutes* a correct tool-action for a hallucination-prone one.
+  - **anneal = a METHODOLOGY.** A process the agent *follows* to evidence + structure its OWN work
+    (basis rule, phases, tracker, separate-context verify). It *disciplines* reasoning; it doesn't do
+    the task for the agent.
+- **Why the earlier mapping fails on inspection:** anneal's **hooks are guardrails, not envoys** — they
+  *block*, they don't *do/provide ground-truth*; a guardrail overlaps only the envoy's *secondary*
+  (enforcement) aspect, not its *defining* (delegation + ground-truth) one. `rg`/`git` are *generic*
+  tools the basis rule mandates, not purpose-built domain envoys.
 
-**anneal already CONTAINS envoy-shaped pieces:**
-1. **Basis-evidence sources ARE envoys** — `rg`/`git`/located reads are the deterministic surfaces
-   anneal's basis-artifacts draw on. An AI Envoy is, in anneal's vocabulary, a basis-evidence source.
-2. **The hooks ARE envoys (enforcement half)** — `skill-craft-pre-edit.py` + the `commit-msg`
-   discharge hook are deterministic CLI surfaces injected to enforce progression + block drift —
-   exactly the envoy's "enforce best-practices/versioning, rules LLMs cannot bypass" role.
-3. **anneal is itself neurosymbolic** — neural reasoning (investigate-design) + symbolic
-   deterministic anchors that can't be overridden (the **evidence-bearing-artifact** rule, closed-set
-   enums, the gates). The envoy is the tool-primitive of the same principle.
-
-**Complementary, not competing:** an AI Envoy is an excellent *citizen* of an anneal run (a
-basis-source / guardrail); anneal is the *process that decides to consult it + records the evidence*.
+**The one genuine, NARROW relation that survives — composition, not identity:** an envoy could be a
+*tool an anneal run calls* (a basis-evidence source, or a deterministic action an implement-unit
+delegates to). anneal *can use* envoys; anneal is not an envoy, and its hooks are not envoys.
 
 ## The open design question (the actual exploration)
 anneal HAS envoys (hooks + basis-tools) but does NOT *name* "deterministic surface / envoy" as a
@@ -64,18 +65,12 @@ success/failure → ship updates immediately (no model retraining). **Explicitly
 pattern** (PostHog) ≠ **"Envoy AI Gateway"** (the Envoy-proxy MCP gateway, Tetrate/Bloomberg) — two
 unrelated "Envoy"s.)
 
-**This sharpens the anneal mapping — and externally validates a design choice:**
-- anneal's deterministic surfaces are **CLI/hook-based, not MCP** — exactly the envoy shape:
-  basis-tools (`rg`/`git`/located reads = the "print real data into context" half) + the hooks
-  (pre-edit, commit-msg discharge = the "enforce progression, succeed-or-block" half — the discharge
-  hook literally won't let a release commit proceed without the verification artifact).
-- **External validation:** emerging evidence that **CLI tools beat MCP for agents** (one report:
-  +28% task completion, +33% token-efficiency; "CLIs for execution/dev-tools, MCP for shared
-  read-only reasoning") supports anneal's CLI/hook-native grounding+enforcement for its
-  file-edit/git-native corpus-evolution domain.
-- **Neurosymbolic alignment:** "separate reasoning from execution" + "deterministic validation LLMs
-  can't override" = anneal's investigate-design (reasoning) vs hooks + basis-rule + verify-battery
-  (symbolic, deterministic, un-overridable). anneal is itself a neurosymbolic methodology.
+**One finding here survives the relationship-revision (it's about anneal's tool-CHOICE, NOT about
+anneal being an envoy — see REVISED relationship above):** anneal grounds + enforces via **CLI/hooks
+(`rg`, `git`, the python hooks), not MCP**, and the emerging **CLI-beats-MCP** evidence (one report:
++28% task completion, +33% token-efficiency; "CLIs for execution/dev-tools, MCP for shared read-only
+reasoning") supports that tool-choice for anneal's file-edit/git-native domain. (Independent point;
+does NOT imply anneal's hooks "are envoys" — they're guardrails.)
 
 **Refined design question:** anneal binds **"executable verification"** (the *check* half of the
 envoy) as an instance slot, but the **data-provision half** (deterministic surfaces that *inject
