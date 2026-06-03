@@ -66,11 +66,16 @@ per-instance re-render below should run *after* they land.)
 1. **Merge the cleaned spec to `main`.** Instances render *from* the spec; it must
    be the settled source of truth first. (Don't hold the spec branch *for* the
    re-render — merge enables it.)
-2. **Re-render `anneal-dev` FIRST** (the tool). It's the one instance that's
-   actively stale-in-use — every run is driven by a stale rendering — and a clean
-   anneal-dev is what drives all the other re-renders. Faithful re-render of the §4
-   changes (sub-numbering, de-dup, [READY] consolidation, passes fix, breadcrumb
-   strip) + render-fidelity verify. **Highest value.**
+2. ✅ **Re-render `anneal-dev` FIRST** — **DONE** 2026-06-03 (anneal-dev repo `cf71ec7`,
+   merged to its `main` local). Run: `.anneal-dev/runs/anneal-dev-rerender.md` (auto-battle).
+   6 files, +45/-54: §4 pass-count reconciliation + §5.3 [READY] thin-bridges + 3 V-N
+   breadcrumb strips + 5 cite-glossary firewall re-points; render-fidelity verify
+   exhaustive-clean. NOTE: the audit under-scoped it as "light-touch"; 2 convergence
+   falsifications caught real §4 divergences (→ method finding
+   `anneal-dev-rerender-changeset-by-source-delta`). **CACHE NOT YET UPDATED:** the
+   re-render is in the repo source; the running installed cache (`0.1.1`) updates only
+   on a version bump + re-install — a separate packaging step before the *next* anneal-dev
+   session runs the clean render. (Filed implicitly here; do at next convenient point.)
 3. **Then the domain instances**, each a pass + render-fidelity verify. Idle
    instances may stay parked to next-active per the render-settlement convention
    (drift cost ~0 while idle) — do them now only if a fully-clean baseline is
