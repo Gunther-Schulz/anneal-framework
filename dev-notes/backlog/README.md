@@ -47,8 +47,10 @@ findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
 
 - `harness-tool-runstate-unsourced` — unsourced "don't use harness task-tools" block
   in every rendered SKILL.md → an instantiation-guide render-time note, then re-render (contract-2).
-- `cite-glossary-not-section-numbers` — instances should cite glossary terms, not
-  framework §-numbers (the meatiest — needs the glossary-as-instance-interface scoping).
+- ✅ `cite-glossary-not-section-numbers` — **DONE** (merged `b56f7d8`, 2026-06-03): the
+  §-number firewall rule + grep-check + 3 glossary headwords + glossary-as-interface naming.
+  Archived. Residual (the binding-table interface completion) spun off, not a re-render blocker →
+  `glossary-binding-table-interface-completeness` (Phase D / no-rush).
 - `instance-template-slot-scaffolding` — the template doesn't scaffold the mechanism-slot
   placeholders; settle slot-as-file vs slot-as-section, then fix the guide/template.
 
@@ -73,7 +75,7 @@ requirement — every item below is its own file (`ls` shows them), workable ind
 order, earlier than any audit if you want. The themes (the run-groupings within the campaign):
 
 - **C1 — verify/impl discipline** (gaps in what verify/impl must check; all touch `core.md` §4.2/§4.3 + `development-process.md`): `verify-vs-original-requirements`, `behavior-change-test-impact-enumeration`, `impl-green-on-commit`.
-- **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`.
+- **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`, `anneal-dev-impl-checkpoint-vs-discharge-hook` (NEW 2026-06-03 — impl-Checkpoint mandates a per-unit commit, but the rule-corpus discharge hook needs verify+operator first; surfaced by the cite-glossary run).
 - **C3 — under-enforced / fragmented disciplines** (soft-rule → structural; consolidate): `completeness-search-enforcement` (decide the open question first), `verified-integrity-consolidation`.
 - **C4 — skill-craft / gate-hook small fixes**: `skill-craft-soft-load-pointer-discriminator` (skill-craft canonical), `skill-craft-pre-edit-hook-findings` (Findings 2 Bash-bypass + 4 spec-origin over-match).
 - **Standalone:** `surface-non-task-observations` (a new channel — small, its own thing).
@@ -81,6 +83,8 @@ order, earlier than any audit if you want. The themes (the run-groupings within 
 
 ### Phase D — instance-level / exploratory (no rush)
 
+- `glossary-binding-table-interface-completeness` — (NEW 2026-06-03, the FB-3 residual) make the
+  glossary cover the binding-table left-column technical terms too; not a re-render blocker.
 - `clippy-greenfield-tolerance` — clippy's `verify` assumes existing code; instance-level greenfield hardening.
 - `clippy-run-findings-dispatch-coupling` — open clippy-surfaced cycles (Cycle 2.5 + the coherence-audit deep-sweep of §4.4 / §5.1 / mode mechanics).
 - `planner-instance-exploration` — build the planner instance + its framework findings (holds the `bindings.md` slot-collapse fork).
