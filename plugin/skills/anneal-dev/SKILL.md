@@ -293,10 +293,10 @@ artifacts):
   pointer; empty sections matching the slot's declaration shape;
   commented-out small example optional):
   - `lenses.md` — lens supplement file (header: "Project supplemental
-    lenses. Add entries here; each fills Name / Question / Scope per
-    anneal-framework's `spec/modules.md` §2.1. Additive-only: cannot
-    disable or override anneal-dev's core lenses. Malformed file =
-    fail-loud halt at standardized-pass dispatch.")
+    lenses. Add entries here; each fills the Name / Question / Scope
+    lens-entry shape. Additive-only: cannot disable or override
+    anneal-dev's core lenses. Malformed file = fail-loud halt at
+    standardized-pass dispatch.")
   - `extensions.enabled` — extension toggles file (header: "Enabled
     lifecycle extensions, one name per line; `#` comments. Available in
     this anneal-dev version: render-and-open-diff (fires on

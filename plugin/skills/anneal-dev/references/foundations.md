@@ -244,9 +244,10 @@ cannot exhibit) — is not statically dischargeable: it is recorded
 executable verification (the render-fidelity / coherence checks at
 verify, `phases/verify.md`), not a read. This is the **target-behavior**
 runtime case (the rule's behavior resolving *through* that
-render-resolved dependent), `anneal-framework/spec/core.md` §3.2.2's
-native path. A static enumeration substituted for it is the silent
-substitution the basis rule forbids.
+render-resolved dependent), the native path for the **target-behavior**
+coupling shape (`anneal-framework/spec/glossary.md` Coupling shape). A
+static enumeration substituted for it is the silent substitution the
+basis rule forbids.
 
 ### Secondary sources
 
@@ -390,18 +391,13 @@ the rule-text.
 
 ### Relationship to [READY]
 
-[READY] is the point at which the working context judges the design
-complete. The tracker state it weighs in that judgment: no finding is
-[INVALIDATED], no load-bearing finding is left below [VERIFIED], and
-every design decision is [VERIFIED] or [AUTO-ACCEPTED] — both modes. An
-[INVALIDATED] finding, a load-bearing finding short of [VERIFIED], or a
-design decision short of that bar is an unresolved concern — the design
-is not complete, and the loop continues.
-
-These are the status the tracker carries — a notebook of where each
-concern stands — that the AI reads when it judges the design complete
-and presents it. They are not gate-conditions a separate evaluation
-re-derives.
+The status tags gate [READY] (`phases/investigate-design.md` [READY]):
+an [INVALIDATED] finding, a load-bearing finding short of [VERIFIED], or
+a design decision short of [VERIFIED]/[AUTO-ACCEPTED] (Design-decision
+states above) is an unresolved concern that holds the phase — the loop
+continues until it resolves. These are the status the tracker carries,
+read at the [READY] judgment (`phases/investigate-design.md` [READY]),
+not a gate a separate evaluation re-derives.
 
 ## Orchestrator
 

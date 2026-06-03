@@ -31,10 +31,9 @@ pre-classification judgment ("is this finding major-new-scope or
 local?") is eliminated — every actioned finding loops back. The
 loopback cost (one investigate-design cycle) is the designed trade for
 eliminating the inline-misjudgment cost (partial-state save, scope
-creep, tracker drift; see
-`anneal-framework/dev-notes/validation-watch.md` V-24). No work is lost
-when loopback fires: the tracker carries the state, and the run
-re-enters the investigate-design cycle loop.
+creep, tracker drift). No work is lost when loopback fires: the tracker
+carries the state, and the run re-enters the investigate-design cycle
+loop.
 
 ## The impl plan
 
@@ -128,10 +127,10 @@ anneal-dev's state marker per touched container is the repository's
 
 A parallel-eligible unit's subagent works on a **separate copy** of each
 touched container — anneal-dev's binding of the framework isolation slot
-(`bindings.md` Isolation slot; guarantees in
-`anneal-framework/spec/core.md` §4.2) — so concurrent units cannot clash
-and the unit's changes reach the operator's work product only through
-Integration below, never directly:
+(`bindings.md` Isolation slot; guarantees enforced by the
+**Integrity check**, `anneal-framework/spec/glossary.md`) — so concurrent
+units cannot clash and the unit's changes reach the operator's work
+product only through Integration below, never directly:
 
 - **Copy:** for each touched container, a separate copy of that repo at
   the unit's base commit, created outside the operator's repository tree

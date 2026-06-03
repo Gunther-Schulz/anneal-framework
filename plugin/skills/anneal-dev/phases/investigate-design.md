@@ -6,8 +6,8 @@ design. It ends at [READY].
 
 ## The cycle
 
-investigate-design runs as a loop of cycles. Each cycle has two
-passes, in order:
+investigate-design runs as a loop of cycles. A cycle has two passes
+by default, in order:
 
 1. **Investigation pass.** Investigate the corpus surfaces the task
    touches — ad-hoc, by a method derived from the task, not a
@@ -33,7 +33,9 @@ passes, in order:
    once, at [READY].
 
 The standardized inspection pass runs every cycle — not only the
-first, not only when something feels off.
+first, not only when something feels off. The convergence cycle
+(Convergence cycle requirement, below) adds a third pass —
+falsification — over its [VERIFIED] decisions.
 
 **Cycle numbering** is continuous across the run. A loopback from a
 downstream phase (implement actioned-finding, verify [ISSUES FOUND])
@@ -148,11 +150,10 @@ the rule-text; executable query with output for a wrap-tolerant search.
 Or FAILED with the specific gap identified. PASSED without per-step
 external citation is a malformed artifact: the test answers from the
 recall pool that wrote the design rather than from external evidence,
-which is the failure shape that allows false-[READY]s (V-5 in
-`anneal-framework/dev-notes/validation-watch.md`). Without the result
-line itself, the closed-artifact form (`SKILL.md`) is also malformed
-and the [READY] declaration unenforced. The result line is recorded in
-the tracker for post-run review in both modes.
+which is the failure shape that allows false-[READY]s. Without the
+result line itself, the closed-artifact form (`SKILL.md`) is also
+malformed and the [READY] declaration unenforced. The result line is
+recorded in the tracker for post-run review in both modes.
 
 ### Convergence cycle requirement
 
@@ -251,9 +252,6 @@ continues. [READY] is presented only after a convergence cycle is
 observed clean. The convergence cycle's outputs (investigation pass
 artifact + falsification pass artifact + zero-D-delta status) form part
 of the [READY] artifact alongside the fresh-session result line.
-
-The convergence cycle's role in closing the false-[READY] failure shape
-is recorded in V-5 (`anneal-framework/dev-notes/validation-watch.md`).
 
 The convergence cycle fires in both modes (interactive and
 auto-battle). In auto-battle no operator override is available; the AI

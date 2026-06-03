@@ -212,18 +212,15 @@ run's history and for resume. Detail is in `phases/implement.md`.
 
 ## [READY]
 
-[READY] is investigate-design's terminal — the point at which the
-working context judges the design complete and presents it. The tracker
-state it weighs in that judgment: no finding is [INVALIDATED], no
-load-bearing finding is left below [VERIFIED], and every design decision
-is [VERIFIED] or [AUTO-ACCEPTED] — both modes. [READY] also weighs the
-cycle-history conditions specified in the investigate-design phase.
-
-These are the status the tracker carries — a notebook of where each
-concern stands — that the AI reads when it judges the design complete
-and presents it. They are not gate-conditions a separate evaluation
-re-derives. Until they hold, the design is not complete and the loop
-continues — the phase is [NOT READY].
+[READY] is investigate-design's terminal. The status tags the tracker
+carries gate it: an [INVALIDATED] finding, a load-bearing finding short
+of [VERIFIED], or a design decision short of [VERIFIED]/[AUTO-ACCEPTED]
+(`foundations.md` Design-decision states) is an unresolved concern that
+holds the phase. These are the status the tracker carries — a notebook
+of where each concern stands — read at the [READY] judgment, not a gate
+a separate evaluation re-derives. The judgment criteria and the
+cycle-history conditions it also weighs live in
+`phases/investigate-design.md` ([READY]).
 
 ## Persistence
 
