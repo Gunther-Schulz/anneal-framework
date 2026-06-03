@@ -1,9 +1,15 @@
 # Harness task-tool vs tracker run-state guidance is unsourced render content (corpus-wide)
 
-**Status:** OPEN — surfaced 2026-06-02 by the anneal-dev step-5
-render-fidelity verify (subagent `ae138c578b57fd85a`, finding #1, notable).
-Not blocking the step-5 dogfood; deferred from the skeleton fix-batch
-([[framework-dev-as-anneal]] step 5).
+**Status:** RESOLVED 2026-06-03 — settled via the `harness-tool-runstate-unsourced`
+anneal-dev run (merged `8b8a4ac`): a harness-GENERAL render-time note added under the
+instantiation-guide §2 run-artifact-persistence slot sources the disambiguation
+(run-state lives in the persistence mechanism, not ambient harness tools). Decision:
+guide not spec (naming the tools in core.md would be Leakage; spec stays harness-clean).
+Run tracker: `.anneal-dev/runs/harness-tool-runstate-unsourced.md`. The per-instance
+re-render of the 4 SKILL.md blocks from the sourced note is downstream Phase B. Archived.
+
+Original detail (surfaced 2026-06-02 by the anneal-dev step-5 render-fidelity verify,
+subagent `ae138c578b57fd85a` finding #1):
 
 ## The finding
 The rendered instance `SKILL.md` carries a block telling the AI to keep

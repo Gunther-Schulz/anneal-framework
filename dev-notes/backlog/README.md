@@ -45,8 +45,10 @@ findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
 
 ### Phase A — render-CONVENTION fixes (the rules; settle before re-rendering, or re-render twice)
 
-- `harness-tool-runstate-unsourced` — unsourced "don't use harness task-tools" block
-  in every rendered SKILL.md → an instantiation-guide render-time note, then re-render (contract-2).
+- ✅ `harness-tool-runstate-unsourced` — **DONE** (merged `8b8a4ac`, 2026-06-03): a harness-general
+  render-time note in instantiation-guide §2 sources the "not the harness's task-tools" disambiguation
+  (decision: guide not spec — spec stays harness-clean). Archived. The 4 SKILL.md blocks re-render
+  faithfully from it in Phase B.
 - ✅ `cite-glossary-not-section-numbers` — **DONE** (merged `b56f7d8`, 2026-06-03): the
   §-number firewall rule + grep-check + 3 glossary headwords + glossary-as-interface naming.
   Archived. Residual (the binding-table interface completion) spun off, not a re-render blocker →
