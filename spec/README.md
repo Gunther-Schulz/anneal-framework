@@ -77,6 +77,13 @@ new Anneal-based plugin for a domain.
 - **Glossary is definitions-only.** A glossary entry states what a
   term means. It never specifies shape, structure, behavior, or
   state-models — those live in `core.md`.
+- **Glossary is the instance-facing interface.** An instance
+  references the framework's method through glossary terms (never
+  section numbers — see `../instantiation-guide.md`), and each entry
+  maps its term to the section that specifies it. The definitions-only
+  role and the interface role are the same surface — defining the term
+  and pointing to its section is exactly what lets an instance cite the
+  term in place of the section.
 - **Closed sets are enumerated.** Where a term names a closed set,
   its members are listed as an explicit enumeration.
 

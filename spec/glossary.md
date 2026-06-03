@@ -53,6 +53,11 @@ behavior exercised by the domain's executable verification
 (`core.md` §3.2.2, §4.3). The basis rule is specified in `core.md`
 §3.2.
 
+**Evidence-bearing-artifact rule** — the requirement that every
+load-bearing artifact the protocol produces be evidence-bearing —
+producing it takes doing the work it represents, so a non-adherent AI
+cannot fake it by pattern alone. Specified in `core.md` §3.1.
+
 **Assumption** — a basis that resolves to recall ("assumed,"
 "inferred") or to deferral ("will verify in cycle N," "TBD")
 rather than evidence. An assumption does not ground a decision;
@@ -243,6 +248,11 @@ default, in order:
 The convergence cycle adds a third, the **falsification pass**
 (`core.md` §4.1.4).
 
+**Standardized-pass findings artifact** — the per-cycle artifact a
+standardized inspection pass emits: one line for each in-scope lens —
+a finding, or a cited reason the lens is clean. Specified in
+`modules.md` §3.2.
+
 **Orchestrator** — the coordinating layer of a run: it detects the
 mode, conducts the phase pipeline through its transitions, and
 manages the run lifecycle. Specified in `core.md` §6.
@@ -421,6 +431,12 @@ with the first-letter typeable shortcut (`(a)nother cycle` /
 `(n)ext phase`). Specified in `modules.md` §1.1.
 
 ## Triage and review classifications
+
+**Post-run review** — the optional analysis, run at the operator's
+discretion during or after a run, that surfaces what the protocol
+missed or got wrong in that run, applied through a fixed Q-set; its
+findings are triaged by the render gap / spec gap / adherence gap
+classification. Specified in `modules.md` §4.
 
 **Render gap / spec gap / adherence gap** — the closed triage
 classification of post-run review findings

@@ -157,6 +157,25 @@ the domain by answering:
 Record the bindings as a table. Clippy's `bindings.md` is the worked
 example.
 
+### Referencing the framework: glossary terms, not section numbers
+
+When an instance spec or rendered file refers to the framework's
+method, it names the framework **glossary term**, never a framework
+section-number (`core.md` §X, `modules.md` §X). The glossary is the
+instance-facing interface: it owns the term→section mapping — each
+entry defines its term and points to the section that specifies it —
+so an instance decouples from framework layout churn while keeping
+traceability (the term is the trace). Section-number cross-references
+stay legal *inside* the framework (the glossary itself maps terms to
+sections this way); they are forbidden only across the instance
+boundary.
+
+The rule is checked mechanically: an instance repo's spec and
+rendered files carry zero framework section-number citations —
+`rg '(core|modules)\.md[^\n]{0,4}§' <instance>` returns empty. The
+render-verify runs this as a coherence check; a non-empty result is a
+finding.
+
 ## 4. Deriving the standardized lens set
 
 The hardest base. The lens set is the domain's recurring blind-spots
