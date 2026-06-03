@@ -60,12 +60,23 @@ clippy · ONE regime (silent-failure code) · ~10 seeded-defect tasks · arms A 
 metrics · pre-registered P1–P3. Effect shows → scale (add arm C, more domains/instances). Act-first
 matches/beats A → refutation, taken honestly.
 
-## To sharpen after the in-flight runs land
-- **verify-techniques** (`wk2gm2y4h`, re-run queued) → how to measure the verify arm + the grounding
-  ratio; whether independence/quorum actually helps (informs arm C + P3).
-- **process-literature** (`w9dtzvm33`, running) → Boehm defect-cost economics = the *predicted
-  shape* of the cost curve (P2); Fagan inspection = the human-baseline analog for "independent
-  pre-commit review pays off."
+## Sharpenings from the completed runs (2026-06-03)
+Both literature runs landed — concrete refinements to fold into the protocol:
+- **Verify-arm design** (verify-techniques run): the verify arm + arm-C should use **criteria-first**
+  verification (rubric fixed BEFORE seeing the output — counters agreement bias, which compute does
+  NOT fix), on a **different base model** than the actor (counters correlated self-confirmation), and
+  **decompose judgment claims into falsifiable sub-questions** rather than holistic verdicts.
+- **Arm C (independence isolation)** should test **different-model vs same-model-fresh-context** — no
+  source has A/B'd that, so the experiment closes a real open question (not just self-validation).
+- **Cost curve (P2):** Boehm's 1:10:100 did NOT verify (process-literature run) — do NOT cite it as
+  the predicted shape; state the cost prediction as anneal's own hypothesis, not borrowed fact.
+- **Grounding ratio (P3):** the adapted overthinking metric (evidence-interaction vs internal
+  rumination), per `anneal-reliability-measurement.md`.
+- **The unique contribution:** NONE of the borrowed verify techniques were measured on **text-only
+  judgment claims** (design-soundness/synthesis-accuracy) — anneal's exact class — so this experiment
+  closes a gap the literature explicitly leaves open.
+- **Possible 4th arm:** carry **multiple working hypotheses** at investigate-design (does it improve
+  outcomes?) → `multiple-working-hypotheses-investigate-design.md`.
 
 ## Relates to
 - `anneal-reliability-measurement.md` (the why/what — this is the how; the 3 metrics live there too).

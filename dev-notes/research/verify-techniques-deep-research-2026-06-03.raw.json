@@ -1,0 +1,288 @@
+{
+  "summary": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report.",
+  "agentCount": 102,
+  "logs": [
+    "Q: Survey verification / self-evaluation techniques an AI agent can apply to its OW…",
+    "Decomposed into 5 angles: primary self-grounded verification 20pt, academic LLM-as-judge reliability biases, benchmarks quorum vs single verifier, mechanism actor-verifier correlated errors, contrarian null results anchoring",
+    "primary self-grounded verification 20pt: 6 results",
+    "contrarian null results anchoring: 6 results",
+    "contrarian null results anchoring: 5 novel (1 filtered)",
+    "benchmarks quorum vs single verifier: 6 results",
+    "benchmarks quorum vs single verifier: 4 novel (2 filtered)",
+    "mechanism actor-verifier correlated errors: 6 results",
+    "mechanism actor-verifier correlated errors: 2 novel (4 filtered)",
+    "academic LLM-as-judge reliability biases: 6 results",
+    "academic LLM-as-judge reliability biases: 3 novel (3 filtered)",
+    "Fetched 20 sources → 93 claims → verifying top 25",
+    "\"Self-Grounded Verification (SGV) is a two-step met…\": 3-0 ✓",
+    "\"Self-Grounded Verification (SGV) is a two-step met…\": 3-0 ✓",
+    "\"The '20pp' figure in this paper is a DIFFERENT met…\": 3-0 ✓",
+    "\"MEASURED RESULT — SGV improves failure detection b…\": 0-3 ✗",
+    "\"MLLM verifiers exhibit a pervasive 'agreement bias…\": 3-0 ✓",
+    "\"The headline '~20-point' figure in the research qu…\": 3-0 ✓",
+    "\"Self-Grounded Verification (SGV) works by first el…\": 3-0 ✓",
+    "\"The headline failure-detection gain is 'up to 20 p…\": 1-2 ✗",
+    "\"The core problem SGV targets is 'agreement bias' —…\": 3-0 ✓",
+    "\"For RL-finetuned vision-language models at inferen…\": 3-0 ✓",
+    "\"Decomposing verification into small falsifiable su…\": 3-0 ✓",
+    "\"The reason holistic verification fails is that ask…\": 1-2 ✗",
+    "\"Plain LLM/agent-as-judge verifiers catch obvious f…\": 3-0 ✓",
+    "\"RL-tuned models' inference-time 'Aha moment' / sel…\": 2-1 ✓",
+    "\"Current RL-trained VLMs derive only limited benefi…\": 3-0 ✓",
+    "\"Position bias is real and large: GPT-4 gives consi…\": 3-0 ✓",
+    "\"GPT-4 as a judge agrees with human preferences at …\": 3-0 ✓",
+    "\"Self-enhancement / self-preference bias is observe…\": 3-0 ✓",
+    "\"There is a measured (not merely asserted) linear c…\": 3-0 ✓",
+    "\"Out-of-the-box LLMs (GPT-4 and Llama 2) have non-t…\": 3-0 ✓",
+    "\"LLM evaluators exhibit a self-preference bias: an …\": 3-0 ✓",
+    "\"The debate-over-aggregation advantage is NOT unive…\": 3-0 ✓",
+    "\"Multi-agent debate beats simple majority voting (\"…\": 2-1 ✓",
+    "\"The theoretical claim that debate \"amplifies corre…\": 3-0 ✓",
+    "\"A Panel of LLM evaluators (PoLL) composed of a lar…\": 3-0 ✓",
+    "Verify done: 25 claims → 22 confirmed, 3 killed"
+  ],
+  "result": {
+    "question": "Survey verification / self-evaluation techniques an AI agent can apply to its OWN work to establish soundness BEFORE shipping — to identify what could strengthen a methodology's INDEPENDENT-verification phase. Context: the Anneal framework uses a single separate-context verifier plus a deterministic falsification-predicate-over-evidence for claims with a mechanical handle (e.g. code references); it needs to know what to adopt for claims WITHOUT a mechanical handle (design-soundness, right-abstraction, synthesis-accuracy — judgment claims).\n\nCover and ADVERSARIALLY VERIFY the effectiveness of each (distinguish asserted from measured):\n1. **Self-grounded verification** — eliciting success criteria in isolation BEFORE verifying the output. There is a claimed ~+20-point failure-detection gain — find the primary source and VERIFY or REFUTE that number specifically.\n2. **Generative verifiers / LLM-as-judge** — reliability and known biases (self-preference / self-enhancement, position bias, verbosity bias) and failure modes; when is LLM-as-judge trustworthy vs not?\n3. **Multi-agent / debate / multi-vote verification** — does an N-voter quorum (e.g. 3 independent skeptics, majority-to-reject) actually beat a single verifier, and by how much? Evidence, not assertion.\n4. **Verifier–actor INDEPENDENCE** — does using a separate context / a different model measurably reduce correlated \"self-confirmation\" errors (the closed-loop problem where a verifier sharing the actor's base model rubber-stamps its mistakes)?\n5. **Criteria-first vs output-anchored judging** — does fixing the rubric before seeing the output reduce agreement/anchoring bias?\n\nFor each: what is evidence-backed vs marketing, and what is concretely borrowable for an independent-verify phase. Cite primary sources; flag peer-reviewed vs preprint; report asserted-vs-measured.",
+    "summary": "For judgment claims lacking a mechanical handle (design-soundness, right-abstraction, synthesis-accuracy), the strongest evidence-backed technique is criteria-first / self-grounded verification: elicit success criteria independent of the candidate output, THEN judge against them — the mechanism that mitigates the dominant failure mode, \"agreement bias,\" where a verifier over-validates the actor's work and rationalizes its flaws (peer-reviewed, ICLR 2026, arXiv:2507.11662). The research question's headline \"~20-point failure-detection gain\" is a conflation and should be corrected: the SGV paper measures +25pp failure detection and +14pp verifier accuracy, while the separate +20pp is a DOWNSTREAM agent-task-completion SOTA gain, not a failure-detection number — and all figures are author-measured on multimodal agent-trajectory benchmarks, not on text-only judgment claims. Verifier–actor INDEPENDENCE is the second well-supported lever: a same-base-model judge systematically over-rates the actor's own outputs (self-preference bias, NeurIPS 2024 oral arXiv:2404.13076), so a different-model or disjoint-family panel reduces correlated self-confirmation — and the debate \"correctness amplification\" proof itself collapses precisely when agents share biases (arXiv:2510.12697, Assumption 4.4). For aggregation, the evidence is mixed-to-modest: an N-voter panel of disjoint models beats a single large judge with less intra-model bias and 7x lower cost (arXiv:2404.18796), and debate beats simple majority voting — but only by ~1.25-4.08pp and not universally (debate UNDERPERFORMED majority voting and a single model on BIG-Bench/Llama-3.1-8B), so a quorum is a marginal, task-dependent improvement, not a reliable multiplier. Concretely borrowable for Anneal's independent-verify phase: (a) make the verifier elicit/fix its rubric BEFORE seeing the output, (b) keep the verifier on a different base model than the actor, (c) decompose judgment claims into small falsifiable sub-questions rather than one holistic verdict (decomposition raised F1 ~12-48pp over a vanilla agent-as-judge in one preprint ablation), and (d) for pairwise judging, swap answer order and require both-orders agreement to counter position bias (order alone flips ~30% of GPT-4 verdicts).",
+    "findings": [
+      {
+        "claim": "Self-grounded / criteria-first verification (SGV) — eliciting success criteria about desired behavior INDEPENDENT of the candidate output, then judging the candidate conditioned on those self-generated priors — is the exact criteria-first mechanism the research question asks about, and it directly mitigates the closed-loop failure mode.",
+        "confidence": "high",
+        "vote": "3-0 (unanimous across the three duplicate renderings [0],[3],[5])",
+        "sources": [
+          "https://arxiv.org/abs/2507.11662",
+          "https://openreview.net/forum?id=eceX2knsGZ",
+          "https://arxiv.org/pdf/2507.11662"
+        ],
+        "evidence": "Peer-reviewed (ICLR 2026; OpenReview eceX2knsGZ; also MTI-LLM @ NeurIPS 2025). Abstract verbatim: 'First, an MLLM is elicited to generate broad priors about desired behavior, independent of the data under evaluation. Then, conditioned on self-generated priors, it reasons over and evaluates a candidate trajectory.' Method 3.2 nuance: step-1 priors are conditioned on PARTIAL information (task/instruction) but independent of the candidate trajectory being judged — 'less-conditional,' not strictly fully unconditional; the load-bearing property (priors formed before/separately from the candidate) holds. SCOPE: defined and measured for MLLMs verifying agent TRAJECTORIES (VisualWebArena, OSWorld, robomimic), NOT text-only judgment claims; the mechanism transfers as motivation but the numbers do not transfer to design-soundness/synthesis-accuracy. BORROWABLE: have Anneal's verifier elicit/fix its success criteria before seeing the output."
+      },
+      {
+        "claim": "The dominant failure mode SGV targets is 'agreement bias' — a verifier's strong tendency to over-validate the actor's behavior and generate chains-of-thought that rationalize flawed work — and it is pervasive across models and NOT fixed by test-time scaling (more compute/sampling/CoT/majority-voting). This IS the closed-loop / self-confirmation problem the research question targets.",
+        "confidence": "high",
+        "vote": "3-0 (unanimous; merges [2],[4])",
+        "sources": [
+          "https://arxiv.org/abs/2507.11662",
+          "https://openreview.net/forum?id=eceX2knsGZ"
+        ],
+        "evidence": "Verified across 13+ models, 28+ scoring templates, thousands of trajectories. MEASURED resilience to scaling (VisualWebArena Table 2 true-negative/failure-detection rate): baseline 44%, CoT 47%, CoT+majority-voting 48%, reasoning-model+extended-thinking 55% — all far below ideal; 'Major test-time scaling techniques fail to mitigate agreement bias, whereas SGV improves all metrics.' This is the key transferable motivation: throwing more compute at a same-context verifier does not fix rubber-stamping; the criteria-first restructuring does. CAVEAT: measured on multimodal agent-trajectory verification, generalization to text judgment claims is plausible but untested."
+      },
+      {
+        "claim": "CORRECTION of the research question's headline: the '~20-point failure-detection gain' is a conflation. SGV measures +25pp failure detection and +14pp verifier accuracy; the separate +20pp is a DOWNSTREAM agent task-completion SOTA gain (new SOTA on VisualWebArena, also OSWorld GUI specialist and robomimic diffusion policy), NOT a failure-detection number. The verifier-level failure-detection gain is +25pp.",
+        "confidence": "high",
+        "vote": "3-0 (unanimous; merges [1],[6]; the competing '25pp REFUTES 20pp' framing and the 'up to 20pp upper-bound' framing were both REFUTED)",
+        "sources": [
+          "https://arxiv.org/abs/2507.11662",
+          "https://arxiv.org/pdf/2507.11662"
+        ],
+        "evidence": "Abstract has two distinct sentences: '(verifier) improving failure detection by 25 pp and accuracy by 14 pp' and '(agents) set a new state of the art on VisualWebArena, outperforming the previous best by 20 pp.' Per-task downstream gains: 9pp VisualWebArena, 5pp OSWorld, 8pp robomimic tool-hang. ASSERTED-vs-MEASURED: all figures are MEASURED but author-measured on the authors' own benchmark setup — not independently replicated. Anyone citing '~20pp failure-detection' is mixing the downstream-SOTA number with the verifier metric; cite +25pp for failure detection specifically."
+      },
+      {
+        "claim": "Verifier–actor INDEPENDENCE measurably reduces correlated self-confirmation: an LLM evaluator scores its OWN outputs higher than others' even when humans judge them equal (self-preference bias), and this self-favoring is mechanistically linked to self-recognition (LLMs distinguish their own generations above chance, and stronger self-recognition linearly predicts stronger self-preference). A verifier sharing the actor's base model inherits this over-scoring tendency.",
+        "confidence": "high",
+        "vote": "3-0 (unanimous; merges [15],[16],[17])",
+        "sources": [
+          "https://arxiv.org/abs/2404.13076",
+          "https://arxiv.org/abs/2410.21819"
+        ],
+        "evidence": "PEER-REVIEWED — NeurIPS 2024 ORAL (Panickssery, Bowman, Feng; OpenReview 4NJBV6Wp0h). Self-recognition MEASURED: GPT-4 73.5% accurate distinguishing itself from two other LLMs + humans (chance 50%); all three tested LLMs >50% out-of-the-box. Linear correlation between self-recognition and self-preference established via fine-tuning on UNRELATED tasks falling on the same trend (rules out fine-tuning artifact); causal explanation 'resists straightforward confounders' (abstract reports linear relationship, no coefficient value). Independently replicated and quantified by Wataoka et al. (NeurIPS 2024, arXiv:2410.21819): GPT-4 self-preference bias = 0.520 on -1..1 scale. Mechanism contested (self-recognition vs lower-perplexity/familiarity) but BOTH predict the same failure for a same-base-model verifier. SCOPE: evidence from summarization/preference tasks, magnitude is model-dependent (mostly GPT-4-class). BORROWABLE: run the verifier on a DIFFERENT base model than the actor."
+      },
+      {
+        "claim": "A self-verifier sharing the actor's model is unreliable and does not beat cheap aggregation: for RL-finetuned VLMs, simple majority voting consistently and substantially OUTPERFORMS best-of-N-with-self-verification; emergent 'Aha-moment'/self-correction behaviors do NOT yield reliable performance gains (occur ~8.3% of responses, minimal accuracy effect). This is measured negative evidence against same-model self-verification — supporting independence over self-checking.",
+        "confidence": "medium",
+        "vote": "3-0 on the core finding [9],[11]; 2-1 on the broadest generalization [10] (the 'RL-tuned models' generalization beyond VLMs was the contested point)",
+        "sources": [
+          "https://arxiv.org/pdf/2506.17417",
+          "https://arxiv.org/abs/2503.20783",
+          "https://arxiv.org/abs/2510.24941"
+        ],
+        "evidence": "arXiv:2506.17417 (preprint; UIUC/Michigan/Meta). MEASURED across 6-7 models (Qwen2-VL-2B, R1-VL-2B/7B, VLAA-Thinker-3B/7B, VL-Rethinker-7B) on GeoQA170K + MathVista: majority vote beats self-verified best-of-N (e.g. R1-VL-7B MathVista x8: MajVote 66.0% vs BoN 61.1%); BoN degrades up to -16.7%. SCOPE CAVEAT (the 2-1 split): finding is strongest for RL-finetuned VLMs / visual-math / UNTRAINED self-verification; the paper itself notes the OPPOSITE may hold in LLM text-math (verification easier than generation), and GenRM-style TRAINED/EXTERNAL verifiers are a different regime not refuted here. Text-domain corroboration that emergent self-reflection correlates weakly with accuracy: arXiv:2503.20783, arXiv:2510.24941 (both preprints). Reading: this argues against a verifier that is just the same model re-checking itself, NOT against verification per se."
+      },
+      {
+        "claim": "LLM-as-judge can be trustworthy at a coarse level — strong judges (GPT-4) match human-human agreement (85% vs 81% in the no-ties setup, >80% overall) — but the SAME measurement documents large, exploitable biases that make a single holistic judge unreliable for fine/judgment-class verdicts.",
+        "confidence": "high",
+        "vote": "3-0 (unanimous; merges [12],[13],[14])",
+        "sources": [
+          "https://arxiv.org/abs/2306.05685"
+        ],
+        "evidence": "PEER-REVIEWED — NeurIPS 2023 Datasets & Benchmarks (Zheng et al., MT-Bench/Chatbot Arena). Agreement: 85% GPT-4-vs-human (S2 no-ties) vs 81% human-human. POSITION BIAS (large): GPT-4 gives consistent verdicts only 65.0% (default) / 66.2% (rename) when answer order is swapped, favors first position ~30% — other judges far worse (Claude-v1 23.8% consistent). Paper's own mitigation: 'call a judge twice by swapping the order... only declare a win when an answer is preferred in both orders.' SELF-ENHANCEMENT: GPT-4 +10% / Claude-v1 +25% higher self-win-rate vs humans, but authors explicitly state 'Due to limited data and small differences, our study cannot determine whether the models exhibit a self-enhancement bias' (asserted-vs-measured distinction; the bias was later confirmed by arXiv:2404.13076/2410.21819). NOTE: GPT-4-circa-2023 figures, treat precise numbers as dated. BORROWABLE: swap-and-recheck for any pairwise judging; do not trust a single holistic judge on subtle/judgment claims."
+      },
+      {
+        "claim": "Decomposing verification into small falsifiable sub-questions ('asymmetry of verification') measurably beats holistic agent-as-judge — and holistic judges systematically MISS the judgment-class errors (secondary-source dependence, overconfident/hallucinated claims) while catching only obvious execution failures. This is the closest evidence for Anneal's falsification-predicate-over-evidence design and for extending it to judgment claims.",
+        "confidence": "medium",
+        "vote": "3-0 on the measured ablation [7],[8] (a related causal-explanation framing [refuted item] was 1-2; the numeric/measured finding stands, the 're-solving reproduces the actor's error rate' causal gloss did not)",
+        "sources": [
+          "https://arxiv.org/pdf/2601.15808"
+        ],
+        "evidence": "PREPRINT (Wan et al., Tencent AI Lab + CUHK, Jan/Apr 2026). GAIA-Web ablation Table 2 (precision/recall of rejection x100): full DeepVerifier F1 73.17 / Acc 75.56 (P75.00/R71.43); vanilla agent-as-judge (decomposition removed) F1 61.54 (R47.62); decomposition-only LLM-judge F1 25.00 (R14.29). Headline '12%-48% F1 improvement' = absolute-point spread over the two ablated baselines (73.17-61.54=11.6; 73.17-25.00=48.2). Recall-collapse on ablated judges (high precision, low recall) = they rarely false-flag but MISS most errors, 'accepting many incorrect answers as correct.' STRONG CAVEATS (claim self-scopes them): single small GAIA-Web subset (~21-case denominator), single backbone (Claude-3.7-Sonnet), preprint — supports 'decomposition beats holistic judging HERE,' not a universal law. BORROWABLE as preprint-grade signal: decompose judgment claims into small falsifiable sub-questions rather than one holistic verdict, pending replication."
+      },
+      {
+        "claim": "An N-voter quorum gives a real but MODEST and NON-universal improvement over a single verifier / simple aggregation — not a reliable multiplier. A disjoint-model panel beats a single large judge with less intra-model bias and ~7x lower cost; multi-agent debate beats simple majority voting by only ~1.25-4.08pp and can UNDERPERFORM both majority voting and a single model on some task/model pairs.",
+        "confidence": "high",
+        "vote": "3-0 on the panel result [21], the debate-decline [19], and the independence-assumption [20]; 2-1 on the precise debate-gain magnitudes [18] (CI overlap on 3 of 4 benchmarks was the contested point)",
+        "sources": [
+          "https://arxiv.org/abs/2404.18796",
+          "https://arxiv.org/abs/2510.12697"
+        ],
+        "evidence": "PANEL (PoLL, Cohere, arXiv:2404.18796, preprint): a panel of smaller disjoint-family models (Command R + Haiku + GPT-3.5) beats a single GPT-4 judge across 3 settings / 6 datasets, 'less intra-model bias due to its composition of disjoint model families,' >7x cheaper — but the win is non-uniform (GPT-4 beat the panel on both multi-hop datasets) with thin margins. DEBATE (arXiv:2510.12697, NeurIPS 2025 poster): debate > simple majority voting (SoM) by +4.08pp LLMBar, +2.29 TruthfulQA, +1.93 JudgeBench, +1.25 MLLM-Judge (Gemini-2.0-Flash) — but 3 of 4 gains have OVERLAPPING confidence intervals (significance not established), and on BIG-Bench/Llama-3.1-8B debate (74.00%) LOST to both majority voting (81.80%) and a single model (78.67%). CRITICAL for independence: the debate 'correctness amplification' proof (Thm 4.2) rests on Assumption 4.4 (conditional independence of agents), which the paper itself flags as violated 'if agents copy or reference one another, or share strong biases' — i.e. the quorum benefit evaporates precisely under shared-base-model correlated errors. BORROWABLE: if using a quorum, use DISJOINT model families (independence is what buys the gain); expect a marginal, task-dependent improvement, and prefer panel-of-disjoint-models over same-model debate."
+      }
+    ],
+    "caveats": "SOURCE QUALITY / PEER-REVIEW STATUS: Peer-reviewed — SGV (arXiv:2507.11662, ICLR 2026), MT-Bench (arXiv:2306.05685, NeurIPS 2023), self-preference (arXiv:2404.13076, NeurIPS 2024 oral; arXiv:2410.21819, NeurIPS 2024), multi-agent debate (arXiv:2510.12697, NeurIPS 2025 poster). PREPRINT (NOT peer-reviewed) — the decomposition/DeepVerifier ablation (arXiv:2601.15808), the VLM-self-verification negative results (arXiv:2506.17417 and corroborators 2503.20783/2510.24941), and PoLL (arXiv:2404.18796). Treat preprint effect sizes as provisional.\n\nDOMAIN-TRANSFER GAP (the biggest caveat for Anneal): nearly every measured number is from a domain ADJACENT to, not identical to, text-only judgment claims. SGV's +25pp/+14pp/+20pp are on multimodal AGENT-TRAJECTORY verification (web/GUI/robotics). The VLM self-verification negatives are visual-math. The debate/panel numbers are pairwise preference and QA judging. NONE were measured on design-soundness / right-abstraction / synthesis-accuracy — the exact judgment class without a mechanical handle that the research question cares about. The MECHANISMS (criteria-first, independence, decomposition, swap-and-recheck) transfer as well-motivated design principles; the SPECIFIC effect sizes do NOT transfer and should not be quoted as if measured on judgment claims.\n\nASSERTED-vs-MEASURED: SGV's headline gains are MEASURED but author-measured (not independently replicated). The decomposition '12-48pp' is MEASURED but on a single small subset / single backbone (~21-case denominator). The PoLL 'panel beats single judge' is a MEASURED aggregate with reversed cells and thin margins (direction asserted in abstract without an effect-size number). The debate gains are MEASURED but 3 of 4 are within confidence-interval noise. Self-enhancement bias in the 2023 MT-Bench paper was explicitly UNCONFIRMED by its own authors (confirmed only by later work).\n\nTIME-SENSITIVITY: MT-Bench bias figures (position 65%, self-enhancement +10%) are GPT-4-circa-2023 and should be treated as dated point estimates, not constants for current models. The field is fast-moving; numbers from 2023-2024 may not hold for 2026-class models.\n\nNUMBER CORRECTION STANDING: the research question's '~20-point failure-detection gain' is a confirmed conflation — the failure-detection figure is +25pp; +20pp is a downstream agent-task gain. Cite +25pp for failure detection.",
+    "openQuestions": [
+      "Do any of these techniques (SGV criteria-first, verifier-actor independence, sub-question decomposition) measurably improve detection of TEXT-ONLY judgment errors — design-soundness, right-abstraction, synthesis-accuracy — as opposed to agent trajectories, visual-math, or pairwise preference? No source measured the exact class Anneal targets; this is the central untested transfer.",
+      "What is the marginal value of an N-skeptic quorum (e.g. Anneal's 3-vote, majority-to-reject) on REJECTION recall specifically (not pairwise preference accuracy), and at what N does it plateau? The debate/panel evidence shows modest, task-dependent gains on accuracy/preference but does not isolate the false-accept (rubber-stamp) reduction that an independent-verify phase most cares about.",
+      "How much of the verifier-actor independence benefit comes from a DIFFERENT base model vs merely a separate CONTEXT on the same base model? The self-preference evidence implies different-model is needed to break correlated self-confirmation, but no source directly A/B-tested 'same-model-fresh-context' against 'different-model' for a verify phase — Anneal currently uses a separate context.",
+      "Can a self-grounded / criteria-first protocol be combined with a deterministic falsification-predicate so that even no-mechanical-handle judgment claims get a quasi-mechanical handle (the elicited criteria become the predicate set)? The decomposition result hints at this but was preprint-grade and untested on judgment claims."
+    ],
+    "refuted": [
+      {
+        "claim": "MEASURED RESULT — SGV improves failure detection by 25 percentage points and accuracy by 14 percentage points. This REFUTES the research question's specific '~20-point failure-detection gain' figure: the failure-detection gain is reported as 25pp, not 20pp.",
+        "vote": "0-3",
+        "source": "https://arxiv.org/abs/2507.11662"
+      },
+      {
+        "claim": "The headline failure-detection gain is 'up to 20 percentage points' — stated as an upper bound, not an average, spanning both accuracy and failure-detection rate, measured across web navigation, computer use, and robotic manipulation domains.",
+        "vote": "1-2",
+        "source": "https://openreview.net/forum?id=eceX2knsGZ"
+      },
+      {
+        "claim": "The reason holistic verification fails is that asking the verifier to re-solve the whole task reproduces the actor's own error rate; decomposition into targeted sub-questions that 'decisively confirm or refute a risky claim' is what makes verification robust against the same reasoning errors. This is the conceptual basis for preferring a falsification-predicate-over-evidence design for judgment claims, supported by the measured ablation where removing decomposition collapses recall to 47.62 and leaves the judge 'vulnerable to the same reasoning errors as the original agent.'",
+        "vote": "1-2",
+        "source": "https://arxiv.org/pdf/2601.15808"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2507.11662",
+        "quality": "primary",
+        "angle": "primary self-grounded verification 20pt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://openreview.net/forum?id=eceX2knsGZ",
+        "quality": "primary",
+        "angle": "primary self-grounded verification 20pt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2507.11662",
+        "quality": "primary",
+        "angle": "primary self-grounded verification 20pt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://iclr.cc/virtual/2026/events/workshop",
+        "quality": "primary",
+        "angle": "primary self-grounded verification 20pt",
+        "claimCount": 0
+      },
+      {
+        "url": "https://arxiv.org/pdf/2601.15808",
+        "quality": "primary",
+        "angle": "primary self-grounded verification 20pt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2506.17417",
+        "quality": "primary",
+        "angle": "primary self-grounded verification 20pt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2306.05685",
+        "quality": "primary",
+        "angle": "academic LLM-as-judge reliability biases",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2404.13076",
+        "quality": "primary",
+        "angle": "academic LLM-as-judge reliability biases",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2510.12697",
+        "quality": "primary",
+        "angle": "academic LLM-as-judge reliability biases",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2404.18796",
+        "quality": "primary",
+        "angle": "benchmarks quorum vs single verifier",
+        "claimCount": 4
+      },
+      {
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/7f1f0218e45f5414c79c0679633e47bc-Paper-Conference.pdf",
+        "quality": "primary",
+        "angle": "benchmarks quorum vs single verifier",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2508.17536",
+        "quality": "primary",
+        "angle": "benchmarks quorum vs single verifier",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2410.21819",
+        "quality": "primary",
+        "angle": "benchmarks quorum vs single verifier",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2506.07962",
+        "quality": "primary",
+        "angle": "mechanism actor-verifier correlated errors",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/html/2410.21819v1",
+        "quality": "primary",
+        "angle": "mechanism actor-verifier correlated errors",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/html/2603.06612",
+        "quality": "primary",
+        "angle": "contrarian null results anchoring",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/html/2604.07650",
+        "quality": "primary",
+        "angle": "contrarian null results anchoring",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2508.06225",
+        "quality": "primary",
+        "angle": "contrarian null results anchoring",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2602.09341",
+        "quality": "primary",
+        "angle": "contrarian null results anchoring",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/pdf/2604.06996",
+        "quality": "primary",
+        "angle": "contrarian null results anchoring",
+        "claimCount": 5
+      }
+    ],
+    "stats": {
+      "angles": 5,
+      "sourcesFetched": 20,
+      "claimsExtracted": 93,
+      "claimsVerified": 25,
+      "confirmed": 22,
+      "killed": 3,
+      "afterSynthesis": 8,
+      "urlDupes": 4,
+      "budgetDropped": 6,
+      "agentCalls": 102
+    }
+  }
+}

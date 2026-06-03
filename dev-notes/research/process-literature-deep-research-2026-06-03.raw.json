@@ -1,0 +1,318 @@
+{
+  "summary": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report.",
+  "agentCount": 104,
+  "logs": [
+    "Q: Survey the established process/methodology literature for reliable knowledge-wor…",
+    "Decomposed into 5 angles: Requirements engineering (richest vein, primary sources), Falsification methodology / strong inference, Independent review + design rationale / argumentation, Failure-mode enumeration methods, SE economics of design-first vs iterative ordering",
+    "Falsification methodology / strong inference: 6 results",
+    "SE economics of design-first vs iterative ordering: 6 results",
+    "Failure-mode enumeration methods: 6 results",
+    "Failure-mode enumeration methods: 4 novel (2 filtered)",
+    "Independent review + design rationale / argumentation: 6 results",
+    "Independent review + design rationale / argumentation: 3 novel (3 filtered)",
+    "Requirements engineering (richest vein, primary sources): 6 results",
+    "Requirements engineering (richest vein, primary sources): 3 novel (3 filtered)",
+    "Fetched 22 sources → 100 claims → verifying top 25",
+    "\"The paper distinguishes requirements (optative pro…\": 3-0 ✓",
+    "\"The paper requires every atomic/primitive term to …\": 3-0 ✓",
+    "\"The paper gives an explicit five-part definition o…\": 3-0 ✓",
+    "\"Zave & Jackson formalize a completion/entailment c…\": 3-0 ✓",
+    "\"Zave & Jackson establish a formal COMPLETION crite…\": 3-0 ✓",
+    "\"The reference model is built on five named artifac…\": 3-0 ✓",
+    "\"The completion/correctness criterion is NOT the na…\": 3-0 ✓",
+    "\"Strong inference is a formal, explicit, recursive …\": 0-3 ✗",
+    "\"Adequacy alone is insufficient for a correct speci…\": 3-0 ✓",
+    "\"The method derives its progress-power from the fac…\": 3-0 ✓",
+    "\"Chamberlin's 'method of multiple working hypothese…\": 3-0 ✓",
+    "\"A theory that excludes nothing — that predicts eve…\": 3-0 ✓",
+    "\"Chamberlin's central thesis is that holding multip…\": 3-0 ✓",
+    "\"Chamberlin documents the confirmation-bias failure…\": 3-0 ✓",
+    "\"Chamberlin claims the multiple-hypothesis method i…\": 3-0 ✓",
+    "\"The Quine-Duhem thesis makes a 'crucial experiment…\": 3-0 ✓",
+    "\"Platt's Strong Inference rests on a central histor…\": 3-0 ✓",
+    "\"Platt defines 'strong inference' as a formal, expl…\": 3-0 ✓",
+    "\"SI's first step — enumerating alternative hypothes…\": 3-0 ✓",
+    "\"Platt's central empirical thesis is that the rate-…\": 1-2 ✗",
+    "\"Platt grounds the method in disproof/exclusion rat…\": 3-0 ✓",
+    "\"Platt imports Chamberlin's 'method of multiple wor…\": 3-0 ✓",
+    "\"Cleanroom's defining mechanism is replacing develo…\": 1-2 ✗",
+    "\"Cleanroom shifts defect detection dramatically ear…\": 2-1 ✓",
+    "\"IBIS structures design/policy deliberation into ex…\": 3-0 ✓",
+    "Verify done: 25 claims → 22 confirmed, 3 killed"
+  ],
+  "result": {
+    "question": "Survey the established process/methodology literature for reliable knowledge-work and identify disciplines the Anneal framework could ADOPT or should consciously REJECT. Anneal = a domain-agnostic, instantiable methodology: evidence/basis rule (claims grounded in re-checkable evidence) + coherent complete state (nothing silently dropped) + investigate-design → implement → verify with INDEPENDENT (separate-context) verification + structured convergence (loopback until settled).\n\nCover these veins:\n- **Requirements engineering** — Problem Frames (Michael Jackson); Zave & Jackson, \"Four Dark Corners of Requirements Engineering\"; the S,K⊢R entailment (spec + domain knowledge entails requirement) as a *completion* criterion.\n- **Popperian falsification + Platt's \"Strong Inference\" (1964)** — the methodology literature behind anneal's falsification step; and Chamberlin's \"method of multiple working hypotheses.\"\n- **Design rationale / argumentation** — Toulmin (claim–grounds–warrant); IBIS / gIBIS.\n- **Software inspection** — Fagan inspections; Cleanroom software engineering (the structured-independent-review lineage).\n- **Failure-mode methods** — FMEA, HAZOP (the structured \"where can this fail\" enumeration; anneal's lens-set is FMEA-like).\n- **The SE economics of design-first vs iterative ordering** — Boehm's cost-of-defect-escalation curve (defect cost rises with detection lateness); the upfront-design-vs-agile-iteration evidence base. (Focus on the *established software-engineering* economics, not AI-agent frameworks — those are covered separately.)\n\nFor EACH discipline: (a) the borrowable mechanism, (b) what anneal already has that is equal or better, (c) what adopting it would cost. Do NOT default to \"anneal already covers it\" — actively hunt for a genuinely missing discipline anneal should adopt. Adversarially verify claims; cite primary sources; flag peer-reviewed vs preprint vs textbook.",
+    "summary": "The established methodology literature strongly VALIDATES anneal's core architecture while exposing two genuine gaps it should consciously address. Anneal's four pillars map almost one-to-one onto canonical, peer-reviewed disciplines: the evidence/basis rule = Zave & Jackson's \"designation\" (every primitive term grounded in re-checkable environment phenomena) plus Platt/Popper's falsifiability gate; coherent-complete-state = the S,K⊢R completion criterion plus a consistency proof; independent verify = Cleanroom's pre-execution human verification lineage; and structured convergence (loopback) = Platt's \"recycle\" step (1'). The single most important BORROWABLE discipline anneal genuinely lacks is Chamberlin's / Platt's method of multiple working hypotheses — carrying several rival designs in parallel during the investigate-design step, rather than committing to one and then trying to disconfirm it — which structurally neutralizes the \"parental affection\" attachment bias that anneal currently mitigates only obliquely (via separate-context verification). The second adoptable sharpening, drawn from the Gunter et al. WRSPM refinement results, is that an \"entailment + nothing-dropped\" completion check is provably INSUFFICIENT on its own (a disjunctive good-or-bad spec can pass adequacy and consistency yet break on deployment), so a soundness/exclusion obligation — verify must EXCLUDE rival accounts of the state, not merely confirm one — should be added. On the REJECT side, the critique literature (O'Donohue & Buchanan; Quine-Duhem) shows strong inference's stronger claims (single crucial experiments as conclusive exclusions; completely enumerable hypothesis sets) do not survive — anneal should adopt the multiple-hypothesis and exclusion DISCIPLINE without importing the discredited promise that one decisive falsification settles a question.",
+    "findings": [
+      {
+        "claim": "Zave & Jackson's S,K⊢R is a formal COMPLETION criterion (the canonical peer-reviewed RE reference model) that directly validates anneal's coherent-complete-state + evidence/basis architecture: the specification S plus relevant domain knowledge K must logically entail the requirements R, and 'completion in the strongest sense' additionally demands a separate PROOF that S and K are consistent, validated R and K sets, and a specification that introduces no unshared phenomena or future reference. This is an early, explicit instance of verification used DURING requirements work — mapping onto anneal's completion + independent-verify steps. The accompanying precise adequacy criterion (an implementation of S connected to the environment ensures all properties of R are satisfied) is anneal's basis/completion analogue.",
+        "confidence": "high",
+        "sources": [
+          "https://cse.msu.edu/~chengb/RE-491/Papers/dark-corners-re-zave-jackson.pdf",
+          "https://dl.acm.org/doi/10.1145/237432.237434"
+        ],
+        "evidence": "Merges claims [0],[1],[3],[4] — all 3-0, all verbatim-confirmed against Zave & Jackson, 'Four Dark Corners of Requirements Engineering,' ACM TOSEM 6(1):1-30, 1997 (peer-reviewed, canonical). Section 5: 'Let K be the relevant domain knowledge... Then S and K together must be sufficient to guarantee that the requirements are satisfied: S, K ⊢ R.' Section 6.3 'Completion' gives the five-part 'strongest sense' definition including criterion (4) 'A proof shows that S, K ⊢ R' and (5) 'There is a proof that S and K are consistent.' Adequacy verbatim: 'S must be such that an implementation of it, connected to the environment, ensures that all the properties of R are satisfied.' The anneal mapping is the researcher's analogy (correctly hedged, not attributed to the source); entailment is strictly stronger/formal than anneal's coverage property, but 'done = nothing unaccounted for' is the shared spirit.",
+        "vote": "3-0 (each constituent claim)"
+      },
+      {
+        "claim": "Zave & Jackson's 'designation' discipline is a borrowable grounding mechanism precisely parallel to anneal's evidence/basis rule: every primitive/atomic term must be given a written, maintained, clear-and-precise informal explanation grounding it in real-world environment phenomena, and the paper notes most requirements methods FAIL to enforce this. The assertion-vs-definition distinction (a grounded assertion can be true or false and must be validated; an ungrounded definition cannot be false but may be useless/misleading) is exactly anneal's grounded-and-checkable vs free-floating-assertion line.",
+        "confidence": "high",
+        "sources": [
+          "https://cse.msu.edu/~chengb/RE-491/Papers/dark-corners-re-zave-jackson.pdf"
+        ],
+        "evidence": "Claim [2], 3-0, verbatim: 'The only way to establish the meaning of a primitive term is to provide an informal explanation of it. This explanation must be clear and precise; it must be written down; and it must be maintained... We call such an explanation a designation.' 'Very few requirements methods address this problem by enforcing the presence of a designation for every primitive term. A notable exception is the A-7 method.' Borrowable mechanism (a): mandate a designation per primitive term in the basis. Cost: documentation/maintenance overhead per term — the paper itself frames this as the discipline most methods skip because it is costly.",
+        "vote": "3-0"
+      },
+      {
+        "claim": "The Gunter et al. WRSPM reference model supplies a structured five/six-artifact decomposition (Domain Knowledge W, Requirements R, Specification S as bridge, Program P, Programming Platform M, plus designated terminology as a sixth artifact partitioning phenomena into environment-controlled vs system-controlled) — a borrowable schema for separating environment facts from system commitments, directly relevant to anneal's evidence (environment-side) vs design (system-side) distinction.",
+        "confidence": "high",
+        "sources": [
+          "http://egunter.cs.illinois.edu/papers/ICRE2000.pdf"
+        ],
+        "evidence": "Claim [5], 3-0, verified against rendered PDF (Gunter, Gunter, Jackson, Zave, 'A Reference Model for Requirements and Specifications,' IEEE ICRE 2000, peer-reviewed). 'Our model is based on five familiar artifacts... denoted W, R, S, P, and M.' Figure 1 places W,R under Environment and P,M under System with S as bridge. Sixth artifact verbatim: 'This clarification is so important that it should be viewed as a sixth artifact in the reference model: the designated terminology.' Borrowable (a): the env/system control partition for the basis. What anneal has equal/better: anneal's evidence-vs-design split already encodes this; the cost of importing WRSPM's full five-artifact apparatus (P, M layers) is formal overhead with low marginal value for a domain-agnostic methodology.",
+        "vote": "3-0"
+      },
+      {
+        "claim": "ADOPTABLE GAP — an 'entailment + nothing-dropped' completion check is provably INSUFFICIENT for soundness: Gunter et al. show the naive split-at-S factorization (S,W⊢R while M,P⊢S) is 'close' and a 'good intuition' but inadequate because consistency and control must be accounted for, and exhibit a disjunctive good-or-bad specification S1∨S2 that passes adequacy (Formula 4) and relative consistency (Formula 5) yet lets a programmer build a system that 'would break as soon as it was deployed.' The fix is the stronger environment-side refinement (Formula 7, adding S⇒W) and system-side refinement (Formula 8, adding P⇒S). Direct evidence that anneal's completion/verify step needs an additional refinement/strengthening (exclusion-of-broken-rivals) obligation to be SOUND, not merely complete.",
+        "confidence": "high",
+        "sources": [
+          "http://egunter.cs.illinois.edu/papers/ICRE2000.pdf"
+        ],
+        "evidence": "Merges claims [6],[7] — both 3-0, verbatim from /tmp/icre2000.txt. 'Is it alright just to say that S and W imply R, while M and P imply S? This is close and provides a good intuition, but the situation is not that simple. Consistency and control must be properly accounted for.' And: 'if we turned it over to a programmer who built a system satisfying S2, the system would also satisfy S, but it would break as soon as it was deployed... The extra strength of Formulas 7 and 8 prevent this problem from arising.' This is the strongest formal warrant that anneal's verify must do more than confirm coverage+entailment: it must rule out states that technically satisfy the spec but are unsound — i.e. exclude rival/broken accounts. Borrowable (a): add a refinement/exclusion obligation. Cost: a stricter verify gate that must reason about disjunctive/degenerate states.",
+        "vote": "3-0 (both constituent claims)"
+      },
+      {
+        "claim": "Platt's Strong Inference (Science 1964) is the methodological backbone behind anneal's falsification + structured-convergence steps and supplies the strongest external warrant for treating verify as load-bearing: the four-step procedure is (1) devise alternative hypotheses; (2) devise a crucial experiment with alternative outcomes each EXCLUDING one or more hypotheses; (3) carry it out for a clean result; (1') recycle/refine the remaining possibilities — the literal antecedent of anneal's loopback-until-settled. The engine principle: only EXCLUSION (disproof) yields a secure conclusion ('Any conclusion that is not an exclusion is insecure and must be rechecked'), so 'not yet excluded' must be treated as not-yet-settled, citing Bacon's 'rejections and exclusions' and Popper's falsifiability.",
+        "confidence": "high",
+        "sources": [
+          "https://pages.cs.wisc.edu/~markhill/science64_strong_inference.pdf",
+          "https://www.science.org/doi/10.1126/science.146.3642.347",
+          "https://courses.cs.duke.edu/fall04/cps296.2/science_platt.html"
+        ],
+        "evidence": "Merges claims [8],[17],[18] — all 3-0, verbatim from the primary Science article (and Duke/eecg.utoronto.ca mirrors; science.org paywalled but corroborated by peer-reviewed retrospective Fudge 2014, J. Exp. Biol. 217(8):1202). Steps verbatim: '1) Devising alternative hypotheses; 2) Devising a crucial experiment... each of which will, as nearly as possible, exclude one or more of the hypotheses; 3) Carrying out the experiment so as to get a clean result; 1') Recycling the procedure.' Engine: 'Any conclusion that is not an exclusion is insecure and must be rechecked.' Popper: 'there is no such thing as proof in science... so that science advances only by disproofs.' What anneal has: its falsification lens and loopback already operationalize this. Embedded candidate critique (sound, licensed by the text): anneal should test whether verify EXCLUDES rival accounts of the state, not merely confirms one — converging with the WRSPM soundness finding above.",
+        "vote": "3-0 (each constituent claim)"
+      },
+      {
+        "claim": "The falsifiability-by-disproof demarcation supplies a concrete, importable acceptance GATE sharper than 'grounded in re-checkable evidence': a theory that excludes nothing is not a theory; the operational test ('The Question') is — for any explanation ask 'what experiment could disprove your hypothesis?' and for any experiment ask 'what hypothesis does your experiment disprove?'. A claim or design that cannot specify what evidence would falsify it FAILS the gate. This is strictly sharper than re-checkability, which can be satisfied by confirming-only evidence.",
+        "confidence": "high",
+        "sources": [
+          "https://pages.cs.wisc.edu/~markhill/science64_strong_inference.pdf"
+        ],
+        "evidence": "Claim [10], 3-0, verbatim: 'a theory is not a theory unless it can be disproved... unless it can be falsified by some possible experimental outcome.' 'The Question': 'But sir, what experiment could disprove your hypothesis?' / 'what hypothesis does your experiment disprove?' The anneal-facing inference (the falsification gate beats mere re-checkability because confirming-only evidence satisfies re-checkability but fails falsifiability) is the researcher's sound design argument, not attributed to Platt. Borrowable (a): add a falsifiability check to the evidence/basis gate — every basis claim must state what would disconfirm it. Cost: low; mostly a phrasing/discipline change. This is the cleanest genuinely-adoptable sharpening of an EXISTING anneal rule.",
+        "vote": "3-0"
+      },
+      {
+        "claim": "GENUINELY MISSING DISCIPLINE anneal should adopt — Chamberlin's / Platt's method of multiple working hypotheses: carrying several rival hypotheses/designs simultaneously, none owned personally, structurally neutralizes the 'parental affection' / confirmation-bias attachment that biases a single-hypothesis investigator toward pressing facts to fit, and intrinsically promotes completeness/thoroughness (co-equal hypotheses force inquiry along lines a single hypothesis overlooks). Verified against the live corpus: anneal's investigate-design.md drives to a SINGLE committed recommendation; the operator is never posed competing alternatives; the only multi-alternative construct (the optional, post-hoc one-line 'considered' field) is not a mandate to carry rival designs in parallel; and the falsification-pass candidate set probes an already-LOCKED single decision, not rival designs during design formation. Adopting multiple-hypothesis generation BEFORE the commit/verify step would guard against single-Ruling-Theory tunnel vision.",
+        "confidence": "high",
+        "sources": [
+          "https://www.mantleplumes.org/WebDocuments/Chamberlin1897.pdf",
+          "https://pages.cs.wisc.edu/~markhill/science64_strong_inference.pdf",
+          "https://www.science.org/doi/10.1126/science.146.3642.347",
+          "https://journals.biologists.com/jeb/article/217/8/1202/13095"
+        ],
+        "evidence": "Merges claims [9],[11],[12],[13],[19] — all 3-0. Chamberlin (1897, primary, peer-reviewed Science reprint PMID 17748786): 'The investigator thus becomes the parent of a family of hypotheses: and, by his parental relation to all, he is forbidden to fasten his affections unduly upon any one.' 'There is an unconscious selection and magnifying of the phenomena that fall into harmony with the theory... and an unconscious neglect of those that fail of coincidence.' 'if all rational hypotheses relating to a subject are worked co-equally, thoroughness is the presumptive result.' Platt: 'whenever each man begins to have multiple working hypotheses, it becomes purely a conflict between ideas.' CRITICAL: claim [19]'s verifier checked the actual corpus (investigate-design.md:45-88 single committed recommendation; glossary.md:273 operator never posed a choice; modules.md:185-192 'considered' field optional/post-hoc) and confirmed anneal lacks this. CAVEAT (from [9], does not refute): anneal's separate-context independent verifier attacks the SAME authorship-attachment bias by a DIFFERENT route (the falsifier has no parental affection), so anneal has a partial mitigation — but it does not mandate generating multiple competing designs before commit. Borrowable (a): mandate enumerating 2+ rival designs during investigate-design. Cost: more upfront design effort, risk of menu-paralysis (which anneal deliberately avoids via committed-recommendation) — the genuine tension to weigh.",
+        "vote": "3-0 (each constituent claim)"
+      },
+      {
+        "claim": "CONSCIOUSLY REJECT the over-strong claims of Strong Inference while keeping its discipline: the peer-reviewed critique (O'Donohue & Buchanan 2001) shows Platt never demonstrated his central historical claim (that more successful sciences used SI more), found no evidence SI accounts for scientific progress, and noted SI is itself rarely used (<10 empirical psychology studies reported using it); the Quine-Duhem thesis makes a single 'crucial experiment' logically inconclusive (an apparent falsification cannot determine whether the central or an auxiliary hypothesis is to blame); and complete enumeration of alternative hypotheses is impossible for open-ended problems, so refutation never fully settles a question ('the number of possibly true theories remains infinite, at any time, and after any number of crucial tests'). Anneal should adopt the multiple-hypothesis + exclusion DISCIPLINE but must NOT import the discredited promise that one decisive falsification conclusively settles a question — which actually REINFORCES anneal's 'not-yet-excluded = not-yet-settled / must recheck' stance and its loopback design.",
+        "confidence": "high",
+        "sources": [
+          "http://www.pelagicos.net/BIOL6090/readings/ODonohue_&_Buchanan_2001.pdf",
+          "https://cornerstone.lib.mnsu.edu/psyc_fac_pubs/37"
+        ],
+        "evidence": "Merges claims [14],[15],[16] — all 3-0, verified via OCR of the scanned PDF (O'Donohue & Buchanan, 'The Weaknesses of Strong Inference,' Behavior and Philosophy 29:1-20, 2001, peer-reviewed; PDF title metadata confirms). 'no demonstration of the central historical claim...' 'there does not appear to be any evidence to suggest that SI accounts for what progress has occurred in science... it is infrequently used.' '<10 empirical studies actually reported utilizing SI.' Quine-Duhem: 'Logically, the results of a crucial experiment cannot determine which of these ought to take the blame.' Enumeration: SI step 1 'assumes... a finite, specifiable set of possible alternative answers such that the correct answer is assured to be contained in this set' — impossible for young/open-ended problems. KEY synthesis point: Quine-Duhem does not refute anneal — if even a falsification is provisional, then a non-falsified claim is a fortiori not-yet-settled, which is exactly anneal's recheck/loopback posture. This is the REJECT column: take the exclusion engine, reject the conclusive-single-experiment and complete-enumeration promises.",
+        "vote": "3-0 (each constituent claim)"
+      },
+      {
+        "claim": "Cleanroom software engineering provides direct empirical support for anneal's investigate-design-before-implement ordering (the design-first / defect-cost-escalation economics vein): Cleanroom shifted defect detection dramatically earlier — more than 90% of total product defects found before first execution, versus the customary ~60% — with the originators attributing this to 'added care and attention given to design in lieu of rushing into code.' Cleanroom is also the structured-pre-execution-verification lineage anneal's independent verify resembles.",
+        "confidence": "medium",
+        "sources": [
+          "http://www.cs.toronto.edu/~chechik/courses07/csc410/mills.pdf",
+          "https://ieeexplore.ieee.org/document/1702342"
+        ],
+        "evidence": "Claim [20], 2-1 (the one split vote in the corpus). Verbatim from Mills, Dyer & Linger, 'Cleanroom Software Engineering,' IEEE Software, Sept 1987 (originator article — advocacy context): 'More than 90 percent of total product defects were found before first execution. This is in marked contrast to the more customary experience of finding 60 percent...' Next sentence (the design-first attribution): 'This effect is probably directly related to the added care and attention given to design in lieu of rushing into code.' GENUINE WEAKNESSES (why medium, not high): (a) the 90% figure is from practitioner experience reports on three projects, not a controlled study; (b) the 60% baseline is uncited; (c) originator self-report. Independent corroboration: Selby & Basili controlled experiment (IEEE TSE SE-13(9), Sept 1987, 15 teams) found Cleanroom products met requirements more completely. NOTE: the related claim that Cleanroom's defining mechanism (replacing developer debugging with pre-execution human verification) is the literal ancestor of anneal's separate-context verify was REFUTED (1-2) — so cite the economics, not a strong lineage claim. Boehm's specific cost-escalation curve was not independently verified in this corpus; the design-first economics here rest on the Cleanroom evidence, not on a verified Boehm citation.",
+        "vote": "2-1"
+      },
+      {
+        "claim": "IBIS / gIBIS provides a concrete, borrowable argumentation grammar for structuring design rationale: exactly three node types (Issue, Position, Argument) connected by nine link types (e.g. Position Responds-to Issue; Argument Supports or Objects-to a Position; Issues Generalize/Specialize/Question/Be-suggested-by; Replaces; Other), forming a constrained tree where an Issue is the root of Positions and their supporting/objecting Arguments. This is the claim-grounds-warrant-style scaffolding anneal's evidence/basis rule could optionally borrow for structuring rationale capture.",
+        "confidence": "high",
+        "sources": [
+          "http://csis.pace.edu/~marchese/CS835/Readings/p303-conklin_gibis.pdf"
+        ],
+        "evidence": "Claim [21], 3-0, verbatim from Conklin & Begeman, 'gIBIS: A Hypertext Tool for Exploratory Policy Discussion,' ACM TOIS 6(4), Oct 1988 (peer-reviewed). 'each separate Issue is the root of a (possibly empty) tree, with the children of the Issue being Positions and the children of the Positions being Arguments.' 'There are nine kinds of links in IBIS... a Position Responds-to an Issue... Arguments must be linked to their Positions with either Supports or Objects-to links.' Borrowable (a): a structured rationale grammar for the basis/decision records. What anneal has equal/better: anneal's evidence/basis + 'considered' field captures rationale more lightly. Cost: IBIS's full node/link grammar is heavyweight and known empirically to impose capture overhead; adopting it wholesale would conflict with anneal's lightweight committed-recommendation style. Note: Toulmin's claim-grounds-warrant model itself was NOT independently verified as a separate primary-source claim in this corpus — it appears only as the framing analogy.",
+        "vote": "3-0"
+      }
+    ],
+    "caveats": "SOURCE QUALITY is strong overall: the load-bearing findings rest on peer-reviewed primary sources (Zave & Jackson TOSEM 1997; Gunter et al. ICRE 2000; Platt Science 1964; Chamberlin 1890/1897; Conklin & Begeman ACM TOIS 1988; O'Donohue & Buchanan Behavior and Philosophy 2001). 21 of 22 claims passed 3-0; only the Cleanroom 90/60 figure was 2-1 (hence its medium confidence). TIME-SENSITIVITY is low — these are foundational/definitional methodology results, not fast-moving findings; age does not erode them. SPECIFIC WEAK SPOTS: (1) The Cleanroom 90%/60% numbers are originator self-report on three uncontrolled projects with an uncited baseline — cite them as 'originator-reported, independently corroborated in direction by Selby & Basili,' not as hard controlled-experiment data. (2) Two named primary sources from the research question were NOT independently verified in this corpus and should not be cited as verified: Boehm's cost-of-defect-escalation curve (the design-first economics here rest on Cleanroom, not a verified Boehm citation) and Toulmin's claim-grounds-warrant model (it appears only as a framing analogy, not a checked primary source). FMEA and HAZOP were named in the question but produced NO surviving claims — the 'anneal's lens-set is FMEA-like' framing is unverified here. Fagan inspections likewise produced no surviving verified claim. (3) Several primary URLs were paywalled (science.org) or scanned-image-only (O'Donohue & Buchanan), so confidence there rests on mirrors/OCR plus independent corroboration rather than a clean fetch of the canonical host. (4) The Cleanroom-as-ancestor-of-independent-verify lineage claim was explicitly REFUTED (1-2); only the design-first economics from Cleanroom survive. (5) Every anneal-mapping in these findings is the researcher's analogy, correctly hedged — the sources do not mention anneal; entailment (S,K⊢R) is a strictly stronger, formal construct than anneal's informal coverage property, so 'directly maps' means 'analogous in spirit,' not 'identical.'",
+    "openQuestions": [
+      "FMEA and HAZOP (named in the research question as the 'where can this fail' enumeration that anneal's lens-set resembles) produced zero surviving verified claims — is anneal's falsification lens-set actually FMEA-like, and does the FMEA/HAZOP literature offer a borrowable structured failure-mode enumeration anneal lacks? This vein was not delivered and warrants a dedicated follow-up.",
+      "Does Boehm's cost-of-defect-escalation curve (the textbook design-first economics) hold up to adversarial verification, and is the often-cited exponential 1:10:100 ratio empirically supported or a frequently-repeated estimate? The design-first vein currently rests only on Cleanroom evidence.",
+      "Given the strongest formal finding (Gunter et al.: entailment + consistency is provably insufficient for soundness; the S1∨S2 counterexample), what concrete EXCLUSION obligation should anneal's verify step add to rule out states that satisfy the spec but break on deployment — and how is that operationalized in a domain-agnostic methodology without formal logic?",
+      "On the multiple-working-hypotheses gap: anneal deliberately avoids posing the operator a menu of alternatives (committed-recommendation design) — can multiple competing hypotheses be carried INTERNALLY during investigate-design (to neutralize attachment bias) while still surfacing a single committed recommendation to the operator, or do these two disciplines genuinely conflict? This is the key design tension to resolve before adopting Chamberlin's method.",
+      "Was Fagan inspection (the other named pillar of the structured-independent-review lineage) ever verified, and does its defect-removal-efficiency data add anything beyond Cleanroom to the independent-verify warrant?"
+    ],
+    "refuted": [
+      {
+        "claim": "Strong inference is a formal, explicit, recursive procedure with three numbered steps plus a recycle step: (1) devise alternative hypotheses, (2) devise a crucial experiment with alternative outcomes each of which excludes one or more hypotheses, (3) carry out the experiment for a clean result, and (1') recycle to make sub/sequential hypotheses to refine remaining possibilities. This is the exact structural template behind anneal's investigate-design -> implement (run the crucial test) -> verify -> loopback-until-settled convergence, with the recycle step (1') being the literal antecedent of anneal's structured convergence loop.",
+        "vote": "0-3",
+        "source": "https://pages.cs.wisc.edu/~markhill/science64_strong_inference.pdf"
+      },
+      {
+        "claim": "Platt's central empirical thesis is that the rate-limiting factor in scientific progress is methodological, not the subject or the people: the fast-moving fields are precisely those where a method of systematic inductive inference is 'systematically used and taught.' This directly supports anneal's premise that a teachable, instantiable process discipline (not talent or domain) drives reliable knowledge-work output.",
+        "vote": "1-2",
+        "source": "https://www.science.org/doi/10.1126/science.146.3642.347"
+      },
+      {
+        "claim": "Cleanroom's defining mechanism is replacing developer debugging with human mathematical (functional) verification BEFORE any execution, so software goes to a separate statistical-testing/certification step never having been debugged by its developers — this is the structured-independent-review lineage anneal's independent (separate-context) verify descends from.",
+        "vote": "1-2",
+        "source": "http://www.cs.toronto.edu/~chechik/courses07/csc410/mills.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://cse.msu.edu/~chengb/RE-491/Papers/dark-corners-re-zave-jackson.pdf",
+        "quality": "primary",
+        "angle": "Requirements engineering (richest vein, primary sources)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://dl.acm.org/doi/10.1145/237432.237434",
+        "quality": "primary",
+        "angle": "Requirements engineering (richest vein, primary sources)",
+        "claimCount": 5
+      },
+      {
+        "url": "http://egunter.cs.illinois.edu/papers/ICRE2000.pdf",
+        "quality": "primary",
+        "angle": "Requirements engineering (richest vein, primary sources)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://pages.cs.wisc.edu/~markhill/science64_strong_inference.pdf",
+        "quality": "primary",
+        "angle": "Falsification methodology / strong inference",
+        "claimCount": 5
+      },
+      {
+        "url": "https://www.mantleplumes.org/WebDocuments/Chamberlin1897.pdf",
+        "quality": "primary",
+        "angle": "Falsification methodology / strong inference",
+        "claimCount": 5
+      },
+      {
+        "url": "http://www.pelagicos.net/BIOL6090/readings/ODonohue_&_Buchanan_2001.pdf",
+        "quality": "primary",
+        "angle": "Falsification methodology / strong inference",
+        "claimCount": 5
+      },
+      {
+        "url": "https://journals.biologists.com/jeb/article/217/8/1202/13095/Fifty-years-of-J-R-Platt-s-strong-inference",
+        "quality": "secondary",
+        "angle": "Falsification methodology / strong inference",
+        "claimCount": 5
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Strong_inference",
+        "quality": "secondary",
+        "angle": "Falsification methodology / strong inference",
+        "claimCount": 5
+      },
+      {
+        "url": "https://www.science.org/doi/10.1126/science.146.3642.347",
+        "quality": "primary",
+        "angle": "Falsification methodology / strong inference",
+        "claimCount": 5
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Fagan_inspection",
+        "quality": "secondary",
+        "angle": "Independent review + design rationale / argumentation",
+        "claimCount": 5
+      },
+      {
+        "url": "http://www.cs.toronto.edu/~chechik/courses07/csc410/mills.pdf",
+        "quality": "primary",
+        "angle": "Independent review + design rationale / argumentation",
+        "claimCount": 5
+      },
+      {
+        "url": "http://csis.pace.edu/~marchese/CS835/Readings/p303-conklin_gibis.pdf",
+        "quality": "primary",
+        "angle": "Independent review + design rationale / argumentation",
+        "claimCount": 5
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s11219-017-9396-0",
+        "quality": "primary",
+        "angle": "Failure-mode enumeration methods",
+        "claimCount": 5
+      },
+      {
+        "url": "http://www.diva-portal.org/smash/get/diva2:1166953/FULLTEXT01.pdf",
+        "quality": "primary",
+        "angle": "Failure-mode enumeration methods",
+        "claimCount": 5
+      },
+      {
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0950423019300701",
+        "quality": "primary",
+        "angle": "Failure-mode enumeration methods",
+        "claimCount": 4
+      },
+      {
+        "url": "https://asmedigitalcollection.asme.org/risk/article/8/3/031104/1115198/Comparison-of-the-HAZOP-FMEA-FRAM-and-STPA-Methods",
+        "quality": "secondary",
+        "angle": "Failure-mode enumeration methods",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/abs/1609.04886",
+        "quality": "primary",
+        "angle": "SE economics of design-first vs iterative ordering",
+        "claimCount": 4
+      },
+      {
+        "url": "https://www.techwell.com/techwell-insights/2013/10/what-does-it-really-cost-fix-software-defect",
+        "quality": "secondary",
+        "angle": "SE economics of design-first vs iterative ordering",
+        "claimCount": 4
+      },
+      {
+        "url": "https://www.researchgate.net/publication/220476082_Software_Defect_Reduction_Top_10_List",
+        "quality": "unreliable",
+        "angle": "SE economics of design-first vs iterative ordering",
+        "claimCount": 0
+      },
+      {
+        "url": "https://ntrs.nasa.gov/api/citations/20100036670/downloads/20100036670.pdf",
+        "quality": "primary",
+        "angle": "SE economics of design-first vs iterative ordering",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/1612.04590",
+        "quality": "primary",
+        "angle": "SE economics of design-first vs iterative ordering",
+        "claimCount": 5
+      },
+      {
+        "url": "https://www.pmi.org/disciplined-agile/agile/costofchange",
+        "quality": "secondary",
+        "angle": "SE economics of design-first vs iterative ordering",
+        "claimCount": 4
+      }
+    ],
+    "stats": {
+      "angles": 5,
+      "sourcesFetched": 22,
+      "claimsExtracted": 100,
+      "claimsVerified": 25,
+      "confirmed": 22,
+      "killed": 3,
+      "afterSynthesis": 10,
+      "urlDupes": 0,
+      "budgetDropped": 8,
+      "agentCalls": 104
+    }
+  }
+}

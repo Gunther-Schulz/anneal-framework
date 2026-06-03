@@ -34,6 +34,17 @@ claim — adopting blind would violate anneal's own basis discipline. Gate on
 `anneal-reliability-measurement` (an A/B: 1-context verify vs N-vote quorum on a claim set with
 known-planted soft errors).
 
+## Evidence landed (verify-techniques run `w7abv8l2k`, 2026-06-03) — REFRAME
+The literature partly answers validate-before-adopt and **deflates the vote-count framing**: an
+N-voter quorum is a **MARGINAL, task-dependent gain, NOT a reliable multiplier** (debate > majority
+voting by only ~1.25–4.08pp, 3/4 within CI noise; sometimes worse than a single model). **The real
+lever is MODEL DIVERSITY, not vote count** — a panel of *disjoint model families* beats a single
+large judge (less correlated bias, ~7× cheaper), and the debate-amplification proof collapses when
+voters share biases. **Reframe this item from "3 skeptics, majority-to-reject" → "disjoint-model
+panel,"** and note it overlaps the cheaper, stronger lever from the same run: a **different-model
+verifier** (`verify-techniques-research.md`, item 2). Still gate the spend on measurement — no source
+isolated quorum's *false-accept/rubber-stamp* reduction on judgment claims specifically.
+
 ## Relates to
 - `anneal-reliability-measurement.md` (the validate-before-adopt gate; A/B testbed).
 - `anneal-placement-and-improvement-research.md` (origin: deep-research adversarial-verify +
