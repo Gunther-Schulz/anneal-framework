@@ -43,8 +43,8 @@ confused with:
    "agreement bias"; ~+20pt failure-detection). → sharpen anneal's verify (establish criteria first).
 2. **Offline-verify-policy + lightweight-online-monitor** split (VeriGuard) — parallels anneal's
    design-time-vs-runtime; possible model for a safety-bound complement on high-stakes instances.
-3. **Reliability benchmarks/eval** (AgentBench-style, the eval surveys) — anneal has *no* way to
-   *measure* its reliability gains. A measurement story would strengthen + validate it.
+3. **Reliability measurement** — anneal has *no* way to *measure* its reliability gains; the biggest
+   gap. **ELEVATED to its own item → `anneal-reliability-measurement.md` (operator's next exploration).**
 
 ## Sharpened deep-research question (for the rigorous run)
 > Place the Anneal framework (above) in the landscape of approaches to reliable/dependable AI-agent
