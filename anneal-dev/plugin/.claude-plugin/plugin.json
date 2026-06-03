@@ -1,0 +1,11 @@
+{
+  "name": "anneal-dev",
+  "version": "0.1.2",
+  "description": "Corpus-evolution for Claude Code: structured investigate-design / implement / verify over rule-corpus edits, with render-fidelity, coherence, and skill-quality checks.",
+  "author": {
+    "name": "Gunther Schulz"
+  },
+  "repository": "https://github.com/Gunther-Schulz/anneal-dev",
+  "license": "MIT",
+  "keywords": ["corpus-evolution", "investigate-design", "implement", "verify", "rule-corpus", "protocol"]
+}
