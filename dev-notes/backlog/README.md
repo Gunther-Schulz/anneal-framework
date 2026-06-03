@@ -58,6 +58,14 @@ so it lives here in the index, not in the names.)
   subagent-dispatch impl for method-kernel edits. Resolved the archived
   `impl-skillcraft-gate` contradiction (the prior "satisfiable" conclusion tested the
   inner function by hand, not the live hook payload).
+- `completeness-search-enforcement.md` — **filed 2026-06-03.** The basis-rule
+  completeness-search discipline (wrap-tolerance; no silently-undercounting search)
+  is AI-discipline only and got tripped twice this session (the §4.2 boundary-regex
+  undercount caught by run-1's convergence cycle; bare multi-word line-greps in the
+  S3 run, caught by the operator). Candidate structural fix: a basis-shape forcing
+  function requiring the completeness-claim search to be single-token-or-flattened.
+  Method-kernel (basis rule + practice 4); same "soft rule needs structural
+  enforcement" shape as the hook-gate fix.
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance.
   **Steps 1–5 DONE (2026-06-02).** Build + validate complete: pass-1/2 derivation
