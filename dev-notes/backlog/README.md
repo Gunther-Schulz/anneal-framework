@@ -63,12 +63,14 @@ findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
 
 ### Phase C — independent method findings, in THEMED BATCHES (not 11 separate runs)
 
-These are small spec/method fixes; one anneal-dev run per *theme* (not per item) amortizes the
-ceremony cost, and a **coherence audit** (practice 12 — mechanically triggered after N cycles) is
-a natural moment to sweep a batch, since it surfaces adjacent drift too. **The batching is a
-cost-saving recommendation, not a requirement, and the audit is a floor not a gate** — every item
-below is still its own file (`ls` shows them), workable individually, in any order, whenever; do
-them earlier than any audit if you want. The themes (the suggested run-groupings):
+These are small spec/method fixes. **Recommended approach (operator-preferred 2026-06-03): one
+coherence-audit-driven campaign.** Run a **coherence audit** (practice 12 — and it's *due-ish*
+anyway: cycles have accumulated since the last handoff `ac1856832b8712fda`) over the corpus to
+surface fresh drift, and **fold the known findings below into that same cleanup**, resolved by
+theme — one audit + a few themed anneal-dev runs, instead of picking items off one at a time.
+**Caveat (still true):** the audit is a *floor not a gate*, the batching is a cost-saver not a
+requirement — every item below is its own file (`ls` shows them), workable individually, in any
+order, earlier than any audit if you want. The themes (the run-groupings within the campaign):
 
 - **C1 — verify/impl discipline** (gaps in what verify/impl must check; all touch `core.md` §4.2/§4.3 + `development-process.md`): `verify-vs-original-requirements`, `behavior-change-test-impact-enumeration`, `impl-green-on-commit`.
 - **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`.
