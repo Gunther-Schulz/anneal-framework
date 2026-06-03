@@ -1,0 +1,315 @@
+{
+  "summary": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report.",
+  "agentCount": 105,
+  "logs": [
+    "Q: Place the **Anneal framework** in the landscape of approaches to reliable/depend…",
+    "Decomposed into 5 angles: broad/primary — placement taxonomy, contrarian/superior-check — methodology peer hunt, academic/technical — self-correction evidence base, practitioner/measurement — borrowable reliability metrics, technical/improvement — verify-policy + self-grounded verification",
+    "technical/improvement — verify-policy + self-grounded verification: 6 results",
+    "practitioner/measurement — borrowable reliability metrics: 6 results",
+    "academic/technical — self-correction evidence base: 6 results",
+    "academic/technical — self-correction evidence base: 3 novel (3 filtered)",
+    "broad/primary — placement taxonomy: 6 results",
+    "broad/primary — placement taxonomy: 5 novel (1 filtered)",
+    "contrarian/superior-check — methodology peer hunt: 6 results",
+    "contrarian/superior-check — methodology peer hunt: 3 novel (3 filtered)",
+    "Fetched 23 sources → 107 claims → verifying top 25",
+    "\"VeriGuard operationalizes exactly the offline-veri…\": 3-0 ✓",
+    "\"VeriGuard sits in the formal-verification layer (p…\": 3-0 ✓",
+    "\"APF has NO reliability measurement or benchmarking…\": 2-1 ✓",
+    "\"Agentic Problem Frames (APF) is a domain-agnostic,…\": 1-2 ✗",
+    "\"APF makes the same two load-bearing bets as Anneal…\": 1-2 ✗",
+    "\"VeriGuard provides concrete reliability MEASUREMEN…\": 3-0 ✓",
+    "\"When an agent's reflection/self-verification reuse…\": 3-0 ✓",
+    "\"Reliable agent trustworthiness requires a layered …\": 0-3 ✗",
+    "\"End-to-end formal verification of LLM-based agents…\": 3-0 ✓",
+    "\"The survey proposes borrowable reliability-MEASURE…\": 3-0 ✓",
+    "\"Anthropic distinguishes 'workflows' (LLMs orchestr…\": 3-0 ✓",
+    "\"Anthropic names exactly five workflow patterns (pr…\": 3-0 ✓",
+    "\"The evaluator-optimizer workflow uses one LLM call…\": 3-0 ✓",
+    "\"APF's Act-Verify-Refine (AVR) loop is a structured…\": 3-0 ✓",
+    "\"APF is a domain-agnostic, instantiable engineering…\": 2-1 ✓",
+    "\"APF's Agentic Job Description (AJD) is a formal sp…\": 2-1 ✓",
+    "\"CARE is a domain-agnostic, repeatable, stage-gated…\": 0-3 ✗",
+    "\"AgentCompass is positioned as the first evaluation…\": 3-0 ✓",
+    "\"CARE embeds the same three load-bearing discipline…\": 0-3 ✗",
+    "\"CARE supplies the reliability-measurement method A…\": 0-3 ✗",
+    "\"AgentCompass implements reliability evaluation as …\": 3-0 ✓",
+    "\"Intrinsic self-correction fails: no prior work dem…\": 3-0 ✓",
+    "\"Self-correction succeeds when (and largely only wh…\": 3-0 ✓",
+    "\"LLMs cannot reliably perform intrinsic self-correc…\": 3-0 ✓",
+    "\"Self-correction can actively HARM performance: at …\": 3-0 ✓",
+    "Verify done: 25 claims → 19 confirmed, 6 killed"
+  ],
+  "result": {
+    "question": "Place the **Anneal framework** in the landscape of approaches to reliable/dependable AI-agent work, extract evidence-backed improvements, and honestly check whether something equal or SUPERIOR exists. Adversarially verify all claims; cite sources.\n\n## What Anneal is (the thing to place)\nA domain-agnostic, **instantiable methodology** that makes open-ended AI work *sound/dependable*. Three load-bearing disciplines:\n1. **Evidence/basis rule** — every load-bearing claim must be grounded in re-checkable evidence (search / located-read), not asserted.\n2. **Coherent, complete state** — a tracker holds the full state of the work; nothing is silently dropped.\n3. **Investigate-design → implement → verify**, with **INDEPENDENT (separate-context) verification** + a convergence requirement (loopback until it settles).\nInstances built on it: clippy (code dev), daneel (debugging), campaign-craft (marketing strategy), bauleitplan (German planning docs), anneal-dev (corpus evolution). Working identity metaphor: *controlled settling of work toward a sound, low-stress state* (the \"annealing\" essence — treat as tentative, not confirmed).\n\n## The questions\n(a) **Placement.** Where does Anneal sit relative to: agent design patterns (e.g. Anthropic's \"Building Effective Agents\": prompt-chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer, reflection); self-correction / self-verification research; formal verification of agents (LTL model-checking, verified-policy + runtime monitor, SMT/Z3); agentic-RL (training-level reliability); eval/benchmarks; and guardrail/envoy tooling?\n(b) **Superior-check (the part that most needs rigor).** Is there a methodology doing Anneal's *specific* thing — force-evidence + independent-verify + coherent-state + structured-convergence, domain-agnostic and instantiable — that is equal or SUPERIOR? Do NOT default to \"Anneal is unique\"; actively hunt for methodology-peers and stronger approaches.\n(c) **Improvements to adopt.** What evidence-backed ideas should Anneal adopt? In particular probe: reliability *measurement/benchmarking* methods for agents (Anneal currently has NO way to measure its reliability gains — flag what's borrowable); self-grounded verification (eliciting success criteria in isolation before verifying); offline-verify-policy + lightweight-online-monitor splits.\n\n## Preliminary placement to VERIFY or REFUTE (only 4 prior searches — low confidence, treat as hypotheses)\n- Anneal sits at a **process-discipline layer** that is *less crowded* than the layers it's confused with.\n- It is **above** the agent-pattern/building-block level (it composes patterns toward an epistemic standard, rather than being one).\n- It is **orthogonal/complementary to formal verification** (formal verification gives provable SAFETY/behavioral bounds; Anneal gives evidence-discipline for open-ended CORRECTNESS where there is no formal spec).\n- It is **distinct from** agentic-RL (training-level) and guardrail/envoy tooling (tool-level).\n- The self-correction literature appears to *validate* Anneal's bets (self-audit alone fails; reliability needs external grounding + independent verification; combining techniques helps). Verify this characterization.\n- Biggest apparent gap: **no reliability measurement.**\n\n## Source leads to start from (verify currency + adversarially check, don't just trust)\n- anthropic.com/research/building-effective-agents\n- arXiv 2503.16416 (agent-evaluation survey)\n- ResearchGate \"When Can LLMs Correct Their Own Mistakes?\" (self-correction survey)\n- arXiv 2603.02798 (Self-Grounded Verification) — verify this identifier; it may be wrong\n- preprints.org 202604.1029 (AgentVerify) — verify\n- arXiv 2510.05156 (VeriGuard) — verify\nFind newer/peer sources beyond these; the existing list is a 4-search preliminary, not a curated bibliography.",
+    "summary": "Anneal sits at a process-discipline layer that is genuinely less crowded than the layers it gets confused with, and the placement hypotheses largely hold up: it is ABOVE Anthropic's agent-building-block patterns (it composes them — the evaluator-optimizer pattern is the closest single-pattern analog to its independent-verify+convergence loop, but it is one workflow, not a domain-agnostic methodology); ORTHOGONAL/complementary to formal verification (VeriGuard and the 2026 trustworthy-agentic survey both confirm formal verification certifies well-specified SAFETY components under explicit assumptions, while Anneal targets open-ended CORRECTNESS where no formal spec exists); and DISTINCT from post-deployment eval/monitoring tools (AgentCompass). The self-correction literature strongly VALIDATES Anneal's core bets — peer-reviewed work (TACL survey; Huang et al. ICLR 2024) establishes that intrinsic same-model self-audit is unreliable and can actively degrade performance, while reliable EXTERNAL/independent feedback is what works, and the \"closed loop\" of correlated errors when verifier shares the actor's base model is exactly Anneal's argument for separate-context verification. On the superior-check: the strongest methodology-PEER found is APF (Agentic Problem Frames, arXiv 2602.19065, Feb 2026), which independently exhibits all four of Anneal's disciplines (evidence-grounding, independent verification, coherent-state, structured convergence) — so Anneal's combination is NOT unique — but APF is NOT superior: it is validated only by two qualitative case studies it calls a \"conceptual proof\" and explicitly solicits partners for empirical validation, sharing Anneal's exact unmeasured-reliability gap. The biggest confirmed gap is reliability MEASUREMENT, and it is borrowable from the eval layer, not the methodology layer: VeriGuard's metric-on-named-benchmark template (ASR/TSR before-after), AgentCompass's four-stage analytical pipeline, and the survey's outcome+process metrics (constraint-violation rates, trace completeness) with scenario-to-metric release gating.",
+    "findings": [
+      {
+        "claim": "Placement vs agent-design patterns CONFIRMED: Anneal sits as a higher composing layer above Anthropic's agent building blocks, not as one of them. Anthropic's 'Building Effective Agents' establishes the canonical vocabulary — workflows (LLMs orchestrated through predefined code paths) vs agents (LLMs dynamically directing their own processes) — and names five representative workflow patterns (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer). The evaluator-optimizer pattern (one LLM generates, a SEPARATE LLM evaluates in a loop) is the closest single-pattern analog to Anneal's independent-verification + convergence discipline, but it is specified at the single-pattern building-block level, whereas Anneal is a domain-agnostic methodology that COMPOSES such patterns toward an epistemic standard.",
+        "confidence": "high",
+        "vote": "3-0 (all three sub-claims)",
+        "sources": [
+          "https://www.anthropic.com/research/building-effective-agents"
+        ],
+        "evidence": "Primary source confirms verbatim: 'Workflows are systems where LLMs and tools are orchestrated through predefined code paths' / 'Agents are systems where LLMs dynamically direct their own processes and tool usage' and the five named patterns. Evaluator-optimizer confirmed verbatim ('one LLM call generates a response while another provides evaluation and feedback in a loop') and corroborated by Anthropic's cookbook. CAVEAT flagged by verifier: Anneal docs should say 'five representative/common workflow patterns,' NOT 'canonical taxonomy' — the source explicitly states 'These building blocks aren't prescriptive. They're common patterns that developers can shape and combine.' The five are WORKFLOWS, one tier of a three-tier structure (augmented LLM -> workflows -> agents); calling them 'the building blocks' conflates tiers. The 'higher composing layer' framing is consistent with, not contradicted by, the source (which itself frames a progressive-complexity discipline above the patterns)."
+      },
+      {
+        "claim": "Placement vs formal verification CONFIRMED orthogonal/complementary: formal verification certifies well-specified SAFETY/policy-compliance components under explicit assumptions (and requires a formal spec), while end-to-end verification of LLM agents remains infeasible due to probabilistic generation. Anneal targets open-ended CORRECTNESS where no formal spec exists, so it is genuinely orthogonal — not a peer of — formal-verification approaches like VeriGuard.",
+        "confidence": "high",
+        "vote": "3-0 (both VeriGuard placement and survey orthogonality claims)",
+        "sources": [
+          "https://arxiv.org/pdf/2510.05156",
+          "https://arxiv.org/pdf/2605.23989",
+          "https://arxiv.org/abs/2501.16274",
+          "https://arxiv.org/abs/2507.13290"
+        ],
+        "evidence": "VeriGuard (Google Research/DeepMind, Oct 2025) 'distinguishes itself... by moving from an empirical to a formal verification paradigm, aiming to prove the correctness of an agent's actions before they are ever executed' via the Nagini program verifier over pre/post-condition safety contracts; Google's own framing calls it 'a guardrail approach rather than open-ended quality assurance.' The trustworthy-agentic survey (arXiv 2605.23989, May 2026) states verbatim: 'Formal verification can certify well-specified components under explicit assumptions... although end-to-end verification of LLM-based agents remains challenging due to probabilistic generation.' Independently corroborated: arXiv 2501.16274 ('virtually all verification techniques... rely on the availability of a formal specification') and arXiv 2507.13290 ('there is no formal specification: the natural language prompt is inherently informal'). Targeted adversarial search for a 'formal verification of LLM agents solved' breakthrough found NONE. KEY NUANCE: VeriGuard's 'correctness' = adherence to safety constraints, NOT general functional correctness — so the layers are distinct, and VeriGuard's formal-guarantee teeth do not transfer to Anneal's no-spec setting."
+      },
+      {
+        "claim": "Self-correction literature strongly VALIDATES Anneal's bets: (a) intrinsic same-model self-audit is unreliable and can actively DEGRADE performance; (b) reliable EXTERNAL/independent feedback is what makes self-correction work; (c) when the verifier reuses the actor's base model, correlated errors form a 'closed loop' of self-confirmed mistakes — the mechanistic case for Anneal's INDEPENDENT (separate-context) verification.",
+        "confidence": "high",
+        "vote": "3-0 (all five constituent claims)",
+        "sources": [
+          "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00713/125177",
+          "https://arxiv.org/abs/2406.01297",
+          "https://arxiv.org/abs/2310.01798",
+          "https://arxiv.org/pdf/2605.23989",
+          "https://arxiv.org/abs/2507.02778"
+        ],
+        "evidence": "TACL survey (Kamoi et al. 2024, peer-reviewed): 'no prior work demonstrates successful self-correction with feedback from prompted LLMs, except for studies in tasks that are exceptionally suited for self-correction' and 'self-correction works well in tasks that can use reliable external feedback.' Huang et al. (ICLR 2024, DeepMind, arXiv 2310.01798): 'LLMs struggle to self-correct their responses without external feedback, and at times, their performance even degrades after self-correction' — Table 3 shows GPT-4 GSM8K 95.5%->91.5%->89.0% across intrinsic-correction rounds; GPT-3.5 CommonSenseQA 75.8%->38.1%. Trustworthy-agentic survey (2605.23989): 'When reflection reuses the same base model as the actor, correlated errors can create a closed loop where mistaken beliefs are repeatedly self-confirmed.' Adversarial counter-examples (ProCo, Key-Condition-Verification, intrinsic-self-critique preprints) all fall inside the 'exceptionally suited / decomposable' carve-out or are grounded/multi-critic methods — none restore reliability via naive same-context self-audit. Minor calibration: surveys establish the external-vs-internal axis; 'separate-context' is a reasonable operationalization of 'outside the generating model' but not directly tested as isolation, so 'supports' (not 'proves') is the accurate verb."
+      },
+      {
+        "claim": "SUPERIOR-CHECK: Anneal's specific combination is NOT unique — a genuine methodology-PEER exists (APF, Agentic Problem Frames, arXiv 2602.19065, Chanjin Park, Seoul National University, Feb 2026) that independently exhibits all four of Anneal's disciplines: evidence-grounding (only confirmed results become 'ground truth'), INDEPENDENT verification (a separate Verification/Approval domain where 'the executor does not approve their own work'), coherent state (formal knowledge propagation Kt+1), and structured convergence (the Act-Verify-Refine loop driving 'asymptotic convergence to mission requirements'). HOWEVER, APF is NOT equal-or-superior in evidentiary standing: it is validated only by two qualitative case studies it itself labels a 'conceptual proof,' reports ZERO quantitative metrics, and ends with a 'Call for Collaboration: Empirical Validation' soliciting partners — sharing Anneal's exact unmeasured-reliability gap rather than solving it.",
+        "confidence": "high",
+        "vote": "Mixed: peer-status descriptive claims 2-1 to 3-0; the strongest 'direct methodology-peer / AVR-is-the-core' framing was REFUTED 1-2 in two formulations — so peer-status holds, but do not over-state APF as a tight one-to-one match",
+        "sources": [
+          "https://arxiv.org/abs/2602.19065",
+          "https://arxiv.org/pdf/2602.19065"
+        ],
+        "evidence": "Verbatim from abstract: 'a dynamic specification paradigm where intent is concretized at runtime through domain knowledge injection'; 'the Act-Verify-Refine (AVR) loop functions as a closed-loop control system... driving system behavior toward asymptotic convergence to mission requirements (R)'; 'the Agentic Job Description (AJD), a formal specification tool that defines jurisdictional boundaries, operational contexts, and epistemic evaluation criteria.' Full-text confirms independent verification ('Whether through a human-in-the-loop or a separate critic agent... preventing self-approval'). The validation gap is verbatim: validated 'through two contrasting case studies,' 'These cases provide a conceptual proof,' and a standalone 'Call for Collaboration: Empirical Validation' section. IMPORTANT CORRECTIONS flagged by verifiers: (1) APF expands to 'Agentic Problem Frames,' NOT 'Agentic Process Framework' — fix any label. (2) Shape-match is imperfect: APF leads with Act (execute first) with no explicit up-front investigate/design phase, whereas Anneal leads with investigate-design BEFORE implement. (3) APF's coherent-state is the LOOSER leg — it has knowledge-asset evolution but does NOT explicitly mandate Anneal's 'nothing silently dropped' completeness (implicit only). (4) APF is single-authored, v1, unpeer-reviewed. NET: a real peer exists (refutes 'Anneal is unique'), but no SUPERIOR methodology was found; the closest peer shares the same core weakness."
+      },
+      {
+        "claim": "IMPROVEMENT TO ADOPT (highest-value, addresses the flagged gap): reliability MEASUREMENT is borrowable from the EVAL/formal-verification layers, not the methodology layer. Three concrete, evidence-backed templates: (1) VeriGuard's metric-on-named-benchmark pattern — define a quantitative metric, run on a named benchmark, report before/after (it cut average Attack Success Rate ~51.9% -> 0.0% on Agent Security Bench while reporting Task Success Rate); (2) AgentCompass's four-stage analytical pipeline (error identification/categorization -> thematic clustering -> quantitative scoring -> strategic summarization) as a transposable verification-stage scaffold; (3) the trustworthy-agentic survey's outcome+PROCESS metrics — constraint-violation rates and trace completeness/coverage — plus scenario-to-metric release-gating thresholds, which map plausibly onto whether Anneal's evidence-discipline and state-coherence are actually being met.",
+        "confidence": "high",
+        "vote": "3-0 (VeriGuard metrics, AgentCompass pipeline, and survey measurement-hub claims all unanimous)",
+        "sources": [
+          "https://arxiv.org/pdf/2510.05156",
+          "https://arxiv.org/pdf/2509.14647",
+          "https://arxiv.org/pdf/2605.23989",
+          "https://arxiv.org/abs/2601.06112",
+          "https://arxiv.org/abs/2603.14987"
+        ],
+        "evidence": "VeriGuard Table 1: average ASR 51.9% (No Defense) -> 0.0% across four backbones; TSR rises on 3 of 4 backbones (e.g. Gemini-Flash 42.1->63.3) but DROPS on Claude-Sonnet-4 (89.0->85.1, -3.9pts) — so soften any 'maintains/raises TSR' to 'raises on weaker backbones, roughly maintains on the strongest.' AgentCompass (arXiv 2509.14647, FutureAGI, Sept 2025) verbatim: 'models the reasoning process of expert debuggers through a structured, multi-stage analytical pipeline: error identification and categorization, thematic clustering, quantitative scoring, and strategic summarization.' Survey (2605.23989) verbatim: 'we consolidate evaluation into a unified metrics-and-benchmarks hub, emphasizing both outcome and process signals (e.g., constraint violations, trace completeness, and adversarial success rates) and offering scenario-to-metric guidance for release gating.' SCOPING CAVEAT: VeriGuard/AgentCompass metrics measure SAFETY (ASR), task COMPLETION (TSR), or post-hoc debugging — NOT epistemic soundness of open-ended work, which is Anneal's actual reliability claim. They are borrowable as measurement-methodology TEMPLATES (define metric, name benchmark, report before/after), not drop-in metrics. Additional borrowable measurement sources surfaced by verifiers but not independently 3-vote-verified: ReliabilityBench (arXiv 2601.06112: k-trial pass rates, Reliability Surface R(k,e,l), perturbation robustness), Tau-squared-Bench pass^k, and 'Beyond Benchmark Islands' (arXiv 2603.14987)."
+      },
+      {
+        "claim": "IMPROVEMENT TO ADOPT (architectural pattern): the offline-verify-policy + lightweight-online-monitor split that the research question asks about IS a real, implemented pattern (VeriGuard) — an exhaustive offline policy-verification stage followed by a cheap runtime monitor checking each action against the pre-verified policy. It is borrowable as an ARCHITECTURAL pattern (expensive verification done once and amortized; cheap per-action checks at runtime), but its formal-guarantee teeth require a formal safety SPECIFICATION (Nagini-provable Hoare triples) that Anneal's open-ended-correctness setting lacks.",
+        "confidence": "high",
+        "vote": "3-0",
+        "sources": [
+          "https://arxiv.org/pdf/2510.05156"
+        ],
+        "evidence": "VeriGuard abstract verbatim: 'a dual-stage architecture... The initial offline stage involves a comprehensive validation process... synthesizes a behavioral policy and subjects it to both testing and formal verification to prove its compliance... This iterative process refines the policy until it is deemed correct. Subsequently, the second stage provides online action monitoring, where VeriGuard operates as a runtime monitor to validate each proposed agent action against the pre-verified policy before execution. This separation of the exhaustive offline validation from the lightweight online monitoring allows formal guarantees to be practically applied.' Mechanics (full text): offline uses Nagini (Viper infra) to prove Hoare triples over a policy synthesized as executable Python; online extracts action parameters and checks them (~300ms/action overhead from LLM argument extraction; the policy check itself is 'trivial'). LIMITATION: soundness contingent on LLM-generated constraints (non-deterministic, hallucination-prone) needing user validation; soundness-but-not-completeness (some safe actions over-blocked). For Anneal: the split is borrowable as a pattern, but the precondition (a formal spec) is exactly what open-ended correctness lacks — so adopt the SHAPE (amortize verification of a stable standard once; cheap per-step conformance checks), not the formal-proof machinery."
+      },
+      {
+        "claim": "Placement vs eval/monitoring tooling CONFIRMED distinct: AgentCompass occupies the POST-deployment monitoring/debugging layer (retrospective analysis of completed execution traces), which is a different lifecycle position than Anneal's IN-PROCESS, pre-output evidence/independent-verify discipline. It is adjacent to Anneal, not a methodology-peer.",
+        "confidence": "high",
+        "vote": "3-0",
+        "sources": [
+          "https://arxiv.org/pdf/2509.14647"
+        ],
+        "evidence": "AgentCompass abstract verbatim: 'the first evaluation framework designed specifically for post-deployment monitoring and debugging of agentic workflows'; title is 'Towards Reliable Evaluation of Agentic Workflows IN PRODUCTION'; it analyzes completed traces (OpenTelemetry spans, dual episodic/semantic memory), evaluated on TRAIL (148 completed GAIA/SWE-Bench traces). Full-text fetch confirmed 'no mention of real-time gating or blocking outputs before production release' — retrospective, not an in-process pre-output gate. The 'first' is a self-promotional flourish, but the placement argument does not depend on its literal novelty — it converts the design (post-deployment retrospective vs in-process pre-output) into a layer/lifecycle distinction that holds regardless. AgentCompass is also a domain-specific LLM-based SYSTEM (needs its own LLM evaluator + memory), not a domain-agnostic methodology."
+      }
+    ],
+    "caveats": "SOURCE QUALITY / CURRENCY: All load-bearing findings rest on PRIMARY sources (arXiv preprints, an Anthropic publication, a peer-reviewed TACL survey, an ICLR 2024 paper) and were adversarially verified with verbatim quote checks; confidence is high across the board. Time-sensitivity is genuine: several keystone sources are very recent and non-peer-reviewed preprints — APF (arXiv 2602.19065, Feb 2026, single-authored v1, unpeer-reviewed), the trustworthy-agentic survey (2605.23989, May 2026), VeriGuard (Oct 2025, OpenReview track), AgentCompass (Sept 2025, industry preprint). Their DESCRIPTIVE/structural claims are well-supported (the paper is authoritative for what it frames itself as), but their EFFECTIVENESS claims are not independently established. LABEL CORRECTION: APF = 'Agentic Problem Frames,' not 'Agentic Process Framework' — fix in any Anneal-side writeup. SCOPE MISMATCH RUNS THROUGH THE MEASUREMENT FINDINGS: every borrowable measurement template found (VeriGuard ASR/TSR, AgentCompass scoring, survey constraint-violation/trace metrics) measures SAFETY, task COMPLETION, or post-hoc debugging — NOT the epistemic soundness of open-ended work that is Anneal's actual reliability claim. They transfer as measurement-methodology TEMPLATES, not as drop-in metrics; designing a metric for 'evidence-discipline actually met' / 'state-coherence actually held' remains Anneal's own unsolved problem. REFUTED-FOR-TRANSPARENCY: CARE (arXiv 2604.28043) was hypothesized as a methodology-peer and a measurement source but was REFUTED 0-3 on all three CARE claims — it should NOT be cited as a peer or as a borrowable two-gate measurement template. The strongest 'APF is a direct/tight methodology-peer with AVR as its core' framings were refuted 1-2; peer-STATUS survives (refuting 'Anneal is unique'), but the match is imperfect (APF executes-first with no up-front investigate/design; its state-coherence is weaker than Anneal's 'nothing silently dropped'). The 'defense-in-depth layered assurance validates Anneal' claim was refuted 0-3 — do not lean on it. One soft overreach corrected: the survey/field does NOT make the measurement gap 'field-wide' — the gap is real for METHODOLOGY/framework papers (APF, Anneal) but agent EVALUATION generally does have quantitative reliability measures (ReliabilityBench, pass^k), which is precisely why measurement is borrowable.",
+    "openQuestions": [
+      "What metric actually captures Anneal's reliability claim (epistemic soundness of open-ended work)? Every measurement template found targets safety/completion/post-hoc-debugging; none measures 'was every load-bearing claim grounded' or 'did the state-tracker stay complete.' Can the survey's process metrics (constraint-violation rate, trace completeness) be operationalized into an Anneal-specific instrument, e.g. a graded audit of whether basis-rule and state-coherence were met per work episode?",
+      "Could Anneal's reliability gain be measured empirically by an A/B / ablation study (Anneal-disciplined runs vs ungoverned baseline) scored on a domain benchmark — the same before/after template VeriGuard and the eval layer use — and would the instances (clippy/daneel/bauleitplan) provide a ready testbed? This is the path APF explicitly could not walk (it solicits partners); Anneal has instances and so may be able to.",
+      "Beyond APF, are there OTHER methodology-peers in the same process-discipline layer that the 3-vote verification did not surface (the search hit APF and the refuted CARE)? The hunt confirmed non-uniqueness via one peer; a broader sweep (2026 agent-engineering / 'reliable domain agent' methodology papers) could find a peer that is actually superior on the measurement axis.",
+      "Does the offline-verify / lightweight-online-monitor SPLIT have a spec-free analog usable by Anneal — i.e. can a stable epistemic standard (the basis rule + verification criteria) be 'compiled once' into cheap per-step conformance checks during work, capturing the amortization benefit without a formal Nagini-style specification?"
+    ],
+    "refuted": [
+      {
+        "claim": "Agentic Problem Frames (APF) is a domain-agnostic, instantiable engineering methodology for reliable LLM agents whose core is the Act-Verify-Refine (AVR) loop: a closed-loop control system that converts execution results into verified knowledge and drives the agent toward asymptotic convergence on requirements (R). This is a direct methodology-PEER to Anneal's investigate/implement/verify + structured-convergence discipline, making it central to the superior-check.",
+        "vote": "1-2",
+        "source": "https://arxiv.org/pdf/2602.19065"
+      },
+      {
+        "claim": "APF makes the same two load-bearing bets as Anneal's evidence/grounding rule and coherent-state discipline: agents must inject external domain knowledge to ground intent (anti-hallucination), and must physically verify actual world state changes rather than assuming 'execution equals success'. This validates Anneal's grounding+verification stance — but APF frames verification as a Verify function observing the world, NOT as an INDEPENDENT separate-context reviewer (Anneal's distinct bet).",
+        "vote": "1-2",
+        "source": "https://arxiv.org/pdf/2602.19065"
+      },
+      {
+        "claim": "Reliable agent trustworthiness requires a layered 'defense-in-depth' assurance stack (upfront, training-time, runtime, post-hoc) in which no single layer is sufficient on its own — each addresses a different failure class and compensates for the others. This validates Anneal's core bet that dependability comes from combining/layering external grounding rather than any single self-check.",
+        "vote": "0-3",
+        "source": "https://arxiv.org/pdf/2605.23989"
+      },
+      {
+        "claim": "CARE is a domain-agnostic, repeatable, stage-gated methodology for engineering LLM agents that makes design intent explicit, reviewable, and verifiable over time via triadic collaboration (SME + developer + helper-agent) — making it a direct methodology-peer to Anneal in the process-discipline layer, not an agent design pattern or formal-verification technique.",
+        "vote": "0-3",
+        "source": "https://arxiv.org/html/2604.28043v1"
+      },
+      {
+        "claim": "CARE embeds the same three load-bearing disciplines Anneal claims as its core (evidence/grounding, coherent state via versioned artifacts, and an explicit verification stage), framing tool-using retrieval as 'authoritative rather than speculative' — overlapping Anneal's evidence/basis rule and verify discipline, which means Anneal's specific combination is NOT unique to it.",
+        "vote": "0-3",
+        "source": "https://arxiv.org/html/2604.28043v1"
+      },
+      {
+        "claim": "CARE supplies the reliability-measurement method Anneal currently lacks: a two-gate evaluation (cheap synthetic benchmark for iteration, then an SME-created gold benchmark for higher-confidence validation) with a concrete metric (Recall@K) and an A/B baseline comparison under identical model/tool access — a directly borrowable, evidence-backed measurement template.",
+        "vote": "0-3",
+        "source": "https://arxiv.org/html/2604.28043v1"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.preprints.org/manuscript/202604.0428",
+        "quality": "secondary",
+        "angle": "broad/primary — placement taxonomy",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2602.19065",
+        "quality": "primary",
+        "angle": "broad/primary — placement taxonomy",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2510.05156",
+        "quality": "primary",
+        "angle": "broad/primary — placement taxonomy",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2605.23989",
+        "quality": "primary",
+        "angle": "broad/primary — placement taxonomy",
+        "claimCount": 5
+      },
+      {
+        "url": "https://www.anthropic.com/research/building-effective-agents",
+        "quality": "primary",
+        "angle": "broad/primary — placement taxonomy",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2602.19065v1",
+        "quality": "primary",
+        "angle": "contrarian/superior-check — methodology peer hunt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/html/2604.28043v1",
+        "quality": "primary",
+        "angle": "contrarian/superior-check — methodology peer hunt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2509.14647",
+        "quality": "primary",
+        "angle": "contrarian/superior-check — methodology peer hunt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00713/125177/When-Can-LLMs-Actually-Correct-Their-Own-Mistakes",
+        "quality": "primary",
+        "angle": "academic/technical — self-correction evidence base",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2310.01798",
+        "quality": "primary",
+        "angle": "academic/technical — self-correction evidence base",
+        "claimCount": 3
+      },
+      {
+        "url": "https://arxiv.org/abs/2511.09785",
+        "quality": "primary",
+        "angle": "academic/technical — self-correction evidence base",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/abs/2602.16666",
+        "quality": "primary",
+        "angle": "practitioner/measurement — borrowable reliability metrics",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/abs/2406.12045",
+        "quality": "primary",
+        "angle": "practitioner/measurement — borrowable reliability metrics",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/abs/2601.06112",
+        "quality": "primary",
+        "angle": "practitioner/measurement — borrowable reliability metrics",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/html/2603.29231v1",
+        "quality": "primary",
+        "angle": "practitioner/measurement — borrowable reliability metrics",
+        "claimCount": 5
+      },
+      {
+        "url": "https://dev.to/issa_gueye/the-ai-agent-reliability-gap-in-2026-why-the-tooling-is-finally-catching-up-ne3",
+        "quality": "blog",
+        "angle": "practitioner/measurement — borrowable reliability metrics",
+        "claimCount": 3
+      },
+      {
+        "url": "https://sierra.ai/blog/tau-bench-shaping-development-evaluation-agents",
+        "quality": "primary",
+        "angle": "practitioner/measurement — borrowable reliability metrics",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2507.11662",
+        "quality": "primary",
+        "angle": "technical/improvement — verify-policy + self-grounded verification",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2510.05156",
+        "quality": "primary",
+        "angle": "technical/improvement — verify-policy + self-grounded verification",
+        "claimCount": 5
+      },
+      {
+        "url": "https://www.preprints.org/manuscript/202604.1029",
+        "quality": "primary",
+        "angle": "technical/improvement — verify-policy + self-grounded verification",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/pdf/2604.08401",
+        "quality": "primary",
+        "angle": "technical/improvement — verify-policy + self-grounded verification",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2604.10800",
+        "quality": "primary",
+        "angle": "technical/improvement — verify-policy + self-grounded verification",
+        "claimCount": 5
+      },
+      {
+        "url": "https://openreview.net/forum?id=eceX2knsGZ",
+        "quality": "primary",
+        "angle": "technical/improvement — verify-policy + self-grounded verification",
+        "claimCount": 5
+      }
+    ],
+    "stats": {
+      "angles": 5,
+      "sourcesFetched": 23,
+      "claimsExtracted": 107,
+      "claimsVerified": 25,
+      "confirmed": 19,
+      "killed": 6,
+      "afterSynthesis": 7,
+      "urlDupes": 3,
+      "budgetDropped": 4,
+      "agentCalls": 105
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "summary": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report.",
+  "agentCount": 103,
+  "logs": [
+    "Q: In the AI-agent methodology space, does anyone order work design-FIRST the way t…",
+    "Decomposed into 5 angles: spectrum / primary methods (academic), the strong-design-first peer/superior hunt, comparative head-to-head evidence on open-ended tasks (the core), contrarian / refutation — act-first WINS, regime discipline — verification-cost / oracle structure of benchmarks",
+    "spectrum / primary methods (academic): 6 results",
+    "regime discipline — verification-cost / oracle structure of benchmarks: 6 results",
+    "contrarian / refutation — act-first WINS: 6 results",
+    "contrarian / refutation — act-first WINS: 4 novel (2 filtered)",
+    "comparative head-to-head evidence on open-ended tasks (the core): 6 results",
+    "comparative head-to-head evidence on open-ended tasks (the core): 2 novel (4 filtered)",
+    "the strong-design-first peer/superior hunt: 6 results",
+    "the strong-design-first peer/superior hunt: 3 novel (3 filtered)",
+    "Fetched 21 sources → 98 claims → verifying top 25",
+    "\"The survey's taxonomy treats task-decomposition or…\": 3-0 ✓",
+    "\"ADaPT is an act-first (decompose-on-failure) metho…\": 3-0 ✓",
+    "\"The survey provides NO empirical head-to-head comp…\": 3-0 ✓",
+    "\"The survey reports that on ALFWorld and ScienceWor…\": 1-2 ✗",
+    "\"ADaPT frames the existing agent landscape as two a…\": 3-0 ✓",
+    "\"APF provides NO comparative empirical evidence on …\": 3-0 ✓",
+    "\"APF concretizes its specification at the moment of…\": 3-0 ✓",
+    "\"Plan-and-Solve (PS) prompting is loose-plan-then-e…\": 3-0 ✓",
+    "\"ReflAct is a reason-then-act-in-a-loop method (a R…\": 3-0 ✓",
+    "\"PS provides a direct plan-first vs act-first head-…\": 2-1 ✓",
+    "\"The entire evaluation is in the CHEAP-ORACLE regim…\": 3-0 ✓",
+    "\"CARE is a design-first, stage-gated methodology th…\": 2-1 ✓",
+    "\"CARE's empirical comparison is against a minimal '…\": 3-0 ✓",
+    "\"APF's operational core is the Act-Verify-Refine (A…\": 3-0 ✓",
+    "\"Verification here is an expensive/non-trivial orac…\": 3-0 ✓",
+    "\"ALL of ReflAct's benchmarks (ALFWorld, ScienceWorl…\": 1-2 ✗",
+    "\"CARE measures outcome correctness (Recall@K) only …\": 3-0 ✓",
+    "\"The paper provides NO empirical head-to-head compa…\": 3-0 ✓",
+    "\"The paper provides NO clean head-to-head of delibe…\": 3-0 ✓",
+    "\"The framework uses an architecturally separated, i…\": 1-2 ✗",
+    "\"In the ablation, removing the deliberation step de…\": 3-0 ✓",
+    "\"DOVA's core mechanism is an explicit deliberation …\": 3-0 ✓",
+    "\"On SWE-bench Verified (a cheap/instant test-oracle…\": 3-0 ✓",
+    "\"CogRouter argues AGAINST uniform deliberation: it …\": 1-2 ✗",
+    "\"A best-of-N selection heuristic that picks the tra…\": 0-3 ✗",
+    "Verify done: 25 claims → 20 confirmed, 5 killed"
+  ],
+  "result": {
+    "question": "In the AI-agent methodology space, does anyone order work design-FIRST the way the Anneal framework does — and is there evidence that design-first beats act-first (shoot-first, verify/fix-later) for OPEN-ENDED work? Find peers/superiors and the comparative evidence. Treat \"design-first is better\" as the hypothesis to REFUTE; actively hunt for evidence that act-first / post-analysis WINS. Do not flatter the design-first approach.\n\n## Anneal's ordering (the thing to match)\ninvestigate (evidence/basis-grounded) → **design, and converge the design to soundness via INDEPENDENT (separate-context) verification BEFORE any implementation** → implement → verify (independent) → loopback until it settles. The distinguishing feature is NOT \"a plan exists\" (many agents plan) but **design-soundness established and independently verified before committing to the expensive artifact (code/document).** It is domain-agnostic and instantiable (instances: clippy=code, daneel=debug, bauleitplan=planning docs).\n\n## The questions\n(a) **Map the spectrum.** Place the major agent methods on a design-first ↔ act-first axis: ReAct, Reflexion, Self-Refine, Plan-and-Solve prompting, Plan-and-Execute / plan-then-act agents, ADaPT, LLMCompiler, Tree-of-Thoughts, LLM+P / classical-planning-integrated agents, \"spec-first\" / design-doc-first coding agents, and APF (Agentic Problem Frames, arXiv 2602.19065). For each: does it establish design *soundness before acting*, or plan-loosely-then-iterate, or pure act-then-fix?\n(b) **Find the peer/superior.** Is there a framework doing anneal's STRONG design-first — pre-commit INDEPENDENT design verification + evidence/grounding discipline + coherent complete state, domain-agnostic? If one exists that is equal or SUPERIOR and has evidence it outperforms act-first on open-ended work, **name it explicitly as a candidate to adopt instead of anneal.** Do not default to \"anneal is unique.\"\n(c) **The comparative evidence (the core).** Find empirical head-to-heads: plan-first vs act-first, ReAct vs Plan-and-Solve, deliberate-before-act vs react-and-repair — on OPEN-ENDED tasks (NOT just cheap-automatic-verification benchmarks like SWE-bench/GSM8K), measuring BOTH (i) outcome correctness AND (ii) token / compute cost. Which ordering wins, and by how much? Is there evidence design-first reduces total token cost (the operator's experience), or evidence it does NOT?\n(d) **Regime discipline.** Split every comparative result by verification cost. Where the environment is a cheap/instant oracle (tests, REPL), act-first/trial-and-error plausibly wins — and benchmarks like SWE-bench are act-first-friendly BY CONSTRUCTION. Design-first's case is the expensive-or-late-verification, wide-design-space regime. Do NOT let benchmark results from the cheap-oracle regime be read as a general verdict on ordering.\n\nAdversarially verify every comparative/effectiveness claim (especially any \"X beats Y\" performance or token-cost claim — these are easy to find as marketing, hard to find as rigorous evidence); cite primary sources; flag preprints vs peer-reviewed; report what is asserted vs what is measured.",
+    "summary": "No agent-space framework matches anneal's STRONG design-first ordering (pre-commit INDEPENDENT design-soundness verification before the expensive artifact), and — critically — no rigorous head-to-head evidence was found that resolves whether design-first beats act-first for OPEN-ENDED work either way. The spectrum maps cleanly: nearly every named agent method (ReAct, Reflexion/ReflAct, Self-Refine, Plan-and-Solve, ADaPT, DOVA, APF) sits at the act-first / loose-plan-then-iterate end; ADaPT and APF are explicitly act-first (decompose-on-failure; Act-Verify-Refine with runtime-bound specs). The only design-first PEERS found (CARE; the TEACh plan-verifier) are weaker than anneal — their pre-commit review is by the authoring parties, not separate-context independent verification — so NO equal-or-superior framework with outperformance evidence was identified (the operator's kill-switch is NOT triggered). On the core comparative question the literature is effectively silent: the only direct plan-first-wins result (Plan-and-Solve PS+ over Zero-shot-CoT, ~+5pp) is entirely in the CHEAP-ORACLE arithmetic regime the brief warns against generalizing from, and the one open-ended-leaning cost signal (DOVA's 40-60% token savings) is driven mainly by an adaptive-thinking-budget mechanism, not by design-first ordering itself. The honest verdict on the (a)-vs-(b) discriminator: the evidence is consistent with (a) neglected-but-better but does NOT establish it — and a real counter-signal exists (the overthinking study: more internal deliberation correlates with WORSE outcomes in the cheap-oracle regime), so design-first's case remains unrefuted-but-also-unproven, confined by argument to the expensive/late-verification regime where no one has run the experiment.",
+    "findings": [
+      {
+        "claim": "(a) Spectrum map: nearly every named agent method sits at the act-first / loose-plan-then-iterate end; none establish independent design-soundness BEFORE acting. ADaPT decomposes only on execution failure (act-first by construction); ReflAct reflects-then-acts per timestep (ReAct-family interleaved); Plan-and-Solve generates plan + executes in a single forward pass induced by a trigger sentence, with no separate-context plan verification; DOVA gates tools via a per-step binary deliberation but does not verify a converged design. The decomposition-ordering distinction (decompose-first vs interleaved, e.g. ReAct) is presented in the survey as alternative design choices, not as competing strategies with a measured winner.",
+        "confidence": "high",
+        "evidence": "ADaPT abstract: 'plans and decomposes complex sub-tasks as-needed, i.e., when the LLM is unable to execute them' (Algorithm 1: executor runs first, planner decomposes ONLY on reported failure). ReflAct: 'You should first reflect on the agent state... then output the action for this turn' (per-timestep interleaved, EMNLP 2025). Plan-and-Solve: plan induced purely by appended trigger 'Let's first... devise a plan... Then... carry out the plan' in one generation; second LLM call is answer-extraction, not plan verification. DOVA: deliberation is a binary USE_TOOLS/RESPOND_DIRECTLY gate, framed as cost reduction, not design-soundness. Survey (2402.02716): decomposition-first vs interleaved given only qualitative pros/cons, NO benchmarked winner.",
+        "sources": [
+          "https://arxiv.org/abs/2311.05772",
+          "https://arxiv.org/html/2505.15182v2",
+          "https://aclanthology.org/2023.acl-long.147.pdf",
+          "https://arxiv.org/html/2603.13327",
+          "https://ar5iv.labs.arxiv.org/html/2402.02716"
+        ],
+        "vote": "claims [0],[2],[3],[7],[10],[16] all 3-0"
+      },
+      {
+        "claim": "(a) APF — the closest named methodology-peer from the prior placement run — is itself ACT-FIRST, not design-first. Its operational core is the Act-Verify-Refine (AVR) loop where execution strictly precedes verification, and its specification is a 'Dynamic Specification' concretized just before execution and verified only post-hoc. This places APF on the act-first end RELATIVE to anneal's design-converge-before-implement ordering, and corrects any reading of APF as a strong design-first peer on the ordering axis.",
+        "confidence": "high",
+        "evidence": "APF Sec 3.3: 'Stage 1: Act (Injection and Realization) -> Stage 2: Verify -> Stage 3: Refine'; state evolution S_t ->[Execute] W_t+1 ->[Verify] K_Delta ->[Refine] K_t+1 (execution precedes verification). 'the specification must manifest as a Dynamic Specification (S_t), concretized just before execution'; 'specifications for agents cannot be fixed at design time'; 'reliability is an emergent property of the cumulative verification process rather than an inherent property' (post-hoc/asymptotic, not pre-commit). The Hoare-precondition reading was adversarially probed and DEFEATED by the paper's own runtime-late-binding text.",
+        "sources": [
+          "https://arxiv.org/html/2602.19065v1"
+        ],
+        "vote": "claims [4],[5] both 3-0"
+      },
+      {
+        "claim": "(b) NO equal-or-superior framework with outperformance evidence was found — the operator's kill-switch is NOT triggered. The two genuine design-first PEERS located (CARE; the TEACh embodied plan-verifier) are both WEAKER than anneal on the distinguishing feature: their pre-commit gate is review by the SAME parties who authored the artifact (CARE: joint SME+developer review) or method-vs-rule-based defect-flagging, NOT anneal-style separate-context INDEPENDENT design-soundness verification. CARE's only empirical/benchmark check is POST-implementation.",
+        "confidence": "high",
+        "evidence": "CARE (2604.28043): 'stage-gated methodology... translate tacit domain intent into explicit, reviewable artifacts... implementation is treated as structured translation of artifacts... rather than ad hoc iteration' — design-first in shape. But its gates are 'review and approval by BOTH developers and SMEs of phase artifacts' (authoring parties review their own artifacts; not independent); Phase 5 benchmarking is post-implementation. TEACh plan-verifier (2509.02761): Judge LLM flags defects in human-authored plans vs manually-annotated ground truth; only baseline is 'rule-based', i.e. method-vs-rule-based, not verification-vs-no-verification on task outcomes; plans never executed. NOTE: the claim that the TEACh verifier is a structurally-independent Planner/Judge analog to anneal was REFUTED 1-2 — do not cite it as an independent-verification peer.",
+        "sources": [
+          "https://arxiv.org/html/2604.28043v1",
+          "https://arxiv.org/abs/2509.02761"
+        ],
+        "vote": "claim [12] 2-1, claim [13] 3-0; refuted-set: the 'independent Judge/Planner' framing 1-2"
+      },
+      {
+        "claim": "(c) THE CORE COMPARATIVE QUESTION IS EFFECTIVELY UNANSWERED in the agent literature. No source provides a rigorous design-first-vs-act-first head-to-head on OPEN-ENDED work measuring BOTH correctness AND token/compute cost. The planning survey runs no such experiment; APF, CARE, and the TEACh verifier each explicitly supply ZERO comparative ordering evidence (APF and CARE both end seeking partners / report only illustrative case studies or a no-method baseline). The operator's token-cost hypothesis (design-first reduces total tokens) is NOT adjudicated by any located source.",
+        "confidence": "high",
+        "evidence": "APF (2602.19065): no head-to-head, no correctness rates, no token figures, two descriptive case studies; 'the author is actively seeking partners... to further validate their efficacy.' CARE (2604.28043): only comparison is vs 'cmr_simple... without CARE's staged artifact methodology' (no-method baseline, NOT act-first/ReAct); measures Recall@K only, NO token/compute cost; gains small (71.7% vs 69.1% Recall@1; 27.2% vs 20.2% Recall@5, n=43; baseline actually WINS Recall@1 on gold gate). TEACh verifier (2509.02761): no verification-vs-no-verification outcome comparison, no token cost (only a qualitative 'computationally lightweight... once cached' hedge). Survey (2402.02716): benchmarks ALFWorld/ScienceWorld are cheap-oracle; measured axis is reflection/replanning expense, not pre-execution design soundness.",
+        "sources": [
+          "https://arxiv.org/html/2602.19065v1",
+          "https://arxiv.org/html/2604.28043v1",
+          "https://arxiv.org/abs/2509.02761",
+          "https://ar5iv.labs.arxiv.org/html/2402.02716"
+        ],
+        "vote": "claims [6],[14],[15],[1] all 3-0; [13] 3-0"
+      },
+      {
+        "claim": "(c)/(d) The ONLY direct plan-first-beats-act-first numeric result is confined to the cheap-oracle regime, so it cannot be read as a general verdict. Plan-and-Solve PS+ beats Zero-shot-CoT by >=5pp on every arithmetic dataset except GSM8K (+2.9pp), avg 76.7% vs 70.4%; plain PS averages +2.5pp. But all ten evaluation datasets are arithmetic/commonsense/symbolic problems with short single-value exact-match answers (Number/Option/Yes-No/String, ~10-52 words) — the cheap/instant-oracle regime the brief explicitly warns against generalizing from, and 'plan-first vs act-first' here is really 'more-planning vs reason-step-by-step', a soft proxy. No token/compute head-to-head is reported.",
+        "confidence": "high",
+        "evidence": "PS Table 2 (text-davinci-003): PS+ minus Zero-shot-CoT = MultiArith +8.0, AddSub +6.9, AQuA +7.1, SingleEq +6.6, SVAMP +5.8, GSM8K +2.9; PS avg 72.9 vs CoT 70.4 (+2.5). All datasets exact-match auto-verifiable (answer types Number/Option/Yes-No/String; lengths 9.6-51.9 words). Zero-shot-CoT already elicits step-by-step reasoning, so the contrast is more-plan vs less-plan, not plan vs no-plan. Accuracy only; no cost measured.",
+        "sources": [
+          "https://aclanthology.org/2023.acl-long.147.pdf"
+        ],
+        "vote": "claim [8] 2-1, claim [9] 3-0"
+      },
+      {
+        "claim": "(c)/(d) COUNTER-SIGNAL (does NOT flatter design-first): in the cheap-oracle regime, MORE internal deliberation correlates with WORSE outcomes. On SWE-bench Verified (4018 trajectories), higher 'overthinking' scores — favoring extended internal reasoning over environmental interaction — correlate with DECREASED task performance, and a best-of-N heuristic picking the LOWEST-overthinking trajectory improved performance ~30% while cutting compute ~43%. This is direct evidence that act-first/trial-and-error wins where the oracle is cheap and instant — exactly as the regime-discipline predicts — and must NOT be cited as evidence for design-first.",
+        "confidence": "high",
+        "evidence": "Cuadron et al. (2502.08235, UC Berkeley/ETH/CMU, Feb 2025): 'higher overthinking scores correlate with decreased performance, with reasoning models exhibiting stronger tendencies toward overthinking.' Correlational over 4018 SWE-bench Verified trajectories (cheap/instant test-oracle, act-first-friendly BY CONSTRUCTION). The low-overthinking selection heuristic (+~30% perf, -~43% compute) was verified 0-3 as NOT supporting design-first — it cuts the other way. SWE-bench is the act-first-friendly regime; this result is properly scoped there and is the strongest located counter-evidence to a blanket design-first policy.",
+        "sources": [
+          "https://arxiv.org/abs/2502.08235"
+        ],
+        "vote": "claim [19] 3-0; the 'less-deliberation wins on cost AND correctness' framing 0-3 (i.e. confirmed it cuts against design-first in this regime)"
+      },
+      {
+        "claim": "(d) Regime discipline holds and is load-bearing: the design-first case is confined to the expensive/late-verification, wide-design-space regime, and the one located source genuinely IN that regime supplies no ordering head-to-head. Scientific-simulation code generation is a true expensive-oracle setting — code 'silently fails' (runs/compiles but is numerically wrong; 42% of cases), correctness requires mathematical certification (well-posedness, CFL stability, convergence, error bounds) against expert baselines, NOT a cheap test/REPL oracle. This is where design-first's case lives — but the source provides effectiveness figures, not a design-first-vs-act-first ordering comparison.",
+        "confidence": "medium",
+        "evidence": "2603.25780 (single-author preprint, NOT peer-reviewed): 'the generated code silently fails on most non-textbook problems'; 'The code compiles, converges, and produces smooth temperature fields—but a CFL violation means the stress predictions are wrong by a factor of three.' Verification = mathematical certification against expert baselines (72 blinded tasks), the antithesis of SWE-bench/GSM8K cheap oracles. Caveat: the gate suite is a MIX (dimensional-consistency cheap; well-posedness/stability expensive); regime placement holds because the DECISIVE silent-failure oracle is expensive/late. The contested 42%->1.5% effectiveness figures are not relied upon for the regime placement.",
+        "sources": [
+          "https://arxiv.org/abs/2603.25780"
+        ],
+        "vote": "claim [11] 3-0"
+      },
+      {
+        "claim": "DISCRIMINATOR VERDICT (the operator's (a)-vs-(b) question): the evidence is CONSISTENT WITH (a) neglected-but-better but does NOT establish it, and (b) is NOT supported either. The spectrum strongly confirms act-first is the prevailing ordering and the field's flagship benchmarks (SWE-bench, GSM8K, ALFWorld) are cheap-oracle / act-first-friendly by construction — which mechanistically explains the absence of design-first as a benchmark-incentive artifact (supporting the (a) framing). But NO source supplies the expensive-regime head-to-head that would prove design-first wins there, and a genuine counter-signal exists in the cheap regime (overthinking). So the honest position is: design-first remains UNREFUTED but UNPROVEN on open-ended work; the operator's positive clippy experience is neither corroborated nor contradicted by external evidence.",
+        "confidence": "medium",
+        "evidence": "Supporting (a)'s plausibility: every located comparative benchmark (PS arithmetic, ReflAct/survey ALFWorld+ScienceWorld, overthinking SWE-bench) is cheap-oracle; the survey adjudicates no ordering; act-first methods dominate the named-method map [0-7,10,16]. Against treating (a) as proven: zero expensive-regime ordering experiments exist [6,11,14,15]; the overthinking result [19] shows act-first winning where the oracle is cheap. Neither (a) nor (b) is empirically settled — the comparative evidence base for the precise question simply does not exist yet, which is itself the key finding.",
+        "sources": [
+          "https://arxiv.org/abs/2502.08235",
+          "https://arxiv.org/html/2602.19065v1",
+          "https://aclanthology.org/2023.acl-long.147.pdf",
+          "https://ar5iv.labs.arxiv.org/html/2402.02716",
+          "https://arxiv.org/abs/2603.25780"
+        ],
+        "vote": "synthesis across [1],[6],[8],[9],[11],[14],[15],[19] (all 3-0 except [8] 2-1)"
+      }
+    ],
+    "caveats": "SOURCE-QUALITY: The most directly relevant sources are weak. APF (2602.19065), CARE (2604.28043), DOVA (2603.13327), and the scientific-simulation judge (2603.25780) are all recent (2026) PREPRINTS, several single-authored, none peer-reviewed, several with no external citation/adoption footprint; DOVA, CARE, and the sim-judge effectiveness numbers are self-reported by the proposing authors and were NOT relied on for any 'X beats Y' conclusion here. The peer-reviewed sources (Plan-and-Solve ACL 2023, ReflAct EMNLP 2025, ADaPT NAACL 2024, overthinking 2502.08235, planning survey 2402.02716) are solid but none test the precise open-ended-ordering question. REGIME CONFOUND IS THE CENTRAL LIMITATION: every located quantitative comparison lives in the cheap/instant-oracle regime (arithmetic, SWE-bench, text-world simulators); the expensive/late-verification regime where design-first's case lives has NO located head-to-head at all, so the core question is answered by ABSENCE, not by evidence. NEGATIVE-RESULT RELIANCE: several load-bearing findings are 'this source supplies no comparative evidence' — verified against the artifacts, but absence-of-evidence in a fast-moving 2026 field is time-sensitive and could be overturned by a paper published after the knowledge/search cutoff. TOKEN-COST HYPOTHESIS UNTESTED: no source measures whether design-first reduces total token cost on open-ended work; DOVA's 40-60% savings were verified to be driven mainly by an adaptive thinking-budget mechanism, not by deliberation-first ordering, so it does NOT corroborate the operator's token-cost experience. FRAMING SOFTNESS: 'Plan-and-Solve vs Zero-shot-CoT' is a more-plan-vs-less-plan proxy, not a clean plan-vs-no-plan contrast (claim [8] was 2-1 partly on this). The prior placement run's 'APF is a peer' finding stands at the four-disciplines level but on the ORDERING axis specifically APF is act-first (this run sharpens that). KILL-SWITCH STATUS: not triggered — no equal-or-superior design-first framework with outperformance evidence found — but this is a 'no superior located', not a proof anneal is best.",
+    "openQuestions": [
+      "Does any expensive/late-verification, wide-design-space head-to-head of design-first vs act-first exist (or can one be run via anneal instances, e.g. clippy A/B) — since the literature supplies none and this is the only regime where design-first's case can be settled? (Feeds anneal-reliability-measurement.md.)",
+      "Is there a spec-free analog to amortized offline-verify (VeriGuard pattern from the placement run): compile the basis rule + verify criteria ONCE into cheap per-step conformance checks, capturing design-first's soundness without paying full verification cost per action — and would that also test the token-cost hypothesis?",
+      "Does the overthinking result (more deliberation -> worse outcomes) survive OUTSIDE the cheap-oracle regime, or is it strictly an artifact of environments where trial-and-error is free? The answer determines whether it is a genuine threat to design-first or merely confirms regime discipline.",
+      "Self-grounded verification ('elicit success criteria in isolation before verifying', the ~+20pt lead) fell below the verification budget in the prior run and remains unverified — does it constitute independent corroboration that a separate-context design/verify step improves open-ended outcomes? Worth a targeted re-probe."
+    ],
+    "refuted": [
+      {
+        "claim": "The survey reports that on ALFWorld and ScienceWorld, success rate rises monotonically with reflection/replanning expense (F-CoT < ReAct < Reflexion), and attributes the gain specifically to reflection on complex tasks — i.e. its only head-to-head evidence favors ITERATIVE act-then-reflect (Reflexion), an act-first/repair-loop method, not pre-commit design verification. This is evidence AGAINST the strong design-first hypothesis as the survey frames it.",
+        "vote": "1-2",
+        "source": "https://ar5iv.labs.arxiv.org/html/2402.02716"
+      },
+      {
+        "claim": "ALL of ReflAct's benchmarks (ALFWorld, ScienceWorld, Jericho) are cheap/instant-oracle environments — text simulators with synchronous step-by-step success flags and dense rewards. Per regime discipline (question d), results from these act-first-friendly environments cannot be read as a general verdict on ordering for the expensive-or-late-verification, wide-design-space regime where anneal's design-first case lives.",
+        "vote": "1-2",
+        "source": "https://arxiv.org/html/2505.15182v2"
+      },
+      {
+        "claim": "The framework uses an architecturally separated, independent verifier: a Judge LLM critiques action sequences while a distinct Planner LLM applies revisions, iterating before deployment. This is a plan/design-verification-before-execution pattern with role separation, structurally analogous (though weaker) to anneal's independent pre-implementation design verification.",
+        "vote": "1-2",
+        "source": "https://arxiv.org/abs/2509.02761"
+      },
+      {
+        "claim": "CogRouter argues AGAINST uniform deliberation: it claims fixed deep-reasoning ('thinking models engage in deep reasoning uniformly') is inefficient for long-horizon tasks because cognitive demands vary step-to-step, with some steps needing strategic planning and others 'only routine execution.' This is direct evidence against a blanket 'always deliberate deeply / design-first at every step' policy, favoring adaptive depth instead.",
+        "vote": "1-2",
+        "source": "https://arxiv.org/abs/2602.12662"
+      },
+      {
+        "claim": "A best-of-N selection heuristic that picks the trajectory with the LOWEST overthinking score improves model performance by ~30% AND reduces computational cost by 43% — i.e., less deliberation / more acting wins on BOTH correctness and cost in this regime.",
+        "vote": "0-3",
+        "source": "https://arxiv.org/abs/2502.08235"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ar5iv.labs.arxiv.org/html/2402.02716",
+        "quality": "primary",
+        "angle": "spectrum / primary methods (academic)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2311.05772",
+        "quality": "primary",
+        "angle": "spectrum / primary methods (academic)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/html/2602.19065v1",
+        "quality": "primary",
+        "angle": "spectrum / primary methods (academic)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://aclanthology.org/2023.acl-long.147.pdf",
+        "quality": "primary",
+        "angle": "spectrum / primary methods (academic)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://dasroot.net/posts/2026/04/agent-architectures-react-plan-execute-graph-agents/",
+        "quality": "blog",
+        "angle": "spectrum / primary methods (academic)",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/html/2505.15182v2",
+        "quality": "primary",
+        "angle": "spectrum / primary methods (academic)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2603.25780",
+        "quality": "primary",
+        "angle": "the strong-design-first peer/superior hunt",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/html/2604.28043v1",
+        "quality": "primary",
+        "angle": "the strong-design-first peer/superior hunt",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2509.02761",
+        "quality": "primary",
+        "angle": "the strong-design-first peer/superior hunt",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/html/2603.13327",
+        "quality": "primary",
+        "angle": "comparative head-to-head evidence on open-ended tasks (the core)",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2602.12662",
+        "quality": "primary",
+        "angle": "comparative head-to-head evidence on open-ended tasks (the core)",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/abs/2502.08235",
+        "quality": "primary",
+        "angle": "contrarian / refutation — act-first WINS",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2507.14417",
+        "quality": "primary",
+        "angle": "contrarian / refutation — act-first WINS",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/abs/2509.03581",
+        "quality": "primary",
+        "angle": "contrarian / refutation — act-first WINS",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/html/2601.22311v1",
+        "quality": "primary",
+        "angle": "contrarian / refutation — act-first WINS",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2507.02825",
+        "quality": "primary",
+        "angle": "regime discipline — verification-cost / oracle structure of benchmarks",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/abs/2411.15114",
+        "quality": "primary",
+        "angle": "regime discipline — verification-cost / oracle structure of benchmarks",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/pdf/2603.00520",
+        "quality": "primary",
+        "angle": "regime discipline — verification-cost / oracle structure of benchmarks",
+        "claimCount": 5
+      },
+      {
+        "url": "https://arxiv.org/pdf/2408.03314",
+        "quality": "primary",
+        "angle": "regime discipline — verification-cost / oracle structure of benchmarks",
+        "claimCount": 4
+      },
+      {
+        "url": "https://arxiv.org/html/2509.16941",
+        "quality": "primary",
+        "angle": "regime discipline — verification-cost / oracle structure of benchmarks",
+        "claimCount": 5
+      },
+      {
+        "url": "https://blog.langchain.com/planning-agents/",
+        "quality": "blog",
+        "angle": "regime discipline — verification-cost / oracle structure of benchmarks",
+        "claimCount": 5
+      }
+    ],
+    "stats": {
+      "angles": 5,
+      "sourcesFetched": 21,
+      "claimsExtracted": 98,
+      "claimsVerified": 25,
+      "confirmed": 20,
+      "killed": 5,
+      "afterSynthesis": 8,
+      "urlDupes": 2,
+      "budgetDropped": 7,
+      "agentCalls": 103
+    }
+  }
+}

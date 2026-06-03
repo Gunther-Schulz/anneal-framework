@@ -51,4 +51,8 @@ main HEAD at dispatch` check is warranted. Cross-ref
 
 **Level.** Framework (§4.2 isolation/integration) + clippy render; (a)/(c) also
 harness. Relates to [[clippy-run-findings-dispatch-coupling]],
-[[harness-tool-runstate-unsourced]].
+[[harness-tool-runstate-unsourced]]. Also informs
+[[impl-dispatch-workflow-substrate]] — these defenses (a: path-relocation,
+b: cherry-pick landing-check) are what a Workflow substrate would have to
+**re-script in-agent** rather than fix as rules; a live argument in that
+substrate trade-off.
