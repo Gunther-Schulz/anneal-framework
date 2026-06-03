@@ -39,6 +39,39 @@ downstream tail, not a rival workstream. (Filenames stay as the item's stable
 identity per the convention above; this framework/instance axis is a *category*,
 so it lives here in the index, not in the names.)
 
+### Execution roadmap (the *sequence* axis — what to do next)
+
+The category grouping below answers "what kind of work"; this answers "what
+order." Persisted here (not in chat) so the cross-item plan survives a session
+boundary. **(2026-06-03: the per-item entries below are partly stale — e.g.
+`framework-spec-cleanup` is done; a grooming pass is owed to re-curate them into
+these phases.)**
+
+- **NOW — gating action:** merge the `spec-cleanup-core-phase-pipeline` branch to
+  `main` (the cleaned spec is what everything renders from).
+- **Close-outs (housekeeping):** archive finished efforts — `anneal-dev-packaging`,
+  `framework-dev-as-anneal`, `framework-spec-cleanup` (audit debt done; only its
+  render-tail = `instance-reinstantiation` remains), `contract1-depollution-cluster`
+  (modulo V-26 + render), `dev-process-adoption`.
+- **Phase A — render-CONVENTION fixes (prereqs; settle before re-rendering or you
+  re-render twice):** `harness-tool-runstate-unsourced`,
+  `cite-glossary-not-section-numbers`, `instance-template-slot-scaffolding`.
+- **Phase B — re-instantiation (the big multi-run effort):**
+  `instance-reinstantiation` — anneal-dev first (the tool) → clippy (bundles
+  `clippy-render-resync` + the §4-cleanup debt + `clippy-skill-de-bloat` +
+  `adoption-instance-settlement`) → daneel → campaign-craft (locate source first)
+  → bauleitplan.
+- **Phase C — independent method findings (batch, e.g. behind a coherence audit):**
+  `completeness-search-enforcement` (decide the open question first),
+  `verified-integrity-consolidation`, `skill-craft-pre-edit-hook-findings` (2/4),
+  `verify-vs-original-requirements`, `behavior-change-test-impact-enumeration`,
+  `impl-green-on-commit`, `dispatch-brief-one-source-of-truth`,
+  `surface-non-task-observations`, `worktree-isolation-and-integration`,
+  `skill-craft-soft-load-pointer-discriminator`, `anneal-dev-extension-render-gate`.
+- **Phase D — instance-level / exploratory (no rush):** `clippy-greenfield-tolerance`,
+  `clippy-run-findings-dispatch-coupling`, `planner-instance-exploration`,
+  `generalize-sharpening-skill`.
+
 ### Framework-core (leads)
 
 - `framework-spec-cleanup.md` — **THE NEXT MAJOR EFFORT (2026-06-02).** Re-derive
@@ -66,6 +99,13 @@ so it lives here in the index, not in the names.)
   function requiring the completeness-claim search to be single-token-or-flattened.
   Method-kernel (basis rule + practice 4); same "soft rule needs structural
   enforcement" shape as the hook-gate fix.
+- `instance-reinstantiation.md` — **the next real effort once the spec branch merges (2026-06-03).**
+  The cleaned spec isn't in the instances yet — clippy/daneel/anneal-dev/campaign-craft are
+  stale renders of the old spec. Effort: re-render them via anneal-dev (so the Bloat lens +
+  skill-craft review catch/prevent bloat), de-bloating the legacy-bloated ones (clippy SKILL.md)
+  with a from-scratch rewrite, render-fidelity-verified. Sequence: merge spec → anneal-dev first
+  (the tool) → domain instances. Coordinates clippy-render-resync + clippy-skill-de-bloat +
+  adoption-instance-settlement. Closes the framework-spec-cleanup render-tail.
 - `framework-dev-as-anneal.md` — **the active effort; decision LOCKED**
   (reframed-A, 2026-06-01): make framework-dev a real anneal instance.
   **Steps 1–5 DONE (2026-06-02).** Build + validate complete: pass-1/2 derivation

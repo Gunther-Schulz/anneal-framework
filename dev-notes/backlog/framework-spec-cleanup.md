@@ -5,7 +5,7 @@
 - **Run 2 (S3) DONE 2026-06-03** (`spec-cleanup-s3-attribution`, verify [PASSED] + kernel-independent review; commit `e453678`): practice-1/8 three-form attribution fix (forms→practice 8, enumeration→practice 1) across development-process/glossary/modules + the S6 glossary-breadcrumb residual. Impl dispatched to a subagent — validated the skill-craft hook fix in-phase.
 - **The other two planned clusters need no run:** the **tracker+status-machine (§5)** and **inspection+lens (§2)** clusters were **drift-skim-confirmed clean** (the coherence audit flagged no debt there; all six S-items landed in §4 / cross-triad). Re-deriving them would be re-derivation for its own sake.
 
-**Only residual = the parked render-tail** (Run 1's §4 structure change owes a re-render into the 4 instance phase files; D1 [CONDITIONAL], batched per render-settlement while instances idle). When that lands, archive this item.
+**Only residual = the render-tail**, now its own effort → **[[instance-reinstantiation]]** (re-render the cleaned spec into the instances via anneal-dev, de-bloating the legacy-bloated ones; anneal-dev first). Archive this item when that effort completes.
 
 Proposed 2026-06-02 (operator: "main anneal was quite chaotic; refactor strongly OR rederive from itself"). **Method-kernel effort** (edits `anneal-framework/spec/*`) → DRIVES through anneal-dev + kernel-independent verify (skill-craft review + operator).
 
