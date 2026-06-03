@@ -1,10 +1,17 @@
 # Re-design the corpus-work paths into one clear, contained system
 
-**Status:** OPEN — strategic, operator-raised + widened 2026-06-03. **Strategy/design
-deliberately deferred to a fresh session.** This file captures the problem + the goal
-durably; it is NOT yet a design. (Was filed narrowly as "anneal-dev as the standard
-channel"; widened to the full path re-design — anneal-dev-as-the-channel is the likely
-*answer*, not the whole question.)
+**Status:** ✅ DONE — resolved by the `corpus-flows-redesign` anneal-dev run (2026-06-03;
+verify PASSED + operator-soundness PASSED; release-record commit `4e77837`). **Design:**
+one channel (anneal-dev), three entry-conditions — new-instantiation (derivation is a
+PRE-CHANNEL design step) / dev-on-anneal / re-render (= the render-tail, never separate);
+the anneal-dev↔anneal-framework **MERGE** (D5, subtree-add `d5ae00d` → `anneal-framework/anneal-dev/`);
+enforcement = a structural floor (the two hooks), no new routing gate (D4); canonical
+routing home = `development-process.md` (D8); new-user bootstrapping anchor (D11). Run
+tracker: `.anneal-dev/runs/corpus-flows-redesign.md` (gitignored — the run's full ledger).
+Dogfooding findings filed: structural-change-dependent-enumeration, loopback-root-cause-triage,
+release-commit-formation-from-checkpoints, instructional-files-streamline.
+
+--- original problem statement below (kept for the record) ---
 
 ## The problem — the three paths are convoluted
 

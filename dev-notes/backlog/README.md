@@ -28,31 +28,44 @@ dependency order**, not priority within a phase. The arc: settle the *system*
 findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
 `main`.)
 
-### ▶ Where we are + ordered next steps (2026-06-03 session 2 — READ FIRST)
+### ▶ Where we are + ordered next steps (2026-06-03 session 3 — READ FIRST)
 
-This session landed three anneal-dev runs (all merged to local `main`, **not pushed**):
-`cite-glossary-not-section-numbers` (firewall convention, `b56f7d8`), `harness-tool-runstate-unsourced`
-(`8b8a4ac`), and the **keystone `anneal-dev-rerender`** (anneal-dev repo `cf71ec7`, version-bumped
-`0.1.2` at `66478d2`). Run detail: `.anneal-dev/runs/{cite-glossary-not-section-numbers,
-harness-tool-runstate-unsourced,anneal-dev-rerender}.md`. Two anneal-dev method findings surfaced +
-filed (kernel held — both are instance-level): `anneal-dev-impl-checkpoint-vs-discharge-hook` (→ folded
-into `corpus-flows-redesign` #3), `anneal-dev-rerender-changeset-by-source-delta`.
+Session 3 landed the **keystone `corpus-flows-redesign`** anneal-dev run (verify PASSED +
+operator-soundness PASSED; release-record `4e77837`; **archived**). It decided AND implemented
+the redesign: **one channel (anneal-dev), three entry-conditions** — new-instantiation
+(derivation = a PRE-CHANNEL design step) / dev-on-anneal / re-render (= the render-tail, never
+separate); the **anneal-dev↔anneal-framework MERGE** (anneal-dev now co-located at
+`anneal-framework/anneal-dev/`, subtree-add `d5ae00d`, clean 0.1.2 carried); enforcement = a
+structural floor (the two hooks, **no new routing gate**, D4); canonical routing home =
+`development-process.md` (D8); a new-user **bootstrapping anchor** in README (D11). Folded items
+resolved: `anneal-dev-impl-checkpoint-vs-discharge-hook` (→ D7/D12, archived);
+`anneal-dev-extension-render-gate` (→ D4 answered the question; **downgraded-open** on a residual).
+Run ledger: `.anneal-dev/runs/corpus-flows-redesign.md` (gitignored).
+
+**Dogfooding yield — 4 method-kernel findings filed (for future anneal-dev runs):**
+`structural-change-dependent-enumeration` (**n=2, highest-leverage**: Missed-dependents misses
+non-content-reference dependent classes + the `[CONDITIONAL]`-falsification-exemption — the
+shared root of BOTH this run's loopbacks), `loopback-root-cause-triage` (bake the root-cause
+triage in vs operator-prompt), `release-commit-formation-from-checkpoints`,
+`instructional-files-streamline` (operator-raised clarity pass).
+
+**Release state:** anneal-framework `main` pushed to origin (session 3). Follow-ups —
+**C1b install re-point** (TODO, *not urgent*: the install runs on its cache; re-point when next
+updating anneal-dev — anneal-framework needs a root marketplace manifest → `anneal-dev/` subdir,
+then `claude plugin update` + `/reload-plugins`; companion infra); **C1c** standalone `anneal-dev`
+repo deprecation (note added; archive the GitHub remote at operator's discretion).
 
 **Ordered next steps:**
-1. ✅ **Repackage anneal-dev — DONE** (2026-06-03): version `0.1.2`; cache `…/anneal-dev/0.1.2/` created
-   from the clean render + `installed_plugins.json` repointed to it (verified clean: firewall + V-N empty,
-   pass-count reconciled). The clean render is LIVE on reload. **CAVEAT:** the marketplace clone still tracks
-   GitHub at the old `ee9e2e6` and the local commits (`cf71ec7`/`66478d2`) are **unpushed** — so do NOT
-   `/plugin update anneal-dev` until anneal-dev is pushed to GitHub, or it will offer `0.1.1` and downgrade.
-   (Rollback points: `0.1.1` cache intact + `/tmp/installed_plugins.json.bak`.)
-2. **`corpus-flows-redesign`** (⭐ STRATEGY) — the next major lever; governs the rest; now informed by 3
-   dogfood sessions + holds the 2 dev-machinery method findings for its #3 (enforcement). The repo-merge
-   is the big open fork — deserves a fresh session with full attention.
-3. **`instance-template-slot-scaffolding`** — the last Phase-A convention (after the strategy clarifies instantiation routing).
-4. **Domain-instance re-renders** (Phase B `instance-reinstantiation`): clippy (heavy — de-bloat + render-resync)
-   → daneel → campaign-craft → bauleitplan. Now drivable through clean anneal-dev + the source-delta method.
-   Idle (drift ~0) → low urgency.
-5. **Phase C + D** — the coherence-audit method-findings campaign + exploratory. Independent, lowest priority.
+1. **`instance-template-slot-scaffolding`** — the last Phase-A convention; now unblocked (the
+   redesign settled instantiation routing — derivation is pre-channel, guided by
+   instantiation-guide + the template).
+2. **Domain-instance re-renders** (Phase B `instance-reinstantiation`): clippy (heavy — de-bloat +
+   render-resync) → daneel → campaign-craft → bauleitplan. anneal-dev's own render is now merged-in;
+   drivable through the merged anneal-dev + the source-delta method. Idle (drift ~0) → low urgency.
+3. **Phase C — method-findings campaign** (coherence-audit-driven): now folds in the 4 NEW findings
+   above (structural-change-dependent + loopback-root-cause-triage are the high-value method-kernel
+   fixes) alongside the prior C-cluster.
+4. **Phase D** — instance-level / exploratory. Lowest priority.
 
 ### Near-done — stay open only for a live residual
 
@@ -61,13 +74,12 @@ into `corpus-flows-redesign` #3), `anneal-dev-rerender-changeset-by-source-delta
 - `contract1-depollution-cluster` — de-pollution complete; held open only on V-26
   (validation-watch) + the parked clippy render-debt.
 
-### ⭐ STRATEGY — the next major effort (governs Phases A+B; its own fresh session)
+### ⭐ STRATEGY — ✅ DONE (session 3, archived)
 
-- `corpus-flows-redesign` — **re-think all three corpus-work flows into one clear,
-  contained system:** (1) fresh instantiation, (2) re-render existing instances,
-  (3) dev on anneal itself — all routed through **anneal-dev** as the enforced
-  de-facto channel; **includes the `anneal-dev`↔`anneal-framework` repo-merge
-  question.** Decide this *before* the renders below — it sets how they're driven.
+- `corpus-flows-redesign` — **DONE** (release-record `4e77837`; archived to `archive/`).
+  Decided + implemented: one channel (anneal-dev), three entry-conditions; the
+  anneal-dev↔anneal-framework merge; enforcement floor; canonical routing home; bootstrapping
+  anchor. See the READ-FIRST block above. The renders below (Phase B) are now unblocked.
 
 ### Phase A — render-CONVENTION fixes (the rules; settle before re-rendering, or re-render twice)
 

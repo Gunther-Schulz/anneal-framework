@@ -1,6 +1,13 @@
 # anneal-dev impl-Checkpoint commit conflicts with the rule-corpus discharge hook
 
-**Status:** OPEN — method finding, surfaced 2026-06-03 during the
+**Status:** ✅ DONE — resolved by `corpus-flows-redesign` (release-record `4e77837`):
+**D7** (checkpoint ≠ release-commit; `commit-msg` hook skips `anneal-checkpoint:`-prefixed
+commits — `00374a5`) + **D12** (anneal-dev's persistence mechanism mandates the prefix, the
+producer rule — `d9033ee`). Validated in-run (both checkpoint commits skipped the discharge
+gate). Residual spun off → `release-commit-formation-from-checkpoints.md`.
+
+--- original finding (kept for the record) ---
+(was) OPEN — method finding, surfaced 2026-06-03 during the
 `cite-glossary-not-section-numbers` anneal-dev run (impl loopback, run tracker F9/D7).
 Affects anneal-dev itself (`anneal-dev/spec` / `phases/implement.md`), not the spec
 this run edits.
