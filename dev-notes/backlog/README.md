@@ -25,10 +25,51 @@ README is the **ordered** view (what to do, in what order).
 One ordered list (replaces the old category grouping). **Phases reflect
 dependency order**, not priority within a phase. The arc: settle the *system*
 → settle the render *conventions* → do the *renders* → mop up independent
-findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
-`main`.)
+findings. (Last groomed 2026-06-04 — session-4 research arc added on top; the
+framework track below is unchanged from session 3 and still pending.)
 
-### ▶ Where we are + ordered next steps (2026-06-03 session 3 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-04 session 4 — READ FIRST)
+
+Session 4 executed the **operator-flagged research thread** end-to-end: **four `deep-research`
+runs** (placement / design-first-vs-act-first / process-literature / verify-techniques), all
+adversarially verified, verdicts + raw reports captured (`dev-notes/research/*.raw.json`; commits
+`e2ef6f2` + `4da569d` on `main`, **unpushed**). Headline: **no superior framework found
+(kill-switch OFF)**; anneal is **strongly validated** by canonical methodology literature; and
+**design-first is unrefuted-but-UNPROVEN** — the deciding experiment has never been run by anyone,
+and anneal's instances are the testbed to run it. (Concurrency lesson: 3 runs at once overloaded the
+schema-verifier subagents → **run deep-research one at a time.**)
+
+**Run verdicts (detail in each item):**
+- `anneal-placement-and-improvement-research` — DONE. Process-discipline layer; **APF = a peer (not
+  unique), no superior**; APF deep-read lessons folded.
+- `design-first-vs-act-first-research` — DONE. No superior (kill-switch off); design-first
+  unrefuted-AND-unproven; act-first dominance ≈ cheap-oracle benchmark artifact.
+- `process-literature-for-anneal-research` — DONE. Canonical RE/methodology **validates** anneal
+  (basis rule = Zave-Jackson "designation"; complete-state = S,K⊢R; loopback = Platt recycle).
+- `verify-techniques-research` — DONE. **Criteria-first verify = standout adoptable**; quorum
+  marginal (model-diversity > vote-count).
+
+**⭐ Candidate KERNEL sharpenings surfaced — findings, NOT yet edits; each needs an anneal-dev cycle.**
+Two literatures converge on a *"carry rivals → exclude rivals"* posture:
+- *Investigate-side:* `multiple-working-hypotheses-investigate-design` (the genuine GAP — resolve the
+  internal-rivals-vs-committed-recommendation tension first).
+- *Verify-side:* criteria-first verify · exclusion-obligation · falsifiability-gate · different-model
+  verifier · decompose judgment claims (across `verify-techniques-research`,
+  `multivoter-verify-no-predicate-claims`, `verify-vs-original-requirements`).
+
+**The proof path (operator's "prove me right or wrong"):** `anneal-empirical-validation-experiment`
+(v0 — falsifiable design-first-vs-act-first A/B on instances, expensive-verification regime) +
+`anneal-reliability-measurement` (token-first + grounding-ratio metrics).
+
+**Next decisions (operator's call):**
+1. **Pursue one kernel sharpening via anneal-dev** — *criteria-first verify* is lowest-cost /
+   highest-confidence (peer-reviewed; attacks rubber-stamping; convergent across two runs).
+2. **Design the MVE experiment** (`anneal-empirical-validation-experiment`).
+3. **Resume the framework track** (unchanged, session-3 block below) — coherence-audit (cadence-due)
+   → re-renders.
+4. **Push** the two unpushed commits when ready.
+
+### Where we are + ordered next steps (2026-06-03 session 3 — prior handoff; framework track still pending)
 
 Session 3 landed the **keystone `corpus-flows-redesign`** anneal-dev run (verify PASSED +
 operator-soundness PASSED; release-record `4e77837`; **archived**). It decided AND implemented
@@ -79,14 +120,9 @@ framework spec. Strong case to **elevate the coherence-audit ahead of the re-ren
 corpus before re-rendering instances *from* it — the same "settle conventions before renders" logic
 that ordered the phases). vs. the as-ordered `instance-template-slot-scaffolding` first.
 
-**Operator-flagged research thread (2026-06-03, separate from the ordered framework work above):**
-two captured items — (1) `anneal-placement-and-improvement-research.md`: place anneal in the
-agent-reliability landscape + honestly find-superior; carries a **ready sharpened `deep-research`
-question** + anneal-characterization + leads → run via the `deep-research` skill in a fresh/clean
-window. (2) `anneal-reliability-measurement.md`: **the operator's flagged next exploration** —
-anneal's soundness claim is *asserted, not measured*; design a credible measurement/proxy (possibly
-extending `validation-watch.md`). Preliminary placement: anneal = the **process-discipline layer**
-(above agent patterns; orthogonal to formal-verification); **biggest real gap = measurement.**
+**Operator-flagged research thread — ✅ EXECUTED in session 4 (2026-06-04); see the READ-FIRST block
+at top.** Four deep-research runs done, verdicts captured; the measurement leg continues via
+`anneal-reliability-measurement` + `anneal-empirical-validation-experiment`.
 
 ### Near-done — stay open only for a live residual
 
@@ -126,6 +162,12 @@ extending `validation-watch.md`). Preliminary placement: anneal = the **process-
 
 ### Phase C — independent method findings, in THEMED BATCHES (not 11 separate runs)
 
+**Session-4 additions (literature-backed candidate kernel sharpenings — fold into this campaign):**
+the verify-side cluster (criteria-first verify · exclusion-obligation · falsifiability-gate ·
+different-model verifier · decompose judgment claims — across `verify-techniques-research`,
+`multivoter-verify-no-predicate-claims`, `verify-vs-original-requirements`) + the investigate-side
+`multiple-working-hypotheses-investigate-design`. See the READ-FIRST block for the convergence.
+
 These are small spec/method fixes. **Recommended approach (operator-preferred 2026-06-03): one
 coherence-audit-driven campaign.** Run a **coherence audit** (practice 12 — and it's *due-ish*
 anyway: cycles have accumulated since the last handoff `ac1856832b8712fda`) over the corpus to
@@ -144,6 +186,10 @@ order, earlier than any audit if you want. The themes (the run-groupings within 
 
 ### Phase D — instance-level / exploratory (no rush)
 
+- `impl-dispatch-workflow-substrate` — (NEW session 4) could clippy's impl-dispatch run on the
+  Workflow substrate? Verdict: not the whole run; defensible for the impl phase only; no change now.
+- `anneal-adhoc-use-and-graduation` — (NEW session 4) ad-hoc anneal use + graduation to an instance;
+  codify in the guide before building any skill.
 - `glossary-binding-table-interface-completeness` — (NEW 2026-06-03, the FB-3 residual) make the
   glossary cover the binding-table left-column technical terms too; not a re-render blocker.
 - `clippy-greenfield-tolerance` — clippy's `verify` assumes existing code; instance-level greenfield hardening.
