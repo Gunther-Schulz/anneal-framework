@@ -90,6 +90,15 @@ fork, not an instance.
   (`spec/modules.md` §3.3); the instance supplies the concrete
   mechanism — where these artifacts live, how an in-progress run is
   found and resumed. Clippy's `bindings.md` is the worked example.
+  - **Render-time note (harness-provided tracking tools).** Where the
+    target harness offers its own task- or run-state-tracking tools, the
+    rendered protocol states that the run's state lives in this
+    persistence mechanism — the source of truth (`spec/core.md` §6, the
+    run lifecycle) — and is **not** kept in those ambient tools, which
+    may serve harness-level work outside the protocol. The note names no
+    specific tool: the concrete tool names are the instance's render-time
+    concretion (the harness it targets), supplied in the render, not
+    here.
 - the **isolation mechanism** — the framework fixes the isolation
   guarantees (`spec/core.md` §4.2.3) and requires them to hold; the
   instance supplies the concrete mechanism — how a separate copy is
