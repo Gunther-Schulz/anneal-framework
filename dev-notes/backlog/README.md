@@ -61,19 +61,18 @@ findings. (Last groomed 2026-06-03, after the spec-cleanup campaign merged to
   - `clippy-skill-de-bloat` — clippy `SKILL.md` structural fresh-rewrite (the "2nd anneal-dev dogfood").
   - `adoption-instance-settlement` — re-point each instance's CLAUDE.md seed; campaign-craft needs its source repo located first.
 
-### Phase C — independent method/framework findings (batch, e.g. behind a coherence audit)
+### Phase C — independent method findings, in THEMED BATCHES (not 11 separate runs)
 
-- `completeness-search-enforcement` — **decide first:** enforce wrap-tolerance, or rely on the convergence-cycle safety net? (open question)
-- `verified-integrity-consolidation` — consolidate the "[VERIFIED] claims more than was checked" family under one principle.
-- `skill-craft-pre-edit-hook-findings` — the pre-edit gate hook; Findings 2 (Bash-bypass) + 4 (spec-origin over-match) still open (1 & 3 done).
-- `verify-vs-original-requirements` — verify checks the locked design, not the original ask.
-- `behavior-change-test-impact-enumeration` — a behavior-changing decision must *executably* enumerate tests asserting the old behavior.
-- `impl-green-on-commit` — spec silent on whether the impl commit must be green; pick mandate vs leave-to-verify.
-- `dispatch-brief-one-source-of-truth` — "reference by letter" is unenforceable for a context-less spawned agent; ship subagent types / template / bootstrap pointer.
-- `surface-non-task-observations` — no channel for what the agent notices outside the task.
-- `worktree-isolation-and-integration` — parallel-worktree path: relocate the worktree out of the operator's tree, verify the unit landed, fail-loud on a stale base.
-- `skill-craft-soft-load-pointer-discriminator` — small skill-craft edit: discriminate a provenance citation from a load-bearing pointer.
-- `anneal-dev-extension-render-gate` — does a mechanical re-render warrant the skill-craft gate? (a piece of `corpus-flows-redesign`'s enforcement question)
+These are small spec/method fixes; one anneal-dev run per *theme* (not per item) amortizes the
+ceremony cost, and a **coherence audit** (practice 12 — mechanically triggered after N cycles) is
+the natural moment to sweep a batch, since it surfaces adjacent drift too. The batches:
+
+- **C1 — verify/impl discipline** (gaps in what verify/impl must check; all touch `core.md` §4.2/§4.3 + `development-process.md`): `verify-vs-original-requirements`, `behavior-change-test-impact-enumeration`, `impl-green-on-commit`.
+- **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`.
+- **C3 — under-enforced / fragmented disciplines** (soft-rule → structural; consolidate): `completeness-search-enforcement` (decide the open question first), `verified-integrity-consolidation`.
+- **C4 — skill-craft / gate-hook small fixes**: `skill-craft-soft-load-pointer-discriminator` (skill-craft canonical), `skill-craft-pre-edit-hook-findings` (Findings 2 Bash-bypass + 4 spec-origin over-match).
+- **Standalone:** `surface-non-task-observations` (a new channel — small, its own thing).
+- **Feeds the strategy, not its own run:** `anneal-dev-extension-render-gate` — the "does a mechanical re-render warrant the skill-craft gate?" question is answered *within* `corpus-flows-redesign` (#3 enforcement).
 
 ### Phase D — instance-level / exploratory (no rush)
 
