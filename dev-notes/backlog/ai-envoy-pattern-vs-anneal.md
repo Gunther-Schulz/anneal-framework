@@ -84,9 +84,26 @@ reads but never declares them as a named instance surface. Narrow open question 
 "ground-truth / envoy surface" slot, OR is it already covered by executable-verification + the basis
 rule (Additive-reflex check)? This is the sharper version of "formalize envoys?".
 
+## PostHog's concrete envoy (the `@posthog/wizard`) — refines "what an envoy is"
+`@posthog/wizard` (npm, MIT, Node, github.com/PostHog/wizard, v2.5.0) — an **"agentic CLI" that
+wraps the Claude Agent SDK**. An OUTER coding agent (Claude Code etc.) runs it non-interactively:
+`npx @posthog/wizard --ci --api-key $KEY --install-dir .`. It: detects the framework (16+), **fetches
+the REAL API key** from the user's account → writes `.env` (kills key-hallucination), then uses the
+wrapped agent to **read the user's code + inject the CURRENT PostHog SDK integration** (events,
+config) — defeating training-lagged/stale-code. Refinements this forces on the model above:
+- **An envoy is not "pure deterministic CLI" — it's a CLI that gives the outer agent a constrained,
+  ground-truth-bearing *sub-tool* (here itself an LLM via Claude Agent SDK).** Determinism comes from
+  *real data* (keys), *fixed flow* (`--ci`), and *current templates* — not from being LLM-free.
+- **Envoy ⟂ MCP are complementary, confirmed:** the wizard *also* runs `npx @posthog/wizard mcp add`
+  to install the PostHog MCP server. Envoy = one-shot correct *setup*; MCP = the *ongoing* interface
+  the envoy installs.
+- **Self-application parallel:** PostHog uses an agent (Claude Agent SDK) to build the tool that makes
+  *other* agents reliable — directly analogous to anneal-dev (an agent methodology) evolving anneal.
+
 ## Relates to
 - `hooks/` (the existing anneal enforcement-envoys), `spec/core.md` (basis rule + evidence-bearing
   -artifact rule = the data-envoy discipline), `instantiation-guide.md` §3 (the "executable
   verification" binding — the check-half) + §2-5 (where a "ground-truth surface" slot would live).
-- Sources: posthog.com/blog/envoy-wizard-llm-agent; jannikreinhard.com (CLI-beats-MCP);
-  rudderstack.com (AI agents need two interfaces: CLI + MCP); dev.to/aws guardrails series.
+- Sources: posthog.com/blog/envoy-wizard-llm-agent; github.com/PostHog/wizard (the MIT impl);
+  posthog.com/docs/ai-engineering/ai-wizard; jannikreinhard.com (CLI-beats-MCP); rudderstack.com
+  (CLI + MCP two-interface pattern); dev.to/aws guardrails series.
