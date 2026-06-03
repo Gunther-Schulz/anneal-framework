@@ -2,40 +2,66 @@
 
 This document governs development work *on* the **anneal-framework**,
 **skill-craft**, and the framework's **instances** (such as
-`coding-clippy`) — distinct from `instantiation-guide.md`, which covers
-deriving a new instance.
+`coding-clippy`) — the evolution of the rule-corpus.
+`instantiation-guide.md` covers the one act this does not: **deriving** a
+new instance's spec from a domain, a pre-channel design step. Once that
+spec is settled, building and evolving the instance is corpus-evolution
+work governed here.
 
-The generic anneal method this process once restated clause-by-clause
-now lives in **anneal-dev** — the framework instantiated for
-corpus-evolution (the `anneal-dev` repo, sibling to this one). So
-development runs through anneal-dev, with one added rule where an edit
-touches anneal-dev's own foundation:
+## One channel, three entry-conditions
 
-- **Corpus-evolution work** — editing an instance, skill-craft, or this
-  dev-process machinery (anneal-dev is rendered from none of these) —
-  **runs through anneal-dev**, which carries the phases, the basis
-  rule, render-verify, the lens set, and the verify battery. (Run
-  followed-in-context until anneal-dev is packaged for install.)
-- **Method-kernel edits** — the edited file is in anneal-dev's
-  render/foundation source: `anneal-framework/spec/*`, `foundation.md`,
-  or `anneal-dev/spec/*`; anything else is corpus-evolution. These
-  **run through anneal-dev too** — the rigor is not optional for the
-  foundation. The one rule they add: anneal-dev **never** certifies a
-  kernel edit alone (a checker built from the kernel shares its blind
-  spots), so verify **must** add a review grounded **outside** the
-  anneal kernel — the skill-craft self-review (catches form/discipline
-  regressions) **and** the operator (the kernel-independent judge of
-  whether the method change is *sound*; skill-craft checks
-  skill-quality, not methodology-correctness), recorded at release-loop
-  step 4. anneal-dev's own lens/coherence pass does not substitute. The
-  bootstrap rule, refined: drive freely; never self-certify the
-  foundation.
+The generic anneal method this process once restated clause-by-clause now
+lives in **anneal-dev** — the framework instantiated for corpus-evolution
+(co-located at `anneal-dev/` in this repo). anneal-dev is the **single
+channel** for all rule-corpus building and evolution — phases, basis rule,
+lens set, render-verify, the verify battery. Three **entry-conditions**
+feed it; they are starting states, not separate systems:
+
+1. **New instantiation** — derive the instance spec first (the pre-channel
+   design step, `instantiation-guide.md`), then build through anneal-dev
+   like any corpus work.
+2. **Dev-on-anneal** — a change to the framework spec, skill-craft, or this
+   dev-process machinery. **Corpus-evolution work** (anneal-dev is rendered
+   from none of these) runs through anneal-dev. A **method-kernel edit** —
+   the edited file is anneal-dev's render/foundation source
+   (`anneal-framework/spec/*`, `foundation.md`, or `anneal-dev/spec/*`;
+   anything else is corpus-evolution) — runs through anneal-dev too, adding
+   one rule: anneal-dev **never** certifies a kernel edit alone (a checker
+   built from the kernel shares its blind spots), so verify **must** add a
+   review grounded **outside** the kernel — the skill-craft self-review
+   (form/discipline regressions) **and** the operator (the
+   kernel-independent judge of whether the method change is *sound*;
+   skill-craft checks skill-quality, not methodology-correctness), recorded
+   at release-loop step 4. anneal-dev's own lens/coherence pass does not
+   substitute. Drive freely; never self-certify the foundation.
+3. **Re-render an existing instance** — propagating a settled spec change
+   into its rendered plugin. Not a separate path: the **render-tail** every
+   spec-changing run already carries (the verify battery's render-fidelity
+   check + the `render-and-open-diff` extension).
+
+**Enforcement — a structural floor, not a hard channel-gate.** Routing
+through anneal-dev is the rigor-preferred channel; the load-bearing
+guarantees are enforced independently of it, so a stray hand-edit cannot
+ship un-checked — the **pre-edit skill-craft gate** (practice 5) blocks any
+rule-corpus Edit lacking a same-turn skill-craft invocation, and the
+**commit-msg discharge hook** (release loop step 4) blocks any rule-corpus
+commit lacking the discharge artifact. No separate "must route through
+anneal-dev" gate is added: it would duplicate these and force the full
+run-machine onto a typo-fix.
+
+**Checkpoint ≠ release-commit.** anneal-dev's implement saves each unit as
+a per-unit **checkpoint** commit (a resume point, first-line prefix
+`anneal-checkpoint:`); the discharge hook skips these — it cannot be
+honestly produced mid-implement, verify is downstream — and gates only the
+operator-approved release commit (step 5).
 
 This document is the home of the shared framework-dev machinery —
 validation-watch governance, the skill-craft pre-edit gate, the
-coherence-audit cadence, and the release/marketplace loop. A fresh
-session does not hold this process by default — read and adopt it
-before development work here.
+coherence-audit cadence, and the release/marketplace loop; the other
+routing docs (`instantiation-guide.md` §6, `spec/README.md`, `README.md`,
+`instance-template/CLAUDE.md`) point here rather than restate. A fresh
+session does not hold this process by default — read and adopt it before
+development work here.
 
 ## The three levels
 

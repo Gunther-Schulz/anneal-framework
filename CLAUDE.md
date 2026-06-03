@@ -24,6 +24,14 @@ insufficient):
 Doubt-voicing about whether re-grounding applies IS the evidence
 it applies.
 
+**New instantiation** (a brand-new instance, e.g. anneal-marketing) is
+not one of the above edit cycles: it starts with the **pre-channel
+derivation** — author the instance spec *with the operator*
+(`instantiation-guide.md`; `README.md` "Building a new instance"),
+*then* anneal-dev builds it. anneal-dev evolves an existing corpus; it
+does not author a spec from a blank domain — do not start by invoking
+it.
+
 ## Rule-corpus edits
 
 When editing skill-craft, anneal-framework spec, or instance

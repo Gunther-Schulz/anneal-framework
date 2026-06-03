@@ -428,14 +428,16 @@ deferred to runtime. The catch is the spec-origin audit
 ## 6. Generate the instance
 
 With the spec settled — bindings, lens set, run-artifact persistence,
-optionally presentation and lifecycle extensions — the domain-specific
-work is done. From here the instance is built and evolved as
-**corpus-evolution work** — run through the **anneal-dev** instance,
-which carries the method (render, verify in a separate context,
-validate, change); `development-process.md` routes corpus work there
-and carries the release machinery. The first build is that process run
-once over the whole instance; every later change runs it over the
-affected parts. This guide does not restate it.
+optionally presentation and lifecycle extensions — the **pre-channel
+design step is done**: §§1–5 are derivation, the design work this guide
+owns. **From here the instance enters the channel** — built and evolved
+as **corpus-evolution work** through the **anneal-dev** instance, which
+carries the method (render, verify in a separate context, validate,
+change). `development-process.md` is the canonical home of that routing
+(one channel, three entry-conditions) and the release machinery. The
+first build is that process run once over the whole instance; every
+later change runs it over the affected parts. This guide does not
+restate it.
 
 Render the plugin files from the instance spec and the framework spec
 — faithfully, per skill-craft's rendering-fidelity rule (`Rendering

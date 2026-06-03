@@ -47,9 +47,10 @@ generated from this spec and stay generated from it. The spec is the
 standing source of truth: a change to the methodology is made here
 and re-rendered into the instance, never hand-edited into the
 instance directly. Hand-editing drifts the instance from the spec and
-forfeits re-derivability. Re-rendering runs as corpus-evolution work
-through the **anneal-dev** instance; `../development-process.md` routes
-it there and carries the release machinery.
+forfeits re-derivability. Re-rendering is the **render-tail** of the one
+development channel — corpus-evolution work through the **anneal-dev**
+instance; `../development-process.md` is its canonical home (the routing
+and the release machinery).
 
 ## Files
 

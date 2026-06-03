@@ -8,9 +8,22 @@ task to a verified outcome. Bound to a domain in an **instance** like
 software) or [DANEEL](https://github.com/Gunther-Schulz/daneel)
 (debugging it).
 
-If you use Clippy or DANEEL, this is what's under them. If you want
-to build a new instance for your domain, start with
-[`instantiation-guide.md`](./instantiation-guide.md).
+If you use Clippy or DANEEL, this is what's under them.
+
+**Building a new instance** for your domain (say, anneal-marketing):
+
+1. Copy [`instance-template/`](./instance-template/) as your new
+   instance repo — it scaffolds every slot.
+2. **You and your LLM derive the instance spec** — the domain bindings
+   and the domain's lens set — guided by
+   [`instantiation-guide.md`](./instantiation-guide.md). This is design
+   work, not a tool you run.
+3. **anneal-dev builds and maintains the plugin** from your settled
+   spec, and every later change runs through it.
+
+Step 2 is the one part the anneal-dev tool does not do for you: it
+builds and evolves an instance, it does not author a spec from a blank
+domain.
 
 ## What it holds
 
@@ -102,12 +115,17 @@ binding and lens set.
   of the framework-dev machinery: the development practices,
   validation-watch governance, the coherence-audit cadence, and the
   release loop with its discharge artifact.
+- [`anneal-dev/`](./anneal-dev/) — the **corpus-evolution instance**,
+  co-located here (its domain *is* this corpus; it renders from `spec/`
+  and is the single channel `development-process.md` routes building +
+  evolution through). `anneal-dev/spec/` is its domain binding;
+  `anneal-dev/plugin/` is the rendered tool.
 - [`post-run-review.md`](./post-run-review.md) — the framework's
   empirical-validation procedure (the Q-set for analyzing a real
   run against the spec; rendered into each instance's
   `references/post-run-review.md`).
 - [`hooks/`](./hooks/) — hooks that enforce the development
-  process. The `commit-msg` git hook validates the step-5
+  process. The `commit-msg` git hook validates the Step-4
   discharge artifact for rule-corpus commits (rejects commits
   missing required check labels or carrying fold-into
   rationalizations). The `skill-craft-pre-edit.py` PreToolUse hook

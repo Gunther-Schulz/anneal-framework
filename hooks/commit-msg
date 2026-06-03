@@ -31,8 +31,13 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Optional `anneal-dev/` prefix: after the anneal-dev↔anneal-framework
+# merge (corpus-flows-redesign D5), anneal-dev's rule-corpus lives at
+# `anneal-dev/{spec,plugin/skills,.claude-plugin}/…` within this repo. The
+# `^`-anchored patterns must match that relocated location too, or the
+# merged instance's rule-corpus commits bypass the discharge gate (D9).
 RULE_CORPUS_PATTERN = re.compile(
-    r"^(spec/.+\.md|development-process\.md|post-run-review\.md|"
+    r"^(anneal-dev/)?(spec/.+\.md|development-process\.md|post-run-review\.md|"
     r"instantiation-guide\.md|foundation\.md|plugin/skills/.+\.md|"
     r"instance-template/.+\.md|"
     r"\.claude-plugin/.+|plugin/\.claude-plugin/.+)$"
@@ -41,8 +46,8 @@ RULE_CORPUS_PATTERN = re.compile(
 # Instance plugin render path — plugin/skills/<not-skill-craft>/*.
 # Skill-craft canonical (plugin/skills/skill-craft/) is exempt because
 # skill-craft IS source, not render (meta-plugin where canonical files
-# are the source).
-INSTANCE_PLUGIN_PATTERN = re.compile(r"^plugin/skills/(?!skill-craft/)[^/]+/.+\.md$")
+# are the source). Optional `anneal-dev/` prefix per the merge (D9).
+INSTANCE_PLUGIN_PATTERN = re.compile(r"^(anneal-dev/)?plugin/skills/(?!skill-craft/)[^/]+/.+\.md$")
 
 REQUIRED_CHECKS = [
     "Render fidelity",
