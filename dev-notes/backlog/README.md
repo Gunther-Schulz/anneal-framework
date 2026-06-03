@@ -49,10 +49,10 @@ these phases.)**
 
 - **NOW — gating action:** merge the `spec-cleanup-core-phase-pipeline` branch to
   `main` (the cleaned spec is what everything renders from).
-- **Close-outs (housekeeping):** archive finished efforts — `anneal-dev-packaging`,
-  `framework-dev-as-anneal`, `framework-spec-cleanup` (audit debt done; only its
-  render-tail = `instance-reinstantiation` remains), `contract1-depollution-cluster`
-  (modulo V-26 + render), `dev-process-adoption`.
+- **Close-outs:** **archived 2026-06-03** — `anneal-dev-packaging`, `framework-dev-as-anneal`,
+  `dev-process-adoption` (cleanly done). **Stay OPEN (have live residuals):**
+  `framework-spec-cleanup` (archives when `instance-reinstantiation` lands),
+  `contract1-depollution-cluster` (gated on V-26 + the render-tail).
 - **Phase A — render-CONVENTION fixes (prereqs; settle before re-rendering or you
   re-render twice):** `harness-tool-runstate-unsourced`,
   `cite-glossary-not-section-numbers`, `instance-template-slot-scaffolding`.
