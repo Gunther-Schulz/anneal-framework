@@ -24,8 +24,9 @@ README is the **ordered** view (what to do, in what order).
 
 Two parts: the **READ-FIRST block** (current state + next decisions) and **the ordered backlog**
 (6 tiers, batched by theme). `ls` is the full index. (Last groomed 2026-06-04 — session-4 research
-arc + a re-prioritization into the 6-tier order below; in the same grooming: 4 research runs
-archived, the re-render bundle merged into `instance-reinstantiation`. 32 open.)
+arc + a re-prioritization into the 6-tier order below; **re-groomed session 7** — slotted the
+session-6/7 spawned items into the tiers, reinstantiation shipped+activated + self-render-urgency
+resolved (both archived). 41 open.)
 
 ### ▶ Where we are + next steps (2026-06-04 session 7 — READ FIRST)
 
@@ -259,10 +260,19 @@ floor). **F0 render-conventions gate the tier-5 re-renders — do them first.**
   `commit-msg-hook-packaging-overmatch` · `instructional-files-streamline`.
 - **F6 — skill-craft / hooks:** `skill-craft-soft-load-pointer-discriminator` (+ the hook-findings
   residual in tier 1).
+- **F7 — enforcement-fidelity gaps (session-6/7 dogfood):** `basis-recorded-query-fidelity` (the
+  recorded basis-query isn't mechanically enforced, only conclusion-correctness is; n=1) ·
+  `deferred-finding-owed-artifact-forcing-function` (a finding deferred to a to-be-authored
+  validation-watch entry *owes* that entry; nothing forces it to exist) ·
+  `validation-watch-entry-retrofit` (mechanical: the active V-entries gain the new watch-kind /
+  catcher fields — a quick-win).
 
 ### 3 ▸ CLIPPY FIXES — instance-level corrections (root-at-clippy)
 Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2, fix-at-source).
 - `clippy-greenfield-tolerance` — clippy `verify` assumes existing code; greenfield hardening.
+- `anneal-dev-plugin-dangling-anti-patterns-ref` — anneal-dev's `tracker.md` render cites a dangling
+  `references/anti-patterns.md` (skill-craft's); pre-existing, low-sev, one-line fix that rides the
+  next anneal-dev render.
 
 ### 4 ▸ FRAMEWORK CHANGES — new disciplines / larger kernel additions (each = an anneal-dev cycle)
 - **The convergent "carry rivals → exclude rivals" sharpenings** (from the literature runs; two
@@ -277,6 +287,10 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   `anneal-dev-extension-render-gate` (downgraded — D4 answered the core question) ·
   `anneal-dev-impl-skillcraft-gate` (NEW 2026-06-04 — dispatch *loads* but doesn't *invoke*
   skill-craft → the pre-edit gate blocks dispatched rule-corpus edits).
+- **mode-mechanics / disciplines:** `auto-battle-cadence-mode` (interactive "auto-cycle to [READY],
+  halt at the phase gate" affordance — direction resolved, not built; the thing we did by hand this
+  session) · `cross-instance-precedent-discipline` (candidate — a forcing-function to check sibling
+  instances for prior art; evaluate "earns a lens" vs "just investigate harder" first).
 
 ### 5 ▸ CLIPPY / INSTANCE CHANGES — the big re-render (gated by F0 above)
 - `instance-reinstantiation` — **umbrella** (now incl. the 3 folded bundles: render-resync, SKILL.md
@@ -295,5 +309,14 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   verification blind spot the framework may have (one — judgment-class soundness — was just found
   by accident; others likely). Must use EXTERNAL lenses (the framework can't introspect its own
   blind spots — Gödel). Output feeds tier-4 changes + `intent-falsification-soundness-sweep`.
+- **Retrospective audits (high-leverage; each generates a fix-queue, not a single edit):**
+  `intent-falsification-soundness-sweep` — audit *already-shipped* enforcement (the `hooks/`, the
+  step-4 discharge, the self-classified "structural enforcement" rules) for the self-certifying-form
+  blind spot the intent-falsification pass was built to catch. The prospective half is DONE (every
+  future run now carries the pass, live as of session 7); this is the retrospective cleanup. n=1 seed
+  caught a 2-for-1 the mechanical pass confirmed clean past. **Strong candidate to promote out of
+  tier 6** — it audits the floor every run leans on. · `canonical-scenario-regression-suite`
+  (executable verification *for the method itself* — a regression net so a spec change can't silently
+  break a known-good scenario).
 - **Exploratory (no rush):** `impl-dispatch-workflow-substrate` · `anneal-adhoc-use-and-graduation` ·
   `planner-instance-exploration` (new instance) · `generalize-sharpening-skill` (cross-repo tooling).
