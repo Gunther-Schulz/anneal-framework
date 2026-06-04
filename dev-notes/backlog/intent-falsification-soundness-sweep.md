@@ -59,3 +59,9 @@ each confirmed finding becomes its own classifiable fix (practice 8) through ann
   sweep mode. Decide which when this runs.
 - Origin: `foundation-self-certification-machinery` / the `foundation-invariants-register`
   run (B1/B2 = the seed findings; tracker in `.anneal-dev/runs/`).
+- **External corroboration** — Hylak, *How to Evaluate AI Agents* (howtoeval.com, 2026):
+  "offline evals must be code-aware, not prompt-level." Reusable statement of this sweep's
+  lesson — **verify the entangled/enforced form, not the isolated unit** (B2 = a hook that
+  can't verify operator approval is an enforced-form flaw invisible to spec-text review).
+  Aims the per-target attack: attack the rendered + hooked + operator-interactive form, not
+  the spec clause in isolation.
