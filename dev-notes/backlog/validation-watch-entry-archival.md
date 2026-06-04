@@ -1,8 +1,12 @@
-# Validation-watch entry archival — physically retire RESOLVED entries to bound file length
+# Validation-watch as a folder of single-entry files + archive/ (like the backlog)
 
-**Status:** OPEN — framework hygiene idea, operator-raised 2026-06-04 ("the V-file has gotten long; do
-we have a mechanism to retire items once proven working?"). **Not urgent** (see data below) but real;
-filed per no-silent-deferral. Mostly a dev-notes convention + preamble edit, lightly spec-wired.
+**Status:** OPEN — framework hygiene, operator-raised + **design-set 2026-06-04**: "v-entries should be
+just like backlog items: single files with an archive folder. much better than one huge file." **Not
+urgent** (see data) but real. **Corpus-evolution → runs through anneal-dev** (spec-only; instance-render
+citations deferred to the batch) — splitting the file changes every reference to it as a file, and
+those references live in the kernel (`post-run-review.md` Q7, `development-process.md`, `glossary.md`)
++ the clippy/daneel rendered rules. (Supersedes the earlier "one big file + stub + single archive file"
+half-measure — the folder model retires entries the way the backlog does.)
 
 ## The gap
 `dev-notes/validation-watch.md` has **logical** retirement but no **physical** retirement:
@@ -30,23 +34,39 @@ that tax at the active set.
 body. (basis: `grep -rhoE 'V-[0-9]+' spec/ development-process.md ../coding-clippy/plugin ../daneel/plugin`
 → V-5, V-9, V-21.)
 
-## Proposed shape (mirror backlog `archive/`)
-On `RESOLVED` (or a superseded `INVALIDATED`): move the entry **body** to `dev-notes/validation-watch-archive.md`
-(or an `## Archived` tail section), leaving a **one-line numbered stub** in the live file —
-`V-N RESOLVED <date>, <commit> — see archive`. Live file = active watches (WATCHING/FIX-SHIPPED) +
-stubs; archive = resolved bodies. Citations still resolve (number stays in the live file as a stub).
-Touch points: the preamble **Entry lifecycle** (document the archival step); confirm Q7 treats a stub as
-skip (already `RESOLVED` = skip, so no logic change); check the `spec/glossary.md` lifecycle description
-doesn't need a note (the 4 statuses are unchanged — archival is relocation, not a new status).
+## Design — folder of single-entry files + archive/ (the backlog model)
+Restructure `dev-notes/validation-watch.md` (one ~1550-line file) into `dev-notes/validation-watch/`:
+- **One file per entry**, named for identity like the backlog (e.g. `V-5-ready-self-assessment.md`).
+  The **V-N number is the stable key** (spec-cited — see Hard constraint); the slug is for humans.
+- **`README.md`** in the folder = the current preamble (purpose, n=1 convention, Entry lifecycle).
+  `ls` is the index (active set at a glance), exactly like `backlog/`.
+- **`archive/`** subfolder — a RESOLVED (or superseded INVALIDATED) entry's file is `git mv`d here.
+  No stub needed in the live folder: the **number lives in the filename**, and citations resolve to
+  "the V-N entry in `dev-notes/validation-watch/` (or its `archive/`)" — the folder is the referent,
+  not a line in a monolith. (This is cleaner than the superseded stub approach — the filename IS the
+  durable handle; reopening on recurrence is `git mv` back, like un-archiving a backlog item.)
+- **Migration:** split the 28 current entries into files; `V-5` (the one RESOLVED) lands in `archive/`.
 
-Secondary length driver (note, not the primary fix): per-entry **verbosity** (~40-50 ln each:
-Decision / Why-uncertain / Production-signal / practice-8 justification / n=1 seeds). Active entries
-need their detail; archival is the cleaner lever than compressing live entries.
+**The reference updates this forces (the corpus-evolution part):** every "in `validation-watch.md`"
+becomes "in `validation-watch/`":
+- `post-run-review.md` Q7 — "For each V-N in `dev-notes/validation-watch.md`" → "for each entry file in
+  `dev-notes/validation-watch/` (+ `archive/` only on a recurrence re-walk)". The Q7 *logic* (per-state
+  classify) is unchanged.
+- `development-process.md` — the ~5 path references.
+- `spec/glossary.md` — "validation-watch.md preamble" → "validation-watch/ README".
+- **clippy/daneel rendered rules** — the V-5/V-9 citations + their post-run-review Q7. **DEFERRED** to
+  the batch re-render (render-cadence policy) — a transient spec↔instance path mismatch, tracked.
 
-## Level
-Mostly a **dev-notes convention** (the archival act + the preamble documenting it). Lightly spec-wired
-(the lifecycle is described in `spec/glossary.md` + consumed by `post-run-review.md` Q7) → a **light
-anneal-dev cycle** if any spec/render text changes, else a dev-process-convention add.
+Secondary length driver (note, out of scope): per-entry **verbosity** (~40-50 ln each). Per-file form
+makes over-long entries individually visible — a softer follow-on, not this change.
+
+## Level — corpus-evolution, runs through anneal-dev
+NOT a dev-notes-only edit: it changes kernel files (`post-run-review.md`, `development-process.md`,
+`spec/glossary.md`) that render to instances. So per the repo discipline it is an **anneal-dev cycle**,
+**spec-only** (the dev-notes restructure + the 3 kernel reference-updates land now; the clippy/daneel
+citation re-points defer to the batch re-render — queued in `instance-reinstantiation`). The Q7/lifecycle
+*rules* don't change — only where entries live and the paths that point at them — so it should be a light
+cycle, but it carries the method-kernel kernel-independent review (touches `glossary.md`).
 
 ## Relates to
 - `backlog/README.md` Convention — the `archive/` model this borrows.
