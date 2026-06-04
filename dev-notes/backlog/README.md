@@ -69,11 +69,25 @@ spec governs on divergence). Plugin-freshness → **hygiene** on the existing ba
 is gone. Self-hosting-only (a downstream anneal-dev has only its plugin → plugin IS its truth). Release
 `e7542eb`. Net new machinery: zero.
 
-**▶ NEXT-UP — operator's pick (high dev-cycle velocity; churn slows as the corpus matures).** Tier 2
-**framework fixes** is next in order — the **F0 render-conventions** (`instance-template-slot-scaffolding`,
-`glossary-binding-table-interface-completeness`) gate the big clippy/daneel re-render, so do them first.
-Lighter quick-wins available: `anneal-dev-plugin-dangling-anti-patterns-ref` (one-line render fix),
-`validation-watch-entry-retrofit` (mechanical field-add).
+**▶ NEXT-UP (DECIDED session 7 — do after a fresh `/clear`): two quick-wins, then open the
+intent-falsification sweep fresh.**
+
+1. **Quick-wins first** (close items, keep velocity): `anneal-dev-plugin-dangling-anti-patterns-ref`
+   (one-line render fix — qualify the dangling `references/anti-patterns.md` cite as skill-craft's) +
+   `validation-watch-entry-retrofit` (mechanical: active V-entries gain the watch-kind / catcher fields).
+2. **Then `intent-falsification-soundness-sweep` — bounded FIRST PASS.** The retrospective audit of the
+   enforcement floor (the prospective half — every future run carries the intent-falsification pass —
+   shipped + went live this session). Risk-ordered first slice: the **3 hooks** (`commit-msg` discharge,
+   `anneal-dev-run-gate`, `skill-craft-pre-edit`) + the **step-4 discharge machinery** — exactly where the
+   n=1 seed (B1/B2: self-dischargeable enforcement + overclaimed gate) lived. Method per target:
+   fresh-context, criteria-first intent-falsification — state the mechanism's intent, then attack whether
+   it actually *binds* (self-dischargeable / overclaimed / operator-detection-dependent / false-comfort).
+   **Single check, not multi-vote.** The sweep is an AUDIT → dispatch the passes directly (NOT an
+   anneal-dev run); output = a triaged **fix-queue**; each confirmed finding then becomes its own
+   anneal-dev cycle. Cap the pass; log what's left unswept. **Why ahead of F0:** it audits the floor every
+   run leans on (incl. this session's); F0 only unblocks the idle tier-5 re-render. (F0 render-conventions
+   — `instance-template-slot-scaffolding`, `glossary-binding-table-interface-completeness` — stay
+   tier-2-next after.)
 
 *(Session 6 history below.)*
 
