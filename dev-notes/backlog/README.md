@@ -20,179 +20,132 @@ README is the **ordered** view (what to do, in what order).
 - **Memory:** one pointer ([[project-framework-backlog]]) auto-loads and says
   "read `dev-notes/backlog/`." Update it only when the *structure* changes.
 
-## Open items — ordered by execution
+## Open items
 
-One ordered list (replaces the old category grouping). **Phases reflect
-dependency order**, not priority within a phase. The arc: settle the *system*
-→ settle the render *conventions* → do the *renders* → mop up independent
-findings. (Last groomed 2026-06-04 — session-4 research arc added on top; the
-framework track below is unchanged from session 3 and still pending.)
+Two parts: the **READ-FIRST block** (current state + next decisions) and **the ordered backlog**
+(6 tiers, batched by theme). `ls` is the full index. (Last groomed 2026-06-04 — session-4 research
+arc + a re-prioritization into the 6-tier order below; in the same grooming: 4 research runs
+archived, the re-render bundle merged into `instance-reinstantiation`. 32 open.)
 
 ### ▶ Where we are + next steps (2026-06-04 session 4 — READ FIRST)
 
 Session 4 executed the **operator-flagged research thread** end-to-end: **four `deep-research`
 runs** (placement / design-first-vs-act-first / process-literature / verify-techniques), all
 adversarially verified, verdicts + raw reports captured (`dev-notes/research/*.raw.json`; commits
-`e2ef6f2` + `4da569d` on `main`, **unpushed**). Headline: **no superior framework found
-(kill-switch OFF)**; anneal is **strongly validated** by canonical methodology literature; and
-**design-first is unrefuted-but-UNPROVEN** — the deciding experiment has never been run by anyone,
-and anneal's instances are the testbed to run it. (Concurrency lesson: 3 runs at once overloaded the
-schema-verifier subagents → **run deep-research one at a time.**)
+`e2ef6f2` + `4da569d` on `main`). Headline: **no superior framework found (kill-switch OFF)**;
+anneal is **strongly validated** by canonical methodology literature; and **design-first is
+unrefuted-but-UNPROVEN** — the deciding experiment has never been run by anyone, and anneal's
+instances are the testbed to run it. (Concurrency lesson: 3 runs at once overloaded the
+schema-verifier subagents → **run deep-research one at a time.**) The 4 run-items are **archived**
+(verdicts summarized below; raw in `dev-notes/research/`).
 
-**Run verdicts (detail in each item):**
-- `anneal-placement-and-improvement-research` — DONE. Process-discipline layer; **APF = a peer (not
-  unique), no superior**; APF deep-read lessons folded.
-- `design-first-vs-act-first-research` — DONE. No superior (kill-switch off); design-first
-  unrefuted-AND-unproven; act-first dominance ≈ cheap-oracle benchmark artifact.
-- `process-literature-for-anneal-research` — DONE. Canonical RE/methodology **validates** anneal
-  (basis rule = Zave-Jackson "designation"; complete-state = S,K⊢R; loopback = Platt recycle).
-- `verify-techniques-research` — DONE. **Criteria-first verify = standout adoptable**; quorum
-  marginal (model-diversity > vote-count).
+**Run verdicts (now in `archive/`):**
+- placement — Process-discipline layer; **APF = a peer (not unique), no superior**; APF lessons folded.
+- design-first-vs-act-first — No superior (kill-switch off); design-first unrefuted-AND-unproven;
+  act-first dominance ≈ cheap-oracle benchmark artifact.
+- process-literature — Canonical RE/methodology **validates** anneal (basis rule = Zave-Jackson
+  "designation"; complete-state = S,K⊢R; loopback = Platt recycle).
+- verify-techniques — **Criteria-first verify = standout adoptable**; quorum marginal
+  (model-diversity > vote-count).
 
 **⭐ Candidate KERNEL sharpenings surfaced — findings, NOT yet edits; each needs an anneal-dev cycle.**
-Two literatures converge on a *"carry rivals → exclude rivals"* posture:
+Two literatures converge on a *"carry rivals → exclude rivals"* posture (see tier 4 + the F1 verify
+batch):
 - *Investigate-side:* `multiple-working-hypotheses-investigate-design` (the genuine GAP — resolve the
   internal-rivals-vs-committed-recommendation tension first).
 - *Verify-side:* criteria-first verify · exclusion-obligation · falsifiability-gate · different-model
-  verifier · decompose judgment claims (across `verify-techniques-research`,
-  `multivoter-verify-no-predicate-claims`, `verify-vs-original-requirements`).
+  verifier · decompose judgment claims (across `multivoter-verify-no-predicate-claims`,
+  `verify-vs-original-requirements`).
 
 **The proof path (operator's "prove me right or wrong"):** `anneal-empirical-validation-experiment`
 (v0 — falsifiable design-first-vs-act-first A/B on instances, expensive-verification regime) +
-`anneal-reliability-measurement` (token-first + grounding-ratio metrics).
+`anneal-reliability-measurement` (token-first + grounding-ratio metrics). In tier 6 *only* because
+they're meta (not framework/clippy fix/change) — high interest, not low value.
 
 **Next decisions (operator's call):**
 1. **Pursue one kernel sharpening via anneal-dev** — *criteria-first verify* is lowest-cost /
    highest-confidence (peer-reviewed; attacks rubber-stamping; convergent across two runs).
 2. **Design the MVE experiment** (`anneal-empirical-validation-experiment`).
-3. **Resume the framework track** (unchanged, session-3 block below) — coherence-audit (cadence-due)
-   → re-renders.
-4. **Push** the two unpushed commits when ready.
+3. **Resume the framework track** (tiers 2 + 5 below) — the coherence-audit-driven framework fixes,
+   then the re-render.
 
-### Where we are + ordered next steps (2026-06-03 session 3 — prior handoff; framework track still pending)
+### Session history (context, not work)
 
-Session 3 landed the **keystone `corpus-flows-redesign`** anneal-dev run (verify PASSED +
-operator-soundness PASSED; release-record `4e77837`; **archived**). It decided AND implemented
-the redesign: **one channel (anneal-dev), three entry-conditions** — new-instantiation
-(derivation = a PRE-CHANNEL design step) / dev-on-anneal / re-render (= the render-tail, never
-separate); the **anneal-dev↔anneal-framework MERGE** (anneal-dev now co-located at
-`anneal-framework/anneal-dev/`, subtree-add `d5ae00d`, clean 0.1.2 carried); enforcement = a
-structural floor (the two hooks, **no new routing gate**, D4); canonical routing home =
-`development-process.md` (D8); a new-user **bootstrapping anchor** in README (D11). Folded items
-resolved: `anneal-dev-impl-checkpoint-vs-discharge-hook` (→ D7/D12, archived);
-`anneal-dev-extension-render-gate` (→ D4 answered the question; **downgraded-open** on a residual).
-Run ledger: `.anneal-dev/runs/corpus-flows-redesign.md` (gitignored).
+- **Session 3 (2026-06-03):** landed the keystone `corpus-flows-redesign` (one channel = anneal-dev;
+  three entry-conditions; the anneal-dev↔anneal-framework merge; enforcement floor) + the live
+  release (F7 resolved). Archived (release-record `4e77837`). Surfaced 5 method-kernel findings (now
+  in the framework tiers below). **The old Phase A–D structure is superseded by the tiers below.**
+- Phase-A render-conventions already DONE + archived: `harness-tool-runstate-unsourced` (`8b8a4ac`),
+  `cite-glossary-not-section-numbers` (`b56f7d8`).
 
-**Dogfooding yield — 5 method-kernel findings filed (for future anneal-dev runs):**
-`structural-change-dependent-enumeration` (**n=2, highest-leverage**: Missed-dependents misses
-non-content-reference dependent classes + the `[CONDITIONAL]`-falsification-exemption — the
-shared root of BOTH this run's loopbacks), `loopback-root-cause-triage` (bake the root-cause
-triage in vs operator-prompt), `release-commit-formation-from-checkpoints`,
-`instructional-files-streamline` (operator-raised clarity pass), `commit-msg-hook-packaging-overmatch`
-(the commit-msg hook gates packaging manifests + disagrees with the pre-edit hook).
+## The ordered backlog (2026-06-04 re-prioritization)
 
-**Release — ✅ DONE + verified live (all on remote).** anneal-framework `main` pushed to origin.
-**C1b install re-pointed**: anneal-framework is now the marketplace host (root manifest →
-`./anneal-dev/plugin`); the install switched to `anneal-dev@anneal-framework` → the merged clean
-0.1.2 (D12 present; firewall-clean — 0 framework §-citations vs the old 0.1.1's 5); old
-`@anneal-dev` install + marketplace removed; `/reload-plugins` confirmed the running session
-resolved the merged render — **F7 fully resolved**. **C1c**: standalone `anneal-dev` repo
-tombstoned (pushed) + **archived** on GitHub (read-only). Cosmetic leftover only: the orphaned
-`~/.claude/plugins/cache/anneal-dev/anneal-dev/0.1.1` dir (harmless, prunable).
+Order = **near-done → framework fixes → clippy fixes → framework changes → clippy changes → rest.**
+Rationale: finish the almost-done; then *fix* (close gaps in existing behavior) before *change* (add
+new); and **framework before clippy at each tier** — clippy renders *from* the framework, so fix /
+change at the source first (practice 1) or you render twice. Level = **root (fix-at-source)**, not
+where it surfaced. Within tiers, items are **batched by theme** (resolve a batch in one campaign/run,
+not one-at-a-time). `ls` remains the full index; every item is workable individually, in any order.
 
-**Ordered next steps:**
-1. **`instance-template-slot-scaffolding`** — the last Phase-A convention; now unblocked (the
-   redesign settled instantiation routing — derivation is pre-channel, guided by
-   instantiation-guide + the template).
-2. **Domain-instance re-renders** (Phase B `instance-reinstantiation`): clippy (heavy — de-bloat +
-   render-resync) → daneel → campaign-craft → bauleitplan. anneal-dev's own render is now merged-in;
-   drivable through the merged anneal-dev + the source-delta method. Idle (drift ~0) → low urgency.
-3. **Phase C — method-findings campaign** (coherence-audit-driven): folds in the 5 NEW findings
-   above (structural-change-dependent + loopback-root-cause-triage are the high-value method-kernel
-   fixes) alongside the prior C-cluster.
-4. **Phase D** — instance-level / exploratory. Lowest priority.
+### 1 ▸ NEAR-DONE — finish / close (each open only on a tracked residual)
+- `framework-spec-cleanup` — audit debt discharged; **archives when `instance-reinstantiation` lands.**
+- `contract1-depollution-cluster` — de-pollution complete; held on validation-watch **V-26** (+ the
+  parked clippy render-debt, now inside `instance-reinstantiation`).
+- `clippy-run-findings-dispatch-coupling` — Findings 1–3 + Cycle G **RELEASED**; tail = the
+  coherence-audit deep-sweep (§4.4 / §5.1 / mode mechanics) + Cycle 2.5 (deferred into planner).
+- `skill-craft-pre-edit-hook-findings` — Finding 1 DONE, Finding 3 MOOT; residual = Findings 2
+  (Bash-bypass) + 4 (spec-origin over-match).
 
-**Ordering note (decide at pickup):** a **coherence-audit is cadence-due** (practice 12 + session-3's
-heavy cycle count) and is the home for the framework-spec **bloat/tightness** question — `core.md`
-(~7.2k words / 976 lines) is the weight; the call was **no de-bloat *rewrite*** (anneal-dev is clean
-spec-rendered lineage), **measure-then-cut via the audit's Bloat lens** instead, aimed at the shared
-framework spec. Strong case to **elevate the coherence-audit ahead of the re-renders** (clean the
-corpus before re-rendering instances *from* it — the same "settle conventions before renders" logic
-that ordered the phases). vs. the as-ordered `instance-template-slot-scaffolding` first.
+### 2 ▸ FRAMEWORK FIXES — close gaps in the existing kernel / dev-process (root-at-framework)
+**Vehicle: a coherence-audit-driven campaign.** A coherence-audit is **cadence-due** (practice 12 +
+session-3's heavy cycle count) and is the home for the **`core.md` bloat/tightness** question (~7.2k
+words / 976 ln; decided: no de-bloat *rewrite* — measure-then-cut via the audit's Bloat lens). Run
+the audit, fold the batches below into the same cleanup, resolve by theme. (Floor not gate — any item
+is workable alone.) **F0 render-conventions gate the tier-5 re-renders — do them first.**
+- **F0 — render-convention (gate tier 5):** `instance-template-slot-scaffolding` (settle slot-as-file
+  vs slot-as-section, then fix guide/template) · `glossary-binding-table-interface-completeness`.
+- **F1 — verify/impl discipline gaps** (`core.md` §4.2/§4.3 + `development-process.md`):
+  `verify-vs-original-requirements` · `behavior-change-test-impact-enumeration` · `impl-green-on-commit`.
+- **F2 — structural / dependency enumeration** (dogfooding-surfaced; highest-leverage):
+  `structural-change-dependent-enumeration` (n=2) · `loopback-root-cause-triage`.
+- **F3 — under-enforced disciplines** (soft-rule → structural; consolidate):
+  `completeness-search-enforcement` (decide its open question first) · `verified-integrity-consolidation`
+  · `surface-non-task-observations`.
+- **F4 — dispatch / parallel-isolation mechanics** (root framework §4.2 + render; surfaced via clippy):
+  `dispatch-brief-one-source-of-truth` · `worktree-isolation-and-integration` (mixed-level: also
+  harness; placed here as fix-at-source).
+- **F5 — dev-process / release machinery:** `release-commit-formation-from-checkpoints` ·
+  `commit-msg-hook-packaging-overmatch` · `instructional-files-streamline`.
+- **F6 — skill-craft / hooks:** `skill-craft-soft-load-pointer-discriminator` (+ the hook-findings
+  residual in tier 1).
 
-**Operator-flagged research thread — ✅ EXECUTED in session 4 (2026-06-04); see the READ-FIRST block
-at top.** Four deep-research runs done, verdicts captured; the measurement leg continues via
-`anneal-reliability-measurement` + `anneal-empirical-validation-experiment`.
+### 3 ▸ CLIPPY FIXES — instance-level corrections (root-at-clippy)
+Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2, fix-at-source).
+- `clippy-greenfield-tolerance` — clippy `verify` assumes existing code; greenfield hardening.
 
-### Near-done — stay open only for a live residual
+### 4 ▸ FRAMEWORK CHANGES — new disciplines / larger kernel additions (each = an anneal-dev cycle)
+- **The convergent "carry rivals → exclude rivals" sharpenings** (from the literature runs; two
+  independent sources point the same way):
+  - *investigate-side* `multiple-working-hypotheses-investigate-design` — the genuine GAP; resolve the
+    internal-rivals-vs-committed-recommendation tension first.
+  - *verify-side* `multivoter-verify-no-predicate-claims` (reframed: model-diversity, not vote-count)
+    + the criteria-first / exclusion-obligation / falsifiability-gate / different-model sharpenings
+    (partly captured in `verify-vs-original-requirements`, tier 2 — the *fix* and the *change*
+    converge; sequence them together).
+- **anneal-dev method:** `anneal-dev-rerender-changeset-by-source-delta` ·
+  `anneal-dev-extension-render-gate` (downgraded — D4 answered the core question).
 
-- `framework-spec-cleanup` — the core.md §4 re-derivation + S3; **audit debt fully
-  discharged** (runs 1+2, merged). Archives when its render-tail (`instance-reinstantiation`) lands.
-- `contract1-depollution-cluster` — de-pollution complete; held open only on V-26
-  (validation-watch) + the parked clippy render-debt.
+### 5 ▸ CLIPPY / INSTANCE CHANGES — the big re-render (gated by F0 above)
+- `instance-reinstantiation` — **umbrella** (now incl. the 3 folded bundles: render-resync, SKILL.md
+  de-bloat, CLAUDE.md seed re-point): re-render the cleaned spec into the instances via anneal-dev
+  (anneal-dev DONE → clippy [heavy] → daneel → campaign-craft → bauleitplan), de-bloating the
+  legacy-bloated ones, render-fidelity-verified. Idle instances (drift ~0) → low urgency.
 
-### ⭐ STRATEGY — ✅ DONE (session 3, archived)
-
-- `corpus-flows-redesign` — **DONE** (release-record `4e77837`; archived to `archive/`).
-  Decided + implemented: one channel (anneal-dev), three entry-conditions; the
-  anneal-dev↔anneal-framework merge; enforcement floor; canonical routing home; bootstrapping
-  anchor. See the READ-FIRST block above. The renders below (Phase B) are now unblocked.
-
-### Phase A — render-CONVENTION fixes (the rules; settle before re-rendering, or re-render twice)
-
-- ✅ `harness-tool-runstate-unsourced` — **DONE** (merged `8b8a4ac`, 2026-06-03): a harness-general
-  render-time note in instantiation-guide §2 sources the "not the harness's task-tools" disambiguation
-  (decision: guide not spec — spec stays harness-clean). Archived. The 4 SKILL.md blocks re-render
-  faithfully from it in Phase B.
-- ✅ `cite-glossary-not-section-numbers` — **DONE** (merged `b56f7d8`, 2026-06-03): the
-  §-number firewall rule + grep-check + 3 glossary headwords + glossary-as-interface naming.
-  Archived. Residual (the binding-table interface completion) spun off, not a re-render blocker →
-  `glossary-binding-table-interface-completeness` (Phase D / no-rush).
-- `instance-template-slot-scaffolding` — the template doesn't scaffold the mechanism-slot
-  placeholders; settle slot-as-file vs slot-as-section, then fix the guide/template.
-
-### Phase B — re-instantiation (the big multi-run effort; anneal-dev first)
-
-- `instance-reinstantiation` — **umbrella:** re-render the cleaned spec into the instances
-  via anneal-dev (**anneal-dev first** → clippy → daneel → campaign-craft → bauleitplan),
-  de-bloating the legacy-bloated ones with a from-scratch rewrite, render-fidelity-verified. Bundles:
-  - `clippy-render-resync` — clippy's parked de-pollution vocab debt (c-safe/T1/T2/R1/R4; pre-dates §4).
-  - `clippy-skill-de-bloat` — clippy `SKILL.md` structural fresh-rewrite (the "2nd anneal-dev dogfood").
-  - `adoption-instance-settlement` — re-point each instance's CLAUDE.md seed; campaign-craft needs its source repo located first.
-
-### Phase C — independent method findings, in THEMED BATCHES (not 11 separate runs)
-
-**Session-4 additions (literature-backed candidate kernel sharpenings — fold into this campaign):**
-the verify-side cluster (criteria-first verify · exclusion-obligation · falsifiability-gate ·
-different-model verifier · decompose judgment claims — across `verify-techniques-research`,
-`multivoter-verify-no-predicate-claims`, `verify-vs-original-requirements`) + the investigate-side
-`multiple-working-hypotheses-investigate-design`. See the READ-FIRST block for the convergence.
-
-These are small spec/method fixes. **Recommended approach (operator-preferred 2026-06-03): one
-coherence-audit-driven campaign.** Run a **coherence audit** (practice 12 — and it's *due-ish*
-anyway: cycles have accumulated since the last handoff `ac1856832b8712fda`) over the corpus to
-surface fresh drift, and **fold the known findings below into that same cleanup**, resolved by
-theme — one audit + a few themed anneal-dev runs, instead of picking items off one at a time.
-**Caveat (still true):** the audit is a *floor not a gate*, the batching is a cost-saver not a
-requirement — every item below is its own file (`ls` shows them), workable individually, in any
-order, earlier than any audit if you want. The themes (the run-groupings within the campaign):
-
-- **C1 — verify/impl discipline** (gaps in what verify/impl must check; all touch `core.md` §4.2/§4.3 + `development-process.md`): `verify-vs-original-requirements`, `behavior-change-test-impact-enumeration`, `impl-green-on-commit`.
-- **C2 — dispatch / parallel-isolation mechanics** (the impl dispatch + worktree path): `dispatch-brief-one-source-of-truth`, `worktree-isolation-and-integration`.
-- **C3 — under-enforced / fragmented disciplines** (soft-rule → structural; consolidate): `completeness-search-enforcement` (decide the open question first), `verified-integrity-consolidation`.
-- **C4 — skill-craft / gate-hook small fixes**: `skill-craft-soft-load-pointer-discriminator` (skill-craft canonical), `skill-craft-pre-edit-hook-findings` (Findings 2 Bash-bypass + 4 spec-origin over-match).
-- **Standalone:** `surface-non-task-observations` (a new channel — small, its own thing).
-- **Feeds the strategy, not its own run:** `anneal-dev-extension-render-gate` — the "does a mechanical re-render warrant the skill-craft gate?" question is answered *within* `corpus-flows-redesign` (#3 enforcement); `anneal-dev-impl-checkpoint-vs-discharge-hook` (NEW 2026-06-03) — anneal-dev's impl-Checkpoint per-unit-commit vs the dev-process rule-corpus discharge hook, reconciled within the same redesign (#3 enforcement).
-
-### Phase D — instance-level / exploratory (no rush)
-
-- `impl-dispatch-workflow-substrate` — (NEW session 4) could clippy's impl-dispatch run on the
-  Workflow substrate? Verdict: not the whole run; defensible for the impl phase only; no change now.
-- `anneal-adhoc-use-and-graduation` — (NEW session 4) ad-hoc anneal use + graduation to an instance;
-  codify in the guide before building any skill.
-- `glossary-binding-table-interface-completeness` — (NEW 2026-06-03, the FB-3 residual) make the
-  glossary cover the binding-table left-column technical terms too; not a re-render blocker.
-- `clippy-greenfield-tolerance` — clippy's `verify` assumes existing code; instance-level greenfield hardening.
-- `clippy-run-findings-dispatch-coupling` — open clippy-surfaced cycles (Cycle 2.5 + the coherence-audit deep-sweep of §4.4 / §5.1 / mode mechanics).
-- `planner-instance-exploration` — build the planner instance + its framework findings (holds the `bindings.md` slot-collapse fork).
-- `generalize-sharpening-skill` — extract the sharpening family (PBS-coupled) like `coherence-audit` was; cross-repo, low-priority.
+### 6 ▸ REST — meta / exploratory / new-instance (doesn't fit the fix/change axis)
+- **Operator-flagged proof thread (high interest, NOT low value):**
+  `anneal-empirical-validation-experiment` (v0 — the falsifiable design-first-vs-act-first A/B) +
+  `anneal-reliability-measurement` (token-first + grounding-ratio). *(Mild disagreement with "rest":
+  these are your "prove me right or wrong" thread — here only because they're meta, not
+  framework/clippy fix/change. Promote if you want to act.)*
+- **Exploratory (no rush):** `impl-dispatch-workflow-substrate` · `anneal-adhoc-use-and-graduation` ·
+  `planner-instance-exploration` (new instance) · `generalize-sharpening-skill` (cross-repo tooling).

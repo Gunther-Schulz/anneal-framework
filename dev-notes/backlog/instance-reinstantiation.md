@@ -2,8 +2,10 @@
 
 **Status:** OPEN — **the effort that closes the framework-spec-cleanup render-tail**,
 expanded into its own home (operator-scoped 2026-06-03). Multi-run; downstream of
-merging the spec cleanup. Coordinates the existing per-instance render items
-(below) under one sequence + one governing principle.
+merging the spec cleanup. Coordinates the per-instance render work under one sequence
++ one governing principle. **(2026-06-04: the 3 bundled sub-efforts — render-resync,
+SKILL.md de-bloat, CLAUDE.md seed re-point — folded in below; their standalone files
+removed.)**
 
 ## The situation
 
@@ -97,6 +99,37 @@ per-instance re-render below should run *after* they land.)
 Each instance pass also closes its share of `adoption-instance-settlement` (the
 "rendered, not authored" CLAUDE.md seed re-point) when touched.
 
+## Bundled sub-efforts (folded in 2026-06-04 — were separate files)
+
+### A. clippy render-resync — parked vocab render-debt (re-enter when clippy active)
+Clippy lags framework core by these cycles (behavior-unchanged vocab alignment; batches freely while
+clippy idle — drift ~0). A **semantic** change instead pulls a render-validation forward, not into
+this batch.
+- **c-safe (§4.1.4 falsification)** — fw `5f4ed74`: coupling shapes `target-shape`/`target-uses` →
+  `target-existence`/`target-dependents`; predicate evidence abstracted in core (clippy binds the
+  concrete grep forms in §3); F3 [CONDITIONAL]/[AUTO-ACCEPTED]→verify handoff; sites:
+  `investigate-design.md`, `tracker.md`, check `lens-set.md`/`lenses.md`.
+- **T1** (`file:line` → "located read") fw `f9fd5b4` — clippy's `file:line` is its legit binding.
+- **T2/T3** fw `c634ebf` (`code`/`fixtures`→"work product"; `grep`→"search") — clippy binds; minimal.
+- **Coherence-audit** fw `8bfa20b` — unified **spawn-fallback** name across §4.2/§4.1.4/§4.3.
+- **R1** contract-surface discriminator + **R4** coupling-shape glossary bridge — fold into the same
+  §5.2 / falsification render-sync.
+- **Re-entry:** diff clippy render vs then-current core → isolate the delicate falsification
+  re-render → skill-craft gate → re-render → separate-context render-fidelity → release. Check daneel.
+
+### B. clippy SKILL.md de-bloat (the "2nd anneal-dev dogfood" candidate)
+`plugin/skills/clippy/SKILL.md` ~372 ln / ~2400 words — over skill-craft's 1500–2000 ideal. Compress
+the dispatch-mechanics overlap that restates the phase files; keep the closed-artifact form. Driving
+it as a 2nd anneal-dev dogfood (larger change = better V-27 datapoint) un-parks A above — bundle them.
+
+### C. CLAUDE.md seed re-point (all instances)
+The adoption re-pointed the instance-CLAUDE.md "rendered, not authored" SEED (`instantiation-guide.md`
+§6 + template); already-rendered instances still carry the old seed:
+- clippy (`coding-clippy/CLAUDE.md:15`) + daneel (`daneel/CLAUDE.md:15`) — straightforward re-point.
+- campaign-craft — stale + **no local source repo** (`CLAUDE.md:16-17` cites obsolete
+  `diligence-framework` + single-spec model; only the marketplace clone exists). Locate/clone source
+  first, then a larger re-point. Each instance pass closes its share when touched.
+
 ## Done when
 
 Every actively-used instance is current with the cleaned spec and de-bloated;
@@ -105,7 +138,5 @@ idle instances are either done or explicitly parked-to-next-active. Then archive
 
 ## Relates to
 - `framework-spec-cleanup.md` — the spec cleanup whose render-tail this is.
-- `clippy-render-resync.md` — clippy's faithful-propagation share.
-- `clippy-skill-de-bloat.md` — clippy's structural fresh-rewrite share (bundle the two).
-- `adoption-instance-settlement.md` — per-instance CLAUDE.md seed re-point + campaign-craft source-repo location.
 - `anneal-dev-extension-render-gate.md` — the render extension's gating (relevant to the faithful-render path).
+- (folded in 2026-06-04: clippy-render-resync, clippy-skill-de-bloat, adoption-instance-settlement — now the Bundled sub-efforts above.)
