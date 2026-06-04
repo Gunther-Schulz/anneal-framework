@@ -68,6 +68,13 @@ to the batch re-render run itself. (Confirmed disabled as of the
   INSTANCE set) → repoint to the folder; + their post-run-review Q7 walk → folder-faithful; + if any
   instance renders the triage/the 3 relocated terms, re-point to the new homes. Mostly mechanical
   path repoints (behavior-preserving). Commit ref: `e6abcc8`.
+- **validation-watch-lifecycle-fix** — run `.anneal-dev/runs/validation-watch-lifecycle-fix.md`; spec-only
+  release `0aa04e3` (+ README lifecycle `78be6e8`) on `main`. Source-delta: `post-run-review.md` Q7 — the
+  FIX-SHIPPED walk now defers to the validation-watch README's opportunity-exercised closing rule + the
+  archive-check (old "mitigation load-bearing/evaded" vocab removed). **Render obligation** (deferred):
+  clippy + daneel render `post-run-review.md` Q7 (their `references/post-run-review.md`) → re-point to the
+  new walk vocabulary (opportunity-handled / opportunity-not-exercised / fix-evaded; defer-to-README).
+  Behavior-preserving vocab + de-fragmentation render. Commit ref: `0aa04e3`.
 
 ## Two kinds of work — do NOT conflate
 
