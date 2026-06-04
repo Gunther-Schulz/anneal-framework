@@ -170,13 +170,15 @@ spec triage applies.
 >   tracker. Classify as **confirms** (cite the evidence),
 >   **refutes** (cite the evidence), or **no relevant evidence in
 >   this run**.
-> - **FIX-SHIPPED**: walk for **load-bearing instances** of the
->   mitigation. Classify as **mitigation load-bearing** (cite the
->   finding the mitigation caught + counter-factual: would this
->   have escaped the pre-mitigation protocol?), **mitigation not
->   exercised this run** (failure shape didn't surface), or
->   **mitigation evaded** (a finding escaped that the mitigation
->   should have caught — INVALIDATED trigger).
+> - **FIX-SHIPPED**: walk the entry against its closing rule
+>   (`dev-notes/validation-watch/README.md` Entry lifecycle), per its
+>   watch kind. Classify as **opportunity-handled** (`caught` for a
+>   correctness-watch / `produced-clean` for a quality-watch — cite the
+>   counter-factual: would the *old* protocol/form have failed?),
+>   **opportunity not exercised** (no case arose this run where the
+>   failure could have occurred — no evidence, stays open), or **fix
+>   evaded** (a case arose and the fix did not hold — INVALIDATED
+>   trigger).
 > - **RESOLVED**: skip — already validated; only re-walk if a
 >   later recurrence surfaces in Q1-Q4 findings.
 > - **INVALIDATED**: skip — already known to need new analysis.
@@ -187,10 +189,10 @@ findings that happen to bear on a V-N. Q7 forces the per-entry
 walk so signals accumulate systematically rather than waiting
 for fortuitous correlations. "No relevant evidence" across many
 WATCHING entries is itself useful signal — a watch entry nobody
-exercises warrants its own scrutiny. A **mitigation load-bearing**
-finding on a FIX-SHIPPED entry is the positive evidence needed to
-promote it to RESOLVED. The operator decides which V-Ns to
-transition from the walk's findings.
+exercises warrants its own scrutiny. An **opportunity-handled**
+finding on a FIX-SHIPPED entry is the evidence needed to promote it
+to RESOLVED. The operator decides which V-Ns to transition from the
+walk's findings.
 
 ### Q2. Value attribution
 
@@ -221,7 +223,12 @@ hit-rate (Q2).
 - **A render / spec / adherence gap** — per
   `development-process.md` practice 1; the triage routes each.
 - **A signal informing a `validation-watch/` entry** — append to
-  or amend the relevant V-N (the watchlist).
+  or amend the relevant V-N (the watchlist). Before filing a **new**
+  entry for a seemingly-new issue, scan
+  `dev-notes/validation-watch/archive/` for a matching — or **adjacent**
+  (same root, different manifestation) — RESOLVED entry; a match is a
+  recurrence/regression: `git mv` it back to the active folder and set
+  INVALIDATED, not a new `V-`. Only a clean scan gets a new entry.
 - **An instance-level F-finding** — if the instance has an
   F-finding record (e.g. coding-clippy's `spec/STATUS.md`),
   record there.
