@@ -1,8 +1,18 @@
 # anneal-dev self-render urgency — the render-cadence "stale-while-idle" rationale fails for the self-governing instance
 
-**Status:** OPEN — surfaced as a meta-observation during the
+**Status:** OPEN (policy carve-out only) — surfaced during the
 `anneal-dev-model-tier-policy` run (2026-06-04, session 7). A render-cadence
 policy gap, not a model-tier issue.
+
+**Immediate instance RESOLVED 2026-06-04 (session 7):** the
+`anneal-dev-reinstantiation` run re-rendered the anneal-dev plugin from the live
+spec (all 5 affected files; verify PASSED, render-fidelity battery clean) and
+bumped `plugin.json` 0.1.2→0.1.3 — the verified render is in the working tree.
+The running cache is **not yet** updated (R4 is github-release-coupled +
+operator-gated — commit → push → plugin update). So the *stale-instance* symptom
+is fixed pending the operator's reinstall; the **policy carve-out below remains
+the open question.** D7 of that run committed to deferring it here (classify per
+practice 8 before shipping).
 
 ## The observation
 

@@ -49,6 +49,15 @@ enabling it would render piecemeal, contradicting the batch. Keep it off in
 to the batch re-render run itself. (Confirmed disabled as of the
 `verify-vs-original-requirements` run, 2026-06-04.)
 
+**⚙ anneal-dev's share DISCHARGED 2026-06-04 (session 7).** The
+`anneal-dev-reinstantiation` run rendered ALL session-5/6/7 deltas below into the
+**anneal-dev** plugin (5 files; verify PASSED, render-fidelity battery clean;
+`plugin.json` 0.1.2→0.1.3) — see `.anneal-dev/runs/anneal-dev-reinstantiation.md`.
+The queue entries stay OPEN for the **domain instances** (clippy / daneel /
+campaign-craft / bauleitplan), which still owe their renders; only anneal-dev's
+obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-ONLY
+→ now **fully discharged**.)
+
 **Queue (accumulating; clear an entry when the batch renders it into all instances):**
 - **verify-vs-original-requirements** — run `.anneal-dev/runs/verify-vs-original-requirements.md`;
   spec change on branch `anneal-dev/verify-vs-original-requirements`. Source-delta:

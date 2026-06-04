@@ -51,15 +51,17 @@ skill-craft self-review + operator soundness on INV-3/F8).
   the intent-falsification pass SHIPPED; the live residual is model-diversity-for-verify, which collides with
   the model-tier floor — F8).
 
-**▶ NEXT-UP (operator-requested, session 7): bring the newest anneal-dev fully active** — re-render the
-anneal-dev plugin from the current spec (session-5/6 deferred renders + this run's model-tier delta) +
-reinstall, so the running tool matches its own method (resolves F9 + `anneal-dev-self-render-urgency`'s
-immediate instance). **Operator chose (b) defer-to-dedicated-run 2026-06-04** after the scope was sized:
-**419-line source-delta across 6 spec files → all 8 plugin files** (the full `instance-reinstantiation`
-render for anneal-dev — the whole intent-falsification + requirements + `[VERIFIED — surfaced]` machinery,
-not just model-tier). **Fidelity-critical (separate-context render-fidelity battery) — run it as its own
-focused effort, NOT a quick reinstall.** Baseline for the source-delta diff: plugin last rendered at
-`d9033ee`.
+**▶ NEXT-UP — DONE (render); reinstall pending operator release.** The
+`anneal-dev-reinstantiation` run (session 7, 2026-06-04) re-rendered the anneal-dev plugin from the live
+spec and **verify PASSED** (render-fidelity battery clean across all 5 affected files: SKILL.md +
+investigate-design.md + verify.md + foundations.md + tracker.md; `plugin.json` 0.1.2→0.1.3). The verified
+render is in the **working tree, uncommitted** — the operator owns the render commit. **R4 activation
+(bring the *running cache* current) is operator-gated:** the `anneal-framework` marketplace is
+github-sourced, so the cache updates only via commit → push → plugin update to 0.1.3 (not a local copy).
+Spawned: `anneal-dev-plugin-dangling-anti-patterns-ref` (pre-existing F16, low-sev). `anneal-dev-self-render-urgency`
+immediate instance resolved; its **policy carve-out stays open** (D7 deferred it there, classify per practice 8).
+*(Original task, for context: the full `instance-reinstantiation` render for anneal-dev — intent-falsification +
+requirements + `[VERIFIED — surfaced]` + model-tier machinery; baseline `d9033ee`.)*
 
 *(Session 6 history below.)*
 
