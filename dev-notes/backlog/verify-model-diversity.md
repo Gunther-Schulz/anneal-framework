@@ -1,11 +1,25 @@
-# Intent-falsification verify for no-mechanical-predicate (judgment) claims
+# Verify model-diversity — should the checker run on a different model than the actor?
 
-**Status:** OPEN — **reframed 2026-06-04** from "multi-voter adversarial quorum" to **single
-criteria-first intent-falsification**, after a live n=1 demonstration in the
-`foundation-invariants-register` run. The judgment-class sibling of anneal's mechanical
-falsification. **PURSUE via its own decide-ahead + anneal-dev run** (method-kernel edit to
-core anneal). No longer gated on multi-vote measurement — the vote-count apparatus is dropped
-(below). (Filename kept for backlink stability; the item is the intent-falsification candidate.)
+**Status:** OPEN (narrowed + renamed 2026-06-04, was `multivoter-verify-no-predicate-claims` —
+the old name implied multi-voting, which is dead; see below). Two of this item's three threads
+are CLOSED, leaving ONE live residual:
+
+- **Multi-voting / quorum — DROPPED.** The verify-techniques research deflated it ("model
+  diversity > vote-count; quorum gains marginal/task-dependent, sometimes worse"). Dead; do not
+  revive.
+- **The intent-falsification pass — SHIPPED** (session 6, run `intent-falsification-convergence-pass`;
+  live in `core.md` §4.1.4 + the `[VERIFIED — surfaced]` disposition). This item was its
+  prospective wiring; now realized. The judgment-class sibling of the mechanical falsification pass.
+- **LIVE residual — model-diversity for verify.** anneal's verify-independence today rests on
+  *fresh-context* isolation only, NOT a *different model*. INV-3's anchor (Panickssery et al.)
+  says a verifier sharing the actor's base model inherits self-preference bias, so a
+  different-model checker is the stronger form. **Open question:** should anneal's verify run on
+  a model distinct from the actor's — and how does that reconcile with the **model-tier floor**
+  (shipped session 7 via `anneal-dev-model-tier-policy`), which now pins author AND verifier to
+  the same top tier (F8)? Options: carve verify out of the floor, seek diversity *within* the top
+  tier, or accept the trade. (Operator accepted the trade for now — this item holds the option open.)
+
+**(History below — the reframe + the shipped intent-falsification design — kept as context.)**
 
 ## The observation (unchanged)
 anneal's falsification step (`core.md` §4.1.4) is a **deterministic predicate over a

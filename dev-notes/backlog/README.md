@@ -27,7 +27,38 @@ Two parts: the **READ-FIRST block** (current state + next decisions) and **the o
 arc + a re-prioritization into the 6-tier order below; in the same grooming: 4 research runs
 archived, the re-render bundle merged into `instance-reinstantiation`. 32 open.)
 
-### ▶ Where we are + next steps (2026-06-04 session 6 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-04 session 7 — READ FIRST)
+
+**Session 7 — `anneal-dev-model-tier-policy` SHIPPED (spec-only, release `3d03d0c`; archived).** The
+blanket top-tier **dispatch model-tier floor**: every anneal-dev dispatch runs at the configured top
+tier (value `anneal-dev.config/model-tier.md` = opus), downgrading forbidden; floor-not-guarantee
+framing. Instance-level per foundation contract 3 (no framework touch — framework stays harness-agnostic,
+mechanically confirmed). Its own anneal-dev run (method-kernel edit; kernel-independent verify =
+skill-craft self-review + operator soundness on INV-3/F8).
+
+- **Standout result:** the convergence cycle's **intent-falsification pass** (a session-6 addition the
+  *running* plugin doesn't even carry yet) caught a real gap the 8 standardized lenses missed — the floor
+  was *absent-by-default* in installed-elsewhere projects → drove the **D5 bootstrap flip**. Conformant-success
+  for the session-6 intent-falsification work.
+- **Soundness residual (operator accepted):** INV-3/F8 — the blanket pin runs verify on the *same tier as
+  the actor*, foreclosing the cross-tier model-diversity lever; trade accepted for now (held open in
+  `verify-model-diversity`).
+- **Spawned:** `anneal-dev-self-render-urgency` (the render-cadence "stale-while-idle" rationale fails for
+  the self-governing instance) · `cross-instance-precedent-discipline` (no forcing-function for sibling-instance
+  prior art; the clippy precedent was found late). V-29 got an n≥1 data point (register focus = scope-shrink,
+  not judgment-shrink).
+- **Renamed:** `multivoter-verify-no-predicate-claims` → **`verify-model-diversity`** (multi-voting is DEAD;
+  the intent-falsification pass SHIPPED; the live residual is model-diversity-for-verify, which collides with
+  the model-tier floor — F8).
+
+**▶ NEXT-UP (operator-requested, session 7): bring the newest anneal-dev fully active** — re-render the
+anneal-dev plugin from the current spec (session-5/6 deferred renders + this run's model-tier delta) +
+reinstall, so the running tool matches its own method (resolves F9 + `anneal-dev-self-render-urgency`'s
+immediate instance).
+
+*(Session 6 history below.)*
+
+### ▶ Where we are + next steps (2026-06-04 session 6 — superseded; history)
 
 **Session 6 — two method-kernel anneal-dev runs SHIPPED (both spec-only; instance renders deferred to
 the batch). The foundation-self-certification arc + its dogfooding consequence.**
@@ -51,7 +82,7 @@ anneal-dev run (method-kernel edit). Self-contained: design sketch + home + rela
 
 **Spawned this session (dogfooding + operator probes):** `framework-blindspot-class-analysis` (tier 6) ·
 `intent-falsification-soundness-sweep` · `canonical-scenario-regression-suite` ·
-`deferred-finding-owed-artifact-forcing-function` · `multivoter-verify-no-predicate-claims` reframed (the
+`deferred-finding-owed-artifact-forcing-function` · `verify-model-diversity` reframed (the
 intent-falsification kernel-candidate — now SHIPPED prospectively as run 2) · `loopback-root-cause-triage`
 n≥4. Render-debt: both runs queue into `instance-reinstantiation`.
 
@@ -120,7 +151,7 @@ batch):
 - *Investigate-side:* `multiple-working-hypotheses-investigate-design` (the genuine GAP — resolve the
   internal-rivals-vs-committed-recommendation tension first).
 - *Verify-side:* criteria-first verify · exclusion-obligation · falsifiability-gate · different-model
-  verifier · decompose judgment claims (across `multivoter-verify-no-predicate-claims`,
+  verifier · decompose judgment claims (across `verify-model-diversity`,
   `verify-vs-original-requirements`).
 
 **The proof path (operator's "prove me right or wrong"):** `anneal-empirical-validation-experiment`
@@ -220,7 +251,7 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   independent sources point the same way):
   - *investigate-side* `multiple-working-hypotheses-investigate-design` — the genuine GAP; resolve the
     internal-rivals-vs-committed-recommendation tension first.
-  - *verify-side* `multivoter-verify-no-predicate-claims` (reframed: model-diversity, not vote-count)
+  - *verify-side* `verify-model-diversity` (reframed: model-diversity, not vote-count)
     + the criteria-first / exclusion-obligation / falsifiability-gate / different-model sharpenings
     (partly captured in `verify-vs-original-requirements`, tier 2 — the *fix* and the *change*
     converge; sequence them together).

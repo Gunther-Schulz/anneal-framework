@@ -81,4 +81,4 @@ Both literature runs landed — concrete refinements to fold into the protocol:
 ## Relates to
 - `anneal-reliability-measurement.md` (the why/what — this is the how; the 3 metrics live there too).
 - `design-first-vs-act-first-research.md` (the verdict that motivates it: no head-to-head exists).
-- `multivoter-verify-no-predicate-claims.md` (arm C's independent-verify variants).
+- `verify-model-diversity.md` (arm C's independent-verify variants).

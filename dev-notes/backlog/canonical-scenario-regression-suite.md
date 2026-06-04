@@ -20,7 +20,7 @@ parent item's own framing) — relate the two at decide-ahead so they don't dupl
 ## Relates to
 - `anneal-empirical-validation-experiment.md` — the cousin (the falsifiable A/B); decide
   shared scaffolding vs distinct at design.
-- `multivoter-verify-no-predicate-claims.md` — the judgment-class verify sibling (intent
+- `verify-model-diversity.md` — the judgment-class verify sibling (intent
   falsification); the scenario suite is the outcome-regression sibling. Both are
   "verify the method itself" candidates.
 - Origin: `foundation-self-certification-machinery` (archived) / the

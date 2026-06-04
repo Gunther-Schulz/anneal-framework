@@ -60,7 +60,7 @@ A taxonomy of confirmed candidate classes; each confirmed class → its own fix/
 ## Relates to
 - `intent-falsification-soundness-sweep` — the RETROSPECTIVE sweep for the ONE class found;
   this is the PROSPECTIVE enumeration of ALL classes (the sweep is acting on one output).
-- `multivoter-verify-no-predicate-claims` — the FIX for the found class (judgment-soundness).
+- `verify-model-diversity` — the FIX for the found class (judgment-soundness).
 - `loopback-root-cause-triage` — REACTIVE (failures-as-gap-signals, per loopback); this is
   PROACTIVE (enumerate before they fire). Compose.
 - `coherence-audit` — one known class (set-level drift) already has a tool; a data point for

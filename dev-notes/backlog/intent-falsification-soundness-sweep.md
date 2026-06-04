@@ -50,7 +50,7 @@ hid one, mature machinery hides more). Risk-order, cap per pass, log what was no
 each confirmed finding becomes its own classifiable fix (practice 8) through anneal-dev.
 
 ## Relates to
-- **Prospective sibling** — `multivoter-verify-no-predicate-claims` (reframed this session:
+- **Prospective sibling** — `verify-model-diversity` (reframed this session:
   mechanism → single intent-falsification; add an intent-falsification leg to anneal-dev's
   convergence/verify). This sweep is the **retrospective** application; that item is the
   **prospective** wiring. Do the wiring and the sweep need not repeat per-run.

@@ -39,3 +39,18 @@ Per `development-process.md` practice 8, this V-N is legitimate: genuine uncerta
 about a shipped design choice's **payoff**, to settle empirically — not deferral of a
 classifiable fix (no fix is in hand; whether the register focuses the pass is an
 empirical question about operation, not a mechanism the run withheld).
+
+---
+
+**n≥1 observation (`anneal-dev-model-tier-policy` run, 2026-06-04 session 7) — MIXED, leans
+produced-clean on the SCOPE claim.** The focusing artifact named INV-3 as the sole touched
+invariant (holds on context-isolation; F8 the surfaced residual) and INV-1/2/4/5 untouched.
+The operator's soundness pass was demonstrably **aimed** — it reduced to "does INV-3 hold, and
+is the F8 verify-cross-tier-diversity trade acceptable?" rather than open-ended "is this
+sound?". That is real **scope-shrink** evidence (the counterfactual open-ended pass would have
+re-derived all five invariants). **But** the register did NOT make the residual *judgeable* on
+its own: the operator initially accepted ("sound-as-is"), then asked for a plain-language
+unpacking of F8 before genuinely rendering the verdict — i.e. the focus named the right thing,
+the judgment still cost. Consistent with the anti-false-comfort residual above: the register
+shrinks WHAT to judge (the known-invariant scope), not the cost of judging the novel/irreducible
+part. One data point, true-positive on focus, not a false-accept measurement; keep WATCHING.
