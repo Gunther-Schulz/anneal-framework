@@ -1,14 +1,16 @@
 # FB-2. Verify checks the locked design, not the original task requirements
 
-**🔄 IN-PROGRESS anneal-dev run (paused 2026-06-04, phase = implement).** Design locked + [VERIFIED]
-(requirements record captured at investigate-design + a verify design-coverage-of-requirements check;
-honest F5 residual: catches captured-but-uncovered, not never-captured). **To resume:** in a fresh
-session *on this machine*, invoke `anneal-dev` (e.g. "resume the anneal-dev run on
-verify-vs-original-requirements") — it scans `.anneal-dev/runs/`, finds the IN-PROGRESS tracker, and
-re-enters at **implement / U1** (write the rules into `core.md` §4.1+§4.3 + `glossary`, then render
-into the 3 instances). Run state (gitignored, local): `.anneal-dev/runs/verify-vs-original-requirements.md`
-+ `…impl-plan.md`. **Method-kernel:** verify adds the kernel-independent review (skill-craft + operator
-soundness) + commit approval — those remain mandatory before ship.
+**✅ SHIPPED + CLOSED 2026-06-04 — spec-only release `1d93e58` on `main`.** The anneal-dev run
+completed: design locked + [VERIFIED] → implement (re-shaped spec-only per the render-cadence policy)
+→ verify **[PASSED]** (isolated) + method-kernel kernel-independent review (skill-craft form-review
+clean + operator soundness "sound, ship — as close as we can get") + operator commit approval. The
+kernel edit (`core.md` §4.1 requirements-record capture + verbatim-request; §4.3 requirements-coverage
+check incl. the soft record-vs-request leg; `glossary` 2 entries) shipped. **Instance renders
+(U2/U3/U4) DEFERRED** to the batch re-render — queued in `instance-reinstantiation` Render-debt queue
+(source-delta = `1d93e58`). **Honest residual shipped (F5, deferred):** catches
+captured-but-uncovered, not never-captured; deferred-trigger = a real run observing a never-captured
+escape. Run state (gitignored, local): `.anneal-dev/runs/verify-vs-original-requirements.md` (Status
+PASSED). Archived per backlog convention.
 
 **Status:** open finding — needs a practice-9 design surface. Detail + steelman: `planner-instance-exploration.md` finding 5. Memory: [[project-verify-requirements-coverage-gap]].
 **✅ AUDIT-CONFIRMED** (coherence-audit `ac39b6ab6d5d929cd`, 2026-06-04, L9-b): the audit independently
