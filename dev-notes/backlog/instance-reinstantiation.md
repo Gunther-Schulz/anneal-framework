@@ -42,6 +42,13 @@ decoupled bookend, so renders were never part of a spec-change run's verify. The
 batch enumerates its change-set by **source-delta diff** per
 `anneal-dev-rerender-changeset-by-source-delta` (never an eyeball audit).
 
+**Corollary — `render-and-open-diff` stays DISABLED for framework-change runs under
+this policy.** The extension re-renders a single change per-run on verify-PASSED;
+enabling it would render piecemeal, contradicting the batch. Keep it off in
+`anneal-dev.config/extensions.enabled` for spec-only runs; if used at all, it belongs
+to the batch re-render run itself. (Confirmed disabled as of the
+`verify-vs-original-requirements` run, 2026-06-04.)
+
 **Queue (accumulating; clear an entry when the batch renders it into all instances):**
 - **verify-vs-original-requirements** — run `.anneal-dev/runs/verify-vs-original-requirements.md`;
   spec change on branch `anneal-dev/verify-vs-original-requirements`. Source-delta:

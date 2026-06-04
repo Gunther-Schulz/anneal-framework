@@ -1,8 +1,37 @@
-# Auto-battle cadence: an "auto-advance-until-next-phase" cadence (+ default-mode question)
+# Interactive "auto-cycle to [READY]" menu affordance (auto-advance cycles, halt at the phase gate)
 
-**Status:** OPEN — framework mode-mechanics idea, operator-raised 2026-06-04. **Not for now** (filed
-per no-silent-deferral). Framework-spec (`foundations.md`/`core.md` Modes + `SKILL.md` Modes) →
-anneal-dev + kernel-independent verify when pursued.
+**Status:** OPEN — framework mode-mechanics idea, operator-raised 2026-06-04, **direction resolved
+2026-06-04** (see Resolution). **Not for now** (filed per no-silent-deferral). Framework-spec
+(`foundations.md`/`core.md` Modes + `SKILL.md` Modes + the closed-artifact menu) → anneal-dev +
+kernel-independent verify when pursued. (Filename `auto-battle-cadence-mode` is legacy — the resolved
+shape is an *interactive* affordance, NOT an auto-battle variant; renamed in-title, file slug kept as
+the stable referent.)
+
+## Resolution (operator, 2026-06-04) — candidate (b), NOT a 3rd mode
+Keep **two named modes** exactly as they are — interactive and **auto-battle stays fully autonomous**
+(reject candidate (c): do not add an auto-battle toggle). Interactive gains **one more menu entry**: a
+"do all `(a)` cycles autonomously until `(n)` (the phase gate) is reached" affordance — the operator
+selects it once and the cycle loop self-advances (taking the AI's recommended `another cycle` each
+cycle) until the AI's recommendation becomes `next phase` at `[READY]`, where it **halts and presents
+the closed artifact** for the operator's `(n)`/override. Supersedes the earlier "(a) one stop-at axis
+that collapses the 3 apparent modes" lean: the operator wants the two modes to stay distinct, with the
+cadence as an interactive *affordance*, not a re-parameterization of what interactive/auto-battle are.
+(Implementation MAY still use an internal stop-at flag — that is a realization detail for the cycle,
+not a surfaced 3rd mode.)
+
+**Two properties to preserve in the design (why the affordance beats an auto-battle variant):**
+- **`[CONDITIONAL]` resolution stays with the operator.** Because the loop halts at `[READY]` with the
+  operator present, open `[CONDITIONAL]`s surface at the closed artifact for operator resolution — they
+  do NOT silently `[AUTO-ACCEPTED]` as they would in auto-battle. The operator sheds per-cycle `(a)`
+  clicks, never the load-bearing `[READY]` decision.
+- **Method-kernel touchpoints still fire.** The affordance auto-takes `another cycle`; it does NOT
+  auto-pass the kernel-independent-review / commit-approval gates. Surfacing at phase transitions +
+  method-kernel touchpoints is unchanged.
+
+**Dogfood datapoint:** the `verify-vs-original-requirements` run (2026-06-04) ran this exact cadence
+**ad-hoc** via a session-cadence instruction ("interactive: auto-advance cycles; surface at phase
+transitions + method-kernel touchpoints"). It worked — evidence the affordance is wanted and the
+semantics above hold in practice. Formalizing it as a menu entry removes the need for the ad-hoc note.
 
 ## The idea
 Today there are **two modes** (`core.md`/`foundations.md` Modes): **interactive** (operator selects
@@ -20,7 +49,9 @@ A third *named* mode = **3 modes** (interactive + two auto-battle variants), whi
 - **(b) interactive gains a "run-until-(n)" affordance** at the menu (operator says "advance until
   ready"; cycles self-run meanwhile).
 - **(c) auto-battle gains a `stop-at-[READY]` toggle.**
-(a) looks cleanest — collapses 3 apparent modes into one parameterized axis. Resolve as part of the cycle.
+(Earlier lean was (a) — collapses 3 apparent modes into one parameterized axis. **Superseded: the
+operator resolved toward (b)** — see Resolution above. (a)'s mechanism may survive as an internal flag,
+but not as a surfaced re-parameterization of the modes.)
 
 ## Parked sub-idea
 **Full auto-battle as the default** (vs interactive-by-default today). Operator-flagged, explicitly
