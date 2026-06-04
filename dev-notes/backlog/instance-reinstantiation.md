@@ -21,6 +21,38 @@ Separately, some instances are **structurally bloated** (clippy's `SKILL.md` is
 372 ln, over budget — `clippy-skill-de-bloat.md`; plus at least one other long
 file). This is a *different* problem from staleness.
 
+## Render-debt queue — spec-only framework runs feed this batch (policy 2026-06-04)
+
+**Render-cadence policy (operator-decided 2026-06-04).** A framework-change
+anneal-dev run ships **spec-only**: it edits the kernel (`spec/` + `foundation.md` +
+dev-process) and does **NOT** render into the instances per-run. Each such run
+appends its **source-delta** to the queue below; the batch re-render (Sequence
+section) carries the *accumulated* delta into every instance **once**. Rationale: N
+spec changes rendered per-run drive N×(#instances) render passes; batched, it is one
+pass per instance over the union delta. Cost of the policy: instances stay
+transiently **stale** between a spec ship and the batch — tracked here, low-urgency
+per the parked-while-idle convention (drift ~0 while an instance is unused); the debt
+is *bounded* because the batch is gated to run before instances are relied on for
+real work / before release.
+
+This is the run-level operationalization of the tier rationale already in
+`README.md` ("framework before clippy … *or you render twice*") and aligns with the
+framework's own model — `render-and-open-diff` fires **on-verify-PASSED**, a
+decoupled bookend, so renders were never part of a spec-change run's verify. The
+batch enumerates its change-set by **source-delta diff** per
+`anneal-dev-rerender-changeset-by-source-delta` (never an eyeball audit).
+
+**Queue (accumulating; clear an entry when the batch renders it into all instances):**
+- **verify-vs-original-requirements** — run `.anneal-dev/runs/verify-vs-original-requirements.md`;
+  spec change on branch `anneal-dev/verify-vs-original-requirements`. Source-delta:
+  `spec/core.md` §4.1 (requirements-record capture + verbatim-request, D3/D8) + §4.3
+  (requirements-coverage check incl. the soft record-vs-request leg, D4/D8) +
+  `spec/glossary.md` (entries: "requirements record", "requirements-coverage check",
+  D6). **Render obligation** (the run's deferred U2/U3/U4): each instance's
+  `phases/investigate-design.md` (capture rule) + `phases/verify.md` (coverage check —
+  render the soft leg honestly, NOT as a mechanical gate) + the 2 term homes. Commit
+  ref: _<filled at run ship>_.
+
 ## Two kinds of work — do NOT conflate
 
 1. **Faithful re-render (propagation).** Carry the §4 cleanup into an instance's

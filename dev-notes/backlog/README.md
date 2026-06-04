@@ -69,6 +69,17 @@ they're meta (not framework/clippy fix/change) — high interest, not low value.
 3. **Resume the framework track** (tiers 2 + 5 below) — the coherence-audit-driven framework fixes,
    then the re-render.
 
+**⚙ Render-cadence policy (operator-decided 2026-06-04).** Framework-change anneal-dev runs (tiers
+2 + 4) ship **spec-only** — they edit the kernel and do **NOT** render into instances per-run. Renders
+batch **once** into tier-5 `instance-reinstantiation`, which now carries a **render-debt queue**: each
+spec-only run appends its source-delta there, and the batch renders the accumulated delta into every
+instance in one pass (method: `anneal-dev-rerender-changeset-by-source-delta`). This operationalizes
+the tier rationale below ("*or you render twice*") at the **run** level — and matches the framework's
+own decoupled model (`render-and-open-diff` fires post-verify, never inside a spec-change run's verify).
+First applicant: the in-flight `verify-vs-original-requirements` run ships its spec edit (U1); its
+per-instance renders (U2/U3/U4) defer to the batch (queued). Instances stay transiently stale —
+tracked, low-urgency while idle (drift ~0).
+
 ### Session history (context, not work)
 
 - **Session 3 (2026-06-03):** landed the keystone `corpus-flows-redesign` (one channel = anneal-dev;
