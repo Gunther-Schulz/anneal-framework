@@ -54,7 +54,12 @@ skill-craft self-review + operator soundness on INV-3/F8).
 **▶ NEXT-UP (operator-requested, session 7): bring the newest anneal-dev fully active** — re-render the
 anneal-dev plugin from the current spec (session-5/6 deferred renders + this run's model-tier delta) +
 reinstall, so the running tool matches its own method (resolves F9 + `anneal-dev-self-render-urgency`'s
-immediate instance).
+immediate instance). **Operator chose (b) defer-to-dedicated-run 2026-06-04** after the scope was sized:
+**419-line source-delta across 6 spec files → all 8 plugin files** (the full `instance-reinstantiation`
+render for anneal-dev — the whole intent-falsification + requirements + `[VERIFIED — surfaced]` machinery,
+not just model-tier). **Fidelity-critical (separate-context render-fidelity battery) — run it as its own
+focused effort, NOT a quick reinstall.** Baseline for the source-delta diff: plugin last rendered at
+`d9033ee`.
 
 *(Session 6 history below.)*
 
