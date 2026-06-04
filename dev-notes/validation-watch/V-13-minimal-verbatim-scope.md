@@ -1,6 +1,12 @@
 ## V-13. Minimal verbatim content scope — sufficient or polluting?
 
-**Status: FIX-SHIPPED (2026-05-27, commit [pending]).** Basis form
+**Status: FIX-SHIPPED (2026-05-27, commit [pending]).**
+
+**Kind: quality-watch.** The fix is a form-change (citation+fact basis
+replaces verbatim code-quote), not a catcher — so it closes on a
+*produced-clean-under-opportunity* instance (see README closing rule).
+
+Basis form
 revised — verbatim content dropped entirely. Basis is now (a) a
 re-runnable executable query OR (b) a file:line range citation
 paired with one observable fact (count, identifier, type,
@@ -20,9 +26,11 @@ quote rather than analysis. Pollution flag tripped clearly.
 
 **Closing criterion (FIX-SHIPPED → RESOLVED).** A post-run review
 identifies a run where the new basis form was load-bearing —
-either grounded a claim cleanly without producing code-quote
-pollution, OR verify/convergence caught a fabricated citation
-under the new form. One observed instance is sufficient.
+either **produced-clean under opportunity** (an opportunity arose
+where the *old verbatim form* would have polluted the tracker, and
+the new citation+fact form grounded the claim clean), OR
+verify/convergence caught a fabricated citation under the new form.
+One observed instance is sufficient.
 
 **Original observation preserved below for audit trail.**
 
