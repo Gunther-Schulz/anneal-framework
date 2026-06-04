@@ -35,6 +35,15 @@ per the parked-while-idle convention (drift ~0 while an instance is unused); the
 is *bounded* because the batch is gated to run before instances are relied on for
 real work / before release.
 
+**anneal-dev is the never-idle exception — resolved, not by faster renders.** The
+parked-while-idle rationale is structurally false for anneal-dev (it's the channel
+for *all* corpus-evolution). But the fix is NOT a prompt self-render: anneal-dev runs
+**ground in the live co-located spec** (project `CLAUDE.md` "Self-hosting" clause —
+the live spec is the source of truth here, the plugin is a build artifact). So its
+plugin freshness is **hygiene, not urgency** — it keeps the *same batched cadence* as
+the idle instances; staleness is never a correctness risk because runs read source,
+not the loaded plugin. (Closed `anneal-dev-self-render-urgency`, archived.)
+
 This is the run-level operationalization of the tier rationale already in
 `README.md` ("framework before clippy … *or you render twice*") and aligns with the
 framework's own model — `render-and-open-diff` fires **on-verify-PASSED**, a

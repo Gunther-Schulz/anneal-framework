@@ -28,6 +28,21 @@ insufficient):
 Doubt-voicing about whether re-grounding applies IS the evidence
 it applies.
 
+**Self-hosting: the live spec governs, the loaded plugin is a build
+artifact.** This repo is the one place anneal-dev operates on its *own*
+source — and that source (`spec/*`, `anneal-dev/spec/*`, `foundation.md`)
+is **co-located** with the work. The installed anneal-dev plugin is a
+**build artifact** of that source and may lag it (renders batch as
+hygiene, not per-edit — `dev-notes/backlog/instance-reinstantiation.md`).
+So when anneal-dev runs *here*, ground the method in the **live
+co-located spec**, not the loaded plugin's rendered `foundations`/`phases`;
+where they diverge, the live spec governs. (Asymmetry: a *downstream*
+project using anneal-dev has only the rendered plugin — the spec isn't
+shipped with it — so there the plugin **is** the source of truth and
+normal instance-staleness applies. The rule is self-hosting-only, which
+is why it lives in this always-fresh, never-rendered `CLAUDE.md` rather
+than in the plugin or the kernel.)
+
 **New instantiation** (a brand-new instance, e.g. anneal-marketing) is
 not one of the above edit cycles: it starts with the **pre-channel
 derivation** — author the instance spec *with the operator*

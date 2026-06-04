@@ -1,8 +1,24 @@
 # anneal-dev self-render urgency — the render-cadence "stale-while-idle" rationale fails for the self-governing instance
 
-**Status:** OPEN (policy carve-out only) — surfaced during the
-`anneal-dev-model-tier-policy` run (2026-06-04, session 7). A render-cadence
-policy gap, not a model-tier issue.
+**Status:** RESOLVED 2026-06-04 (session 7) — archived. Surfaced during the
+`anneal-dev-model-tier-policy` run; a render-cadence policy gap, not a model-tier
+issue.
+
+**Resolution — the urgency dissolves; re-grounding is the rule, freshness is
+hygiene.** The load-bearing mitigation all along was that anneal-dev runs
+**re-ground in the live spec** — so the stale loaded plugin was never a
+correctness risk, only an *invisible debt*. The fix is therefore not a prompt
+self-render carve-out (expensive per-run render) nor a staleness detector — it
+is to make the re-grounding the **explicit rule**: the project `CLAUDE.md`
+"Self-hosting" clause now states that in this repo the **live co-located spec is
+the source of truth** and the loaded anneal-dev plugin is a **build artifact**
+that may lag (live spec governs on divergence). This works *only* because the
+self-render problem is unique to the self-hosting repo (a downstream anneal-dev
+has only its plugin → plugin IS its truth). With re-grounding explicit, plugin
+freshness drops to **hygiene** — keep the batched cadence (no prompt-per-run
+render, no detector hook); the urgency is gone. A project-instruction edit, not
+a kernel edit or plugin render. (`instance-reinstantiation.md` render-cadence
+note updated to match.)
 
 **Immediate instance RESOLVED 2026-06-04 (session 7):** the
 `anneal-dev-reinstantiation` run re-rendered the anneal-dev plugin from the live
