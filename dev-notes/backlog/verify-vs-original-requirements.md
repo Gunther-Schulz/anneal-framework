@@ -1,6 +1,10 @@
 # FB-2. Verify checks the locked design, not the original task requirements
 
 **Status:** open finding — needs a practice-9 design surface. Detail + steelman: `planner-instance-exploration.md` finding 5. Memory: [[project-verify-requirements-coverage-gap]].
+**✅ AUDIT-CONFIRMED** (coherence-audit `ac39b6ab6d5d929cd`, 2026-06-04, L9-b): the audit independently
+traced this gap (`core.md:686`, `:708-720`) — verify frames on the *locked design*; neither a
+design-side nor a verify-side check tests against the *original ask*. Ranked the **one finding with a
+real correctness consequence**. Fix is this item's anneal-dev cycle (F1).
 
 **Gap.** A requirement dropped at investigate-design escapes: verify
 checks work-vs-locked-design + standardized lenses + executable

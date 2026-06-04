@@ -99,22 +99,29 @@ F2 `mv`/`cp` Bash-bypass accepted as a known limitation; F3 residual filed →
   non-code instance) + the parked render-debt (now folded into `instance-reinstantiation`).
 - `clippy-run-findings-dispatch-coupling` → archives when the coherence-audit deep-sweep (tier 2 —
   §4.4 / §5.1 / mode mechanics) lands + Cycle 2.5 (deferred into `planner-instance-exploration`).
+  (NOTE: the 2026-06-04 cadence audit was kernel-wide / on-demand-fleshing — it did NOT target this
+  specific §4.4/§5.1/mode-mechanics deep-sweep; this tail remains open.)
 
 ### 2 ▸ FRAMEWORK FIXES — close gaps in the existing kernel / dev-process (root-at-framework)
-**Vehicle: a coherence-audit-driven campaign.** A coherence-audit is **cadence-due** (practice 12 +
-session-3's heavy cycle count) and is the home for the **`core.md` bloat/tightness** question (~7.2k
-words / 976 ln; decided: no de-bloat *rewrite* — measure-then-cut via the audit's Bloat lens). Run
-the audit, fold the batches below into the same cleanup, resolve by theme. (Floor not gate — any item
-is workable alone.) **F0 render-conventions gate the tier-5 re-renders — do them first.**
+**Vehicle: the coherence-audit-driven campaign — audit ✅ RAN 2026-06-04** (handoff
+`ac39b6ab6d5d929cd`; cadence baseline reset from `ac1856832b8712fda`). Verdict: kernel structurally
+sound, keystone coherent, no domain-leakage; load-bearing-lens (1+8+9) finding count = 5. Findings
+captured → the F-batches below (F1 confirmations) + the new `kernel-consolidation-glossary-hygiene`
+(cluster: triage-3-homes · dev-terms-in-glossary · "edit cycle" gloss · `core.md` §4=52% bloat with 2
+measured movable points). The **`core.md` bloat question** is now *measured* (no de-bloat rewrite —
+the 2 movable points live in that item). Fixes are separate anneal-dev cycles (the audit was the
+floor). **F0 render-conventions gate the tier-5 re-renders — do them first.**
 - **F0 — render-convention (gate tier 5):** `instance-template-slot-scaffolding` (settle slot-as-file
   vs slot-as-section, then fix guide/template) · `glossary-binding-table-interface-completeness`.
 - **F1 — verify/impl discipline gaps** (`core.md` §4.2/§4.3 + `development-process.md`):
-  `verify-vs-original-requirements` · `behavior-change-test-impact-enumeration` · `impl-green-on-commit`.
+  `verify-vs-original-requirements` (✅ audit-confirmed L9-b — the real correctness gap) ·
+  `behavior-change-test-impact-enumeration` · `impl-green-on-commit` (✅ audit-confirmed spec-silent L7-a).
 - **F2 — structural / dependency enumeration** (dogfooding-surfaced; highest-leverage):
   `structural-change-dependent-enumeration` (n=2) · `loopback-root-cause-triage`.
-- **F3 — under-enforced disciplines** (soft-rule → structural; consolidate):
+- **F3 — under-enforced / fragmented disciplines** (soft-rule → structural; consolidate):
   `completeness-search-enforcement` (decide its open question first) · `verified-integrity-consolidation`
-  · `surface-non-task-observations`.
+  · `surface-non-task-observations` · `kernel-consolidation-glossary-hygiene` (NEW — the 2026-06-04
+  audit's consolidation cluster: triage-3-homes, glossary scope, edit-cycle gloss, core.md bloat).
 - **F4 — dispatch / parallel-isolation mechanics** (root framework §4.2 + render; surfaced via clippy):
   `dispatch-brief-one-source-of-truth` · `worktree-isolation-and-integration` (mixed-level: also
   harness; placed here as fix-at-source).

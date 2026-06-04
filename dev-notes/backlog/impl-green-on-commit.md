@@ -1,7 +1,10 @@
 # Impl commit semantics — "committed on completion" vs "green on commit"
 
 **Status:** OPEN — finding (cross-session clippy run, 2026-06-02; surfaced in a
-"what's mandated vs ad-hoc" exchange). Minor / spec-silence. Relates to
+"what's mandated vs ad-hoc" exchange). Minor / spec-silence. **✅ AUDIT-CONFIRMED spec-silent**
+(coherence-audit `ac39b6ab6d5d929cd`, 2026-06-04, L7-a): §4.2.8 checkpoint + §4.2.5 self-check (lenses,
+not executable) defer executable verification wholesale to §4.3 — *defensible* (verify = single
+executable locus) but genuinely silent; this cycle decides explicit-vs-leave. Relates to
 [[clippy-run-findings-dispatch-coupling]] (V-8 dispatch self-check) and the verify
 phase's executable verification.
 
