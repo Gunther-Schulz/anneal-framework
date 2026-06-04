@@ -6,7 +6,10 @@ urgent** (see data) but real. **Corpus-evolution → runs through anneal-dev** (
 citations deferred to the batch) — splitting the file changes every reference to it as a file, and
 those references live in the kernel (`post-run-review.md` Q7, `development-process.md`, `glossary.md`)
 + the clippy/daneel rendered rules. (Supersedes the earlier "one big file + stub + single archive file"
-half-measure — the folder model retires entries the way the backlog does.)
+half-measure — the folder model retires entries the way the backlog does.) **QUEUED — tier-2 F3,
+batched with `kernel-consolidation-glossary-hygiene`** (operator: "batch", 2026-06-04). Both touch
+`glossary.md` + kernel structure; one anneal-dev run amortizes the ceremony (the V-27 cost concern) —
+not run standalone now. Low urgency (the file's length is mostly legitimate active watches, not cruft).
 
 ## The gap
 `dev-notes/validation-watch.md` has **logical** retirement but no **physical** retirement:
