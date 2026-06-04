@@ -51,17 +51,28 @@ skill-craft self-review + operator soundness on INV-3/F8).
   the intent-falsification pass SHIPPED; the live residual is model-diversity-for-verify, which collides with
   the model-tier floor — F8).
 
-**▶ NEXT-UP — DONE (render); reinstall pending operator release.** The
-`anneal-dev-reinstantiation` run (session 7, 2026-06-04) re-rendered the anneal-dev plugin from the live
-spec and **verify PASSED** (render-fidelity battery clean across all 5 affected files: SKILL.md +
-investigate-design.md + verify.md + foundations.md + tracker.md; `plugin.json` 0.1.2→0.1.3). The verified
-render is in the **working tree, uncommitted** — the operator owns the render commit. **R4 activation
-(bring the *running cache* current) is operator-gated:** the `anneal-framework` marketplace is
-github-sourced, so the cache updates only via commit → push → plugin update to 0.1.3 (not a local copy).
-Spawned: `anneal-dev-plugin-dangling-anti-patterns-ref` (pre-existing F16, low-sev). `anneal-dev-self-render-urgency`
-immediate instance resolved; its **policy carve-out stays open** (D7 deferred it there, classify per practice 8).
-*(Original task, for context: the full `instance-reinstantiation` render for anneal-dev — intent-falsification +
-requirements + `[VERIFIED — surfaced]` + model-tier machinery; baseline `d9033ee`.)*
+**▶ `anneal-dev-reinstantiation` SHIPPED + ACTIVATED (session 7, 2026-06-04).** The full
+`instance-reinstantiation` render scoped to anneal-dev *itself*: re-rendered the plugin from the live spec
+(intent-falsification pass + mechanical-rename, `[VERIFIED — surfaced]` disposition, requirements record +
+coverage check, model-tier floor) across all 5 affected files; **verify PASSED** (separate-context
+render-fidelity battery clean); released `02e7ee2` (step-4 discharge) + `5edf6cd`, pushed; `claude plugin
+update` → **0.1.3 LIVE** (cache verified carrying the render; `/reload-plugins` swapped it in-session). The
+running anneal-dev now carries its own method. Dogfood: the run used the very intent-falsification pass it
+was rendering (grounded in live spec, not the stale loaded skill). Spawned:
+`anneal-dev-plugin-dangling-anti-patterns-ref` (pre-existing dangling cite, low-sev).
+
+**▶ `anneal-dev-self-render-urgency` RESOLVED + archived (session 7).** Not via faster renders — via
+recognizing **re-grounding already does the job**: the project `CLAUDE.md` "Self-hosting" clause now makes
+the **live co-located spec the source of truth** (the loaded plugin is a build artifact that may lag; live
+spec governs on divergence). Plugin-freshness → **hygiene** on the existing batched cadence; the "urgency"
+is gone. Self-hosting-only (a downstream anneal-dev has only its plugin → plugin IS its truth). Release
+`e7542eb`. Net new machinery: zero.
+
+**▶ NEXT-UP — operator's pick (high dev-cycle velocity; churn slows as the corpus matures).** Tier 2
+**framework fixes** is next in order — the **F0 render-conventions** (`instance-template-slot-scaffolding`,
+`glossary-binding-table-interface-completeness`) gate the big clippy/daneel re-render, so do them first.
+Lighter quick-wins available: `anneal-dev-plugin-dangling-anti-patterns-ref` (one-line render fix),
+`validation-watch-entry-retrofit` (mechanical field-add).
 
 *(Session 6 history below.)*
 
