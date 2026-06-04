@@ -67,6 +67,29 @@ manufacture false gaps and bloat the backlog. The value is in the SORT (practice
   a FRAMEWORK-root cannot fix it (that's corpus-evolution) — it SURFACES it (per
   skill-craft Layer 5 reflexivity: notice + surface, don't fix cross-level).
 
+## 2026-06-04 update — n≥4, intent-falsification-convergence-pass run
+Three more operator-detection instances in ONE run, all design-refinements the operator's
+questions surfaced that the AI + the framework's lenses missed on their own:
+1. convergence-pass invalidation-ordering (→ D9; candidate: the EXISTING convergence cycle's
+   passes were never examined for the same orderable dependency).
+2. F-track absent-operator auto-defer asymmetry (→ D3 fix; a REAL general finding-state gap —
+   F-track `[VERIFIED — deferred]` is "operator-pull" while D-track `[AUTO-ACCEPTED]` handles
+   absent-operator; this run's D3 fix closes it generally, but it was latent in the kernel).
+3. basis-strength (deductive-over-n=1; softest — a candidate "prefer-strongest-available-basis"
+   lens, judgment-adjacent).
+Each was caught by the operator ASKING — the operator-detection reliance this item removes.
+Strengthens the case that the standing in-loop triage must fire without the operator.
+
+## Register-anchor observation (related, surfaced same run)
+The **no-operator-detection invariant** keeps proving load-bearing (F11, foundation-invariants
+run; the D3 auto-accept fix, this run) yet was EXCLUDED from the foundation-invariants register
+for lack of an external anchor (correct per the membership rule). Open: is there an external
+anchor (automation/autonomy literature — "don't rely on the supervised party to supervise")? If
+yes → it earns a register slot; if no → the register README should note it as a known
+load-bearing invariant the register can't hold (so "absent" ≠ "not load-bearing"). Relates to
+`framework-blindspot-class-analysis` (a register that can't hold a load-bearing invariant is a
+blind-spot class) + the register README.
+
 ## Relates to
 - `structural-change-dependent-enumeration.md` — that is a SPECIFIC gap (n=2);
   this check is the META-mechanism that would have surfaced it automatically.

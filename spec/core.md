@@ -320,7 +320,12 @@ last cycle's pass left no load-bearing finding; every design decision is
 [VERIFIED] or [AUTO-ACCEPTED] (§5.2) — both modes; **and every
 [VERIFIED] design decision's embedded target-naming and count
 premises carry a re-runnable basis** (per §3.2 basis-naming for
-design-decision premises); no finding is left open. These are the
+design-decision premises); no finding is left open. The
+convergence cycle's intent-falsification findings (§4.1.4) must be
+**dispositioned, not the pass silent**: mechanically-confirmable
+findings resolved, pure-judgment findings terminal at
+[VERIFIED — surfaced] (§5.1); a [VERIFIED — surfaced] finding is
+terminal and does not hold the phase. These are the
 status the tracker carries (§5.2) — a notebook of where each
 concern stands — not a mechanical check the run self-passes.
 
@@ -381,9 +386,24 @@ produce **zero D-track deltas** (no new design decisions, no
 amendments to existing ones).
 
 A convergence cycle is a full cycle (investigation pass +
-standardized inspection pass + falsification pass over
-[VERIFIED] decisions; see `modules.md` §3.4), not a final lens
-application on accumulated state. Its investigation pass must enumerate **new
+standardized inspection pass + intent-falsification pass +
+mechanical falsification pass over [VERIFIED] decisions; see
+`modules.md` §3.4), not a final lens application on accumulated
+state. The two falsification-style passes are **sequenced**, not
+run unconditionally-both: the intent-falsification pass runs
+**first**; if it produces a D-track delta the mechanical
+falsification pass is **skipped** that cycle (the design is about
+to change, so the mechanical run would be stale) and the cycle
+records "mechanical skipped: intent-delta this cycle" (so
+`modules.md` §3.4's no-falsification-line-malformed rule is
+reconciled — its skip carve-out is specified there). Only when the
+intent-falsification pass comes up clean does the mechanical
+falsification pass run. The re-trigger reuses the
+behavior-preserving classification (§4.3): a behavior-preserving
+mechanical fix does not re-open the intent-falsification pass (the
+design's character is unchanged, so the intent-clean result carries
+forward); a non-behavior-preserving mechanical fix re-opens it.
+Its investigation pass must enumerate **new
 surfaces investigated this cycle**, where each surface is
 **new** by at least one of: (a) cites a file path not in any
 prior cycle's artifact this run; (b) cites a search query whose
@@ -393,11 +413,11 @@ by any prior cycle's citation of the same source. A convergence cycle that
 produces no new-surface citations (only re-attestations of
 prior surfaces) is a malformed artifact.
 
-The **falsification pass** iterates each [VERIFIED] D-entry at
-the convergence cycle's start. Entries still [CONDITIONAL] or
-[AUTO-ACCEPTED] rest on an unverified assumption and are **not**
-falsified textually here — that assumption is discharged by
-verify (§4.3) exercising the work, per §3.2.2. The pass is **dispatched to a fresh-
+The **mechanical falsification pass** iterates each [VERIFIED]
+D-entry at the convergence cycle's start. Entries still
+[CONDITIONAL] or [AUTO-ACCEPTED] rest on an unverified assumption
+and are **not** falsified textually here — that assumption is
+discharged by verify (§4.3) exercising the work, per §3.2.2. The pass is **dispatched to a fresh-
 context subagent**, applying §3.1's separate-checker
 requirement — an artifact produced and judged in the same
 context is not self-enforcing. The subagent is briefed per
@@ -443,20 +463,92 @@ brief (d); per-candidate falsifying capability is now mechanical
 (predicate-applied-to-result; no subagent judgment).
 
 **Spawn-fallback.** If an isolated context cannot be
-established (subagent spawn fails), the falsification pass is
-conducted in the working context per the rules above and the
-artifact records "without isolation" — the spawn-fallback
-(§4.2.2); an un-isolated falsification pass is never silently
-taken as though it were independent.
+established (subagent spawn fails), the pass — mechanical or
+intent-falsification — is conducted in the working context per
+the rules above and the artifact records "without isolation" —
+the spawn-fallback (§4.2.2); an un-isolated pass is never
+silently taken as though it were independent.
+
+The **intent-falsification pass** is a pure judgment surfacer: a
+fresh-context, criteria-first adversarial attack on whether the
+locked design **serves its intent**, against the requirements
+record (§4.1). Criteria-first means the subagent derives the
+success criteria from the requirements record **before** reading
+the design — the independence lever; the design is the attack's
+target, not its criteria source. It is dispatched to a
+fresh-context subagent (§3.1's separate-checker requirement),
+briefed per `modules.md` §3.3, and produces the
+intent-falsification artifact (`modules.md` §3.4.1): a per-R#
+attack line (every requirement attacked, so a clean pass is
+**evidenced** clean, not asserted — an anti-flood and audit-trail
+bound, not rubber-stamp prevention) plus a per-finding line. The
+intent-model is the captured requirements record; a requirement
+never captured there is invisible to the pass (the inherited
+never-captured-requirement residual, reduced by verify's
+requirements-coverage check, §4.3, not eliminated).
+
+Each finding routes by whether a runnable check exists:
+
+- A concern that **reduces to a §3.4 coupling-shape falsification
+  of a [VERIFIED] D-entry's basis** is a mechanical-falsification
+  finding: it is formatted as a candidate + closed predicate and
+  the orchestrator computes the verdict (no subagent judgment, per
+  the mechanical pass above); a confirmed flaw flips the affected
+  [VERIFIED] entry through [INVALIDATED]→[PENDING] (§5.2) and the
+  cycle continues (this is the intent-delta that skips the
+  mechanical pass that cycle). A runnable-but-not-coupling-shape
+  concern (e.g. an edit-set that includes a render path a
+  requirement forbids) does not force a cycle via §3.4 — its input
+  shape is the §3.4 line, not "any runnable check" — and is
+  recorded `surfaced` like any judgment concern.
+- A concern with **no such reduction** (pure judgment) is recorded
+  on the F-track as **[VERIFIED — surfaced]** (§5.1) — terminal,
+  surfaced for the operator's review, never blocking the phase and
+  never a loopback. The dodge-down vector (classify a checkable
+  concern as judgment to skip the cycle) is judgment-adjacent but
+  backstopped by the next cycle's fresh-context re-spawn
+  (operator-independent), which re-attacks the same design.
+
+**The operator-independence boundary.** The pass's value is
+operator-**independent**: it force-fixes the checkable concerns
+(the mechanical-falsification route — the teeth) and honestly
+records the judgment residual ([VERIFIED — surfaced]), neither
+waiting on the operator. The recorded residual **feeds** the
+operator's soundness pass; for a method-kernel edit that pass is
+the kernel-mandated step-4 soundness verdict
+(`development-process.md`, the "Dev-on-anneal" entry-condition —
+the operator originates it via the permitted [READY]/`next phase`
+menu selection (§1 action (a)), not forbidden operator-detection),
+and for an instance run there is no such required gate (the
+residual is honest-record-for-review, the [AUTO-ACCEPTED]
+contract, §5.2). The pass **feeds** that gate; it never becomes it
+or depends on it, and introduces no forbidden
+operator-detection-as-enforcement (§1 operator-expected action
+bound).
+
+A clean intent-falsification pass is **not a soundness
+certificate**: for a method-kernel edit the operator's
+design-vs-intent soundness verdict is irreducible; the pass feeds
+it, never replaces it.
 
 If the convergence cycle surfaces D-track deltas (new decisions
 or amendments, or falsified [VERIFIED] entries reopened), the
 design is not [READY]: the deltas feed into the next cycle and
 the loop continues. [READY] is presented only after a
-convergence cycle is observed clean. **The convergence cycle's
-outputs (investigation pass artifact + falsification pass
-artifact + zero-D-delta status) form part of the [READY]
-artifact** alongside §4.1.2's fresh-session result line.
+convergence cycle is observed clean — for the intent-falsification
+pass, **clean means its findings are dispositioned, not the pass
+silent**: every mechanically-confirmable finding resolved (the
+affected entry re-[VERIFIED] across a cycle, bounded by the
+zero-D-delta convergence) and every pure-judgment finding terminal
+at [VERIFIED — surfaced]. A perpetually-skeptical pass converges:
+its surfaced concerns terminate and accumulate in the record;
+only an open mechanically-confirmable finding holds the phase, so
+the cycle cannot loop forever on judgment surfacing. **The
+convergence cycle's outputs (investigation pass artifact +
+intent-falsification pass artifact + mechanical falsification pass
+artifact, or its recorded skip + zero-D-delta status) form part of
+the [READY] artifact** alongside §4.1.2's fresh-session result
+line.
 
 The convergence cycle fires in both modes (interactive and
 auto-battle). In auto-battle no operator override is available;
@@ -806,7 +898,7 @@ A finding — an observation recorded by inspection — moves through:
    spans steps or cycles.
 3. **[VERIFIED]** — verification complete: the finding's content is
    established on evidence. A [VERIFIED] tag carries a cited
-   **disposition** naming which of three cases applies (closed enum):
+   **disposition** naming which of four cases applies (closed enum):
 
    - **addressed** — the cited D# names the same observable
      behavior the finding observes (an element of the work
@@ -827,11 +919,23 @@ A finding — an observation recorded by inspection — moves through:
      class, a named dependency change — that would re-fire on
      the deferred finding; defer-without-trigger or
      trigger-without-observable-class is malformed).
+   - **surfaced** — a judgment-class concern raised by the
+     intent-falsification pass (§4.1.4) with no runnable
+     mechanical check and no observable re-fire trigger. Its
+     citable basis-form is the fresh-context intent-falsification
+     attack artifact (`modules.md` §3.4.1): the attack ran and
+     classified the concern as having no runnable check. Terminal,
+     surfaced for the operator's always-available, never-required
+     review (the [AUTO-ACCEPTED] mode-keyed contract, §5.2: in
+     auto-battle the surface is recorded for post-run review, not
+     awaited). A `surfaced` without its cited attack-artifact
+     basis is malformed (§3.1), the same shape as the dispositions
+     above.
 
    The disposition is cited as a tagged suffix on the status line:
    `[VERIFIED — <disposition>]`. A [VERIFIED] without a cited
    disposition is malformed (§3.1). A finding with none of the
-   three dispositions citable stays at its prior status; §4.3
+   four dispositions citable stays at its prior status; §4.3
    then forces [ISSUES FOUND].
 
 A finding whose stated content is found inaccurate during
@@ -847,10 +951,10 @@ A [VERIFIED] finding can then be invalidated:
    contradicted before [VERIFIED] is simply corrected.
 
 **F-entry resolution closure.** F-entries resolve through
-exactly four paths: one of the three [VERIFIED — disposition]
+exactly five paths: one of the four [VERIFIED — disposition]
 cases above, or [ISSUES FOUND] → loopback (§4.3). Inline-fix —
 modifying the work product to address a finding without one of
-the four resolutions — is not a path; attempting one is
+the five resolutions — is not a path; attempting one is
 malformed (§3.1). The closure applies to F-entries from any
 source: verify findings, impl-phase self-check findings,
 investigation-pass findings.
@@ -943,7 +1047,10 @@ not in the work product.
 The status tags gate [READY] (§4.1.1): an [INVALIDATED] finding, a
 load-bearing finding short of [VERIFIED], or a design decision short
 of [VERIFIED]/[AUTO-ACCEPTED] (§5.2) is an unresolved concern that
-holds the phase — the loop continues until it resolves. These are the
+holds the phase — the loop continues until it resolves. Only a
+finding short of [VERIFIED] holds the phase; a [VERIFIED — surfaced]
+finding (§5.1) is at [VERIFIED] — terminal — and therefore does not
+hold it. These are the
 status the tracker carries, read at the [READY] judgment (§4.1.1),
 not a gate a separate evaluation re-derives.
 

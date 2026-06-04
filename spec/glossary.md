@@ -105,7 +105,7 @@ D-entry's basis claims to rest on. Closed set of three:
   basis the behavior exercised by executable verification, not
   falsified textually here.
 
-The convergence-cycle falsification pass (`core.md` §4.1.4)
+The convergence-cycle mechanical falsification pass (`core.md` §4.1.4)
 must cover every shape the basis depends on with a candidate
 per shape (`modules.md` §3.4 candidate set).
 
@@ -146,8 +146,9 @@ from `development-process.md`'s *edit cycle* — one scope of change,
 not a loop iteration.)
 
 **Convergence cycle** — a full cycle (investigation pass +
-standardized inspection pass + falsification pass over [VERIFIED]
-decisions) run after the working context judges the §4.1.1
+standardized inspection pass + intent-falsification pass +
+mechanical falsification pass over [VERIFIED] decisions) run after
+the working context judges the §4.1.1
 supporting facts met and the §4.1.2 fresh-session test PASSED.
 [READY] requires the convergence cycle to produce zero D-track
 deltas (`core.md` §4.1.4). The investigation pass must enumerate
@@ -156,9 +157,11 @@ queries not present in any prior cycle's investigation-pass
 artifact this run; a convergence cycle that only re-attests prior
 findings is malformed.
 
-**Falsification pass** — the per-decision pass at the convergence
-cycle attempting to invalidate each [VERIFIED] D-entry's basis
-(`core.md` §4.1.4). Dispatched to a fresh-context subagent
+**Mechanical falsification pass** — the per-decision pass at the
+convergence cycle attempting to invalidate each [VERIFIED] D-entry's
+basis (`core.md` §4.1.4), distinct from the **Intent-falsification
+pass** (below), which attacks the design's serving of its intent.
+Dispatched to a fresh-context subagent
 applying §3.1's separate-checker requirement. For each entry,
 the subagent produces a candidate set (one candidate per
 coupling shape the basis depends on; see Coupling shape above),
@@ -190,6 +193,28 @@ present). The predicate's variant must suit the candidate's
 tagged coupling shape (`modules.md` §3.4 shape-coherence rule).
 Lifts per-candidate falsifying capability from subagent
 judgment to orchestrator computation.
+
+**Intent-falsification pass** — the convergence cycle's
+judgment-class soundness pass: a fresh-context, criteria-first
+adversarial attack on whether the locked design **serves its
+intent**, against the requirements record — distinct from the
+mechanical falsification pass, which attacks each [VERIFIED]
+D-entry's basis. A pure judgment surfacer: it feeds the operator's
+soundness pass, it does not certify soundness (a clean pass is not
+a soundness certificate). Sequenced first in the convergence cycle
+(its delta skips the mechanical pass that cycle). Specified in
+`core.md` §4.1.4.
+
+**Mechanically-confirmable / pure-judgment finding** — the routing
+distinction for an intent-falsification finding (`core.md` §4.1.4).
+A **mechanically-confirmable** finding reduces to a `modules.md`
+§3.4 coupling-shape falsification of a [VERIFIED] D-entry's basis →
+routed to the mechanical falsification pass (orchestrator computes;
+a confirmed flaw reopens the entry). A **pure-judgment** finding has
+no such reduction → recorded `[VERIFIED — surfaced]`. The split-tag
+is evidence-bearing: mechanically-confirmable only when a §3.4
+candidate is named (a runnable-but-not-coupling-shape concern is
+pure-judgment).
 
 **Cycle-another (recommendation)** — the AI's recommendation to
 run another investigate-design cycle rather than transition to
@@ -231,8 +256,9 @@ surface (cause uncertain, no auto-restore).
 cannot spawn an isolated subagent for dispatched work: the work is
 conducted in the working context and surfaces "without isolation".
 Applies wherever the framework dispatches isolated work — an
-implement unit (`core.md` §4.2.2), the convergence-cycle falsification
-pass (§4.1.4), or verify (§4.3). The isolation guarantee (separate
+implement unit (`core.md` §4.2.2), the convergence-cycle
+falsification-style passes (mechanical and intent-falsification,
+§4.1.4), or verify (§4.3). The isolation guarantee (separate
 copy, escape-resistance, integrity check) is **waived** on this
 path — hence surfaced, not silent.
 
@@ -247,8 +273,9 @@ default, in order:
    investigation pass produced. Artifact shape and citation
    requirements per `modules.md` §3.2.
 
-The convergence cycle adds a third, the **falsification pass**
-(`core.md` §4.1.4).
+The convergence cycle adds two more, sequenced: the
+**intent-falsification pass** then the **mechanical falsification
+pass** (`core.md` §4.1.4).
 
 **Standardized-pass findings artifact** — the per-cycle artifact a
 standardized inspection pass emits: one line for each in-scope lens —
@@ -301,9 +328,21 @@ a status tag.
 
 **Finding disposition** — the cited case-discrimination on a
 [VERIFIED] finding's status line (form `[VERIFIED —
-<disposition>]`). Closed enum: **addressed**, **non-issue**,
-**deferred**. Each case's body, cite-form, and the malformed-
+<disposition>]`). Closed enum of four: **addressed**,
+**non-issue**, **deferred**, **surfaced** (see `[VERIFIED —
+surfaced]` below). Each case's body, cite-form, and the malformed-
 status rule on absence are specified in `core.md` §5.1.
+
+**[VERIFIED — surfaced]** — the fourth finding disposition: a
+judgment-class concern raised by the intent-falsification pass
+(`core.md` §4.1.4) with no runnable mechanical check and no
+observable re-fire trigger. Recorded as an honest soundness
+residual, terminal at [VERIFIED] — it does not hold the phase
+(`core.md` §5.3) and never triggers a loopback — and surfaced for
+the operator's always-available, never-required review (the
+[AUTO-ACCEPTED] mode-keyed contract). Its citable basis-form is
+the fresh-context intent-falsification attack artifact; a
+`surfaced` without it is malformed. Specified in `core.md` §5.1.
 
 **Status tag** — a bracketed marker on a finding or a design
 decision recording its state. The full set:

@@ -5,8 +5,11 @@ The framework requires the tracker to persist across interruptions
 (`spec/modules.md` §3.1). Other artifacts must also persist: each
 cycle's standardized-pass findings artifact (`spec/modules.md`
 §3.2), the impl plan (`spec/modules.md` §3.3), and — at the
-convergence cycle — the falsification-pass artifact
-(`spec/modules.md` §3.4). The framework states run state is **not
+convergence cycle — the mechanical falsification-pass artifact
+(`spec/modules.md` §3.4) and the intent-falsification-pass
+artifact (`spec/modules.md` §3.4.1, the intent-falsification pass
+per `anneal-framework/spec/core.md` §4.1.4). The framework states
+run state is **not
 assumed to share a container with the work product** (`core.md`
 §6 Run lifecycle); the instance supplies the concrete location and
 resume mechanism per `instantiation-guide.md` §2.
@@ -34,9 +37,13 @@ Where the artifacts live:
 - **Tracker:** `.anneal-dev/runs/<run-name>.md`
 - **Standardized-pass findings artifacts:** `.anneal-dev/runs/<run-name>.cycle-<N>.standardized-pass.md`
   (cycle-stamped; per `modules.md` §3.2)
-- **Falsification-pass artifact:** `.anneal-dev/runs/<run-name>.cycle-<N>.falsification.md`
+- **Mechanical falsification-pass artifact:** `.anneal-dev/runs/<run-name>.cycle-<N>.falsification.md`
   (the convergence cycle's per-decision artifact; per
   `modules.md` §3.4)
+- **Intent-falsification-pass artifact:** `.anneal-dev/runs/<run-name>.cycle-<N>.intent-falsification.md`
+  (the convergence cycle's intent-falsification pass artifact —
+  the per-R# attack lines + per-finding lines; per `modules.md`
+  §3.4.1, the pass per `anneal-framework/spec/core.md` §4.1.4)
 - **Impl plan:** `.anneal-dev/runs/<run-name>.impl-plan.md`
   (the dispatch-unit list, dependency-ordered, parallel-eligibility
   marker + listed element/contract scope per unit; per
@@ -93,7 +100,8 @@ Per `instantiation-guide.md` §5 (filesystem layout rule + Project
 init):
 
 - **Runtime state** (tracker, standardized-pass artifacts,
-  falsification-pass artifacts, impl plans): `.anneal-dev/runs/`
+  mechanical falsification-pass artifacts, intent-falsification-pass
+  artifacts, impl plans): `.anneal-dev/runs/`
   (gitignored — `git check-ignore` true).
 - **Operator-editable artifacts** (extension toggles, lens
   supplements, operator-facing config): `anneal-dev.config/`

@@ -27,7 +27,37 @@ Two parts: the **READ-FIRST block** (current state + next decisions) and **the o
 arc + a re-prioritization into the 6-tier order below; in the same grooming: 4 research runs
 archived, the re-render bundle merged into `instance-reinstantiation`. 32 open.)
 
-### ▶ Where we are + next steps (2026-06-04 session 5 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-04 session 6 — READ FIRST)
+
+**Session 6 — two method-kernel anneal-dev runs SHIPPED (both spec-only; instance renders deferred to
+the batch). The foundation-self-certification arc + its dogfooding consequence.**
+
+1. **`foundation-invariants-register`** (release `35cc329`; item `foundation-self-certification-machinery`
+   archived) — the anchor-gated **foundation-invariants register** (`dev-notes/foundation-invariants/`: 5
+   externally-anchored kernel invariants + README) + the per-touched-invariant focusing artifact wired into
+   the method-kernel-edit verify (`development-process.md` §2 / step-4) + the `Invariant-change-ratified`
+   protection (`hooks/commit-msg`). Surfacer, not certifier; operator stays irreducible. Watch **V-29**
+   (focus-payoff, WATCHING).
+2. **`intent-falsification-convergence-pass`** (shipped this commit) — the **intent-falsification pass**
+   (judgment-class design-vs-intent soundness check) in core anneal's convergence cycle (`core.md` §4.1.4) +
+   the new **`[VERIFIED — surfaced]`** finding disposition + the artifact (`modules.md` §3.4.1) + glossary
+   terms + persistence binding. A pure SURFACER (operator-irreducible for kernel edits; never self-certifies).
+   **Validated by 4 recursive-dogfooding rounds — the pass run on its own design caught + fixed B/F/S-class
+   soundness flaws** (the session's standout result).
+
+**▶ NEXT-UP (operator-chosen, after /clear): `anneal-dev-model-tier-policy`.** anneal-dev work always uses
+the top model tier (never cost-downgraded) — rule in `anneal-dev/spec`, value in `anneal-dev.config`. Its own
+anneal-dev run (method-kernel edit). Self-contained: design sketch + home + relate in the item.
+
+**Spawned this session (dogfooding + operator probes):** `framework-blindspot-class-analysis` (tier 6) ·
+`intent-falsification-soundness-sweep` · `canonical-scenario-regression-suite` ·
+`deferred-finding-owed-artifact-forcing-function` · `multivoter-verify-no-predicate-claims` reframed (the
+intent-falsification kernel-candidate — now SHIPPED prospectively as run 2) · `loopback-root-cause-triage`
+n≥4. Render-debt: both runs queue into `instance-reinstantiation`.
+
+*(Session 5 history below.)*
+
+### ▶ Where we are + next steps (2026-06-04 session 5 — superseded; history)
 
 **Session 5 — three method-kernel anneal-dev runs SHIPPED (all spec-only; instance renders deferred to
 the batch) + a new enforcement hook. Dogfooding validated: runs 2 & 3 came out of using anneal-dev on
@@ -211,5 +241,10 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   `anneal-reliability-measurement` (token-first + grounding-ratio). *(Mild disagreement with "rest":
   these are your "prove me right or wrong" thread — here only because they're meta, not
   framework/clippy fix/change. Promote if you want to act.)*
+- **Framework blind-spot class analysis (high interest — generalizes the intent-falsification
+  discovery):** `framework-blindspot-class-analysis` — proactively enumerate the CLASSES of
+  verification blind spot the framework may have (one — judgment-class soundness — was just found
+  by accident; others likely). Must use EXTERNAL lenses (the framework can't introspect its own
+  blind spots — Gödel). Output feeds tier-4 changes + `intent-falsification-soundness-sweep`.
 - **Exploratory (no rush):** `impl-dispatch-workflow-substrate` · `anneal-adhoc-use-and-graduation` ·
   `planner-instance-exploration` (new instance) · `generalize-sharpening-skill` (cross-repo tooling).
