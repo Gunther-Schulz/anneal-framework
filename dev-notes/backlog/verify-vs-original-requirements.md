@@ -1,5 +1,15 @@
 # FB-2. Verify checks the locked design, not the original task requirements
 
+**🔄 IN-PROGRESS anneal-dev run (paused 2026-06-04, phase = implement).** Design locked + [VERIFIED]
+(requirements record captured at investigate-design + a verify design-coverage-of-requirements check;
+honest F5 residual: catches captured-but-uncovered, not never-captured). **To resume:** in a fresh
+session *on this machine*, invoke `anneal-dev` (e.g. "resume the anneal-dev run on
+verify-vs-original-requirements") — it scans `.anneal-dev/runs/`, finds the IN-PROGRESS tracker, and
+re-enters at **implement / U1** (write the rules into `core.md` §4.1+§4.3 + `glossary`, then render
+into the 3 instances). Run state (gitignored, local): `.anneal-dev/runs/verify-vs-original-requirements.md`
++ `…impl-plan.md`. **Method-kernel:** verify adds the kernel-independent review (skill-craft + operator
+soundness) + commit approval — those remain mandatory before ship.
+
 **Status:** open finding — needs a practice-9 design surface. Detail + steelman: `planner-instance-exploration.md` finding 5. Memory: [[project-verify-requirements-coverage-gap]].
 **✅ AUDIT-CONFIRMED** (coherence-audit `ac39b6ab6d5d929cd`, 2026-06-04, L9-b): the audit independently
 traced this gap (`core.md:686`, `:708-720`) — verify frames on the *locked design*; neither a
