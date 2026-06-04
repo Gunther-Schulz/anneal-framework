@@ -141,7 +141,9 @@ three, run in sequence:
 **Investigation** — a single run of the investigate-design phase, from
 the first cycle to [READY].
 
-**Cycle** — one iteration of the investigate-design loop.
+**Cycle** — one iteration of the investigate-design loop. (Distinct
+from `development-process.md`'s *edit cycle* — one scope of change,
+not a loop iteration.)
 
 **Convergence cycle** — a full cycle (investigation pass +
 standardized inspection pass + falsification pass over [VERIFIED]
@@ -371,36 +373,10 @@ parallel-eligibility marker. Produced at implement-phase start;
 persisted alongside the tracker. Specified in `core.md` §4.2.1 and
 `modules.md` §3.3.
 
-**Production signal** — a real-run observation that confirms or
-refutes a watch entry's hypothesis about an uncertain design
-choice (`validation-watch.md` preamble). Validation-watch entries
-record uncertain decisions and what signal would prompt revisiting
-them; production signals come from any instance's real runs.
-
-**Watch-entry lifecycle states** — the four states a
-`validation-watch.md` entry carries on its Status line
-(`validation-watch.md` preamble Entry lifecycle): **WATCHING**
-(uncertainty exists, no fix yet; signal being watched);
-**FIX-SHIPPED** (structural fix in spec; watching for a
-load-bearing instance of the mitigation); **RESOLVED**
-(load-bearing instance observed via post-run review — positive
-evidence the mitigation works); **INVALIDATED** (production
-signal recurred under the fix-shipped spec; mitigation didn't
-hold; requires new analysis). Distinct from the [INVALIDATED]
-status tag above — the status tag is a finding/decision state in
-the tracker; the lifecycle state is a watch-entry state in
-validation-watch.md.
-
-**Load-bearing instance** — a finding the watch entry's
-mitigation actively caught that would have escaped under the
-pre-mitigation protocol (`validation-watch.md` preamble Entry
-lifecycle). The positive-evidence criterion for FIX-SHIPPED →
-RESOLVED transitions — distinct from absence-of-recurrence
-(which is indistinguishable from "failure shape didn't surface
-this run"). Distinct from the **Load-bearing** descriptor above
-(an adjective describing claims/premises that design decisions
-rest on); here, "load-bearing" modifies *instance* in a specific
-sense — the instance carries the V-N's positive validation.
+*Validation-watch / dev-process vocabulary (Production signal,
+Watch-entry lifecycle states, Load-bearing instance, edit cycle)
+lives at its source, not here — see `dev-notes/validation-watch/`
+README and `development-process.md`.*
 
 **Recall pool** — the working context's accumulated set of
 already-recorded findings and design decisions when answering a
@@ -454,17 +430,14 @@ findings are triaged by the render gap / spec gap / adherence gap
 classification. Specified in `modules.md` §4.
 
 **Render gap / spec gap / adherence gap** — the closed triage
-classification of post-run review findings
-(`development-process.md` practice 1; used in `modules.md` §4 and
-`post-run-review.md` Where outcomes land). A **render gap** is
-the instance file not faithfully carrying the spec → re-render.
-A **spec gap** is the render faithful, the AI followed it, and
-it still broke → sharpen the spec. An **adherence gap** is a
-faithful render of an unambiguous evidence-bearing rule violated
-anyway — a failure indicator requiring practice 1's enumeration of the
-three structural-enforcement forms (practice 8); residual accepted only after
-enumeration shows all three forms fail with cited per-form failure
-reasons.
+classification of post-run review findings (used in `modules.md`
+§4 and `post-run-review.md` Where outcomes land). A **render gap**
+is the instance file not faithfully carrying the spec → re-render.
+A **spec gap** is the render faithful, the AI followed it, and it
+still broke → sharpen the spec. An **adherence gap** is a faithful
+render of an unambiguous evidence-bearing rule violated anyway →
+failure indicator. Full machinery + the adherence-gap enforcement:
+`development-process.md` practice 1.
 
 **Escape / operator catch** — the closed pair classifying Q1
 design-defect findings in post-run review (`post-run-review.md`

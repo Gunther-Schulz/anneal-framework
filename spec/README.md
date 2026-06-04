@@ -61,7 +61,7 @@ and the release machinery).
   itself is instance-supplied), artifact and tracker formats.
 - `README.md` — this file.
 
-`../dev-notes/validation-watch.md` is a maintainer-side companion:
+`../dev-notes/validation-watch/` is a maintainer-side companion:
 records fixed decisions made under uncertainty and the production
 signal to watch. Not part of the spec.
 
@@ -95,7 +95,7 @@ decided," or carry tradeoffs.
 
 A decision made best-effort under genuine uncertainty is still stated
 as fixed. The uncertainty is recorded separately in
-`../dev-notes/validation-watch.md` — the decision, why it was
+`../dev-notes/validation-watch/` — the decision, why it was
 uncertain, and the production signal that would prompt revisiting it. The spec is
 best-effort on current information and revised through production
 learning, but that provisional nature is understood, never written

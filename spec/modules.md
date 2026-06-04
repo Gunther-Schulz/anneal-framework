@@ -457,17 +457,8 @@ artifact yields data that can be wrong and checked. Use:
 
 The review surfaces; the operator decides what to do. The
 framework's triage applies (`development-process.md` practice 1):
-
-- A **render gap** — the instance file does not faithfully carry
-  the spec → re-render.
-- A **spec gap** — the render is faithful and was followed, and it
-  still broke → a finding for the framework spec.
-- An **adherence gap** — a faithful render of an unambiguous,
-  evidence-bearing rule, violated anyway → failure indicator
-  requiring practice 1's enumeration of the three
-  structural-enforcement forms (practice 8); residual accepted only
-  after enumeration shows all three forms fail with cited per-form
-  failure reasons.
+a render gap → re-render, a spec gap → a framework-spec finding, an
+adherence gap → practice 1's three-forms enumeration.
 
 ### 4.6 What this is not
 

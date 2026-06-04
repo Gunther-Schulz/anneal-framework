@@ -58,7 +58,7 @@ goes stale. Where state lives instead:
   first to orient.
 - **Working disciplines:**
   - Capture substantive corpus-evolution decisions to the backlog or
-    `dev-notes/validation-watch.md` *when they land* — long contexts
+    `dev-notes/validation-watch/` *when they land* — long contexts
     can't be reliably searched after the fact.
   - **No silent deferral — file, don't defer.** When work won't be done
     now (a follow-up, a "future cycle", a parked idea, a "we should also…"),

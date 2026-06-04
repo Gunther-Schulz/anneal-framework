@@ -1,6 +1,6 @@
 # Post-run review
 
-Companion to `dev-notes/validation-watch.md`; not part of the spec. The
+Companion to `dev-notes/validation-watch/`; not part of the spec. The
 framework's empirical-validation procedure: when a session has run
 the instance on a real task, review the run against the spec. The
 review's deviations are triaged (`development-process.md` practice
@@ -162,8 +162,9 @@ spec triage applies.
 
 ### Q7. Validation-watch cross-check
 
-> For each V-N in `dev-notes/validation-watch.md`, read the entry's
-> Status line and respond per state:
+> For each V-N entry file in `dev-notes/validation-watch/` (the
+> active set; `archive/` holds RESOLVED entries, re-walked only on a
+> recurrence), read the entry's Status line and respond per state:
 >
 > - **WATCHING**: walk the production signal against this run's
 >   tracker. Classify as **confirms** (cite the evidence),
@@ -219,7 +220,7 @@ hit-rate (Q2).
 
 - **A render / spec / adherence gap** — per
   `development-process.md` practice 1; the triage routes each.
-- **A signal informing a `validation-watch.md` entry** — append to
+- **A signal informing a `validation-watch/` entry** — append to
   or amend the relevant V-N (the watchlist).
 - **An instance-level F-finding** — if the instance has an
   F-finding record (e.g. coding-clippy's `spec/STATUS.md`),

@@ -96,7 +96,7 @@ A deviation found by running the instance is triaged. A *render gap*
 render. A *spec gap* — the render is faithful, the AI followed it,
 and it still broke → a finding for the framework or the instance
 spec. A *conformant success* — followed and worked → a positive
-signal, logged to `dev-notes/validation-watch.md`. The subtle case is a
+signal, logged to `dev-notes/validation-watch/`. The subtle case is a
 faithful render the AI did *not* follow: do not call it a render gap
 by reflex. First test the rule for underspecification — if it was
 loose enough to admit the violating reading, it fails the framework's
@@ -493,7 +493,7 @@ computed from the corpus's git history: commits between the
 last `Coherence-audit-handoff:` commit-message marker and HEAD.
 If no prior marker exists (no audit has run), the count is from
 the corpus's initial commit. **N is initial calibration**
-(starting value 5; refined via `dev-notes/validation-watch.md` V-21
+(starting value 5; refined via `dev-notes/validation-watch/` V-21
 as drift-cadence observations accumulate). The mechanical SHAPE
 (cycle-count threshold + git-log observable + marker artifact)
 is fixed; only the number is open.
