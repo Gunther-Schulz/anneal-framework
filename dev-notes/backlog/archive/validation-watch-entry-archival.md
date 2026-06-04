@@ -1,5 +1,7 @@
 # Validation-watch as a folder of single-entry files + archive/ (like the backlog)
 
+**✅ SHIPPED + CLOSED 2026-06-04** — anneal-dev run `kernel-consolidation-batch`, release `e6abcc8`/`d008afe` on `main`. `dev-notes/validation-watch.md` is now `dev-notes/validation-watch/` (README = preamble + the relocated vocabulary home + archival convention; one file per watch-entry; `archive/V-5`). All kernel references repointed (validation-watch [PASSED] verify; byte-for-byte round-trip verified). Archived per convention.
+
 **Status:** OPEN — framework hygiene, operator-raised + **design-set 2026-06-04**: "v-entries should be
 just like backlog items: single files with an archive folder. much better than one huge file." **Not
 urgent** (see data) but real. **Corpus-evolution → runs through anneal-dev** (spec-only; instance-render

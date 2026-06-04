@@ -132,11 +132,11 @@ floor). **F0 render-conventions gate the tier-5 re-renders — do them first.**
   `structural-change-dependent-enumeration` (n=2) · `loopback-root-cause-triage`.
 - **F3 — under-enforced / fragmented disciplines** (soft-rule → structural; consolidate):
   `completeness-search-enforcement` (decide its open question first) · `verified-integrity-consolidation`
-  · `surface-non-task-observations` · `kernel-consolidation-glossary-hygiene` (NEW — the 2026-06-04
-  audit's consolidation cluster: triage-3-homes, glossary scope, edit-cycle gloss, core.md bloat)
-  · `validation-watch-entry-archival` (NEW 2026-06-04 — validation-watch.md → folder-of-files +
-  archive/; **batch with `kernel-consolidation-glossary-hygiene`** — both touch `glossary.md` +
-  kernel structure, so one anneal-dev run amortizes the ceremony per V-27).
+  · `surface-non-task-observations`. **✅ SHIPPED 2026-06-04** (run `kernel-consolidation-batch`, release
+  `e6abcc8`/`d008afe`): `validation-watch-entry-archival` (validation-watch → folder, archived) +
+  `kernel-consolidation-glossary-hygiene` A/B/C (triage-one-home, glossary-vocab relocate, edit-cycle
+  disambiguation, archived). **Remaining:** `core-md-bloat-measure-then-cut` (Run B — the core/modules
+  half of the consolidation, split out; core.md §4.1.4↔modules §3.4 dedup + glossary-indexes-core-bodies).
 - **F4 — dispatch / parallel-isolation mechanics** (root framework §4.2 + render; surfaced via clippy):
   `dispatch-brief-one-source-of-truth` · `worktree-isolation-and-integration` (mixed-level: also
   harness; placed here as fix-at-source).

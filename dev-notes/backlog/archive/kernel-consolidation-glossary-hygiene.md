@@ -1,5 +1,7 @@
 # Kernel consolidation + glossary hygiene (coherence-audit follow-up)
 
+**✅ A/B/C SHIPPED 2026-06-04 — D → Run B.** anneal-dev run `kernel-consolidation-batch`, release `e6abcc8` on `main`: **A** (triage → one canonical home `development-process.md` practice 1 + glossary/modules cross-refs), **B** (3 misfiled terms relocated to the validation-watch README home + glossary pointer), **C** ("edit cycle" disambiguated in the glossary Cycle entry; canonical at `development-process.md:177`) all shipped + [PASSED] verify. **D** (core.md §4 bloat — both movable points, touch core.md bodies) split to **Run B** = `core-md-bloat-measure-then-cut.md`. Cluster fully dispositioned → archived.
+
 **Status:** OPEN — a batched **consolidation cluster** surfaced by the 2026-06-04 coherence-audit
 (handoff `ac39b6ab6d5d929cd`). Framework-spec edits → route through **anneal-dev + kernel-independent
 verify** (the audit was the floor; these are the edits). F3-theme (fragmentation → consolidate) + the

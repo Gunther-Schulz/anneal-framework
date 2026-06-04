@@ -60,6 +60,14 @@ to the batch re-render run itself. (Confirmed disabled as of the
   render the soft leg honestly, NOT as a mechanical gate) + the 2 term homes. Commit
   ref: `1d93e58` (main — spec-only release: requirements-record + coverage-check; the
   source-delta the batch renders from). Shipped 2026-06-04.
+- **kernel-consolidation-batch** — run `.anneal-dev/runs/kernel-consolidation-batch.md`; spec-only
+  release `e6abcc8` (+ folder restructure `d008afe`) on `main`. Source-delta: the
+  `validation-watch.md` → `dev-notes/validation-watch/` **path repoint** + the triage/term
+  consolidation. **Render obligation** (deferred): clippy + daneel carry `validation-watch.md`
+  file-refs in `phases/investigate-design.md`, `references/post-run-review.md`, `SKILL.md` (the F1
+  INSTANCE set) → repoint to the folder; + their post-run-review Q7 walk → folder-faithful; + if any
+  instance renders the triage/the 3 relocated terms, re-point to the new homes. Mostly mechanical
+  path repoints (behavior-preserving). Commit ref: `e6abcc8`.
 
 ## Two kinds of work — do NOT conflate
 
