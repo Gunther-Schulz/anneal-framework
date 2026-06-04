@@ -346,6 +346,21 @@ is the instance's binding.
 foundational design decision, established by search. Specified in
 `core.md` §4.1.
 
+**Requirements record** — the original task requirements captured as
+a tracked artifact at investigate-design: the goal enumerated R1..Rn
+(separated from any solution the operator's request proposes), plus
+the operator's verbatim request, persisted header-adjacent in the
+tracker so the isolated verify reads it. A task-input, not a third
+track. What counts as a requirement is instance-defined. Specified
+in `core.md` §4.1.
+
+**Requirements-coverage check** — verify's check that each
+requirement in the requirements record is covered by a locked
+decision; an uncovered requirement is a finding. The dual of the
+design-completeness audit (intent-correct, where that audit is
+fact-correct). Includes a soft-judgment leg checking the enumeration
+against the verbatim request. Specified in `core.md` §4.3.
+
 **Dispatch unit** — a group of design decisions implemented together
 as one piece of impl-phase work. Derived from the locked design at
 implement-phase start. Specified in `core.md` §4.2.1.

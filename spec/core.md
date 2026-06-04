@@ -293,6 +293,20 @@ re-searched. Because [READY] requires every design decision
 [VERIFIED] or [AUTO-ACCEPTED] (§5.2) — applies in both modes — an
 unestablished scope, at neither, holds the phase.
 
+**Requirements record.** investigate-design captures the original
+task requirements as a tracked artifact: the operator's request sets
+the task and may propose a solution (§1), and the record enumerates
+the requirements — the goal — as R1..Rn, separated from any proposed
+solution. The operator's **verbatim request** is captured alongside
+the enumeration, in the same artifact. The record is header-adjacent
+in the tracker — a task-input, not a third track (§5 holds exactly
+two) — extending the header's one-line task summary (`modules.md`
+§3.1), and is persisted so the isolated verify reads it (§4.3; verify
+needs nothing from the run's conversation, where the raw request
+otherwise lives). What counts as a requirement and how it is elicited
+is instance-defined, as the work product (`glossary.md`) and the
+domain's executable verification (§4.3) are.
+
 #### 4.1.1 [READY] — judgment criteria
 
 **[READY]** is reached when the working context judges the design
@@ -691,7 +705,7 @@ context — the context that conducted investigate-design and
 implement. An actor checking its own work carries its own anchoring
 and blind spots into the check; isolation is what makes verify an
 independent check and not the actor re-reading itself. verify is
-artifact-driven — the three checks below work from the current
+artifact-driven — the four checks below work from the current
 run's tracker, the standardized lens set, and the work product,
 and need nothing from the run's conversation — so the isolated
 context is fully equipped. Prior-run trackers are not basis
@@ -718,16 +732,28 @@ verify is never silently taken as though it were independent.
   persisted behavior). Impl-detail (variable naming, internal
   organization, test fixture choice) does not yield such a
   value-change.
+- **Requirements coverage** — each requirement in the requirements
+  record (§4.1) is checked for coverage by a locked decision; an
+  uncovered requirement surfaces as a finding. This is the dual of
+  the design-completeness audit above: that audit catches a material
+  element no decision designed (fact-correct); this catches a
+  requirement no decision covers (intent-correct). The record's
+  enumeration is also checked against the captured verbatim request
+  (§4.1) — a requirement present in the raw request but never
+  enumerated is a finding. This second leg is a **soft judgment**: it
+  has no mechanical predicate, so it reduces but does not eliminate
+  the residual of a requirement that escaped capture entirely.
 - **Standardized lenses** — the standardized lens set is applied to
   the produced work.
 - **Executing the verification** — the domain's executable
   verification is run and its output shown. verify does not pass on
   static inspection alone.
 
-verify accounts for every check. Each planned-vs-actual check, and
-every standardized lens — applied where it is in scope, or given a
-cited reason it is not — either holds, recorded as a cited-clean
-line, or yields a divergence from the locked design or a lens issue;
+verify accounts for every check. Each planned-vs-actual check, each
+requirement's coverage check, and every standardized lens — applied
+where it is in scope, or given a cited reason it is not — either
+holds, recorded as a cited-clean line, or yields a divergence from
+the locked design, an uncovered requirement, or a lens issue;
 a failed run of the executable verification is likewise an issue.
 Any non-failure output the executable verification surfaces is
 also a finding unless the project has explicitly de-prioritized
