@@ -88,3 +88,9 @@ use the check — exactly how the foundation-invariants run used it.)
   `verify-vs-original-requirements.md` (sibling verify-discipline, already shipped).
 - `anneal-reliability-measurement.md` — only relevant if multi-vote is ever revisited (the
   reframe makes that unlikely); the single intent-falsification's n=1 is "pursue," not "gate."
+- `anneal-dev-model-tier-policy` — **conflict to resolve if model-diversity-for-verify is pursued
+  here.** anneal-dev's blanket top-tier pin runs verify on the **same tier as the actor**, foreclosing
+  the cross-tier model-diversity lever (verify-techniques' "model diversity > vote count"). Pursuing
+  model-diversity for anneal-dev's verify collides with the model-tier floor — the conflict must be
+  resolved (e.g. diversity *within* the top tier, or an explicit floor carve-out for verify), not
+  assumed away.

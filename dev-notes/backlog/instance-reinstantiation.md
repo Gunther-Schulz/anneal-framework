@@ -75,6 +75,14 @@ to the batch re-render run itself. (Confirmed disabled as of the
   clippy + daneel render `post-run-review.md` Q7 (their `references/post-run-review.md`) → re-point to the
   new walk vocabulary (opportunity-handled / opportunity-not-exercised / fix-evaded; defer-to-README).
   Behavior-preserving vocab + de-fragmentation render. Commit ref: `0aa04e3`.
+- **anneal-dev-model-tier-policy** — run `.anneal-dev/runs/anneal-dev-model-tier-policy.md`; spec change on
+  branch `anneal-dev/anneal-dev-model-tier-policy`. **ANNEAL-DEV ONLY** — this policy renders into no other
+  instance (anneal-dev-specific binding; other instances keep the framework per-task default). Source-delta:
+  `anneal-dev/spec/bindings.md` new "Dispatch model tier" section (the blanket top-tier floor) + the
+  Operator-editable-artifacts 4th-placeholder bootstrap entry (`model-tier.md`). **Render obligation**
+  (deferred): the anneal-dev plugin's `SKILL.md` (First-run bootstrap → 4 placeholders incl `model-tier.md`)
+  + the dispatch description (render the model-tier floor) + `references/foundations.md` (Operator-editable
+  artifacts → add `model-tier.md`). Commit ref: pending spec-only release (checkpoint not yet released).
 
 ## Two kinds of work — do NOT conflate
 

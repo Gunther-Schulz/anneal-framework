@@ -233,6 +233,48 @@ unit change-set. The **change-set-vs-listed-scope check**
 (`core.md` §4.2) also applies: change-set-referenced identifiers ∖
 listed scope = ∅; an out-of-scope reference is an actioned finding.
 
+## Dispatch model tier — corpus-evolution binding
+
+The framework dispatches subagents — for impl (`core.md` §4.2), for
+verify (`core.md` §4.3), and for the convergence cycle's
+falsification passes (`core.md` §4.1.4) — but names **no model**: it
+is harness-agnostic. Dispatch-orchestration mechanics is the
+instance's to bind (`foundation.md` contract 3, "dispatch-orchestration
+mechanics" — the instance slot, not a framework gap). anneal-dev binds
+the model concretion here.
+
+**Model tier** is the harness's ordering of its models by capability;
+the **top tier** is the most-capable model the harness offers.
+
+**The rule (blanket).** Every anneal-dev subagent dispatch — across
+**all** dispatch kinds: the investigate-side passes (intent-falsification
+and the mechanical falsification, `core.md` §4.1.4), impl, and verify
+— runs at the configured model tier. Cost-downgrading any anneal-dev
+dispatch below that tier is **forbidden**. The rule is blanket over all
+dispatch kinds, **not** a per-dispatch "is this one sensitive?"
+judgment — that judgment is itself error-prone, so it is removed.
+
+**Tier source.** The configured tier is the model named in
+`anneal-dev.config/model-tier.md` (Operator-editable artifacts below).
+Absent or empty, the configured tier is the session model — the harness
+default. In neither case may a dispatch be downgraded below that tier.
+
+**Floor, not guarantee.** Running at the top tier avoids *handicapping*
+sensitive judgment — anneal-dev's blast radius is the whole framework
+plus every instance, and the work is judgment-heavy. It is **not** a
+substitute for the structural robustness that actually catches errors:
+the separate-context verify and its isolation (`core.md` §4.3), the
+falsification and dogfooding passes, and the operator. The tier floor
+says "don't run sensitive work on a weak model"; it does **not** say "a
+strong model makes the work safe."
+
+**Enforcement.** The model parameter on each dispatch is observable, so
+a downgraded dispatch is visible on the dispatch itself — mechanical, no
+separate artifact required.
+
+**Scope.** This binding is anneal-dev-specific. Other instances keep the
+framework default — per-task model choice, harness-supplied.
+
 ## Operator-editable artifacts
 
 Per `instantiation-guide.md` §5 filesystem-layout rule,
@@ -242,10 +284,22 @@ distinct from `.anneal-dev/runs/` (gitignored runtime state — see
 
 - `lenses.md` — lens-supplement mechanism (per `lens-supplement.md`)
 - `extensions.enabled` — extension enable file (per `extensions.md`)
+- `model-tier.md` — dispatch model-tier override (per Dispatch model
+  tier above); a sibling instance bootstraps its own dispatch-model
+  config the same way (clippy's `clippy.config/models`), permitted by
+  the `instantiation-guide.md` §5 filesystem-layout rule, which covers
+  any operator-editable instance-side artifact, not only the three
+  framework-recognized slot kinds
 - `README.md` — operator-facing explainer
 
 **First-run bootstrap.** On first run in a project, anneal-dev adds
 `.anneal-dev/` to the repo's `.gitignore` (creating it if absent)
-and bootstraps `anneal-dev.config/` with the placeholder files
+and bootstraps `anneal-dev.config/` with the four placeholder files
 above, each per `instantiation-guide.md` §5 Placeholder content
-style.
+style. On bootstrap the `model-tier.md` placeholder is commented/empty
+(default — inherit the session model), with a header pointing at the
+Dispatch model tier section and how to pin the harness top-tier model; a
+project pins a tier by **filling** the placeholder with a model name,
+which replaces the placeholder content (`instantiation-guide.md` §5) — as
+this repo's own `model-tier.md` is filled, not left at the bootstrap
+default.

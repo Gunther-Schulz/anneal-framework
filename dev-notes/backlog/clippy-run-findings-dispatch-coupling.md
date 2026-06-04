@@ -7,6 +7,13 @@ practice 9 (design, then decide, then implement) so the three edit
 cycles are recorded before any spec edit. Not spec. Delete or fold
 into history once all three cycles close.
 
+**Relates to** `anneal-dev-model-tier-policy` — the sibling
+dispatch-model mechanism of **opposite polarity**: clippy's selector
+(Finding 1) is a *per-unit cost-downgrade* lever (run a cheap unit on a
+cheaper model); anneal-dev's policy is a *blanket anti-downgrade floor*
+(every dispatch at the top tier, no downgrade). Same dispatch-model
+surface, inverted intent.
+
 Each is a **separate edit cycle** (practice 5: one scope of change per
 cycle) at a different level — own re-grounding + skill-craft invocation
 when its edits start.
