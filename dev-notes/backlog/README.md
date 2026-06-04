@@ -27,7 +27,37 @@ Two parts: the **READ-FIRST block** (current state + next decisions) and **the o
 arc + a re-prioritization into the 6-tier order below; in the same grooming: 4 research runs
 archived, the re-render bundle merged into `instance-reinstantiation`. 32 open.)
 
-### ▶ Where we are + next steps (2026-06-04 session 4 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-04 session 5 — READ FIRST)
+
+**Session 5 — three method-kernel anneal-dev runs SHIPPED (all spec-only; instance renders deferred to
+the batch) + a new enforcement hook. Dogfooding validated: runs 2 & 3 came out of using anneal-dev on
+itself.**
+
+1. **`verify-vs-original-requirements`** (release `1d93e58`) — verify now checks the locked design's
+   coverage of a captured **requirements record** (intent-correct channel beside planned-vs-actual).
+   Honest residual V-28 (never-captured requirement), WATCHING.
+2. **`kernel-consolidation-batch`** (release `e6abcc8` + folder `d008afe`) — `validation-watch.md` → a
+   **folder** (file-per-entry + README + `archive/`); the 3 misfiled glossary terms relocated; the
+   render/spec/adherence-gap triage consolidated to one home (practice 1); "edit cycle" disambiguated.
+3. **`validation-watch-lifecycle-fix`** (release `78be6e8` + `0aa04e3`) — the **opportunity-exercised**
+   closing rule (a watch closes when the failure's *opportunity* arose and the fix handled it — caught,
+   or produced-clean; pure non-occurrence never closes), the **correctness-watch / quality-watch** split,
+   n=1 justified, and the **archive-check** (recurrence/regression net + n=1 safety hatch).
+
+**New: `hooks/anneal-dev-run-gate.py` (project-local `.claude/settings.json`).** Blocks Edit/Write to the
+kernel source (`spec/*.md`, `foundation.md`, `development-process.md`, `post-run-review.md`,
+`instantiation-guide.md`, `anneal-dev/spec/*`) unless an anneal-dev run is `IN-PROGRESS` — i.e. **spec
+work must go through anneal-dev** (now enforced at edit-time, not just at commit). Bypass:
+`touch .anneal-dev/allow-adhoc-kernel-edit` (15-min self-healing TTL, non-silent). **Needs operator
+approval (project hook) to activate next session.**
+
+**Open / next (from this session):**
+- **Run B — `core-md-bloat-measure-then-cut`** (the deferred core/modules consolidation half: core↔modules §4.1.4/§3.4 dedup + glossary-indexes-core-bodies).
+- **The render batch — `instance-reinstantiation`** now queues **3** source-deltas (the 3 runs above) for the clippy/daneel re-render.
+- **`validation-watch-entry-retrofit`** (lazy: the 26 active V-entries gain the new kind/catcher fields).
+- **`foundation-self-certification-machinery`** (the soundness-machinery idea) + the **render-cadence policy** (framework runs ship spec-only) + the **interactive auto-cycle affordance** (`auto-battle-cadence-mode`, design resolved, not built).
+
+**Session 4 (prior — the operator-flagged research thread):**
 
 Session 4 executed the **operator-flagged research thread** end-to-end: **four `deep-research`
 runs** (placement / design-first-vs-act-first / process-literature / verify-techniques), all
