@@ -1,9 +1,14 @@
 # Foundation self-certification machinery — externalize the soundness half of the kernel-edit verify
 
-**Status:** OPEN — framework/anneal-dev method idea, operator-raised 2026-06-04 (at the
-`verify-vs-original-requirements` verify soundness gate). **Idea + open design questions, NOT a locked
-design.** A future anneal-dev cycle — and itself a **method-kernel edit**, so it runs through anneal-dev
-+ the operator soundness gate (it cannot bootstrap past the operator either; same principle, recursively).
+**Status:** CLOSED — SHIPPED 2026-06-04 via the `foundation-invariants-register` anneal-dev run (verify
+[PASSED]; release pending operator approval). Built candidate (1): the foundation-invariants register
+(anchor-gated; 5 externally-anchored invariants) + the per-touched-invariant focusing artifact wired into
+the method-kernel-edit verify (`development-process.md` §2 / step-4 / `CLAUDE.md`) + the
+Invariant-change-ratified protection (`hooks/commit-msg`). Candidates (2)/(3) rehomed:
+`canonical-scenario-regression-suite` + the reframed `multivoter-verify-no-predicate-claims` (single
+intent-falsification; kernel-integration design captured). Spawned follow-ups:
+`intent-falsification-soundness-sweep`, `deferred-finding-owed-artifact-forcing-function`. Watch:
+`validation-watch/V-29-register-focus-payoff`. Archived.
 
 ## The problem
 anneal-dev **can't self-certify its own foundation** (Gödelian bootstrap: checks built *from* the kernel

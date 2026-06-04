@@ -32,7 +32,15 @@ feed it; they are starting states, not separate systems:
    (form/discipline regressions) **and** the operator (the
    kernel-independent judge of whether the method change is *sound*;
    skill-craft checks skill-quality, not methodology-correctness), recorded
-   at release-loop step 4. anneal-dev's own lens/coherence pass does not
+   at release-loop step 4. The **foundation-invariant focusing artifact**
+   (the per-touched-invariant holds/violates-against-anchor ledger, per the
+   register at `dev-notes/foundation-invariants/`) is the *grounding input*
+   to that soundness pass: it names which registered invariants the edit
+   touches and which external anchors to satisfy, aiming the operator's
+   review. It focuses, never pre-empts — the operator originates the
+   soundness verdict; the artifact is not a co-equal mechanically-discharged
+   leg and not a verdict itself (known-invariant only; novel soundness stays
+   the operator's). anneal-dev's own lens/coherence pass does not
    substitute. Drive freely; never self-certify the foundation.
 3. **Re-render an existing instance** — propagating a settled spec change
    into its rendered plugin. Not a separate path: the **render-tail** every
@@ -573,6 +581,7 @@ kernel-independent review at verify:
    - Practice-4 dependent audit → [grep evidence cited] OR [N/A: cited reason]
    - Skill-craft full review on changed skill files → [subagent ID, verdict] OR [N/A: cited reason]
    - Skill-craft self-review on framework-spec section → [subagent ID, verdict] OR [N/A: cited reason]
+   - Foundation-invariant check (method-kernel edits) → [per-touched-invariant holds/violates artifact: subagent ID] — FOCUSING INPUT for the operator's soundness pass; NOT a soundness verdict (known-invariant only; novel soundness = operator) OR [N/A: not a method-kernel edit — no kernel-source file in diff, cite paths]
    - Skill-craft self-review on commits to skill-craft canonical files (PROCEDURE.md, SKILL.md, references/*.md per skill-craft's own Layer 4 mandate) → [subagent ID, verdict] OR [N/A: no skill-craft canonical file in diff — cite paths]
    - Practice-6 whole-document coherence → [subagent ID, verdict] OR [in-context check cited] OR [N/A: cited reason]
    - Cross-spec multi-file coherence → [subagent ID, verdict] OR [N/A: cited reason]

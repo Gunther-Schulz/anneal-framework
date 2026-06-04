@@ -1,7 +1,11 @@
 # Per-loopback / falsification-failure root-cause triage (failures as framework-gap signals)
 
 **Status:** OPEN — framework finding, operator-raised 2026-06-03, strongly
-evidenced by THIS session (F16 + VF1, n=2). Methodology-correctness →
+evidenced (F16 + VF1 in the 2026-06-03 session, n=2; **+ F-DC1 in the 2026-06-04
+`foundation-invariants-register` run, n=3** — where the operator again had to ASK
+"is this loopback pointing to a gap?", the exact operator-detection reliance this
+item removes; the triaged gap is now filed as
+`deferred-finding-owed-artifact-forcing-function`). Methodology-correctness →
 **operator is the kernel-independent judge.** Idea, not yet a design.
 
 ## The idea

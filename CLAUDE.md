@@ -18,8 +18,12 @@ insufficient):
   outside the anneal kernel — the skill-craft self-review (form) + the
   operator (soundness; skill-craft checks skill-quality, not
   methodology-correctness) — because anneal-dev never self-certifies its
-  own foundation. Read `development-process.md` for that discipline +
-  the shared release machinery.
+  own foundation. The foundation-invariant register check
+  (`dev-notes/foundation-invariants/`) produces the focusing artifact that
+  aims the operator's soundness pass (which invariants touched, which
+  anchors to satisfy) — it focuses, never replaces it. Read
+  `development-process.md` for that discipline + the shared release
+  machinery.
 
 Doubt-voicing about whether re-grounding applies IS the evidence
 it applies.

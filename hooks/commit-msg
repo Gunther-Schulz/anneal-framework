@@ -49,6 +49,30 @@ RULE_CORPUS_PATTERN = re.compile(
 # are the source). Optional `anneal-dev/` prefix per the merge (D9).
 INSTANCE_PLUGIN_PATTERN = re.compile(r"^(anneal-dev/)?plugin/skills/(?!skill-craft/)[^/]+/.+\.md$")
 
+# Method-kernel SOURCE files — the set whose edit is a method-kernel edit.
+# Mirrors hooks/anneal-dev-run-gate.py's KERNEL_PATTERNS (that file's
+# suffix-anchored `/spec/.+\.md$`, `/foundation\.md$`, etc.) in this hook's
+# repo-relative `^`-anchored idiom; `(anneal-dev/)?` covers anneal-dev/spec/*
+# and anneal-dev/{foundation,development-process,...}.md post-merge, exactly
+# as RULE_CORPUS_PATTERN above. A commit touching one of these is a
+# method-kernel edit, so the discharge must carry the Foundation-invariant
+# check line (development-process.md step 4). NARROW + additive: this does NOT
+# broaden RULE_CORPUS_PATTERN — it is a separate, additional check.
+KERNEL_SOURCE_PATTERN = re.compile(
+    r"^(anneal-dev/)?(spec/.+\.md|foundation\.md|development-process\.md|"
+    r"post-run-review\.md|instantiation-guide\.md)$"
+)
+
+# A registered foundation-invariant entry file (dev-notes/foundation-invariants/
+# INV-<n>-<slug>.md). README.md and archive/ under that folder are EXEMPT — only
+# the INV-*.md entry files are the registered invariants. Used with
+# `git diff --cached --name-status --diff-filter=MD` so only MODIFIES/DELETES of
+# an existing invariant trip the marker; ADDITIONS of new INV files do not
+# (adding a check does not weaken the foundation). NARROW + additive.
+INVARIANT_FILE_PATTERN = re.compile(
+    r"^dev-notes/foundation-invariants/INV-.+\.md$"
+)
+
 REQUIRED_CHECKS = [
     "Render fidelity",
     "Practice-4 dependent audit",
@@ -63,6 +87,24 @@ REQUIRED_CHECKS = [
 # development-process.md practice 5 "Spec-origin grounding for plugin
 # edits" + contract 2 "Render completeness").
 SPEC_ORIGIN_CHECK = "Spec-origin trace"
+
+# Required only when the commit touches a method-kernel SOURCE file
+# (KERNEL_SOURCE_PATTERN) — per development-process.md step 4, a method-kernel
+# edit's discharge must carry the Foundation-invariant check. Parallel to
+# SPEC_ORIGIN_CHECK (required only when instance-plugin files are touched).
+# HONESTY (per the locked design): the hook checks the LINE IS PRESENT — that
+# the focusing artifact was produced + presented. It does NOT and cannot
+# enforce the soundness judgment; that is the operator's, via the step-4
+# approval. A green pass on a kernel-source commit means "artifact present",
+# never "sound".
+FOUNDATION_INVARIANT_CHECK = "Foundation-invariant check"
+
+# The line printed on a PASSING kernel-source commit — disclaims soundness so
+# the green pass is not misread as a soundness certification.
+FOUNDATION_INVARIANT_PASS_NOTE = (
+    "foundation-invariant check: focusing artifact present — NOT a soundness "
+    "certification; operator soundness verdict required"
+)
 
 FOLD_INTO_PATTERNS = [
     re.compile(r"folded into", re.IGNORECASE),
@@ -116,6 +158,36 @@ def is_rule_corpus_commit(files: list[str]) -> tuple[bool, list[str]]:
     return bool(matching), matching
 
 
+def has_kernel_source_files(files: list[str]) -> tuple[bool, list[str]]:
+    """True if any staged file is a method-kernel SOURCE file (the set that
+    makes the commit a method-kernel edit)."""
+    matching = [f for f in files if KERNEL_SOURCE_PATTERN.match(f)]
+    return bool(matching), matching
+
+
+def get_modified_deleted_invariant_files() -> list[str]:
+    """Staged files that MODIFY (M) or DELETE (D) an existing registered
+    invariant entry (INV-*.md). Uses `--diff-filter=MD` so ADDITIONS (A) of new
+    INV files are excluded — adding a check does not weaken the foundation.
+    README.md / archive/ are excluded by INVARIANT_FILE_PATTERN."""
+    result = subprocess.run(
+        ["git", "diff", "--cached", "--name-status", "--diff-filter=MD"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    matched = []
+    for entry in result.stdout.splitlines():
+        if not entry:
+            continue
+        # name-status lines: "<STATUS>\t<path>" (M/D have a single path).
+        parts = entry.split("\t")
+        path = parts[-1]
+        if INVARIANT_FILE_PATTERN.match(path):
+            matched.append(path)
+    return matched
+
+
 def has_instance_plugin_files(files: list[str]) -> tuple[bool, list[str]]:
     """True if any file is an instance plugin render (excluding skill-craft canonical)."""
     matching = [f for f in files if INSTANCE_PLUGIN_PATTERN.match(f)]
@@ -160,6 +232,27 @@ def validate_discharge(msg: str) -> list[str]:
                 f"    - {SPEC_ORIGIN_CHECK} (per development-process.md\n"
                 f"      practice 5 'Spec-origin grounding for plugin edits'\n"
                 f"      and contract 2 'Render completeness')."
+            )
+
+    # 2b. Foundation-invariant check required for method-kernel-edit commits
+    # (per development-process.md step 4). Fires only when a method-kernel
+    # SOURCE file is in the diff — parallel to the spec-origin check above.
+    # The line confirms the focusing artifact was PRODUCED + PRESENTED; the
+    # soundness judgment remains the operator's (step-4 approval).
+    if FOUNDATION_INVARIANT_CHECK not in msg:
+        changed = get_changed_files()
+        has_kernel, kernel_files = has_kernel_source_files(changed)
+        if has_kernel:
+            errors.append(
+                f"Commit touches method-kernel SOURCE files:\n"
+                + "\n".join(f"    - {f}" for f in kernel_files)
+                + "\n  Discharge artifact missing required check:\n"
+                f"    - {FOUNDATION_INVARIANT_CHECK} (per development-process.md\n"
+                f"      step 4 — a method-kernel edit's discharge must carry the\n"
+                f"      per-touched-invariant holds/violates focusing artifact).\n"
+                f"  NOTE: this checks the artifact is PRESENT, not that the edit\n"
+                f"  is sound — the soundness verdict is the operator's (step-4\n"
+                f"  approval), never this hook's."
             )
 
     # 3. No fold-into rationalizations
@@ -208,6 +301,51 @@ def validate_discharge(msg: str) -> list[str]:
     return errors
 
 
+INVARIANT_RATIFIED_MARKER = "Invariant-change-ratified:"
+
+
+def check_invariant_marker(msg: str) -> int | None:
+    """D4 — Invariant-change-ratified marker (audit-trail + friction, NOT a
+    binding gate). When the staged diff MODIFIES (M) or DELETES (D) an existing
+    registered invariant (INV-*.md), the commit message must carry an
+    `Invariant-change-ratified:` line. Returns 1 (block) if such a file is
+    staged and the marker is absent; None otherwise (no M/D invariant, or marker
+    present — fall through). ADDITIONS of new INV files are exempt (filtered out
+    by --diff-filter=MD); README.md / archive/ are exempt (INVARIANT_FILE_PATTERN).
+
+    This is a separate, additive check — independent of the rule-corpus
+    discharge path (an INV-*.md under dev-notes/ is not a rule-corpus file), so
+    it runs before the discharge early-out."""
+    md_invariants = get_modified_deleted_invariant_files()
+    if not md_invariants:
+        return None  # no M/D of a registered invariant — not in scope
+    if INVARIANT_RATIFIED_MARKER in msg:
+        print(green(
+            f"✓ {INVARIANT_RATIFIED_MARKER} marker present for invariant "
+            f"modify/delete ({len(md_invariants)} file(s))."
+        ))
+        return None
+    print(red("✗ Registered-invariant modify/delete without ratification marker:"))
+    print()
+    for f in md_invariants:
+        print(red(f"    - {f}"))
+    print()
+    print(red(
+        f"  This commit MODIFIES or DELETES a registered foundation invariant.\n"
+        f"  Weakening or removing a registered invariant must be a deliberate,\n"
+        f"  ratification-CLAIMING, logged act — add an\n"
+        f"  '{INVARIANT_RATIFIED_MARKER} <operator-approval-ref>' line to the\n"
+        f"  commit message.\n"
+        f"\n"
+        f"  This is an audit-trail + friction mechanism, NOT a binding gate: it\n"
+        f"  is bypassable with `git commit --no-verify` (by design), and a hook\n"
+        f"  cannot verify an operator actually approved. The binding is\n"
+        f"  AI-discipline + the operator's review catching a bogus claim."
+    ))
+    print()
+    return 1
+
+
 def main() -> int:
     msg_file = Path(sys.argv[1])
     msg = msg_file.read_text()
@@ -221,6 +359,13 @@ def main() -> int:
         ("Merge ", "Revert ", "fixup!", "squash!", "amend!", "anneal-checkpoint:")
     ):
         return 0
+
+    # D4 — Invariant-change-ratified marker. Independent of the rule-corpus
+    # discharge below (an INV-*.md under dev-notes/ is not a rule-corpus file),
+    # so it is checked first, on its own. Blocks on M/D of a registered
+    # invariant without the marker.
+    if check_invariant_marker(msg) == 1:
+        return 1
 
     changed = get_changed_files()
     is_corpus, corpus_files = is_rule_corpus_commit(changed)
@@ -249,6 +394,15 @@ def main() -> int:
         return 1
 
     print(green("✓ Discharge artifact validation passed."))
+
+    # D3b — when this is a method-kernel-edit commit that PASSED, the green
+    # signal must NOT read as a soundness certification. Disclaim it explicitly:
+    # the hook confirmed the focusing artifact is PRESENT, not that the edit is
+    # sound (the operator's step-4 soundness verdict is the irreducible gate).
+    has_kernel, _ = has_kernel_source_files(corpus_files)
+    if has_kernel:
+        print(green(f"  {FOUNDATION_INVARIANT_PASS_NOTE}"))
+
     return 0
 
 
