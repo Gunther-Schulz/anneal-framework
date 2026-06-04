@@ -10,6 +10,13 @@ are CLOSED, leaving ONE live residual:
 - **The intent-falsification pass — SHIPPED** (session 6, run `intent-falsification-convergence-pass`;
   live in `core.md` §4.1.4 + the `[VERIFIED — surfaced]` disposition). This item was its
   prospective wiring; now realized. The judgment-class sibling of the mechanical falsification pass.
+  - **Conformant-success track record (practice 1):** **n=1** — the foundation-invariants run
+    (caught 2 BLOCKING soundness flaws the mechanical convergence-falsification passed clean past).
+    **n=2** — the `anneal-dev-model-tier-policy` run (2026-06-04 session 7): caught the
+    *absent-by-default floor* (Finding 2) that all **8 standardized lenses + the mechanical pass
+    missed** → drove the D5 bootstrap flip. Both are real flaws the mechanical/lens passes
+    structurally could not see (the "does it serve its intent?" question). True-positives, not
+    false-accept measurements — the pass keeps earning its keep; n accumulates.
 - **LIVE residual — model-diversity for verify.** anneal's verify-independence today rests on
   *fresh-context* isolation only, NOT a *different model*. INV-3's anchor (Panickssery et al.)
   says a verifier sharing the actor's base model inherits self-preference bias, so a
