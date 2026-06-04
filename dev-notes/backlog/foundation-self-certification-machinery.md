@@ -50,6 +50,30 @@ The operator's soundness pass becomes **focused** (which invariants this edit to
 still satisfy) instead of open-ended "is this sound?". Known-invariant breaks become mechanical findings;
 the irreducible residual (novel soundness) is shrunk and made legible — not closed.
 
+## ▶ NEXT-UP (session-5 handoff, 2026-06-04) — start here next session
+**Operator picked this as the next item.** It's corpus-evolution (touches `development-process.md`'s
+kernel-edit verify discipline + a new dev-notes invariants register) → runs through anneal-dev + the
+kernel-independent review. The run-gate hook (`hooks/anneal-dev-run-gate.py`) now *enforces* that — the
+edits to `development-process.md` will require an active run, so the two compose.
+
+**The design has real open forks — settle them WITH the operator first (decide-ahead), THEN run anneal-dev.**
+The forks: (a) which machinery — the invariants register alone, or + the canonical-scenario suite, or +
+the different-model checker; (b) how the invariants are anchored externally (the anchors already exist in
+`dev-notes/research/` — process-literature run); (c) the protection mechanism (operator-gated invariant
+changes).
+
+**Framing crystallized this session (so it survives `/clear`):**
+- The need exists ONLY for **foundation edits** — files anneal-dev *depends on* (`spec/*`, `foundation.md`,
+  `anneal-dev/spec/*`). Editing files it does NOT depend on (clippy/daneel/ad-hoc) self-certifies cleanly
+  (verify is a real independent check — doctor examining a patient). Foundation edits = doctor examining
+  *themselves*: fine for the mechanics, but can't be their own second opinion on soundness.
+- **Empirical grounding:** session 5 shipped **3 foundation edits via anneal-dev**, each closed by the
+  operator's soundness "ship it." That operator step is *exactly* what this machinery would lighten —
+  catch the known-invariant breaks mechanically so the soundness pass is small + sharp.
+- **The hard limit (restate every time):** it's "dogfood **+** an outside check," never "dogfood alone."
+  The machinery shrinks the operator's role; the operator is irreducible (Gödel). Removing them = the
+  rubber-stamping the framework exists to prevent.
+
 ## Relates to
 - skill-craft (the form half — already the external form ground; this is its soundness sibling).
 - The verify-side cluster: `multivoter-verify-no-predicate-claims` (different-model verifier; decompose

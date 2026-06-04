@@ -51,11 +51,17 @@ work must go through anneal-dev** (now enforced at edit-time, not just at commit
 `touch .anneal-dev/allow-adhoc-kernel-edit` (15-min self-healing TTL, non-silent). **Needs operator
 approval (project hook) to activate next session.**
 
-**Open / next (from this session):**
+**▶ NEXT (operator-chosen, 2026-06-04): `foundation-self-certification-machinery`.** Lighten the
+operator's soundness role on kernel edits (catch known-invariant breaks mechanically; the operator stays
+irreducible). See that item's **"NEXT-UP" section** — start by settling the design forks WITH the operator
+(decide-ahead), THEN run anneal-dev. (It edits `development-process.md` → the run-gate hook will require an
+active run, so they compose.)
+
+**Also open (from this session):**
 - **Run B — `core-md-bloat-measure-then-cut`** (the deferred core/modules consolidation half: core↔modules §4.1.4/§3.4 dedup + glossary-indexes-core-bodies).
 - **The render batch — `instance-reinstantiation`** now queues **3** source-deltas (the 3 runs above) for the clippy/daneel re-render.
 - **`validation-watch-entry-retrofit`** (lazy: the 26 active V-entries gain the new kind/catcher fields).
-- **`foundation-self-certification-machinery`** (the soundness-machinery idea) + the **render-cadence policy** (framework runs ship spec-only) + the **interactive auto-cycle affordance** (`auto-battle-cadence-mode`, design resolved, not built).
+- The **render-cadence policy** (framework runs ship spec-only) + the **interactive auto-cycle affordance** (`auto-battle-cadence-mode`, design resolved, not built).
 
 **Session 4 (prior — the operator-flagged research thread):**
 
