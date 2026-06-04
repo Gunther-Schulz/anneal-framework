@@ -58,7 +58,8 @@ to the batch re-render run itself. (Confirmed disabled as of the
   D6). **Render obligation** (the run's deferred U2/U3/U4): each instance's
   `phases/investigate-design.md` (capture rule) + `phases/verify.md` (coverage check —
   render the soft leg honestly, NOT as a mechanical gate) + the 2 term homes. Commit
-  ref: _<filled at run ship>_.
+  ref: `1d93e58` (main — spec-only release: requirements-record + coverage-check; the
+  source-delta the batch renders from). Shipped 2026-06-04.
 
 ## Two kinds of work — do NOT conflate
 

@@ -76,9 +76,9 @@ spec-only run appends its source-delta there, and the batch renders the accumula
 instance in one pass (method: `anneal-dev-rerender-changeset-by-source-delta`). This operationalizes
 the tier rationale below ("*or you render twice*") at the **run** level — and matches the framework's
 own decoupled model (`render-and-open-diff` fires post-verify, never inside a spec-change run's verify).
-First applicant: the in-flight `verify-vs-original-requirements` run ships its spec edit (U1); its
-per-instance renders (U2/U3/U4) defer to the batch (queued). Instances stay transiently stale —
-tracked, low-urgency while idle (drift ~0).
+First applicant: the `verify-vs-original-requirements` run **SHIPPED 2026-06-04** (spec-only release
+`1d93e58`, archived); its per-instance renders (U2/U3/U4) deferred to the batch (queued in
+`instance-reinstantiation`). Instances stay transiently stale — tracked, low-urgency while idle (drift ~0).
 
 ### Session history (context, not work)
 
@@ -125,8 +125,9 @@ floor). **F0 render-conventions gate the tier-5 re-renders — do them first.**
 - **F0 — render-convention (gate tier 5):** `instance-template-slot-scaffolding` (settle slot-as-file
   vs slot-as-section, then fix guide/template) · `glossary-binding-table-interface-completeness`.
 - **F1 — verify/impl discipline gaps** (`core.md` §4.2/§4.3 + `development-process.md`):
-  `verify-vs-original-requirements` (✅ audit-confirmed L9-b — the real correctness gap) ·
-  `behavior-change-test-impact-enumeration` · `impl-green-on-commit` (✅ audit-confirmed spec-silent L7-a).
+  `verify-vs-original-requirements` (✅ **SHIPPED 2026-06-04**, spec-only `1d93e58`, archived — render
+  debt queued in `instance-reinstantiation`) · `behavior-change-test-impact-enumeration` ·
+  `impl-green-on-commit` (✅ audit-confirmed spec-silent L7-a).
 - **F2 — structural / dependency enumeration** (dogfooding-surfaced; highest-leverage):
   `structural-change-dependent-enumeration` (n=2) · `loopback-root-cause-triage`.
 - **F3 — under-enforced / fragmented disciplines** (soft-rule → structural; consolidate):
