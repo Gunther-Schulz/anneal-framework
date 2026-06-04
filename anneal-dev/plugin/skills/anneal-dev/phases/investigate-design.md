@@ -34,8 +34,9 @@ by default, in order:
 
 The standardized inspection pass runs every cycle — not only the
 first, not only when something feels off. The convergence cycle
-(Convergence cycle requirement, below) adds a third pass —
-falsification — over its [VERIFIED] decisions.
+(Convergence cycle requirement, below) adds two more passes —
+intent-falsification then mechanical falsification — over its
+[VERIFIED] decisions.
 
 **Cycle numbering** is continuous across the run. A loopback from a
 downstream phase (implement actioned-finding, verify [ISSUES FOUND])
@@ -105,6 +106,23 @@ Because [READY] requires every design decision [VERIFIED] or
 [AUTO-ACCEPTED] — both modes — an unestablished scope, at neither,
 holds the phase at [NOT READY].
 
+## Requirements record
+
+investigate-design captures the original task requirements as a tracked
+artifact. The operator's request sets the task and may propose a
+solution (Design, above), and the record enumerates the requirements —
+the goal — as R1..Rn, **separated from any solution the operator's
+request proposes**. The operator's **verbatim request** is captured
+alongside the enumeration, in the same artifact. The record is
+**header-adjacent** in the tracker — a task-input, not a third track
+(the tracker holds exactly two: F-track, D-track) — extending the
+header's one-line task summary (`references/tracker.md` Persistence),
+and is persisted so the isolated verify reads it (`phases/verify.md`;
+verify needs nothing from the run's conversation, where the raw request
+otherwise lives). What counts as a requirement, and how it is elicited,
+is instance-defined — as the work product and the domain's executable
+verification (`phases/verify.md`) are.
+
 ## [READY]
 
 ### Judgment criteria
@@ -124,7 +142,12 @@ finding. The supporting facts are recorded across the run:
   [AUTO-ACCEPTED] (`tracker.md` — triggers per §Design-decisions); and
   every [VERIFIED] design decision's embedded target-naming and count
   premises carry a re-runnable basis (per `references/foundations.md`
-  basis-naming for design-decision premises).
+  basis-naming for design-decision premises). The convergence cycle's
+  intent-falsification findings (Convergence cycle requirement, below)
+  must be **dispositioned, not the pass silent**: mechanically-confirmable
+  findings resolved, pure-judgment findings terminal at
+  [VERIFIED — surfaced] (`references/foundations.md` Finding states); a
+  [VERIFIED — surfaced] finding is terminal and does not hold the phase.
 
 These are the status the tracker carries — a notebook of where each
 concern stands — that the AI reads when it judges the design complete.
@@ -165,9 +188,24 @@ produce **zero D-track deltas** (no new design decisions, no amendments
 to existing ones).
 
 A convergence cycle is a full cycle (investigation pass + standardized
-inspection pass + falsification pass over [VERIFIED] decisions; see
-Falsification pass below), not a final lens application on accumulated
-state. Its investigation pass must enumerate **new surfaces
+inspection pass + intent-falsification pass + mechanical falsification
+pass over [VERIFIED] decisions; see Intent-falsification pass and
+Mechanical falsification pass below), not a final lens application on
+accumulated state. The two falsification-style passes are **sequenced**,
+not run unconditionally-both: the intent-falsification pass runs
+**first**; if it produces a D-track delta the mechanical falsification
+pass is **skipped** that cycle (the design is about to change, so the
+mechanical run would be stale) and the cycle records "mechanical
+skipped: intent-delta this cycle" (the skip carve-out that reconciles
+`references/tracker.md` The mechanical falsification-pass artifact's
+no-line-malformed rule for that cycle). Only when the
+intent-falsification pass comes up clean does the mechanical
+falsification pass run. The re-trigger reuses the behavior-preserving
+classification (`phases/verify.md`): a behavior-preserving mechanical
+fix does not re-open the intent-falsification pass (the design's
+character is unchanged, so the intent-clean result carries forward); a
+non-behavior-preserving mechanical fix re-opens it. Its investigation
+pass must enumerate **new surfaces
 investigated this cycle**, where each surface is **new** by at least one
 of: (a) cites a file path not in any prior cycle's artifact this run;
 (b) cites a search query whose query string differs verbatim from every
@@ -176,7 +214,7 @@ not covered by any prior cycle's citation of the same source. A
 convergence cycle that produces no new-surface citations (only
 re-attestations of prior surfaces) is a malformed artifact.
 
-**Falsification pass.** Iterates each [VERIFIED] D-entry at the
+**Mechanical falsification pass.** Iterates each [VERIFIED] D-entry at the
 convergence cycle's start. Entries still [CONDITIONAL] or
 [AUTO-ACCEPTED] rest on an unverified assumption and are **not**
 falsified textually here — that assumption is discharged by verify
@@ -185,21 +223,22 @@ falsified textually here — that assumption is discharged by verify
 fresh-context subagent**, applying the separate-checker requirement
 from `references/foundations.md` — an artifact produced and judged in
 the same context is not self-enforcing. The subagent is briefed per the
-Falsification dispatch-brief template below: it loads the
+falsification dispatch-brief template below: it loads the
 orchestrator's skill files, reads the tracker reduced-to-latest
 projection, and iterates each [VERIFIED] D-entry. For each, the
 subagent names a search or read whose positive result would invalidate
 the entry's basis, runs it, and cites the result. The subagent returns
 the artifact and does not initiate further dispatches. Produces a
-per-decision artifact (`references/tracker.md` The falsification-pass
-artifact): one line per [VERIFIED] entry carrying a **candidate set** —
+per-decision artifact (`references/tracker.md` The mechanical
+falsification-pass artifact): one line per [VERIFIED] entry carrying a
+**candidate set** —
 one candidate per coupling shape the basis depends on
 (`anneal-framework/spec/glossary.md` Coupling shape; closed set:
 **target-existence** / **target-dependents** / **target-behavior**).
 Each candidate is tagged with its shape and carries a **falsification
 predicate** — the rule the orchestrator applies to the candidate's
 result to compute holds-or-falsified (closed set per
-`references/tracker.md` The falsification-pass artifact:
+`references/tracker.md` The mechanical falsification-pass artifact:
 `any-match` / `any-outside-scope:<scope>` / `expected-match:<pattern>`).
 The line aggregates to `holds` only if every per-shape candidate holds.
 The candidate's falsifying-capability check is mechanical — the
@@ -222,9 +261,9 @@ non-empty, (ii) each candidate carries a shape tag from the closed set
 (`anneal-framework/spec/glossary.md` Coupling shape), a candidate field
 (a located read or re-runnable query per `references/foundations.md`),
 a falsification-predicate from the closed set (`references/tracker.md`
-The falsification-pass artifact; shape-coherent for the candidate's
-tagged shape), a result field, and a per-candidate holds-or-falsified
-value; (iii) the orchestrator computes the per-candidate
+The mechanical falsification-pass artifact; shape-coherent for the
+candidate's tagged shape), a result field, and a per-candidate
+holds-or-falsified value; (iii) the orchestrator computes the per-candidate
 holds-or-falsified by applying the predicate to the result, and the
 returned value must match the computed value (a mismatch is a malformed
 line); (iv) the line's aggregate-holds-or-falsified equals the
@@ -233,25 +272,98 @@ mechanically-malformed line is a malformed return; the orchestrator
 re-dispatches with the gap's D-entry IDs explicit, and the subagent
 fills the gap. All checks are computed from the artifact. **Residual
 delegation** — whether the candidate set's shape coverage matches the
-basis's claimed shapes (`references/tracker.md` The falsification-pass
-artifact) — is the subagent's responsibility per the Falsification
-dispatch-brief template (d); per-candidate falsifying capability is now
-mechanical (predicate-applied-to-result; no subagent judgment).
+basis's claimed shapes (`references/tracker.md` The mechanical
+falsification-pass artifact) — is the subagent's responsibility per the
+falsification dispatch-brief template (d); per-candidate falsifying
+capability is now mechanical (predicate-applied-to-result; no subagent
+judgment).
 
 **Isolation fallback.** If an isolated context cannot be established
-(subagent spawn fails), the falsification pass is conducted in the
-working context per the rules above and the artifact records "without
-isolation" — the spawn-fallback; an un-isolated falsification pass is
-never silently taken as though it were independent (parallel to
-`phases/verify.md` §Isolation).
+(subagent spawn fails), the pass — mechanical or intent-falsification —
+is conducted in the working context per the rules above and the
+artifact records "without isolation" — the spawn-fallback; an
+un-isolated pass is never silently taken as though it were independent
+(parallel to `phases/verify.md` §Isolation).
+
+**Intent-falsification pass.** A pure judgment surfacer: a
+fresh-context, **criteria-first** adversarial attack on whether the
+locked design **serves its intent**, against the requirements record
+(Requirements record, above) — distinct from the mechanical
+falsification pass, which attacks each [VERIFIED] D-entry's basis.
+Criteria-first means the subagent derives the success criteria from the
+requirements record **before** reading the design — the independence
+lever; the design is the attack's target, not its criteria source. It
+is **dispatched to a fresh-context subagent** (the same separate-checker
+requirement, `references/foundations.md`), briefed per the
+falsification dispatch-brief template below, and produces the
+intent-falsification artifact (`references/tracker.md` The
+intent-falsification-pass artifact): a per-R# attack line per
+requirement (every requirement attacked, so a clean pass is
+**evidenced** clean, not asserted — an anti-flood and audit-trail bound,
+not rubber-stamp prevention) plus a per-finding line. The intent-model
+is the captured requirements record; a requirement never captured there
+is invisible to the pass (the never-captured-requirement residual,
+reduced by verify's requirements-coverage check (`phases/verify.md`),
+not eliminated).
+
+Each finding **routes** by whether a runnable check exists:
+
+- A concern that **reduces to a coupling-shape falsification of a
+  [VERIFIED] D-entry's basis** (`references/tracker.md` The mechanical
+  falsification-pass artifact) is a **mechanically-confirmable** finding:
+  it is formatted as a candidate + closed predicate and the orchestrator
+  computes the verdict (no subagent judgment, per the mechanical pass
+  above); a confirmed flaw flips the affected [VERIFIED] entry through
+  [INVALIDATED]→[PENDING] (`references/tracker.md` Design decisions) and
+  the cycle continues — this is the **intent-delta** that **skips** the
+  mechanical pass that cycle (recorded "mechanical skipped: intent-delta
+  this cycle"). A runnable-but-not-coupling-shape concern (e.g. an
+  edit-set that includes a render path a requirement forbids) does not
+  force a cycle this way — its input shape is the mechanical
+  falsification-pass line, not "any runnable check" — and is recorded
+  `surfaced` like any judgment concern.
+- A **pure-judgment** concern with **no such reduction** is recorded on
+  the F-track as **[VERIFIED — surfaced]** (`references/foundations.md`
+  Finding states) — terminal, surfaced for the operator's never-required
+  review, never blocking the phase and never a loopback. The dodge-down
+  vector (classify a checkable concern as judgment to skip the cycle) is
+  judgment-adjacent but backstopped by the next cycle's fresh-context
+  re-spawn (operator-independent), which re-attacks the same design.
+
+**The operator-independence boundary.** The pass's value is
+operator-**independent**: it force-fixes the checkable concerns (the
+mechanical-falsification route — the teeth) and honestly records the
+judgment residual ([VERIFIED — surfaced]), neither waiting on the
+operator. The recorded residual **feeds** the operator's soundness pass
+— for a method-kernel edit that is the kernel-mandated step-4 soundness
+verdict (`anneal-framework/development-process.md`), originated by the
+operator via the permitted [READY]/`next phase` menu selection (not a
+forbidden operator-detection); for an instance run there is no such
+required gate (the residual is honest-record-for-review, the
+[AUTO-ACCEPTED] contract). The pass **feeds** that gate; it never
+becomes it or depends on it, and introduces no forbidden
+operator-detection-as-enforcement. A clean intent-falsification pass is
+**not a soundness certificate**: for a method-kernel edit the operator's
+design-vs-intent soundness verdict is irreducible; the pass feeds it,
+never replaces it.
 
 If the convergence cycle surfaces D-track deltas (new decisions,
 amendments, or falsified [VERIFIED] entries reopened), the design is
 not [READY]: the deltas feed into the next cycle and the loop
 continues. [READY] is presented only after a convergence cycle is
-observed clean. The convergence cycle's outputs (investigation pass
-artifact + falsification pass artifact + zero-D-delta status) form part
-of the [READY] artifact alongside the fresh-session result line.
+observed clean — for the intent-falsification pass, **clean means its
+findings are dispositioned, not the pass silent**: every
+mechanically-confirmable finding resolved (the affected entry
+re-[VERIFIED] across a cycle, bounded by the zero-D-delta convergence)
+and every pure-judgment finding terminal at [VERIFIED — surfaced]. A
+perpetually-skeptical pass converges: its surfaced concerns terminate
+and accumulate in the record; only an open mechanically-confirmable
+finding holds the phase, so the cycle cannot loop forever on judgment
+surfacing. The convergence cycle's outputs (investigation pass
+artifact + intent-falsification pass artifact + mechanical
+falsification pass artifact, or its recorded skip + zero-D-delta status)
+form part of the [READY] artifact alongside the fresh-session result
+line.
 
 The convergence cycle fires in both modes (interactive and
 auto-battle). In auto-battle no operator override is available; the AI
@@ -264,6 +376,12 @@ Per-dispatch briefs carry only per-dispatch parameters (b) and (c) —
 the brief MUST NOT restate (a) or (d) content; it references them by
 section letter only.
 
+This template covers both falsification dispatches — the **mechanical
+falsification** dispatch and the **intent-falsification** dispatch. (a)
+and (d) are uniform within each dispatch kind; (b) and (c) carry the
+per-dispatch parameters, with a mechanical variant and an
+intent-falsification variant noted below.
+
 **(a) Load instructions** (uniform across falsification dispatches in
 this run): the dispatched subagent reads, in order,
 `references/foundations.md`, `references/tracker.md`, and this file
@@ -272,25 +390,43 @@ this run): the dispatched subagent reads, in order,
 **(b) Tracker reference**: the tracker reduced-to-latest projection
 (`references/tracker.md` Persistence, reduce-to-latest); the raw
 tracker remains accessible to the subagent for ledger-history
-inspection.
+inspection. For the **intent-falsification** dispatch, (b)
+**additionally** carries the **requirements record** (Requirements
+record, above — the criteria source the subagent derives criteria from
+before reading the design).
 
-**(c) Unit scope**: the [VERIFIED] D-entry set at the convergence
-cycle's start, cited by tracker D# identifiers.
+**(c) Unit scope**: for the **mechanical falsification** dispatch, the
+[VERIFIED] D-entry set at the convergence cycle's start, cited by
+tracker D# identifiers. For the **intent-falsification** dispatch, the
+locked [VERIFIED] design (the D-entry set the pass attacks
+holistically) plus the requirements record R1..Rn (Requirements
+record, above).
 
-**(d) Return-state expectations**: the per-decision falsification-pass
-artifact (`references/tracker.md` The falsification-pass artifact) —
-one line per [VERIFIED] entry carrying a candidate set in
-`{decision-ID, [{shape, candidate, falsification-predicate, result, holds-or-falsified}, …], aggregate-holds-or-falsified}`
-shape; coverage-checked by the orchestrator on return (Coverage check
-on return above). Per-candidate falsification-predicate is from the
-closed set (`references/tracker.md` The falsification-pass artifact) and
-shape-coherent for the candidate's tagged shape; per-candidate
-holds-or-falsified is orchestrator-computed by applying the predicate to
-the result (the subagent declares the predicate; the subagent does not
-judge holds-or-falsified). Candidate-set shape coverage must match
-every coupling shape the basis claims to depend on
-(`anneal-framework/spec/glossary.md` Coupling shape) — this remains the
-subagent's responsibility.
+**(d) Return-state expectations**:
+
+- For the **mechanical falsification** dispatch: the per-decision
+  mechanical falsification-pass artifact (`references/tracker.md` The
+  mechanical falsification-pass artifact) — one line per [VERIFIED]
+  entry carrying a candidate set in
+  `{decision-ID, [{shape, candidate, falsification-predicate, result, holds-or-falsified}, …], aggregate-holds-or-falsified}`
+  shape; coverage-checked by the orchestrator on return (Coverage check
+  on return above). Per-candidate falsification-predicate is from the
+  closed set (`references/tracker.md` The mechanical falsification-pass
+  artifact) and shape-coherent for the candidate's tagged shape;
+  per-candidate holds-or-falsified is orchestrator-computed by applying
+  the predicate to the result (the subagent declares the predicate; the
+  subagent does not judge holds-or-falsified). Candidate-set shape
+  coverage must match every coupling shape the basis claims to depend on
+  (`anneal-framework/spec/glossary.md` Coupling shape) — this remains the
+  subagent's responsibility.
+- For the **intent-falsification** dispatch: the intent-falsification-
+  pass artifact (`references/tracker.md` The intent-falsification-pass
+  artifact) — a per-R# attack line per requirement (every requirement in
+  the requirements record attacked) plus a per-finding route line whose
+  `route` is from the closed set
+  {`mechanical-falsification-candidate`, `[VERIFIED — surfaced]`};
+  coverage-checked by the orchestrator on return (an R# without an
+  attack line, or a route outside the closed set, is malformed).
 
 ### Cycle-another recommendation
 

@@ -85,6 +85,25 @@ Self-check at dispatch boundary). The subagent does not design.
 Parallel-eligible units may be dispatched concurrently; the
 disjointness basis is what makes concurrent dispatch safe.
 
+**Dispatch model tier (blanket).** Every anneal-dev subagent dispatch —
+across **all** dispatch kinds: the investigate-side passes
+(intent-falsification and mechanical falsification,
+`phases/investigate-design.md`), impl, and verify — runs at the
+configured model tier. Cost-downgrading any anneal-dev dispatch below
+that tier is **forbidden**. The rule is blanket over all dispatch kinds,
+**not** a per-dispatch "is this one sensitive?" judgment. The configured
+tier is the model named in `anneal-dev.config/model-tier.md` (Operator-
+editable artifacts, First-run bootstrap below); absent or empty, it is
+the session model — never downgraded below that. It is a **floor, not a
+guarantee**: it avoids handicapping judgment-heavy work whose blast
+radius is the whole framework plus every instance, but does not replace
+the structural robustness that catches errors — the separate-context
+verify and its isolation (`phases/verify.md`), the falsification passes,
+and the operator. Enforcement is **observable**: the model parameter on
+each dispatch is visible, so a downgraded dispatch shows on the dispatch
+itself — no separate artifact required. This binding is anneal-dev-
+specific (`bindings.md` Dispatch model tier).
+
 The orchestrator owns the tracker append: a dispatched subagent
 returns its state on completion or halt — findings, the unit's
 persistence reference, a loopback signal where applicable — and the
@@ -183,10 +202,12 @@ out-of-order sections make the artifact malformed:
    implementability result line (PASSED / FAILED per
    `phases/investigate-design.md`), **the convergence-cycle status**
    when at [READY] (the convergence cycle's investigation-pass artifact
-   citation + falsification-pass artifact citation + zero-D-delta
-   confirmation per `phases/investigate-design.md` Convergence cycle
-   requirement), named blockers preventing [READY] (open [PENDING]
-   decisions and weak-basis tracker entries), **impl plan preview at
+   citation + intent-falsification-pass artifact citation + mechanical
+   falsification-pass artifact citation, or its recorded skip, +
+   zero-D-delta confirmation per `phases/investigate-design.md`
+   Convergence cycle requirement), named blockers preventing [READY]
+   (open [PENDING] decisions and weak-basis tracker entries), **impl
+   plan preview at
    [READY]** — header line with unit count + run-level
    sequential-vs-parallel summary + the disjointness basis citation;
    followed by one line per dispatch unit naming dependencies (after
@@ -248,7 +269,13 @@ investigate-design (Loopbacks above). A finding that closes
 [VERIFIED — deferred] (`references/tracker.md`, finding-state #3) does
 not trigger loopback — the disposition cites the existing
 [AUTO-ACCEPTED] decision and the run completes; the AI's prior judgment
-to defer is preserved for the operator's post-run review. Other halt
+to defer is preserved for the operator's post-run review. A finding that
+closes [VERIFIED — surfaced] (`references/tracker.md`, finding-state #3) —
+the intent-falsification pass's pure-judgment residual, a judgment-class
+concern with no runnable mechanical check — is likewise terminal and
+does **not** trigger loopback: it is recorded for the operator's
+always-available, never-required review (in auto-battle the surface is
+recorded for post-run review, not awaited). Other halt
 conditions — phases that genuinely cannot complete on causes other than
 [ISSUES FOUND] — remain a separate, not-yet-undertaken effort.
 
@@ -287,7 +314,7 @@ artifacts):
 
 - Add `.anneal-dev/` to the repository's `.gitignore` (creating that
   file if absent) and note the change.
-- Create `anneal-dev.config/` with three placeholder files (each per
+- Create `anneal-dev.config/` with four placeholder files (each per
   `anneal-framework/instantiation-guide.md` §5 Placeholder content
   style — header comment naming the slot + framework spec section
   pointer; empty sections matching the slot's declaration shape;
@@ -303,10 +330,22 @@ artifacts):
     verify-PASSED; re-renders affected plugin skill files from the
     verified spec and presents the diff — presentation only).
     Uncomment to enable.")
+  - `model-tier.md` — dispatch model-tier slot (header: "Dispatch
+    model-tier override (anneal-dev model-tier slot; `bindings.md`
+    Dispatch model tier). Set the value line to your harness's top-tier
+    model identifier — every anneal-dev dispatch (investigate/
+    falsification/impl/verify) runs at this tier, never downgraded.
+    Absent or empty inherits the session model — the harness default —
+    also never downgraded below."); commented/empty on bootstrap
+    (default: inherit the session model), filled with a model name to
+    pin a tier.
   - `README.md` — operator-facing explainer (one paragraph: "This
     directory is operator-editable: add project lenses to `lenses.md`,
-    toggle extensions in `extensions.enabled`. Runtime state lives at
-    `.anneal-dev/runs/` and is gitignored — do not edit there.")
+    toggle extensions in `extensions.enabled`, and pin the dispatch
+    model tier in `model-tier.md` (the floor every anneal-dev dispatch
+    runs at — never downgraded; empty inherits the session model).
+    Runtime state lives at `.anneal-dev/runs/` and is gitignored — do
+    not edit there.")
 
 ## Post-run review (optional)
 

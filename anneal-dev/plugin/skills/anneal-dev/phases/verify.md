@@ -29,9 +29,9 @@ without isolation — the spawn-fallback — and its result records that; an
 un-isolated verify is never silently taken as though it were
 independent.
 
-## The three checks
+## The four checks
 
-verify runs three checks over the completed work:
+verify runs four checks over the completed work:
 
 1. **Planned vs actual.** Check every locked design decision
    (`tracker.md`) against what the rule-text actually does. **Also check
@@ -48,9 +48,22 @@ verify runs three checks over the completed work:
    carries structurally). Realization-output detail (the exact wording,
    synonym choice, internal section ordering that changes no rule) does
    not yield such a value-change.
-2. **Standardized lenses.** Apply the standardized lens set
+2. **Requirements coverage.** Check each requirement in the
+   **requirements record** (the R1..Rn enumeration the working context
+   captured at investigate-design, `tracker.md`) for coverage by a
+   locked decision; an uncovered requirement surfaces as a finding. This
+   is the **dual of the design-completeness audit** above: that audit
+   catches a material element no decision designed (fact-correct); this
+   catches a requirement no decision covers (intent-correct). The
+   record's enumeration is **also** checked against the captured
+   **verbatim request** (persisted alongside the enumeration in the same
+   artifact, `tracker.md`) — a requirement present in the raw request but
+   never enumerated is a finding. This second leg is a **soft judgment**:
+   it has no mechanical predicate, so it reduces but does not eliminate
+   the residual of a requirement that escaped capture entirely.
+3. **Standardized lenses.** Apply the standardized lens set
    (`lenses.md`) to the produced rule-text.
-3. **Executing the verification.** Run the domain's executable
+4. **Executing the verification.** Run the domain's executable
    verification — anneal-dev's **3-check battery** (`bindings.md`
    Verification battery) — and show its output. "Executable" means each
    check is **dispatched/run, not asserted**. verify does not pass on
@@ -91,11 +104,11 @@ of shipping a green build, not a check the isolated verify context runs.
 ## Account for every check
 
 verify accounts for every check — no check silently absent. Each
-planned-vs-actual check, and every standardized lens (applied where it
-is in scope, or given a one-line cited reason it is not), either holds —
-recorded as a cited-clean line — or yields a divergence from the locked
-design or a lens issue. A failed run of any battery check is likewise an
-issue.
+planned-vs-actual check, each requirement's coverage check, and every
+standardized lens (applied where it is in scope, or given a one-line
+cited reason it is not), either holds — recorded as a cited-clean line —
+or yields a divergence from the locked design, an uncovered requirement,
+or a lens issue. A failed run of any battery check is likewise an issue.
 
 Any non-failure output a battery check surfaces is also a finding unless
 the project has explicitly de-prioritized that output class.
@@ -132,7 +145,16 @@ Finding ledger:
   F2 [VERIFIED — non-issue]
   ...
   F34 [VERIFIED — deferred]
+  F35 [VERIFIED — surfaced]
 ```
+
+The disposition suffix is one of four (`references/tracker.md`,
+finding-state #3): addressed, non-issue, deferred, **surfaced**. A
+`[VERIFIED — surfaced]` finding — a judgment-class concern the
+intent-falsification pass raised with no runnable mechanical check — is
+**at [VERIFIED]** (terminal), so it is not a finding short of [VERIFIED]
+and does **not** block [PASSED]; it is surfaced for the operator's
+review downstream, never a loopback.
 
 ## Re-run scope
 
@@ -140,9 +162,9 @@ When [ISSUES FOUND] returns the run to investigate-design and the fix
 flows through the full procedure (design re-cycled, implement re-run),
 verify re-runs as either:
 
-- **Fresh verify pass** — full re-attest of the three checks (planned vs
-  actual, lenses, the battery). Default — required when the closing fix
-  is not behavior-preserving.
+- **Fresh verify pass** — full re-attest of the four checks (planned vs
+  actual, **requirements coverage**, lenses, the battery). Default —
+  required when the closing fix is not behavior-preserving.
 - **Delta verify** — confirm the named finding closed + minimal
   regression. Permitted when the closing fix is **behavior-preserving**.
 

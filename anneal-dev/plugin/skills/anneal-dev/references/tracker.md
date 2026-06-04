@@ -54,8 +54,8 @@ ledger line: a status tag, a summary of what was found, and its
 verification evidence (a basis-rule artifact, `foundations.md`, not
 prose). Its state machine — [PENDING] → [PARTIALLY VERIFIED] →
 [VERIFIED] (with the closed disposition enum addressed / non-issue /
-deferred) → [INVALIDATED], and the F-entry resolution closure — is in
-`foundations.md` (Finding states). On a ledger line the [VERIFIED]
+deferred / surfaced) → [INVALIDATED], and the F-entry resolution
+closure — is in `foundations.md` (Finding states). On a ledger line the [VERIFIED]
 disposition is cited as a tagged suffix: `[VERIFIED — <disposition>]`; a
 [VERIFIED] without a cited disposition is a malformed artifact. A finding
 whose stated content is found inaccurate during verification is
@@ -126,9 +126,9 @@ working context, at [READY], account for the standardized set whole —
 every lens applied in the cycle(s) its scope was touched, the last
 cycle's pass clean — without it, that [READY] condition is unauditable.
 
-## The falsification-pass artifact
+## The **mechanical** falsification-pass artifact
 
-The convergence cycle's falsification pass
+The convergence cycle's mechanical falsification pass
 (`phases/investigate-design.md`) emits a per-decision artifact: one line
 per [VERIFIED] D-entry at the start of the convergence cycle, carrying a
 **candidate set** — one candidate per coupling shape the basis depends
@@ -190,15 +190,94 @@ target-dependents in the basis's claimed shapes; the candidate set's
 target-dependents candidate re-runs that reference enumeration as its
 search.
 
-A [VERIFIED] entry without a falsification-pass line at the convergence
-cycle is a malformed artifact — the [READY] declaration requires the
-pass complete across all [VERIFIED] entries
-(`phases/investigate-design.md`).
+A [VERIFIED] entry without a mechanical falsification-pass line at the
+convergence cycle is a malformed artifact — the [READY] declaration
+requires the pass complete across all [VERIFIED] entries
+(`phases/investigate-design.md`). **Skip carve-out:** a convergence
+cycle whose intent-falsification pass (The intent-falsification-pass
+artifact, below) produced a D-track delta **skips** the mechanical
+falsification pass that cycle and records `mechanical skipped:
+intent-delta this cycle`; on a cycle carrying that recorded skip, the
+absence of mechanical falsification-pass lines is **not** malformed. The
+carve-out is scoped to the recorded-skip cycle only: a convergence cycle
+**without** that recorded skip — the converged cycle, which runs both
+passes — is held to the malformed-line rule above unchanged (every
+[VERIFIED] entry carries a mechanical falsification-pass line).
 
 The artifact is per-cycle, fired only at the convergence cycle (not at
 every cycle's standardized pass). Persisted alongside the cycle's
 standardized-pass findings at
 `.anneal-dev/runs/<run-name>.cycle-<N>.falsification.md`.
+
+## The intent-falsification-pass artifact
+
+The convergence cycle's intent-falsification pass
+(`phases/investigate-design.md`) emits this artifact, sibling to the
+mechanical falsification-pass artifact (above). The mechanical pass
+attacks each [VERIFIED] D-entry's basis per coupling shape; the intent
+pass attacks whether the locked design **serves its intent**, against
+the requirements record (the criteria source — Persistence below). Two
+line kinds:
+
+**Per-R# attack line** — one per requirement (R#) in the requirements
+record:
+
+`{R#, attempted-refutation, outcome}`
+
+- **R#** — the requirement attacked.
+- **attempted-refutation** — the attack mounted against the design's
+  serving of R# (the located read or query the attack ran).
+- **outcome** — `served` or `finding` (a finding is also lined as a
+  per-finding line below).
+
+Every requirement carries an attack line — coverage is the whole
+requirements record, so a clean pass is **evidenced** clean, not
+asserted. This bound is **anti-flood and audit-trail**, not
+rubber-stamp prevention: a per-R# line is free-form and can be
+vacuously satisfied, so it does not mechanically force soundness. The
+soundness judgment for a method-kernel edit remains the operator's
+irreducible verdict (`phases/investigate-design.md`
+operator-independence boundary); the intent pass feeds it, never
+substitutes.
+
+**Per-finding line** — one per concern the attack raises:
+
+`{finding, criterion-attacked, refutation, route}`
+
+- **finding** — the design-vs-intent concern.
+- **criterion-attacked** — the R# (from the requirements record) the
+  finding attacks, or the intent it attacks where no single R# captures
+  it.
+- **refutation** — the located read or query that surfaced the concern
+  (`foundations.md` — search-established, not a recalled hypothesis).
+- **route** — one of (closed set):
+    - `mechanical-falsification-candidate` — the concern reduces to a
+      coupling-shape falsification (The mechanical falsification-pass
+      artifact, above) of a [VERIFIED] D-entry's basis; it is handed to
+      the mechanical pass (formatted as a mechanical candidate + closed
+      predicate, orchestrator-computed verdict, no subagent judgment)
+      and routed per `phases/investigate-design.md`.
+    - `[VERIFIED — surfaced]` — pure judgment, no coupling-shape
+      reduction; recorded on the F-track as `[VERIFIED — surfaced]`
+      (`foundations.md` Finding states), terminal, surfaced for the
+      operator's never-required review. A route not from this closed set
+      is malformed.
+
+Produced by the fresh-context intent-falsification subagent dispatched
+per `phases/investigate-design.md`. An R# in the requirements record
+without a per-R# attack line is a malformed artifact — the coverage
+bound requires the pass attack every requirement. A per-finding line
+whose route is `mechanical-falsification-candidate` is reconciled
+against the mechanical falsification-pass artifact (above): the routed
+candidate appears as a mechanical falsification-pass line on the
+affected [VERIFIED] entry that cycle (the intent-delta cycle; see the
+mechanical artifact's skip carve-out above for what the skip leaves
+unlined).
+
+The artifact is per-cycle, fired only at the convergence cycle.
+Persisted alongside the cycle's standardized-pass findings and the
+mechanical falsification artifact at
+`.anneal-dev/runs/<run-name>.cycle-<N>.intent-falsification.md`.
 
 ## The impl plan
 
@@ -229,9 +308,25 @@ Each run has its own tracker — an append-only markdown file under
 — holding a **header** (the run's status, the current phase, mode, a
 one-line task summary) and the two tracks (F-track, D-track), and
 **nothing else**. The standardized-pass findings artifact, the
-falsification-pass artifact, and the impl plan (above) are persisted
-alongside the tracker — per-cycle / per-phase run artifacts — not filed
-into it.
+mechanical falsification-pass artifact, the intent-falsification-pass
+artifact, and the impl plan (above) are persisted alongside the tracker
+— per-cycle / per-phase run artifacts — not filed into it, at:
+
+- **Standardized-pass findings:** `.anneal-dev/runs/<run-name>.cycle-<N>.standardized-pass.md`
+- **Mechanical falsification-pass:** `.anneal-dev/runs/<run-name>.cycle-<N>.falsification.md`
+- **Intent-falsification-pass:** `.anneal-dev/runs/<run-name>.cycle-<N>.intent-falsification.md`
+- **Impl plan:** `.anneal-dev/runs/<run-name>.impl-plan.md`
+
+The **requirements record** — investigate-design's capture of the
+original task requirements as R1..Rn, separated from any proposed
+solution, with the operator's verbatim request captured alongside — is
+**header-adjacent**: it extends the header's one-line task summary, a
+**task-input, not a third track** (the tracker holds exactly two —
+F-track and D-track), and is persisted so the isolated verify reads it
+(`phases/verify.md` — verify needs nothing from the run's
+conversation). It is the criteria
+source the intent-falsification pass attacks (The
+intent-falsification-pass artifact, above).
 
 **Status** is one of (instance-defined closed enum):
 

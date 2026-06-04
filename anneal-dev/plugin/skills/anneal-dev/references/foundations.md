@@ -30,7 +30,12 @@ operator, presented the design, selects `next phase`), **implement**
 **verify** (checks the produced rule-text against the locked design and
 the standardized lenses). The tracker carries state across the phases:
 investigate-design produces it, implement works from it, verify records
-its results into it. An orchestrator conducts the run (§Orchestrator).
+its results into it. investigate-design also captures a **requirements
+record** — the task's goal enumerated R1..Rn (separated from any
+solution the operator's request proposes), plus the operator's verbatim
+request — a **task-input** (not a third track), header-adjacent in the
+tracker, persisted so the isolated verify reads it. An orchestrator
+conducts the run (§Orchestrator).
 
 A run is driven in one of two **modes**: **interactive** (the operator
 advances the loop and selects at menus) or **auto-battle** (the loop
@@ -286,7 +291,7 @@ A finding — an observation recorded by inspection — moves through:
    spans steps or cycles.
 3. **[VERIFIED]** — verification complete: the finding's content is
    established on evidence. A [VERIFIED] tag carries a cited
-   **disposition** naming which of three cases applies (closed enum):
+   **disposition** naming which of four cases applies (closed enum):
    - **addressed** — the cited D# names the same observable behavior the
      finding observes (an element of the rule-text, or its contract
      surface); citation-equivalence is the check.
@@ -303,10 +308,21 @@ A finding — an observation recorded by inspection — moves through:
      executable-verification output class, a named dependency change —
      that would re-fire on the deferred finding; defer-without-trigger
      or trigger-without-observable-class is malformed).
+   - **surfaced** — a judgment-class concern raised by the
+     intent-falsification pass (`phases/investigate-design.md`) with no
+     runnable mechanical check and no observable re-fire trigger. Its
+     citable basis-form is the **fresh-context intent-falsification attack
+     artifact** — the attack ran and classified the concern as having no
+     runnable check. Terminal, surfaced for the operator's
+     always-available, never-required review (the [AUTO-ACCEPTED]
+     mode-keyed contract — in auto-battle the surface is recorded for
+     post-run review, not awaited). A `surfaced` without its cited
+     attack-artifact basis is malformed, the same shape as the
+     dispositions above.
 
    The disposition is cited as a tagged suffix on the status line:
    `[VERIFIED — <disposition>]`. A [VERIFIED] without a cited disposition
-   is malformed. A finding with none of the three dispositions citable
+   is malformed. A finding with none of the four dispositions citable
    stays at its prior status; verify then ends [ISSUES FOUND].
 
    A finding whose stated content is found inaccurate during
@@ -318,10 +334,10 @@ A finding — an observation recorded by inspection — moves through:
    phase until it does. Only a [VERIFIED] finding becomes [INVALIDATED];
    one contradicted before [VERIFIED] is simply corrected.
 
-**F-entry resolution closure.** F-entries resolve through exactly four
-paths: one of the three [VERIFIED — disposition] cases above, or [ISSUES
+**F-entry resolution closure.** F-entries resolve through exactly five
+paths: one of the four [VERIFIED — disposition] cases above, or [ISSUES
 FOUND] → loopback (`phases/verify.md`). Inline-fix — modifying the
-rule-text to address a finding without one of the four resolutions — is
+rule-text to address a finding without one of the five resolutions — is
 not a path; attempting one is malformed. The closure applies to
 F-entries from any source: verify findings, impl-phase self-check
 findings, investigation-pass findings.
@@ -395,9 +411,12 @@ The status tags gate [READY] (`phases/investigate-design.md` [READY]):
 an [INVALIDATED] finding, a load-bearing finding short of [VERIFIED], or
 a design decision short of [VERIFIED]/[AUTO-ACCEPTED] (Design-decision
 states above) is an unresolved concern that holds the phase — the loop
-continues until it resolves. These are the status the tracker carries,
-read at the [READY] judgment (`phases/investigate-design.md` [READY]),
-not a gate a separate evaluation re-derives.
+continues until it resolves. Only a finding short of [VERIFIED] holds
+the phase; a [VERIFIED — surfaced] finding (Finding states above) is at
+[VERIFIED] — terminal — and therefore does not hold it. These are the
+status the tracker carries, read at the [READY] judgment
+(`phases/investigate-design.md` [READY]), not a gate a separate
+evaluation re-derives.
 
 ## Orchestrator
 
@@ -443,7 +462,10 @@ Operator-editable artifacts live at `anneal-dev.config/` (committed),
 distinct from `.anneal-dev/runs/` (gitignored runtime state). The
 operator-editable set: `lenses.md` (lens-supplement mechanism per
 `lenses.md` Project supplements), `extensions.enabled` (extension enable
-file), `README.md` (operator-facing explainer). On first run in a
-project, anneal-dev adds `.anneal-dev/` to the repo's `.gitignore`
-(creating it if absent) and bootstraps `anneal-dev.config/` with the
-placeholder files (`SKILL.md` First-run bootstrap).
+file), `model-tier.md` (the dispatch model-tier slot — the floor every
+anneal-dev dispatch runs at, never downgraded; empty inherits the
+session model, per `SKILL.md` Dispatch model tier), and `README.md`
+(operator-facing explainer). On first run in a project, anneal-dev adds
+`.anneal-dev/` to the repo's `.gitignore` (creating it if absent) and
+bootstraps `anneal-dev.config/` with the four placeholder files
+(`SKILL.md` First-run bootstrap).
