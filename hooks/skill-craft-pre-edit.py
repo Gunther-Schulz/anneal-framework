@@ -104,6 +104,24 @@ origin is drift (Edit-without-spec-origin anti-pattern,
 skill-craft references/anti-patterns.md)."""
 
 
+def is_anneal_instance_render(file_path: str) -> bool:
+    """A plugin render that belongs to an anneal INSTANCE — it renders from an
+    instance spec living at its repo root (e.g. coding-clippy/spec/ ↔
+    coding-clippy/plugin/skills/clippy/; anneal-dev/spec/ ↔ anneal-dev/plugin/).
+    A standalone skill (a sibling-repo plugin like bildhauer) has plugin/ but
+    NO sibling spec/, so the spec-origin reminder does not apply to it.
+
+    Scopes the (informational) spec-origin reminder only — NOT the
+    skill-craft-invocation gate, which stays broad (any skill edit should
+    route through skill-craft). Finding 4: the reminder previously fired on
+    every /plugin/skills/ path on disk, including non-anneal sibling skills.
+    """
+    if not any(p.search(file_path) for p in PLUGIN_RENDER_PATTERNS):
+        return False
+    repo_root = file_path.split("/plugin/skills/")[0]
+    return os.path.isdir(os.path.join(repo_root, "spec"))
+
+
 def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
     """Scan the JSONL transcript: find the last operator-prompt
     user message (a user-role event with isMeta unset, origin
@@ -282,10 +300,13 @@ def main() -> int:
         deny(DENY_REASON)
         # Unreachable; deny() exits.
 
-    # Skill-craft was invoked in the current turn. Allow, with
-    # informational spec-origin reminder for plugin renders (except
-    # skill-craft canonical, which IS source not render).
-    if is_plugin_render and not is_sc_canonical:
+    # Skill-craft was invoked in the current turn. Allow, with an
+    # informational spec-origin reminder for anneal-INSTANCE plugin renders
+    # (sibling spec/ at the repo root). NOT for skill-craft canonical (IS
+    # source, not render) and NOT for standalone non-anneal skills, which have
+    # no anneal spec-origin to cite (Finding 4: the reminder over-matched
+    # sibling-repo skills like bildhauer).
+    if is_anneal_instance_render(file_path) and not is_sc_canonical:
         output = {
             "hookSpecificOutput": {
                 "hookEventName": "PreToolUse",

@@ -1,6 +1,11 @@
 # skill-craft-pre-edit hook — over-broad path match + bypassable + subagent-reliability
 
-**Status:** Finding 1 **DONE** (2026-06-01); Finding 3 **RE-GROUNDED 2026-06-02 → MOOT as a hook bug** (the boundary detector handles the current harness shape correctly — empirical test below); residual reframed to [[anneal-dev-impl-skillcraft-gate]]. Findings 2 + 4 open. Surfaced
+**Status:** ✅ **CLOSED 2026-06-04 → archived.** F1 DONE (2026-06-01, `ad29c27`); F3 MOOT
+(re-grounded; its real residual — anneal-dev dispatch *loads* but doesn't *invoke* skill-craft —
+**filed** as `anneal-dev-impl-skillcraft-gate`); **F4 DONE 2026-06-04** (hook spec-origin reminder
+scoped to anneal-instance renders via sibling-`spec/` detection; verified — clippy/anneal-dev fire,
+bildhauer/framework-spec don't); **F2 ACCEPTED** as a known limitation (the `mv`/`cp` Bash-bypass;
+backstop = release-loop step 4 + operator). Surfaced
 2026-06-01 by the anneal-dev pass-1 subagent (which tripped the gate writing
 draft spec files and routed around it). The path-narrowing (Finding 1) is done,
 so the de-pollution cycles' `spec/*.md` edits gate correctly without
@@ -32,7 +37,7 @@ gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).
    `anneal-framework/spec/`, instance `coding-clippy/spec/`, and plugin renders
    still gate. Kept minimal — `dev-notes/` is the one concrete non-corpus area
    (its README says "not the spec"); no speculative scratch-dir list (practice 7).
-2. **`mv`/`cp` bypass hole (note).** The gate is a PreToolUse hook on Write/Edit;
+2. **`mv`/`cp` bypass hole — ACCEPTED known-limitation (2026-06-04).** The gate is a PreToolUse hook on Write/Edit;
    it does not gate Bash file moves, so writing to a non-matching path and
    `mv`-ing into place circumvents it (which the pass-1 subagent did). Fully
    closing this is not cheap (can't gate all Bash without heavy friction) —
@@ -75,8 +80,13 @@ gates Edit/Write to rule-corpus files behind an in-turn skill-craft invocation).
    anneal-dev's impl dispatch loads its references but does not *invoke* skill-craft
    via the Skill tool, so a dispatched rule-corpus edit has no Skill `tool_use` and
    the gate correctly blocks it → [[anneal-dev-impl-skillcraft-gate]].
-4. **Spec-origin-trace fires on non-anneal-instance skills (over-match,
-   2026-06-02).** The PreToolUse spec-origin-trace demand (practice 5
+4. **Spec-origin-trace fires on non-anneal-instance skills (over-match) — DONE 2026-06-04.**
+   *Fix:* `is_anneal_instance_render()` now gates the reminder — it fires only when the plugin's
+   repo root has a sibling `spec/` (anneal-instance renders: clippy, anneal-dev, …), not on every
+   `/plugin/skills/` path. bildhauer (no root `spec/`) no longer triggers it; the broad
+   skill-craft-*invocation* gate is left unchanged (any skill edit still routes through skill-craft).
+   Verified (`hooks/skill-craft-pre-edit.py`). Original finding:
+   The PreToolUse spec-origin-trace demand (practice 5
    "spec-origin grounding for plugin edits") matched a `plugin/skills/*/` edit
    in a **sibling repo** (`bildhauer`), demanding an anneal framework/instance
    spec-origin that cannot apply — bildhauer is a standalone skill, not an

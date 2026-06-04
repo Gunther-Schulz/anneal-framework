@@ -87,14 +87,18 @@ change at the source first (practice 1) or you render twice. Level = **root (fix
 where it surfaced. Within tiers, items are **batched by theme** (resolve a batch in one campaign/run,
 not one-at-a-time). `ls` remains the full index; every item is workable individually, in any order.
 
-### 1 ▸ NEAR-DONE — finish / close (each open only on a tracked residual)
-- `framework-spec-cleanup` — audit debt discharged; **archives when `instance-reinstantiation` lands.**
-- `contract1-depollution-cluster` — de-pollution complete; held on validation-watch **V-26** (+ the
-  parked clippy render-debt, now inside `instance-reinstantiation`).
-- `clippy-run-findings-dispatch-coupling` — Findings 1–3 + Cycle G **RELEASED**; tail = the
-  coherence-audit deep-sweep (§4.4 / §5.1 / mode mechanics) + Cycle 2.5 (deferred into planner).
-- `skill-craft-pre-edit-hook-findings` — Finding 1 DONE, Finding 3 MOOT; residual = Findings 2
-  (Bash-bypass) + 4 (spec-origin over-match).
+### 1 ▸ NEAR-DONE
+**Finish-now:** none open. (`skill-craft-pre-edit-hook-findings` **CLOSED + archived 2026-06-04** —
+F4 hook spec-origin reminder scoped to anneal-instance renders [sibling-`spec/` detection, verified];
+F2 `mv`/`cp` Bash-bypass accepted as a known limitation; F3 residual filed →
+`anneal-dev-impl-skillcraft-gate`, now in tier 4.)
+
+**Auto-closing — NO action; each archives when its dependency lands (do not try to "work" these):**
+- `framework-spec-cleanup` → archives when `instance-reinstantiation` (tier 5) lands.
+- `contract1-depollution-cluster` → archives when validation-watch **V-26** resolves (needs a built
+  non-code instance) + the parked render-debt (now folded into `instance-reinstantiation`).
+- `clippy-run-findings-dispatch-coupling` → archives when the coherence-audit deep-sweep (tier 2 —
+  §4.4 / §5.1 / mode mechanics) lands + Cycle 2.5 (deferred into `planner-instance-exploration`).
 
 ### 2 ▸ FRAMEWORK FIXES — close gaps in the existing kernel / dev-process (root-at-framework)
 **Vehicle: a coherence-audit-driven campaign.** A coherence-audit is **cadence-due** (practice 12 +
@@ -133,7 +137,9 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
     (partly captured in `verify-vs-original-requirements`, tier 2 — the *fix* and the *change*
     converge; sequence them together).
 - **anneal-dev method:** `anneal-dev-rerender-changeset-by-source-delta` ·
-  `anneal-dev-extension-render-gate` (downgraded — D4 answered the core question).
+  `anneal-dev-extension-render-gate` (downgraded — D4 answered the core question) ·
+  `anneal-dev-impl-skillcraft-gate` (NEW 2026-06-04 — dispatch *loads* but doesn't *invoke*
+  skill-craft → the pre-edit gate blocks dispatched rule-corpus edits).
 
 ### 5 ▸ CLIPPY / INSTANCE CHANGES — the big re-render (gated by F0 above)
 - `instance-reinstantiation` — **umbrella** (now incl. the 3 folded bundles: render-resync, SKILL.md
