@@ -113,6 +113,44 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   carry-forward (verify F-V1). Not behavior-preserving (adds the structural-enforcement clauses) → instance
   re-renders need a render-fidelity verify. Commit ref: `f74b145`.
 
+## Capability-by-instance render matrix (2026-06-05)
+
+The queue above is **per-source-delta** (each anneal-dev run's edit). This is the
+**per-capability view** — the framework capabilities the instances should carry, vs
+their current render status per instance — to keep the render-sync discipline visible
+before drift compounds. (Other-session evidence 2026-06-05: clippy's bugs trace partly
+to clippy lagging anneal's intent-falsification + requirements-record machinery; the
+matrix is the forcing function for noticing.)
+
+Status legend: ✅ live (rendered + verified), 📦 queued (in the render-debt queue
+above), ⛔ not yet (capability missing from this instance), N/A (capability doesn't
+apply to this instance), ❓ unknown (needs a verify scan to confirm).
+
+| Capability (source) | Shipped | anneal-dev plugin | clippy | daneel | campaign-craft | bauleitplan |
+|---|---|---|---|---|---|---|
+| **intent-falsification pass + `[VERIFIED — surfaced]` finding state** (`core.md §4.1.4` + `modules.md §3.4.1`, session 6) | 2026-06-04 | ✅ (session-7 reinstantiation) | ⛔ | ⛔ | ⛔ | ⛔ |
+| **requirements record + verify requirements-coverage check** (`core.md §4.1` + `phases/verify.md`, session 5) | 2026-06-04 | ✅ (session-7 reinstantiation) | ⛔ | ⛔ | ⛔ | ⛔ |
+| **foundation-invariants register + per-touched-invariant artifact** (session 6) | 2026-06-04 | N/A (anneal-only; register is for anneal's kernel) | N/A | N/A | N/A | N/A |
+| **validation-watch lifecycle fix** (opportunity-exercised closing; correctness/quality split; archive-check; n=1 justified, session 5) | 2026-06-04 | ✅ (session-7 reinstantiation) | 📦 | 📦 | 📦 | 📦 |
+| **kernel-consolidation: validation-watch → folder; triage homes; "edit cycle" gloss** (session 5) | 2026-06-04 | ✅ (session-7 reinstantiation) | 📦 | 📦 | 📦 | 📦 |
+| **§3.1 bind/surface relabel keystone (Move 1)** (`spec/core.md §3.1` + practices 10/11/12 + glossary, 2026-06-05) | 2026-06-05 (`819e84e`) | 📦 (D7 of move1) | 📦 | 📦 | 📦 | 📦 |
+| **L1 convergence-pass structural sequencing** (`spec/core.md §4.1.4` + `modules.md §3.3/§3.4`, today) | 2026-06-05 (`f74b145`) | 📦 (D6 of L1) | 📦 | 📦 | 📦 | 📦 |
+| **model-tier policy** (`anneal-dev/spec/bindings.md`, session 7) | (pending release) | 📦 | N/A (anneal-dev-specific binding) | N/A | N/A | N/A |
+| **instance-domain-invariant register slot** (newly-filed; not yet specified) | not-yet | depends | depends | depends | depends | depends |
+
+**Reading the matrix:** anneal-dev plugin is most-recently rendered (session-7
+reinstantiation; lags only today's two releases — `819e84e` move-1 + `f74b145` L1).
+Clippy/daneel/campaign-craft/bauleitplan lag everything since pre-session-6 — i.e.,
+the **intent-falsification pass itself**, plus everything after. **The intent-falsification
+gap is the highest-leverage render** for those instances (cross-session corroborated:
+clippy's bug class would be caught by it). It can NOT render alone — it composes with the
+`[VERIFIED — surfaced]` finding state, the convergence-cycle requirement, the requirements
+record, and now the L1 structural sequencing. Bundle.
+
+**Discipline:** every spec-only framework release adds (a) a row to the matrix if the
+capability is new, OR (b) a status update to existing rows. Drift becomes visible at
+matrix-glance, not requiring per-source-delta archaeology.
+
 ## Two kinds of work — do NOT conflate
 
 1. **Faithful re-render (propagation).** Carry the §4 cleanup into an instance's
@@ -197,6 +235,17 @@ Each instance pass also closes its share of `adoption-instance-settlement` (the
 Clippy lags framework core by these cycles (behavior-unchanged vocab alignment; batches freely while
 clippy idle — drift ~0). A **semantic** change instead pulls a render-validation forward, not into
 this batch.
+
+**2026-06-05 update — clippy's lag is no longer just vocab.** Per the capability matrix above,
+clippy is missing the *semantic* additions since pre-session-6: the **intent-falsification pass**
+(`core.md §4.1.4` / `modules.md §3.4.1`), the **`[VERIFIED — surfaced]` finding disposition**, the
+**requirements record + verify coverage check**, **today's L1 structural sequencing**
+(`f74b145`), and the **§3.1 bind/surface keystone** (`819e84e`). Other-session evidence
+2026-06-05: clippy's 4 silent-correctness bugs trace partly to the missing
+intent-falsification axis. So clippy's re-render bundles ALL of the above (not just the vocab
+cycles below) + a render-fidelity verify (the L1 + intent-falsification renders are
+**not behavior-preserving** — they change what clippy enforces). The **vocab-cycles list below
+is the long tail of behavior-preserving items**, layered under the semantic carry.
 - **c-safe (§4.1.4 falsification)** — fw `5f4ed74`: coupling shapes `target-shape`/`target-uses` →
   `target-existence`/`target-dependents`; predicate evidence abstracted in core (clippy binds the
   concrete grep forms in §3); F3 [CONDITIONAL]/[AUTO-ACCEPTED]→verify handoff; sites:

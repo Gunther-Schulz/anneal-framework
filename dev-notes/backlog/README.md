@@ -29,7 +29,11 @@ session-6/7 spawned items into the tiers, reinstantiation shipped+activated + se
 resolved; **session 8 (2026-06-05)** — the two quick-wins + V-15 archived, the sweep ran both passes
 + keystone Move-1 partially shipped, items filed (`method-kernel-soundness-verdict-locus`,
 `foundation-register-intent-falsification-anchors`; *continued:* `convergence-sequencing-enforcement`
-after the convergence-pass sequencing gap + skill-craft v1.0.58 L3 fix). 42 open.)
+after the convergence-pass sequencing gap + skill-craft v1.0.58 L3 fix + L1 `f74b145` shipped;
+*then-continued:* `ready-machinery-self-attestation` (promoted from sweep) + `instance-domain-invariant-register`
+(new architectural surface from a cross-session clippy-bug analysis) + V-30 watch (form-not-binding
+class-recurrence) filed, + `instance-reinstantiation` extended with a capability-by-instance matrix
++ clippy semantic-render call-out). 44 open.)
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 
