@@ -33,7 +33,9 @@ after the convergence-pass sequencing gap + skill-craft v1.0.58 L3 fix + L1 `f74
 *then-continued:* `ready-machinery-self-attestation` (promoted from sweep) + `instance-domain-invariant-register`
 (new architectural surface from a cross-session clippy-bug analysis) + V-30 watch (form-not-binding
 class-recurrence) filed, + `instance-reinstantiation` extended with a capability-by-instance matrix
-+ clippy semantic-render call-out). 44 open.)
++ clippy semantic-render call-out; **then** `anneal-dev-evaluation-discipline` filed —
+render skill-craft v1.0.61's Tier 1/2 (triggering + behaviour-delta signature) into
+anneal-dev-the-plugin). 45 open.)
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 

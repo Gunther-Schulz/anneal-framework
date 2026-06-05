@@ -137,6 +137,7 @@ apply to this instance), ❓ unknown (needs a verify scan to confirm).
 | **L1 convergence-pass structural sequencing** (`spec/core.md §4.1.4` + `modules.md §3.3/§3.4`, today) | 2026-06-05 (`f74b145`) | 📦 (D6 of L1) | 📦 | 📦 | 📦 | 📦 |
 | **model-tier policy** (`anneal-dev/spec/bindings.md`, session 7) | (pending release) | 📦 | N/A (anneal-dev-specific binding) | N/A | N/A | N/A |
 | **instance-domain-invariant register slot** (newly-filed; not yet specified) | not-yet | depends | depends | depends | depends | depends |
+| **skill-evaluation discipline (Tier 1 triggering + Tier 2 behaviour-delta signature)** (skill-craft v1.0.61, 2026-06-05) | 2026-06-05 (skill-craft v1.0.61) | ⛔ (filed: `anneal-dev-evaluation-discipline`) | ⛔ | ⛔ | ⛔ | ⛔ |
 
 **Reading the matrix:** anneal-dev plugin is most-recently rendered (session-7
 reinstantiation; lags only today's two releases — `819e84e` move-1 + `f74b145` L1).
