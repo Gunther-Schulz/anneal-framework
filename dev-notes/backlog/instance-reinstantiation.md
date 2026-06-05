@@ -101,6 +101,17 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   (deferred): the anneal-dev plugin's `SKILL.md` (First-run bootstrap → 4 placeholders incl `model-tier.md`)
   + the dispatch description (render the model-tier floor) + `references/foundations.md` (Operator-editable
   artifacts → add `model-tier.md`). Commit ref: pending spec-only release (checkpoint not yet released).
+- **l1-convergence-pass-sequencing** — run `.anneal-dev/runs/l1-convergence-pass-sequencing.md`; spec-only
+  release `f74b145` on `main`. Source-delta: `core.md §4.1.4` (coverage-check clause (v) re-deriving intent-clean
+  + the carry-forward paragraph REMOVED + the sequencing prose naming its structural bind) + `modules.md §3.3(c)`
+  (mechanical dispatch input carries this-cycle intent-clean verdict) + `modules.md §3.4` (mechanical artifact
+  cites the verdict in a per-artifact header; malformed-if-absent). **Render obligation** (deferred, ALL
+  instances): each instance's `phases/investigate-design.md` renders the convergence-cycle sequencing — drop the
+  behavior-preserving carry-forward para, render clause (v) + the dispatch-brief (c) intent-clean input; and
+  `references/tracker.md` renders the §3.4 mechanical-artifact per-artifact intent-clean header field. **Known
+  stale render confirmed:** anneal-dev plugin `investigate-design.md`:203-207 still carries the removed
+  carry-forward (verify F-V1). Not behavior-preserving (adds the structural-enforcement clauses) → instance
+  re-renders need a render-fidelity verify. Commit ref: `f74b145`.
 
 ## Two kinds of work — do NOT conflate
 

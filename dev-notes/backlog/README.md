@@ -42,9 +42,13 @@ the **operator caught it**. Root-caused across levels → new item **`convergenc
   discipline for conditionally-dependent *independently-dispatchable* steps (encode the dependency in the
   dependent's input + cite it) + the enforcement-register **salience** fix (proportionality elevated to the
   Layer-2 intro; new "Scope precedes default" principle; 12th review-checklist item "Salience / reading order").
-- **L1 (anneal-dev kernel) IN PROGRESS:** apply it to `core.md §4.1.4` + `modules.md §3.4` (the mechanical
-  pass can't be dispatched without the same-cycle intent-clean verdict as input + the artifact cites it). Its
-  own anneal-dev cycle (*renders from* the L3 discipline).
+- **L1 (anneal-dev kernel) SHIPPED `f74b145`** (run `l1-convergence-pass-sequencing`, operator step-4-approved):
+  `core.md §4.1.4` + `modules.md §3.3/§3.4` — mechanical pass's input carries this-cycle's intent-clean verdict
+  + artifact cites it + coverage-check clause (v) rejects a mismatch + prose names the structural bind. **The
+  convergence cycle's own intent pass caught a carry-forward legitimacy hole → D7 removed the carry-forward
+  optimization** (intent runs every convergence cycle). Render-follow queued to `instance-reinstantiation` (ALL
+  instances; not behavior-preserving). `convergence-sequencing-enforcement` now L3+L1 shipped (archives when the
+  render batch carries L1's delta).
 - **⏸ PARKED — the `move1-tail-honest-relabel` anneal-dev run** (tracker `IN-PROGRESS`, `.anneal-dev/runs/`).
   Stopped mid-investigate-design at **cycle 2**: design locked (D1-D4 [VERIFIED] — FQ-5 hook PASS-line relabel
   + dev-process:438 "un-fakeable evidence" relabel + defer-FQ-B), convergence cycle NOT yet run. **Resume:**

@@ -1,7 +1,9 @@
 # Convergence-pass sequencing — enforce intent→mechanical ordering structurally (not prose)
 
-**Status:** L3 (skill-craft) **SHIPPED 2026-06-05** (v1.0.58); L1 (anneal-dev kernel) **IN PROGRESS** as its own
-anneal-dev cycle (this session). Discovered 2026-06-05 when the orchestrator (the AI) ran the convergence cycle's
+**Status:** L3 (skill-craft) **SHIPPED 2026-06-05** (v1.0.58); L1 (anneal-dev kernel) **SHIPPED 2026-06-05**
+(spec-only release `f74b145`; render-follow queued to `instance-reinstantiation`). **Both levels shipped — this
+item archives once the render-debt batch carries L1's source-delta into the instances.** Discovered 2026-06-05
+when the orchestrator (the AI) ran the convergence cycle's
 two falsification passes **in PARALLEL** instead of sequenced — the **operator caught it**. A form-not-binding /
 unenforced-rule instance living in the convergence machinery (intent-falsification-soundness-sweep **scope-item-3**,
 which pass-8 marked "swept" but missed this — itself a sweep blind spot).
@@ -26,12 +28,15 @@ the gating dependency in prose → parallelizing is the *natural* error. It happ
   the gate register into judgment-skill authoring → elevated to the Layer-2 intro + new **"Scope precedes default"**
   principle + 12th review-checklist item **"Salience / reading order"**. (Salience half sourced from the operator's
   other-session dev-notes — `pbs-bureau/learnings:311`, "carve-out comes too late in reading order".)
-- **L1 [anneal-dev kernel] — IN PROGRESS** (its own anneal-dev cycle, *renders from* the L3 discipline). Apply to
-  the instance: `spec/core.md §4.1.4` + `modules.md §3.4` — encode intent→mechanical so the mechanical pass
-  **cannot be constructed/dispatched without the same-cycle intent-clean verdict as its input**, and the mechanical
-  artifact **cites** it (a mechanical artifact in an intent-delta cycle, or with no cited intent-clean verdict, is
-  malformed → caught by the existing **coverage-check-on-return**, `core.md §4.1.4` ~:457-481) + a convergence-cycle
-  dispatch-boundary checklist in the rendered phase file.
+- **L1 [anneal-dev kernel] — SHIPPED `f74b145`** (anneal-dev run `l1-convergence-pass-sequencing`, operator
+  step-4-approved). Applied to `spec/core.md §4.1.4` + `modules.md §3.3/§3.4`: the mechanical pass's input carries
+  this-cycle's intent-clean verdict (D2), its artifact **cites** it in a per-artifact header (D3), the
+  coverage-check clause (v) re-derives + rejects a mismatch (D4), the prose names the structural bind (D5).
+  **Plus (run-surfaced):** the convergence cycle's own intent-falsification pass caught a **carry-forward
+  legitimacy hole** (a behavior-preserving carry-forward let a stale intent-clean carry across a design change,
+  its legitimacy resting on orchestrator say-so) → **D7 removed the carry-forward optimization** (the intent pass
+  now runs every convergence cycle; simpler + tighter). Render-follow queued to the render-debt batch (ALL
+  instances; not behavior-preserving → needs render-fidelity verify).
 - **L2 [anneal-framework]** — likely **subsumed** by L3 (the spec itself is authored under skill-craft form
   discipline). Not opened separately unless L1 shows the spec's own ordering dependencies need a framework-level lens.
 
