@@ -148,8 +148,12 @@ audit included.
    external-fact checkers). ONE conceptual fix, MANY sites: §3.1, dev-process:573, practices 10/11, the
    discharge green-✓, the falsification "holds" labels. Cheap (re-labeling, no new machinery); removes the
    false comfort the whole sweep objected to. **Highest leverage.** (subsumes FQ-5, FX-A/B/C/F, FQ-K1/K2, FQ-B·pass7)
-   - **Move-1 progress + a residual to sweep (2026-06-05):** move-1 (the §3.1 relabel cycle) shipped §3.1 +
-     practices 10/11/12 + step-4 + glossary + foundation.md + instantiation-guide. **Residual absolute-"un-fakeable"
+   - **Move-1 PARTIALLY SHIPPED `819e84e` (2026-06-05, method-kernel anneal-dev run, operator step-4-approved):**
+     §3.1 keystone (producer-independence bind test + F-B fence) + `development-process.md` practices 10/11/12 +
+     step-4 + `glossary.md` term + `foundation.md` + `instantiation-guide.md`. Render-follow queued to the
+     render-debt batch (D7). **Still in root-move-1 scope, NOT yet done:** the commit-msg hook's green-✓ output
+     relabel (FQ-5) + the falsification "holds" labels (FQ-B·pass7) — those are separate sites/cycles.
+     **Residual absolute-"un-fakeable"
      site, OUT of move-1's D6 scope → swept here:** `development-process.md:438` (practice-11 keep-as-is rule)
      "the named loss is **the un-fakeable evidence** the keep is defensible" — same self-recorded-artifact shape
      (the named-loss is first-judge-authored; its correctness is operator-re-derivable → a weak/strong-surfacer
