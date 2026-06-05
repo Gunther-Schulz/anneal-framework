@@ -1,11 +1,23 @@
 # Measurement harness — wiring skill-creator's runner to the anneal MVE
 
-**Status:** OPEN — plan ready, not yet built (2026-06-05). The **HOW** for the
+**Status:** OPEN — Step 0 done (seam proven; scaffold committed `abcb0af`); next = Step 1
+task pack (2026-06-05). The **HOW** for the
 measurement gap: operationalizes `anneal-reliability-measurement.md` (the
 why/what — 3 metric axes) and `anneal-empirical-validation-experiment.md` (the
 A/B/C protocol — pre-registered, seeded-defect) by borrowing Anthropic
 skill-creator's eval harness as the execution runner instead of building runner
 plumbing. Operational home: `eval/` (see `eval/README.md`).
+
+## Progress
+- **Step 0 — done (2026-06-05, `abcb0af`).** Seam proven end-to-end: two live arms
+  (clippy-discipline vs act-first) → deterministic oracle → `grading.json` → vendored
+  `aggregate_benchmark.py` → `benchmark.json` (dynamic arm names + variance + delta).
+  Scaffold at `eval/{vendor,oracle,tasks}/`; `eval/runs/` gitignored.
+  **Plumbing-only result:** both arms caught the defect (catch-rate Δ0); the discipline arm
+  cost +1065 tokens — the cheap-oracle null this thread already predicts. The task is the
+  lesson: too easy / wrong regime.
+- **Next — Step 1.** Build genuine silent-failure tasks (defects that survive a competent
+  act-first review), then k=3 + arm C. Recipe + layout in `eval/README.md`.
 
 ## The decision
 Don't build a runner. skill-creator (`anthropics/skills`, cloned at

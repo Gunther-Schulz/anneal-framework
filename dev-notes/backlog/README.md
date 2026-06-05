@@ -510,9 +510,14 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
 ### 6 ▸ REST — meta / exploratory / new-instance (doesn't fit the fix/change axis)
 - **Operator-flagged proof thread (high interest, NOT low value):**
   `anneal-empirical-validation-experiment` (v0 — the falsifiable design-first-vs-act-first A/B) +
-  `anneal-reliability-measurement` (token-first + grounding-ratio). *(Mild disagreement with "rest":
-  these are your "prove me right or wrong" thread — here only because they're meta, not
-  framework/clippy fix/change. Promote if you want to act.)* **2026-06-05 framing update** (per
+  `anneal-reliability-measurement` (token-first + grounding-ratio) +
+  `measurement-harness-mve` (the HOW — wires skill-creator's runner to the A/B; method-level,
+  sibling to the plugin-level `anneal-dev-evaluation-discipline` in tier 4). *(Mild disagreement
+  with "rest": these are your "prove me right or wrong" thread — here only because they're meta,
+  not framework/clippy fix/change.)* **Now being acted on (2026-06-05):** `measurement-harness-mve`
+  Step 0 ran — seam proven end-to-end, scaffold committed at `eval/` (`abcb0af`); Step 1 (the
+  silent-failure task pack) is next. Step 0's cheap-oracle null reproduced this tier's own
+  "act-first dominance ≈ cheap-oracle benchmark artifact" caveat. **2026-06-05 framing update** (per
   skill-craft v1.0.61's evaluation discipline + the C-option re-tiering decision): these are
   **Tier-3 isolated-grade shape** at the framework level — one-shot validation that anneal-the-method
   is itself sound, distinct from the per-edit regression net (`canonical-scenario-regression-suite`,
