@@ -1026,7 +1026,20 @@ A finding — an observation recorded by inspection — moves through:
      classes: a file change, an executable-verification output
      class, a named dependency change — that would re-fire on
      the deferred finding; defer-without-trigger or
-     trigger-without-observable-class is malformed).
+     trigger-without-observable-class is malformed); or
+     (c) deferred-pending-authoring — the deferral's discharge is
+     the authoring of an artifact: the watch lives in a
+     to-be-authored artifact, not (as in (a)) an existing
+     [AUTO-ACCEPTED] decision nor (as in (b)) an already-existing
+     observable trigger. The basis cites the artifact's path, which
+     §3.2 re-opens like any basis citation; an absent path makes the
+     basis malformed (§3.1), so the finding cannot reach
+     `[VERIFIED — deferred to <path>]` — §4.3 forces [ISSUES FOUND]
+     on the absent artifact. The artifact's existence is the
+     un-fakeable evidence: faking the disposition requires authoring
+     the artifact, which is doing the work. The artifact kind is
+     instance-defined (for corpus-evolution: a validation-watch
+     V-entry).
    - **surfaced** — a judgment-class concern raised by the
      intent-falsification pass (§4.1.4) with no runnable
      mechanical check and no observable re-fire trigger. Its

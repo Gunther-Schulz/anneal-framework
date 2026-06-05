@@ -1,7 +1,9 @@
 # Completeness-search correctness is under-enforced (wrap-tolerance + boundary-regex)
 
-**Status:** OPEN QUESTION — filed 2026-06-03 (operator-requested). **Not** a
-settled "needs a structural fix" item: the question is *whether* completeness-search
+**Status:** RESOLVED 2026-06-05 (campaign ③ run `campaign3-enforcement-fidelity`, D1) — **safety-net adequate; no fix; residual accepted per practice 1.** The disposition (close, don't mandate) rests on: wrap-tolerance is ALREADY enforced at every relevant level — `development-process.md` practice 4 (contract-change audits + dispatched audit subagents, explicit) AND `anneal-dev/spec/bindings.md:41` (binds the framework `search` wrap-tolerant, reaching the convergence safety-net's OWN target-dependents completeness candidates — so the candidate harden once considered is **redundant**). The two trips were caught (trip-1 by the convergence pass; trip-2 = an adherence gap against practice 4's explicit "incomplete audit" rule, caught by the operator). Practice-1 three-form enumeration of the adherence-gap residual: **mechanical** fails (no cheap auto-verify an arbitrary grep is wrap-safe), **structural** fails (the flatten-and-loop form creates the harness multi-line-loop-hang), **safety-net** is the accepted form (in place, caught both trips, itself wrap-tolerant via bindings.md) → residual recorded as observation. **No kernel edit shipped.** (Original framing retained below for history.)
+
+**Original (OPEN QUESTION) framing — filed 2026-06-03 (operator-requested). **Not** a
+settled "needs a structural fix" item: the question was *whether* completeness-search
 wrap-tolerance should be mandated/structurally-enforced at all, or whether the
 current enforcement (AI-discipline at search-time + the convergence-cycle
 falsification pass as the safety net) is adequate. The observations below are

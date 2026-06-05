@@ -49,7 +49,9 @@ the 44 items grouped into **6 coherent drain campaigns + 1 deferred + a meta buc
 drain clusters as one cycle each, not one item at a time — see ▶ Campaign map below), and
 `proportional-cycle-weight` filed (⑦ stub; no-silent-deferral); **then campaign ② SHIPPED**
 (run `campaign2-completeness-rigor`, spec-only release) — 5 items archived, `verify-model-diversity`
-dropped-but-open (fork ε), V-31 watch filed, render-debt queued to ⑥. 40 open.)
+dropped-but-open (fork ε), V-31 watch filed, render-debt queued to ⑥. 40 open; **then (later 2026-06-05) the
+per-campaign cadence levels + a pre-campaign re-ground/re-evaluate discipline were added to the ▶ Campaign map,
+and the stale session-8 NEXT-UP was marked superseded — no count change, 40 open.**)
 
 ### ▶ Campaign map (2026-06-05 — the execution view; READ FIRST)
 
@@ -61,6 +63,33 @@ a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is s
 
 **Order:** ~~②~~ ✅ → ③ → ⑤ → ④a → ④b → ①-light → ①-heavy → ⑥ (last; gated). ⑦ practiced-not-run throughout.
 **(② SHIPPED 2026-06-05 — next up: ③.)**
+
+**Before each campaign starts** *(operator discipline, 2026-06-05):* (1) **re-ground** — invoke anneal-dev per
+CLAUDE.md "Development process grounding" (it loads its own foundations + lenses; never from summary or memory);
+(2) **re-evaluate** — is this still the right next campaign? The order is a **default, not a lock**; a cheap
+"are we doing the right thing?" check fires *before* commit. It usually confirms — the value is that the check
+runs, not that it flips the answer.
+
+**Cadence per campaign** — the **persisted hands-off level** (so it need not be re-stated each run). This is the
+*cheap realization* of the ⑦ "run-until-(n)" affordance, which itself stays **deferred** (`auto-battle-cadence-mode`):
+auto-cycle the investigate→falsify→verify loops in every campaign; the level says **where it halts** + the **weight**:
+- **gated-kernel** — auto-cycle loops, but **step-4 (operator soundness) fires per shipped edit** (kernel soundness
+  is irreducible). Default for kernel campaigns.
+- **fork-first** — a **pre-cycle operator decision** (architectural fork / harness-capability check / decide-ahead)
+  gates the campaign *before* any cycle.
+- **drain** — auto-cycle through, **light/no step-4** (non-kernel or behavior-preserving relabel) — operator sheds the clicks.
+- **deliberate** — operator-paced, **not auto-cycled** (architectural / meta / exploratory; heaviest weight).
+
+  - **①** light = *gated-kernel* (behavior-preserving relabels) · heavy = *fork-first → deliberate* (the
+    dispatch-witness-manifest architectural decision precedes any cycle)
+  - **②** ✅ was *gated-kernel* (one bundled release, one step-4)
+  - **③** *fork-first* (2 forks: completeness-search disposition · basis-query-fidelity n=1) **→ gated-kernel**
+  - **④a** *fork-first* (worktree harness-capability check) **→ gated-kernel**
+  - **④b** *gated-kernel* (hooks/release) + *skill-craft-gate* (the soft-load-pointer item) + *drain* (instructional-files-streamline)
+  - **⑤** *gated-kernel* (anneal-dev self-hosting verify); the eval / regression-net items are **impl-heavy builds**, not pure-spec relabels
+  - **⑥** render-conventions = *fork-first* (slot/binding spec decisions) · the re-render = *drain* per instance, gate at render-verify
+  - **⑦** *deliberate* — deferred (practiced, not run)
+  - **meta** *deliberate* — never auto-cycled
 
 - **① Sweep finish — soundness & binding** *(active workstream; split by weight)*
   - *light (drain):* `intent-falsification-soundness-sweep` Move-1 tail (honest-relabel; the parked
@@ -162,7 +191,9 @@ interjection all held).
 *(2026-06-05: the items below are folded into the ▶ Campaign map above — sweep = campaign ①, F0/tier-5 =
 ⑥, etc. Ordering now lives in the map; these blocks are retained for per-item detail.)*
 
-**▶ NEXT-UP (the sweep is now the active workstream): finish Root-Move-1's residual sites, then Root-Moves 2–5
+**▶ NEXT-UP** ⚠ **SUPERSEDED by the ▶ Campaign map (2026-06-05): ③ is next, not ①.** The sweep (campaign ①) is now
+sequenced *late* (①-light → ①-heavy, after ⑤/④). This block is retained for the Root-Move detail only. *(Original,
+superseded:)* **finish Root-Move-1's residual sites, then Root-Moves 2–5
 (each its own anneal-dev cycle; the queue lives in `intent-falsification-soundness-sweep`).**
 1. **Close Move-1's tail** — FQ-5 (commit-msg green-✓ relabel) + FQ-B·pass7 (falsification "holds" labels) +
    dev-process:438 — all the same honest-relabel concept, deferred from `819e84e` to avoid widening that

@@ -1,10 +1,16 @@
 # Recorded-basis-query fidelity isn't mechanically enforced (only conclusion-correctness is)
 
-**Status:** OPEN — method-kernel dogfood observation, **n=1**, surfaced 2026-06-04 by the
+**Status:** OPEN — **watch-bearing backlog item** (n=1; no fix now, watch for recurrence), disposition set 2026-06-05 by campaign ③ run `campaign3-enforcement-fidelity` (D2). Kept here as a **backlog item carrying its watch criteria inline** — NOT converted to a validation-watch V-entry — per the operator's V-vs-backlog clarification (a V-entry is a *post-ship effect-watch*; a not-yet-implemented consideration stays a visible backlog item; see `v-entry-is-post-ship-only.md`). The decision: do NOT build the forcing-function at n=1 (practice 7 no-over-build); **soundness is preserved by the separate-checker re-deriving the conclusion** — only the audit trail degrades (campaign ③ F5/F6, verified by the cycle-3 intent pass).
+
+**Watch criteria (inline):**
+- **watch-kind:** recorded-query-fidelity (correctness/audit-trail).
+- **catcher:** the convergence coverage-check (`core.md` §4.1.4) / a future operator catch.
+- **closing rule (→ build the forcing-function):** a recorded-but-false-**as-written** query passes the mechanical check (the conclusion was re-derived correct but the cited query, re-run verbatim, does NOT reproduce it AND that slips), **OR** n≥2 distinct recurrences. Then build candidate-(b): the coverage-check compares the AI's recorded query against the subagent's re-derived candidate and flags a mismatch (a §4.1.4 coverage-check clause — mechanical predicate, not narrative goodwill).
+- **how the signal accrues:** post-run-review attribution (which pass surfaced the basis defect) — no dedicated instrument.
+
+Original framing — method-kernel dogfood observation, **n=1**, surfaced 2026-06-04 by the
 `verify-vs-original-requirements` anneal-dev run (cycle-4 convergence falsification, handoff
-`a3ce2e1c8a1d14f59`, on its `D1` basis). Validation-watch-flavored (genuine uncertainty whether a fix
-is warranted) — captured per no-silent-deferral, NOT folded into the run that surfaced it (different
-referent; the run was at [READY]). Framework-spec (§3.2 basis rule + §4.1.4 falsification) → anneal-dev
+`a3ce2e1c8a1d14f59`, on its `D1` basis). Framework-spec (§3.2 basis rule + §4.1.4 falsification) → anneal-dev
 + kernel-independent verify when/if pursued.
 
 ## The observation

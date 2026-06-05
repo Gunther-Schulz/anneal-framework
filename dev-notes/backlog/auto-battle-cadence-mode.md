@@ -43,6 +43,15 @@ open `[CONDITIONAL]`s (D3/D4/D5) surfaced at `[READY]` for operator resolution (
 `[AUTO-ACCEPTED]`), and the method-kernel soundness touchpoint fired at the gate (it did NOT auto-pass
 into implement). Strongest validation yet that the (b) affordance design is right.
 
+**Capture decision (2026-06-05, operator ask "capture appropriate levels for all campaigns").** Rather than
+build (b) now, the per-campaign **hands-off level is persisted as an annotation in the backlog README's
+▶ Campaign map** ("Cadence per campaign": gated-kernel / fork-first / drain / deliberate). This is the **cheap
+realization** of the (b) affordance — it records *where each campaign halts* so the operator need not re-state
+"auto-cycle until (n)" each run — and lets (b) stay ⑦-**deferred** (no kernel cycle spent yet). Promotion to a
+built menu entry remains the open option if per-campaign re-statement ever becomes felt friction. **Datapoint 3
+(campaign ③) pending** — log the run's behavior here when it executes (does the map-annotated cadence actually
+remove the need for the ad-hoc invocation?).
+
 ## The idea
 Today there are **two modes** (`core.md`/`foundations.md` Modes): **interactive** (operator selects
 `(a)nother-cycle` / `(n)ext-phase` at *every* cycle's closed artifact) and **auto-battle** (loop
