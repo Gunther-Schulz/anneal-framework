@@ -160,11 +160,30 @@ audit included.
      artifact, not absolutely un-fakeable). Verify and the form-review split on it; left out of move-1 to avoid
      widening the release. Reconcile it (→ "the named loss is the evidence the operator second-judges") when this
      move-1 keystone lands. (Move-1 also caught + fixed an in-scope sibling at `development-process.md:538`.)
-2. **[ARCHITECTURAL FORK] Dispatch provenance / spawn-witness.** The single lever that converts surfacers →
-   binding: tie a recorded separate-checker verdict to a NON-self-mintable signal (harness spawn-witness /
-   orchestrator-issued nonce the subagent echoes / transcript-ID cross-check). **Needs the operator's "bind
-   harder vs honest-relabel" decision + a check on what the harness can actually provide;** if it can't
-   witness spawns, move 1 is the principled fallback. (subsumes FQ-3, FQ-9·pass1, FQ-K3, FQ-A·pass7)
+2. **[ARCHITECTURAL] Dispatch-witness manifest as §3.1 first-class instrument.** (Fork decided 2026-06-05,
+   broadened in scope: not a tactical FQ patch, a §3.1 instrument.) The single lever that converts surfacers
+   → strong-surfacer-with-active-fabrication-cost for **dispatch-class claims**: a PostToolUse-on-Agent hook
+   records each dispatched subagent (agentId, timestamp, prompt-hash) to a manifest; non-producing checkers
+   (commit-msg gate, end-of-run audit) re-derive cited dispatch claims against the manifest. Faking it
+   requires explicit Edit/Write to the manifest path, visible in the transcript — §3.1's gradient promotes
+   the artifact from "weak (self-recorded)" to "strong surfacer (checker-re-derivable against an external
+   fact)." Operator-irreducible gate retained for **non-dispatch claims** (the bind/surface split: manifest
+   for dispatch evidence; operator for soundness).
+   **The primitive renders into six sites:** (a) intent-falsification pass artifact (`core.md §4.1.4` +
+   `modules.md §3.4.1`) — manifest entry proves a fresh-context subagent ran; (b) mechanical falsification
+   pass artifact (same locus) — same; (c) verify isolation (`core.md §4.3`, `phases/verify.md`) — manifest
+   entry proves the verifier was separate-context; (d) run-gate IN-PROGRESS signal (FQ-3) — alternative
+   non-self-mintable signal via PostToolUse-on-Skill(anneal-dev); (e) step-4 discharge subagent-ID cites
+   (FQ-9/A) — commit-msg cross-checks against manifest; (f) anneal-dev-evaluation-discipline Tier-2 signature
+   (filed 2026-06-05) — the signature becomes manifest-observable. (subsumes FQ-3, FQ-9·pass1, FQ-K3,
+   FQ-A·pass7.)
+   **Harness-capability check (2026-06-05):** PostToolUse fires on the `Agent` matcher (confirmed via
+   `claude-code-guide` agent against Claude Code docs). The `tool_response` shape is not documented for
+   subagent calls — empirical verification of the agentId field path is an investigate-design pass within the
+   cycle, NOT a fork blocker. No harness-side audit log is documented (manifest is operator-owned).
+   **Composes with:** `anneal-dev-evaluation-discipline` (gives the Tier-2 signature its un-fakeable artifact);
+   `instance-domain-invariant-register` (sibling instrument at the work-product layer); V-30 (manifest enables
+   automated catcher for dispatch-class violations — V-30's closing rule gains real teeth).
 3. **[FALSE-COMFORT] Carry every caveat to its point-of-use.** Vacuity caveat → the [READY] artifact; enum-
    scope caveat → the mechanical "holds" site; presence≠correctness → practices 10/11; soundness-vs-form
    disclaimer → a discharge-block header, not 1-of-9 lines. The caveats EXIST; they're just not where the
