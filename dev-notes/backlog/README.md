@@ -51,7 +51,7 @@ drain clusters as one cycle each, not one item at a time — see ▶ Campaign ma
 (run `campaign2-completeness-rigor`, spec-only release) — 5 items archived, `verify-model-diversity`
 dropped-but-open (fork ε), V-31 watch filed, render-debt queued to ⑥. 40 open; **then (later 2026-06-05) the
 per-campaign cadence levels + a pre-campaign re-ground/re-evaluate discipline were added to the ▶ Campaign map,
-and the stale session-8 NEXT-UP was marked superseded — no count change, 40 open.**)
+and the stale session-8 NEXT-UP was marked superseded — no count change, 40 open; **then campaign ③ run 1 SHIPPED** (`014b7b0`, run `campaign3-enforcement-fidelity`, spec-only): D3.1 (`core.md §5.1` deferred sub-case (c) deferred-pending-authoring) shipped; `deferred-finding-owed-artifact-forcing-function` + `completeness-search-enforcement` archived; `basis-recorded-query-fidelity` kept watch-as-backlog; 3 items spawned (`convergence-mechanical-pass-value`, `v-entry-is-post-ship-only`, `verify-disposition-citation-reopen-explicit-leg`) → **41 open**; §5.1 render-debt → ⑥.**)
 
 ### ▶ Campaign map (2026-06-05 — the execution view; READ FIRST)
 
@@ -62,7 +62,7 @@ section below is retained for per-item detail + the fix-before-change rationale.
 a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is still the index.
 
 **Order:** ~~②~~ ✅ → ③ → ⑤ → ④a → ④b → ①-light → ①-heavy → ⑥ (last; gated). ⑦ practiced-not-run throughout.
-**(② SHIPPED 2026-06-05 — next up: ③.)**
+**(② SHIPPED; ③ run 1 SHIPPED 2026-06-05 — `014b7b0`, the enforcement-fidelity bundle: D3.1 deferred-pending-authoring shipped + 2 dispositions closed/watched. ③ CONTINUES — remaining items as later runs: `core-md-bloat-measure-then-cut` (needs re-measure post-`f74b145`) · `verified-integrity-consolidation` (undesigned) · `surface-non-task-observations` (undesigned). Side-quest queued: `v-entry-is-post-ship-only`.)**
 
 **Before each campaign starts** *(operator discipline, 2026-06-05):* (1) **re-ground** — invoke anneal-dev per
 CLAUDE.md "Development process grounding" (it loads its own foundations + lenses; never from summary or memory);

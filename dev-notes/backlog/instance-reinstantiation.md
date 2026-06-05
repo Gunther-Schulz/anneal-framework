@@ -128,6 +128,15 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   `phases/implement.md` (§4.2.7 triage + §4.2.8 green-on-commit), `references/tracker.md` (§3.1 considered +
   §3.4 candidate-set), `SKILL.md` (loopback/dispatch surfaces). Commit ref: campaign ② release (this commit).
 
+- **campaign3-enforcement-fidelity** — run `.anneal-dev/runs/campaign3-enforcement-fidelity.md`; spec-only
+  release `014b7b0` on `main`. Source-delta: `core.md §5.1` finding-state #3 `deferred` — new sub-case
+  **(c) deferred-pending-authoring** (a finding deferred to a to-be-authored artifact must cite the artifact's
+  path, re-checked by verify §3.2/§4.3; absent path → malformed §3.1 → cannot reach `[VERIFIED — deferred to
+  <path>]` → [ISSUES FOUND]). **Render obligation** (deferred, ALL instances; NOT behavior-preserving — adds a
+  closed-enum sub-case → render-fidelity verify needed): each instance's `references/foundations.md` (Finding
+  states — the `deferred` disposition now carries three sub-cases (a)/(b)/(c)). `glossary.md` "Finding
+  disposition" indexes the 4 disposition NAMES (unchanged → no render delta). Commit ref: `014b7b0`.
+
 ## Capability-by-instance render matrix (2026-06-05)
 
 The queue above is **per-source-delta** (each anneal-dev run's edit). This is the

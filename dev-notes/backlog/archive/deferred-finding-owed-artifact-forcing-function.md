@@ -1,6 +1,8 @@
 # Deferred-finding owed-artifact forcing function — a finding deferred to a to-be-authored validation-watch entry owes that entry; nothing forces it to exist
 
-**Status:** OPEN — framework-spec gap, surfaced 2026-06-04 by **F-DC1** (the
+**Status:** SHIPPED + RESOLVED 2026-06-05 (release `014b7b0`, run `campaign3-enforcement-fidelity` D3.1) — `spec/core.md` §5.1 finding-state #3 `deferred` gained sub-case **(c) deferred-pending-authoring**: a finding deferred to a to-be-authored artifact must cite the artifact's path, re-checked by verify's isolated citation re-check (§3.2 / §4.3); an absent path makes the basis malformed (§3.1) → cannot reach `[VERIFIED — deferred to <path>]` → §4.3 forces [ISSUES FOUND]. The owed artifact's existence is the un-fakeable evidence (structural enforcement that binds — the checker is named, not self-asserted). Verified [PASSED] (kernel-independent: skill-craft form review + operator soundness + foundation-invariant register all clean; the convergence intent pass confirmed the bind end-to-end). **§5.1 render-debt → campaign ⑥.** Spawned: `verify-disposition-citation-reopen-explicit-leg` (the inherited surface the (c) bind rests on, firmed separately). (Original framing below.)
+
+**Original — framework-spec gap, surfaced 2026-06-04 by **F-DC1** (the
 `foundation-invariants-register` run's verify [ISSUES FOUND] loopback). Method-kernel
 finding (`foundations.md` finding-state) → anneal-dev + kernel-independent verify.
 
