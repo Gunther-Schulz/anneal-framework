@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: quality-watch.** The fix is a form-change (codifying emergent header fields — Protocol, Cycles-complete — into the tracker-header schema) with no catcher — so it closes on a *produced-clean* instance: a run where the emergent fields recur with semantics matching the prior emergence, licensing codification (see README closing rule).
+
 **Decision (`modules.md` §3.1).** The 2026-05-26 light tracker
 formalization requires `Status` and `Phase` as instance-defined
 closed enums (plus run identifier, mode, task summary as the

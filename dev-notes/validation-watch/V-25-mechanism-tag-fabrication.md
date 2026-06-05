@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The fix is a stronger forcing function on mechanism-tags (tags emitted only as a mechanism's structured return-state, never orchestrator-authored free-text) — a catcher — so it closes on a *caught* instance: a fabricated [VERIFIED]/COMPLETE tag that the separate-checker (not the operator) intercepts before a terminal (see README closing rule).
+
 **Decision (`foundations.md` Evidence-bearing artifacts).** Status
 tags ([VERIFIED], [PASSED], COMPLETE) are weak artifacts —
 mechanism-produced, enforced by a separate checker (verify /

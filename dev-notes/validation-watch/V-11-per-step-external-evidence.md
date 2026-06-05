@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The fix is a catcher (§4.1.2's per-implementer-step external-evidence artifact at [READY]), not a form-change — so it closes on a *caught* instance: a run where §4.1.2 surfaces a decision-to-step translation gap that §4.1.4's convergence cycle did not (see README closing rule).
+
 **Decision (`core.md` §4.1.2, §4.1.4).** V-5's false-[READY] failure
 shape was closed in commit e18bca1 with two layered mitigations:
 §4.1.2 requires per-implementer-step external evidence (file:line /

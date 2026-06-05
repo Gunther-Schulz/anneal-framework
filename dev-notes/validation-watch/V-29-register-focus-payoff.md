@@ -1,6 +1,8 @@
 ## V-29. Register focus-payoff — does the foundation-invariants register SHRINK the operator's soundness pass, or add net artifacts?
 
-**Status: WATCHING.**
+**Status: FIX-SHIPPED (2026-06-04, commit 35cc329).**
+
+**Kind: quality-watch.** The fix is a form-change (the foundation-invariants register produces a focusing holds/violates ledger that aims the operator's soundness pass) with no catcher — so it closes on a *produced-clean* instance: a method-kernel edit where the focusing artifact narrows the pass to the named touched invariants plus a small scoped residual, where the old open-ended "is this sound?" would have been the whole pass, counterfactual shown (see README closing rule).
 
 **Decision (`dev-notes/foundation-invariants/` register + the method-kernel-edit
 verify wiring at `development-process.md` §2 / step-4 / `hooks/commit-msg`; run

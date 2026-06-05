@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: quality-watch.** The watch is on whether a locked form-change (contract-2 per-cycle render-ceremony on the dev-process-as-instance) justifies its cost — no catcher — so it closes on a *produced-clean* instance: a larger change or kernel-churn re-render where the ceremony catches drift the old advisory process would have missed, counterfactual shown (see README closing rule).
+
 **Decision (`framework-dev-as-anneal` locked decision; `foundation.md`
 contract 2; `development-process.md` practice 2 / release loop).** Making
 framework development a real anneal instance (anneal-dev) means the

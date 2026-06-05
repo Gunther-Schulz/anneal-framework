@@ -13,6 +13,8 @@ including variant_seed.py:97 and surfaced the validator collision
 before commit. Theater shape confirmed: `holds` on shallow
 candidate; downstream catch on coupling the candidate didn't cover.
 
+**Kind: correctness-watch.** The fix is a catcher (the dispatched convergence-falsification subagent with per-coupling-shape candidate enumeration, §4.1.4 + `modules.md` §3.4), not a form-change — so it closes on a *caught* instance: a run where the subagent catches a coupling failure that the pre-fix in-context pattern-only candidate returned `holds` on and would have missed, counterfactual shown (see README closing rule).
+
 **Two-part fix shipped 2026-05-28** (same date, sequential cycles):
 
 1. **Convergence-subagent** (C8 sharpening, commit 8f27d32):

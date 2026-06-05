@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The fix is a strengthened in-context check (sharpened artifact, or escalation to mandatory subagent dispatch / Tier-1 mechanical) — a catcher — so it closes on a *caught* instance: a thin-artifact PASS/N-A whose broken neighborhood the strengthened check flags before it ships (see README closing rule).
+
 **Decision (`development-process.md` release loop step 4, "in-
 context check artifact (practice-6 specific)"; commit
 `e4190ef` + subsequent sharpening).** The practice-6 in-context

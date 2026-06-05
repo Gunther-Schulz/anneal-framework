@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: quality-watch.** The fix is a form-change (partition into category sub-files, or intra-file category headings) with no catcher — so it closes on a *produced-clean* instance: a run where the new structure resolves a "where does X live" navigability friction the old single-file form would have hit (see README closing rule).
+
 **Decision (`spec/glossary.md` cardinality at audit time ~22
 entries; cycle D.1 audit F11 observation).** Glossary remains a
 single file ~400 lines mixing vocabulary categories

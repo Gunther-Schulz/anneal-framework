@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: quality-watch.** The watched fix is a form-change (a "content not format" clarification or a mechanical trivial-decision carve-out to §5.2's 5-part body), not a catcher — so it closes on a *produced* instance: a run whose trivial decisions either compress cleanly (all 5 slots implicit → resolved as-is) or boilerplate-fill (5 empty paragraphs → sharpen the form), read off the tracker (see README closing rule).
+
 **Decision (`core.md` §5.2, commit e12eec5).** Design decision
 body specifies (a) target, (b) shape, (c) acceptance criteria,
 (d) side effects/failure modes, (e) basis. Adopted to prevent

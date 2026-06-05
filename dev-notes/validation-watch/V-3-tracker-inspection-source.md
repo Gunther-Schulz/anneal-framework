@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The catcher under watch is the [READY] coverage accounting anchored to the standardized lens set (`core.md` §4.1.1) — closes on an instance where an ad-hoc clean-check read as protocol coverage would have misled a [READY] ratification, and the lens-set-anchored accounting caught it.
+
 **Decision (`modules.md` §3.1).** A tracker finding is a status tag,
 a one-sentence summary, and its evidence — it does not record whether
 it came from an ad-hoc inspection or a standardized lens. Findings

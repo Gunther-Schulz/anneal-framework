@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The catcher under watch is the *removed* isolated [READY] gate — closes on an instance where a cross-decision-contradiction or recall-proxy defect that the old gate targeted is instead caught downstream by implement-loopback or verify [ISSUES FOUND] (the accepted residual catchers), or escapes past them.
+
 **Decision (`glossary.md`, `core.md`).** The framework has one
 reusable mechanism: inspection (with an ad-hoc or standardized lens
 source). Phase transitions — chiefly [READY] — are not a self-passed

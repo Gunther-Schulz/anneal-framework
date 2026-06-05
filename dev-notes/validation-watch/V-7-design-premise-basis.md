@@ -8,6 +8,8 @@ structural fix is in spec; positive evidence of the fix actively
 catching a finding that would have escaped pre-fix has not yet
 been recorded.
 
+**Kind: correctness-watch.** The fix is a catcher (the Target-locality lens + the §3.2.1 embedded-claims basis requirement + the [READY] judgment), not a form-change — so it closes on a *caught* instance where one of them caught a path/filename/completeness-count claim that the pre-fix protocol would have let slip into [READY] (see README closing rule).
+
 **Closing criterion (FIX-SHIPPED → RESOLVED).** A post-run review
 identifies a run where the §3.2 embedded-claims sharpening or the
 Target-locality lens was load-bearing — caught a path / filename /

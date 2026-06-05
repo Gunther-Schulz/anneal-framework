@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The per-cycle standardized inspection pass (`core.md` §4.1) is the catcher under watch — it closes on a *caught* instance where a per-cycle lens fired on a concern early, before the design locked it in, that end-only sweeping would have missed.
+
 **Decision (`core.md`).** Standardized lenses are applied every
 cycle, incrementally: each cycle's standardized inspection pass
 applies the lenses whose scope that cycle's work touched.

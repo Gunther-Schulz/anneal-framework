@@ -1,6 +1,21 @@
 ## V-15. Standardized-pass lens noise on methodology-design tasks — collapse or accept?
 
-**Status: WATCHING.**
+**Status: ARCHIVED 2026-06-05 — measured failure overtaken-by-construction.**
+
+**Closure (staleness review, 2026-06-05).** The noise this entry measured —
+out-of-scope lens-lines and "cited-clean (re-attest)" lines (~24 of 36 lines in
+the grounding Unit-16 case) — is now structurally eliminated by `modules.md` §3.2:
+an out-of-scope lens is **not lined**, and a line whose only basis is prior-cycle
+entries is **malformed**. The watched failure (a noise-dominated standardized-pass
+artifact from those line classes) cannot recur under the current spec →
+correct-by-construction for the measured form; the ≥50%-collapse signal threshold
+is no longer reachable as written. Residual outside this entry's measurement:
+touched-scope lenses that line trivially-clean on no-code tasks — a much smaller,
+different concern; if it ever surfaces as a real problem, re-file a fresh `V-`
+(the README archive-check is the safety hatch). Original body preserved below for
+audit trail.
+
+---
 
 **Decision (`core.md` §4.1.1 + `modules.md` §3.2).** Each cycle's
 standardized inspection pass emits a line per lens whose scope

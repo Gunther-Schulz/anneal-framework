@@ -12,6 +12,8 @@ the un-fakeable content). Extends V-7's prior basis-rule sharpening
 a different axis — V-7 widened *which claims* carry the rule; V-12
 sharpens *what counts as the artifact*.
 
+**Kind: correctness-watch.** The fix is a catcher (§3.2's basis artifact-form requirement — paraphrase/summary is not a basis), not a form-change — so it closes on a *caught* instance: a run where the artifact-form requirement catches a paraphrase-shape basis at finding-record time that would otherwise have forced cascade convergence cycles to correct (see README closing rule).
+
 **Closing criterion (FIX-SHIPPED → RESOLVED).** A post-run review
 identifies a run where the artifact-form requirement was
 load-bearing — caught a paraphrase-shape finding at finding-record

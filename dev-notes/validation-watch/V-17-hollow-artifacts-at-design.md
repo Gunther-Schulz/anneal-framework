@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The anticipated fix is a catcher (a Substantive-artifact lens, a basis-rule substance sub-edge, or a pre-verify check) firing at design-time, not a form-change — so it closes on a *caught* instance: a Clippy [ISSUES FOUND] tracing to a HOLLOW artifact named as a target without a behavioral claim, where a design-time catcher would have caught at [READY] what executable-verify caught at impl (see README closing rule).
+
 **Decision (no dedicated mechanism shipped).** The framework
 does not ship a dedicated catcher for "design decision names an
 artifact as a binding/wiring target, the artifact exists at the

@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The anticipated fix is a catcher (a coherence/validity check or lens for the specific incoherence shape that surfaces, per the Unit-4 §5.2 precedent), not a form-change — so it closes on a *caught* instance: a [READY] design later found incoherent or invalid where a design-time catcher would have caught it at [READY] (see README closing rule).
+
 **Decision (no dedicated mechanism shipped).** The framework
 does not ship a dedicated design-validity/coherence audit at
 [READY]. Existing partial coverage:

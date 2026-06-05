@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The catcher under watch is the dispatch-boundary self-check (`core.md` §4.2.5) — closes on an instance where it caught a post-design reference or behavior slipping the locked enumeration that would otherwise have reached verify.
+
 **Decision (`core.md` §4.2 "Self-check at dispatch boundary").**
 Each dispatched subagent applies the instance's standardized lenses
 against its own diff before returning state. The check compounds with

@@ -1,6 +1,21 @@
 ## V-26. Falsification closed-enum domain-completeness — are 3 coupling shapes / 3 predicate types enough across domains?
 
-**Status: WATCHING.**
+**Status: ARCHIVED 2026-06-05 — correct-by-construction (not a watch entry).**
+
+**Closure (staleness review, 2026-06-05).** Under the current spec the
+coupling-shape and falsification-predicate sets are deliberately **closed** enums
+(`glossary.md` Coupling shape / Falsification predicate; `modules.md` §3.4, with a
+shape-coherence rule). A "missing 4th coupling shape / predicate type" cannot be
+expressed as an in-spec failure — the only resolution is a **framework amendment**
+triggered by a real non-code domain proving a new shape necessary (an external
+event), not a catcher firing or a form-change. Per the README carve-out, a failure
+that cannot be expressed under the current spec is **not a watch entry**. The one
+concrete sub-case the entry raised (paraphrase-restatement dependent) was already
+bound to target-behavior / [CONDITIONAL] in `core.md` §3.2.2. If a real domain ever
+forces a new shape, that amendment re-files. Original body preserved below for
+audit trail.
+
+---
 
 **Decision (`core.md` §4.1.4, `glossary.md` Coupling shape /
 Falsification predicate, `modules.md` §3.4).** Cycle c-safe (2026-06-02)

@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The catcher under watch is the convergence-cycle zero-D-track-delta test (`core.md` §4.1.4) gating [READY] — closes on an instance where the D-delta proxy correctly captured materiality (a material change appeared as a D-track delta and held the phase) where, had it escaped the D-track, a real gap would have reached implement or verify.
+
 **Decision (`core.md` §4.1.4).** The convergence cycle test for
 [READY] uses **D-track delta = 0** as the mechanical convergence
 criterion: a cycle producing no new design decisions and no

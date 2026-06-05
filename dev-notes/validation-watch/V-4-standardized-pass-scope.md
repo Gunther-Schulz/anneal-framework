@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The catcher under watch is the [READY] whole-set lens accounting (`core.md` §4.1.1, `modules.md` §3.2) that replaced per-cycle whole-set attestation — closes on an instance where it caught a lens-catchable concern (or a silently-dropped lens) at [READY], before implement, that the dropped per-cycle attestation would otherwise have surfaced earlier.
+
 **Decision (`core.md` §4.1, `modules.md` §3.2).** Each cycle's
 standardized inspection pass emits a line only for the lenses in
 scope that cycle; an out-of-scope lens is not lined. The set is

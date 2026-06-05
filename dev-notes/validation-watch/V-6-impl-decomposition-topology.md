@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The mechanism under watch is the impl-phase dispatch/loopback/checkpoint machinery (`core.md` §4.2) — closes on a run where the loopback-across-subagent-boundary protocol fired correctly under a genuine actioned-finding (subagent halted at the right moment, halt-other-subagents lost no work, resume-from-tracker held) where a malformed protocol would have lost or corrupted work.
+
 **Decision (`core.md` §4.2, §6; `modules.md` §3.3).** The impl phase
 opens with an impl plan: dispatch units derived from the locked
 design, dependency-ordered, parallel-eligibility marked with a

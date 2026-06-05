@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: quality-watch.** The fix is a calibration of an existing cadence number (practice-12 N=5 → adjusted), not a catcher — so it closes on a *produced-clean* instance: an audit cycle whose finding-density sits between the too-low and too-high boundaries where the old N would have mis-paced (see README closing rule). (Borderline fit: a pacing-calibration is neither a pure catcher nor an output-form change; quality-watch is the better of the two kinds.)
+
 **Decision (`development-process.md` practice 12; commit pending).**
 The mechanical trigger for periodic coherence audits fires every
 **N=5 cycles** closed since the last `Coherence-audit-handoff:`

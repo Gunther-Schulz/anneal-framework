@@ -1,8 +1,10 @@
 ## V-24. Always-loopback default — does the elimination of inline-fix in implement reduce judgment-failures empirically, and does loopback overhead become a real burden?
 
-**Status: WATCHING.**
+**Status: FIX-SHIPPED (2026-05-28, commit e2c0776).**
 
-**Decision (`core.md` §4.2; commit pending).** The impl-phase
+**Kind: correctness-watch.** The shipped always-loopback rule's residual fix is a forcing function (dispatch-boundary check halting out-of-scope diff lines) — a catcher — so it closes on a *caught* instance: a run where an inline-edit that would have produced the partial-state-commit failure is halted and routed through loopback, counterfactual shown (see README closing rule).
+
+**Decision (`core.md` §4.2; commit e2c0776).** The impl-phase
 rule for handling new findings is replaced: any actioned
 finding routes through loopback to investigate-design; any
 non-actioned finding routes through [VERIFIED — deferred] with

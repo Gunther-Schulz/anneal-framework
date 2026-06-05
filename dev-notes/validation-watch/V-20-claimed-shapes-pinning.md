@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The watched fix strengthens a catcher (an explicit claimed-shapes field on §5.2 (b) that mechanically pins the §3.4 falsification candidate set's shape coverage), not a standalone form-change — so it closes on a *caught* instance: a run where the mechanically-pinned shapes catch a coupling failure on a basis-claimed shape that the current bounded-judgment shape-inference would have missed (see README closing rule).
+
 **Decision (`core.md` §4.1.4 + `modules.md` §3.4 + `glossary.md`
 Coupling shape; commit pending).** The candidate-set form
 requires per-D-entry candidates covering "every shape the basis

@@ -1,6 +1,8 @@
 ## V-28. Never-captured-requirement residual — does capture-at-design + the soft verbatim backstop hold in practice?
 
-**Status: WATCHING.**
+**Status: FIX-SHIPPED (2026-06-04, commit 1d93e58).**
+
+**Kind: correctness-watch.** The shipped requirements-coverage check is a catcher; its residual fix (a harder record-vs-request gate or capture-time elicitation discipline) is also a catcher — so it closes on a *caught* instance: a never-enumerated requirement the operator genuinely asked for that the strengthened gate flags before it ships, where the soft verbatim backstop would have missed it (see README closing rule).
 
 **Decision (`core.md` §4.1 requirements record + §4.3 requirements-coverage
 check; shipped `1d93e58`, 2026-06-04, run `verify-vs-original-requirements`).**

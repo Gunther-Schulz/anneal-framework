@@ -2,6 +2,8 @@
 
 **Status: WATCHING.**
 
+**Kind: correctness-watch.** The mechanism under watch is the always-loopback rule at verify [ISSUES FOUND] (`core.md` §4.3) plus the auto-battle [AUTO-ACCEPTED]-cross-reference convergence exception (`modules.md` §1.2) — closes on an instance where always-loopback caught a finding the old silent-accept-by-close pathway would have shipped, with the convergence exception correctly recognized so auto-battle still terminated.
+
 **Decision (`core.md` §4.3, §6; `modules.md` §1.2).** Verify [ISSUES
 FOUND] returns the run to investigate-design — the single locus for
 fix resolution. The fix runs through the full procedure
