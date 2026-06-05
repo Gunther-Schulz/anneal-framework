@@ -56,6 +56,25 @@ verified.
    the *mechanical/runnable* falsifier; the validation leg is the *criteria-first judgment*
    attack — argued distinct, but the pass must confirm, not assume.)
 
+3. **Second candidate — the no-operator-detection invariant** (relocated here 2026-06-05 from
+   `loopback-root-cause-triage` on its archival; this item is now the home for register-candidate
+   invariants awaiting anchors). A live load-bearing kernel rule (`core.md` §1 operator-expected-
+   action bound + `foundation.md`: "where an artifact's enforcement would require operator-detection,
+   the enforcement form is malformed — AI-discipline or a fresh-context checker carries it"). Passes
+   register criterion 1 (live kernel invariant) but **blocked on criterion 2** — needs a genuine
+   external anchor (autonomy/automation literature: "don't rely on the supervised party to supervise").
+   The pass must source one (or the register README notes it as a known load-bearing invariant the
+   register can't hold). Distinct from INV-6-candidate-2 (intent-falsification) and from INV-3
+   (verify-isolation): this is the *no-detection-dependence* rule, not the *separate-checker* rule.
+
+**Campaign-② datapoints (2026-06-05, run `campaign2-completeness-rigor`) — both candidates gained n:**
+- *Intent-falsification leg:* the run's two convergence intent-falsification passes caught 3 real
+  design flaws (D2/D4/D5 re-forms) the mechanical/lens passes missed — n+ that the validation leg is
+  load-bearing and distinct from INV-5.
+- *No-operator-detection:* the shipped D5 (in-loop loopback root-cause triage) is justified **entirely**
+  by this invariant — the triage is standard-and-non-optional precisely so the operator needn't *detect*
+  "is this loopback a gap?". n+1 that it is load-bearing.
+
 ## The seam the sources do NOT cover (record, don't anchor)
 Two recombinations had no single authoritative home: (a) **criteria-first as an explicit
 anti-anchoring lever** + full-requirements coverage as an audit bound; (b) **the route split**

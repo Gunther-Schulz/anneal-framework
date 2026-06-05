@@ -128,6 +128,16 @@ audit included.
 (spec-closure can't certify spec-correctness) → **reversed** (V-26 restored WATCHING).
 
 ### Root moves (the ~25 granular FQs across both slices reduce to these 5; each → its own anneal-dev cycle)
+> **Cross-cutting lens (2026-06-05 — operator-raised during campaign ②): token-efficiency vs
+> convergence-coverage.** Before adding ANY soundness-machinery in this cluster (dispatch-witness manifest,
+> `ready-machinery-self-attestation`, `method-kernel-soundness-verdict-locus`,
+> `foundation-register-intent-falsification-anchors`), apply the test: *does the convergence cycle's existing
+> fresh-context pass already cover this?* If yes, self-attestation backstopped by convergence is acceptable —
+> adding a check costs tokens without proportional value (Bloat lens + practice-7 proportionality at the meta
+> level: "most token-efficient without sacrificing value/performance"). First to (likely) FAIL the test:
+> `ready-machinery-self-attestation` (readiness verdict is convergence-backstopped → close-as-covered, not new
+> machinery — see that item's Disposition leaning). The manifest (Move-2) PASSES the test: dispatch-provenance
+> is the one thing convergence does NOT witness.
 > **Move-1 cycle SETUP (2026-06-05 — anneal-dev invoked, paused at investigate-design before run state).**
 > Confirmed scope (a contract change, practice-4 dependent audit owed at the fresh resume): the overclaim
 > vocabulary lives at **`spec/core.md` §3.1** (source) + **`development-process.md` practices 8/10/11/12 +

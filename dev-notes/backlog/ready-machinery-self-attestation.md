@@ -47,6 +47,27 @@ Two candidates:
 
 Prefer (1) (uses existing machinery; fewer new constructs).
 
+## Disposition leaning (2026-06-05 — flagged during campaign ②; operator-raised)
+**Likely close-as-substantially-covered-by-convergence — not new machinery.**
+- The convergence cycle's fresh-context passes (intent + mechanical) ALREADY re-derive
+  design-soundness independently. The residual is narrow: **fresh-session-implementability**
+  (specification-completeness-for-impl — a distinct axis from soundness) is
+  orchestrator-self-attested. But convergence **backstops** it: the n=1 seed itself shows the
+  optimistic cycle-2 self-PASS was caught by the convergence cycle — no bad [READY] resulted.
+- **Token-efficiency test (operator framing — "most token-efficient without sacrificing
+  value/performance"):** fix-option 2 (a dedicated fresh-context implementability dispatch)
+  adds a whole subagent dispatch for marginal value over convergence's existing catch — **not
+  Pareto**. Fix-option 1 (anchor the implementability line at the convergence cycle's closing)
+  is ~free and procedural.
+- **Live dogfood (campaign ②, run `campaign2-completeness-rigor`, 2026-06-05):** the
+  fresh-session-implementability PASSED line WAS produced in the convergence-clean block (already
+  follows option 1); the convergence cycle's fresh-context passes caught **all 3 real D-deltas**
+  (D2/D4/D5 re-forms), while the self-attested implementability line was secondary. Confirms
+  convergence is the load-bearing gate; the readiness self-attestation rides on top harmlessly.
+- **Leaning when ① runs:** close as covered, at most a one-line procedural note (option 1); do
+  NOT add option-2 machinery. The self-attestation is acceptable *because* convergence backstops
+  it — adding a check costs tokens without proportional value.
+
 ## Relates to
 - `intent-falsification-soundness-sweep` — promoted out; sweep's Unswept register should
   cross-reference here.

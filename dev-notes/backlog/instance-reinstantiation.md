@@ -113,6 +113,21 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   carry-forward (verify F-V1). Not behavior-preserving (adds the structural-enforcement clauses) → instance
   re-renders need a render-fidelity verify. Commit ref: `f74b145`.
 
+- **campaign2-completeness-rigor** — run `.anneal-dev/runs/campaign2-completeness-rigor.md`; spec-only
+  release (this commit) on `main`. Source-delta: `core.md` §3.2.2 (dependent-enumeration generalized to
+  non-content-reference forms: path-hardcoder→target-dependents, producer-existence→target-existence + the
+  behavior-CHANGE executable test-impact clause), §4.1 Design (during-formation rival-carrying), §4.1.4 +
+  `modules.md` §3.4 ([CONDITIONAL]/[AUTO-ACCEPTED] exemption narrowed to the assumption shape; technical
+  shapes still falsified), §4.2.7/§4.3/§4.1.4 (standard in-loop loopback root-cause triage, orchestrator-on-
+  receipt), §4.2.8 (green-on-commit checkpoint) + `modules.md` §3.1 (`considered` required-where-≥2-rivals) +
+  `anneal-dev/spec/lens-set.md` Missed-dependents (the two new forms) + `glossary.md` (Coupling-shape subclass
+  + 2 new term entries). **Render obligation** (deferred, ALL instances; NOT behavior-preserving — adds
+  rules → render-fidelity verify needed): each instance's `references/foundations.md` (§3.2.2 completeness-
+  claim), `references/lenses.md` (Missed-dependents two forms), `phases/investigate-design.md` (§4.1.4
+  exemption-narrowing + rivals-during-formation + the convergence falsification candidate-set extension),
+  `phases/implement.md` (§4.2.7 triage + §4.2.8 green-on-commit), `references/tracker.md` (§3.1 considered +
+  §3.4 candidate-set), `SKILL.md` (loopback/dispatch surfaces). Commit ref: campaign ② release (this commit).
+
 ## Capability-by-instance render matrix (2026-06-05)
 
 The queue above is **per-source-delta** (each anneal-dev run's edit). This is the

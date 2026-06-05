@@ -101,7 +101,17 @@ D-entry's basis claims to rest on. Closed set of three:
   trigger (`core.md` §3.2.2) shows resolves only at runtime, not one
   merely unfound — is not a missing dependent but the
   **target-behavior** runtime case below, carrying the [CONDITIONAL]
-  disposition stated there.
+  disposition stated there. Two non-content-reference dependent
+  forms render the existing closed Coupling-shape set (not new
+  shapes): a **path-hardcoder** — code or config that hardcodes the
+  target's location or structure and breaks on a relocate/rename
+  without naming it by content (a target-dependents form); and the
+  consumer half of a
+  **producer↔consumer pairing** — when the target newly consumes an
+  artifact X, the dependent enumerated is the rule producing X, whose
+  absence is checked as the **target-existence** shape applied to the
+  producer (a consumer without a producer fires on a non-existent
+  artifact).
 - **target-behavior** — the target's behavior or effect under
   input classes. A target-behavior claim a read cannot exhibit
   (resolved at runtime) is [CONDITIONAL] per `core.md` §3.2.2 —

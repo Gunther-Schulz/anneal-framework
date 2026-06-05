@@ -108,10 +108,18 @@ cycle-applied lenses below.
   same rule worded differently elsewhere — invisible to a verbatim
   search), **rendered clauses** (the plugin paraphrase of the rule),
   **closed-set members** (the rule names a member enumerated in more
-  than one file), and **glossary/defined-term uses** (the rule uses
-  a term whose definition the change affects). A search on one form
-  only, declared as the dependent set, is missing its true-unit
-  basis — the silent-substitution shape (`core.md` §3.2).
+  than one file), **glossary/defined-term uses** (the rule uses
+  a term whose definition the change affects), **path-hardcoders**
+  (a hook, `.gitignore`, or manifest that hardcodes the changed
+  artifact's location/structure — a target-dependents form that
+  breaks on a relocate/rename without naming it by content), and
+  **producer↔consumer** (the rule consumes an artifact X → "what
+  produces X?": producer-existence, the target-existence shape
+  applied to the producer, absence falsifies). All seven forms
+  render the existing closed Coupling-shape set (no fourth shape).
+  A search on one form only, declared as the dependent set, is
+  missing its true-unit basis — the silent-substitution shape
+  (`core.md` §3.2).
 - **Scope:** any change, removal, or replacement of an existing rule
   (the framework's Coupled-change / completeness-claim forcing
   function, `core.md` §3.2.2). The enumeration spans every corpus

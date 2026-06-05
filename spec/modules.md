@@ -183,14 +183,17 @@ steps.
 The standardized-pass findings artifact (§3.2) is a separate
 per-cycle artifact, not part of the tracker.
 
-A design decision may carry, as an optional sub-line under its peer
+A design decision may carry, as a sub-line under its peer
 entry, a structured **considered** field — one line per alternative
 in the shape `considered: <alternative> (rejected: <reason>)`. The
 rejection reason carries a cited basis (`core.md` §3.2) where
-applicable; loose narrative does not belong here. The field is
-optional — fabricating alternatives degrades the ledger. Use it
-where alternatives were genuinely weighed and naming them informs a
-later reader (the operator at [READY] or post-hoc debugging).
+applicable; loose narrative does not belong here. Fabricating
+alternatives degrades the ledger. The field is **required** where a
+load-bearing decision's recorded investigation findings surfaced ≥2
+viable rivals (`core.md` §4.1 Design — the during-formation
+rival-carrying recorded here), **optional** otherwise (use it where
+alternatives were genuinely weighed and naming them informs a later
+reader — the operator at [READY] or post-hoc debugging).
 
 The tracker is **append-only** at the **ledger** layer. A new entry,
 and every later change to an entry — a new status, a corrected
@@ -329,9 +332,13 @@ references them by section letter.
 
 The convergence cycle's mechanical falsification pass (`core.md` §4.1.4)
 emits a per-decision artifact: one line per [VERIFIED] D-entry
-at the start of the convergence cycle, carrying a **candidate
-set** — one candidate per coupling shape the basis depends on
-(`glossary.md` Coupling shape). Line shape:
+at the start of the convergence cycle — plus one line per
+[CONDITIONAL]/[AUTO-ACCEPTED] entry covering **only** its
+technical-basis shapes (`target-existence`, `target-dependents`;
+its operator-resolvable-assumption shape is exempt per `core.md`
+§4.1.4) — each carrying a **candidate set**: one candidate per
+covered coupling shape the basis depends on (`glossary.md`
+Coupling shape). Line shape:
 
 `{decision-ID, [{shape, candidate, falsification-predicate, result, holds-or-falsified}, …], aggregate-holds-or-falsified}`
 
@@ -406,7 +413,10 @@ enumeration as its search.
 A [VERIFIED] entry without a mechanical falsification-pass line at
 the convergence cycle is a malformed artifact — the [READY]
 declaration requires the pass complete across all [VERIFIED]
-entries (`core.md` §4.1.4). A mechanical falsification-pass
+entries (`core.md` §4.1.4). A [CONDITIONAL]/[AUTO-ACCEPTED] entry
+with a technical-basis shape but no line covering that shape is
+likewise malformed (per `core.md` §4.1.4 the technical shapes are
+not exempt). A mechanical falsification-pass
 artifact **without** the cited this-cycle intent-clean verdict
 (the per-artifact header field above) is likewise malformed — the
 pass is unconstructable without the verdict it is built from.

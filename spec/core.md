@@ -231,9 +231,18 @@ were the basis. Surface the gap, do not substitute.
 
 A design decision involving **replacement, removal, or amendment
 of an existing artifact** carries an implicit completeness claim:
-that all references to (and load-bearing behaviors of) the
-affected artifact have been accounted for. The basis must
-include the re-runnable search enumerating references AND — for
+that all references to, load-bearing behaviors of, AND
+**non-reference structural dependents** of the affected artifact
+have been accounted for. Non-reference structural dependents are
+two renderings of the existing closed Coupling-shape set
+(`glossary.md`; not a new shape): code or config that **hardcodes the target's
+location or structure** (it breaks on a relocate/rename without
+naming the target by content-reference), and a **producer of an
+artifact the target consumes** (a consumer without a producer is
+an unenforced rule firing on a non-existent artifact —
+producer-existence is the target-existence shape applied to the
+producer). The basis must include the re-runnable search
+enumerating references and these dependents AND — for
 replacements introducing a successor — an explicit enumeration
 of behaviors preserved or dropped. Without both where applicable,
 the decision is missing its true-unit basis and cannot reach
@@ -248,6 +257,22 @@ recorded [CONDITIONAL], its basis the affected behavior exercised
 by the domain's executable verification (verify, §4.3), not a
 read. A static enumeration substituted for it is the silent
 substitution the basis rule forbids (§3.2).
+
+A decision that **changes** an observable or computed behavior
+(distinct from the *preserved*-behavior case above) carries a
+completeness claim over existing tests or checks asserting the
+prior behavior — a check can assert a derived value without
+referencing the changed symbol, so the reference-search does not
+surface it. Where a **spike of the change is buildable at
+design-time**, the enumeration is executable: run the domain's
+executable verification against the spike; the failing checks ARE
+the enumerated set, and their old→new expected-value updates enter
+the **locked design scope** (impl transcribes them, does not
+judge). Where a spike is **not** design-time-buildable (the
+impact manifests only once the implementing work exists), the
+claim is [CONDITIONAL], discharged at verify by the executable
+verification — the same runtime path as the preserved-behavior
+case above. Which case applies is recorded in the basis.
 
 #### 3.2.3 Secondary sources
 
@@ -299,6 +324,18 @@ not at cycle 1. Each cycle number is unique within the run.
 (§5.2) from the cycle's findings — the design-formation the phase is
 named for, §1's synthesis into the evolving design. The locked design
 is the body of those decisions; it locks as they reach [VERIFIED].
+Where the cycle's **recorded investigation findings** surface ≥2
+viable rival approaches for a load-bearing decision, formation
+carries them co-equally — each probed on evidence across the cycle —
+**before** the decision reaches its terminal, and records them in the
+`considered` field (`modules.md` §3.1), which is the required artifact
+of that carrying for this case (not optional). One committed
+recommendation still surfaces to the operator (rivals-internal ≠
+operator-interface; no menu posed). The trigger is the recorded
+findings, not a bare declaration; fabricated rivals stay forbidden
+(`modules.md` §3.1). This is the multiple-hypothesis discipline only,
+not Strong Inference's discredited promises (a single crucial
+experiment, complete enumeration).
 
 **Scope.** The scope — the set of elements the work will modify — is
 the foundational design decision; every other decision is designed
@@ -442,10 +479,14 @@ produces no new-surface citations (only re-attestations of
 prior surfaces) is a malformed artifact.
 
 The **mechanical falsification pass** iterates each [VERIFIED]
-D-entry at the convergence cycle's start. Entries still
-[CONDITIONAL] or [AUTO-ACCEPTED] rest on an unverified assumption
-and are **not** falsified textually here — that assumption is
-discharged by verify (§4.3) exercising the work, per §3.2.2. The pass is **dispatched to a fresh-
+D-entry at the convergence cycle's start. For an entry still
+[CONDITIONAL] or [AUTO-ACCEPTED], only the
+**operator-resolvable-assumption shape** (the target-behavior
+runtime case discharged by verify, §3.2.2) is exempt — that
+assumption is discharged by verify (§4.3) exercising the work; the
+entry's **technical-basis shapes** (target-existence,
+target-dependents) ARE still falsified textually here, since a
+search can falsify them now. The pass is **dispatched to a fresh-
 context subagent**, applying §3.1's separate-checker
 requirement — an artifact produced and judged in the same
 context is not self-enforcing. The subagent is briefed per
@@ -465,7 +506,9 @@ holds-or-falsified. The artifact's line shape, the predicate
 closed set, and the malformed-line conditions are specified in
 `modules.md` §3.4. A [VERIFIED] entry whose aggregate is
 `falsified` flips through [INVALIDATED]→[PENDING] (§5.2) and the
-cycle continues.
+cycle continues; the orchestrator produces the loopback root-cause
+triage on this reopen (§4.2.7), citing the falsified entry as its
+basis.
 
 **Coverage check on return.** The orchestrator counts the
 returned artifact's lines against the [VERIFIED] D-entry set at
@@ -809,14 +852,37 @@ is preserved across all cases. The run returns to investigate-
 design with the four-field result feeding the new cycle. The
 pattern mirrors verify's [ISSUES FOUND] return (§4.3, §6).
 
+**Loopback root-cause triage.** On receipt of any loopback — this
+boundary, verify [ISSUES FOUND] (§4.3), or a falsification-failure
+reopen (§4.1.4) — the orchestrator (the receiving working context,
+not the halting subagent, which does not design, §4.2.4) produces
+a STANDARD (non-optional) triage line classifying the failure's
+root per the existing render/spec/adherence taxonomy (`glossary.md`
+Render gap / spec gap / adherence gap; `development-process.md`
+practice 1), with a disposition: render-root → re-render in-run;
+spec-root → surface for corpus-evolution; adherence-root → noted
+(no source fix). The line cites the loopback's input (the
+four-field result here, the verify finding at §4.3, or the
+falsified entry at §4.1.4) as its basis — an evidence-bearing
+artifact, so the triage does not depend on the operator noticing.
+It must **sort**, not cry-wolf: an adherence-root loopback is noted,
+not surfaced as a framework gap.
+
 #### 4.2.8 Checkpoint
 
 On completion a dispatch unit's work product is
-durably **saved** as an instance-specific persistence artifact, and
-the orchestrator appends its **persistence reference** to the
-tracker. The save plus tracker line is the unit's persistence
-artifact: a run interrupted mid-implement resumes from the tracker
-— the last-completed unit, the next per the impl plan (§6, Run
+durably **saved green** as an instance-specific persistence artifact,
+and the orchestrator appends its **persistence reference** to the
+tracker. **Green** means the project's executable verification (§4.3)
+passes before the checkpoint lands; the persistence reference records
+a green checkpoint, so resume-from-tracker inherits a clean state.
+A red unit cannot checkpoint — its failure surfaces as an actioned
+finding / loopback (§4.2.7), not a silent red save. This is the
+per-unit composition of the whole-work verify-green (§4.3); it does
+not replace verify, which still runs the executable verification over
+the completed work. The save plus tracker line is the unit's
+persistence artifact: a run interrupted mid-implement resumes from the
+tracker — the last-completed unit, the next per the impl plan (§6, Run
 lifecycle). Without a per-unit save-point, resume must re-derive
 from work-product state — a silent-substitution shape this rule
 closes.
@@ -903,7 +969,9 @@ line is paired with a **finding-status ledger** enumerating every
 recorded finding's current status. A [PASSED] alongside any finding
 short of [VERIFIED] is a malformed artifact.
 
-[ISSUES FOUND] returns the run to investigate-design (§6 loopback).
+[ISSUES FOUND] returns the run to investigate-design (§6 loopback),
+and the orchestrator produces the loopback root-cause triage on
+receipt (§4.2.7), citing the verify finding as its basis.
 The fix runs through the full procedure: investigate-design →
 implement → verify. There is no in-place shortcut at verify-terminal
 — no fix-in-implement bypass and no accept-as-followup at the

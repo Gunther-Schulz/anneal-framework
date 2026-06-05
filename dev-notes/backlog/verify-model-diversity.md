@@ -25,6 +25,10 @@ are CLOSED, leaving ONE live residual:
   (shipped session 7 via `anneal-dev-model-tier-policy`), which now pins author AND verifier to
   the same top tier (F8)? Options: carve verify out of the floor, seek diversity *within* the top
   tier, or accept the trade. (Operator accepted the trade for now — this item holds the option open.)
+  - **2026-06-05 (campaign ②, fork ε):** operator **re-confirmed accept-the-trade**; this item is
+    **dropped from the ② cycle** (its live residual is a held decision, not a design). Stays OPEN
+    holding the option — revisit only if the model-tier floor is reopened (then carve-out vs
+    within-tier-diversity is the live fork). Not method-kernel work until then.
 
 **(History below — the reframe + the shipped intent-falsification design — kept as context.)**
 

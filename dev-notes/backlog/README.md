@@ -47,7 +47,9 @@ from tactical FQ-patch to "dispatch-witness manifest as §3.1 first-class instru
 backlog count, sharper item); **then the session-strategy re-assessment landed the ▶ Campaign map** —
 the 44 items grouped into **6 coherent drain campaigns + 1 deferred + a meta bucket** (the rate fix:
 drain clusters as one cycle each, not one item at a time — see ▶ Campaign map below), and
-`proportional-cycle-weight` filed (⑦ stub; no-silent-deferral). 45 open.)
+`proportional-cycle-weight` filed (⑦ stub; no-silent-deferral); **then campaign ② SHIPPED**
+(run `campaign2-completeness-rigor`, spec-only release) — 5 items archived, `verify-model-diversity`
+dropped-but-open (fork ε), V-31 watch filed, render-debt queued to ⑥. 40 open.)
 
 ### ▶ Campaign map (2026-06-05 — the execution view; READ FIRST)
 
@@ -57,7 +59,8 @@ bucket** (handled deliberately, never campaign-drained). This is the master orde
 section below is retained for per-item detail + the fix-before-change rationale. Folder stays flat —
 a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is still the index.
 
-**Order:** ② → ③ → ⑤ → ④a → ④b → ①-light → ①-heavy → ⑥ (last; gated). ⑦ practiced-not-run throughout.
+**Order:** ~~②~~ ✅ → ③ → ⑤ → ④a → ④b → ①-light → ①-heavy → ⑥ (last; gated). ⑦ practiced-not-run throughout.
+**(② SHIPPED 2026-06-05 — next up: ③.)**
 
 - **① Sweep finish — soundness & binding** *(active workstream; split by weight)*
   - *light (drain):* `intent-falsification-soundness-sweep` Move-1 tail (honest-relabel; the parked
@@ -65,9 +68,11 @@ a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is s
   - *heavy (deliberate — the dispatch-witness manifest, re-scoped on its OWN merits, not the rate push):*
     manifest = sweep Move-2 · `method-kernel-soundness-verdict-locus` · `ready-machinery-self-attestation`
     · `foundation-register-intent-falsification-anchors`
-- **② Verify / impl / investigate rigor:** `behavior-change-test-impact-enumeration` · `impl-green-on-commit`
-  · `verify-model-diversity` · `multiple-working-hypotheses-investigate-design` ·
-  `structural-change-dependent-enumeration` · `loopback-root-cause-triage`
+- **② Verify / impl / investigate rigor — ✅ SHIPPED 2026-06-05** (run `campaign2-completeness-rigor`,
+  spec-only release; 5 items archived: `structural-change-dependent-enumeration` (D1/D1.1) ·
+  `behavior-change-test-impact-enumeration` (D2.1) · `multiple-working-hypotheses-investigate-design` (D4.1) ·
+  `loopback-root-cause-triage` (D5) · `impl-green-on-commit` (D6). `verify-model-diversity` **dropped-not-shipped**
+  per fork ε — stays open (held option). Residuals: F-R4b closed; F-R5a → V-31 watch. Render-debt → ⑥.)
 - **③ Under-enforced disciplines → structural + core de-dup:** `completeness-search-enforcement` ·
   `verified-integrity-consolidation` · `surface-non-task-observations` · `basis-recorded-query-fidelity`
   · `deferred-finding-owed-artifact-forcing-function` · `core-md-bloat-measure-then-cut`
@@ -91,7 +96,8 @@ a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is s
   `framework-blindspot-class-analysis` · `anneal-adhoc-use-and-graduation` · `planner-instance-exploration`
   · `generalize-sharpening-skill`
 
-**Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`). Nothing dropped.
+**Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
+(5 archived) → **40 open**. Nothing dropped.
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 
