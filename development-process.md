@@ -389,8 +389,10 @@ defined locally (when usage is framework-specific) or
 cross-referenced (when the canonical definition lives there).
 
 This rule classifies as **structural enforcement** per practice 8:
-the glossary entry itself is the un-fakeable artifact — its
-presence in the commit is the check. The audit-direction
+the glossary entry is a **weak** artifact (`core.md` §3.1) — its
+presence in the commit is checkable, but its correctness and
+completeness are not bound by presence; they surface for the
+separate checker / operator second-judge. The audit-direction
 sub-clause provides a **mechanical** secondary criterion (grep
 the diff for capitalized or hyphenated multi-word phrases in
 noun position; cross-check against glossary).
@@ -466,17 +468,20 @@ informational data, not severity-ranked findings — they do not
 trigger this presentation rule.
 
 This rule classifies as **structural enforcement** per practice 8:
-the table itself is the un-fakeable artifact — its presence in
-the response is the check. A secondary **mechanical** criterion
-applies — the required-columns enumeration is computed from the
-findings (every finding produces exactly those columns; missing
-columns are observable); the disposition cell's discipline-cite
-and observable-evidence are observable from the cell contents.
-Same shape as practice 10: structural (table + summary presence)
-primary, mechanical (column + disposition-cell completeness)
-secondary. Prose-only presentation, table-without-summary, and
-echo-only disposition ("subagent said X, so X") are the failure
-shapes this rule forecloses.
+the table is a **weak** artifact (`core.md` §3.1) — its presence
+in the response is checkable, but the table's correctness (that
+the dispositions are sound, not echoed) is not bound by presence;
+it surfaces for the operator second-judge. A secondary
+**mechanical** criterion applies — the required-columns
+enumeration is computed from the findings (every finding produces
+exactly those columns; missing columns are observable); the
+disposition cell's discipline-cite and observable-evidence are
+observable from the cell contents. Same shape as practice 10:
+structural (table + summary presence) primary, mechanical (column
++ disposition-cell completeness) secondary. Prose-only
+presentation, table-without-summary, and echo-only disposition
+("subagent said X, so X") are the failure shapes this rule
+forecloses.
 
 ### 12. Periodic coherence audit on the rule corpus
 
@@ -530,7 +535,8 @@ cycle that fixes findings) carrying a `Coherence-audit-handoff:
 <subagent-id>` line in the commit message body. **The AI MUST
 emit the marker on any commit completing or containing audit
 work.** A claimed audit without the marker on the audit-bearing
-commit is malformed — the marker IS the un-fakeable artifact:
+commit is malformed — the marker is a **strong,
+producer-independent** artifact (`core.md` §3.1):
 `git log --grep "Coherence-audit-handoff:"` finds the last
 audit reference; subsequent cycle-counting starts from it.
 Absence of marker after a claimed audit is operator-detectable
@@ -539,9 +545,13 @@ via the same grep.
 This rule classifies as **mechanical criteria** (cycle count +
 git-log observable) + **structural enforcement** (audit
 dispatch produces findings artifact + handoff marker in commit
-message). Per practice 8, classifiable at both primary
-(mechanical) and secondary (structural) tiers — earns its
-place at n=1.
+message). The handoff-marker leg **binds** (`core.md` §3.1): its
+terminus is the git log, producer-independent re-derivable by a
+non-producing context via `git log --grep`. The findings-artifact
+leg **surfaces** — its presence is checkable, its audit-content's
+soundness is not bound by presence. Per practice 8, classifiable
+at both primary (mechanical) and secondary (structural) tiers —
+earns its place at n=1.
 
 ## The release loop
 
@@ -569,8 +579,13 @@ kernel-independent review at verify:
    each commit still requires its own approval moment at the
    table/discharge presentation. Force the artifact, not self-
    attest (parallel to `core.md` §4.1.4 / V-5). Structural
-   enforcement per practice 8 — the artifact IS the un-fakeable
-   thing, the operator's approval IS the un-fakeable gate.
+   enforcement per practice 8 — the operator's approval is the
+   binding gate (the bound action, `core.md` §3.1); the discharge
+   artifact **surfaces** the checks for it, its presence not
+   verification of them. The render-fidelity no-in-context leg is
+   the one author-side leg that binds — producer-independent
+   re-derivable by a non-producing context (`core.md` §3.1) — not
+   downgraded to the operator's catch.
 
    The discharge artifact form, per commit:
 

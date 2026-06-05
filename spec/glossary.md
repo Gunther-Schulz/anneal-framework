@@ -56,7 +56,10 @@ behavior exercised by the domain's executable verification
 **Evidence-bearing-artifact rule** — the requirement that every
 load-bearing artifact the protocol produces be evidence-bearing —
 producing it takes doing the work it represents, so a non-adherent AI
-cannot fake it by pattern alone. Specified in `core.md` §3.1.
+cannot fake it by pattern alone. Evidence-bearing is a gradient
+(strong / weak), not an absolute un-fakeability; a weak artifact
+binds only through a producer-independent separate checker.
+Specified in `core.md` §3.1.
 
 **Assumption** — a basis that resolves to recall ("assumed,"
 "inferred") or to deferral ("will verify in cycle N," "TBD")

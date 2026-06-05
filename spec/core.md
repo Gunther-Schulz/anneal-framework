@@ -142,7 +142,25 @@ context that did not produce the artifact re-derives it (verify's
 isolated subagent §4.3, the convergence cycle §4.1.4). The
 artifact still earns its place — it makes faking require
 fabrication, and gives the checker something concrete to check —
-but the guarantee comes from the checker, not the artifact.
+but the bind comes from the checker's **producer-independent
+re-derivability**, not from its say-so. A checker BINDS when its
+verdict is re-derivable by a context that did not produce the
+artifact — terminating at a re-checkable fact (an executed output,
+the work exercised by verify §4.3, a render re-derived by a
+non-producing context, the git log) or at the operator's
+irreducible verdict. A verdict the producing context self-records
+that no non-producing context can re-derive is itself a weak
+artifact — a **strong surfacer**, not a guarantee: it makes the
+concern visible for the separate checker but does not discharge it.
+
+The operator's verdict is a binding terminus only at the
+genuinely-irreducible judgment — and only through the bound actions
+(§1, menu selection / soundness pass), never operator-detection
+(§1: where enforcement would require the operator to detect, the
+form is malformed). A check a non-producing context can re-derive
+(a verify leg, a falsification pass §4.1.4) stays author-side; it
+must NOT be downgraded to "the operator will catch it." Naming the
+operator as terminus licenses no such downgrade.
 
 This rule reaches the protocol's behavioral rules, not its
 mechanisms alone: a rule whose adherence cannot be read off an

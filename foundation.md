@@ -23,7 +23,7 @@ both operate within these contracts.
    (the methodology) or the instance spec (the domain bindings).
    The plugin is the rendered output of these two specs;
    structural mechanisms (closed enums, gated checks, "must"
-   verbs, un-fakeable artifacts) survive as structural, not
+   verbs, evidence-bearing artifacts) survive as structural, not
    flattened to prose. A plugin clause with no spec origin is
    drift. The renderer is blind to its own flattening; render
    fidelity is verified by a separate context

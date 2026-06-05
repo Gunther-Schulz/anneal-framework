@@ -391,9 +391,11 @@ header comment naming the slot kind and pointing at its spec
 section; empty sections matching the slot's declaration shape;
 optionally a commented-out small example showing what filling-in
 looks like. The file documents
-the capability — its presence is the un-fakeable signal that
-the slot is available in this instance; its content shows the
-operator what content goes here. An instance that later adds a
+the capability — its presence is a strong signal (`core.md`
+§3.1) that the slot is available in this instance, binding that
+narrow claim because file-presence is producer-independent
+re-checkable; its content shows the operator what content goes
+here. An instance that later adds a
 declared item (a specific extension; a specific supplemental
 lens) replaces the placeholder content rather than creating a
 new file. (Distinct from the developer-time template-copy at
