@@ -238,6 +238,15 @@ harder to satisfy the lens with constructor-only searches.
   these at loopback time; these were instead surfaced by a manual retrospective.
 - `verified-integrity-consolidation.md` — Class 3's basis-adherence face
   (incomplete evidence reaching [VERIFIED]).
+- `instance-domain-invariant-register.md` — **the complementary half of the same
+  retrospective.** That item homes the OTHER class from the original analysis: the
+  *out-of-scope / inherited / uncharted-surface* bugs (Class 1 in the original split —
+  paper-mode idempotency, `signal_id` identity, overtime period-drop), whose fix is a
+  *locked cross-unit-invariant register* every unit derives from. THIS item homes the
+  *within-scope reasoning-depth* bugs (Class 2 in the original split). They **overlap in
+  evidence** (Unit 7 and `signal_id` appear in both, seen from different angles —
+  reasoning-depth-at-design-lock here vs locked-invariant there) and together cover the
+  retrospective's 6 production bugs.
 - beat-the-books `docs/MULTI_STRATEGY_ARCHITECTURE.md` Rev 32 (Unit 21), Rev 34
   (txn-hold), Rev 35 (dead enrichment), Rev 47–51 (Units 26–27) — the
   production bugs; `.clippy/runs/2026-05-27-unit-7-replay-engine.md` (Class 1)

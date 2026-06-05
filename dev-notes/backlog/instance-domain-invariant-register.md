@@ -96,6 +96,14 @@ plus discipline + rendered attack mechanism:
   effectiveness rolls into.
 - `intent-falsification-soundness-sweep` — the per-run anchor (requirements record) the
   cross-run register supplements; sweep machinery composes cleanly.
+- `design-decision-implication-depth-gaps` — **the complementary half of the same clippy
+  retrospective.** This register homes the *out-of-scope / inherited / uncharted-surface*
+  class (paper-mode idempotency, `signal_id` identity, overtime period-drop — cross-unit
+  invariants never locked); that item homes the *within-scope reasoning-depth-at-design-lock*
+  class (period-blind settlement, txn-hold, dead-write). Overlapping evidence (Unit 7,
+  `signal_id`); together they cover the retrospective's 6 production bugs. The register is
+  the stronger answer to the inherited-surface class than the analysis's "inherited-surface
+  audit pass" candidate — lock the primitive once, every unit derives from it.
 
 ## Surfacing context (other-session note, 2026-06-05, key excerpts)
 > "Lock cross-unit domain primitives as first-class invariants. The deepest prevention:
