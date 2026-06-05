@@ -22,8 +22,10 @@ README is the **ordered** view (what to do, in what order).
 
 ## Open items
 
-Two parts: the **READ-FIRST block** (current state + next decisions) and **the ordered backlog**
-(6 tiers, batched by theme). `ls` is the full index. (Last groomed 2026-06-04 — session-4 research
+Three parts: the **READ-FIRST block** (current state + next decisions), the **▶ Campaign map**
+(the execution view — what runs together as one anneal-dev cycle, in what order), and **the
+ordered backlog** (6 tiers, batched by theme — retained for per-item detail + the
+fix-before-change rationale). `ls` is the full index. (Last groomed 2026-06-04 — session-4 research
 arc + a re-prioritization into the 6-tier order below; re-groomed session 7 — slotted the
 session-6/7 spawned items into the tiers, reinstantiation shipped+activated + self-render-urgency
 resolved; **session 8 (2026-06-05)** — the two quick-wins + V-15 archived, the sweep ran both passes
@@ -42,7 +44,54 @@ tier-6 archive sweep — `impl-dispatch-workflow-substrate` archived (work-of-de
 `framework-blindspot-class-analysis` promoted tier 6 → tier 4 (empirically validated by this session's
 dispatch-witness manifest discovery); **and** Move-2 of `intent-falsification-soundness-sweep` broadened
 from tactical FQ-patch to "dispatch-witness manifest as §3.1 first-class instrument" framing — same
-backlog count, sharper item). 44 open.)
+backlog count, sharper item); **then the session-strategy re-assessment landed the ▶ Campaign map** —
+the 44 items grouped into **6 coherent drain campaigns + 1 deferred + a meta bucket** (the rate fix:
+drain clusters as one cycle each, not one item at a time — see ▶ Campaign map below), and
+`proportional-cycle-weight` filed (⑦ stub; no-silent-deferral). 45 open.)
+
+### ▶ Campaign map (2026-06-05 — the execution view; READ FIRST)
+
+The rate fix: **stop draining one item per cycle.** The 45 open items group into **6 coherent drain
+campaigns** (each = one anneal-dev cycle, weight called per-item in-loop) + **1 deferred** + a **meta
+bucket** (handled deliberately, never campaign-drained). This is the master ordering; the 6-tier
+section below is retained for per-item detail + the fix-before-change rationale. Folder stays flat —
+a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is still the index.
+
+**Order:** ② → ③ → ⑤ → ④a → ④b → ①-light → ①-heavy → ⑥ (last; gated). ⑦ practiced-not-run throughout.
+
+- **① Sweep finish — soundness & binding** *(active workstream; split by weight)*
+  - *light (drain):* `intent-falsification-soundness-sweep` Move-1 tail (honest-relabel; the parked
+    run `move1-tail-honest-relabel`) + Moves 3/4/5 · `convergence-sequencing-enforcement` (rides ⑥)
+  - *heavy (deliberate — the dispatch-witness manifest, re-scoped on its OWN merits, not the rate push):*
+    manifest = sweep Move-2 · `method-kernel-soundness-verdict-locus` · `ready-machinery-self-attestation`
+    · `foundation-register-intent-falsification-anchors`
+- **② Verify / impl / investigate rigor:** `behavior-change-test-impact-enumeration` · `impl-green-on-commit`
+  · `verify-model-diversity` · `multiple-working-hypotheses-investigate-design` ·
+  `structural-change-dependent-enumeration` · `loopback-root-cause-triage`
+- **③ Under-enforced disciplines → structural + core de-dup:** `completeness-search-enforcement` ·
+  `verified-integrity-consolidation` · `surface-non-task-observations` · `basis-recorded-query-fidelity`
+  · `deferred-finding-owed-artifact-forcing-function` · `core-md-bloat-measure-then-cut`
+- **④a Dispatch / parallel-isolation:** `dispatch-brief-one-source-of-truth` · `worktree-isolation-and-integration`
+- **④b Release machinery + hooks:** `release-commit-formation-from-checkpoints` ·
+  `commit-msg-hook-packaging-overmatch` · `instructional-files-streamline` ·
+  `skill-craft-soft-load-pointer-discriminator`
+- **⑤ anneal-dev method & evaluation:** `anneal-dev-rerender-changeset-by-source-delta` ·
+  `anneal-dev-extension-render-gate` · `anneal-dev-impl-skillcraft-gate` · `anneal-dev-evaluation-discipline`
+  · `canonical-scenario-regression-suite`
+- **⑥ Render conventions + the big re-render** *(LAST — gated; batches the accumulated spec deltas from
+  ①–⑤):* `instance-template-slot-scaffolding` · `glossary-binding-table-interface-completeness` ·
+  `instance-reinstantiation` (umbrella) · `instance-domain-invariant-register` · `clippy-greenfield-tolerance`
+  · *auto-closers fall out here:* `framework-spec-cleanup`, `contract1-depollution-cluster`,
+  `clippy-run-findings-dispatch-coupling`
+- **⑦ Rate machinery — DEFERRED (practice first, formalize only if proven):** `auto-battle-cadence-mode` ·
+  `cross-instance-precedent-discipline` · `proportional-cycle-weight` (thin stub). Not run as a cycle; the
+  *practice* (operator calls cycle-weight + auto-battles non-kernel items) runs throughout.
+- **Meta / proof-thread / exploratory (deliberate, never campaign-drained):**
+  `anneal-empirical-validation-experiment` · `anneal-reliability-measurement` ·
+  `framework-blindspot-class-analysis` · `anneal-adhoc-use-and-graduation` · `planner-instance-exploration`
+  · `generalize-sharpening-skill`
+
+**Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`). Nothing dropped.
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 
@@ -103,6 +152,9 @@ orchestrator-self-attested; move-1's cycle-2 self-PASS under-detected, the fresh
 caught the real refinements). `auto-battle-cadence-mode` got **dogfood datapoint 2** — the move-1 run was
 driven by "auto-cycle until (n)", validating the (b) affordance (halt-at-[READY], menu-persistence, mid-cycle
 interjection all held).
+
+*(2026-06-05: the items below are folded into the ▶ Campaign map above — sweep = campaign ①, F0/tier-5 =
+⑥, etc. Ordering now lives in the map; these blocks are retained for per-item detail.)*
 
 **▶ NEXT-UP (the sweep is now the active workstream): finish Root-Move-1's residual sites, then Root-Moves 2–5
 (each its own anneal-dev cycle; the queue lives in `intent-falsification-soundness-sweep`).**
@@ -317,6 +369,8 @@ new); and **framework before clippy at each tier** — clippy renders *from* the
 change at the source first (practice 1) or you render twice. Level = **root (fix-at-source)**, not
 where it surfaced. Within tiers, items are **batched by theme** (resolve a batch in one campaign/run,
 not one-at-a-time). `ls` remains the full index; every item is workable individually, in any order.
+**(2026-06-05: the ▶ Campaign map above is now the execution grouping — these tiers are retained for
+per-item detail + the fix-before-change / framework-before-clippy rationale, which the campaigns respect.)**
 
 ### 1 ▸ NEAR-DONE
 **Finish-now:** none open. (`skill-craft-pre-edit-hook-findings` **CLOSED + archived 2026-06-04** —
