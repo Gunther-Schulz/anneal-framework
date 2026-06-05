@@ -49,6 +49,28 @@ Expensive (a fresh context per target) and it WILL surface a fix-queue (if a fre
 hid one, mature machinery hides more). Risk-order, cap per pass, log what was not swept;
 each confirmed finding becomes its own classifiable fix (practice 8) through anneal-dev.
 
+## Observed seed (2026-06-05, from quick-win `anneal-dev-plugin-dangling-anti-patterns-ref`)
+The **commit-msg step-4 discharge** gate was exercised live on a one-line cosmetic
+plugin-render fix (commit `26ac662`) — an unplanned probe of scope-item-1. Two data
+points for the sweep to chase:
+- **Binds (conformant-success):** the **render-fidelity leg (practice 2)** accepts only
+  `[subagent ID, verdict]` or mechanical N/A — *no in-context option*. That forced a
+  fresh verifier which **caught a source-absent accretion the actor (renderer) had
+  under-weighted**. The "renderer is blind to its own flattening" rationale held
+  empirically → that leg resists self-discharge. Evidence the no-in-context rule is
+  load-bearing, not ceremony.
+- **Candidate class-(i) finding — N/A validated by *form*, not by *binding*:** the hook
+  accepts a self-authored `[N/A: <reason>]` if the reason dodges a **banned-phrase
+  blacklist** (FOLD_INTO / JUDGMENT_NA patterns). It cannot verify the N/A *condition*
+  actually holds — a plausible-but-false "mechanically-verifiable" reason passes. The
+  actor produces most of the 7-check discharge himself; only render-fidelity (+ the
+  spec-origin trace) is independently tied. Attack target: does the discharge bind, or
+  does it self-certify its own *form* (the exact B1/B2 shape)?
+- **Proportionality probe (practice 7):** the full 7-check discharge fired on a one-line
+  cosmetic cite — friction that could pressure toward `--no-verify` (class-ii bypass).
+  Whether that is correct (a render edit IS a rule-corpus change) or over-scoped (no
+  cosmetic-render carve-out) is a sweep question, not yet adjudicated.
+
 ## Relates to
 - **Prospective sibling** — `verify-model-diversity` (reframed this session:
   mechanism → single intent-falsification; add an intent-falsification leg to anneal-dev's
