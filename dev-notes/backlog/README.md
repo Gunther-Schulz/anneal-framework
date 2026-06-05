@@ -35,7 +35,9 @@ after the convergence-pass sequencing gap + skill-craft v1.0.58 L3 fix + L1 `f74
 class-recurrence) filed, + `instance-reinstantiation` extended with a capability-by-instance matrix
 + clippy semantic-render call-out; **then** `anneal-dev-evaluation-discipline` filed —
 render skill-craft v1.0.61's Tier 1/2 (triggering + behaviour-delta signature) into
-anneal-dev-the-plugin). 45 open.)
+anneal-dev-the-plugin; **and** Option-C re-tiering: `canonical-scenario-regression-suite`
+promoted tier 6 → tier 4 (per-edit method-level Tier-2 measurement); proof-thread items
+stay in tier 6 with the v1.0.61 framing note). 45 open.)
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 
@@ -384,6 +386,13 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   `anneal-dev-extension-render-gate` (downgraded — D4 answered the core question) ·
   `anneal-dev-impl-skillcraft-gate` (NEW 2026-06-04 — dispatch *loads* but doesn't *invoke*
   skill-craft → the pre-edit gate blocks dispatched rule-corpus edits).
+- **method evaluation (per-edit discipline; renders skill-craft v1.0.61's Tier 2 at the method level):**
+  `canonical-scenario-regression-suite` — promoted from tier 6 2026-06-05. Executable verification
+  *for the method itself*: a regression net so a spec change can't silently break a known-good
+  scenario. Per-edit cadence (every spec change runs it) — Tier-2-shaped behaviour-delta signature
+  measurement at the method level, sibling to `anneal-dev-evaluation-discipline` (which renders
+  Tier 1/2 at the **plugin** level). Composes with V-30 closing rule (provides the empirical
+  per-edit input the watch tracks).
 - **mode-mechanics / disciplines:** `auto-battle-cadence-mode` (interactive "auto-cycle to [READY],
   halt at the phase gate" affordance — direction resolved, not built; the thing we did by hand this
   session) · `cross-instance-precedent-discipline` (candidate — a forcing-function to check sibling
@@ -400,7 +409,12 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   `anneal-empirical-validation-experiment` (v0 — the falsifiable design-first-vs-act-first A/B) +
   `anneal-reliability-measurement` (token-first + grounding-ratio). *(Mild disagreement with "rest":
   these are your "prove me right or wrong" thread — here only because they're meta, not
-  framework/clippy fix/change. Promote if you want to act.)*
+  framework/clippy fix/change. Promote if you want to act.)* **2026-06-05 framing update** (per
+  skill-craft v1.0.61's evaluation discipline + the C-option re-tiering decision): these are
+  **Tier-3 isolated-grade shape** at the framework level — one-shot validation that anneal-the-method
+  is itself sound, distinct from the per-edit regression net (`canonical-scenario-regression-suite`,
+  now in tier 4). Kept here as proof-thread items, not under-valued. Compose with V-30
+  (`form-not-binding-class-recurrence`): the A/B's outcome would be one of V-30's data points.
 - **Framework blind-spot class analysis (high interest — generalizes the intent-falsification
   discovery):** `framework-blindspot-class-analysis` — proactively enumerate the CLASSES of
   verification blind spot the framework may have (one — judgment-class soundness — was just found
@@ -412,8 +426,8 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   blind spot the intent-falsification pass was built to catch. The prospective half is DONE (every
   future run now carries the pass, live as of session 7); this is the retrospective cleanup. n=1 seed
   caught a 2-for-1 the mechanical pass confirmed clean past. **Strong candidate to promote out of
-  tier 6** — it audits the floor every run leans on. · `canonical-scenario-regression-suite`
-  (executable verification *for the method itself* — a regression net so a spec change can't silently
-  break a known-good scenario).
+  tier 6** — it audits the floor every run leans on. (*`canonical-scenario-regression-suite` was
+  previously listed here; **promoted to tier 4** 2026-06-05 — per-edit cadence + Tier-2-shaped
+  measurement discipline. See tier 4.*)
 - **Exploratory (no rush):** `impl-dispatch-workflow-substrate` · `anneal-adhoc-use-and-graduation` ·
   `planner-instance-exploration` (new instance) · `generalize-sharpening-skill` (cross-repo tooling).
