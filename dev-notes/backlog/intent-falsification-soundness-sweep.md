@@ -1,7 +1,9 @@
 # Intent-falsification soundness sweep — audit shipped enforcement for the self-certifying-form blind spot
 
-**Status:** FIRST PASS DONE 2026-06-05 (4 targets: the 3 hooks + the step-4 discharge design).
-Fix-queue below. Originally operator-requested 2026-06-04, surfaced FROM the
+**Status:** SECOND PASS DONE 2026-06-05 (8 targets total: the 3 hooks + step-4 design, then the
+structural-enforcement practices + the §3.1 keystone + the falsification machinery + the
+intent-falsification pass itself). Fix-queue below reduces to 5 root moves. Only scope-item-2 (shipped
+run artifacts) remains unswept. Originally operator-requested 2026-06-04, surfaced FROM the
 `foundation-invariants-register` anneal-dev run (B1/B2 intent-falsification findings).
 Retrospective audit effort; **own scope, NOT the foundation-invariants run's.** A sweep,
 not a single edit — it generates a fix-queue (each confirmed finding → its own method-kernel
@@ -84,6 +86,62 @@ regardless; the self-minted-signal items (FQ-3/4) need this fork decided first.
   evidence-bearing-artifact rule) in `development-process.md` + `spec/core.md` — scope-item-1, not attacked.
 - Shipped method-kernel edits in `.anneal-dev/runs/` (scope-item-2).
 - The `anneal-dev` skill's own internal enforcement (convergence / mechanical+intent falsification passes).
+  *(↑ scope-item-1-remainder + scope-item-3 were SWEPT in the second pass below; only scope-item-2 remains.)*
+
+## Second-pass results (2026-06-05) — 4 more passes: structural-enforcement practices · §3.1 keystone · the falsification machinery · the intent-falsification pass itself
+**Form-not-binding confirmed at the ROOT and recursively — but the FOUNDATION is SOUND; the defect is
+localized OVERCLAIM.** §3.1 (the keystone every dispatched check cites) does not bind: its "separate
+checker" **relocates** fakeability one level up — the orchestrator (the AI, §4.2.6) is the SOLE
+tracker-writer, so a recorded "separate-checker PASS" is indistinguishable from a self-authored one (no
+dispatch provenance). The genuine non-fakeable termini that DO exist: (a) the **operator's irreducible
+soundness pass**, and (b) checkers terminating at an **external re-checkable fact** — verify executing the
+work, the §4.2.4 Integrity state-marker, git-log cycle-counts. Everything else is a **strong surfacer**,
+not a binding gate. The spec is HONEST about this in places (§4.1.4:529-532 "not a soundness certificate;
+operator irreducible") — so the framework's FOUNDATION (operator-irreducible + strong-surfacers) is sound;
+the defect is **localized overclaims** selling surfacers as binding ("the guarantee comes from the checker"
+§3.1; "the artifact IS the un-fakeable thing" dev-process:573; "structural enforcement" on practices 10/11;
+"holds"/"clean" on the falsification passes).
+
+**The recursion, explicit + unavoidable:** the intent-falsification pass — the instrument this sweep IS —
+partially binds (genuinely fresh-context dispatch + operator-independent teeth on the mechanical-candidate
+route) but its "evidenced clean" judgment verdict is **vacuously fakeable by the spec's own admission**
+(`modules.md`:436-439 "can be vacuously satisfied… not rubber-stamp prevention") and its intent-model is
+anchored to a designer-authored requirements record. **So these sweep findings are SURFACED, not certified**
+— nothing internal to intent-falsification distinguishes a genuine clean from a vacuous one; only the
+**operator (+ the skill-craft form review, per CLAUDE.md's kernel-independent leg)** closes the loop. This
+audit included.
+
+**⚠ Self-catch:** pass 7 caught that **V-26's archival earlier this session was a circular error**
+(spec-closure can't certify spec-correctness) → **reversed** (V-26 restored WATCHING).
+
+### Root moves (the ~25 granular FQs across both slices reduce to these 5; each → its own anneal-dev cycle)
+1. **[KEYSTONE] Honest relabel at §3.1 — distinguish external-terminus checkers (bind) from
+   textual-re-derivation checkers (surface).** Stop attributing "the guarantee" / "un-fakeable" /
+   "structural enforcement" generically; name the real binding root (operator soundness pass +
+   external-fact checkers). ONE conceptual fix, MANY sites: §3.1, dev-process:573, practices 10/11, the
+   discharge green-✓, the falsification "holds" labels. Cheap (re-labeling, no new machinery); removes the
+   false comfort the whole sweep objected to. **Highest leverage.** (subsumes FQ-5, FX-A/B/C/F, FQ-K1/K2, FQ-B·pass7)
+2. **[ARCHITECTURAL FORK] Dispatch provenance / spawn-witness.** The single lever that converts surfacers →
+   binding: tie a recorded separate-checker verdict to a NON-self-mintable signal (harness spawn-witness /
+   orchestrator-issued nonce the subagent echoes / transcript-ID cross-check). **Needs the operator's "bind
+   harder vs honest-relabel" decision + a check on what the harness can actually provide;** if it can't
+   witness spawns, move 1 is the principled fallback. (subsumes FQ-3, FQ-9·pass1, FQ-K3, FQ-A·pass7)
+3. **[FALSE-COMFORT] Carry every caveat to its point-of-use.** Vacuity caveat → the [READY] artifact; enum-
+   scope caveat → the mechanical "holds" site; presence≠correctness → practices 10/11; soundness-vs-form
+   disclaimer → a discharge-block header, not 1-of-9 lines. The caveats EXIST; they're just not where the
+   comfort is generated. (subsumes FQ-5, FQ-C·pass7/8, FX-D/E)
+4. **[CHEAP EXTERNAL CHECKS] Verify against external facts where the hook/orchestrator already can.** Verdict-
+   form parsing not substring-presence (FQ-1); validate the mechanical N/A conditions the commit-msg hook
+   already holds the diff for (FQ-2); re-run a sampled subset of falsification `result` fields (FQ-C·pass7).
+5. **[ENUM COMPLETENESS] The closed 3-shape/3-predicate falsification enum needs an exhaustiveness basis or an
+   explicit residual** (FQ-D·pass7); "holds" relabeled enum-scoped; bind shape-coverage to the design's
+   ACTUAL couplings, not the basis's self-declared ones (FQ-E·pass7). **This is the root of the V-26 reversal.**
+
+**Known/accepted reconsideration (carried):** the **Bash channel** evades both PreToolUse hooks — still the
+shared hole that nullifies hook fixes; promote to "reconsider" (a Bash matcher, or tool-agnostic commit-time
+checks). Reframe under the surfacer lens: if the hooks are surfacers for a cooperating AI, the Bash bypass is
+acceptable (a cooperating AI won't `sed`-edit to dodge its own reminder) — which is itself a reason to take
+move 1 (stop calling them gates).
 
 ## Why (the discovery)
 The foundation-invariants run ran a **single criteria-first intent-falsification** (judgment

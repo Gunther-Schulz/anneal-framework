@@ -1,19 +1,30 @@
 ## V-26. Falsification closed-enum domain-completeness — are 3 coupling shapes / 3 predicate types enough across domains?
 
-**Status: ARCHIVED 2026-06-05 — correct-by-construction (not a watch entry).**
+**Status: WATCHING.**
 
-**Closure (staleness review, 2026-06-05).** Under the current spec the
-coupling-shape and falsification-predicate sets are deliberately **closed** enums
-(`glossary.md` Coupling shape / Falsification predicate; `modules.md` §3.4, with a
-shape-coherence rule). A "missing 4th coupling shape / predicate type" cannot be
-expressed as an in-spec failure — the only resolution is a **framework amendment**
-triggered by a real non-code domain proving a new shape necessary (an external
-event), not a catcher firing or a form-change. Per the README carve-out, a failure
-that cannot be expressed under the current spec is **not a watch entry**. The one
-concrete sub-case the entry raised (paraphrase-restatement dependent) was already
-bound to target-behavior / [CONDITIONAL] in `core.md` §3.2.2. If a real domain ever
-forces a new shape, that amendment re-files. Original body preserved below for
-audit trail.
+**Kind: correctness-watch.** The catcher under watch is the convergence/mechanical
+falsification pass (`core.md` §4.1.4, `modules.md` §3.4) — closes on a *caught*
+instance where a real coupling that fits one of the 3 enumerated shapes was
+falsified that the pre-enum process would have missed. (Meta/borderline: this entry
+also watches the *completeness* of that catcher's own closed candidate-set — see the
+reversal note; the completeness signal is external/empirical, not in-spec.)
+
+**Reversal note (2026-06-05, caught by the intent-falsification soundness sweep,
+pass 7).** This entry was briefly archived correct-by-construction (earlier the same
+session, in the validation-watch retrofit) on the reasoning "a missing 4th coupling
+shape cannot be expressed as an in-spec failure, so there's no watch." **That was a
+circular error and is reversed.** The closed 3-shape / 3-predicate enum (`glossary.md`
+Coupling shape / Falsification predicate; `modules.md` §3.4) makes the framework
+*blind to its own incompleteness* — spec-closure can't be used to certify spec-
+correctness. Whether 3 shapes span the real coupling space *across domains* is exactly
+the genuine, empirical uncertainty validation-watch exists to track, against the
+production signal of a real (esp. non-code) domain exhibiting a coupling no enumerated
+shape can express — at which point falsification reads `holds` while a real flaw ships.
+Correct-by-construction means a failure that *cannot occur*; here the failure *can*
+occur, the spec just can't *detect* it — which is when an external watch is most
+needed, not least. The sweep's pass-7 finding (FQ-D: the enum closure has no
+exhaustiveness basis; V-26's archival was circular) restored this. Original body
+preserved below.
 
 ---
 
