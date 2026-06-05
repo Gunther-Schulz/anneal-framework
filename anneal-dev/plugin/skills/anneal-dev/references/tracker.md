@@ -341,8 +341,8 @@ updates to header fields at phase transitions or terminal moments
 (status `IN-PROGRESS` → `PASSED`, phase investigate-design → implement)
 are not edits to ledger lines. Two malformed annotation shapes:
 within-field qualifier on a bare enum value (e.g. "PASSED (1st pass)" —
-the common-word-qualifier symptom, skill-craft
-`references/anti-patterns.md` Naked-judgment); and cross-field
+the common-word-qualifier symptom,
+`skill-craft/references/anti-patterns.md`); and cross-field
 conflation (e.g. "verify PASSED" — embedding the Status value inside the
 Phase field, or vice versa).
 
