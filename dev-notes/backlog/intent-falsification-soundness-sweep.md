@@ -115,6 +115,20 @@ audit included.
 (spec-closure can't certify spec-correctness) → **reversed** (V-26 restored WATCHING).
 
 ### Root moves (the ~25 granular FQs across both slices reduce to these 5; each → its own anneal-dev cycle)
+> **Move-1 cycle SETUP (2026-06-05 — anneal-dev invoked, paused at investigate-design before run state).**
+> Confirmed scope (a contract change, practice-4 dependent audit owed at the fresh resume): the overclaim
+> vocabulary lives at **`spec/core.md` §3.1** (source) + **`development-process.md` practices 8/10/11/12 +
+> :573** + is **rendered verbatim into every instance's `foundations.md`** (e.g. anneal-dev plugin
+> `references/foundations.md` L106-145 carries "the guarantee comes from the checker"). So the cycle edits
+> §3.1 → propagates to the practices/dev-process → re-renders each instance (the render-tail).
+> **Design seed:** §3.1 ALREADY carries the strong/weak gradient ("strong = points at external re-checkable
+> truth; weak = a claim about the run's own state") — the fix *sharpens its own gradient*: a self-recorded
+> textual-re-derivation verdict is a WEAK artifact; name the binding terminus (external fact / operator).
+> Not a new concept → a clean amendment. **Verify must add the kernel-independent legs** (skill-craft form +
+> operator soundness); the sweep finding is SURFACED not certified, so the operator's soundness ON THE
+> DESIGN is where it gets certified. Paused fresh because the keystone deserves full-discipline design +
+> un-rushed operator soundness (practice 7).
+
 1. **[KEYSTONE] Honest relabel at §3.1 — distinguish external-terminus checkers (bind) from
    textual-re-derivation checkers (surface).** Stop attributing "the guarantee" / "un-fakeable" /
    "structural enforcement" generically; name the real binding root (operator soundness pass +
