@@ -33,6 +33,16 @@ not a surfaced 3rd mode.)
 transitions + method-kernel touchpoints"). It worked — evidence the affordance is wanted and the
 semantics above hold in practice. Formalizing it as a menu entry removes the need for the ad-hoc note.
 
+**Dogfood datapoint 2 (2026-06-05, `move1-s3.1-honest-relabel`):** operator invoked it verbatim —
+"auto-cycle please until (n)". The loop self-advanced cycles 2→5 (incl. the convergence cycle's
+fresh-context falsification dispatches) and **halted at [READY]** with the closed artifact for the
+operator's `(n)`. It also exercised the **menu-persistence + free-form interjection** property: the
+operator interjected a question mid-auto-cycle ("what is F3 about?"); the question was answered and the
+auto-cycle continued — exactly the SKILL.md interjection-handling. Both preserved-properties held: the
+open `[CONDITIONAL]`s (D3/D4/D5) surfaced at `[READY]` for operator resolution (not silent
+`[AUTO-ACCEPTED]`), and the method-kernel soundness touchpoint fired at the gate (it did NOT auto-pass
+into implement). Strongest validation yet that the (b) affordance design is right.
+
 ## The idea
 Today there are **two modes** (`core.md`/`foundations.md` Modes): **interactive** (operator selects
 `(a)nother-cycle` / `(n)ext-phase` at *every* cycle's closed artifact) and **auto-battle** (loop

@@ -87,6 +87,19 @@ regardless; the self-minted-signal items (FQ-3/4) need this fork decided first.
 - Shipped method-kernel edits in `.anneal-dev/runs/` (scope-item-2).
 - The `anneal-dev` skill's own internal enforcement (convergence / mechanical+intent falsification passes).
   *(↑ scope-item-1-remainder + scope-item-3 were SWEPT in the second pass below; only scope-item-2 remains.)*
+- **NEW target (2026-06-05, discovered by running the move-1 cycle): the [READY] / fresh-session-implementability
+  machinery.** [READY]'s gates — fresh-session-implementability ("would a fresh session implement without a new
+  design decision?"), standardized-coverage-accounted-whole, the convergence-clean judgment — are
+  **orchestrator-self-attested** (the same context that wrote the design judges it ready), with per-step
+  *citations* but no fresh-context re-derivation of the readiness verdict itself. The sweep's first two slices hit
+  the hooks + §3.1 + the falsification dispatches but NOT this gate. **Observed instance (seed):** in
+  `move1-s3.1-honest-relabel`, fresh-session-implementability self-attested **PASSED at cycle 2** — yet the
+  downstream fresh-context convergence cycle then caught two real design refinements (F-C "external terminus"
+  under-defined; F-A render-tracking), which a genuinely-implementable design would not have surfaced. The
+  implementability self-judgment under-detected; only the convergence cycle (a real fresh-context pass) caught it.
+  Same "self-recorded verdict < fresh-context check" class, at the [READY] machinery. (Adjacent to V-11
+  per-step-evidence / V-16 design-validity-at-ready, but distinct: this is the *readiness verdict's* self-attestation,
+  not the per-step evidence form.)
 
 ## Second-pass results (2026-06-05) — 4 more passes: structural-enforcement practices · §3.1 keystone · the falsification machinery · the intent-falsification pass itself
 **Form-not-binding confirmed at the ROOT and recursively — but the FOUNDATION is SOUND; the defect is
