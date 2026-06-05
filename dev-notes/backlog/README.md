@@ -51,7 +51,7 @@ drain clusters as one cycle each, not one item at a time — see ▶ Campaign ma
 (run `campaign2-completeness-rigor`, spec-only release) — 5 items archived, `verify-model-diversity`
 dropped-but-open (fork ε), V-31 watch filed, render-debt queued to ⑥. 40 open; **then (later 2026-06-05) the
 per-campaign cadence levels + a pre-campaign re-ground/re-evaluate discipline were added to the ▶ Campaign map,
-and the stale session-8 NEXT-UP was marked superseded — no count change, 40 open; **then campaign ③ run 1 SHIPPED** (`014b7b0`, run `campaign3-enforcement-fidelity`, spec-only): D3.1 (`core.md §5.1` deferred sub-case (c) deferred-pending-authoring) shipped; `deferred-finding-owed-artifact-forcing-function` + `completeness-search-enforcement` archived; `basis-recorded-query-fidelity` kept watch-as-backlog; 3 items spawned (`convergence-mechanical-pass-value`, `v-entry-is-post-ship-only`, `verify-disposition-citation-reopen-explicit-leg`) → **41 open**; §5.1 render-debt → ⑥; **then the run's post-run review filed `self-hosting-inplace-integrity-clean-precondition` (spec×self-hosting friction) → 42 open** + logged auto-battle datapoint-3.**)
+and the stale session-8 NEXT-UP was marked superseded — no count change, 40 open; **then campaign ③ run 1 SHIPPED** (`014b7b0`, run `campaign3-enforcement-fidelity`, spec-only): D3.1 (`core.md §5.1` deferred sub-case (c) deferred-pending-authoring) shipped; `deferred-finding-owed-artifact-forcing-function` + `completeness-search-enforcement` archived; `basis-recorded-query-fidelity` kept watch-as-backlog; 3 items spawned (`convergence-mechanical-pass-value`, `v-entry-is-post-ship-only`, `verify-disposition-citation-reopen-explicit-leg`) → **41 open**; §5.1 render-debt → ⑥; **then the run's post-run review filed `self-hosting-inplace-integrity-clean-precondition` (spec×self-hosting friction) → 42 open** + logged auto-battle datapoint-3; **then (concurrent sessions, accidental — now reconciled) `measurement-harness-mve` filed + Step-0 eval scaffold shipped (`abcb0af`/`025d3f7`, tier 6) and `design-decision-implication-depth-gaps` integrated** (moved from a stray marketplace-clone copy → tier-4 blind-spot cluster as framework-blindspot's empirical core; the campaign-③ side-quest `v-entry-is-post-ship-only` PAUSED mid-run, α/β lifecycle fork) → **44 open.**)
 
 ### ▶ Campaign map (2026-06-05 — the execution view; READ FIRST)
 
@@ -62,7 +62,7 @@ section below is retained for per-item detail + the fix-before-change rationale.
 a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is still the index.
 
 **Order:** ~~②~~ ✅ → ③ → ⑤ → ④a → ④b → ①-light → ①-heavy → ⑥ (last; gated). ⑦ practiced-not-run throughout.
-**(② SHIPPED; ③ run 1 SHIPPED 2026-06-05 — `014b7b0`, the enforcement-fidelity bundle: D3.1 deferred-pending-authoring shipped + 2 dispositions closed/watched. ③ CONTINUES — remaining items as later runs: `core-md-bloat-measure-then-cut` (needs re-measure post-`f74b145`) · `verified-integrity-consolidation` (undesigned) · `surface-non-task-observations` (undesigned). Side-quest queued: `v-entry-is-post-ship-only`.)**
+**(② SHIPPED; ③ run 1 SHIPPED 2026-06-05 — `014b7b0`, the enforcement-fidelity bundle: D3.1 deferred-pending-authoring shipped + 2 dispositions closed/watched. ③ CONTINUES — remaining items as later runs: `core-md-bloat-measure-then-cut` (needs re-measure post-`f74b145`) · `verified-integrity-consolidation` (undesigned) · `surface-non-task-observations` (undesigned). Side-quest `v-entry-is-post-ship-only` **PAUSED mid-run** (design reopened — α/β lifecycle fork; resume: re-ground, rework D2, re-converge; tracker `.anneal-dev/runs/v-entry-is-post-ship-only.md`).)**
 
 **Before each campaign starts** *(operator discipline, 2026-06-05):* (1) **re-ground** — invoke anneal-dev per
 CLAUDE.md "Development process grounding" (it loads its own foundations + lenses; never from summary or memory);
@@ -122,11 +122,11 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
   *practice* (operator calls cycle-weight + auto-battles non-kernel items) runs throughout.
 - **Meta / proof-thread / exploratory (deliberate, never campaign-drained):**
   `anneal-empirical-validation-experiment` · `anneal-reliability-measurement` ·
-  `framework-blindspot-class-analysis` · `anneal-adhoc-use-and-graduation` · `planner-instance-exploration`
-  · `generalize-sharpening-skill`
+  `framework-blindspot-class-analysis` (+ its empirical core `design-decision-implication-depth-gaps`) ·
+  `anneal-adhoc-use-and-graduation` · `planner-instance-exploration` · `generalize-sharpening-skill`
 
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
-(5 archived) → **40 open**. Nothing dropped.
+(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) → **44 open**. Nothing dropped.
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 
@@ -496,6 +496,16 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   class found by accident — confirming the item's premise that enumeration-instead-of-
   accident is right. Must use EXTERNAL lenses (framework can't introspect its own
   blind spots — Gödel). Output feeds tier-4 changes + `intent-falsification-soundness-sweep`.
+  - **empirical core (NEW 2026-06-05, integrated from a stray marketplace-clone copy):**
+    `design-decision-implication-depth-gaps` — 3 confirmed blind-spot classes with **production
+    instances** (clippy beat-the-books) + candidate fixes; the *results* to framework-blindspot's
+    *method*. The unifying shape ("saw the fact, didn't connect it to the decision" = reasoning-depth
+    at design-lock) is **framework-level** — recurs in anneal-dev's own work (the campaign-③
+    `v-entry-is-post-ship-only` side-quest is a fresh instance). Fixes route by level: Class 2
+    (execution-context) → clippy lens; Class 1 (input-dimension) → clippy lens-sharpen OR a framework
+    body-shape (d) parameter-completeness check; Class 3 (write-without-reader) covered by convergence
+    `target-dependents`. Framework-level open Q: do intent/convergence suffice for the reasoning-depth
+    shape, or is a forcing function warranted? NOT campaign ③.
 - **mode-mechanics / disciplines:** `auto-battle-cadence-mode` (interactive "auto-cycle to [READY],
   halt at the phase gate" affordance — direction resolved, not built; the thing we did by hand this
   session) · `cross-instance-precedent-discipline` (candidate — a forcing-function to check sibling
