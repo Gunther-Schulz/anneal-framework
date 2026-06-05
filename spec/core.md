@@ -416,11 +416,21 @@ records "mechanical skipped: intent-delta this cycle" (so
 `modules.md` §3.4's no-falsification-line-malformed rule is
 reconciled — its skip carve-out is specified there). Only when the
 intent-falsification pass comes up clean does the mechanical
-falsification pass run. The re-trigger reuses the
-behavior-preserving classification (§4.3): a behavior-preserving
-mechanical fix does not re-open the intent-falsification pass (the
-design's character is unchanged, so the intent-clean result carries
-forward); a non-behavior-preserving mechanical fix re-opens it.
+falsification pass run. This sequencing **binds structurally**,
+not on the ordering prose alone: the mechanical pass's input
+carries this cycle's intent-clean verdict (`modules.md` §3.3
+dispatch-brief (c)), its artifact **cites** that verdict
+(`modules.md` §3.4 header field), and the coverage check on
+return **re-derives** intent-clean from this cycle's §3.4.1
+artifact and rejects a mismatch (clause (v) below) — a
+producer-independent re-derivation against the intent artifact
+(§3.1's bind/surface gradient), not the keyword alone.
+
+The intent-falsification pass runs **every convergence cycle**;
+the mechanical pass's governing intent-clean verdict is **always
+this cycle's** (no carry-forward across cycles). The §3.4 skip
+for a *this-cycle* intent-delta still applies (intent-delta →
+mechanical skipped + recorded, that cycle).
 Its investigation pass must enumerate **new
 surfaces investigated this cycle**, where each surface is
 **new** by at least one of: (a) cites a file path not in any
@@ -470,7 +480,19 @@ orchestrator computes the per-candidate holds-or-falsified by
 applying the predicate to the result, and the returned value
 must match the computed value (a mismatch is a malformed line);
 (iv) the line's aggregate-holds-or-falsified equals the
-conjunction of per-candidate holds. A missing line OR a
+conjunction of per-candidate holds; (v) the orchestrator
+re-derives "intent-clean" from **this cycle's** §3.4.1
+intent-falsification artifact (no `mechanical-falsification-
+candidate` finding) and verifies the artifact's cited
+this-cycle intent-clean verdict (`modules.md` §3.4 header
+field) matches it. **Mechanical falsification-pass lines
+present in a cycle whose this-cycle intent artifact shows a
+`mechanical-falsification-candidate` finding (a D-track delta),
+OR a mechanical artifact with an absent or unmatched
+intent-clean citation, is a malformed return.** This composes
+with the absence-of-lines skip carve-out (`modules.md` §3.4):
+the carve-out covers absence of lines in an intent-delta cycle;
+(v) covers presence of lines. A missing line OR a
 mechanically-malformed line is a malformed return; the
 orchestrator re-dispatches with the gap's D-entry IDs explicit,
 and the subagent fills the gap. All checks are computed from

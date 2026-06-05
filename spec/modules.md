@@ -299,7 +299,13 @@ at implement dispatch, the [VERIFIED] decisions this unit
 implements (by tracker identifier) plus the unit's element
 and contract scopes; at convergence-falsification dispatch,
 the [VERIFIED] D-entry set at the convergence cycle's start
-(by tracker identifier); at intent-falsification dispatch,
+(by tracker identifier) **plus this cycle's intent-clean
+verdict** — the §3.4.1 intent-falsification artifact for this
+cycle showing **no** `mechanical-falsification-candidate`
+per-finding line; the mechanical dispatch is **constructed
+from** that verdict and **cannot be issued without it** (the
+intent→mechanical dependency encoded in the dependent step's
+input, `core.md` §4.1.4); at intent-falsification dispatch,
 the locked [VERIFIED] design (the D-entry set the pass attacks
 holistically) plus the requirements record R1..Rn (`core.md`
 §4.1); (d) **return-state expectations** —
@@ -328,6 +334,14 @@ set** — one candidate per coupling shape the basis depends on
 (`glossary.md` Coupling shape). Line shape:
 
 `{decision-ID, [{shape, candidate, falsification-predicate, result, holds-or-falsified}, …], aggregate-holds-or-falsified}`
+
+The artifact carries, as a **per-artifact header field**
+governing the whole pass (not per-line — the verdict scopes the
+pass, not a decision), a **cited this-cycle intent-clean
+verdict**: the §3.4.1 intent-falsification artifact reference for
+this cycle plus "no `mechanical-falsification-candidate`
+finding". The mechanical pass is constructed from that verdict
+(`modules.md` §3.3 dispatch-brief (c); `core.md` §4.1.4).
 
 Produced by the fresh-context falsification subagent dispatched
 per `core.md` §4.1.4; the orchestrator coverage-checks the
@@ -392,7 +406,11 @@ enumeration as its search.
 A [VERIFIED] entry without a mechanical falsification-pass line at
 the convergence cycle is a malformed artifact — the [READY]
 declaration requires the pass complete across all [VERIFIED]
-entries (`core.md` §4.1.4). **Skip carve-out:** a convergence
+entries (`core.md` §4.1.4). A mechanical falsification-pass
+artifact **without** the cited this-cycle intent-clean verdict
+(the per-artifact header field above) is likewise malformed — the
+pass is unconstructable without the verdict it is built from.
+**Skip carve-out:** a convergence
 cycle whose intent-falsification pass (§3.4.1) produced a D-track
 delta **skips** the mechanical falsification pass that cycle (per
 `core.md` §4.1.4's depth-sequencing) and records `mechanical
