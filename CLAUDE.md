@@ -87,5 +87,34 @@ goes stale. Where state lives instead:
     (Distinct from the framework's practice-8 anti-deferral, which is about
     shipping *classifiable fixes* now; this is about making *any* not-now
     work an explicit tracked item.)
+  - **Filing-shape classification — *where* to file, not *whether*.**
+    The no-silent-deferral rule above is absolute: **always capture**, including
+    items that seem mundane. This classification is purely about *which artifact
+    best holds the capture* — never a reason to hesitate or skip. **When uncertain
+    about shape, default to a backlog item.** You can relocate later; capturing
+    in the wrong shape costs almost nothing, not capturing costs the whole item.
+    
+    Shapes (in order of catch-all-ness):
+    - **Backlog item** in `dev-notes/backlog/<slug>.md` — **the default.** Holds
+      any future work, follow-up, parked idea, design question, or "we should
+      also…" — whether or not it ever maps to an anneal-dev cycle. When in doubt,
+      this.
+    - **V-entry** in `dev-notes/validation-watch/V-<N>-<slug>.md` — when the capture
+      is an *empirical claim to watch for recurrence*, not a unit of work. Carries
+      `watch-kind` + `catcher` + closing rule. Lighter than a backlog item; tracks
+      recurrence, doesn't imply a fix is scheduled.
+    - **Cross-reference in an existing item's `relates-to` block** — when the
+      capture *auto-closes when item X lands*; a separate file just for the
+      closure-by-dependency adds noise without information.
+    - **Row in `instance-reinstantiation`** matrix or render-debt queue — when
+      the capture is a *render-follow obligation* on instances after a shipped
+      spec change.
+    - **Folded into an in-flight item** — when the capture is a *scope-sharpening
+      of an item already mid-cycle* (e.g., broadening one of an active sweep's
+      moves), the in-flight item is its home; a sibling file fragments the work.
+    
+    The classification keeps the index legible — the right shape makes a capture
+    easier to find later. It never reduces the *rate* of capture; capture stays
+    absolute.
   - Verify subagent IDs / SHAs from a compaction summary against the
     transcript before citing them in evidence-bearing artifacts.
