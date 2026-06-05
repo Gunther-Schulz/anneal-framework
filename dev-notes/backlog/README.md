@@ -27,10 +27,29 @@ Two parts: the **READ-FIRST block** (current state + next decisions) and **the o
 arc + a re-prioritization into the 6-tier order below; re-groomed session 7 — slotted the
 session-6/7 spawned items into the tiers, reinstantiation shipped+activated + self-render-urgency
 resolved; **session 8 (2026-06-05)** — the two quick-wins + V-15 archived, the sweep ran both passes
-+ keystone Move-1 partially shipped, two items filed (`method-kernel-soundness-verdict-locus`,
-`foundation-register-intent-falsification-anchors`). 41 open.)
++ keystone Move-1 partially shipped, items filed (`method-kernel-soundness-verdict-locus`,
+`foundation-register-intent-falsification-anchors`; *continued:* `convergence-sequencing-enforcement`
+after the convergence-pass sequencing gap + skill-craft v1.0.58 L3 fix). 42 open.)
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
+
+**⏵ Session 8 *continued* (2026-06-05, later) — sequencing-enforcement gap found + skill-craft L3 fix
+shipped; L1 anneal-dev fix in progress; the Move-1-tail run PARKED.** While running the Move-1 tail
+(FQ-5 hook relabel + dev-process:438), the orchestrator ran the convergence cycle's two falsification
+passes **in parallel** instead of sequenced (intent-first, mechanical-only-if-clean — `core.md §4.1.4`);
+the **operator caught it**. Root-caused across levels → new item **`convergence-sequencing-enforcement`**:
+- **L3 (skill-craft) SHIPPED v1.0.58** (`9771523`, pin 1.0.57→1.0.58 installed): the missing authoring
+  discipline for conditionally-dependent *independently-dispatchable* steps (encode the dependency in the
+  dependent's input + cite it) + the enforcement-register **salience** fix (proportionality elevated to the
+  Layer-2 intro; new "Scope precedes default" principle; 12th review-checklist item "Salience / reading order").
+- **L1 (anneal-dev kernel) IN PROGRESS:** apply it to `core.md §4.1.4` + `modules.md §3.4` (the mechanical
+  pass can't be dispatched without the same-cycle intent-clean verdict as input + the artifact cites it). Its
+  own anneal-dev cycle (*renders from* the L3 discipline).
+- **⏸ PARKED — the `move1-tail-honest-relabel` anneal-dev run** (tracker `IN-PROGRESS`, `.anneal-dev/runs/`).
+  Stopped mid-investigate-design at **cycle 2**: design locked (D1-D4 [VERIFIED] — FQ-5 hook PASS-line relabel
+  + dev-process:438 "un-fakeable evidence" relabel + defer-FQ-B), convergence cycle NOT yet run. **Resume:**
+  re-invoke anneal-dev (resumes from the tracker); only the convergence cycle → [READY] → implement → verify
+  remain. No timeline set. (Tail of the sweep's Root-Move-1, beside the shipped keystone `819e84e`.)
 
 **Session 8 — the `intent-falsification-soundness-sweep` RAN (both passes) + its keystone Root-Move-1
 PARTIALLY SHIPPED.** The session-7 NEXT-UP executed end-to-end: the two quick-wins, then the sweep, then
