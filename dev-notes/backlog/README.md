@@ -37,7 +37,12 @@ class-recurrence) filed, + `instance-reinstantiation` extended with a capability
 render skill-craft v1.0.61's Tier 1/2 (triggering + behaviour-delta signature) into
 anneal-dev-the-plugin; **and** Option-C re-tiering: `canonical-scenario-regression-suite`
 promoted tier 6 → tier 4 (per-edit method-level Tier-2 measurement); proof-thread items
-stay in tier 6 with the v1.0.61 framing note). 45 open.)
+stay in tier 6 with the v1.0.61 framing note; **then Move 1 of the session-strategy plan executed**:
+tier-6 archive sweep — `impl-dispatch-workflow-substrate` archived (work-of-deciding already done),
+`framework-blindspot-class-analysis` promoted tier 6 → tier 4 (empirically validated by this session's
+dispatch-witness manifest discovery); **and** Move-2 of `intent-falsification-soundness-sweep` broadened
+from tactical FQ-patch to "dispatch-witness manifest as §3.1 first-class instrument" framing — same
+backlog count, sharper item). 44 open.)
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 
@@ -393,6 +398,13 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   measurement at the method level, sibling to `anneal-dev-evaluation-discipline` (which renders
   Tier 1/2 at the **plugin** level). Composes with V-30 closing rule (provides the empirical
   per-edit input the watch tracks).
+- **blind-spot enumeration (proactive, not by-accident):**
+  `framework-blindspot-class-analysis` — promoted from tier 6 2026-06-05.
+  Empirically validated this session: the dispatch-witness manifest discovery (sweep
+  Move-2, broadened to a §3.1 first-class instrument) is exactly one such blind-spot
+  class found by accident — confirming the item's premise that enumeration-instead-of-
+  accident is right. Must use EXTERNAL lenses (framework can't introspect its own
+  blind spots — Gödel). Output feeds tier-4 changes + `intent-falsification-soundness-sweep`.
 - **mode-mechanics / disciplines:** `auto-battle-cadence-mode` (interactive "auto-cycle to [READY],
   halt at the phase gate" affordance — direction resolved, not built; the thing we did by hand this
   session) · `cross-instance-precedent-discipline` (candidate — a forcing-function to check sibling
@@ -415,11 +427,9 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   is itself sound, distinct from the per-edit regression net (`canonical-scenario-regression-suite`,
   now in tier 4). Kept here as proof-thread items, not under-valued. Compose with V-30
   (`form-not-binding-class-recurrence`): the A/B's outcome would be one of V-30's data points.
-- **Framework blind-spot class analysis (high interest — generalizes the intent-falsification
-  discovery):** `framework-blindspot-class-analysis` — proactively enumerate the CLASSES of
-  verification blind spot the framework may have (one — judgment-class soundness — was just found
-  by accident; others likely). Must use EXTERNAL lenses (the framework can't introspect its own
-  blind spots — Gödel). Output feeds tier-4 changes + `intent-falsification-soundness-sweep`.
+- (*`framework-blindspot-class-analysis` was previously listed here; **promoted to tier 4** 2026-06-05
+  — empirically validated by this session's dispatch-witness discovery; the item's premise that
+  enumeration-instead-of-accident is right is now confirmed. See tier 4.*)
 - **Retrospective audits (high-leverage; each generates a fix-queue, not a single edit):**
   `intent-falsification-soundness-sweep` — audit *already-shipped* enforcement (the `hooks/`, the
   step-4 discharge, the self-classified "structural enforcement" rules) for the self-certifying-form
@@ -429,5 +439,8 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
   tier 6** — it audits the floor every run leans on. (*`canonical-scenario-regression-suite` was
   previously listed here; **promoted to tier 4** 2026-06-05 — per-edit cadence + Tier-2-shaped
   measurement discipline. See tier 4.*)
-- **Exploratory (no rush):** `impl-dispatch-workflow-substrate` · `anneal-adhoc-use-and-graduation` ·
-  `planner-instance-exploration` (new instance) · `generalize-sharpening-skill` (cross-repo tooling).
+- **Exploratory (no rush):** `anneal-adhoc-use-and-graduation` · `planner-instance-exploration`
+  (new instance) · `generalize-sharpening-skill` (cross-repo tooling).
+  (*`impl-dispatch-workflow-substrate` was previously listed here; **archived 2026-06-05** — its own
+  status was already "no change recommended now; captured so it isn't re-derived"; the work-of-deciding
+  was done. Decision preserved in `archive/`.*)
