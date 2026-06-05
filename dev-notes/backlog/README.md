@@ -24,11 +24,65 @@ README is the **ordered** view (what to do, in what order).
 
 Two parts: the **READ-FIRST block** (current state + next decisions) and **the ordered backlog**
 (6 tiers, batched by theme). `ls` is the full index. (Last groomed 2026-06-04 — session-4 research
-arc + a re-prioritization into the 6-tier order below; **re-groomed session 7** — slotted the
+arc + a re-prioritization into the 6-tier order below; re-groomed session 7 — slotted the
 session-6/7 spawned items into the tiers, reinstantiation shipped+activated + self-render-urgency
-resolved (both archived). 41 open.)
+resolved; **session 8 (2026-06-05)** — the two quick-wins + V-15 archived, the sweep ran both passes
++ keystone Move-1 partially shipped, two items filed (`method-kernel-soundness-verdict-locus`,
+`foundation-register-intent-falsification-anchors`). 41 open.)
 
-### ▶ Where we are + next steps (2026-06-04 session 7 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
+
+**Session 8 — the `intent-falsification-soundness-sweep` RAN (both passes) + its keystone Root-Move-1
+PARTIALLY SHIPPED.** The session-7 NEXT-UP executed end-to-end: the two quick-wins, then the sweep, then
+the first fix.
+
+1. **Two quick-wins SHIPPED + archived.** `anneal-dev-plugin-dangling-anti-patterns-ref` (one-line render
+   fix, `26ac662`) — and its **step-4 discharge became the live seed probe** that opened the sweep
+   (`1ae472f`). `validation-watch-entry-retrofit` (`5c187ee`) — the active V-entries gained
+   watch-kind/catcher fields; **V-15 archived** in the same pass.
+2. **`intent-falsification-soundness-sweep` — FIRST + SECOND PASS DONE (8 targets; `cd75248` + `1023f5a`).**
+   First pass: the 3 hooks (commit-msg / run-gate / skill-craft-pre-edit) + step-4 design. Second: the
+   structural-enforcement practices + the **§3.1 keystone** + the falsification machinery + the
+   intent-falsification pass *itself* (the recursion). **Convergent verdict:** enforcement certifies **form**
+   (a string is present), not **binding** (the verification happened) — BUT the **foundation is SOUND**
+   (operator-irreducible gate + strong-surfacers); the defect is **localized OVERCLAIM** (surfacers sold as
+   binding gates). The ~25 granular FQs **reduce to 5 root moves** (in the item). **⚠ Self-catch:** the sweep
+   found **V-26's archival *earlier this session* was a circular error** (spec-closure can't certify
+   spec-correctness) → **reversed; V-26 restored WATCHING.** Only **scope-item-2** (shipped run artifacts)
+   remains unswept.
+3. **Root-Move-1 (THE KEYSTONE) — PARTIALLY SHIPPED `819e84e`.** The honest **bind-vs-surface relabel**:
+   `spec/core.md` §3.1 (producer-independence bind test + F-B operator-detection fence) +
+   `development-process.md` practices 10/11/12 + step-4 + `glossary.md` + `foundation.md` +
+   `instantiation-guide.md`. A method-kernel anneal-dev run (`move1-s3.1-honest-relabel`), operator
+   step-4-approved; render-follow queued to the render-debt batch (D7). **Still in Move-1 scope, NOT yet done**
+   (separate sites/cycles, noted in the item): the commit-msg hook's green-✓ output relabel (FQ-5) · the
+   falsification "holds" labels (FQ-B·pass7) · the `development-process.md:438` "un-fakeable evidence"
+   reconcile (`c5adcbb`).
+
+**Spawned this session:** `method-kernel-soundness-verdict-locus` (NEW — the [READY]-vs-step-4 split: *which*
+operator soundness verdict binds *where* for a kernel edit; surfaced by running move-1, finding F-B) ·
+`foundation-register-intent-falsification-anchors` (NEW — external-anchor source-map for the register). New
+sweep target logged: the **[READY] / fresh-session-implementability machinery** (the readiness verdict is
+orchestrator-self-attested; move-1's cycle-2 self-PASS under-detected, the fresh-context convergence cycle
+caught the real refinements). `auto-battle-cadence-mode` got **dogfood datapoint 2** — the move-1 run was
+driven by "auto-cycle until (n)", validating the (b) affordance (halt-at-[READY], menu-persistence, mid-cycle
+interjection all held).
+
+**▶ NEXT-UP (the sweep is now the active workstream): finish Root-Move-1's residual sites, then Root-Moves 2–5
+(each its own anneal-dev cycle; the queue lives in `intent-falsification-soundness-sweep`).**
+1. **Close Move-1's tail** — FQ-5 (commit-msg green-✓ relabel) + FQ-B·pass7 (falsification "holds" labels) +
+   dev-process:438 — all the same honest-relabel concept, deferred from `819e84e` to avoid widening that
+   release.
+2. **Then Root-Moves 2–5.** **Move-2 [ARCHITECTURAL FORK] dispatch provenance** — the one lever that converts
+   surfacers→binding; **needs the operator's "bind-harder vs honest-relabel" decision + a harness-capability
+   check** (can it witness spawns?) before it runs. **Move-3** carry-every-caveat-to-its-point-of-use.
+   **Move-4** cheap external checks (verdict-form parsing FQ-1 / mechanical-N/A validation FQ-2). **Move-5**
+   falsification-enum completeness (**the root of the V-26 reversal**). Plus the **Bash-bypass
+   reconsideration** (promote from "accepted" — it nullifies every hook fix).
+
+*(Session 7 history below.)*
+
+### ▶ Where we are + next steps (2026-06-04 session 7 — superseded; history)
 
 **Session 7 — `anneal-dev-model-tier-policy` SHIPPED (spec-only, release `3d03d0c`; archived).** The
 blanket top-tier **dispatch model-tier floor**: every anneal-dev dispatch runs at the configured top
