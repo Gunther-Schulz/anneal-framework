@@ -1,0 +1,3 @@
+# Ephemeral run artifacts — per-run outputs, grading.json, timing.json,
+# benchmark.json. Regenerated every run, not source (cf. .clippy/runs/).
+runs/
