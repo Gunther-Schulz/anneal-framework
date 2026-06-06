@@ -37,6 +37,21 @@ omission** — exactly the shape the crowding hypothesis predicts.
 - **Clippy / instance lens-sets:** argues for a **lean lens-set backed by the general disciplines**, not
   a maximal one.
 
+## If real, it ARGUES FOR the multi-pass process (reconciles with "the additions compound")
+Crowding (if real) is about a **single attention-limited pass** being somewhat *zero-sum on focus*: a
+focused directive buys depth on what it names by spending attention it can't also give the broad sweep.
+That does **not** contradict the operator's lived "the anneal additions compound / help" — it **explains a
+mechanism by which the *process* layer earns its keep:** if one pass can't hold focused-depth + broad
+breadth at once, the way to get both is **multiple passes / fresh contexts with different focuses**
+(convergence, fresh-context verify). So "lenses divert attention *within a pass*" is an argument **for**
+the cycles, not against them — the process buys back the breadth a single focused pass sacrifices.
+- **Corollary:** the value isn't "more lenses in one prompt" (where crowding bites) — it's **fewer lenses
+  per pass, more passes / fresh contexts** (lean-per-pass + iterate). Ties to the prompt-vs-process reframe
+  (`anneal-empirical-validation-experiment` Addendum 2): single-pass prompt-stacking is the *weak* form;
+  the process is the *strong* form.
+- **Reframes the self-improvement anti-accretion rule:** don't only prune lenses globally — **distribute**
+  them across passes (a fresh-context pass per focus) rather than piling them into one.
+
 ## The test that would settle it (queued; runs paused 2026-06-06)
 Controlled ablation, more reps (k≥10): adhoc with **only** the provenance lens vs **only** generic-
 falsify vs **both** — measure the *omission*-class rate (period) across them. If "both" < "only-falsify"
