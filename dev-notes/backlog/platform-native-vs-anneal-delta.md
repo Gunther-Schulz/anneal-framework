@@ -88,7 +88,11 @@ caught) + the 2-3 concrete cuts. **Residual check the slim cycle owes:** a per-c
 every cut cites the official file that now covers it → anneal-dev + skill-craft self-review, not a
 blind delete.
 
-## L3 prior-art investigation (action 3 detail — scope, not yet run)
+## L3 prior-art investigation (action 3 detail) — **RAN 2026-06-06 → see `l3-prior-art-methodologies.md`**
+**Verdict: kill-switch OFF** (no dominator; APF arXiv 2602.19065 is the near-twin but lacks falsification
++ is conceptual-proof-only; the field splits anneal's bundle). anneal's delta = the bundle, esp. the
+two-pass falsification cycle. Bonus: self-correction-limitation papers (2310.01798, 2406.01297) now
+empirically back the independence/basis rules. Scope (retained below) was:
 **Warranted, and distinct from the session-4 research.** Session-4 framed it as design-first-vs-act-first
 + placement + academic process-literature, and found **APF** (arXiv 2602.19065) as the peer (same
 unmeasured-reliability gap, no testbed). This investigation is narrower + more current: *"who has assembled
