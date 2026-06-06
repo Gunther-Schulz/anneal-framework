@@ -116,12 +116,22 @@ overclaim:**
   toward data-flow tracing, away from the broad falsification that catches omissions). If real, focused
   lenses and broad search *trade off* — piling on directives isn't free. **Untested** (would need
   adhoc-with-only-provenance vs only-falsify, more reps); flagged, not claimed.
-- **Arm-framing confound (on the act-first→vanilla step only):** act-first was prompted toward *efficiency*
-  ("normal time pressure, keep it efficient"); vanilla + adhoc toward *thoroughness* ("be thorough; cost
-  is not a concern"). So **act-first→vanilla conflates "generic disciplines" with "be thorough"** — not a
-  clean isolation (a fair-isolation arm would be act-first-but-told-to-be-thorough). The **vanilla→adhoc
-  step is clean**: identical framing, differing *only* in the two focused directives (trace-to-producer +
-  follow-to-consumers), which were **adhoc-only**.
+- **DESIGN FLAW — the act-first→vanilla step is not a controlled comparison.** The prompts varied **two**
+  things at once between act-first and the discipline arms: the *disciplines* (intended) **and** the
+  *effort framing* — act-first "normal time pressure, keep it efficient" vs vanilla/adhoc "be thorough;
+  cost is not a concern." A controlled experiment holds all else constant and varies only the manipulated
+  text; this didn't. Consequence: the run cleanly answers **"does the anneal *package* (disciplines + a
+  be-thorough ethos) beat default fast usage?"** (a legitimate, real-world question) but **NOT "do the
+  disciplines add value, effort held constant?"** — which is how the act-first→vanilla "generic discipline
+  helps" claim was *labeled*. The missing control that would isolate it: **"thorough + no disciplines"**
+  (I have "efficient+none" and "thorough+disciplines", not "thorough+none"). So treat "generic discipline
+  helps" as **package-vs-default, not disciplines-isolated.**
+  - **The vanilla→adhoc step IS clean** — identical prompts, identical "be thorough" framing, differing
+    *only* in the two focused directives (trace-to-producer + follow-to-consumers), adhoc-only. So the
+    **provenance-lens result (2/5→5/5) is the one fully-controlled finding** and stands.
+  - **Clean redo (if runs resume):** all arms identical + "be thorough" held constant — A) no disciplines,
+    B) +generic, C) +generic+focused — isolating generic (A→B) and focused (B→C); a separate
+    "efficient+none" arm answers package-vs-default on the side.
 - **Bugs were real** (market_id / handicap / team_qualifier / closing_lines, all traced + corroborated
   by the project's own Unit-27 fix for handicap+team_qualifier; market_id + closing_lines real-latent,
   unfixed). Confirms the *regime* is genuine — just that frontier act-first reaches it too, given enough
