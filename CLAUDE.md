@@ -99,10 +99,11 @@ goes stale. Where state lives instead:
       any future work, follow-up, parked idea, design question, or "we should
       also…" — whether or not it ever maps to an anneal-dev cycle. When in doubt,
       this.
-    - **V-entry** in `dev-notes/validation-watch/V-<N>-<slug>.md` — when the capture
-      is an *empirical claim to watch for recurrence*, not a unit of work. Carries
-      `watch-kind` + `catcher` + closing rule. Lighter than a backlog item; tracks
-      recurrence, doesn't imply a fix is scheduled.
+    - **V-entry** in `dev-notes/validation-watch/V-<N>-<slug>.md` — a **post-ship
+      effect-watch**: an empirical claim about whether an *already-shipped* fix or
+      choice holds, watched for recurrence. Carries `watch-kind` + `catcher` + closing
+      rule. **Never holds an un-implemented change** — a not-yet-built gap is a backlog
+      item, and a V-entry that fires spawns one. Lighter than a backlog item.
     - **Cross-reference in an existing item's `relates-to` block** — when the
       capture *auto-closes when item X lands*; a separate file just for the
       closure-by-dependency adds noise without information.

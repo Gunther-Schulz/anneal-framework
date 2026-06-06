@@ -25,6 +25,12 @@ nothing.
 
 ## Entry lifecycle
 
+Every watch entry tracks something **already shipped** — a decision or a
+fix — for whether it holds. A not-yet-implemented consideration (a
+noticed gap to be built and tested) is a **backlog item, not a watch
+entry** (`development-process.md` practice 8, Entry hygiene); a watch
+entry that fires spawns a backlog item for the change.
+
 Every entry is one of two **watch kinds**, set by what its fix is:
 
 - a **correctness-watch** — the fix is a **catcher** (a check, lens,
@@ -39,10 +45,11 @@ correctness-watch closes on a *caught* instance, a quality-watch on a
 
 Each V-N entry carries a **Status** with one of four values:
 
-- **WATCHING** — uncertainty exists; no structural fix shipped yet.
-  Production signal is being watched. If the signal observes per
-  `development-process.md` practice 8 (classifiable structural
-  fix), ship the fix at n=1 and transition to FIX-SHIPPED.
+- **WATCHING** — an **already-shipped** decision (a choice or rule in
+  the spec) is under watch for whether it holds; no structural fix has
+  yet been warranted. Production signal is being watched. If the signal
+  observes per `development-process.md` practice 8 (classifiable
+  structural fix), ship the fix at n=1 and transition to FIX-SHIPPED.
 
 - **FIX-SHIPPED** — structural fix in spec, dated + commit-cited.
   Still watching, but now for a **load-bearing instance** of the
@@ -125,13 +132,10 @@ the methodology glossary).
   Production signals come from any instance's real runs.
 
 - **Watch-entry lifecycle states** — the four states an entry carries
-  on its Status line: **WATCHING** (uncertainty exists; no fix shipped
-  yet) / **FIX-SHIPPED** (structural fix in spec; watching for a
-  load-bearing instance) / **RESOLVED** (a load-bearing instance has
-  been observed — positive evidence) / **INVALIDATED** (the signal
-  recurred under the fixed spec; the mitigation didn't hold). Distinct
-  from the `[INVALIDATED]` *tracker status tag* (a finding/decision
-  state in an anneal-dev run) — this is a watch-entry state.
+  on its Status line (WATCHING / FIX-SHIPPED / RESOLVED / INVALIDATED),
+  defined canonically in **Entry lifecycle** above. Distinct from the
+  `[INVALIDATED]` *tracker status tag* (a finding/decision state in an
+  anneal-dev run) — this is a watch-entry state.
 
 - **Load-bearing instance** — a run where the failure's opportunity
   genuinely arose and the fix handled it (caught or produced-clean);
