@@ -31,24 +31,23 @@ Four distinct bugs in the beat-the-books replay-settlement review were all this 
 > and whose producer is a different module/provider. *Evaluation (judgment):* do producer and
 > consumer agree on the referent?
 
-## Finding-rate evidence (act-first ×5 vs adhoc-anneal ×5, same task)
-The discipline that backs this lens **measurably raises the finding rate** — the clean n=5-vs-n=5
-comparison (an earlier n=1-vs-n=5 read wrongly suggested "no gap"):
+## Finding-rate evidence (3 arms × 5, same task) — this lens is *specifically* load-bearing
+The 3-arm ×5 comparison **isolates this lens**: generic anneal discipline does NOT catch the provenance
+class — only the explicit "trace each value to its producer" does.
 
-| bug | act-first ×5 | adhoc-anneal ×5 |
-|---|---|---|
-| handicap | 5/5 | 5/5 |
-| team_qualifier crash | 4/5 | 5/5 |
-| market_id (this class) | **2/5** | **5/5** |
-| closing_lines (this class) | **2/5** | **5/5** |
-| period drop (Class 1, *different* class) | **0/5** | **2/5** |
+| bug (this class) | act-first (none) | vanilla-anneal (generic disc.) | adhoc (+ trace-to-producer) |
+|---|---|---|---|
+| market_id | 2/5 | **2/5** | **5/5** |
+| closing_lines | 2/5 | **2/5** | **5/5** |
 
-So the lens's value is **reliability on a derivable class** (≈40% → ~100% for the provenance bugs) — a
-real, systematic gain, not "catches the otherwise-uncatchable." Two honest bounds: (1) n=5 → wide CIs,
-though all bugs move the same direction; (2) this measures the *discipline applied as a checklist* vs
-no-discipline — not this *specific lens* in isolation. **The period-drop bug is a *different* class**
-(depth-gaps **Class 1**, a dropped *dimension*) and went **0/5 → 2/5** when the dimension-enumeration
-discipline was applied — validating *that* (separate) lens, still the hardest case.
+**Vanilla anneal is no better than act-first here (both 2/5); only the explicit provenance discipline
+lifts it to 5/5.** So this lens earns its keep — it catches a class that *plain thoroughness misses*.
+Contrast the sibling **dimension-completeness** lens (for the **period** bug): that one turned out
+**redundant with generic thoroughness** — vanilla catches period **3/5 without it**, *more* than adhoc's
+2/5. So of the two candidate lenses, **provenance-at-handoff (this one) is the stronger bet; the
+completeness lens is the weaker** (plain "verify each kind" already gets period). Bounds: n=5 (wide CIs);
+single-pass (understates anneal — cycles would compound); the clippy/heavy-machinery arm was run
+single-pass so heavy-vs-lean is untested.
 
 ## Lens vs. general-discipline (the open question — mirrors depth-gaps' open Q)
 What actually *caught* market_id (the adhoc arm) was the **general** basis-rule + trace-to-producer
