@@ -69,5 +69,8 @@ found **≫ act-first in daily use**. So run the **factorial**, blind + identica
   structured *multi-step* process) — isolates the value of **basic structured process**.
 - **modern-anneal-clippy** (current skill, with falsification/convergence/lenses) — the step from
   monolithic → modern isolates the value of **the anneal additions** (the gold-plating question).
-Hypothesis to test: act-first→monolithic is the big jump; monolithic→modern is small (additions may be
-gold-plating / crowding). See experiment-doc Addendum 3.
+Operator's lived prior (CORRECTED — not gold-plating): **both jumps are real** — act-first < monolithic <
+modern; the anneal additions *further improved* results in daily use. So the open question isn't "are the
+additions worth it" (operator: yes) but **whether a controlled one-shot test can even capture this** — our
+one-shot reviews came up null, which likely indicts the regime/instrument (one-shot ≠ sustained real use),
+not the framework. See experiment-doc Addendum 3.

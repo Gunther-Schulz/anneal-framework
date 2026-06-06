@@ -179,8 +179,11 @@ accept the current honest state and close the proof thread.**
   **PREFERRED form (operator, session-11 close):** use REAL artifacts as a factorial — **act-first /
   legacy-monolithic-clippy / modern-anneal-clippy** (the clippy repo's legacy monolithic clippy — no
   falsification/convergence/lenses — which the operator found ≫ act-first in daily use). act-first→monolithic
-  isolates *basic structured process*; monolithic→modern isolates *the anneal additions* (the gold-plating
-  question). Real driver + strong operator prior > synthetic Arm B. See experiment-doc Addendum 3 + `eval/realcode-ab/arms.md`.
+  isolates *basic structured process*; monolithic→modern isolates *the anneal additions* — which the operator's
+  daily use says **ALSO help (NOT gold-plating; an AI mis-extrapolation, corrected).** Operator's lived prior:
+  act-first < monolithic < modern, monotonic. So the open Q is whether a **controlled one-shot test can even
+  capture** the regime-dependent value the toy reviews missed. Real driver + strong operator prior > synthetic
+  Arm B. See experiment-doc Addendum 3 + `eval/realcode-ab/arms.md`.
 - **Why it's the *forced* question, NOT goalpost-moving:** the disciplines-*as-prompt* are now shown
   ~inert (blind tie). Anneal = prompt-disciplines + process; eliminate the first → value, *if any*, is in
   the process. So this is **process-of-elimination**, not "escalate to a regime where it might still win."

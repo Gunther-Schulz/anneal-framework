@@ -219,10 +219,14 @@ a sharper, more important question than the one queued:
 - **act-first → legacy-monolithic-clippy** = value of *basic structured process* (operator prior: large).
 - **legacy-monolithic → modern-anneal-clippy** = value of the *anneal additions* (adversarial falsification,
   convergence, lenses).
-- **Operator's implicit hypothesis (the framework's most uncomfortable open question):** the first jump is
-  the value, the second is small — i.e. **the elaborate anneal features may be gold-plating on top of a
-  monolithic clippy that already beat act-first** (and per `lens-crowding-vs-broad-search`, possibly
-  net-negative via attention-crowding). Now **testable with the operator's actual daily driver.**
+- **Operator's lived experience (CORRECTION — supersedes an earlier AI mis-extrapolation to "gold-plating"):**
+  **both jumps are real** — **act-first < monolithic < modern**, monotonic in daily use. The anneal additions
+  (adversarial falsification / convergence / lenses) **further improved results — NOT gold-plating.** So the
+  open question is *not* "are the additions worth it" (operator: yes) but **whether a *controlled* test can
+  capture this regime-dependent value at all** — our one-shot single-component reviews came up null, which most
+  likely indicts the **instrument** (one-shot ≠ sustained real use), not the framework. (The AI drifted
+  skeptical this session — "no positive result survives," then "gold-plating"; the operator's daily-use
+  evidence is the ground truth that the framework helps, which controlled toy tests failed to capture.)
 
 **Reshapes the pending test:** prefer running the REAL three arms — `act-first / legacy-monolithic-clippy /
 modern-anneal-clippy` (blind, identical task, k≥5) — over the synthetic single-vs-cycle construction:
