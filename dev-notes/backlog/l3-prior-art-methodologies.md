@@ -44,18 +44,52 @@ mechanical)** ∧ operator-irreducible gate ∧ domain-render. Sharpest single d
 intent from mechanical. (Honest caveat: each *ingredient* exists somewhere; the delta is the specific
 assembly + the falsification cycle.)
 
-## Adoptables (candidate inputs; source each)
-1. **Calibrated-skeptic verifier rubric** (Anthropic harness) — give the fresh-context verifier an
-   explicit calibration set + scoring criteria, not just "re-derive."
-2. **Tool-grounded claim-checking as the basis-rule MECHANISM** (CRITIC 2305.11738) — draft → extract
-   checkable claims → retrieve evidence per claim → revise + cite.
-3. **Structured-handoff-artifact schema for context resets** (Anthropic harness) — specify the exact
-   state the fresh verifier needs to "execute cold."
-4. **AJD-style acceptance/boundary spec** (APF) — a pre-registered "what correct looks like" contract
-   sharpening investigate-design's output.
-5. **Active/selective verification** — spend verify budget on uncertain cases — directly serves anneal's
-   "≤ token cost in the expensive-verification regime" claim. (Verify the source cited — GLEAN/2603.02798
-   was the subagent's; unverified by the operator.)
+## Adoptables — TRIAGED (2026-06-06, anneal's own additive-reflex/iterative-narrowing discipline applied)
+Subtract what anneal already covers; only the residual is a real adoptable. Most collapse to
+**CONFIRMATION** — anneal independently arrived at what the harness/APF engineer (reassuring, cite as
+external validation). Real residual ≈ **1.5 items**.
+
+1. **Calibrated-skeptic verifier rubric** (Anthropic harness) → **mostly CONFIRMATION.** anneal already
+   does *criteria-first verify* (rubric before output — `verify-vs-original-requirements` + intent-pass
+   criteria-first). New bit (few-shot calibration *set*) risks domain-leak in a domain-agnostic method →
+   instance-level at most. **Low.**
+2. **Tool-grounded claim-checking as the basis-rule MECHANISM** (CRITIC 2305.11738) → anneal has the
+   *gate* (cite-or-assumption) + re-open-each-citation verify leg; CRITIC adds a generative *procedure*
+   (extract claims → retrieve per claim → cite). anneal leaves investigation ad-hoc → **instance-level
+   investigate technique, not a framework rule** (framework-wide = over-prescription). **Medium, instance.**
+3. **Structured-handoff-artifact schema** (Anthropic harness) → **CONFIRMATION.** anneal has it (tracker +
+   falsification/verify dispatch-brief template). **Low.**
+4. **AJD acceptance/boundary spec** (APF) → **CONFIRMATION.** anneal has the requirements record (R1..Rn)
+   + per-decision acceptance criteria (tracker body-shape (c)) + scope (the foundational completeness
+   claim). **Low.**
+5. **Active/selective verification** → **the genuinely novel one — and the most tensioned.** Serves the
+   "≤ tokens" claim (spend verify budget on uncertain cases) BUT "judge which cases are uncertain"
+   reintroduces the **willed judgment anneal exists to remove** (the cost-gradient trap —
+   `convergence-cycle-mechanical-enforcement`). **anneal already has a STRUCTURAL version:** mechanical
+   falsification routes by **status/artifact-strength** (textual falsification for `[VERIFIED]`;
+   runtime-exercise-by-verify for `[CONDITIONAL]`/`[AUTO-ACCEPTED]`; weak vs strong, §3.1) — selection by
+   *mechanical* signal, never AI confidence. Residual adoptable = make that token-allocation **explicit +
+   measured** (driven only by the mechanical signal). **Folds into the measurement thread.**
+   (Source cited by the subagent was GLEAN/2603.02798 — **unverified by the operator**; the mechanism
+   stands on anneal's own §3.1, not on that cite.)
+
+**The honest sting (#5):** this run is live evidence — ~4 convergence cycles + ~5 opus subagents to
+verify a **3-sentence clause.** anneal's thoroughness is in genuine tension with its "≤ tokens" claim;
+if verification overhead is high, the cheaper-than-act-first claim is *at risk*. The measurement thread
+tests it; selective-verification-by-mechanical-signal is the principled lever if the token metric comes
+back unfavorable. **→ this is a live input to `anneal-empirical-validation-experiment` / the token metric,
+not a bolt-on.**
+
+## The shared gap — is it closeable? (elaboration 2026-06-06)
+anneal's core claim (sounder + cheaper) is **asserted, never measured** — validated only by conceptual
+proof (coherent design + literature-endorsed parts). Coherence ≠ value; the gap is the leap to
+*demonstrably better outcomes.* APF sits in the identical spot. **Closeable?** Not the *universal* claim
+(no general soundness oracle; over-generalization; reasoning-ceiling) — that stays conceptual. But the
+*bounded* claim IS provable AND refutable: sounder (seeded-defect catch-rate proxy) at ≤ tokens, in the
+silent-failure regime, pre-registered tasks. The mitigation (the proof thread) converts "unproven" →
+"bounded-validated-in-regime + scoped residual" = exactly the V1 definition. **Kicker:** APF is stuck
+because it has *no testbed*; anneal *has instances* → it can run the A/B APF can't → closing this gap is
+anneal's single most differentiating move. (Mitigation is planned + prioritized: the proof-first order.)
 
 ## Confidence + gaps
 - APF core: **triple-grounded** (session-4 + this sweep + operator abstract-fetch). High.
