@@ -22,6 +22,44 @@ A maintained **failure-class register** the post-run-review self-review probes *
 1. **Additive, not blinders.** The operator's own lens-narrowness insight applies to the register itself: a fixed catalog becomes blinders if it *replaces* the open-ended probe. It MUST compose with Q1's "no existing check covers this class" (the novel-class surfacer), and **novel classes found feed BACK into the register** (it grows; it is the accumulated institutional memory of failure modes, not a frozen list).
 2. **Regression-guard, not ceiling-fix.** A register-probe catches **known** classes recurring. It does NOT fix the underlying reasoning-depth ceiling (`design-decision-implication-depth-gaps` cross-class obs 3: *reducible, not eliminable* by process). It raises the floor, not the ceiling — say so, so it isn't sold as solving "saw it, didn't connect it."
 
+## Design-quality probe-templates (operator's proving-questions — 2026-06-06)
+A **second kind of probe** the self-review should run, distinct from the failure-class register
+above: not "did this run exhibit known defect X?" (reactive pattern-match) but a **fresh
+adversarial interrogation of each load-bearing decision's SHAPE / quality**. Surfaced
+empirically — across a long 2026-06-06 session the operator's recurring "proving-questions"
+repeatedly found gaps the framework's own checks (basis, missed-dependents, lenses,
+intent-falsification) passed clean:
+- **workaround-vs-principle** — "is this sound, or a workaround?"
+- **proportionality** — "are we over-building / nitpicking?" (the additive-reflex)
+- **default-justification** — "why this default — why not the opposite?"
+- **altitude / scope** — "is this the right level?"
+- **front-loading / simplicity** — "can this be caught earlier / done simpler?"
+- **precedent-linking** — "does this connect to a known pattern / backlog item?"
+
+These attack the decision's **quality**, not its basis (the mechanical checks cover basis).
+They are **design-time-cheapest** — the convergence **intent-falsification pass** is the natural
+home to ADD them as attack-criteria (catch them before ship) — AND a **post-review backstop**
+(the retrospective notices "did the run lean on the operator's live probing to find gaps the
+framework should have caught?").
+
+**Load-bearing caveats (state both, or it oversells):**
+1. **Floor, not ceiling.** Encoding the probes raises the floor but cannot replace the operator:
+   a self-asked adversarial question can be **vacuously satisfied** (the intent-pass's own
+   acknowledged weakness — `core.md §4.1.4`: the per-R# line "can be vacuously satisfied"). A
+   fresh *human* adversary asking "is this a workaround?" is harder to fool than the AI asking
+   itself. The operator's live probing keeps irreducible value — same reducible-not-eliminable
+   ceiling as `design-decision-implication-depth-gaps` cross-class obs 3.
+2. **Seed, not bound.** The probe-list seeds the interrogation; it must not become a fixed
+   checklist the AI runs-and-stops (skill-craft "Checklist as ceiling"). Trace each probe's
+   lead beyond the list.
+
+**Empirical base (2026-06-06 session):** workaround-probe pressure-tested the integrity-check fix
+(confirmed sound — but the question forced the justification); proportionality caught the
+v-entry gold-plating (→ `convergence-surfaced-finding-action-brake`); default-justification
+flipped runs-data off→on; altitude reframed runs-data this-repo→framework; front-loading
+simplified archive→track-in-place; precedent-linking surfaced
+`design-decision-implication-depth-gaps`.
+
 ## Design questions to resolve (anneal-dev cycle)
 - Register home + layering (framework vs instance; one file or a slot like the invariant registers).
 - Probe shape in `modules.md` §4 / `post-run-review.md` Q-set: a new Q (Q8?) or an extension of Q1; the per-class evidence/clean artifact.
