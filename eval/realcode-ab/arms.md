@@ -59,3 +59,15 @@ vary **only the process**. Blind task, no effort framing, k≥5.
      under-detects, the framework's own finding).
   3. Loop until convergence (no new findings).
 - Pre-commit as TERMINAL: if Arm B ties/misses vs Arm A, that is the answer (no "one more level").
+
+## PREFERRED REAL arms (operator-flagged, session-11 close) — better than the synthetic construction above
+Use the operator's **actual artifacts** instead of constructing Arm B. The clippy repo has a **legacy
+monolithic clippy** (pre-anneal: NO adversarial falsification / convergence / lens-set) that the operator
+found **≫ act-first in daily use**. So run the **factorial**, blind + identical task + k≥5:
+- **act-first** (blind, no method block).
+- **legacy-monolithic-clippy** (locate in the clippy repo; pin whether it's one elaborate *prompt* or a
+  structured *multi-step* process) — isolates the value of **basic structured process**.
+- **modern-anneal-clippy** (current skill, with falsification/convergence/lenses) — the step from
+  monolithic → modern isolates the value of **the anneal additions** (the gold-plating question).
+Hypothesis to test: act-first→monolithic is the big jump; monolithic→modern is small (additions may be
+gold-plating / crowding). See experiment-doc Addendum 3.

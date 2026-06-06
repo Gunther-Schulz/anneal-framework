@@ -176,6 +176,11 @@ accept the current honest state and close the proof thread.**
 - **The test** (designed in experiment-doc Addendum 2): prompt held **IDENTICAL** for both arms; vary
   **only the process** — Arm A single-pass vs Arm B real anneal cycle (investigate → *separate fresh-context*
   independent verify/falsify → converge); blind; k≥5; + a **blind re-test of the provenance directive**.
+  **PREFERRED form (operator, session-11 close):** use REAL artifacts as a factorial — **act-first /
+  legacy-monolithic-clippy / modern-anneal-clippy** (the clippy repo's legacy monolithic clippy — no
+  falsification/convergence/lenses — which the operator found ≫ act-first in daily use). act-first→monolithic
+  isolates *basic structured process*; monolithic→modern isolates *the anneal additions* (the gold-plating
+  question). Real driver + strong operator prior > synthetic Arm B. See experiment-doc Addendum 3 + `eval/realcode-ab/arms.md`.
 - **Why it's the *forced* question, NOT goalpost-moving:** the disciplines-*as-prompt* are now shown
   ~inert (blind tie). Anneal = prompt-disciplines + process; eliminate the first → value, *if any*, is in
   the process. So this is **process-of-elimination**, not "escalate to a regime where it might still win."

@@ -206,6 +206,30 @@ instruction, not "anneal"); vary **only the process**:
   independence) from the **prompt** — the only design that measures the framework, not a checklist.
 - Also re-test the **provenance directive** blind (adhoc-blind ×5) to see if *that* result survives blinding.
 
+## Addendum 3 (session 11 close) — the legacy monolithic clippy: a REAL arm + the structure-vs-additions factorial
+**Operator datapoint (observational, daily usage, uncontrolled — but a strong prior):** the clippy repo
+contains a **legacy monolithic clippy** — a pre-anneal, single-artifact version with **no adversarial
+falsification, no convergence, no lens-set** (none of anneal's later additions) — that in daily use
+**performed much better than act-first.** This does **not** contradict the blind tie (prompt-disciplines ≈
+act-first): the monolithic clippy is a *structured driver* (phases / tracker / persistence), not a one-shot
+prompt → it **reinforces the reframe** (value is in the structure/process, not the prompt). It also surfaces
+a sharper, more important question than the one queued:
+
+**The factorial it enables (REAL artifacts, not synthetic arms):**
+- **act-first → legacy-monolithic-clippy** = value of *basic structured process* (operator prior: large).
+- **legacy-monolithic → modern-anneal-clippy** = value of the *anneal additions* (adversarial falsification,
+  convergence, lenses).
+- **Operator's implicit hypothesis (the framework's most uncomfortable open question):** the first jump is
+  the value, the second is small — i.e. **the elaborate anneal features may be gold-plating on top of a
+  monolithic clippy that already beat act-first** (and per `lens-crowding-vs-broad-search`, possibly
+  net-negative via attention-crowding). Now **testable with the operator's actual daily driver.**
+
+**Reshapes the pending test:** prefer running the REAL three arms — `act-first / legacy-monolithic-clippy /
+modern-anneal-clippy` (blind, identical task, k≥5) — over the synthetic single-vs-cycle construction:
+real artifacts + a strong operator prior + it separates *structure* from *the additions*. **Next time:**
+locate the legacy monolithic clippy in the clippy repo; pin what it actually is (one elaborate *prompt* →
+real tension with the blind tie, worth probing; or structured *multi-step* → exactly the untested process arm).
+
 ---
 
 ## Goal (original v0 design — retained below the verdict for the resumption case)
