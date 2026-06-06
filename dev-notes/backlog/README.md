@@ -134,36 +134,60 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 
 ### ▶ Where we are + next steps (2026-06-06 session 11 — READ FIRST)
 
-**Session 11 — the empirical-validation proof thread reached its TERMINAL VERDICT: a controlled
-single-task A/B structurally TIES at frontier capability. PARKED with a negative/structural read (not a
-failure — an answer). Pivot to observational evidence. The `eval/` harness is built, proven, committed.**
+**Session 11 — a long empirical-validation arc that, through successive operator-driven rigor fixes,
+DISSOLVED every apparent positive result and reframed the question. Honest end-state: prompt-level
+"anneal disciplines" ≈ act-first once fairly (BLIND) tested; the framework-AS-PROCESS is UNTESTED. Tree
+clean + committed. Stopped deliberately mid-thread (operator pacing compute).** Full detail (the live
+writeup): `anneal-empirical-validation-experiment.md` — VERDICT + Addendum 1 + Addendum 2.
 
-1. **Built + froze the Step-1 silent-failure task pack** (`eval/`, commit `9d14501`): 10 tasks + held-out
-   oracles + a shared harness + a well-formedness gate (all green) + `PACK.md` pre-registration. Then ran
-   the A/B cheaply (not 60 runs — the operator's "don't run 60" + "act-first until it fails" steer).
-2. **Result — a clean negative verdict.** **7 act-first runs across 6 tasks all scored 1.0** (5
-   silent-failure + 1 design-surface `config-resolver` built specifically to have a design surface — opus
-   still nailed the two-phase ordering on the fly). Clippy: same outcome, **2.5–3.4× the cost.** The
-   **three-band model** explains it (band 1 cheaply-derivable → both catch; band 2 needs outside
-   domain/operational knowledge → both miss, e.g. beat-the-books **W1** "Azuro can't settle future bets";
-   band 3 derivable-only-with-care = anneal's band, **narrow at frontier** because opus reasons carefully
-   even act-first). Full verdict + pivot in `anneal-empirical-validation-experiment.md` (VERDICT 2026-06-06);
-   harness state in `measurement-harness-mve.md`.
-3. **Surveyed beat-the-books** for a free control arm: it exists (3,080 pre-Clippy commits, 833 bug-fixes,
-   34 real Clippy runs) but is **confounded** (pre-Clippy author ≠ same-model opus act-first). The unit-16
-   audit (Clippy-on-Clippy) shipped **71/72 clean** — discipline ships clean, not a head-to-head catch.
+**The arc (each step superseded the prior framing):**
+1. **Froze the `eval/` harness** (`9d14501`): 10 silent-failure tasks + held-out oracles + well-formedness
+   gate + `PACK.md`. Reusable.
+2. **Synthetic A/B → ties.** Opus one-shots tractable tasks (7 act-first runs all 1.0; clippy same at
+   2.5–3.4× cost). (Three-band model — was the mid-session verdict; now seen as one regime, not the answer.)
+3. **Real-codebase A/B (operator's clone-at-commit idea)** on **beat-the-books** (real 250-file repo @ a
+   pre-fix commit, fresh opus arms, period-drop bug as target). Real bugs surfaced; **the period omission
+   missed by everyone**.
+4. **Finding-rate ×5/arm** (act-first / vanilla-anneal / adhoc+focused-lenses) → first looked like a
+   dose-response ladder **2.6 / 3.4 / 4.4** ("discipline helps + a provenance lens adds").
+5. **Operator caught 3 design flaws**, each shrinking the effect: **effort-framing confound** (act-first
+   "efficient" vs disciplines "be thorough") · **non-blind task** (the step-list pre-directed attention —
+   a crutch that most helps the *weakest* arm) · **prompt-asymmetry** (giving the disciplines block to only
+   one arm tests a *checklist*, not the framework).
+6. **Clean BLIND re-run** (identical blind task, no effort framing, disciplines-block the only difference),
+   ×5/arm → **the gap COLLAPSED**: act-first-blind **~2.2** vs vanilla-blind **~2.4** (tie). The disciplines
+   block mostly **redistributes which bugs are found**, not net catch → the ladder was a framing artifact.
+7. **THE REFRAME (operator, correct):** all runs varied the **prompt**, single-pass → they test "does a
+   review checklist help" (barely, blind), NOT "does anneal-the-framework help." Anneal = a **PROCESS**
+   (multi-pass + fresh-context **independent** verify + convergence) = **UNTESTED**.
 
-**▶ NEXT-UP — the proof-first ordering is RESOLVED (the "testing" leg returned PARKED/tie).** Consequences:
-- **Proof discipline going forward = observational, not a lab A/B:** keep a **dogfooding catch-log** (real
-  defects the convergence/verify passes catch in real runs — session-10's F7/F10 are the seed) + lean on the
-  documented **self-improvement loop** (beat-the-books depth-gaps + unit-16). This is the honest in-regime
-  signal; the controlled A/B is parked, reusable only for a **scale-resumption** (the one regime a gap shows).
-- **The bounded enforcement-fidelity batch is no longer "pre-test prep"** — it was gated behind "get to
-  representative-best, then test"; with testing parked it proceeds **on its own merits** (the convergence
-  soundness hole in `convergence-cycle-mechanical-enforcement` is real regardless). Resume the ▶ Campaign map
-  order (③ → ⑤ → …) — the proof thread no longer front-gates it.
-- **Methodology banked** (in the experiment item) for any resumption: act-first-as-regime-screen (+ the
-  selection-bias guard), the reusable `eval/` harness, the 833 beat-the-books fixes as a real-bug task source.
+**Honest net state: no robustly-established positive result survives the rigor fixes.** prompt-disciplines
+≈ act-first (blind); the omission is missed by *every single-pass* arm (0/15+); the provenance-directive
+result (2/5→5/5) was non-blind → **untested-blind**; the framework-PROCESS is untested entirely.
+
+**Filed/updated this session:** NEW `provenance-at-handoff-lens` (a value's assumed semantics ≠ its
+producer's — the one directive with a real, if non-blind, effect) · NEW `lens-crowding-vs-broad-search`
+(focused directives may trade off vs open-ended search — the period 3-vs-2 hint) · updated
+`anneal-self-improvement-loop` (empirical inputs: judge-by-rate-not-n=1; prune-don't-accrete) ·
+`measurement-harness-mve` (harness built + parked).
+
+**▶ NEXT-UP — ONE open decision (operator's; stopped for today): run the framework's *actual* test, or
+accept the current honest state and close the proof thread.**
+- **The test** (designed in experiment-doc Addendum 2): prompt held **IDENTICAL** for both arms; vary
+  **only the process** — Arm A single-pass vs Arm B real anneal cycle (investigate → *separate fresh-context*
+  independent verify/falsify → converge); blind; k≥5; + a **blind re-test of the provenance directive**.
+- **FOR:** the omission is missed by *every single-pass* arm, and the framework's named mechanism is
+  "fresh-context catches what the first pass missed" — a specific, falsifiable hypothesis (not "try harder").
+- **AGAINST (take seriously):** a **goalpost-moving pattern** — every null, the AI proposed "the real test
+  is one level deeper" (synthetic→real→blind→process); and the prompt-null is partial evidence the process
+  (which just *enforces* those disciplines) won't help either. **Discount the AI's enthusiasm to run it.**
+  If run, **pre-commit it as TERMINAL** (a tie/miss = the answer; no "one more level").
+- **Operational lesson:** dispatch **≤5 parallel** subagents (10-at-once → server rate-limited 5).
+  beat-the-books harness recipe: `git archive <pre-fix-commit>` → strip `docs/ .clippy/ .git` (they leak
+  the fix) → keep `src/ tests/` → dispatch ≤5. Scratch dirs were `/tmp/bt-eval/*` (ephemeral — findings are
+  in the doc; raw runs not persisted).
+- **Independent of the proof thread:** the ▶ Campaign map work (③ enforcement-fidelity → ⑤ … below) remains
+  the standing non-proof backlog, available anytime.
 
 *(Session 10 block below — superseded; history. Its ▶ NEXT-UP "TESTING / proof-first order" is the thread this
 session resolved.)*
