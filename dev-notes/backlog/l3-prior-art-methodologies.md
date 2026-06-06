@@ -113,6 +113,18 @@ silent-failure regime, pre-registered tasks. The mitigation (the proof thread) c
 because it has *no testbed*; anneal *has instances* → it can run the A/B APF can't → closing this gap is
 anneal's single most differentiating move. (Mitigation is planned + prioritized: the proof-first order.)
 
+**Why APF can't (not won't) test — and why anneal can (operator probe 2026-06-06):** It's a *can't*, not
+a *won't* — the author **wants** validation (subagent full-text: "actively seeking partners… to validate
+their efficacy"; medium confidence) but **lacks a testbed** (session-4 verdict + the plain fact APF is a
+*paper* with two illustrative case studies, no deployed implementations to measure). The root: **anneal
+renders into live, git-checkable instances** (clippy/daneel/…) — so the "render into domain instances"
+packaging discipline that *is part of anneal's delta* **IS the testbed.** anneal's differentiator and its
+testability are one property, not two; it's *built differently*, not luckier. Structural: validating a
+*process* (vs a model) needs running-at-scale-against-a-baseline → a testbed most methodology papers lack
+(the field's gap, per session-4). **Inference (flagged):** APF's deterministic-feedback regime gives
+per-action environmental validation, which can make the methodology-level test feel *less urgent*; anneal's
+no-cheap-oracle regime denies that → anneal both **needs** the empirical test more AND **can** run it.
+
 ## Confidence + gaps
 - APF core: **triple-grounded** (session-4 + this sweep + operator abstract-fetch). High.
 - "No dominator": a broad-sweep **negative** — a longer-tail effort could exist (RE / formal-methods-for-LLM
