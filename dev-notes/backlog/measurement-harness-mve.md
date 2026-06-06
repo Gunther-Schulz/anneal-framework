@@ -16,8 +16,40 @@ plumbing. Operational home: `eval/` (see `eval/README.md`).
   **Plumbing-only result:** both arms caught the defect (catch-rate Δ0); the discipline arm
   cost +1065 tokens — the cheap-oracle null this thread already predicts. The task is the
   lesson: too easy / wrong regime.
-- **Next — Step 1.** Build genuine silent-failure tasks (defects that survive a competent
-  act-first review), then k=3 + arm C. Recipe + layout in `eval/README.md`.
+- **Step 1 — in progress (2026-06-06).** Building the genuine silent-failure task pack.
+  First exemplar **`merge-config` built + verified in-regime** (`eval/tasks/merge-config/` +
+  `eval/oracle/merge_config_oracle.py`): seeded defect `base.update(override); return base`
+  (mutates + aliases a shared-default `base`). 3-way well-formedness check passes — weak check
+  green on the defect (silent), held-out oracle catches it (0.5), correct fix scores 1.0. Not yet
+  committed; not yet run through the arms.
+  - **Next:** build the rest of the pack to the rubric below (~10), then **pre-register/freeze**
+    + run arms A/B at k=3.
+
+## Task-pack rubric (the load-bearing design — added 2026-06-06)
+Step 0's `discount-floor` (floor division) gave a null because it failed criterion **4**: a
+floor-division bug is requirement-*trivia* (one extra test case catches it), not requirement-
+*space-gated*. A task is in the silent-failure regime iff:
+1. **Fair** — the full requirement is stated in the prompt prose. The info needed to catch the
+   defect is available to *both* arms (no hidden-intent gotcha).
+2. **Weak-oracle-green** — the seeded defect passes the visible/quick check the prompt advertises
+   (mechanically checkable: run the weak check on the starter).
+3. **Held-out-detectable** — a deterministic script (no LLM, no arm-awareness) catches it, and a
+   correct fix scores 1.0 (the oracle is neither blind nor over-strict).
+4. **Requirement-space-gated** — catching it requires *enumerating a requirement the visible check
+   never exercises* (the design-first mechanism under test), not domain-trivia or an extra random
+   test. ← the criterion `discount-floor` failed.
+5. **Plausible** — the defect looks like a natural first implementation, not an obvious blunder.
+
+**Pre-register by rubric, NOT by performance.** Each task is argued in-regime from this rubric;
+the pack is frozen *before* any scored run. We do **not** filter tasks by running arm B and keeping
+its misses — that is the experiment doc's own **selection-bias** threat (tuning the set toward
+arm-B failure rigs the comparison toward clippy). Consequence taken honestly: if arm B catches a
+rubric-conformant task, that is a legitimate *measured* result (toward refutation), not a harness
+artifact. The Step-0 fix is therefore a **better rubric**, not a difficulty-filter.
+
+**Well-formedness gate (every task, before freeze):** the 3-way check run on `merge-config` —
+(a) weak check passes on the seeded defect, (b) held-out oracle scores < 1.0 on the defect,
+(c) held-out oracle scores 1.0 on a correct fix.
 
 ## The decision
 Don't build a runner. skill-creator (`anthropics/skills`, cloned at

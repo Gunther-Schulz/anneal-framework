@@ -23,10 +23,39 @@ intent is operator-owned — see caveat 1).
    an **interpretation**. The intent is exactly what only the operator can certify; baking Claude's
    reading into the canonical spec as the stated intent is the "launder my view as authoritative"
    risk. The operator confirms / corrects / rewrites before it enters the spec.
-2. **Home: `foundation.md` (or a VISION), NOT the main README.** README = what-it-is / how-to-use;
-   this is *why* — the philosophical north star, foundation.md's role.
+2. **Home is NOT `foundation.md`** (corrected 2026-06-06 — see Grounding below; foundation.md is 3
+   architectural *contracts*, not a why-doc). And the *trust* half is **already canonized** (README
+   tagline + core.md Purpose); only the **mechanism + asymptote** half is net-new. Real home options
+   in Grounding.
 3. **Discipline:** foundation-level kernel edit → anneal-dev + operator soundness (fitting: the
    soundness gate is the operator, and the intent is the thing only they can certify).
+
+## Grounding (2026-06-06 — where intent already lives + what's actually new)
+Checked the canon before treating the candidate as net-new:
+- **Already canonized (the trust half):** README tagline **"Convert AI confidence into AI evidence"**
+  (the north-star one-liner) + `spec/core.md` **Purpose** (the rubric: grounded claims + a coherent,
+  complete picture, operating within the 3 `foundation.md` contracts). The candidate's
+  "trust-manufacturing / trust-without-re-checking" framing *restates* these — not new.
+- **NOT canonized (the new half, worth persisting):** the **mechanism** (replace the *AI's*
+  self-discipline with structural enforcement on load-bearing steps) + the **V1 asymptote** ("rigor
+  enforced, not hoped for"; each gap = a place still leaning on AI will). core.md Purpose states the
+  *goals*, never the *how*. This is the genuinely-additive contribution.
+- **Real home options** (foundation.md ruled out): **(a)** a one-paragraph "Mechanism" clause
+  appended to core.md's **Purpose** (goals → how they're secured; keeps goals + mechanism + the
+  contract-reference co-located — *lean*); or **(b)** a dedicated short root `VISION.md` the README
+  tagline points at (philosophy out of the spec spine).
+
+## Two analog-sharpenings the candidate needs before canonizing (it overclaims twice)
+1. **"structural, not willed" vs the operator gate.** The operator is the *deliberately-irreducible
+   willed* gate (foundation + `core.md §3.1`: the AI can't certify its own foundation). Precise
+   claim: structural enforcement replaces the **AI's** self-discipline; the operator's judgment is
+   the load-bearing willed *exception*, NOT a gap to close. Asymptote = "all rigor that *can* be made
+   structural is, leaving the irreducibly-human gate" — not "no willed rigor anywhere." Un-carved,
+   the every-edit test ("does this move rigor willed→structural?") would wrongly target the operator
+   gate for elimination.
+2. **"the AI is a satisficing reasoner"** → state the *observed failure mode* (rules load but don't
+   fire — the loaded-but-inert class; clippy Unit-18, skill-craft-antipatterns), which is
+   evidence-backed per the grounded-claims rubric, rather than a categorical cognitive assertion.
 
 ## Why it's worth doing (composes with the V1 question)
 A crisp intent statement is **half of what makes "V1" definable**: V1 = the intent's
@@ -36,7 +65,9 @@ proof thread). Intent statement + measurement = the answer to "do we ever arrive
 every future edit a test: *does this move rigor from willed → structural?*
 
 ## Relates to
-- `foundation.md` — the home + the "grounded + complete" rubric this reads from.
+- `spec/core.md` **Purpose** — where the "grounded + coherent/complete" rubric actually lives (+ the
+  lean home option (a)); `README.md` tagline "Convert AI confidence into AI evidence" — the existing
+  north-star. `foundation.md` — the 3 contracts the Purpose operates within (NOT a vision home).
 - `anneal-empirical-validation-experiment` / `measurement-harness-mve` — the *measurement* half of
   the V1 definition (the intent statement is the *target* half).
 - `skill-craft-antipatterns-loaded-but-inert` / `convergence-cycle-mechanical-enforcement` — the

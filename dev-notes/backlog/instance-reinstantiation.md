@@ -146,10 +146,16 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   state-marker + restore exclude `.anneal-dev/runs/`) + `core.md §4.2.4` (in-place integrity excludes the
   run-state directory). **Render obligation** (deferred, ALL instances; NOT behavior-preserving — flips
   the gitignore default + adds the integrity-exclusion → render-fidelity verify needed): the anneal-dev
-  plugin's `SKILL.md` First-run bootstrap (`:315`) + `references/foundations.md` (`:462`/`:469`) +
+  plugin's `SKILL.md` First-run bootstrap (`:315`) + the README-placeholder line (`:347`) +
+  `references/foundations.md` (`:462`/`:469`) +
   `references/tracker.md` (`:402`) + `phases/implement.md` (`:160` provisioning + the in-place run-state
   exclusion). Per **D3**, each domain instance renders the default per its OWN binding (anneal-dev on; a
-  downstream instance may bind off). Commit ref: pending. (Follow-up, not a render: the **F-prov-framing**
+  downstream instance may bind off). Commit ref: pending. **Priority note (2026-06-06):** anneal-dev's
+  slice has a small *real* downstream bite (unlike the drift≈0 idle instances) — its **published plugin**
+  would mis-instruct a fresh downstream install to gitignore its run-state, which the live spec no longer
+  wants; consider doing anneal-dev's slice ahead of the gated batch. (Confirmed via the `purpose-mechanism-clause`
+  run's investigation, where folding the fix in was considered then de-scoped — render-fix belongs in the batch,
+  not a spec-edit run.) (Follow-up, not a render: the **F-prov-framing**
   terminology cleanup — 4 framework sites still say "non-tracked run-inputs" — tracked in `runs-data-preservation`.)
 
 ## Capability-by-instance render matrix (2026-06-05)
