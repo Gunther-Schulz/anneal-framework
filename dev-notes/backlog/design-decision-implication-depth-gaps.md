@@ -193,6 +193,43 @@ of the Consumer-enumeration lens to explicitly name **read-side** enumeration
 write-side references only) would close the interpretation gap — making it
 harder to satisfy the lens with constructor-only searches.
 
+## New instance — anneal-dev's OWN corpus-evolution (2026-06-06; operator-surfaced)
+The `run-state-tracked-by-default` run produced **two fresh instances of the unifying shape** —
+in anneal-dev's own framework work, not clippy/coding — confirming line-10's claim that the shape
+recurs in the kernel's own runs. Both were caught by the **convergence cycle** (the fresh-context
+backstop), not by the same-context design:
+- **Cycle-2 gap:** the decision "track run-state (un-gitignore the slot)" — the design *did*
+  enumerate dependent **spots** (the Missed-dependents lens found the parallel-isolation
+  provisioning rule), but did **not trace the behavioral implication** that tracking run-state
+  collides with the **in-place integrity check** (the orchestrator's mid-run tracker writes become
+  visible to "clean-before-dispatch"; a restore would discard the live tracker). Saw the dependent,
+  didn't connect it to the integrity-check implication.
+- **Cycle-4 gap:** the decision D7 (exclude run-state from the in-place check) — didn't
+  **propagate the boundary** to the parallel separate-copy/integration path (D4 still rested on the
+  wrong discriminant). Saw the boundary, didn't connect it to *all* its application sites.
+
+**What this sharpens (the line-14 open question):** the operator asked whether the repeated
+convergence-caught gaps could be optimized by a **better design before convergence**. This run is
+direct evidence that the answer is the item's open question — *and* points at a concrete
+forcing-function candidate at **framework-corpus-evolution** level (not just clippy):
+
+> **Trace, don't just list, dependents.** The Missed-dependents lens (and design-decision
+> body-shape (d)) currently force enumerating the dependent **spots** of a changed contract; they
+> do **not** force tracing **what the change DOES to each** ("for each dependent of the changed
+> contract, state the behavioral effect of the change on it"). Cycle-1 listed the provisioning
+> dependent but never asked "what does tracking run-state do to the integrity check." A
+> trace-the-implication clause on Missed-dependents / (d) is the design-time analogue of what the
+> convergence `target-behavior` pass did after the fact.
+
+This is the **sibling at framework level** of Class 1's "enumerate consumed dimensions vs
+parameters" — same shape (enumerate-and-trace, not just enumerate), generalized from
+coding-function-parameters to any-changed-contract's-behavioral-dependents. Reinforces cross-class
+obs 3: convergence (fresh-context) is the working backstop; a design-time trace-clause would
+**reduce** (not eliminate) the convergence-cycle count. NB: distinct from the v-entry gold-plating
+(`convergence-surfaced-finding-action-brake`) — that was convergence churning on *non-defects*
+(over-fixing); this is convergence catching *real defects the design missed* (depth gaps). Two
+different failure modes, two different items.
+
 ## Cross-class observations
 
 1. **The intent-falsification pass and convergence falsification (both
