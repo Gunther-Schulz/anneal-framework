@@ -1,12 +1,77 @@
 # Empirical validation experiment — does design-first (anneal) beat act-first? (v0)
 
-**Status:** OPEN — experiment design **v0** (operator-requested 2026-06-03). **To be sharpened
-after** the two in-flight research runs land (they inform specific parts — see bottom). This is
-the operationalization of the measurement gap: the falsifiable test that can prove anneal **right
-OR wrong**. Origin: `design-first-vs-act-first-research.md` verdict — the literature supplies NO
+**Status:** ⏸ **PARKED 2026-06-06** — the controlled single-task A/B **structurally ties at
+frontier capability** (opus). This is the proof-thread's *terminal verdict* (see VERDICT below),
+not a TODO. The harness that feeds it is built + proven (`eval/`, `measurement-harness-mve.md`);
+the *experiment* is parked, not the harness. (Prior: OPEN — experiment design v0, operator-requested
+2026-06-03.) Origin: `design-first-vs-act-first-research.md` verdict — the literature supplies NO
 such head-to-head, and anneal's instances are the testbed the field lacks.
 
-## Goal
+## VERDICT (2026-06-06) — why the controlled A/B ties, and where value actually lives
+
+**What we ran (cheap + decisive — not the 60-run study).** A frozen 10-task silent-failure pack +
+one design-surface task (`config-resolver`), opus both arms, isolated `/tmp` workdirs, deterministic
+held-out oracles (`eval/`). **7 act-first runs across 6 tasks — every one scored 1.0** (caught the
+seeded defect / built the correct two-phase design). Clippy (full anneal) also 1.0, at **2.5–3.4×
+the tokens** (~22k act-first vs 62–75k clippy) and ~3× wall-time. Plus a survey of the beat-the-books
+production instance (34 real Clippy runs, 3,080 pre-Clippy commits, 833 pre-Clippy bug-fixes) for a
+free control arm.
+
+**The structural finding — the three-band model.** A bug is one of:
+1. **Cheaply derivable from the code** → frontier opus catches it act-first; anneal adds only cost.
+   (All our synthetic tasks, incl. the design-surface one — both arms independently found the
+   merge-then-interpolate ordering + cycle detection.)
+2. **Requires knowledge not in the evidence** (domain/operational facts learned by *running* the
+   system) → *neither* arm catches it pre-ship; production does. (beat-the-books **W1**: the poller
+   returned future-dated bets because "Azuro can't settle a bet before its game starts" — an
+   incident-learned fact, not in the code. **State the fact → both arms fix it; omit it → both miss.**
+   No gap either way.)
+3. **Derivable, but only with careful reasoning act-first would skip** → anneal's genuine band.
+   **Narrow at frontier capability, because opus reasons carefully even when acting fast.** We never
+   landed a clean band-3 single-task; every task fell in band 1 or band 2.
+
+**So a controlled *single-task* A/B ties** — not because anneal is worthless, but because its
+discriminating band is thin at this model's strength, and tasks small enough to score cleanly fall in
+band 1.
+
+**Where anneal WOULD measurably win — and why we can't cheaply measure it.** At **scale**: across
+many requirements, act-first's small per-item miss rate accumulates (drop ~1 of 20) while
+design-first's forced enumeration catches more — a thin per-item edge becomes a visible *aggregate*
+gap. But the many-requirement regime is large/messy and resists a clean deterministic oracle (the same
+wall that sank the synthetic pack, from the other side). The regime where the gap is real is the regime
+that can't be cheaply A/B'd.
+
+**The beat-the-books arm is real but confounded.** 3,080 pre-Clippy commits are genuine non-disciplined
+output and 833 bug-fixes are real shipped defects with ready-made oracles — but the pre-Clippy author
+was an unknown/mixed process (not same-model opus act-first), so "Clippy finds bugs there" is
+anneal-opus vs unknown-author (strawman risk), not the clean same-model A/B. Using a historical bug as
+a *fresh task for both arms* removes the confound — but reintroduces the band-1/band-2 wall (per W1).
+
+## The pivot (what replaces the controlled A/B)
+Keep the **observational** evidence that's already accruing; don't manufacture a lab verdict that
+structurally ties:
+1. **Dogfooding catch-log** — anneal-dev's convergence/verify passes catch real defects in its own
+   spec (session-10: F7 §3.1 over-attribution, F10 a mis-cite). Log these as they land; the rate is
+   the in-regime value signal.
+2. **The self-improvement loop** — beat-the-books' miss→root-cause→new-lens history
+   (`design-decision-implication-depth-gaps`) + unit-16's 71/72-clean audit are documented value,
+   misses included.
+3. **Scale-only future option** (if ever worth the cost) — one large multi-requirement task where
+   band-3 accumulates; accept judgment/messy scoring. Not cheap; not now.
+
+## Methodology bankable for any future resumption (operator, 2026-06-06)
+- **Act-first as the regime screen** ("run act-first until it fails"): escalate to the clippy arm
+  only where act-first actually breaks — no compute where there's no gap. **Guard:** that's a *search*
+  for the discriminating regime, NOT the scored set (scoring on act-first's misses is this doc's own
+  selection-bias trap). Score a fresh, pre-registered set of the discovered class.
+- **The harness is reusable** (`eval/`): frozen pack + oracles + well-formedness gate + arm briefs
+  (`eval/arms/`). Token + grounding-ratio capture works from the foreground subagent `<usage>` block.
+- **Real-bug task source** if scale-resumption: the 833 beat-the-books pre-Clippy fixes (each fix =
+  a real defect + a ready oracle); run *both arms fresh* on the reconstructed task to stay same-model.
+
+---
+
+## Goal (original v0 design — retained below the verdict for the resumption case)
 A pre-registered, falsifiable A/B(/C) test of: *anneal (design-first, evidence-grounded, cyclic)
 produces sounder outcomes at equal-or-lower token cost than act-first (edit/run/test), in the
 expensive-verification regime.* Must be capable of refuting anneal, not just confirming it.

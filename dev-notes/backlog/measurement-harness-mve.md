@@ -1,9 +1,13 @@
 # Measurement harness — wiring skill-creator's runner to the anneal MVE
 
-**Status:** OPEN — Step 0 done (`abcb0af`); **Step 1 task pack FROZEN** (10 silent-failure
-tasks + held-out oracles, all passing `eval/wellformedness.py`; pre-registration manifest
-`eval/PACK.md`). Next = **Phase 2** — build the arms (`arm_A_clippy` / `arm_B_actfirst`) + run
-the baseline A/B at k=3 (operator-gated: arm fairness is validity-critical). The **HOW** for the
+**Status:** ⏸ **HARNESS BUILT + PROVEN; the A/B it feeds is PARKED** (negative/structural verdict —
+see `anneal-empirical-validation-experiment.md` VERDICT 2026-06-06). The harness works end-to-end
+(frozen pack + oracles + well-formedness gate + arm briefs `eval/arms/`; opus both arms; token +
+grounding capture from the foreground subagent `<usage>`). What it *measured* is the point: **7
+act-first runs across 6 tasks all scored 1.0** — frontier opus one-shots tractable tasks, so the
+controlled single-task A/B ties (clippy same outcome, 2.5–3.4× cost). The three-band model + the
+pivot to observational evidence live in the experiment item. The harness is **retained, reusable** for
+a scale-resumption (the only regime where a gap would show). The **HOW** for the
 measurement gap: operationalizes `anneal-reliability-measurement.md` (the
 why/what — 3 metric axes) and `anneal-empirical-validation-experiment.md` (the
 A/B/C protocol — pre-registered, seeded-defect) by borrowing Anthropic

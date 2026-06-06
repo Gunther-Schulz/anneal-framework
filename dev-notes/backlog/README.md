@@ -132,7 +132,43 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
 (5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +4 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`, `anneal-self-improvement-loop`) → 56 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
-### ▶ Where we are + next steps (2026-06-06 session 10 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-06 session 11 — READ FIRST)
+
+**Session 11 — the empirical-validation proof thread reached its TERMINAL VERDICT: a controlled
+single-task A/B structurally TIES at frontier capability. PARKED with a negative/structural read (not a
+failure — an answer). Pivot to observational evidence. The `eval/` harness is built, proven, committed.**
+
+1. **Built + froze the Step-1 silent-failure task pack** (`eval/`, commit `9d14501`): 10 tasks + held-out
+   oracles + a shared harness + a well-formedness gate (all green) + `PACK.md` pre-registration. Then ran
+   the A/B cheaply (not 60 runs — the operator's "don't run 60" + "act-first until it fails" steer).
+2. **Result — a clean negative verdict.** **7 act-first runs across 6 tasks all scored 1.0** (5
+   silent-failure + 1 design-surface `config-resolver` built specifically to have a design surface — opus
+   still nailed the two-phase ordering on the fly). Clippy: same outcome, **2.5–3.4× the cost.** The
+   **three-band model** explains it (band 1 cheaply-derivable → both catch; band 2 needs outside
+   domain/operational knowledge → both miss, e.g. beat-the-books **W1** "Azuro can't settle future bets";
+   band 3 derivable-only-with-care = anneal's band, **narrow at frontier** because opus reasons carefully
+   even act-first). Full verdict + pivot in `anneal-empirical-validation-experiment.md` (VERDICT 2026-06-06);
+   harness state in `measurement-harness-mve.md`.
+3. **Surveyed beat-the-books** for a free control arm: it exists (3,080 pre-Clippy commits, 833 bug-fixes,
+   34 real Clippy runs) but is **confounded** (pre-Clippy author ≠ same-model opus act-first). The unit-16
+   audit (Clippy-on-Clippy) shipped **71/72 clean** — discipline ships clean, not a head-to-head catch.
+
+**▶ NEXT-UP — the proof-first ordering is RESOLVED (the "testing" leg returned PARKED/tie).** Consequences:
+- **Proof discipline going forward = observational, not a lab A/B:** keep a **dogfooding catch-log** (real
+  defects the convergence/verify passes catch in real runs — session-10's F7/F10 are the seed) + lean on the
+  documented **self-improvement loop** (beat-the-books depth-gaps + unit-16). This is the honest in-regime
+  signal; the controlled A/B is parked, reusable only for a **scale-resumption** (the one regime a gap shows).
+- **The bounded enforcement-fidelity batch is no longer "pre-test prep"** — it was gated behind "get to
+  representative-best, then test"; with testing parked it proceeds **on its own merits** (the convergence
+  soundness hole in `convergence-cycle-mechanical-enforcement` is real regardless). Resume the ▶ Campaign map
+  order (③ → ⑤ → …) — the proof thread no longer front-gates it.
+- **Methodology banked** (in the experiment item) for any resumption: act-first-as-regime-screen (+ the
+  selection-bias guard), the reusable `eval/` harness, the 833 beat-the-books fixes as a real-bug task source.
+
+*(Session 10 block below — superseded; history. Its ▶ NEXT-UP "TESTING / proof-first order" is the thread this
+session resolved.)*
+
+### ▶ Where we are + next steps (2026-06-06 session 10 — superseded by session 11; history)
 
 **Session 10 — shipped the framework-intent Mechanism clause + a deep platform / prior-art grounding;
 groomed the campaign map (orphans placed). Ends /clear-clean (pushed).**
