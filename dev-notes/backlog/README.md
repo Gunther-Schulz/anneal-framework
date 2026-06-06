@@ -126,7 +126,7 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
   `anneal-adhoc-use-and-graduation` · `planner-instance-exploration` · `generalize-sharpening-skill`
 
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
-(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open.** Nothing dropped.
+(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open.** Nothing dropped.
 
 ### ▶ Where we are + next steps (2026-06-06 session 9 — READ FIRST)
 
@@ -160,12 +160,18 @@ shipped `structural-change-dependent-enumeration`) · `skill-craft-antipatterns-
   (`core-md-bloat-measure-then-cut` [re-measure post-`f74b145`], `verified-integrity-consolidation`,
   `surface-non-task-observations`) → then ⑤. The session-9 spawned items slot mostly **tier-4
   (framework-changes) + the meta bucket**; they are **NOT auto-next**.
-- **The session-9 cluster is coherent but DELIBERATE:** the brake / proving-questions / depth-gaps /
-  replacement-side-effect / skill-craft-loaded-but-inert all orbit **design-quality + adherence
-  enforcement**. `skill-craft-antipatterns-loaded-but-inert` is the highest-leverage BUT is a
-  skill-craft-canonical cycle (triggers skill-craft's self-review mandate; classify-first) → **open
-  it as its own deliberate session, not a campaign drain.** Operator's call whether to elevate this
-  cluster above ③/⑤.
+- **The session-9 cluster is coherent and now harder to defer:** the brake / proving-questions /
+  depth-gaps / replacement-side-effect / skill-craft-loaded-but-inert / **`convergence-cycle-mechanical-enforcement`**
+  all orbit **design-quality + adherence enforcement** — and the last one (clippy Unit-18: *the
+  convergence cycle, the un-fakeable-bind soundness mechanism, is silently skippable in auto-battle*)
+  raises the stakes from "quality" to "soundness." Two of these (`convergence-cycle-mechanical-enforcement`,
+  `skill-craft-antipatterns-loaded-but-inert`) share one diagnosis — **behavioral rules that are
+  loaded but don't fire; fix = structural enforcement / trigger-sharpening, NOT adding rules.**
+  `skill-craft-antipatterns-loaded-but-inert` is a skill-craft-canonical cycle (its self-review
+  mandate; classify-first); `convergence-cycle-mechanical-enforcement` is method-kernel (anneal-dev +
+  operator soundness). **Operator's call whether to elevate this cluster above ③/⑤ — I lean yes**
+  (soundness-enforcement > ③'s remaining housekeeping), but it's deliberate (kernel + skill-craft
+  cycles), so it's a fresh-session decision at the re-evaluate gate, not a now-lock.
 - **Quick wins (no loopback):** `F-prov-framing` (the 4-site "non-tracked run-inputs" terminology
   cleanup from `run-state-tracked-by-default`) — fold into the next kernel touch.
 
