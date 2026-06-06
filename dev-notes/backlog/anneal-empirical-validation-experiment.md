@@ -129,9 +129,20 @@ overclaim:**
   - **The vanilla→adhoc step IS clean** — identical prompts, identical "be thorough" framing, differing
     *only* in the two focused directives (trace-to-producer + follow-to-consumers), adhoc-only. So the
     **provenance-lens result (2/5→5/5) is the one fully-controlled finding** and stands.
-  - **Clean redo (if runs resume):** all arms identical + "be thorough" held constant — A) no disciplines,
-    B) +generic, C) +generic+focused — isolating generic (A→B) and focused (B→C); a separate
-    "efficient+none" arm answers package-vs-default on the side.
+  - **SECOND FLAW — the task wasn't blind.** Every arm's prompt enumerated the pipeline steps ("how it
+    *matches* a score to a pick…") and hinted "each *kind* of pick / *right score*" — **pre-directing
+    attention** at the matching layer (market_id) and the kind/score mismatch (period). A blind prompt
+    would be just "review this code for correctness, report bugs." This crutch is *constant across arms*
+    (so the deltas survive) but **most helps the weakest arm** (a disciplined arm generates that direction
+    itself; act-first doesn't) → it **compresses the gaps → understates the discipline's value.** Pulls
+    *opposite* to the effort confound (which inflated the bottom step), so exact magnitudes are unreliable.
+    And conceptually it tests the wrong thing: the discipline's whole claim is that it *generates*
+    investigative coverage unprompted — a leading task does that work for the baseline.
+  - **Clean redo (if runs resume) — needs a full re-run, not a patch:** (i) **blind task** — "review this
+    code for correctness, report bugs", no step-list / no kind-score hint; (ii) **effort held constant**
+    for all arms; (iii) method-block the *only* variable — A) none, B) +generic, C) +generic+focused.
+    Isolates generic (A→B) and focused (B→C). A separate "efficient" arm answers package-vs-default on the
+    side. (My "just add arm A" idea does NOT fix this — arm A would still inherit the leading task.)
 - **Bugs were real** (market_id / handicap / team_qualifier / closing_lines, all traced + corroborated
   by the project's own Unit-27 fix for handicap+team_qualifier; market_id + closing_lines real-latent,
   unfixed). Confirms the *regime* is genuine — just that frontier act-first reaches it too, given enough
