@@ -205,6 +205,11 @@ instruction, not "anneal"); vary **only the process**:
 - Blind task, no effort framing, k≥5, same seeded-bug scoring. Isolates the **machinery** (cycles +
   independence) from the **prompt** — the only design that measures the framework, not a checklist.
 - Also re-test the **provenance directive** blind (adhoc-blind ×5) to see if *that* result survives blinding.
+- **Distributed-lens arm (operator idea, crowding mitigation):** broad-main agent **lens-free** + a
+  fresh-context **per-lens** agent, findings merged — vs stacked-in-one (adhoc). Tests whether distributing
+  lenses across *agents* recovers the breadth stacking loses while keeping focused depth (and yields the
+  fresh-context independence for free). Gated on the crowding ablation confirming crowding is real. See
+  `lens-crowding-vs-broad-search.md`.
 
 ## Addendum 3 (session 11 close) — the legacy monolithic clippy: a REAL arm + the structure-vs-additions factorial
 **Operator datapoint (observational, daily usage, uncontrolled — but a strong prior):** the clippy repo

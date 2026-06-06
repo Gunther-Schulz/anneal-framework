@@ -74,3 +74,11 @@ modern; the anneal additions *further improved* results in daily use. So the ope
 additions worth it" (operator: yes) but **whether a controlled one-shot test can even capture this** — our
 one-shot reviews came up null, which likely indicts the regime/instrument (one-shot ≠ sustained real use),
 not the framework. See experiment-doc Addendum 3.
+
+## Distributed-lens arm (crowding mitigation — gated; operator idea 2026-06-07)
+Variant for the crowding test (`../../dev-notes/backlog/lens-crowding-vs-broad-search.md`): instead of
+stacking the focused directives into one agent (current adhoc), **distribute across agents** — a
+**broad-main agent with NO lenses** (preserves the omission sweep) + **one fresh-context lens-agent per
+focus** (e.g. a provenance-agent), **findings merged**. Tests whether distribution recovers the broad
+coverage stacking loses while keeping the focused depth (and gives the fresh-context independence for
+free). Build/run only if the crowding ablation confirms crowding is real — else cost for no gain.

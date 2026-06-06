@@ -52,11 +52,31 @@ the cycles, not against them — the process buys back the breadth a single focu
 - **Reframes the self-improvement anti-accretion rule:** don't only prune lenses globally — **distribute**
   them across passes (a fresh-context pass per focus) rather than piling them into one.
 
-## The test that would settle it (queued; runs paused 2026-06-06)
-Controlled ablation, more reps (k≥10): adhoc with **only** the provenance lens vs **only** generic-
-falsify vs **both** — measure the *omission*-class rate (period) across them. If "both" < "only-falsify"
-on omissions beyond noise → crowding is real. Pair with a **directive-count gradient** (1 lens / few /
-many) vs omission-catch rate. (Runs paused per operator; this is the queued next experiment if resumed.)
+## Candidate mitigation (gated on the hypothesis): distributed lens-agents (operator idea, 2026-06-07)
+If crowding is real, distribute lenses across **agents**, not prompt-lines:
+- **Main / investigative agent(s): NO lenses loaded** → the broad falsify-every-kind sweep stays
+  uncrowded (preserves omission-catching).
+- **One fresh-context lens-agent per focus** → focused depth on its target class, on its own attention budget.
+- **Merge** broad + focused findings (dedup) at convergence.
+
+Two benefits in one move: lens-focus-without-crowding **and** the fresh-context *independence* the verify
+arm is about (an agent that didn't form the original belief). Fits anneal's existing shape — the
+convergence/verify pass is already a separate fresh-context agent; lens-agents extend it. The clean form
+of the corollary above (distribute across passes → distribute across **agents**).
+- **Gating:** value is conditional on crowding being real (unproven) — if it's noise, this is just cost.
+  Build only **after** the test below confirms crowding; don't build speculatively.
+- **Cost is bounded:** parallelizable; spawn a lens-agent only for *present/relevant* bug-classes (not all,
+  always); and if crowding is real the cost *recovers* value stacking loses — not pure overhead.
+
+## The test that would settle it — AND test the mitigation (queued; runs paused)
+Controlled ablation, more reps (k≥10), arms: **only-provenance** · **only-generic-falsify** · **stacked**
+(both in one agent = current adhoc) · **distributed** (broad-main lens-free + a fresh-context
+provenance-agent, findings merged). Measure BOTH the *omission* rate (period) and the *provenance* rate.
+- stacked < only-falsify on omissions (beyond noise) → **crowding is real.**
+- distributed ≥ only-falsify on omissions AND ≥ stacked on provenance → **distribution mitigates it**
+  (recovers broad coverage while keeping focused depth) — confirms the operator's mitigation.
+One design tests both. Pair with a **directive-count gradient** (1 / few / many in one agent) vs omission
+rate. (Runs paused per operator; queued next experiment if resumed.)
 
 ## Relates to
 - `anneal-empirical-validation-experiment` — the source A/B + the per-bug mechanism (3-arm ×5 data).
