@@ -5,11 +5,14 @@ The validation layer over the methodology: does an anneal-disciplined run
 than an act-first agent, in the regime anneal is for — expensive/late
 verification, i.e. silent-failure tasks?
 
-**Status:** spec only — not yet built. This README is the build plan; the
-decision and rationale live in `dev-notes/backlog/measurement-harness-mve.md`.
-The designs it implements: `dev-notes/backlog/anneal-reliability-measurement.md`
-(metrics) and `dev-notes/backlog/anneal-empirical-validation-experiment.md`
-(A/B/C protocol).
+**Status:** Step 0 done (seam proven, `abcb0af`); Step 1 task pack **FROZEN** —
+10 silent-failure tasks + held-out oracles, all passing the well-formedness gate
+(`python eval/wellformedness.py`). The frozen pack + its rubric argument live in
+`PACK.md`. Still to build: the arms (`arm_A_clippy` / `arm_B_actfirst`) + the k=3
+dispatch (Phase 2, operator-gated). The decision and rationale live in
+`dev-notes/backlog/measurement-harness-mve.md`. The designs it implements:
+`dev-notes/backlog/anneal-reliability-measurement.md` (metrics) and
+`dev-notes/backlog/anneal-empirical-validation-experiment.md` (A/B/C protocol).
 
 ## Approach: borrow the runner, keep our design
 We do **not** build a runner. Anthropic's `skill-creator`
@@ -24,22 +27,26 @@ metrics, and tasks.
 directory names (`arm_A_clippy`, `arm_B_actfirst`). **Reuse the aggregation;
 replace the scorer** — `summary.pass_rate` becomes seeded-defect catch-rate.
 
-## Proposed layout
+## Layout
 ```
 eval/
 ├── README.md                 # this file
+├── PACK.md                   # the FROZEN pre-registered task pack + rubric argument
+├── wellformedness.py         # pre-freeze 3-way gate over every task
 ├── vendor/                   # copied from anthropics/skills (provenance noted)
 │   ├── aggregate_benchmark.py
 │   └── schemas.md
 ├── arms/
-│   └── actfirst_runner.md    # arm-B agent brief                      (build)
+│   └── actfirst_runner.md    # arm-B agent brief                      (Phase 2)
 ├── oracle/
-│   └── <task>_oracle.py      # deterministic seeded-defect scorer →
-│                             #   grading.json                          (build)
+│   ├── _harness.py           # shared grade/load machinery
+│   ├── <task>_oracle.py      # deterministic held-out scorer → grading.json
+│   └── fixtures/             # reference correct fixes (gate-only; arm never sees)
+│       └── <task>_fixed.py
 ├── tasks/
-│   └── <task>/               # prompt + weak oracle + held-out oracle  (build,
-│                             #   pre-registered)
-└── runs/
+│   └── <task>/               # prompt.md (states full requirement) + solution.py
+│                             #   (seeded-defect starter the arm edits)
+└── runs/                     # gitignored
     └── <bench>/<task>/<arm>/run-K/{grading.json,timing.json}
 ```
 

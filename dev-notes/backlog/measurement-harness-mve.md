@@ -1,7 +1,9 @@
 # Measurement harness — wiring skill-creator's runner to the anneal MVE
 
-**Status:** OPEN — Step 0 done (seam proven; scaffold committed `abcb0af`); next = Step 1
-task pack (2026-06-05). The **HOW** for the
+**Status:** OPEN — Step 0 done (`abcb0af`); **Step 1 task pack FROZEN** (10 silent-failure
+tasks + held-out oracles, all passing `eval/wellformedness.py`; pre-registration manifest
+`eval/PACK.md`). Next = **Phase 2** — build the arms (`arm_A_clippy` / `arm_B_actfirst`) + run
+the baseline A/B at k=3 (operator-gated: arm fairness is validity-critical). The **HOW** for the
 measurement gap: operationalizes `anneal-reliability-measurement.md` (the
 why/what — 3 metric axes) and `anneal-empirical-validation-experiment.md` (the
 A/B/C protocol — pre-registered, seeded-defect) by borrowing Anthropic
@@ -16,14 +18,19 @@ plumbing. Operational home: `eval/` (see `eval/README.md`).
   **Plumbing-only result:** both arms caught the defect (catch-rate Δ0); the discipline arm
   cost +1065 tokens — the cheap-oracle null this thread already predicts. The task is the
   lesson: too easy / wrong regime.
-- **Step 1 — in progress (2026-06-06).** Building the genuine silent-failure task pack.
-  First exemplar **`merge-config` built + verified in-regime** (`eval/tasks/merge-config/` +
-  `eval/oracle/merge_config_oracle.py`): seeded defect `base.update(override); return base`
-  (mutates + aliases a shared-default `base`). 3-way well-formedness check passes — weak check
-  green on the defect (silent), held-out oracle catches it (0.5), correct fix scores 1.0. Not yet
-  committed; not yet run through the arms.
-  - **Next:** build the rest of the pack to the rubric below (~10), then **pre-register/freeze**
-    + run arms A/B at k=3.
+- **Step 1 — task pack done + FROZEN (2026-06-06).** The full silent-failure pack: **10 tasks**,
+  each with `tasks/<slug>/{prompt.md,solution.py}` (seeded-defect starter) + a deterministic
+  held-out `oracle/<slug>_oracle.py` (built on the new shared `oracle/_harness.py`). Diverse
+  defect classes (mutation, lost-ordering, missing-tiebreak, delimiter-escaping, non-idempotency,
+  case-folding, empty-input, forgotten-bound, wrong-rounding-rule, dropped-partial-page) so a
+  measured effect isn't a single-bug artifact. Reference correct fixes live gate-only in
+  `oracle/fixtures/` (arm never sees them). **`eval/wellformedness.py` gates all 10 GREEN** (weak
+  check green on the defect; held-out < 1.0 on the defect; correct fix == 1.0). Pre-registration
+  manifest = `eval/PACK.md` (frozen by rubric, NOT by performance — selection-bias guard).
+  `discount-floor` is documented-excluded (the criterion-4 null). merge-config defect re-scores
+  0.5 under the migrated harness (behavior preserved).
+  - **Next (Phase 2, operator-gated):** build the arm briefs + dispatch A/B at k=3 (~10×2×3 ≈ 60
+    runs); the arm-fairness / anti-strawman design is decided with the operator before compute spend.
 
 ## Task-pack rubric (the load-bearing design — added 2026-06-06)
 Step 0's `discount-floor` (floor division) gave a null because it failed criterion **4**: a
