@@ -43,31 +43,50 @@ platform-native.
    (`purpose-mechanism-clause`): **anneal is the discipline of *which* rigor to enforce structurally, on
    platform primitives.**
 
-## L1 concrete cut/keep map (action 1 detail, 2026-06-06)
-Grounded in a direct read of skill-craft (`~/dev/Gunther-Schulz/skill-craft/plugin/skills/skill-craft/`).
-**Key fact: skill-craft already admits the redundancy** — its `SKILL.md` "Companion: official plugin-dev"
-section says `references/plugin-engineering.md` "covers only partially" what the official plugin-dev
-covers authoritatively. The slim *finishes a delegation skill-craft already started.*
+## L1 concrete cut/keep map — FULLY GROUNDED (2026-06-06; supersedes the first coarse pass)
+**Correction:** the first pass (and a mid-course revision) were BOTH wrong — a full clause-by-clause
+read of all of skill-craft + a direct check of plugin-dev overturned the headline. **skill-craft is
+mostly delta; the redundant surface is small + specific; and skill-craft already delegates the big
+mechanics** (SKILL.md "Companion: official plugin-dev"; `plugin-engineering.md` self-scoping to "what
+plugin-dev does NOT cover"; Layer 1 "path mechanics belong to plugin-dev"; `review-checklist.md`
+"Structure … validated via plugin-dev"). Basis-rule lesson: a heading-inferred map that *felt* right
+("a lot is already solved") was materially wrong; only reading every section caught it.
 
-**Cut / thin to a cited pointer (redundant with official baseline):**
-- `references/plugin-engineering.md` (**382 lines** — marketplace/layout/install/distribution) →
-  ~40-line pointer to official plugin-dev + Agent Skills docs. Biggest single win.
-- PROCEDURE Layer 1 (plugin-structure plumbing) → pointer (SKILL.md: "most authors get layer 1 right").
-- PROCEDURE Layer 3's progressive-disclosure teaching → cite the official 3-tier model.
-- `evaluation.md` Tier-1 triggering *mechanics* + the `/eval-skill` runner → lean on skill-creator's
-  runner + description-improver (already vendored); keep the framing, drop the re-built plumbing.
+**Cut (genuinely redundant — small, specific):**
+- `plugin-engineering.md` **"Plugin layout / Directory tree / Key rules / plugin.json / README
+  structure"** (≈lines 60-113) → redundant with `plugin-dev:plugin-structure` (`manifest-reference.md`)
+  + `documentation-patterns.md`; cut to a cite. **NOT the whole 382-line file.** [Checked: plugin-dev's
+  `marketplace-considerations.md` is command-distribution UX — a *different thing* from skill-craft's
+  marketplace-setup/activation knowledge.]
+- PROCEDURE **Layer 3 lazy-load mechanic** (lines 326-329) → cite official; **KEEP the activation-gate
+  qualifier** (lines 329-331: load-bearing refs gated at activation, not on-demand — anneal delta, the
+  loaded-but-inert trap) + the "File categories / loading boundary" section (Category 2 never-loaded).
+- `evaluation.md` **Tier-1 triggering mechanics + the `/eval-skill` runner** → overlaps
+  `plugin-dev:skill-development`'s embedded `skill-creator-original.md` + the description-improver;
+  consolidate/cite. **KEEP the Tier-2 signature framing** (un-fakeable-artifact applied to eval).
+- PROCEDURE **Layer 1** plumbing — already thin + already delegating; near-zero left to cut.
 
-**Keep — the genuine delta (why skill-craft exists):**
-- `references/anti-patterns.md` (325 lines) — the failure-mode corpus; nothing official canonicalizes it.
-- PROCEDURE Layer 2 "Enforcement mechanics" (closed enums / must-verbs / evidence-bearing artifacts) —
-  the structural-enforcement form discipline; the **bridge to the method layer**.
-- Layers 4-5 + `self-review.md` (evolution, reflexivity, self-review mandate).
-- `evaluation.md` Tier-2 behaviour-delta *signature* framing (un-fakeable-artifact applied to eval).
+**Keep (genuine anneal delta — the bulk):**
+- PROCEDURE **Layer 2** (un-fakeable artifacts; judgment-call mitigation; blocking gates incl. the
+  reference-loading gate; forcing functions; output/boundary/authoring/portability discipline) — the
+  core; the bridge to the method layer. Confirmed wholesale.
+- PROCEDURE **Layers 4-5** (evolution, self-review mandate, iterative-narrowing, abstraction check,
+  reflexivity) + `self-review.md`.
+- `anti-patterns.md` (failure-mode corpus + Form-choice / Edit-as-Pareto / Skip-rationalization).
+- `writing-by-skill-type.md` (skill-type taxonomy + Path-1/2 + judgment-procedure discipline).
+- `evaluation.md` Tier-2 + Tier-3.
+- `plugin-engineering.md` **distribution (Path A/B) / dev-link symlink / edit-source-not-cache /
+  two-pin activation / Common-Mistakes gotchas / when-NOT-to-use** — operational delta plugin-dev
+  doesn't carry.
+- `review-checklist.md` (13-item form review; already delegates mechanical conformance to plugin-dev).
 
-**Slim principle:** skill-craft carries only the delta over {Agent Skills docs + plugin-dev +
-skill-creator}. ~20-25% smaller, concentrated in plumbing; value-density up. **Discipline (basis rule):**
-every cut cites the official doc that now covers it → an anneal-dev + skill-craft-self-review cycle, not
-a blind delete.
+**Net:** a targeted tune-up (~80-120 lines across a few spots) + an explicit-baseline-citation
+discipline — NOT a 20-25% gut. Lower-priority than first implied (the delegation is already mostly
+done); the value is the citation discipline (each cut names the official file it defers to → drift
+caught) + the 2-3 concrete cuts. **Residual check the slim cycle owes:** a per-clause diff of
+`plugin-engineering.md`'s layout section vs `plugin-dev:plugin-structure`. **Discipline (basis rule):**
+every cut cites the official file that now covers it → anneal-dev + skill-craft self-review, not a
+blind delete.
 
 ## L3 prior-art investigation (action 3 detail — scope, not yet run)
 **Warranted, and distinct from the session-4 research.** Session-4 framed it as design-first-vs-act-first
