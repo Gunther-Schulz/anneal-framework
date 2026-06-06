@@ -62,7 +62,7 @@ section below is retained for per-item detail + the fix-before-change rationale.
 a campaign is a *view*, not item identity, so no per-campaign folders; `ls` is still the index.
 
 **Order:** ~~②~~ ✅ → ③ → ⑤ → ④a → ④b → ①-light → ①-heavy → ⑥ (last; gated). ⑦ practiced-not-run throughout.
-**(② SHIPPED; ③ run 1 SHIPPED 2026-06-05 — `014b7b0`, the enforcement-fidelity bundle: D3.1 deferred-pending-authoring shipped + 2 dispositions closed/watched. ③ CONTINUES — remaining items as later runs: `core-md-bloat-measure-then-cut` (needs re-measure post-`f74b145`) · `verified-integrity-consolidation` (undesigned) · `surface-non-task-observations` (undesigned). Side-quest `v-entry-is-post-ship-only` **PAUSED mid-run** (design reopened — α/β lifecycle fork; resume: re-ground, rework D2, re-converge; tracker `.anneal-dev/runs/v-entry-is-post-ship-only.md`).)**
+**(② SHIPPED; ③ run 1 SHIPPED 2026-06-05 — `014b7b0`. ③ side-quest `v-entry-is-post-ship-only` **SHIPPED 2026-06-06** (`98e9354`/`5910cf4`, archived — V-entries are post-ship-only). ③ CONTINUES — remaining undesigned items: `core-md-bloat-measure-then-cut` (re-measure post-`f74b145`) · `verified-integrity-consolidation` · `surface-non-task-observations`. **Also shipped 2026-06-06 (out-of-campaign, operator-driven):** the runs-data formalization `run-state-tracked-by-default` (`d0f479a`, method-kernel — run-state TRACKED by default). See session-9 block below for the spawned-item cascade.)**
 
 **Before each campaign starts** *(operator discipline, 2026-06-05):* (1) **re-ground** — invoke anneal-dev per
 CLAUDE.md "Development process grounding" (it loads its own foundations + lenses; never from summary or memory);
@@ -126,9 +126,50 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
   `anneal-adhoc-use-and-graduation` · `planner-instance-exploration` · `generalize-sharpening-skill`
 
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
-(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open.** Nothing dropped.
+(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open.** Nothing dropped.
 
-### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-06 session 9 — READ FIRST)
+
+**Session 9 — two runs SHIPPED + a cascade of operator-driven spawned findings; ends /clear-clean (tree committed).**
+
+1. **`v-entry-is-post-ship-only` SHIPPED + archived** (`98e9354`/`5910cf4`). Resumed from PAUSED;
+   operator chose β; reworked cycles 3–9 (convergence caught a real over-narrow axis + a collision;
+   operator flagged overthinking → minimal design). V-entries are now **post-ship effect-watches
+   only** (validation-watch README + CLAUDE.md filing-shape); un-implemented gaps → backlog.
+2. **`run-state-tracked-by-default` SHIPPED** (`d0f479a`, method-kernel). The runs-data decision
+   (operator-driven, multi-step): the run-state slot is **TRACKED by default, not gitignored**
+   (`instantiation-guide.md §5` + `persistence.md` + `bindings.md` + `core.md §4.2.4`); per-instance
+   binding (anneal-dev on; framework doesn't mandate downstream); the in-place integrity +
+   separate-copy integration **exclude the run-state dir** (work-product-vs-bookkeeping). **`.anneal-dev/runs/`
+   is now tracked in THIS repo** (`5910cf4`) — run history version-controlled (resume survives
+   clone/clean). Render-debt queued (ALL instances; not behavior-preserving).
+
+**Spawned this session (all filed + relate-linked):** `convergence-surfaced-finding-action-brake`
+(gold-plating brake — additive-reflex w/o requirement-anchor, n=2) · `post-run-review-nonsensical-cycle-probe`
+(catch ANY nonsensical cycle) · `post-run-review-failure-class-register` EXTENDED (the operator's
+**proving-questions as a design-quality probe-class**) · `design-decision-implication-depth-gaps`
++2 datapoints · `replacement-side-effect-behavior-parity` (clippy Unit-5 — behavioral-parity must
+name side-effects invisible to reference-search; grep the bodies not the callers; sibling of the
+shipped `structural-change-dependent-enumeration`) · `skill-craft-antipatterns-loaded-but-inert`
+(skill-craft's anti-patterns describe-but-don't-fire; fix = trigger-sharpening, NOT adding anti-patterns) ·
+`runs-data-preservation` (DECIDED; F-prov-framing cleanup follow-up open) · `validation-watch-entry-conformance-sweep`
+(v-entry D6) · `self-hosting-inplace-integrity-clean-precondition` +datapoint (run-state-tracking compounds it; D7 = subset fix).
+
+**▶ NEXT-UP (RE-GROUND + RE-EVALUATE first, per the discipline above):**
+- **Default per the order (③ → ⑤ → …):** ③ CONTINUES — the 3 remaining undesigned items
+  (`core-md-bloat-measure-then-cut` [re-measure post-`f74b145`], `verified-integrity-consolidation`,
+  `surface-non-task-observations`) → then ⑤. The session-9 spawned items slot mostly **tier-4
+  (framework-changes) + the meta bucket**; they are **NOT auto-next**.
+- **The session-9 cluster is coherent but DELIBERATE:** the brake / proving-questions / depth-gaps /
+  replacement-side-effect / skill-craft-loaded-but-inert all orbit **design-quality + adherence
+  enforcement**. `skill-craft-antipatterns-loaded-but-inert` is the highest-leverage BUT is a
+  skill-craft-canonical cycle (triggers skill-craft's self-review mandate; classify-first) → **open
+  it as its own deliberate session, not a campaign drain.** Operator's call whether to elevate this
+  cluster above ③/⑤.
+- **Quick wins (no loopback):** `F-prov-framing` (the 4-site "non-tracked run-inputs" terminology
+  cleanup from `run-state-tracked-by-default`) — fold into the next kernel touch.
+
+### ▶ Where we are + next steps (2026-06-05 session 8 — superseded; history)
 
 **⏵ Session 8 *continued* (2026-06-05, later) — sequencing-enforcement gap found + skill-craft L3 fix
 shipped; L1 anneal-dev fix in progress; the Move-1-tail run PARKED.** While running the Move-1 tail
