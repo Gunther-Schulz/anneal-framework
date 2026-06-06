@@ -158,6 +158,54 @@ Net: the real-codebase run **did not** overturn "controlled single-task A/B ties
 The honest value remains observational + the self-improvement loop (this run *is* an instance: a real
 review surfaced a real latent bug-class and a concrete lens to close it).
 
+## Addendum 2 (session 11 cont.) — the blind re-run COLLAPSES the gap; the prompt-vs-process reframe
+The operator drove three rigor fixes in sequence, each shrinking the apparent effect: effort-framing
+confound → non-blind task → prompt-asymmetry. The clean **blind** re-run (identical blind task — "review
+this replay engine for correctness, report bugs", **no** step-list / kind-score hint; **no** effort
+framing; the generic-disciplines block the *only* difference) ×5 per arm:
+
+| bug | act-first-blind | vanilla-blind |
+|---|---|---|
+| market_id | **4/5** | 2/5 |
+| team_qualifier crash | 2/5 | **4/5** |
+| handicap | 2/5 | **4/5** |
+| closing_lines | 3/5 | 2/5 |
+| period (omission) | 0/5 | 0/5 |
+| mean (5-bug set) | **~2.2** | **~2.4** |
+
+**The "discipline helps" gap (non-blind 2.6→3.4) collapsed to a tie (2.2 vs 2.4).** Blind + no effort
+framing, the disciplines block barely moves *net* catch — it mostly **redistributes which bugs are
+found** (act-first-blind → the severe market_id matching bug 4/5; vanilla-blind → the spread-derivation
+bugs 4/5). So the earlier "dose-response ladder" was **substantially a framing artifact**: the non-blind
+step-list steered everyone to the derivation function (inflating the disciplined-looking arms) and the
+effort confound widened it. Period 0/5 both (omission robustly missed). (n=5, noisy, judgment in scoring
+"uncertain" flags — the gap-collapse is the qualitative headline.)
+
+**THE REFRAME (operator, correct):** every run here varies the **prompt**, single-pass throughout — so
+they test *"does a review checklist in the prompt help?"* (answer: barely, once blind), **NOT** *"does
+anneal the framework help?"*. Anneal-the-framework is a **process** — structured multi-pass +
+**independent fresh-context verification** + convergence — and it is **untested**. A prompt instruction
+is not a method; and if the whole value were a 4-line block it would argue *against* the heavy framework
+— yet blind, even that block nets ~nothing. The one apparent clean result (provenance directive
+2/5→5/5, Addendum 1) was *also* on the non-blind task → **also needs a blind re-test before it's trusted.**
+
+**Net honest state after the rigor fixes: no robustly-established positive result survives.** The
+prompt-discipline gap collapsed blind; the provenance-directive result is untested-blind; the
+framework-PROCESS is untested entirely. (This supersedes Addendum 1's "discipline measurably helps" and
+the dose-response ladder — those were prompt-framing artifacts, not framework results.)
+
+## The experiment that would actually test the framework (prompt-constant, process-varied)
+Hold the prompt **identical** for both arms (both get the disciplines block — it's good-faith
+instruction, not "anneal"); vary **only the process**:
+- **Arm A — single pass:** one review, stop.
+- **Arm B — the real anneal cycle:** investigate pass → **fresh-context independent verify/falsify pass**
+  (a *separate* subagent that does not see Arm-A's reasoning) → loop to convergence. Orchestrated across
+  dispatches (a single subagent can't faithfully self-run independent verification — same-context
+  self-verify under-detects, the framework's own finding).
+- Blind task, no effort framing, k≥5, same seeded-bug scoring. Isolates the **machinery** (cycles +
+  independence) from the **prompt** — the only design that measures the framework, not a checklist.
+- Also re-test the **provenance directive** blind (adhoc-blind ×5) to see if *that* result survives blinding.
+
 ---
 
 ## Goal (original v0 design — retained below the verdict for the resumption case)
