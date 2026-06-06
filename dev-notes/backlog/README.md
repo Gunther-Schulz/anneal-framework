@@ -176,12 +176,24 @@ accept the current honest state and close the proof thread.**
 - **The test** (designed in experiment-doc Addendum 2): prompt held **IDENTICAL** for both arms; vary
   **only the process** — Arm A single-pass vs Arm B real anneal cycle (investigate → *separate fresh-context*
   independent verify/falsify → converge); blind; k≥5; + a **blind re-test of the provenance directive**.
-- **FOR:** the omission is missed by *every single-pass* arm, and the framework's named mechanism is
-  "fresh-context catches what the first pass missed" — a specific, falsifiable hypothesis (not "try harder").
-- **AGAINST (take seriously):** a **goalpost-moving pattern** — every null, the AI proposed "the real test
-  is one level deeper" (synthetic→real→blind→process); and the prompt-null is partial evidence the process
-  (which just *enforces* those disciplines) won't help either. **Discount the AI's enthusiasm to run it.**
-  If run, **pre-commit it as TERMINAL** (a tie/miss = the answer; no "one more level").
+- **Why it's the *forced* question, NOT goalpost-moving:** the disciplines-*as-prompt* are now shown
+  ~inert (blind tie). Anneal = prompt-disciplines + process; eliminate the first → value, *if any*, is in
+  the process. So this is **process-of-elimination**, not "escalate to a regime where it might still win."
+  (The synthetic→real→blind steps were *confound fixes*; this is a *component elimination*. Supersedes the
+  earlier "goalpost-moving / discount enthusiasm" framing.)
+- **The real lever is *independence*, not "cycles" per se:** the vanilla disciplines already contain
+  "verify/falsify"; a single agent self-applying them added nothing. What a cycle adds is a **fresh context
+  that didn't form the original belief** — someone who didn't make the mistake checking for it (the
+  framework's named mechanism; we watched it catch F7/F10 in the spec this session). Hypothesis:
+  **independent verify > self-verify, disciplines held equal.**
+- **But hold a genuine null prior:** if self-applied disciplines are inert, the cycle mostly *enforces those
+  same inert disciplines* → it may not help either, in which case the honest read is "anneal adds little on
+  this task class." Run it **open to the null**, **pre-committed as TERMINAL** (a tie/miss = the answer; no
+  "one more level"). (Minor orthogonal candidate: a specific **lens** like the provenance directive —
+  untested-blind — but that's a checklist item, not the framework.)
+- **High-information either way:** null → clean kill on catch-rate for this task class; positive → pinpoints
+  the value as *independence*, deliverable minimally (bolt on one independent verify pass) rather than the
+  whole heavy apparatus.
 - **Operational lesson:** dispatch **≤5 parallel** subagents (10-at-once → server rate-limited 5).
   beat-the-books harness recipe: `git archive <pre-fix-commit>` → strip `docs/ .clippy/ .git` (they leak
   the fix) → keep `src/ tests/` → dispatch ≤5. Scratch dirs were `/tmp/bt-eval/*` (ephemeral — findings are
