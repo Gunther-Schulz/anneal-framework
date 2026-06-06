@@ -102,6 +102,26 @@ overclaim:**
   signal). All **single-pass**, which *understates* anneal (multi-pass cycles compound) → 3.4/4.4 are
   conservative floors. The **clippy (heavy-machinery) arm was run single-pass / same-context** → undersold
   (its fresh-context convergence cycles never engaged); so **lightweight-vs-heavy is untested**, not answered.
+- **Per-bug mechanism (why the cells differ — each bug-shape needs a different catch):**
+  (a) *wrong logic inside the focal function* (handicap) → **everyone** catches it (it's in the function
+  the task makes you read). (b) *misleading-provenance across a boundary* (market_id, closing_lines) →
+  caught **only** by explicit trace-to-producer; the variable name (`pinnacle_market_id`) and docstring
+  *lie*, so generic "ground your claims" trusts the name and lands at act-first's rate (both 2/5) — the
+  provenance lens (adhoc) lifts it to 5/5. (c) *omission / dropped dimension* (period) → caught by
+  **broad falsify-each-kind** (vanilla 3/5), invisible to efficient review (0/5) since there's no wrong
+  line, only a missing one. So **act-first gets (a); generic discipline adds (c); the provenance lens
+  adds (b)** — complementary, not "more = better."
+- **The one anomaly = an open question:** period **3/5 vanilla > 2/5 adhoc** — almost certainly n=5
+  noise, but *possibly* a real **crowding** effect (adhoc's extra focused directives pull attention
+  toward data-flow tracing, away from the broad falsification that catches omissions). If real, focused
+  lenses and broad search *trade off* — piling on directives isn't free. **Untested** (would need
+  adhoc-with-only-provenance vs only-falsify, more reps); flagged, not claimed.
+- **Arm-framing confound (on the act-first→vanilla step only):** act-first was prompted toward *efficiency*
+  ("normal time pressure, keep it efficient"); vanilla + adhoc toward *thoroughness* ("be thorough; cost
+  is not a concern"). So **act-first→vanilla conflates "generic disciplines" with "be thorough"** — not a
+  clean isolation (a fair-isolation arm would be act-first-but-told-to-be-thorough). The **vanilla→adhoc
+  step is clean**: identical framing, differing *only* in the two focused directives (trace-to-producer +
+  follow-to-consumers), which were **adhoc-only**.
 - **Bugs were real** (market_id / handicap / team_qualifier / closing_lines, all traced + corroborated
   by the project's own Unit-27 fix for handicap+team_qualifier; market_id + closing_lines real-latent,
   unfixed). Confirms the *regime* is genuine — just that frontier act-first reaches it too, given enough

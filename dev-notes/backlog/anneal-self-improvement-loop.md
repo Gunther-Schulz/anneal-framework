@@ -1,8 +1,10 @@
 # anneal self-improvement loop — harness-as-oracle, tiered (unattended Tier-A + operator-gated Tier-B)
 
 **Status:** OPEN — exploratory, operator-raised 2026-06-06. **GATED on a positive A/B verdict** (do
-NOT build an auto-loop on an unvalidated proxy — the verdict is the prerequisite). Meta/strategic; a
-future direction, not near-term. Origin: operator's "rising run-count / we never finish" worry +
+NOT build an auto-loop on an unvalidated proxy). **Session-11 update:** the validation arc gives
+*anecdotal weak-positive* evidence (the dose-response in the Empirical-inputs section below) — it
+**nudges** the gate but does NOT clear it (n=5, one codebase, single-pass). Meta/strategic; a future
+direction, not near-term. Origin: operator's "rising run-count / we never finish" worry +
 "could anneal auto-improve itself using the testing harness + auto-triggered self-review + tests for
 known failures."
 
@@ -59,6 +61,30 @@ This **raises the value of the proof test** (it's the GATE to the engine — can
 unvalidated proxy) and makes the 10%-refutation case *more* valuable (if the proxy doesn't track real
 gain, you'd be automating in the dark — better to learn first). → one more reason to run the
 proof-first order **rigorously**.
+
+## Empirical inputs (session-11 validation arc — anecdotal, n=5)
+The real-codebase A/B (`anneal-empirical-validation-experiment` Addendum) produced lessons that bear
+directly on this loop's design — several **confirm the failure modes above empirically**:
+- **The gate has weak-positive evidence:** dose-response act-first 2.6 → vanilla 3.4 → adhoc 4.4
+  bugs/run. Nudges, doesn't clear (anecdotal, single-pass — which *understates* anneal).
+- **Confirms failure-mode 3 (self-certification recursion) — and sharpens prereq #2:** at n=1 the
+  methodology question was *unanswerable*; a single self-run flipped the verdict **twice**. → the loop
+  MUST evaluate every change it makes by **rate over multiple runs (k≥several)**, never a single
+  self-judged run. A one-shot self-assessment of "did this improvement help?" will mislead the loop.
+- **Confirms failure-mode 1 / anti-accretion — adds a concrete brake:** focused lenses help only on
+  their *matched* bug-class (provenance lens 2/5→5/5); one candidate (completeness) added nothing; and a
+  faint hint that piling on lenses can *trade off* against the broad pass (period 3/5 vanilla > 2/5
+  adhoc — likely noise, possibly real "crowding"). → the loop must **prune / measure each lens's
+  marginal value, not just add** (the additive-reflex anti-pattern weaponized by automation), and the
+  regression net MUST include **broad / omission-class** scenarios so a lens-add that *degrades* general
+  coverage is caught — not only the targeted bug.
+- **Tier-A scope refinement:** improvements split into (a) *general-discipline* gains (broad,
+  transferable — most of the value; the act-first→vanilla step) and (b) *matched-lens* gains
+  (class-specific, only when the class is present; the vanilla→adhoc step). Bank (a) broadly; gate (b)
+  on "is this class actually present, and does it regress the broad pass?"
+- **Worked instance:** the arc *is* a manual Tier-A step (real clippy-domain failure → provenance bug
+  class → a concrete lens identified — `provenance-at-handoff-lens`), minus the automation. Evidence the
+  value-step is real, not hypothetical.
 
 ## Prerequisites (ordered)
 1. **Positive A/B verdict** (`anneal-empirical-validation-experiment`) — the gate.
