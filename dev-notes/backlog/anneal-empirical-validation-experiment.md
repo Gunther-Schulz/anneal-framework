@@ -69,6 +69,36 @@ structurally ties:
 - **Real-bug task source** if scale-resumption: the 833 beat-the-books pre-Clippy fixes (each fix =
   a real defect + a ready oracle); run *both arms fresh* on the reconstructed task to stay same-model.
 
+## Addendum — the real-codebase A/B actually run (session 11, 2026-06-06)
+We then *did* run the clone-at-a-commit version on **beat-the-books** (real 250-file codebase, a
+real pre-fix commit, both arms fresh opus, neutral "review the replay settlement pipeline" task; the
+period-drop bug as the band-3 target). Arms: act-first, clippy (full skill), adhoc-anneal (the core
+disciplines as a by-hand checklist, no skill). **Result reinforces the verdict and corrects an
+overclaim:**
+- **First read (n=1 each) looked like an anneal edge** — clippy/adhoc reported bugs act-first's single
+  run didn't. **The act-first ×5 replication dissolved it.** Per-bug finding rate over 5 act-first
+  runs: handicap **5/5**, team_qualifier crash **4/5**, market_id (severe) **2/5**, closing_lines CLV
+  **2/5**, **period 0/5**. One act-first run (af_1) found *all four* non-period bugs. So the disciplined
+  arms' "extra" finds were **within act-first's own variance** — no demonstrated capability gap
+  (would need clippy×5/adhoc×5 to claim a *rate* difference).
+- **Robust signal:** **period (depth-gaps Class 1, a dropped *dimension*) = 0 across every arm, every
+  run.** The only truly-uncatchable-without-a-lens case. The other four are *derivable* bugs found
+  stochastically (≈40–100%).
+- **Bugs were real** (market_id / handicap / team_qualifier / closing_lines, all traced + corroborated
+  by the project's own Unit-27 fix for handicap+team_qualifier; market_id + closing_lines real-latent,
+  unfixed). Confirms the *regime* is genuine — just that frontier act-first reaches it too, given enough
+  draws.
+- **Spawned a concrete improvement:** `provenance-at-handoff-lens.md` (4 of the 5 bugs share one
+  class: a value's assumed semantics ≠ its producer's). Honest framing: the lens buys *reliability*
+  (raise a ~40%-found class toward ~100%), not new capability. **What caught it was the root basis-rule
+  / trace-to-producer discipline** (an adhoc by-hand pass), not clippy machinery and not anneal-dev —
+  a root-framework property. The "clippy's lenses narrowed attention" idea was an n=1 overreach,
+  retracted; lenses remain *additive to scope* (prior position holds).
+
+Net: the real-codebase run **did not** overturn "controlled single-task A/B ties" — it sharpened it.
+The honest value remains observational + the self-improvement loop (this run *is* an instance: a real
+review surfaced a real latent bug-class and a concrete lens to close it).
+
 ---
 
 ## Goal (original v0 design — retained below the verdict for the resumption case)
