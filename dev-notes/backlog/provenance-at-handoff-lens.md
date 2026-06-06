@@ -31,15 +31,24 @@ Four distinct bugs in the beat-the-books replay-settlement review were all this 
 > and whose producer is a different module/provider. *Evaluation (judgment):* do producer and
 > consumer agree on the referent?
 
-## The honest finding-rate caveat (load-bearing — do not overstate this lens)
-These bugs are **derivable**, and a plain act-first review finds them **stochastically** (5 act-first
-runs, same task): handicap **5/5**, team_qualifier crash **4/5**, market_id **2/5**, closing_lines
-**2/5**. So this lens's value is **reliability** — raising a ~40%-found class toward ~100% — **not**
-"catches the otherwise-uncatchable." The single disciplined-arm "wins" that first suggested this lens
-were **within act-first's own variance** (n=1); the lens is justified on *consistency*, not on a
-demonstrated capability gap. (Contrast the **period-drop** bug — depth-gaps **Class 1**, a *dropped
-dimension* — found **0/5** by every arm: that one genuinely needs its own structural lens and is the
-only robustly-uncatchable case.)
+## Finding-rate evidence (act-first ×5 vs adhoc-anneal ×5, same task)
+The discipline that backs this lens **measurably raises the finding rate** — the clean n=5-vs-n=5
+comparison (an earlier n=1-vs-n=5 read wrongly suggested "no gap"):
+
+| bug | act-first ×5 | adhoc-anneal ×5 |
+|---|---|---|
+| handicap | 5/5 | 5/5 |
+| team_qualifier crash | 4/5 | 5/5 |
+| market_id (this class) | **2/5** | **5/5** |
+| closing_lines (this class) | **2/5** | **5/5** |
+| period drop (Class 1, *different* class) | **0/5** | **2/5** |
+
+So the lens's value is **reliability on a derivable class** (≈40% → ~100% for the provenance bugs) — a
+real, systematic gain, not "catches the otherwise-uncatchable." Two honest bounds: (1) n=5 → wide CIs,
+though all bugs move the same direction; (2) this measures the *discipline applied as a checklist* vs
+no-discipline — not this *specific lens* in isolation. **The period-drop bug is a *different* class**
+(depth-gaps **Class 1**, a dropped *dimension*) and went **0/5 → 2/5** when the dimension-enumeration
+discipline was applied — validating *that* (separate) lens, still the hardest case.
 
 ## Lens vs. general-discipline (the open question — mirrors depth-gaps' open Q)
 What actually *caught* market_id (the adhoc arm) was the **general** basis-rule + trace-to-producer

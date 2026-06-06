@@ -75,15 +75,27 @@ real pre-fix commit, both arms fresh opus, neutral "review the replay settlement
 period-drop bug as the band-3 target). Arms: act-first, clippy (full skill), adhoc-anneal (the core
 disciplines as a by-hand checklist, no skill). **Result reinforces the verdict and corrects an
 overclaim:**
-- **First read (n=1 each) looked like an anneal edge** — clippy/adhoc reported bugs act-first's single
-  run didn't. **The act-first ×5 replication dissolved it.** Per-bug finding rate over 5 act-first
-  runs: handicap **5/5**, team_qualifier crash **4/5**, market_id (severe) **2/5**, closing_lines CLV
-  **2/5**, **period 0/5**. One act-first run (af_1) found *all four* non-period bugs. So the disciplined
-  arms' "extra" finds were **within act-first's own variance** — no demonstrated capability gap
-  (would need clippy×5/adhoc×5 to claim a *rate* difference).
-- **Robust signal:** **period (depth-gaps Class 1, a dropped *dimension*) = 0 across every arm, every
-  run.** The only truly-uncatchable-without-a-lens case. The other four are *derivable* bugs found
-  stochastically (≈40–100%).
+- **Per-arm ×5 finding rates (the decisive comparison — n=1 misled twice; see the zigzag below):**
+  | bug | act-first ×5 | adhoc-anneal ×5 |
+  |---|---|---|
+  | handicap | 5/5 | 5/5 |
+  | team_qualifier crash | 4/5 | 5/5 |
+  | market_id (severe) | 2/5 | **5/5** |
+  | closing_lines CLV | 2/5 | **5/5** |
+  | period drop (Class 1 omission) | **0/5** | **2/5** |
+  | mean bugs/run | **2.6** | **4.4** |
+- **The anneal discipline measurably helps — at n=5 the gap is clear and systematic** (adhoc ≥ act-first
+  on every bug; large on the hard three; never worse). Applied *lightweight* (a by-hand checklist, no
+  skill machinery). Reliability on the hard bugs 40%→100%; and **period went 0%→40%** — the only thing
+  that ever caught the Class-1 dropped-dimension omission. The discipline that did it ("trace each value
+  to its producer" + "notice a carried field not used where expected") is exactly the basis-rule +
+  dimension-enumeration the depth-gaps item proposes → **empirically validates that lens.**
+- **The zigzag (the real meta-lesson):** n=1-each → looked like an edge; act-first×5 vs adhoc×**1** →
+  looked like *no* gap (unequal-n error); act-first×5 vs adhoc×**5** → clear gap. **At n=1 the
+  methodology question is unanswerable; the *rate* is the signal.** (Supersedes an earlier
+  "no demonstrated capability gap" note committed mid-investigation.)
+- **Honest bounds:** n=5 → wide per-bug CIs; the comparison is *discipline-as-checklist vs no-discipline*
+  — the *lightweight-vs-heavy-clippy* question still needs clippy×5.
 - **Bugs were real** (market_id / handicap / team_qualifier / closing_lines, all traced + corroborated
   by the project's own Unit-27 fix for handicap+team_qualifier; market_id + closing_lines real-latent,
   unfixed). Confirms the *regime* is genuine — just that frontier act-first reaches it too, given enough
