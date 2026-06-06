@@ -19,6 +19,16 @@ rubric every prescription is judged against:
    visible, and carries a state. A superseded aspect is reconciled
    or invalidated, never silently dropped.
 
+**The mechanism: structural, not willed.** These goals are secured
+by shifting rigor from the AI's discipline to **structural
+enforcement** — because a rule that depends on the AI *choosing*
+rigor leaks: it loads but does not fire. Each load-bearing step is
+bound to an evidence-bearing artifact that a separate, non-producing
+context re-derives (§3.1), so adherence is read off the artifact
+rather than trusted. The one irreducible exception is the
+**operator's verdict** at the genuinely-irreducible judgment (§3.1):
+a deliberately-willed terminus, not a gap to close.
+
 Human inspectability is a constraint, not a primary value:
 artifacts must stay cognitively palatable rather than bloating
 into detail too large to hold.
