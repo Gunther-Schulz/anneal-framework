@@ -158,6 +158,14 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   not a spec-edit run.) (Follow-up, not a render: the **F-prov-framing**
   terminology cleanup — 4 framework sites still say "non-tracked run-inputs" — tracked in `runs-data-preservation`.)
 
+- **purpose-mechanism-clause** — run `.anneal-dev/runs/purpose-mechanism-clause.md`; spec-only release
+  **`24fdb5f`** on `main`. Source-delta: `spec/core.md` **Purpose** gained the **"Mechanism: structural,
+  not willed"** clause (goals secured by structural enforcement, cite §3.1; operator = the irreducible
+  willed exception). **Render obligation** (deferred, ALL instances): render the clause into every
+  instance's Purpose render — anneal-dev `references/foundations.md` (`:7-21`, the two-goals Purpose) +
+  clippy/daneel/campaign-craft/bauleitplan foundations. Additive orientation (no enforcement-strength
+  change) → render-fidelity verify at the batch. (Per D2 of the run — shipped spec-only, render deferred.)
+
 ## Capability-by-instance render matrix (2026-06-05)
 
 The queue above is **per-source-delta** (each anneal-dev run's edit). This is the

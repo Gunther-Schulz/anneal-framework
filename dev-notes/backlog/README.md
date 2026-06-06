@@ -130,9 +130,67 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
   `anneal-adhoc-use-and-graduation` · `planner-instance-exploration` · `generalize-sharpening-skill`
 
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
-(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** Nothing dropped.
+(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +3 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`) → 55 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
-### ▶ Where we are + next steps (2026-06-06 session 9 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-06 session 10 — READ FIRST)
+
+**Session 10 — shipped the framework-intent Mechanism clause + a deep platform / prior-art grounding;
+groomed the campaign map (orphans placed). Ends /clear-clean (pushed).**
+
+1. **`purpose-mechanism-clause` SHIPPED** (`24fdb5f`, method-kernel via anneal-dev; verify [PASSED];
+   operator step-4). `spec/core.md` Purpose gained **"Mechanism: structural, not willed"** (the goals
+   are secured by structural enforcement, cite §3.1; operator = the irreducible *willed* exception) —
+   the **mechanism half** of `framework-intent-vision-statement`; the asymptote/V1 half + operator
+   ratification stay open. Render-debt queued (`instance-reinstantiation`). The convergence cycle caught
+   2 real defects (F7 §3.1 over-attribution, F10 a tracker mis-cite) — live proof the method works on
+   its own spec.
+2. **Platform / prior-art grounding (two new items):**
+   - `platform-native-vs-anneal-delta`: anneal vs Anthropic official docs — **L1 authoring + L2 hooks
+     are platform-native** (lean on them; the skill-craft slim is a *small, fully-grounded tune-up* + a
+     citation discipline, NOT a gut — lower-priority than first thought); **L3 (the verified-multi-step
+     method) is anneal's genuine core.** The convergence gate must be a **HOOK** (documented primitive),
+     not an orchestrator self-check (sharpened into `convergence-cycle-mechanical-enforcement`).
+   - `l3-prior-art-methodologies`: **kill-switch OFF** — no methodology dominates. **APF** (arXiv
+     2602.19065) is the near-twin (same conceptual-proof gap) but partitions a *different regime*
+     (industrial control-loop) and lacks falsification; self-correction papers (2310.01798/2406.01297)
+     **empirically back** anneal's independence + basis rules. anneal can run the validation APF can't
+     (instances = testbed; a *lower, designed-clearable* bar) — but must report scope honestly
+     (proxy / in-regime).
+
+**▶ NEXT-UP — TESTING (the proof-first order; unchanged + reinforced by the APF thread).** Concrete
+first action: **continue `measurement-harness-mve` Step 1** — build the silent-failure task pack to the
+5-point rubric (the `merge-config` exemplar is committed), pre-register/freeze, run the **baseline A/B**
+— *then* the bounded enforcement batch (`convergence-cycle-mechanical-enforcement` *as a hook* →
+`skill-craft-antipatterns-loaded-but-inert`, re-measure each) → the **A/B verdict**
+(`anneal-empirical-validation-experiment`). The whole APF thread reconfirmed this is anneal's single
+differentiating + *achievable* move (the one APF structurally can't make). **Parallel low-gating
+(anytime):** ratify the rest of `framework-intent-vision-statement`; the (small) skill-craft slim;
+`F-prov-framing` on the next kernel touch.
+
+**Backlog hygiene — 10 session-9/10 orphans placed into the campaign batching (preserves the few-runs goal):**
+- **Enforcement-fidelity cluster** (loaded-but-inert / structural-enforcement — same diagnosis; *drains
+  as ONE post-verdict cycle*; the bound is deliberate, don't expand it): proof-first **bounded batch** =
+  `convergence-cycle-mechanical-enforcement` + `skill-craft-antipatterns-loaded-but-inert` (now); the
+  rest follow *after the verdict* — `disposition-misclassification-shields-design`,
+  `convergence-surfaced-finding-action-brake`, `replacement-side-effect-behavior-parity`,
+  `convergence-mechanical-pass-value` (parked/evidence-gated).
+- **Proof / measurement / strategy (meta):** `l3-prior-art-methodologies` + `platform-native-vs-anneal-delta`
+  join the proof thread (`measurement-harness-mve`, `anneal-empirical-validation-experiment`,
+  `anneal-reliability-measurement`).
+- **③ verify / de-pollution:** `verify-disposition-citation-reopen-explicit-leg`,
+  `validation-watch-entry-conformance-sweep`.
+- **⑤ anneal-dev self-hosting:** `self-hosting-inplace-integrity-clean-precondition`.
+- **Parallel / low-gating (done on-touch, not their own runs):** `framework-intent-vision-statement`
+  (half shipped), `runs-data-preservation` (mostly DECIDED; `F-prov-framing` residual).
+
+**Few-runs check:** every orphan now drains *with* a campaign cycle, not as its own run. The
+**enforcement-fidelity cluster** is the coherent new batch sessions 9-10 surfaced — its first 2 items
+are the bounded pre-verdict fix, the rest are one post-verdict cycle. (As few runs as possible, as many
+as necessary — the cluster is one run, not five.)
+
+*(Session 9 block below — superseded by session 10; history.)*
+
+### ▶ Where we are + next steps (2026-06-06 session 9 — superseded by session 10; history)
 
 **Session 9 — two runs SHIPPED + a cascade of operator-driven spawned findings; ends /clear-clean (tree committed).**
 
