@@ -22,11 +22,30 @@ weight, NOT the same pass that wants to skip ceremony. If the AI self-certifies
 closed. Encode the classifier as operator-in-loop (or an external check), never
 self-attested.
 
+**Empirical evidence (n=1, 2026-06-06 — the "proven" the deferred status waited for):**
+the `v-entry-is-post-ship-only` run — a **non-method-kernel, small doc-clarification**
+(re-word one state def + one exclusion sentence + a Vocab pointer) — got the **full**
+ceremony: **3 convergence intent-falsification dispatches** (cycles 4/6/8) + an isolated
+verify, across **10 cycles** for a ~3-edit change. Two findings:
+1. **The cost was the convergence ceremony, not verify** — 3 opus dispatches vs verify's 1.
+   A *light* cycle (no convergence, one verify) would have cut ~3 dispatches and kept the
+   irreducible independent check. (The operator's instinct "skip verify?" aimed at the wrong
+   target — verify stays; convergence is the lever.)
+2. **The heavy ceremony GENERATED churn, not just cost** — each convergence cycle invited
+   additive over-fixing (the gold-plating in `convergence-surfaced-finding-action-brake`);
+   cycles 6–8 chased an unbounded "unambiguous" requirement's tail. A light cycle would have
+   *avoided* the churn by never opening the convergence loop. So proportional weight is not
+   only a cost win — for a small/non-kernel change it removes a churn *source*.
+   The operator flagged the disproportion **twice** in-run (overthinking in convergence; verify
+   weight) — the signal the light path was warranted and not taken.
+
 **Relates to:** `auto-battle-cadence-mode` (sibling ⑦ mode-mechanic — cadence vs
-weight; distinct concerns) · the framework's existing behavior-preserving
-classification (verify already uses delta-vs-fresh re-verify — extend that
-*forward* to right-size the whole cycle) · D7 carry-forward removal (the negative
-precedent).
+weight; distinct concerns) · `convergence-surfaced-finding-action-brake` (complementary:
+the brake prevents gold-plating *within* a convergence cycle; proportional-weight *avoids*
+the convergence cycle for a light change — two levers on the same 2026-06-06 churn) · the
+framework's existing behavior-preserving classification (verify already uses delta-vs-fresh
+re-verify — extend that *forward* to right-size the whole cycle) · D7 carry-forward removal
+(the negative precedent; the soundness hazard above is its cousin).
 
 **Next action:** none until campaign ⑦ is un-deferred. When it is: settle the
 "who certifies light, non-circularly" fork WITH the operator (decide-ahead),

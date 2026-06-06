@@ -84,6 +84,27 @@ plus discipline + rendered attack mechanism:
   cross-run lock itself the gate? (Likely the latter — instance-domain primitives are
   by definition domain-specific.)
 
+## The lens-framing — clippy's dependency-classes to WALK (operator-raised 2026-06-06)
+This register frames the domain primitives as **invariants to lock** (what must hold). The
+**investigation-side dual** is the same primitives framed as **lenses to walk** — the
+dependency-classes a clippy cycle should trace during investigation (the domain rendering of the
+framework **Missed-dependents** lens, which is domain-general: cross-refs / paraphrases / rendered
+clauses / closed-set members / glossary uses). For clippy (corpus = code) the dependency-classes
+warranting lenses include:
+- **consumers of a value-class** (the producer-for-every-consumer invariant — every consumer has a
+  real producer, not a test fixture; the Unit-7 replay-green-no-producer bug);
+- **closed-set / enum propagation** (on enum extension, every branch / serializer / consumer — the
+  `MarketType += team_total` sweep; the `signal_id`-lossy + freshness-wrong-market bugs);
+- **cross-unit data contracts** (table readers vs writers — the `autobet_bets` vs `paper_bets` bug);
+- **serialization round-trip** (identity preserved through encode/decode — the `signal_id` class);
+- **call sites / interface implementors** (standard code dependents).
+
+This is a **clippy-render** of Missed-dependents (the lenses are the investigation-time walk; the
+register is the lock the intent-falsification pass attacks against) — lens-set + register are the two
+faces (walk vs lock) of clippy's domain dependency-model. **Operator decided (2026-06-06): fold here
+— design the lens-set + register together in one clippy cycle** (they share the same primitive
+enumeration; a separate clippy-lens item would fragment the shared enumeration). Not a separate item.
+
 ## Relates to
 - `cross-instance-precedent-discipline` — distinct concern (precedent discovery in
   sibling instances; this is invariant-locking *within* an instance), but composes (a

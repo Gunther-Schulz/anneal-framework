@@ -126,7 +126,7 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
   `anneal-adhoc-use-and-graduation` · `planner-instance-exploration` · `generalize-sharpening-skill`
 
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
-(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → **45 open**. Nothing dropped.
+(5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism.** Nothing dropped.
 
 ### ▶ Where we are + next steps (2026-06-05 session 8 — READ FIRST)
 
@@ -513,10 +513,20 @@ Sparse on purpose: most clippy-surfaced findings are framework-root (→ tier 2,
     3 · blindspot · instance-domain primitives). Regression-guard (catches KNOWN classes), NOT a
     reasoning-depth-ceiling fix; must stay additive (not blinders). Framework (`modules.md` §4 +
     `post-run-review.md`); the consumer-end of framework-blindspot's enumeration.
+  - **process-waste sibling (NEW 2026-06-06):** `post-run-review-nonsensical-cycle-probe` — the
+    post-run review should catch **any** nonsensical/wasted cycle (operator-clarified), not only
+    protocol-forced grind (Q3 today scopes to that → misses orchestrator-discretionary self-inflicted
+    waste, e.g. this session's gold-plate-then-revert). Distinct object from the failure-class register
+    (process-level wasted *cycles* vs output-defect *classes*); shares the additive/open-ended discipline.
+    Detective-general counterpart to the preventive-single-shape `convergence-surfaced-finding-action-brake`.
 - **mode-mechanics / disciplines:** `auto-battle-cadence-mode` (interactive "auto-cycle to [READY],
   halt at the phase gate" affordance — direction resolved, not built; the thing we did by hand this
   session) · `cross-instance-precedent-discipline` (candidate — a forcing-function to check sibling
-  instances for prior art; evaluate "earns a lens" vs "just investigate harder" first).
+  instances for prior art; evaluate "earns a lens" vs "just investigate harder" first) ·
+  `convergence-surfaced-finding-action-brake` (NEW 2026-06-06 — the orchestrator actions intent-pass
+  `[VERIFIED — surfaced]` findings as D-deltas with no requirements-anchored brake → scope-inflation /
+  convergence-loop amplification; caught dogfooding the `v-entry-is-post-ship-only` run. Same
+  surfacer-vs-bind family as campaign ① / `intent-falsification-soundness-sweep` — consumer side).
 
 ### 5 ▸ CLIPPY / INSTANCE CHANGES — the big re-render (gated by F0 above)
 - `instance-reinstantiation` — **umbrella** (now incl. the 3 folded bundles: render-resync, SKILL.md

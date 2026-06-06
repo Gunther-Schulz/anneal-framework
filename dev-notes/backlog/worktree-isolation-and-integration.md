@@ -49,6 +49,24 @@ HEAD at dispatch"; the harness didn't honor it → a fail-loud `worktree base ==
 main HEAD at dispatch` check is warranted. Cross-ref
 [[harness-tool-runstate-unsourced]].
 
+## (d) Test-execution dependencies in the isolated copy (operator-raised 2026-06-06)
+The isolation moves each unit's copy to a distinct top-level path with **remotes stripped**
+((a) above) — `/tmp/anneal-dev-copy-…` / `git worktree add /tmp/…`. For a **test-running
+instance** (clippy: a unit's verify runs the suite), that copy needs the **build/dependency
+cache** — `node_modules`, cargo/`target`, a venv, DB fixtures — which a fresh `/tmp` copy does
+NOT have. The spec currently **punts**: implement.md "Provisioning" + (a) above both say
+"project bootstrap (venv/deps) stays the operator's concern, out of scope." That punt is
+**insufficient for a test-running unit**: with no cache, the isolated test run fails or is
+prohibitively slow → the parallel-worktree path becomes unusable exactly where it's most
+wanted (parallel test-heavy units). Open question: does the isolated copy get cache access —
+via a **shared, read-only cache mount/symlink** (e.g. a shared cargo/npm cache dir the copy
+points at, kept read-only so units can't clash), via **copy-on-provision** of the cache, or
+does "out of scope" stand (and parallel isolation is simply not for test-running instances)?
+This is the load-bearing decision that determines whether worktree isolation is viable for
+clippy at all. Compose with the Provisioning rule (run-inputs provisioned, excluded from
+integration) — the cache is a read-only run-input, not a tracked work-product, so it fits that
+shape if provisioned read-only.
+
 **Level.** Framework (§4.2 isolation/integration) + clippy render; (a)/(c) also
 harness. Relates to [[clippy-run-findings-dispatch-coupling]],
 [[harness-tool-runstate-unsourced]]. Also informs
