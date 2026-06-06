@@ -1,0 +1,2 @@
+# foundation-invariants-register — cycle 4 falsification (corrected D1; subagent abcfd1ceadf582571)
+- D1 (corrected) — target-dependents (full search, no exclusions, all 7 repos) + target-existence → aggregate HOLDS. 0 normative encodings outside the 3 cited files; all 23 other matches are non-normative dev-notes/backlog notes that point AT the normative homes; discipline confirmed normatively present at all 3. (D2,D3,D3b,D5,D6 carry cycle-3 holds — textually unchanged.)

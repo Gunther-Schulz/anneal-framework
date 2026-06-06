@@ -2,7 +2,7 @@
 
 Working records for *developing* the anneal-framework — distinct from the
 canonical spec (`../spec/`, `../foundation.md`, `../development-process.md`,
-`../post-run-review.md`). These live here:
+`../post-run-review.md`). Two things live here:
 
 - **`backlog/`** — every open item (findings *and* efforts), one file each.
   `ls backlog/` is the index; start at `backlog/README.md` for the convention
@@ -12,8 +12,6 @@ canonical spec (`../spec/`, `../foundation.md`, `../development-process.md`,
   Spec-wired (read by `../development-process.md`, `../post-run-review.md`,
   `../spec/`); a living log, not a task — which is why it's *not* in the
   backlog.
-- **`run-history/`** — completed anneal-dev runs, archived on close (the
-  committed durable record of *how* a run unfolded — tracker + per-cycle
-  pass artifacts). Live run state stays in gitignored `.anneal-dev/runs/`;
-  on verify-[PASSED] close the run is copied here. Provisional first instance
-  pending the `runs-data-preservation` formalization (backlog).
+
+(Completed anneal-dev run records live in `../.anneal-dev/runs/` — **tracked**,
+not gitignored, the accumulated run history; see `backlog/runs-data-preservation.md`.)

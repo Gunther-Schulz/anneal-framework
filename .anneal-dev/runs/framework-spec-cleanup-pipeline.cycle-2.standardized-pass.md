@@ -1,0 +1,13 @@
+# Standardized-pass — cycle 2
+
+This cycle locked D2–D6 to [VERIFIED] (concrete amendments of existing §4 rules,
+specified as deltas; realization output still at impl). Lenses in scope:
+
+- **Missed-dependents** — CLEAN. D2–D6 amend existing rules → in scope. Dependents enumerated in D1 (search-established) + this cycle's §5.3 cite split (`grep §5\.3` → core:287/300/304 in §4.1 retarget to §5.2; core:814/890/942 keep §5.3). D2 retargets the 20 bare-§4.2 cites by referent; D3 leaves the §4.1.4 anchor unchanged (its 20 cites stay valid). Rendered dependents (4 instance phase-file sets) are target-behavior [CONDITIONAL] per D1 → discharged at release re-render + verify render-fidelity. Basis: D1, D4.
+- **Over-claimed-verification** — CLEAN. D2–D6 reach [VERIFIED] → each basis re-opened against its claimed unit: D2 "behavior-preserving" = read of §4.2 462–678 (8 bold sub-topics map 1:1 to 8 sub-sections, no rule moved across a boundary); D3 "de-dup" = located duplicated span core 391–414 ≈ modules 326–380 + README placement filter; D4 = the 6-cite §5.3 split (actual grep output) + glossary 232–241 read. No basis rests on recall. Basis: D2–D6 located reads/searches.
+- **Fragmentation** — CLEAN. D3 collapses the core↔modules falsification duplication to one home (modules §3.4) + a core cite; D4 collapses the [READY] supporting-facts list to one home (§4.1.1) + a §5.3 bridge. No new second copy committed. Basis: D3, D4, F2, F3.
+- **Lossy-render** — CLEAN. D2–D6 render into the instance phase files; all behavior-preserving except F4's passes reconciliation (sharpens an existing contradiction, softens no "must"). D3's spec de-dup (core cites modules) preserves the rendered falsification content — the instance still carries the artifact format, now sourced from modules §3.4 (already its render home, per the instance `references/tracker.md`); the render-fidelity discharge is the [CONDITIONAL] dependent (D1). Basis: D2–D6, F4.
+- **Bloat** — CLEAN (net-reducing). D2 adds 8 sub-headings (structure, not prose); D3 removes ~24 ln of predicate/shape re-enumeration from core; D4 removes the §5.3 list restatement; D6 removes 3 breadcrumb parentheticals. No restating/hedging prose added. Basis: D2, D3, D4, D6.
+- **Unenforced-rule** — CLEAN. D4's passes reconciliation is a factual correction, not a new prescription; the [READY] consolidation keeps §4.1.1's enforcement (the §4.1.2 result-line artifact). No load-bearing rule downgraded to prose. Basis: D4.
+- **Leakage** — OUT OF SCOPE. The re-org and de-dup stay domain-general; no domain concretion introduced.
+- **Undefined-shorthand** — OUT OF SCOPE. No new coined term (§4.2.1–8 are section labels; "falsification pass / convergence cycle" are pre-defined in glossary).

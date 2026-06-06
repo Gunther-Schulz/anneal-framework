@@ -1,5 +1,7 @@
-# anneal-dev runtime run-state (dogfood)
-.anneal-dev/
+# anneal-dev: run-state history (.anneal-dev/runs/) is TRACKED — the accumulated
+# run record (foundation.md). Only the local run-gate override flag is ignored: a
+# per-developer momentary bypass; committing it would re-arm on every checkout.
+.anneal-dev/allow-adhoc-kernel-edit
 
 # Python bytecode cache (e.g. from importing hooks/ during testing)
 __pycache__/
