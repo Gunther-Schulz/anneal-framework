@@ -52,6 +52,36 @@ sharpens anneal's positioning (the methodology for the regime APF's control-loop
 *inference* from the abstract framing, NOT a line-by-line read of all 18pp — a full APF read would
 confirm/nuance the regime-partition.
 
+## The validation BAR — APF's (high) vs anneal's (low by design) (operator probe 2026-06-06; APF full-text fetched)
+APF's paper specifies **no validation methodology** — no metrics, baseline, or design; only a "call for
+partners… to apply [it] to real-world industrial domains." The bar he *describes* is enormous: industrial
+deployment partners, real enterprise systems (legacy + physical equipment), long operational horizons,
+proprietary data. Case studies are **hypothetical** (mock specs + diagrams), not deployed. (Fetch-read,
+medium-high confidence.)
+
+**Why his bar is that high — his strategy's doing, not validation's intrinsic cost:** (1) **regime** —
+validating an *industrial control loop* needs real industrial systems running; (2) **claim shape** — APF
+claims *asymptotic convergence over time* (Eq. 4 `lim{Sₜ,Kₜ₊₁}⊢R`), a long-horizon claim that needs long
+operational history.
+
+**anneal's bar is much lower — by design, not by being better-resourced:** a controlled seeded-defect A/B
+(clippy vs act-first, same model), **per-run**, scriptable objective oracle (catch-rate, tokens), k=3-5,
+synthetic task pack. Sidesteps APF's bar because: regime probeable **synthetically**; **has instances**
+(the testbed APF lacks); claim is **per-run** not long-horizon; uses a **scriptable defect-proxy** (dodges
+both the general-soundness-oracle problem AND the deployment problem). → anneal doesn't go *over* APF's
+bar; it stands on a different, lower, deliberately-clearable one. That IS the escape — and a methodological
+contribution (methodology-validation without industrial deployment, given a testbed + proxy).
+
+**The catch (the operator's worry, relocated — has teeth):** the lower bar buys clearability **at the cost
+of scope** — anneal validates a *proxy* in a *bounded* regime, NOT the full "sounder open-ended work"
+claim. APF's high-bar instinct is the *rigorous* one (real deployment generalizes; a synthetic A/B binds
+to its regime). **Danger = mistaking proxy-clearance for full validation** (the conceptual-proof gap
+reasserting one level up). **Mitigation (already in the design, must be HELD):** pre-registration +
+refutation conditions + results-bind-to-regime-only + arm-C (isolate design-first carries the gain).
+Sound **iff** reported as "validated on this proxy, in this regime" — a real down-payment, not "validated
+full stop." → load-bearing input to `anneal-empirical-validation-experiment` (sharpens its existing
+over-generalization threat with the APF-comparison framing).
+
 ## The empirical gift — anneal's core rules are now literature-backed
 **Huang et al. "LLMs Cannot Self-Correct Reasoning Yet"** (2310.01798) + **Kamoi et al.** (2406.01297):
 self-critique *without external feedback degrades* performance. This is the published empirical basis
