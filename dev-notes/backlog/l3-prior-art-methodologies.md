@@ -30,6 +30,28 @@ guide (2509.08646, a *security* impl guide) lack verify-as-discipline + groundin
 spec-driven dev (GitHub Spec Kit, Kiro, BMAD, SDD survey 2602.00180) grounds *code* not *claims* and has
 no fresh-context re-derivation; Jackson "designation" is the pre-LLM RE ancestor of grounding.
 
+## APF: closest on INGREDIENTS, different on STRATEGY (operator probe 2026-06-06 — sharpens "near-twin")
+"Near-twin minus falsification" understated it. Two axes:
+- **Ingredient axis — near-twin:** APF independently has evidence-grounding, a verify + human gate, the
+  conceptual-proof gap. Closest parts-list out there.
+- **Strategic/frame axis — genuinely different:** APF's frame is **control-systems + RE** (the name echoes
+  Jackson's *Problem Frames*). My abstract-fetch: AVR *"functions as a closed-loop control system,"*
+  *"anchoring stochastic AI within deterministic business processes"* — verification is **against the
+  environment's objective feedback** (execution results; per the subagent's full-text read, callbacks/
+  approvals). anneal's frame is **epistemic** (basis rule + fresh-context re-derivation of the *reasoning*)
+  for the regime where the environment **can't cheaply adjudicate**.
+
+→ **Falsification is a SYMPTOM, not the root:** anneal falsifies the *reasoning* because it can't lean on
+environmental feedback; APF doesn't need it because it does. Different verification *substrate*.
+→ **They partition the regime space, not compete:** APF owns the **deterministic-feedback** regime;
+anneal owns the **no-cheap-oracle / expensive-late-verification** regime (exactly what anneal already
+scopes its claims to). This makes the kill-switch verdict *even more clearly OFF* (different regime) AND
+sharpens anneal's positioning (the methodology for the regime APF's control-loop can't serve).
+**Confidence:** the control-loop framing = my abstract fetch (high); "substrate = environmental feedback"
+= partly the subagent's full-text read (medium); "fundamentally different strategy" = a grounded
+*inference* from the abstract framing, NOT a line-by-line read of all 18pp — a full APF read would
+confirm/nuance the regime-partition.
+
 ## The empirical gift — anneal's core rules are now literature-backed
 **Huang et al. "LLMs Cannot Self-Correct Reasoning Yet"** (2310.01798) + **Kamoi et al.** (2406.01297):
 self-critique *without external feedback degrades* performance. This is the published empirical basis
