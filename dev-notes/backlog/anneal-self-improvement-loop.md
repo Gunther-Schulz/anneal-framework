@@ -1,17 +1,21 @@
 # anneal self-improvement loop — harness-as-oracle, tiered (unattended Tier-A + operator-gated Tier-B)
 
-**Status:** OPEN — exploratory, operator-raised 2026-06-06. **GATED on a positive A/B verdict** (do
-NOT build an auto-loop on an unvalidated proxy). **Session-11 update:** the validation arc gives
-*anecdotal weak-positive* evidence (the dose-response in the Empirical-inputs section below) — it
-**nudges** the gate but does NOT clear it (n=5, one codebase, single-pass). Meta/strategic; a future
-direction, not near-term. Origin: operator's "rising run-count / we never finish" worry +
-"could anneal auto-improve itself using the testing harness + auto-triggered self-review + tests for
-known failures."
+**Status:** OPEN — exploratory, operator-raised 2026-06-06. **GATE REFRAMED (session-11): the loop is
+gated on a REGRESSION NET + the tiered mechanical gate — NOT on a methodology-proof / "positive A/B
+verdict."** The proof (does anneal's compounding value beat act-first?) turned out **unprovable cheaply**
+(session-11 — controlled one-shot tests tie; the value is compounding + regime-dependent) AND — the key
+realization — **was never operationally required**: a regression net is a *safety guardrail*, not a
+proxy-to-maximize, so it doesn't carry the "validate the proxy first" burden the proof was meant to
+satisfy. So the loop is **blocked on building the regression net, not on an impossible proof** (see "The
+gate is the regression net" below) → **near-term-unblockable**, which is the point given the operator's
+"backlog keeps growing / getting difficult." Origin: operator's "rising run-count / backlog keeps growing"
++ "could anneal auto-improve itself using the harness + auto-review + tests for known failures."
 
 ## The concept
-If the proof verdict is positive, compose the eval **harness** (objective oracle) + the **self-review**
-machinery + **tests devised for known failures** into a loop that improves anneal **unattended** —
-anneal drains its own backlog instead of the operator driving every run.
+Compose a **regression net** (objective per-known-failure oracles) + the **self-review** machinery +
+**tests devised for known failures** into a loop that improves anneal **unattended** (Tier A), with the
+operator gating only the irreducible-judgment changes (Tier B) — anneal drains its own backlog instead of
+the operator driving every run. (No methodology-proof prerequisite — see the gate reframe below.)
 
 ## Verdict: real merit — and it's anneal's OWN architecture applied recursively
 NOT a new paradigm. anneal's core move is *bind the measurable, surface the irreducible-judgment to the
@@ -56,11 +60,29 @@ All designable-against — but Tier B must be **mechanically enforced** (a hook 
 operator soundness when a change touches a foundation invariant or lacks an objective oracle — the
 convergence-gate-as-hook pattern, `convergence-cycle-mechanical-enforcement`).
 
-## Strategic kicker
-This **raises the value of the proof test** (it's the GATE to the engine — can't safely automate on an
-unvalidated proxy) and makes the 10%-refutation case *more* valuable (if the proxy doesn't track real
-gain, you'd be automating in the dark — better to learn first). → one more reason to run the
-proof-first order **rigorously**.
+## The gate is the regression net, NOT the proof (session-11 reframe — the key unblock)
+The original framing (and prereq #1) made a **positive A/B verdict the gate** — "don't automate on an
+unvalidated proxy." Session-11 dissolved that on two counts:
+- **The proof is unprovable cheaply** — compounding, regime-dependent value; controlled one-shot tests tie
+  (`anneal-empirical-validation-experiment` Addendum 2). A proof-gate is therefore unsatisfiable → the loop
+  stays blocked forever *while the backlog grows*. Unacceptable.
+- **The proof was never operationally required.** The Goodhart fear ("validate the proxy first") applies to
+  *optimizing* a metric. The loop does NOT optimize catch-rate — it **gates on no-regression** (a safety
+  guardrail) and leaves *value/soundness judgment to the operator* (Tier B). Guardrail + operator-judgment
+  is safe *without* proving the metric tracks value, because **the operator IS the value-check; the net just
+  stops breakage.**
+
+So the **real gate** = (a) a regression net of real known-failures + (b) the Tier-A/B mechanical boundary
+(hook) + (c) periodic coherence-audit. **The loop is blocked on building the regression net — tractable,
+and it accumulates from the real failures you already hit — not on an impossible proof.** That is the
+direct answer to the backlog-growth pain: build the net → Tier-A drains the bulk unattended → operator
+handles only Tier-B.
+
+**Residual honesty:** the Goodhart risk is *reduced, not zero* (Tier-B + coherence-audit are the live
+mitigations); building the net is real, incremental work; and the "Tier-A drains the bulk" split should be
+checked empirically. The operator's **lived evidence that the framework compounds** (act-first < monolithic
+< modern, daily use) is the standing justification that the shipped changes are worth it — the regression
+net just keeps them *safe*.
 
 ## Empirical inputs (session-11 validation arc — anecdotal, n=5)
 The real-codebase A/B (`anneal-empirical-validation-experiment` Addendum) produced lessons that bear
@@ -86,16 +108,22 @@ directly on this loop's design — several **confirm the failure modes above emp
   class → a concrete lens identified — `provenance-at-handoff-lens`), minus the automation. Evidence the
   value-step is real, not hypothetical.
 
-## Prerequisites (ordered)
-1. **Positive A/B verdict** (`anneal-empirical-validation-experiment`) — the gate.
-2. **Objective, blind, un-gameable oracles** per known-failure test (the honest-hard-part —
-   `measurement-harness-mve` task-pack methodology).
-3. **The regression net** (`canonical-scenario-regression-suite`) — the Tier-A component.
-4. **The Tier-A/B boundary as a mechanical gate** (a hook — `convergence-cycle-mechanical-enforcement`
-   family).
+## Prerequisites (ordered — session-11 reframe: the A/B verdict is NOT one)
+1. **The regression net** (`canonical-scenario-regression-suite`) — real known-failure scenarios with
+   known-good outcomes; the Tier-A oracle. **The actual gate + the actual blocker** (build this and go).
+2. **Objective, blind, un-gameable oracles** per scenario (the honest-hard-part — `measurement-harness-mve`
+   task-pack methodology; the committed `eval/` harness is the machinery pattern).
+3. **The Tier-A/B boundary as a mechanical gate** (a hook — `convergence-cycle-mechanical-enforcement`
+   family); Tier B (soundness / invariants / novel blind-spots) stays with the operator.
+4. **Periodic coherence-audit** — the cross-run drift guard on the unmeasured axis.
+- **NOT a prerequisite (decoupled, session-11):** a "positive A/B verdict" / methodology-proof. Unprovable
+  cheaply AND not operationally required (gate-not-optimize; operator is the value-check). The operator's
+  lived evidence is the value-justification; the net is the safety gate. `anneal-empirical-validation-experiment`
+  is now a *separate, optional* thread, not this loop's gate.
 
 ## Relates to
-- `anneal-empirical-validation-experiment` / `measurement-harness-mve` — the harness + the gating verdict.
+- `anneal-empirical-validation-experiment` / `measurement-harness-mve` — the harness (machinery pattern) +
+  the now-DECOUPLED proof thread (no longer this loop's gate, session-11).
 - `canonical-scenario-regression-suite` — the Tier-A regression net (this loop is what *uses* it).
 - `framework-intent-vision-statement` / V1 — the loop is the engine to the tolerable-residual asymptote.
 - `convergence-cycle-mechanical-enforcement` — the hook pattern that enforces the Tier-A/B boundary.
