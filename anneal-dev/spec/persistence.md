@@ -94,18 +94,28 @@ Completed runs' tracker files are kept; `.anneal-dev/runs/`
 accumulates as the project's anneal-dev history — no run overwrites
 another.
 
-## Filesystem layout — operator-config vs runtime state
+## Filesystem layout — operator-editable vs instance-written (both tracked)
 
 Per `instantiation-guide.md` §5 (filesystem layout rule + Project
 init):
 
-- **Runtime state** (tracker, standardized-pass artifacts,
+- **Run-state history** (tracker, standardized-pass artifacts,
   mechanical falsification-pass artifacts, intent-falsification-pass
-  artifacts, impl plans): `.anneal-dev/runs/`
-  (gitignored — `git check-ignore` true).
+  artifacts, impl plans): `.anneal-dev/runs/` — **tracked**
+  (`git ls-files` true), the accumulated run history committed as
+  durable, self-describing, resumable checkpoints (in-flight and
+  completed), **not gitignored**. Instance-written, not operator-edited.
 - **Operator-editable artifacts** (extension toggles, lens
   supplements, operator-facing config): `anneal-dev.config/`
   (committed — `git ls-files` tracked).
+- Only a **transient local override-flag**, if the project uses one
+  (e.g. a run-gate bypass marker), is gitignored — a per-developer
+  momentary state, not history.
+
+The two are distinguished by **namespace/path + the edit-permission
+convention** (operators edit `anneal-dev.config/`; the instance writes
+`.anneal-dev/runs/` and operators do not hand-edit it), not by
+tracked-vs-gitignored — both are now tracked.
 
 The namespace (`anneal-dev` / `.anneal-dev`) is unique to this
 instance per the namespace-uniqueness rule, preventing collision

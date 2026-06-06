@@ -137,6 +137,21 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   states — the `deferred` disposition now carries three sub-cases (a)/(b)/(c)). `glossary.md` "Finding
   disposition" indexes the 4 disposition NAMES (unchanged → no render delta). Commit ref: `014b7b0`.
 
+- **run-state-tracked-by-default** — run `.anneal-dev/runs/run-state-tracked-by-default.md`; spec-only
+  release (pending commit) on `main`. Source-delta: `instantiation-guide.md §5` (rule 1 distinct-location
+  +edit-permission reframe — run-state **tracked by default**, the marker is namespace/path not
+  commit-vs-gitignore; rule 3 + Project-init) + `persistence.md` Filesystem-layout (run-state tracked) +
+  `bindings.md` (First-run bootstrap no longer gitignores `.anneal-dev/`; Operator-editable reword;
+  Provisioning/Integration → work-product-vs-bookkeeping, run-state excluded from integration; in-place
+  state-marker + restore exclude `.anneal-dev/runs/`) + `core.md §4.2.4` (in-place integrity excludes the
+  run-state directory). **Render obligation** (deferred, ALL instances; NOT behavior-preserving — flips
+  the gitignore default + adds the integrity-exclusion → render-fidelity verify needed): the anneal-dev
+  plugin's `SKILL.md` First-run bootstrap (`:315`) + `references/foundations.md` (`:462`/`:469`) +
+  `references/tracker.md` (`:402`) + `phases/implement.md` (`:160` provisioning + the in-place run-state
+  exclusion). Per **D3**, each domain instance renders the default per its OWN binding (anneal-dev on; a
+  downstream instance may bind off). Commit ref: pending. (Follow-up, not a render: the **F-prov-framing**
+  terminology cleanup — 4 framework sites still say "non-tracked run-inputs" — tracked in `runs-data-preservation`.)
+
 ## Capability-by-instance render matrix (2026-06-05)
 
 The queue above is **per-source-delta** (each anneal-dev run's edit). This is the

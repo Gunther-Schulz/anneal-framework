@@ -769,7 +769,14 @@ takes two forms by dispatch path:
   **exactly the unit's intended change** and no other modification.
   On mismatch it **restores** the pre-dispatch state (discarding the
   subagent's writes) and halts and surfaces — contamination is
-  contained, not merely detected.
+  contained, not merely detected. **The run-state directory is
+  excluded from all three of these checks** (clean-before-dispatch,
+  the no-other-modification comparison, and restore): run-state is the
+  orchestrator's own bookkeeping — written during the run, not the
+  unit's work product — so the Integrity check, which guards the work
+  product against the unit, neither counts a run-state change as
+  contamination nor discards it on restore. The instance binds the
+  concrete run-state path.
 
 #### 4.2.5 Self-check at dispatch boundary
 

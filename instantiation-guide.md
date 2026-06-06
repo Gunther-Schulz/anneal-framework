@@ -356,24 +356,33 @@ enable mechanism above; the lens-supplement file in §4; any future
 operator-editable instance-side artifact — three framework rules
 apply:
 
-1. **Distinct location from runtime state.** Operator-editable
-   artifacts and runtime-state artifacts (the run-artifacts an
-   instance writes per §2's persistence mechanism) live at
-   observably distinct filesystem paths — observable under git
-   as: operator-editable paths are tracked (`git ls-files`);
-   runtime-state paths are gitignored (`git check-ignore`).
-   Mixing them blurs the commit boundary and the edit-permission
-   contract: operators forget which files they own, instances
-   overwrite operator-edited files, and gitignore rules fragment.
+1. **Distinct location + edit-permission.** Operator-editable
+   artifacts and run-state artifacts (the run-artifacts an instance
+   writes per §2's persistence mechanism) live at observably distinct
+   filesystem paths under distinct namespaces, with distinct
+   edit-permission: operators edit the operator-editable artifacts;
+   the instance writes the run-state and operators do not hand-edit
+   it. The run-state is the instance's accumulated run history and is
+   **tracked by default** (committed as durable, resumable
+   checkpoints — in-flight and completed); the instance binds this
+   default, and a project may gitignore its run-state to opt out
+   (gitignore is the override), while a transient local override-flag
+   is always gitignored. The operator-editable/run-state distinction
+   is carried by **namespace/path + the edit-permission convention**,
+   not by a commit-vs-gitignore split: keep the paths distinct so the
+   contract holds (operators know which files they own; instances do
+   not overwrite operator-edited files).
 2. **Namespace uniqueness.** Each instance's filesystem footprint
    uses a namespace unique to that instance, preventing collisions
    when multiple anneal-derived instances coexist in one project.
 3. **Convention** (recommended, not mandated):
    `<plugin-skill-name>.config/` (committed, operator-editable) +
-   `.<plugin-skill-name>/runs/` (gitignored, instance-managed). The
-   visible-vs-hidden filesystem distinction maps to
-   commit-vs-gitignore; the namespace inherits uniqueness from the
-   plugin manifest's skill-name uniqueness.
+   `.<plugin-skill-name>/runs/` (tracked run-state history,
+   instance-written). The visible-vs-hidden filesystem distinction
+   maps to **operator-editable-vs-instance-written** (both tracked,
+   distinguished by the edit-permission convention); the namespace
+   inherits uniqueness from the plugin manifest's skill-name
+   uniqueness.
 
 **Project init.** When an instance runs in a project for the
 first time, it bootstraps placeholder files for **every
@@ -382,9 +391,11 @@ operator-editable slot kind the framework recognises**
 whether the instance has declared specific items in those slots.
 The placeholder is what makes the capability visible: an
 operator landing in a fresh project sees the slot kinds
-available without needing to read spec-prose to discover them. Placeholders are committed (tracked under git);
-the runtime-state directory is added to `.gitignore` by the
-instance on the same first-run.
+available without needing to read spec-prose to discover them. Placeholders are committed (tracked under git); the run-state
+directory is **tracked** by default (the accumulated run history) —
+an instance binds this default and no longer gitignores run-state on
+first-run unless its binding opts out; a transient local override-flag
+is gitignored individually.
 
 **Placeholder content style.** Each placeholder carries: a
 header comment naming the slot kind and pointing at its spec

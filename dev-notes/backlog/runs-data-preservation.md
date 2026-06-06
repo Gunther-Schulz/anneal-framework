@@ -47,7 +47,24 @@ anything at all?"), the **extension + separate archive folder below is over-buil
 alternative + reasoning trail). If ratified: the framework bootstrap stops gitignoring the
 run-state slot (default-on); for THIS repo now, remove the `dev-notes/run-history/` provisional
 copy, un-gitignore `.anneal-dev/runs/`, and `git add` it; keep a local gitignore only for the
-`allow-adhoc-kernel-edit` override-flag. Framework bootstrap change = a later cycle.
+`allow-adhoc-kernel-edit` override-flag.
+
+## Framework formalization — IN-FLIGHT 2026-06-06 (run `run-state-tracked-by-default`)
+The framework bootstrap change is being done now (not a later cycle) — anneal-dev run
+`run-state-tracked-by-default` edits `instantiation-guide.md` §5 + `persistence.md` +
+`bindings.md` + `core.md` §4.2.4 (run-state tracked by default; per-instance binding per D3; the
+in-place integrity check + restore + separate-copy integration exclude the run-state dir on the
+work-product-vs-bookkeeping boundary). Verify + commit pending.
+
+**Follow-up surfaced (NOT actioned this run — `F-prov-framing`):** four framework provisioning
+sites still read "non-tracked run-inputs" / "not part of the tracked work product" —
+`spec/core.md:734`/`:736`, `instantiation-guide.md:107`, `anneal-dev/spec/bindings.md:129`. Under
+tracked run-state "non-tracked" is now **mildly misleading** (run-state IS git-tracked), but the
+rule **stays true** (run-state isn't *work-product*) → surfaced-not-actioned per the
+requirements-anchor brake (R4 doesn't fail). A small terminology cleanup ("run-inputs outside the
+tracked work product") — do as a quick follow-up spec edit (or fold into the next kernel touch);
+NOT worth a loopback. Consistency note: the prior convergence corrections in that run fixed the
+same staleness class on sibling sites, so Pareto-consistency favors the cleanup eventually.
 
 ## Framework framing (the heavier alternative — lifecycle extension; superseded by the above unless the extra separation is wanted)
 This is **not** a path this repo picks; it's a framework affordance defined in anneal and

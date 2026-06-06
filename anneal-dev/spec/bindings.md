@@ -177,29 +177,45 @@ touches one or more repos, and each touched repo is one container.
     HEAD snapshotted, and after return confirmed advanced by
     **exactly the unit's intended change** and no other
     modification. On mismatch, **restore** the pre-dispatch state
-    (discard the subagent's writes) and halt and surface.
+    (discard the subagent's writes) and halt and surface. The
+    run-state directory `.anneal-dev/runs/` is **excluded** from all
+    three (`core.md` §4.2.4 run-state exclusion): `git status
+    --porcelain` for the clean-before check excludes it (e.g.
+    `git status --porcelain -- ':!.anneal-dev/runs/'`), the
+    advanced-by-exactly comparison ignores it, and restore preserves
+    it. Run-state is the orchestrator's bookkeeping; since it is now
+    **tracked** (not gitignored), the exclusion must be explicit or
+    the live in-flight tracker would fail clean-before-dispatch and be
+    discarded on restore.
 
 - **Restore mechanism.** Reset the touched container to its
   snapshotted HEAD and discard uncommitted changes, returning the
   repo to its pre-dispatch state (`core.md` §4.2 in-place
-  mismatch path).
+  mismatch path) — **excluding `.anneal-dev/runs/`**, whose contents
+  are preserved across the reset (the live run-state tracker is the
+  orchestrator's bookkeeping, not the unit's work product, and must
+  survive a restore).
 
-- **Provisioning.** Run-inputs a dispatched unit reads that are not
-  part of the tracked work product — the run-state directory
-  `.anneal-dev/runs/` (`persistence.md`), which is gitignored and so
-  not carried by a copy — are provisioned into the separate copy
-  before dispatch and excluded from integration (`core.md` §4.2
-  Provisioning). Project bootstrap (what a repo needs merely to be
-  runnable) stays out of scope. For an in-place unit, the subagent
-  reads run state and the runnable environment natively from the
-  operator's repo (no provisioning, `core.md` §4.2).
+- **Provisioning.** The run-state directory `.anneal-dev/runs/`
+  (`persistence.md`) is the orchestrator's **bookkeeping, not work
+  product** — so although it is now tracked, a separate copy made at
+  the unit's base commit lacks the run's **current** (in-flight)
+  run-state. The orchestrator provisions the current run-state into
+  the separate copy before dispatch and **excludes it from
+  integration** (`core.md` §4.2 Provisioning). Project bootstrap (what
+  a repo needs merely to be runnable) stays out of scope. For an
+  in-place unit, the subagent reads run state and the runnable
+  environment natively from the operator's repo (no provisioning,
+  `core.md` §4.2).
 
 - **Integration.** After the unit's changes are verified clean
   (self-check passed and the integrity check confirms no
   contamination), the orchestrator integrates **only the unit's
-  changes** into the operator's work product, per touched
-  container — no copy-side metadata crosses over (`core.md` §4.2
-  Integration).
+  work-product changes** into the operator's work product, per touched
+  container — **run-state changes are not integrated** (run-state is
+  the orchestrator's bookkeeping, authored in the orchestrator's
+  context, not the copy's), and no copy-side metadata crosses over
+  (`core.md` §4.2 Integration).
 
 **Spawn-fallback** (`core.md` §4.2, `glossary.md` Spawn-fallback):
 if a separate copy or isolated subagent cannot be established, the
@@ -279,8 +295,9 @@ framework default — per-task model choice, harness-supplied.
 
 Per `instantiation-guide.md` §5 filesystem-layout rule,
 operator-editable artifacts live at `anneal-dev.config/` (committed),
-distinct from `.anneal-dev/runs/` (gitignored runtime state — see
-`persistence.md`). The operator-editable set:
+distinct from `.anneal-dev/runs/` (the **tracked** run-state history —
+instance-written, not operator-edited; see `persistence.md`). The
+operator-editable set:
 
 - `lenses.md` — lens-supplement mechanism (per `lens-supplement.md`)
 - `extensions.enabled` — extension enable file (per `extensions.md`)
@@ -292,11 +309,14 @@ distinct from `.anneal-dev/runs/` (gitignored runtime state — see
   framework-recognized slot kinds
 - `README.md` — operator-facing explainer
 
-**First-run bootstrap.** On first run in a project, anneal-dev adds
-`.anneal-dev/` to the repo's `.gitignore` (creating it if absent)
-and bootstraps `anneal-dev.config/` with the four placeholder files
-above, each per `instantiation-guide.md` §5 Placeholder content
-style. On bootstrap the `model-tier.md` placeholder is commented/empty
+**First-run bootstrap.** On first run in a project, anneal-dev **no
+longer gitignores `.anneal-dev/`** — the run-state directory
+`.anneal-dev/runs/` is **tracked** (the accumulated run history;
+`persistence.md`). Only a transient local override-flag, if the
+project uses one (e.g. a run-gate bypass marker), is added to
+`.gitignore` individually. anneal-dev bootstraps `anneal-dev.config/`
+with the four placeholder files above, each per `instantiation-guide.md`
+§5 Placeholder content style. On bootstrap the `model-tier.md` placeholder is commented/empty
 (default — inherit the session model), with a header pointing at the
 Dispatch model tier section and how to pin the harness top-tier model; a
 project pins a tier by **filling** the placeholder with a model name,
