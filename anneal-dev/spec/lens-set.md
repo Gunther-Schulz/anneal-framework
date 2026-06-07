@@ -115,14 +115,25 @@ cycle-applied lenses below.
   breaks on a relocate/rename without naming it by content), and
   **producer↔consumer** (the rule consumes an artifact X → "what
   produces X?": producer-existence, the target-existence shape
-  applied to the producer, absence falsifies). All seven forms
+  applied to the producer, absence falsifies), and **co-producer**
+  (the rule produces a value written to a shared site consumed by
+  equality → "what are the other producers/writers of that site?":
+  sibling producers must format-match, resolving through the shared
+  site's format contract — a target-dependents rendering; by target
+  role: target-as-consumer → enumerate its producer,
+  target-as-producer → enumerate the sibling producers of the shared
+  sink). All eight forms
   render the existing closed Coupling-shape set (no fourth shape).
   A search on one form only, declared as the dependent set, is
   missing its true-unit basis — the silent-substitution shape
   (`core.md` §3.2).
 - **Scope:** any change, removal, or replacement of an existing rule
   (the framework's Coupled-change / completeness-claim forcing
-  function, `core.md` §3.2.2). The enumeration spans every corpus
+  function, `core.md` §3.2.2). For a **replacement**, the completeness
+  obligation also covers the behaviors leg's **emitted effects**
+  (effects the replaced code emits rather than returns), enumerated by
+  **reading the replaced body, not its callers** (`core.md` §3.2.2).
+  The enumeration spans every corpus
   repo (framework spec, skill-craft, instance specs, rendered
   plugins); the search is wrap-tolerant per `bindings.md`. A
   paraphrased restatement or a rendered clause is a

@@ -244,19 +244,43 @@ of an existing artifact** carries an implicit completeness claim:
 that all references to, load-bearing behaviors of, AND
 **non-reference structural dependents** of the affected artifact
 have been accounted for. Non-reference structural dependents are
-two renderings of the existing closed Coupling-shape set
+renderings of the existing closed Coupling-shape set
 (`glossary.md`; not a new shape): code or config that **hardcodes the target's
 location or structure** (it breaks on a relocate/rename without
-naming the target by content-reference), and a **producer of an
+naming the target by content-reference), a **producer of an
 artifact the target consumes** (a consumer without a producer is
 an unenforced rule firing on a non-existent artifact —
 producer-existence is the target-existence shape applied to the
-producer). The basis must include the re-runnable search
-enumerating references and these dependents AND — for
-replacements introducing a successor — an explicit enumeration
-of behaviors preserved or dropped. Without both where applicable,
-the decision is missing its true-unit basis and cannot reach
-[VERIFIED]. This is the forcing function for Coupled-change
+producer), and a **co-producer**: when the target produces a
+value written to a shared site consumed by equality (two or more
+artifacts must emit a matching value because a downstream consumer
+compares them), the obligation enumerates **every producer/writer
+of that shared site** — a reference-search on the target's name
+does not reach a *sibling* producer; the dependency resolves
+through the shared sink's *format contract*, the symmetric
+analogue of the producer↔consumer mediation, so it too is a
+target-dependents rendering, not a new shape. By target role:
+target-as-consumer → enumerate its producer; target-as-producer →
+enumerate the sibling producers of the shared sink. The basis must
+include the re-runnable search enumerating references and these
+dependents AND — for replacements introducing a successor — an
+explicit enumeration of behaviors preserved or dropped, covering
+behaviors the replaced artifact **emits rather than returns** —
+effects produced *within* its body (an emission, write, or call),
+which a reference-search cannot surface (it surfaces callers, not
+internal effects). The method differs by target: for the body's
+emitted effects, **read the replaced artifact's body** for
+effect-producing operations, not a reference-search of its
+callers; for a co-producer, **search the shared site's writers**,
+not the target's references — enumeration keyed on the target's
+references misses both, and the search is aimed at the right
+target instead. Each enumerated emitted effect must have a
+successor in the replacement (an effect with no successor
+falsifies — `target-behavior`/`expected-match`); a co-producer
+whose emitted format diverges from the target's falsifies
+(`target-dependents`/`any-match`). Without both enumerations where
+applicable, the decision is missing its true-unit basis and cannot
+reach [VERIFIED]. This is the forcing function for Coupled-change
 adherence.
 
 A preserved-behavior claim a read cannot exhibit — because the
@@ -1121,8 +1145,8 @@ a delta against current state; (c) the
 count as implemented; (d) the **side effects and failure modes** —
 what's observable on success and at boundaries; (e) the **basis** per
 §3.2 (for amendment decisions, (e) carries the §3.2.2
-completeness enumeration of references + behaviors preserved/
-dropped; (b) carries the shape of the delta). **Brevity discipline:**
+completeness enumeration; (b) carries the shape of the delta).
+**Brevity discipline:**
 the body covers exactly (a)-(e) above — what a fresh session needs
 to implement the decision — and no realization output beyond what the
 contract surface and its cited sources already convey. The
