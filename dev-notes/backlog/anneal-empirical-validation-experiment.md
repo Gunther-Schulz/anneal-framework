@@ -313,6 +313,63 @@ Both literature runs landed — concrete refinements to fold into the protocol:
 - **Possible 4th arm:** carry **multiple working hypotheses** at investigate-design (does it improve
   outcomes?) → `multiple-working-hypotheses-investigate-design.md`.
 
+## Two-lever model + falsifiable tests (2026-06-07, session 12 — operator-raised)
+
+**Why the proof thread kept dissolving: wrong metric, wrong regime — and it was reaching for the
+*harder* of two distinct levers and measuring it the one way guaranteed to null it.**
+
+The toy A/Bs killed the EASY claim ("disciplines-as-prompt help on tractable single-pass tasks" — true,
+~inert blind). That's a result, not a failure: it isolated the real levers. There are **two**, distinct,
+countering two different act-first failure modes:
+
+- **Lever 1 — falsification / independence = error-DETECTION.** A fresh context catches the confident-
+  wrong output the actor is blind to. Counters act-first mode 1 (*shipping a wrong thing*).
+  **Already external science — do not re-prove the mechanism:** INV-3 anchor (Panickssery, Bowman & Feng,
+  NeurIPS 2024) measured self-preference bias + that majority voting beats best-of-N self-verification.
+  The only open claim is whether anneal's process *instantiates* it on a task-class.
+- **Lever 2 — convergence / iteration = local-optimum ESCAPE + fixed-point.** The loop refuses the first
+  coherent design; it perturbs (each cycle's delta), re-forms, re-checks until the artifact **survives a
+  clean pass (zero new deltas)**. Counters act-first mode 2 (*settling for the first plausible answer; no
+  stability guarantee*). The annealing name is literal — a single pass (even independent) lands at the
+  first coherent design = a local optimum; the cycles are the temperature schedule. The
+  convergence-specific payoff act-first can't claim: the output **has survived a fresh attack.**
+
+**Why mean catch-rate A/Bs null both:** Lever-1 value is TAIL-risk (the rare confident-wrong averted),
+not mean uplift — structurally under-measured, like code-review / type-systems / seatbelts (value = the
+disaster you didn't have; can't observe the counterfactual). Lever-2 only fires where the work has local
+optima a single pass settles into — toy tasks have none (one-pass-tractable), so the cycles converge in 1
+and add nothing. Both levers live in the hard-task / high-stakes regime the toy apparatus can't reach.
+
+**Separate falsifiable tests (each with a pre-committed kill condition):**
+- **Lever 1 — planted-blind-spot:** plant a *systematic* blind spot (a misleading framing the forming
+  context adopts — e.g. beat-the-books' period omission). Arm A: actor self-verifies (predict miss).
+  Arm B: fresh-context independent verify (predict catch). Metric = catch-rate **on the plant**. **Kill:**
+  B ⊁ A ⇒ independence claim dies.
+- **Lever 2 — three-arm + planted local-vs-global optimum:** A (1 pass) · B (1 independent pass) ·
+  C (N-cycle iterate-to-convergence). A<B isolates falsification; **B<C isolates convergence.** Use a task
+  with a KNOWN plausible-but-suboptimal answer + a better one; metric = escape-rate (no clean oracle
+  otherwise — you'd grade with the faculty under test). **Kill:** C ≈ B ⇒ convergence adds nothing beyond
+  one independent pass (the cycles just re-enforce inert disciplines).
+
+**Currency = existence-proofs, not mean uplift** (tail/averted-failure value can't yield a clean mean).
+**Session-12 logged n=2, both levers firing on anneal-dev's OWN work (dogfood):**
+1. *Falsification:* the f0 cycle-3 fresh-context convergence pass caught the design was too narrow —
+   **after the working context had declared it [READY].** A self-certifying run ships the gap.
+2. *Convergence:* cycles 3→4→5 turned the deltas into a stable design — cycle-5 came back clean (survived
+   re-attack); the cycle-5 artifact > the locally-optimal cycle-2 artifact *because of the iteration*.
+   (Bonus third: the implement integrity check caught a subagent's **confabulated** state claim against the
+   actual tree — doer≠checker firing.)
+**Revealed-preference signal** (don't discount to zero): operator runs modern-clippy > act-first in daily
+work — real evidence the RCT keeps nulling *because* the value is regime/tail-shaped.
+
+**Honest bottom line:** the deliverable was never "anneal lifts the mean." It's: independence is
+established (INV-3); anneal instantiates two levers (detect + escape-to-fixed-point); their value is
+tail-risk + local-optimum-escape, worth the N× cost exactly when a confident-wrong / first-plausible
+output costs more than the passes — i.e. hard/high-stakes design, which a sensible operator already
+reserves it for. The planted tests convert that from a plausible story into a falsifiable one. The
+"value is in the tail" framing is honest ONLY paired with the pre-committed kill conditions above —
+otherwise it's an unfalsifiable dodge.
+
 ## Relates to
 - `anneal-reliability-measurement.md` (the why/what — this is the how; the 3 metrics live there too).
 - `design-first-vs-act-first-research.md` (the verdict that motivates it: no head-to-head exists).
