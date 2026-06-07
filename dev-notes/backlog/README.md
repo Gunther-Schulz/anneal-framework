@@ -88,7 +88,8 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
     dispatch-witness-manifest architectural decision precedes any cycle)
   - **②** ✅ was *gated-kernel* (one bundled release, one step-4)
   - **③** *fork-first* (2 forks: completeness-search disposition · basis-query-fidelity n=1) **→ gated-kernel**
-  - **④a** *fork-first* (worktree harness-capability check) **→ gated-kernel**
+  - **④a** *gated-kernel* — was *fork-first* (worktree cache decision); **fork DISSOLVED 2026-06-07**:
+    the merge-tree-gated integration design needs no cache decision (`worktree-isolation-and-integration`)
   - **④b** *gated-kernel* (hooks/release) + *skill-craft-gate* (the soft-load-pointer item) + *drain* (instructional-files-streamline)
   - **⑤** *gated-kernel* (anneal-dev self-hosting verify); the eval / regression-net items are **impl-heavy builds**, not pure-spec relabels
   - **⑥** render-conventions = *fork-first* (slot/binding spec decisions) · the re-render = *drain* per instance, gate at render-verify
