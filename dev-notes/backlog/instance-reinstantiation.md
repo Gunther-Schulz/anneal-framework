@@ -266,13 +266,22 @@ per-instance re-render below should run *after* they land.)
    instances may stay parked to next-active per the render-settlement convention
    (drift cost ~0 while idle) — do them now only if a fully-clean baseline is
    wanted:
-   - **clippy** — the heaviest: bundle clippy's **whole** render-debt into ONE full
-     anneal-dev run (the flagged "2nd anneal-dev dogfood"): (i) the parked
-     **de-pollution** vocab debt (`clippy-render-resync` — c-safe/T1/T2/R1/R4,
-     pre-dates the §4 work); (ii) the **new §4-cleanup** debt (sub-numbering/de-dup/
-     consolidation — NOT in clippy-render-resync); (iii) the **SKILL.md de-bloat**
-     fresh-rewrite (`clippy-skill-de-bloat`); (iv) the **CLAUDE.md seed re-point**
-     (`adoption-instance-settlement`).
+   - **clippy** — ✅ **DISCHARGED 2026-06-07** (run `clippy-reinstantiation`,
+     `.anneal-dev/runs/`; verify [PASSED] after a cycle-8 loopback fix). The "2nd
+     anneal-dev dogfood": full re-render of all 8 plugin files + the 3 instance-spec
+     sources (`spec/{bindings,lens-set,README}.md`) from the live spec, carrying the
+     06-02→06-07 source-delta (intent-falsification pass, requirements record, §3.1
+     bind/surface relabel, L1 convergence sequencing, campaign ②/③, §3.2.1 provenance,
+     §3.2.2 co-producer/emitted-effect, purpose-mechanism, coupling-rename, citation-
+     firewall, validation-watch folder + V-N strip) + SKILL.md de-bloat (2579→2182).
+     **Matrix correction:** the "clippy lags since pre-session-6" claim below was a
+     **stale secondary source** — clippy was current to **2026-06-02** (v0.9.94); the
+     real debt was the ~28-commit delta since. The work product is rendered + verified
+     in `coding-clippy` (operator owns the commit + version-bump release). Residual
+     tails filed: `clippy-reference-file-debloat`, `firewall-regex-wrap-tolerance`.
+     *(Superseded plan, retained for history: (i) de-pollution vocab `clippy-render-resync`
+     — done; (ii) §4-cleanup — done; (iii) SKILL.md de-bloat `clippy-skill-de-bloat` —
+     done; (iv) CLAUDE.md seed `adoption-instance-settlement` — was already current.)*
    - **daneel** — faithful re-render of §4.
    - **campaign-craft** — faithful re-render; also **locate its source repo first**
      (stale `diligence-framework` name; only the marketplace clone exists — see

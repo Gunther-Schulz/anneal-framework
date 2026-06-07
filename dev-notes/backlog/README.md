@@ -133,6 +133,39 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
 (5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +4 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`, `anneal-self-improvement-loop`) → 56 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
+### ▶ Where we are + next steps (2026-06-07 session 13 — READ FIRST)
+
+**▶ CURRENT STATE (end of session 13, all pushed; both repos clean):** the **clippy re-render SHIPPED**
+(campaign ⑥ / tier-⑥ — the operator's session-12 candidate (A)). Run `clippy-reinstantiation`
+(`.anneal-dev/runs/`), 8 cycles + 1 verify-loopback, verify **[PASSED]**; **coding-clippy `298bf88` v0.9.95
+LIVE** (pushed; `claude plugin update` → cache 0.9.95; `/reload-plugins` confirmed active). Full re-render of
+all 8 plugin files + 3 instance-spec sources from the live spec — the **2026-06-02→06-07 source-delta**
+(intent-falsification pass, requirements record + coverage check, §3.1 bind/surface relabel, L1 convergence
+sequencing, campaign ②/③, §3.2.1 provenance, §3.2.2 co-producer/emitted-effect, purpose-mechanism,
+coupling-rename, citation-firewall, validation-watch folder+strip) + SKILL.md de-bloat (2579→2182). **Matrix
+correction:** the backlog's "clippy lags since pre-session-6" was a **stale secondary source** — clippy was
+current to 2026-06-02; this rendered the real delta. **Clean dogfood** — the convergence/verify caught real
+bugs: cycle-6 mechanical falsified a too-narrow scope search (missed `spec/README.md`); cycle-8 verify caught a
+dropped co-producer falsification clause. (My cycle-1 "moderate not heavy" reframe was itself wrong + caught in cycle-2.)
+
+**Filed this session:** `clippy-reference-file-debloat` (D15-deferred reference/phase budget tail: tracker 3880 /
+investigate-design 3545 / implement 2319 / foundations 2216) · `firewall-regex-wrap-tolerance` (the firewall
+coherence-check regex misses newline-split §-cites — kernel/method robustness). **`instance-reinstantiation.md`:**
+clippy ✅ **DISCHARGED**; **daneel** (+ campaign-craft, bauleitplan) still owe the same deltas.
+
+**▶ NEXT — operator picks; the genuine candidates (re-ground in anneal-dev per CLAUDE.md before any cycle):**
+- **(B) `framework-intent-vision-statement`** — the session-12 ripe sibling (seeded to a "ripe seed"); low-gating,
+  self-contained: articulate the two-value core / define what "V1" means. (Pairs well with the proof thread, which needs a V1 definition.)
+- **The DECIDED proof-first order (session 9, still standing):** the bounded enforcement-fidelity batch
+  (`convergence-cycle-mechanical-enforcement` + `skill-craft-antipatterns-loaded-but-inert`) →
+  `measurement-harness-mve` baseline → the `anneal-empirical-validation-experiment` A/B verdict. The strategic
+  "does the framework actually work" thread (paused session 11 for compute).
+- **`daneel-reinstantiation`** — repeat the now-PROVEN clippy re-render method on the sibling debugging instance
+  (clean, low-risk; the method just shipped end-to-end this session).
+- *Campaign ③ housekeeping, anytime:* `core-md-bloat-measure-then-cut` · `verified-integrity-consolidation` · `surface-non-task-observations`.
+
+*(Session 12 block below — superseded; history. Its NEXT candidate (A) clippy re-render is now SHIPPED.)*
+
 ### ▶ Where we are + next steps (2026-06-07 session 12 — READ FIRST)
 
 **▶ CURRENT STATE (end of session 12, all pushed; tree clean):** the **3 pre-render lens kernel edits
