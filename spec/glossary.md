@@ -47,11 +47,16 @@ additive-only (supplements cannot disable or override core lenses).
 ## Basis and evidence
 
 **Basis** — the evidence a claim or design decision rests on — the
-artifact itself: a search result, a located read of the source, or
-— for a behavior a read cannot exhibit, resolved at runtime — that
-behavior exercised by the domain's executable verification
-(`core.md` §3.2.2, §4.3). The basis rule is specified in `core.md`
-§3.2.
+artifact itself: a search result; a **located read of the source**
+— the clause read to its visible close (the full sentence,
+paragraph, or section, not a fragment) paired with exactly one
+observable fact about it; **a construct taken whole** (true-unit) —
+the rule-bearing unit read to its visible close, when the claim is
+about a unit that must be taken whole; or — for a behavior a read
+cannot exhibit, resolved at runtime — that behavior exercised by
+**the domain's executable verification**, the instance's
+dispatched-and-run check (`core.md` §3.2.2, §4.3). The basis rule
+is specified in `core.md` §3.2.
 
 **Evidence-bearing-artifact rule** — the requirement that every
 load-bearing artifact the protocol produces be evidence-bearing —
@@ -76,7 +81,10 @@ load-bearing claims carry the basis apparatus (`core.md` §3.2).
 
 **Completeness claim** — a claim about a complete set: a scope, an
 element's dependents, an input's value-classes, a flaw class's
-instances. Its basis is a mechanical search (`core.md` §3.2).
+instances. Its basis is a **wrap-tolerant** mechanical search —
+matched on distinctive single tokens, or against newline-flattened
+input, because prose wraps across lines and a multi-word pattern can
+split mid-match (`core.md` §3.2).
 
 **Basis cardinality** — the count of observable facts per
 citation in a basis. The rule (`core.md` §3.2): exactly one

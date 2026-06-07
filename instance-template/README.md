@@ -27,6 +27,9 @@ usable):
 - `spec/persistence.md` — your run-artifact persistence
   mechanism (where the tracker, standardized-pass artifacts, and
   implementation decompositions live; how a run is resumed).
+- `spec/isolation.md` — your impl-phase isolation mechanism (how a
+  separate copy is made escape-resistant, the unit identifier, the
+  state marker, the restore mechanism — `core.md §4.2.3`).
 - `spec/lens-set.md` — the domain's standardized lens set: the
   recurring blind-spots an expert watches for.
 

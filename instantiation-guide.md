@@ -90,6 +90,11 @@ fork, not an instance.
   (`spec/modules.md` §3.3); the instance supplies the concrete
   mechanism — where these artifacts live, how an in-progress run is
   found and resumed. Clippy's `bindings.md` is the worked example.
+  (The template scaffolds one *file* per slot for discoverability; a
+  stabilized instance MAY consolidate slots into `bindings.md` sections
+  — so the worked examples here are consolidated instances, not
+  contradictions of the file scaffold. Canonical statement:
+  `instance-template/README.md` "After instantiation".)
   - **Render-time note (harness-provided tracking tools).** Where the
     target harness offers its own task- or run-state-tracking tools, the
     rendered protocol states that the run's state lives in this
