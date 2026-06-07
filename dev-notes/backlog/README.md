@@ -135,8 +135,10 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 
 ### ▶ Where we are + next steps (2026-06-07 session 12 — READ FIRST)
 
-**Session 12 — two items cleared toward the standing goal "re-render clippy sooner." Tree clean + committed
-(`97981dc`, `05c3f35`, `89a7a63`).**
+**Session 12 — two items cleared toward "re-render clippy sooner" (worktree + F0) + a foundational
+articulation captured. Tree clean + committed: worktree `97981dc`; F0 `05c3f35`/`89a7a63`; proof-model
+`98c1cc6`; intent-layer `0eb6952`. (Concurrent session also landed `5f038b5`/`e8248d2` —
+`co-producer-format-parity`.)**
 
 1. **`worktree-isolation-and-integration` — RESOLVED** (`97981dc`). The "silent hunk-drop" was **misdiagnosed**
    (9-cell empirical battery: plain cherry-pick/merge **never** silently drop — only `-X ours/theirs` does).
@@ -155,7 +157,19 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
    **Basis**/**Completeness-claim** now DEFINE the 4 binding-table terms + guide §2 file-vs-section reconciliation.
    **The tier-⑥ clippy re-render gate is CLEARED.**
 
-**▶ NEXT-UP — the clippy re-render itself (`instance-reinstantiation` / tier ⑥ / campaign ⑥)** — the operator's
+3. **Foundational (operator-raised reflection: "what does anneal actually do / is this the core?").** Captured the
+   **two-lever value model** — falsification/independence (error-detection, INV-3) + convergence/iteration
+   (local-optimum-escape) as DISTINCT levers, each with a falsifiable test + pre-committed kill condition — in
+   `anneal-empirical-validation-experiment` ("Two-lever model", `98c1cc6`); and folded the **core-of-the-system
+   articulation** (the two values counter two AI failure modes — assertion→basis-rule, dropping→complete-state;
+   the loop is *machinery*, the two values are the *core*) into `framework-intent-vision-statement` (session-12
+   layer, `0eb6952`). That intent item went from blank-"what's-the-intent" to a **ripe seed** — now a strong
+   next-session anneal-dev candidate (home: `core.md` Purpose Mechanism-clause or a `VISION.md`, NOT foundation.md;
+   the README tagline "Convert AI confidence into AI evidence" already front-doors the trust half).
+
+**▶ NEXT-UP — two ripe candidates, operator picks priority: (A) the clippy re-render** (`instance-reinstantiation`
+/ tier ⑥ / campaign ⑥), **(B) the intent statement** (`framework-intent-vision-statement`, seeded above). (A) is
+the operator's
 actual goal, now **unblocked**: coherent template/guide/glossary + the worktree/cache design + F0 to render
 against. **Heavy** — clippy carries *semantic* render-debt since pre-session-6 (intent-falsification pass,
 requirements-record machinery; clippy's real bugs trace partly to that lag — see `instance-reinstantiation.md`).
