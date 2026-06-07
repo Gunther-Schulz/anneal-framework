@@ -135,6 +135,17 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 
 ### ▶ Where we are + next steps (2026-06-07 session 12 — READ FIRST)
 
+**▶ CURRENT STATE (end of session 12, all pushed; tree clean):** the **3 pre-render lens kernel edits
+SHIPPED** — §3.2.2 **co-producer + emitted-effect** dependent forms (`49cb453`, run
+`enumeration-target-blindness`) and §3.2.1 **provenance** grounded-at-the-producer (`cd2fd2c`, run
+`provenance-basis-naming`); worktree + F0 done earlier this session. **▶ NEXT = the clippy re-render (A),
+now fully UNBLOCKED — HEAVY, START FRESH** (re-ground in anneal-dev per CLAUDE.md). Full detail + the
+render-debt to fold in: **"Session 12 continued #2"** block below. Filed this session:
+`forcing-function-dose-discriminator` (the force/surface/build discriminator + the three-fix-shapes cut),
+`co-producer-single-source-of-truth-cure`; watch under `lens-crowding-vs-broad-search` (recognition-economy).
+
+*(The three "Session 12 …" sub-blocks below are the chronological detail — historical, READ-FIRST banner above is the live summary.)*
+
 **Session 12 — two items cleared toward "re-render clippy sooner" (worktree + F0) + a foundational
 articulation captured. Tree clean + committed: worktree `97981dc`; F0 `05c3f35`/`89a7a63`; proof-model
 `98c1cc6`; intent-layer `0eb6952`. (Concurrent session also landed `5f038b5`/`e8248d2` —
