@@ -49,6 +49,22 @@ verify, across **10 cycles** for a ~3-edit change. Two findings:
   schema** (`modules.md §3.3`) + the falsification-brief template (`investigate-design.md`) + verify's brief
   (`verify.md`). (A) cuts dispatch *count*; (B) cuts each dispatch's *fixed cost*.
 
+**⚠ Lever (A) is SENSITIVE — operator flagged 2026-06-07, unsure whether to pursue it at all.** Reason: skipping
+the convergence cycle = **removing the framework's primary independence mechanism** (the fresh-context falsification
+that catches the blind spot the producer shared) — on a **"light" classification that can be wrong**. In direct
+tension with the framework's own "independence is the lever" tenet (`framework-intent-vision-statement`). The two
+datapoints **conflict on (A)**, which is itself the hazard:
+- **n=1 (v-entry)** — convergence only *churned* (gold-plating, no real catch) → favored skipping.
+- **n=2 (clippy-write-side, THIS run)** — the change *looked* light (one lens), yet the convergence cycle **caught a
+  real defect**: the cycle-2 intent pass found D2's render target was wrong (F-b — would have shipped the wrong
+  lenses.md lines) AND surfaced the extend-vs-new crux. **Skipping convergence here would have shipped a defect.**
+- ∴ the value of convergence on a "light" change is **unpredictable** — you cannot tell ahead of time whether it
+  will churn (waste) or catch (save). That unpredictability + the **cost asymmetry** (a skipped-convergence *shipped
+  defect* ≫ a wasted-ceremony) is why (A) is doubtful. **Lever (B) carries NO such hazard** — it keeps the
+  independent check, only leaning the brief. **Recommendation: pursue (B); HOLD (A)** — do not adopt it without a
+  hard non-circular "light" certifier AND acceptance that some real catches will be missed; quite possibly **don't
+  do (A)** and just take (B). (The "light" classifier is the same circularity-risk the D7 precedent closed.)
+
 **Empirical evidence (n=2, 2026-06-07 — the lean-brief lever (B)):** the `clippy-write-side-boundary` run — a
 **one-lens instance edit** (extend Silent-substitution-at-boundary bidirectional) — spent **~4 subagents ×
 ~50–77k tokens**, the isolated verify alone **~68k** for a one-line-class change. Diagnosis:
