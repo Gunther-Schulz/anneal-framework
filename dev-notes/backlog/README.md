@@ -632,8 +632,12 @@ captured → the F-batches below (F1 confirmations) + the new `kernel-consolidat
 measured movable points). The **`core.md` bloat question** is now *measured* (no de-bloat rewrite —
 the 2 movable points live in that item). Fixes are separate anneal-dev cycles (the audit was the
 floor). **F0 render-conventions gate the tier-5 re-renders — do them first.**
-- **F0 — render-convention (gate tier 5):** `instance-template-slot-scaffolding` (settle slot-as-file
-  vs slot-as-section, then fix guide/template) · `glossary-binding-table-interface-completeness`.
+- **F0 — render-convention (gate tier 5): ✅ DONE 2026-06-07** (anneal-dev run `f0-render-conventions`,
+  verify [PASSED] + operator soundness SOUND): `instance-template-slot-scaffolding` (the slot-as-file-vs-
+  section fork was already settled live; closed via isolation.md scaffold + README enum + guide §2
+  reconciliation) · `glossary-binding-table-interface-completeness` (glossary Basis/Completeness now
+  define the 4 binding-table terms). **The tier-5/⑥ re-render gate is CLEARED.** Render-debt: anneal-dev
+  binding-table cite re-point (F-E, rides the re-render). Both items archivable.
 - **F1 — verify/impl discipline gaps** (`core.md` §4.2/§4.3 + `development-process.md`):
   `verify-vs-original-requirements` (✅ **SHIPPED 2026-06-04**, spec-only `1d93e58`, archived — render
   debt queued in `instance-reinstantiation`) · `behavior-change-test-impact-enumeration` ·

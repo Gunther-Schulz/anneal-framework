@@ -1,7 +1,14 @@
 # instance-template doesn't scaffold the mechanism slots
 
-**Status:** OPEN finding, surfaced by Cycle a (2026-06-01) while declaring the
-isolation slot. Pre-existing; not caused by the de-pollution.
+**Status:** ✅ DONE 2026-06-07 (anneal-dev run `f0-render-conventions`, verify [PASSED] + operator
+soundness SOUND; release `<pending-this-commit>`). The slot-as-file-vs-section "fork" was already
+settled in the live corpus (template README:53-59 — file-per-slot in template, instances may
+consolidate); the real gap (missing `isolation.md` scaffold + README enumeration omission + the
+guide's internally-contradictory file-vs-section framing) is closed by D2 (`instance-template/spec/
+isolation.md`), D3 (README "Required slots" + isolation), D5 (guide §2 reconciliation clause).
+Archivable.
+
+_Original finding (2026-06-01, Cycle a):_
 
 `instantiation-guide.md` §2 claims the template "scaffolds a placeholder file
 for every slot the framework recognises." But `instance-template/spec/` carries

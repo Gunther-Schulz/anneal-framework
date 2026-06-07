@@ -1,7 +1,7 @@
 # Run: f0-render-conventions
 
-- **Status:** IN-PROGRESS
-- **Phase:** investigate-design
+- **Status:** PASSED
+- **Phase:** verify
 - **Mode:** interactive
 - **Task summary:** F0 render-convention gate (gates the clippy re-render) — make the
   instance-template / guide / glossary coherent on (1) slot scaffolding (the missing isolation
@@ -297,3 +297,56 @@ Every step carries an external citation → PASSED (no step answered from recall
 
 Impl plan: `.anneal-dev/runs/f0-render-conventions.impl-plan.md` (4 units, all parallel-eligible).
 **[READY]** presented to operator for `next phase`.
+
+---
+
+## IMPLEMENT (operator selected `next phase`)
+4 units (D2–D5) dispatched to one in-place subagent (operator-noted: a permitted regroup of the
+parallel-eligible disjoint set; see `dev-notes/backlog/impl-plan-unit-granularity-vs-dispatch.md`).
+**Persistence reference: checkpoint `05c3f35`** (HEAD `97981dc`→`05c3f35`, integrity: exactly the 4
+in-scope edits + run-state). Orchestrator recursion-check: re-read all 4 diffs vs the locked design →
+**faithful + within scope** (subagent self-check clean; subagent NARRATION unreliable — confabulated a
+"prior interrupted attempt", caught by the integrity check vs the actual tree; the real state is
+correct). No loopback. Edits: `instance-template/spec/isolation.md` (new), `instance-template/README.md`,
+`spec/glossary.md`, `instantiation-guide.md`.
+
+---
+
+## VERIFY — [PASSED] (isolated)
+Fresh-context isolated verify (subagent `ac576fee52906b745`, opus). All four checks + the self-hosting
+skill-craft form review accounted for; every finding at [VERIFIED] terminal.
+
+```
+Verify result: [PASSED] (isolated)
+Finding ledger:
+  F1 [VERIFIED — non-issue]  F2 [VERIFIED — addressed→D2]  F3 [VERIFIED — addressed→D3]
+  F4 [VERIFIED — addressed→D2]  F5 [VERIFIED — non-issue]  F6 [VERIFIED — addressed→D4]
+  F7 [VERIFIED — non-issue→D4]  F8 [VERIFIED — surfaced]  F-A [VERIFIED — surfaced]
+  F-B [VERIFIED — addressed→D2+D5]  F-C [VERIFIED — addressed→D5]  F-D [VERIFIED — addressed→D4]
+  F-E [VERIFIED — deferred: clippy/anneal-dev re-render §3 firewall check]
+  F-INTENT-1 [VERIFIED — surfaced: placement folded into D5, re-checked HOLDS]
+  F-INTENT-2 [VERIFIED — surfaced: corrected F-E enumeration]
+```
+- **Planned-vs-actual:** D1–D5 each citation-equivalent; design-completeness audit clean (no uncovered
+  material element; isolation.md's `§4.2` pointer = realization detail).
+- **Requirements:** R1←D2+D5, R2←D1/D2/D3/D5, R3←D4, R4←R1∧R2∧R3; verbatim-request enumeration clean.
+- **Lenses:** all 8 clean (Undefined-shorthand actively resolved by D4; Fragmentation avoided by D5
+  cross-ref + D4 define-in-place; Leakage clean — isolation.md domain-general).
+- **Battery:** render-fidelity + skill-quality **N/A** (no rendered skill file in change-set — spec/
+  template/guide only); **coherence RAN** — all cross-refs resolve (`core.md §4.2.3`@730, `§3.2`@181,
+  `§3.2.2`@240, `§4.3`@913, README "After instantiation"@54); **F-INTENT-1 placement HOLDS** (clause
+  @guide:93-97 precedes the isolation@:113 and presentation@:120 contradiction-exhibiting examples);
+  slot-set coherent across guide §2 / README / template.
+- **skill-craft form review:** no findings.
+
+**OPERATOR SOUNDNESS PASS — pending** (self-hosting method-kernel rule; anneal-dev never self-certifies
+its foundation). Focusing artifact: only **INV-1 (basis rule)** touched (by D4); HOLDS/advances against
+its Zave-&-Jackson designation anchor. Soundness question aimed: do D4's glossary definitions faithfully
+designate `core.md §3.2`'s forms without drift?
+
+**OPERATOR SOUNDNESS PASS: SOUND** (2026-06-07) — operator verdict on the INV-1 designation question:
+D4's glossary definitions faithfully designate `core.md §3.2`'s basis-rule forms; the method reads
+soundly with these forms pinned in the instance-facing interface. **RUN COMPLETE** (verify [PASSED] +
+operator soundness SOUND). F0 render-convention gate discharged → unblocks the clippy re-render
+(tier ⑥ / `instance-reinstantiation`). Render-debt carried out: F-E (anneal-dev binding-table
+left-column `core.md §3.2`→glossary re-point, rides the next anneal-dev re-render).

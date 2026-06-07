@@ -1,9 +1,16 @@
 # Complete the glossary as the binding-table interface (the technical binding terms)
 
-**Status:** OPEN — spun off 2026-06-03 from the `cite-glossary-not-section-numbers` run
-(D6 [AUTO-ACCEPTED]). The §-number citation convention (FB-3) is settled + the §-cited
-method-concept gaps closed (3 headwords added); THIS item is the caveat's separable
-"real work" — making the glossary cover the binding-table left column too.
+**Status:** ✅ DONE 2026-06-07 (anneal-dev run `f0-render-conventions`, verify [PASSED] + operator
+soundness SOUND; release `<pending-this-commit>`). D4 sharpened glossary **Basis** + **Completeness
+claim** to DEFINE the 4 NEEDS-discriminator terms (located-read, construct-taken-whole, executable
+verification, wrap-tolerant search) in-place (no new headwords — Additive-reflex caveat honored).
+Template `bindings.md` already firewall-clean, so R3 holds for the template + new instances.
+**Render-debt (rides the re-render, NOT this item):** the realized instances' binding-table
+left-column `core.md §3.2` cites re-point to the glossary — **anneal-dev `bindings.md` rows 39/42/43
+only** (clippy/daneel tables already clean; corrected via F-INTENT-2) — tracked as F-E /
+`instance-reinstantiation`. Archivable.
+
+_Original item (2026-06-03):_
 
 ## The gap (enumerated, not yet closed)
 
