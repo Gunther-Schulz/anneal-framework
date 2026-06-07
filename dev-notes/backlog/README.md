@@ -140,6 +140,22 @@ articulation captured. Tree clean + committed: worktree `97981dc`; F0 `05c3f35`/
 `98c1cc6`; intent-layer `0eb6952`. (Concurrent session also landed `5f038b5`/`e8248d2` —
 `co-producer-format-parity`.)**
 
+**⏵ Session 12 continued (2026-06-07) — the two §3.2.2 lenses bundled + SHIPPED (`49cb453`).** The
+operator's "do the two proposed clippy lenses before the re-render" → bundled `co-producer-format-parity`
++ `replacement-side-effect-behavior-parity` into ONE §3.2.2 sharpening (run `enumeration-target-blindness`,
+gated-kernel; verify [PASSED] isolated; operator soundness + commit approval): the **emitted-effect**
+behaviors form (read the body, not the callers) + the **co-producer** dependents form (search the sink's
+writers, not the symbol), inline closed-set licensing + target-role disambiguation, §5.2 de-dup; glossary
++ lens-set renderings. No fourth shape; `modules §3.4` untouched. The convergence cycle caught INT-1/INT-2
+(inline licensing + role-disambiguation); honest residuals INT-3/INT-4 (`[VERIFIED — surfaced]`, not
+fake-gated). **Archived** (shipped): `co-producer-format-parity`, `replacement-side-effect-behavior-parity`.
+**Filed:** `co-producer-single-source-of-truth-cure` (D6 — the structural cure, kept OUT of the §3.2.2
+completeness rule) · `forcing-function-dose-discriminator` (operator step-back: when to force / surface /
+build — a skill-craft consolidation candidate carrying the cross-session **three fix-shapes** cut:
+enforce #1 / sharpen-question #2 / build #3). **Remaining pre-render lens:** `provenance-at-handoff-lens`
+(settle its (a)/(b) fork — salience-of-basis-rule vs discrete lens; mind `lens-crowding-vs-broad-search`),
+THEN the clippy re-render (A).
+
 1. **`worktree-isolation-and-integration` — RESOLVED** (`97981dc`). The "silent hunk-drop" was **misdiagnosed**
    (9-cell empirical battery: plain cherry-pick/merge **never** silently drop — only `-X ours/theirs` does).
    Design now = **merge-tree-gated integration** (`git merge-tree --write-tree` → halt-loud → `merge --ff-only`,
