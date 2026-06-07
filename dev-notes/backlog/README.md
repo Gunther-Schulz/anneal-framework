@@ -133,7 +133,39 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
 (5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +4 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`, `anneal-self-improvement-loop`) → 56 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
-### ▶ Where we are + next steps (2026-06-07 session 13 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-07 session 13-cont — READ FIRST)
+
+**▶ CURRENT STATE (end of session 13-cont, all pushed; both repos clean):** after the clippy re-render (below),
+a **clippy lens cycle SHIPPED** — `Silent-substitution-at-boundary` extended **bidirectional** (write-side
+merge-clobber, the F29 class from a beat-the-books Unit-31 loopback) via anneal-dev (run
+`clippy-write-side-boundary`; skill-craft PASS, converged 3 cycles, verify-passed after a cosmetic rewrap;
+**coding-clippy `43b11c7` v0.9.96 LIVE** — pushed + `claude plugin update` → cache 0.9.96; run `/reload-plugins`).
+The operator's **"bidirectionality is a core tenet"** call settled the extend-vs-new-lens crux.
+
+**Filed this continuation (operator wants the two open ones UP NEXT):** `clippy-write-side-boundary-gap` (SHIPPED
+→ archived) · **`bidirectional-lens-coverage-tenet`** (the core tenet + a lens-set audit: which other directional
+lenses lack their mirror) · **`debt-accrual-prevention`** (operator strategic insight — Clippy is *trailing
+detection*, debt accrues in the seams between units; *prevention bounds Clippy's growing cost*; 3 holes
+[no subtraction-forcing-function / residuals-die-in-gitignored-tracker / no mechanism-proliferation check] + 3 fixes +
+the coherence/architecture-audit-cadence caveat; frames `deferred-removal-cross-run-obligation-ledger`).
+`framework-intent-vision-statement`: my recommendation recorded in-session (ratify the **two-mode core** + home **(a)**
+lean Mechanism-clause extension, framed **design-rationale-not-efficacy**) — **pending operator ratification**, not executed.
+
+**▶ NEXT (operator-set 2026-06-07 — the just-added items first, then the session-13 order; re-ground in anneal-dev per cycle):**
+1. **`bidirectional-lens-coverage-tenet`** — sweep clippy's lens set for directional lenses missing their mirror
+   (Canonical-ID-dropped, Branch-coverage, …); extend bidirectional per the F29 precedent (additive-reflex per lens);
+   decide whether the tenet also belongs in skill-craft's lens-authoring discipline. *(clippy + maybe skill-craft.)*
+2. **`debt-accrual-prevention`** — the leading-prevention layer: subtraction-forcing-function / supersession-obligation-at-[READY]
+   (framework §3.2.2 add-vs-subtract mirror) + checked-in debt register vs gitignored-tracker (cross-run residual visibility) +
+   mechanism-proliferation lens (clippy) + coherence/architecture-audit cadence (process). Folds in
+   `deferred-removal-cross-run-obligation-ledger`.
+3. **then the session-13 order:** `framework-intent-vision-statement` (ratify, per the recorded recommendation) → the
+   proof-first batch (`convergence-cycle-mechanical-enforcement` + `skill-craft-antipatterns-loaded-but-inert` → baseline → A/B) →
+   the 5-run occurrence-grounded set (below) → `daneel-reinstantiation` (deferred).
+
+*(Session-13 banner below — superseded; history. Its (A) clippy re-render is SHIPPED.)*
+
+### ▶ Where we are + next steps (2026-06-07 session 13 — superseded by 13-cont; history)
 
 **▶ CURRENT STATE (end of session 13, all pushed; both repos clean):** the **clippy re-render SHIPPED**
 (campaign ⑥ / tier-⑥ — the operator's session-12 candidate (A)). Run `clippy-reinstantiation`
