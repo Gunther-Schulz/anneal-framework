@@ -57,6 +57,44 @@ Checked the canon before treating the candidate as net-new:
    fire — the loaded-but-inert class; clippy Unit-18, skill-craft-antipatterns), which is
    evidence-backed per the grounded-claims rubric, rather than a categorical cognitive assertion.
 
+## Session-12 layer (2026-06-07, operator-raised "is this the core?") — the levers + failure-mode map
+A finer-resolution decomposition that **MERGES** with the candidate above (same mechanism — structural
+enforcement — at higher resolution). Surfaced when the operator articulated the cycle dynamics
+(plan → investigate-leads → revise-or-harden → new-leads → … → robust → falsification run) and asked if
+that's the core.
+
+**The rubric's two values each counter a distinct AI failure mode** — this is what the structural
+enforcement *targets*:
+- **Grounded claims** ⟂ **confident assertion** (states what it can't back) → the **basis rule** (every
+  load-bearing claim carries named, re-runnable evidence; ungrounded = an assumption that blocks "done").
+- **Complete, coherent picture** ⟂ **dropping concerns** (loses/forgets hard threads) → **complete-state
+  / the tracker** (every concern held + stated; superseded ones reconciled/invalidated, never silently
+  dropped).
+- The candidate's own **"satisficing / loaded-but-inert"** is a *third* mode (has the rule, won't apply
+  it) → it is **why the two counters above must be STRUCTURAL** (un-fakeable artifacts), not written
+  rules. (c) ties the candidate's mechanism to the two values: structural-not-willed *because* even the
+  basis-rule and complete-state rules leak if they depend on the AI choosing to apply them.
+
+**The structural enforcement decomposes into two levers** (distinct; counter different act-first
+failures; full treatment in `anneal-empirical-validation-experiment` "Two-lever model"):
+- **Convergence / iteration** — the cycle loop iterates to a **fixed point** (zero-delta convergence);
+  value = **local-optimum escape** + a stability a single pass can't claim. Same-context (refines *within*
+  the frame).
+- **Independence / falsification** — the fresh-context run (INV-3) that **breaks the frame** the loop
+  refined within; catches the blind spot the whole same-context loop shared. *Completeness ≠ soundness*
+  (INV-5): the loop yields a complete-coherent design; only **exclusion** (named falsifiers, not
+  confirmation) makes it sound.
+
+**The unifying frame:** the loop + falsification are **machinery**; the **core** is the two values,
+chosen because they counter the AI's native failure modes. "The loop is the core" is one level too
+shallow — *the values are the core; the loop + falsification are the enforcement that forces an AI to
+live by them.* This is the candidate's "structural-not-willed" at the resolution of the actual mechanism.
+**Home unchanged** (caveat 2): NOT foundation.md; lands with the mechanism+asymptote half (core.md Purpose
+Mechanism-clause, or a `VISION.md`), beneath the existing README tagline; Fragmentation-reconcile vs
+core.md Purpose at the run. **n=2 dogfood evidence this session** (`anneal-empirical-validation-experiment`
+session-12 log): falsification caught a too-narrow design post-[READY]; the integrity check (grounding)
+caught a subagent's confabulation.
+
 ## Why it's worth doing (composes with the V1 question)
 A crisp intent statement is **half of what makes "V1" definable**: V1 = the intent's
 structural-enforcement asymptote reached to a *tolerable residual* (the AI reasoning-ceiling is
