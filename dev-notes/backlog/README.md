@@ -164,7 +164,13 @@ requirements-record machinery; clippy's real bugs trace partly to that lag — s
 isolation-slot binding update.
 
 **Filed this session:** `impl-plan-unit-granularity-vs-dispatch` (framework-clarity, operator-raised — does the
-[READY]-presented unit count bind the implement dispatch?). **Two F0 items marked ✅ DONE + archivable**
+[READY]-presented unit count bind the implement dispatch?) · `co-producer-format-parity` (operator-driven, from a
+beat-the-books `signal_id` 7-vs-10 dedup bug + clippy run-tracker archaeology — **consumer-enumeration is
+consumer/symbol-shaped, so it misses CO-PRODUCERS of a shared-format key**: Unit 26 extended one builder, the
+Coupled-change pass saw the other only as an "opaque-key consumer" (`passes.md:15`/`F18`), the `EXISTS` dedup never
+matched → already-bet alerts re-fire forever. Batches with the **tier-4 blind-spot cluster** beside
+`replacement-side-effect-behavior-parity` / `provenance-at-handoff-lens` / `framework-blindspot-class-analysis`;
+tier-placement left to the next grooming pass, matching the provenance sibling). **Two F0 items marked ✅ DONE + archivable**
 (`instance-template-slot-scaffolding`, `glossary-binding-table-interface-completeness`).
 
 *(Session 11 block below — superseded; history.)*
