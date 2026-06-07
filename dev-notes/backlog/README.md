@@ -153,16 +153,39 @@ investigate-design 3545 / implement 2319 / foundations 2216) · `firewall-regex-
 coherence-check regex misses newline-split §-cites — kernel/method robustness). **`instance-reinstantiation.md`:**
 clippy ✅ **DISCHARGED**; **daneel** (+ campaign-craft, bauleitplan) still owe the same deltas.
 
-**▶ NEXT — operator picks; the genuine candidates (re-ground in anneal-dev per CLAUDE.md before any cycle):**
-- **(B) `framework-intent-vision-statement`** — the session-12 ripe sibling (seeded to a "ripe seed"); low-gating,
-  self-contained: articulate the two-value core / define what "V1" means. (Pairs well with the proof thread, which needs a V1 definition.)
-- **The DECIDED proof-first order (session 9, still standing):** the bounded enforcement-fidelity batch
-  (`convergence-cycle-mechanical-enforcement` + `skill-craft-antipatterns-loaded-but-inert`) →
-  `measurement-harness-mve` baseline → the `anneal-empirical-validation-experiment` A/B verdict. The strategic
-  "does the framework actually work" thread (paused session 11 for compute).
-- **`daneel-reinstantiation`** — repeat the now-PROVEN clippy re-render method on the sibling debugging instance
-  (clean, low-risk; the method just shipped end-to-end this session).
-- *Campaign ③ housekeeping, anytime:* `core-md-bloat-measure-then-cut` · `verified-integrity-consolidation` · `surface-non-task-observations`.
+**▶ NEXT — the execution order (operator-set 2026-06-07; re-ground in anneal-dev per CLAUDE.md before EACH cycle):**
+
+**First — two ripe candidates:**
+1. **`framework-intent-vision-statement`** — define **V1** (the two-value core); low-gating, and it gives the proof
+   thread a V1 to test against.
+2. **The proof-first batch** — `convergence-cycle-mechanical-enforcement` + `skill-craft-antipatterns-loaded-but-inert`
+   → `measurement-harness-mve` baseline → `anneal-empirical-validation-experiment` A/B verdict. The strategic
+   "does the framework actually work" thread (session-9 proof-first order; paused session 11 for compute).
+   *(`daneel-reinstantiation` deliberately DEFERRED — not yet.)*
+
+**Then — the ▶ Occurrence-grounded run set** (the standing execution view): every item below was triggered by a
+**real run/incident** (not a speculative design-Q), compressed by **shared fix-locus** to **5 anneal-dev runs**
+(each run = one cycle, the cluster drained together, weight called in-loop). Run 1's
+`convergence-cycle-mechanical-enforcement` is consumed by the proof-first batch above, so Run 1 here carries the remainder.
+
+- **Run 1 — Convergence / disposition enforcement-fidelity** *(§4.1.4 + §5.1 + §4.3 + §3.2 — "does the
+  falsify/converge/disposition machinery BIND or load-but-not-fire?")*: `convergence-surfaced-finding-action-brake`
+  · `disposition-misclassification-shields-design` · `verify-disposition-citation-reopen-explicit-leg`
+  · `basis-recorded-query-fidelity` · `deferred-removal-cross-run-obligation-ledger` *(+ `convergence-mechanical-pass-value` rides free)*
+- **Run 2 — §3.1 / [READY] soundness (the ① sweep)**: `intent-falsification-soundness-sweep` (+ Root-Moves 2–5)
+  · `ready-machinery-self-attestation` · `method-kernel-soundness-verdict-locus`
+- **Run 3 — Post-run-review machinery** *(`post-run-review.md` + the validation-watch register it walks)*:
+  `post-run-review-failure-class-register` · `post-run-review-nonsensical-cycle-probe` · `validation-watch-entry-conformance-sweep`
+- **Run 4 — Run-lifecycle output (dispatch / release / hooks / checks)**: `dispatch-brief-one-source-of-truth`
+  · `release-commit-formation-from-checkpoints` · `commit-msg-hook-packaging-overmatch` · `firewall-regex-wrap-tolerance`
+- **Run 5 — anneal-dev method + self-hosting** *(`anneal-dev/spec`)*: `anneal-dev-rerender-changeset-by-source-delta`
+  · `anneal-dev-impl-skillcraft-gate` · `self-hosting-inplace-integrity-clean-precondition`
+- **Rides ⑥ (next instance re-render, not its own run):** `instance-domain-invariant-register` (new framework slot
+  from clippy's bug class) · **`daneel-reinstantiation`** (deferred for now — repeats this session's proven method).
+
+*Everything NOT in this set is a speculative design-Q / tooling / experiment / instance / skill-craft item — see the
+▶ Campaign map + 6 tiers below for those + per-item detail. Clustering rationale: shared fix-locus = one coherent
+edit, not one-item-per-run.*
 
 *(Session 12 block below — superseded; history. Its NEXT candidate (A) clippy re-render is now SHIPPED.)*
 
