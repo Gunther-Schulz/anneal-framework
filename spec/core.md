@@ -218,7 +218,14 @@ were the basis. Surface the gap, do not substitute.
   reaches design premises, not findings alone, AND it reaches
   **claims embedded within larger statements** — implicit
   premises in target-naming decisions, cited rules or prior
-  decisions, completeness counts asserted as facts. Each
+  decisions, completeness counts asserted as facts, and **a name
+  or label asserting an artifact's meaning or provenance** — its
+  source, identity, perspective, unit, or value-domain: its basis
+  is a located read at the artifact's **producer** (where it is
+  set or produced), *not* its use-site label — distrust the
+  surface assertion and ground the meaning where the artifact is
+  produced (§3.2(b)'s "located read of the source," resolved to
+  the producer, not the consuming site that labels it). Each
   embedded claim carries the basis-rule requirement *separately*
   from the surrounding statement: the surrounding claim's basis
   does not cover the embedded one. An embedded claim with no
