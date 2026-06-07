@@ -133,7 +133,43 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
 (5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +4 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`, `anneal-self-improvement-loop`) → 56 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
-### ▶ Where we are + next steps (2026-06-06 session 11 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-07 session 12 — READ FIRST)
+
+**Session 12 — two items cleared toward the standing goal "re-render clippy sooner." Tree clean + committed
+(`97981dc`, `05c3f35`, `89a7a63`).**
+
+1. **`worktree-isolation-and-integration` — RESOLVED** (`97981dc`). The "silent hunk-drop" was **misdiagnosed**
+   (9-cell empirical battery: plain cherry-pick/merge **never** silently drop — only `-X ours/theirs` does).
+   Design now = **merge-tree-gated integration** (`git merge-tree --write-tree` → halt-loud → `merge --ff-only`,
+   never `-X`) + **scope-conformance** + the **escape-theater cut** (drop remote-strip + the cwd-soft-rule; HEAD
+   pre/post verify is the real guarantee). Test-parallelism/cache researched: **the isolation invariant extends to
+   caches** — each worktree gets a PRIVATE copy via `cp --reflink=auto -r` (COW-instant / full-copy-floor,
+   machine- + toolchain-agnostic); share only content-addressed (Go `GOCACHE`, dep caches); **REJECT** shared-
+   writable + hardlinked-mutable (the cross-pollination vectors, empirically demonstrated). Enabler: worktrees off
+   tmpfs `/tmp` onto the repo's COW volume (reflink works + escape-resistance holds). Design locked; rides the
+   clippy re-render's isolation slot. (d) is **solved-not-moot**, gated on the per-unit-testing choice.
+
+2. **F0 render-convention gate — DONE** via anneal-dev run `f0-render-conventions` (5 investigate-design cycles,
+   2 fresh-context convergence passes, isolated verify **[PASSED]** + **operator soundness SOUND**; released
+   `89a7a63`). Edits: `instance-template/spec/isolation.md` scaffold + README "Required slots" enum + glossary
+   **Basis**/**Completeness-claim** now DEFINE the 4 binding-table terms + guide §2 file-vs-section reconciliation.
+   **The tier-⑥ clippy re-render gate is CLEARED.**
+
+**▶ NEXT-UP — the clippy re-render itself (`instance-reinstantiation` / tier ⑥ / campaign ⑥)** — the operator's
+actual goal, now **unblocked**: coherent template/guide/glossary + the worktree/cache design + F0 to render
+against. **Heavy** — clippy carries *semantic* render-debt since pre-session-6 (intent-falsification pass,
+requirements-record machinery; clippy's real bugs trace partly to that lag — see `instance-reinstantiation.md`).
+**Start FRESH** (not on a long session); re-ground in anneal-dev per CLAUDE.md. Render-debt to fold in: F-E
+(anneal-dev binding-table `core.md→glossary` cite re-point) + clippy's own bindings re-point + the worktree
+isolation-slot binding update.
+
+**Filed this session:** `impl-plan-unit-granularity-vs-dispatch` (framework-clarity, operator-raised — does the
+[READY]-presented unit count bind the implement dispatch?). **Two F0 items marked ✅ DONE + archivable**
+(`instance-template-slot-scaffolding`, `glossary-binding-table-interface-completeness`).
+
+*(Session 11 block below — superseded; history.)*
+
+### ▶ Where we are + next steps (2026-06-06 session 11 — superseded by session 12; history)
 
 **Session 11 — a long empirical-validation arc that, through successive operator-driven rigor fixes,
 DISSOLVED every apparent positive result and reframed the question. Honest end-state: prompt-level
