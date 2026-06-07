@@ -152,9 +152,25 @@ fake-gated). **Archived** (shipped): `co-producer-format-parity`, `replacement-s
 **Filed:** `co-producer-single-source-of-truth-cure` (D6 — the structural cure, kept OUT of the §3.2.2
 completeness rule) · `forcing-function-dose-discriminator` (operator step-back: when to force / surface /
 build — a skill-craft consolidation candidate carrying the cross-session **three fix-shapes** cut:
-enforce #1 / sharpen-question #2 / build #3). **Remaining pre-render lens:** `provenance-at-handoff-lens`
-(settle its (a)/(b) fork — salience-of-basis-rule vs discrete lens; mind `lens-crowding-vs-broad-search`),
-THEN the clippy re-render (A).
+enforce #1 / sharpen-question #2 / build #3).
+
+**⏵ Session 12 continued #2 (2026-06-07) — provenance SHIPPED (`cd2fd2c`); ALL pre-render lenses now done.**
+The (a)/(b) fork settled to **(b)-direction** (operator-locked): provenance homed in the **framework basis
+rule** (`core.md §3.2.1` basis-naming edge — a name/label asserting an artifact's meaning/provenance is an
+embedded claim grounded at the **producer**, not the use-site label), via run `provenance-basis-naming`
+(gated-kernel; verify [PASSED] isolated; #2-sharpen settled by the three-fix-shapes cut + the empirical
+2/5-vs-5/5 inertness of the general rule). Convergence dogfood: the mechanical pass caught D1's render-debt
+scope omitting the anneal-dev/plugin self-render (INV-2). Soundness: shipped as a recognition-**raiser** with
+INT-A recognition-gating honestly surfaced (`[VERIFIED — surfaced]`), not a class-eliminating gate.
+**Archived:** `provenance-at-handoff-lens`. **Watch filed:** the recognition-economy/crowding datapoint
+under `lens-crowding-vs-broad-search` (first kernel-basis-rule instance — does the added salience trade off
+against the broad sweep?). The clippy fire-point (trace-to-producer) + the anneal-dev/plugin self-render = render-debt.
+
+**▶ NEXT-UP — the clippy re-render (A) is now fully UNBLOCKED.** All three pre-render lenses (co-producer +
+emitted-effect at §3.2.2, provenance at §3.2.1) are in the kernel; the template/guide/glossary (F0) + the
+worktree/cache design are done. Render-debt to fold in: the §3.2.2 + §3.2.1 kernel deltas (anneal-dev/plugin
+self-render + clippy's bindings/lens-set re-point) + F-E (binding-table cite re-point) + the worktree
+isolation-slot binding. **Heavy — START FRESH** (not on a long session); re-ground in anneal-dev per CLAUDE.md.
 
 1. **`worktree-isolation-and-integration` — RESOLVED** (`97981dc`). The "silent hunk-drop" was **misdiagnosed**
    (9-cell empirical battery: plain cherry-pick/merge **never** silently drop — only `-X ours/theirs` does).

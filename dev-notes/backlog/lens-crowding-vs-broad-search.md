@@ -78,9 +78,30 @@ provenance-agent, findings merged). Measure BOTH the *omission* rate (period) an
 One design tests both. Pair with a **directive-count gradient** (1 / few / many in one agent) vs omission
 rate. (Runs paused per operator; queued next experiment if resumed.)
 
+## Post-ship watch — the first KERNEL basis-rule instance (provenance shipped 2026-06-07, `cd2fd2c`)
+The provenance form shipped into the **framework basis rule** (`core.md §3.2.1`, run
+`provenance-basis-naming`) — not a clippy lens-prompt but a salient directive in the kernel every
+instance renders. This is the **first instance of the crowding question at the basis-rule level**:
+INT-A (the provenance falsifier is recognition-gated) and this hypothesis are two faces of one
+**recognition-economy** concern — recognition is finite and contested. The run's own soundness verdict
+was explicitly scoped: provenance raises recognition **on the provenance class** (validated 5/5-vs-2/5),
+but whether adding it to the basis rule's salience **trades off against the broad sweep** (esp. the
+*omission* class, where the same A/B showed the focused arm at 2/5 < vanilla's 3/5) is **unproven**.
+Choosing (b)-as-one-form-in-the-kernel over a discrete-lens-pile was the deliberate containment.
+- **watch-kind:** quality-watch (net-recognition trade-off, not a correctness regression).
+- **catcher:** a future eval / A/B where the basis rule's broad recognition (omission-class catch-rate)
+  is measured and shows degradation traceable to the added provenance (or other) salience — vs the
+  pre-provenance baseline. The settling test above (only-falsify / stacked / distributed × omission-rate)
+  is the instrument; this run is its first kernel datapoint.
+- **closing rule:** the controlled crowding test runs and either confirms (→ prune/distribute the
+  kernel's salient forms) or refutes (→ the basis-rule salience is free) the trade-off, per
+  `v-entry-is-post-ship-only`. Until then: do not pile further salient forms into the basis rule
+  reflexively (additive-reflex at the attention level).
+
 ## Relates to
 - `anneal-empirical-validation-experiment` — the source A/B + the per-bug mechanism (3-arm ×5 data).
-- `provenance-at-handoff-lens` — the focused lens whose attention-pull is the suspected cause.
+- `provenance-at-handoff-lens` (**archived — shipped** as the (b)-direction at `core.md §3.2.1`, `cd2fd2c`)
+  — the focused form whose attention-pull is the suspected cause; now the live kernel datapoint above.
 - `anneal-self-improvement-loop` — the anti-accretion failure-mode this would empirically ground.
 - skill-craft **additive-reflex** anti-pattern — the doctrine this extends from "clarity/Pareto" to "attention."
 - (earlier in-session) the retracted n=1 "clippy lenses narrow attention" claim — same hypothesis, first appearance.
