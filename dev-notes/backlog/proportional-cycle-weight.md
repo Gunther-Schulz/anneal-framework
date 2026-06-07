@@ -7,10 +7,12 @@ ceremony (convergence + intent+mechanical falsification + isolated verify) for
 method-kernel + load-bearing semantic edits.
 
 **Status / stage:** DEFERRED — campaign ⑦ (rate machinery). **Practice now,
-formalize only if proven.** The *practice* is already available: the operator
-calls cycle-weight per item in-loop when draining a campaign. This item is the
-*formalization* (a spec change making the light path a documented default) — run
-it as its own anneal-dev cycle only after the practice has earned it.
+formalize only if proven** — now **n=2 evidenced** (2026-06-06 v-entry lever (A);
+2026-06-07 clippy-write-side lever (B), below), so the "proven" bar is closer. The
+*practice* is already available: the operator calls cycle-weight per item in-loop
+when draining a campaign. This item is the *formalization* (a spec change making the
+light path + lean-brief a documented default) — run it as its own anneal-dev cycle
+when ⑦ is un-deferred.
 
 **The soundness hazard (why it's not a free win):** this is the cousin of the
 **carry-forward optimization removed by D7** (`f74b145`, the sweep's L1) — that
@@ -38,6 +40,30 @@ verify, across **10 cycles** for a ~3-edit change. Two findings:
    only a cost win — for a small/non-kernel change it removes a churn *source*.
    The operator flagged the disproportion **twice** in-run (overthinking in convergence; verify
    weight) — the signal the light path was warranted and not taken.
+
+**Two distinct levers (clarified 2026-06-07):** proportional weight has *two* knobs, not one —
+- **(A) skip the convergence cycle** for a light change (the n=1 finding above — avoid opening the
+  intent+mechanical loop at all). Home: method-kernel ([READY]/convergence requirement, `core.md §4.1.4`).
+- **(B) lean the dispatch BRIEF** — even when falsification/verify *do* run, scope the brief to the **diff +
+  its source clause + the relevant method section**, NOT "load the whole method." Home: the **dispatch-brief
+  schema** (`modules.md §3.3`) + the falsification-brief template (`investigate-design.md`) + verify's brief
+  (`verify.md`). (A) cuts dispatch *count*; (B) cuts each dispatch's *fixed cost*.
+
+**Empirical evidence (n=2, 2026-06-07 — the lean-brief lever (B)):** the `clippy-write-side-boundary` run — a
+**one-lens instance edit** (extend Silent-substitution-at-boundary bidirectional) — spent **~4 subagents ×
+~50–77k tokens**, the isolated verify alone **~68k** for a one-line-class change. Diagnosis:
+- **Fixed cost dominates, not change-size** — a fresh isolated context (the independence requirement) re-loads
+  the method + work-product from zero every dispatch; a 1-line and a 100-line edit pay nearly the same toll.
+- **Triage = mostly adherence + a self-hosting wrinkle, with a real spec-gap tail:** the brief template does NOT
+  mandate "load the full method" — the orchestrator over-briefed (adherence), aggravated by self-hosting (it
+  pointed the subagent at the live `core.md` ~17k because the plugin lags, vs the lean *rendered* method files a
+  normal run loads). The genuine **spec gap**: nothing *structurally forces* proportional brief-scoping — it's
+  left to orchestrator discretion = **willed = leaks** (the loaded-but-inert class). "I'll lean it next time" is
+  itself the willed-not-structural anti-pattern this whole family targets → encode it, don't resolve to it.
+- **Independence tension (the (B) soundness hazard, cousin of the (A) certifier-of-light hazard above):** lean
+  the brief **while preserving the fresh-context independent re-derivation** — too thin (just the diff) and the
+  falsification/verify subagent *rubber-stamps* instead of catching the blind spot the producer shared. The rule
+  is "scope proportional to the change, independence preserved," not "always thin."
 
 **Relates to:** `auto-battle-cadence-mode` (sibling ⑦ mode-mechanic — cadence vs
 weight; distinct concerns) · `convergence-surfaced-finding-action-brake` (complementary:
