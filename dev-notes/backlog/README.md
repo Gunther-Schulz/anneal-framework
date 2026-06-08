@@ -133,7 +133,43 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
 (5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +4 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`, `anneal-self-improvement-loop`) → 56 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
-### ▶ Where we are + next steps (2026-06-07 session 13-cont — READ FIRST)
+### ▶ Where we are + next steps (2026-06-08 session 14 — READ FIRST)
+
+**▶ NEXT-UP (operator-set 2026-06-08 — both from the session-14 leg-decomposition thread):**
+1. **`framework-gap-receipt`** — a *periodic, post-hoc, fresh-context* reader of `.clippy/runs/*.passes.md`
+   that tallies falsification findings **by class**, detects recurrence, and routes each **lens / framework
+   / neither** per the boundary discriminator ("new thing to look *for*" → lens; "change to how looking is
+   *structured*" → framework; else → neither, the default). Coarse routing (mechanical- vs intent-route) is
+   already free in the artifacts; only fine class-recurrence needs the pass. **Outside the kernel** (a
+   reader, not a per-run obligation) → the low-risk first cut; the Q1 caught-side reader, and now the
+   automatic **watcher** for the de-priming change (#3).
+2. **`intent-falsification-coverage-binding`** — *agreed + ungated* kernel sharpening: bind requirement-
+   coverage **completeness** at convergence (every R# served by ≥1 decision — an empty row holds the phase),
+   pulling the enumerable coverage check upstream from verify §4.3 (post-implement) to pre-implement; +
+   criteria-first re-derived from the **verbatim** request. `core.md` §4.1.4/§3.4.1 kernel edit → anneal-dev.
+   Likely **one campaign** with #3 (both are convergence-machinery edits).
+3. **`investigation-pass-lens-priming`** — **REMOVAL DECIDED** (operator, 2026-06-08): remove the lens-set
+   priming of the *investigation* pass — keep the legs pure. **Ungated, ship-and-observe** (reversible; no
+   controlled test — the `framework-gap-receipt` + daily-use is the watch). `core.md` §4.1 kernel edit →
+   anneal-dev + kernel-independent verify (which must confirm lens coverage is **edit-set-driven**, not
+   investigation-attention-driven). **One convergence-machinery campaign with #2.**
+
+**Then the session-13-cont order below stays live:** `bidirectional-lens-coverage-tenet` →
+`debt-accrual-prevention` → the session-13 order.
+
+*(Both items carry the session-14 conceptual spine in their relates-to: the **2+1 leg model** — 2 dynamic
+legs (iteration, independence) + 1 static prosthetic (the lens set) — and the **enumerable/un-enumerable
+boundary**, which the receipt's routing discriminator applies to the machinery itself.)*
+
+**Consolidation landed (2026-06-08):** the framework self-improvement *signal* items unified under
+**`self-improvement-signal-architecture`** (the caught/missed × known/novel map + the prune analysis: the
+receipt/tracker is the *caught* side, self-review the *missed* side — they don't overlap, so self-review is
+**not** prunable against the receipt). The **missed-side** items merged → **`self-review-missed-side`**
+(absorbed `post-run-review-failure-class-register` → archived; folded `surface-non-task-observations` (b); its
+(a) kept standalone). `framework-gap-receipt` is the separate caught-side (Q1). `post-run-review`
+scope-narrowing to the missed-side is the owed spec cycle (anneal-dev).
+
+### ▶ Where we are + next steps (2026-06-07 session 13-cont — preceded by session-14 next-up above; order still live)
 
 **▶ CURRENT STATE (end of session 13-cont, all pushed; both repos clean):** after the clippy re-render (below),
 a **clippy lens cycle SHIPPED** — `Silent-substitution-at-boundary` extended **bidirectional** (write-side

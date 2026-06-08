@@ -2,6 +2,11 @@
 
 **Status:** OPEN — operator-raised 2026-06-05 (during the clippy 6-bug retrospective integration; "I want [the self-review] to capture as many failure classes as possible"). Framework-spec (`spec/modules.md` §4 post-run-review minimum-shape — **method-kernel**) + `post-run-review.md` (the procedure, corpus-evolution) → anneal-dev + kernel-independent verify (the modules §4 part is method-kernel). NOT urgent; a design to work out.
 
+**▶ CLOSED — ABSORBED (session 14, 2026-06-08):** consolidated into `self-review-missed-side` as its **Q2
+arm** (known-escape probe) + the shared failure-class vocabulary, with the **design-quality probe-templates**
+carried there (Q3) and into `intent-falsification-coverage-binding` (the intent-pass design-time home).
+Content preserved there; this file archived. Part of `self-improvement-signal-architecture`.
+
 ## The gap
 The post-run review's **Q1 (Misses)** is **reactive**: "list every design defect the run *produced*, classify escape/operator-catch, name which check should have caught it (or 'no existing check covers this class')." But the dominant failure shape (`design-decision-implication-depth-gaps`: *"saw the fact, didn't connect it to the decision"*) means **a model that missed an implication in-run also misses flagging it in self-review** — the same reasoning-depth ceiling operates in both passes. Q1 catches what the model spontaneously recognizes as a defect; it does NOT *proactively* ask "did this run exhibit failure-class X?" for each known class. So a run that exhibited a known class without the model noticing slips Q1.
 

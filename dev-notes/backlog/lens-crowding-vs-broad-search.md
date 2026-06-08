@@ -99,6 +99,10 @@ Choosing (b)-as-one-form-in-the-kernel over a discrete-lens-pile was the deliber
   reflexively (additive-reflex at the attention level).
 
 ## Relates to
+- `investigation-pass-lens-priming` — the **surgical sibling**: should the lens set prime the
+  *investigation* pass at all? The extreme "zero lenses in one pass" of this item's "fewer-per-pass /
+  distribute" corollary, isolated as a distinct, cheaper test (priming on/off for one pass, vs this
+  item's count/distribution arms). Same recognition-economy root.
 - `anneal-empirical-validation-experiment` — the source A/B + the per-bug mechanism (3-arm ×5 data).
 - `provenance-at-handoff-lens` (**archived — shipped** as the (b)-direction at `core.md §3.2.1`, `cd2fd2c`)
   — the focused form whose attention-pull is the suspected cause; now the live kernel datapoint above.
