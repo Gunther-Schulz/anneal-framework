@@ -154,6 +154,12 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
    anneal-dev + kernel-independent verify (which must confirm lens coverage is **edit-set-driven**, not
    investigation-attention-driven). **One convergence-machinery campaign with #2.**
 
+4. **`in-flight-cross-cycle-learning`** *(exploratory / gated — the session-14 capstone, not a decided ship)*
+   — the receipt's recurring-class signal run *in-flight*. **Downstream of #1** (reuses its class-tally) and
+   the **successor to #3**: Branch A (dynamic earned-priming) is the candidate replacement for the removed
+   static priming — **gated on the de-priming observation showing a gap**. Branch B (basin-jump → between-basin
+   annealing, the unbuilt half of the framework's namesake) is the independent quality exploration. Design-first.
+
 **Then the session-13-cont order below stays live:** `bidirectional-lens-coverage-tenet` →
 `debt-accrual-prevention` → the session-13 order.
 
@@ -168,6 +174,13 @@ receipt/tracker is the *caught* side, self-review the *missed* side — they don
 (absorbed `post-run-review-failure-class-register` → archived; folded `surface-non-task-observations` (b); its
 (a) kept standalone). `framework-gap-receipt` is the separate caught-side (Q1). `post-run-review`
 scope-narrowing to the missed-side is the owed spec cycle (anneal-dev).
+
+**Also filed (2026-06-08, not yet sequenced):** `in-flight-cross-cycle-learning` — the **fast-loop twin**
+of the receipt (same recurring-falsification-class signal, consumed *in-flight* → next cycle, orchestrator-
+computed not self-review). Two branches: **patch-sooner** (speed — also the dynamic earned-priming that could
+replace the removed static priming) and **basin-jump** (quality — recurrence triggers questioning the design
+*basin* / spawning a structural rival; the between-basin annealing the framework's name promises but the
+patch-loop doesn't yet do). Downstream of `framework-gap-receipt` (reuses its tally).
 
 ### ▶ Where we are + next steps (2026-06-07 session 13-cont — preceded by session-14 next-up above; order still live)
 
