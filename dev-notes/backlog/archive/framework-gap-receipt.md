@@ -1,6 +1,14 @@
 # Framework-gap receipt — cross-run falsification-pattern tally → lens / framework / neither routing
 
-**Status:** [READY] — operator-raised 2026-06-08 (session 14), **NEXT-UP #1** (ahead of
+**▶ SHIPPED + ARCHIVED 2026-06-15 — `6673e29` (main, pushed).** Built via anneal-dev (run
+`framework-gap-receipt`, auto-battle, opus). Shipped as **practice 13 "Periodic framework-gap receipt"**
+in `development-process.md` (+ the intro machinery-enumeration in both homes: development-process.md +
+README.md). The convergence cycles caught 8 design seams fixed before [READY] (overloaded-flip confound,
+SG4 internal contradiction, pass-type-vs-landed-type, auto-battle binder gap, README missed-dependent);
+verify [PASSED] isolated. 2 irreducible residuals stated in the practice (weak class-label; lens/framework
+fits-both). Run records: `.anneal-dev/runs/framework-gap-receipt.*`.
+
+**Status:** SHIPPED (was [READY]) — operator-raised 2026-06-08 (session 14), **NEXT-UP #1** (ahead of
 `investigation-pass-lens-priming`). **Additive machinery OUTSIDE the per-run kernel** — a *periodic,
 post-hoc reader* of existing run records, not a new per-run obligation. The low-risk first cut (it
 *tells you* whether kernel questions like investigation-pass priming are real, before you touch the

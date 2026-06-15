@@ -150,6 +150,17 @@ Convention + on **every** open item (22 READY · 18 DESIGN · 11 PARKED · 11 PA
 the partials tokenized; `move1-tail-honest-relabel` parked with a resume-condition). **Open 65 → 64.**
 NEXT-UP now advances to **`framework-gap-receipt`** (the live #1, heavy) + the deferred batch-economics measurement.
 
+**▶ SHIPPED (2026-06-15, `6673e29`, main/pushed):** **`framework-gap-receipt`** → **practice 13 "Periodic
+framework-gap receipt"** in `development-process.md` (+ the intro machinery-enumeration named the receipt in
+both homes: development-process.md + README.md). Built via **anneal-dev (auto-battle, opus)** — the convergence
+cycles caught **8 design seams** fixed before [READY] (overloaded tracker-flip confound → falsification-cause
+pairing; SG4 internal contradiction; pass-type-vs-landed-type; auto-battle binder gap → surface-only routing;
+README missed-dependent → impl self-check loopback); **verify [PASSED] isolated**; 2 irreducible residuals
+stated in the practice (weak class-label; lens/framework fits-both). Archived. **Open 64 → 63.** NEXT-UP now
+advances to **batch-economics measurement** (#4 below — deferred until a body-confirmed clean comparable-weight
+light pair exists) or the next live tier item per the campaign map. Method-kernel render-debt: **nil**
+(development-process.md is not rendered).
+
 **▶ SHIPPED this session:** `convergence-machinery-batch` (`7880be6`, spec-only) — batched
 **`intent-falsification-coverage-binding`** (#2: R#→D# coverage-completeness bind at convergence +
 criteria-first-from-verbatim + enumeration-faithfulness leg) **+** **`investigation-pass-lens-priming`**
@@ -182,7 +193,7 @@ validation of `backlog-status-queryability`. Highest-value next work is the **st
    stale-candidate picks are the evidence it earns its place). Makes future cluster-picking cheap + drift-free.
 2. **staleness drain** — normalize the ~8 oversold partial status-lines; disambiguate `anneal-dev-impl-skillcraft-gate`;
    resolve the **abandoned `move1-tail-honest-relabel` run** (IN-PROGRESS across 3 sessions — resume or close).
-3. **`framework-gap-receipt`** — the live session-14 #1, still open (heavy, solo).
+3. ~~**`framework-gap-receipt`**~~ — ✅ **SHIPPED 2026-06-15 (`6673e29`)**, archived (practice 13; see the ▶ SHIPPED note above).
 4. **batch-economics measurement** — DEFERRED until a body-confirmed clean comparable-weight light pair exists
    (sweep candidates: `release-commit-formation-from-checkpoints`+`commit-msg-hook-packaging-overmatch`;
    `anneal-dev-rerender-changeset-by-source-delta`+`firewall-regex-wrap-tolerance` — body-confirm first).
