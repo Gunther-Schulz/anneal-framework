@@ -81,6 +81,33 @@ datapoints **conflict on (A)**, which is itself the hazard:
   falsification/verify subagent *rubber-stamps* instead of catching the blind spot the producer shared. The rule
   is "scope proportional to the change, independence preserved," not "always thin."
 
+## Coherence-batch economics — n=1, 2026-06-15 (`convergence-machinery-batch`)
+A **sibling lever** to (A)/(B): not "how heavy a cycle for one change" but **how many items per cycle.**
+The `convergence-machinery-batch` run drained TWO coherent backlog items (#2 `intent-falsification-
+coverage-binding` + #3 `investigation-pass-lens-priming`, both §4.1.4 convergence machinery) in ONE cycle.
+**Finding: the token savings come from COHERENCE, not count** — the fixed per-cycle costs (one grounding,
+one convergence, one verify, one skill-craft self-review) amortize across items sharing the same machinery;
+unrelated items share none of it. Estimate (**NOT a measured A/B**): ~one full cycle-overhead saved vs two
+separate runs.
+
+**The ceiling (do NOT read this as "batch more"):** a finding in ANY batched item re-converges the WHOLE
+batch (this run: an intent-pass R2 seam in D3 → re-converge both items) and a fresh-context verify has
+finite budget → past some size it churns or dilutes (the "too thin → rubber-stamp" failure at batch scale).
+A coherent batch has a **sweet spot**, not a maximum. The lever licenses **"batch the largest *coherent*
+cluster"** (= the campaign-map unit, `dev-notes/backlog/README.md` ▶ Campaign map), NOT "batch more items."
+This empirically supports the campaign-map thesis (drain a coherent campaign as one cycle).
+
+**Measure it next:** n=1 + an estimate. Pair the next aggressive coherent batch with the token-measurement
+(`measurement-harness-mve`) for a real number, and watch specifically for the churn/dilution ceiling.
+
+**Isolation is NOT a proportional-weight lever (F9 lesson, same run).** When this run's skill-craft
+self-review surfaced a behavior-preserving wording fix (F9), the orchestrator first delta-checked it
+**in-context** (doer=checker) on a proportionality rationale — then the operator flagged it. Verify
+isolation is **unconditional** (`core.md` §4.3 / INV-3), and a *delta* verify is still a verify → it must
+run in a separate context. Leaning the BRIEF (lever B) is the safe economy; dropping the INDEPENDENT check
+— even for a "trivial" fix — is the sensitive lever-(A) shape. Re-ran isolated: [F9 CLOSED — clean], no harm,
+but the lesson binds: **proportional weight scopes the brief, never the independence.**
+
 **Relates to:** `auto-battle-cadence-mode` (sibling ⑦ mode-mechanic — cadence vs
 weight; distinct concerns) · `convergence-surfaced-finding-action-brake` (complementary:
 the brake prevents gold-plating *within* a convergence cycle; proportional-weight *avoids*

@@ -166,6 +166,19 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   clippy/daneel/campaign-craft/bauleitplan foundations. Additive orientation (no enforcement-strength
   change) → render-fidelity verify at the batch. (Per D2 of the run — shipped spec-only, render deferred.)
 
+- **convergence-machinery-batch** — run `.anneal-dev/runs/convergence-machinery-batch.md`; spec-only
+  release `7880be6` on `main`. Source-delta: `core.md` §4.1 (remove investigation-pass lens priming +
+  re-anchor the standardized-pass trigger to the **edit-set**, attention-independent) + §4.1.4
+  (requirement-coverage **completeness bind** — empty `serving-decisions` row holds the phase:
+  serve/descope/reject; criteria-first from the **verbatim** request + enumeration-faithfulness soft leg) +
+  §4.3 (re-checks the R#→D# matrix, independence retained) + `modules.md` §3.4.1 (per-R# line gains
+  `serving-decisions`) + `glossary.md` (Intent-falsification-pass + Requirements-coverage-check entries).
+  **Render obligation** (deferred, ALL instances; NOT behavior-preserving — removes priming + adds the
+  completeness bind → render-fidelity verify needed): each instance's `phases/investigate-design.md`
+  (de-prime the investigation pass + edit-set trigger + the §4.1.4 completeness bind + criteria-from-verbatim)
+  + `references/tracker.md` (§3.4.1 per-R# `serving-decisions` field) + `phases/verify.md` (§4.3 matrix
+  re-check) + the 2 glossary term homes. Commit ref: `7880be6`.
+
 ## Capability-by-instance render matrix (2026-06-05)
 
 The queue above is **per-source-delta** (each anneal-dev run's edit). This is the
