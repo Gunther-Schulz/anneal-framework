@@ -55,6 +55,16 @@ operator's live probing to find gaps the framework should have caught?").
     caught the v-entry gold-plating (→ `convergence-surfaced-finding-action-brake`); default-justification
     flipped runs-data off→on; altitude reframed runs-data scope; front-loading simplified archive→track-in-
     place; precedent-linking surfaced `design-decision-implication-depth-gaps`.
+  - *Empirical base (2026-06-15, `convergence-machinery-batch`):* operator proving-questions on the
+    aggressive-batching workflow — each building on a process-aside the AI surfaced ad-hoc — produced 3
+    filed gaps the run's own checks passed clean on: "does coherence warrant more batching?" → coherence-batch
+    economics + the batch-size ceiling (`proportional-cycle-weight`); "should the F9 fix be re-verified?" →
+    isolation-is-not-a-proportional-lever (a delta-verify must stay isolated, INV-3); "is the convergence-cluster
+    miss a protocol phenomenon?" → `backlog-status-queryability`. **Two-step composition:** the AI's ad-hoc
+    process-surfacing (the (ii) feeder) *seeded* the operator's probing (this (i)) — neither alone would have
+    filed them, and the surfacing was **willed** (parentheticals), so an un-probed aside would have dropped
+    (the `surface-non-task-observations` capture gap). A datapoint that the (i)×(ii) channel is recurrent +
+    productive but its AI-surfacing half is un-structured.
 
 **(ii) Protocol-tension feeder** [from `surface-non-task-observations` (b)] — two protocol rules that clash
 *only at runtime* (seed: single-unit impl in working-context vs a configured `impl: sonnet` — the agent
