@@ -65,7 +65,8 @@ operator-approved release commit (step 5).
 
 This document is the home of the shared framework-dev machinery —
 validation-watch governance, the skill-craft pre-edit gate, the
-coherence-audit cadence, and the release/marketplace loop; the other
+coherence-audit cadence, the framework-gap receipt, and the
+release/marketplace loop; the other
 routing docs (`instantiation-guide.md` §6, `spec/README.md`, `README.md`,
 `instance-template/CLAUDE.md`) point here rather than restate. A fresh
 session does not hold this process by default — read and adopt it before
@@ -552,6 +553,110 @@ leg **surfaces** — its presence is checkable, its audit-content's
 soundness is not bound by presence. Per practice 8, classifiable
 at both primary (mechanical) and secondary (structural) tiers —
 earns its place at n=1.
+
+### 13. Periodic framework-gap receipt
+
+A **framework-gap receipt** is a periodic, post-hoc, cross-run
+reading of an instance's persisted falsification-pass records that
+tallies caught findings by class, detects recurrence, and routes
+each recurring class to a framework edit, a new lens, or neither.
+
+Where practice 12 reads the *corpus* for set-level drift, the
+receipt reads the *run-records* for the meta-signal — what the
+*pattern* of falsifications says about the framework's own adequacy,
+invisible in any single run that self-heals to [READY]. The two are
+the caught-side cross-run siblings.
+
+**Invocation.** Operator-invoked, optional, at the framework-review
+cadence — NOT a mechanical per-cycle or per-run trigger, NOT a
+per-run obligation. The per-*run* caught/missed analysis is a
+distinct mechanism (`anneal-dev` post-run-review / the missed-side
+self-review); the receipt is the cross-run, caught-side reader.
+
+**Mechanism.** The pass produces an evidence-bearing **by-class
+tally** over an instance's persisted falsification-pass records —
+the **primary source** (instance-defined locator; e.g. clippy
+`.passes.md`, anneal-dev `.falsification.md` +
+`.intent-falsification.md`). Per class: the count, its **cited
+located instances** (run:cycle:finding), and a recurrence flag.
+The run tracker's existing status-history is consulted ONLY to
+confirm the affected entry's **[VERIFIED] position** — never the
+bare [INVALIDATED]→[PENDING] flip, which is overloaded (the
+amendment-is-contradiction rule, `core.md` §5.2, fires the same flip
+for target/scope/count/basis changes, none a falsification-class
+recurrence). The class **LABEL is a weak artifact** (`core.md`
+§3.1) — judgment assigned from finding prose, not a tagged field;
+its stability comes from the separate checker (operator
+second-judge), not from the label. The per-class **cited
+instances** make the grouping auditable — strong where the label is
+weak.
+
+**Pass-type split (router by landed type).** Split each tally by
+where the falsification **landed**: a §3.4 mechanical `falsified`
+line (enumerable → a lens-or-re-sequence question) vs a §3.4.1
+`[VERIFIED — surfaced]` judgment residual (a stronger framework-gap
+signal, almost never a lens). An intent-pass finding that routed
+`mechanical-falsification-candidate` is tallied as mechanical — read
+its landed type by reconciling the route field against the same
+cycle's §3.4 mechanical line (or its recorded skip).
+
+**Routing discriminator.** A recurring class names a **new thing to
+look *for*** (enumerable, general, currently uncovered) → **lens**;
+changes **how the looking is *structured*** (cycle count,
+convergence criterion, independence, sequencing) → **framework**;
+otherwise → **neither** (the default). Recurrence is evidence for
+**re-sequencing or strengthening EXISTING structure by default** — a
+new lens requires novelty + generality, and the receipt **forces
+that justification every time**, guarding the additive-reflex
+anti-pattern (skill-craft) — piling lenses trades off against broad
+search (the framework's lens-crowding concern).
+
+The four load-bearing **safeguards**:
+
+- **SG1.** A single falsification firing is NOT a framework failure
+  — usually the framework succeeding. The signal is the same class
+  recurring within one run **post-[VERIFIED]**, established by
+  pairing the falsification CAUSE (a §3.4 `falsified` line, or an
+  intent-routed-mechanical that falsified) with the affected entry's
+  [VERIFIED] status — never the bare flip (above).
+- **SG2.** Mechanical detection of the pattern; **human judgment on
+  the interpretation.** The operator binds lens/framework/neither as
+  calibrator, not per-case adjudicator.
+- **SG3.** The routing discriminator above — default to
+  strengthening existing structure, new lens only on
+  novelty+generality, justification forced.
+- **SG4.** **Outside the kernel** — a reader of existing run-records
+  (the falsification artifacts + the tracker's existing
+  status-history), it does NOT add a per-run tracker field. Reading
+  existing records ≠ adding a field.
+
+**Operator-binds, surface-only.** The AI **first-judges** each
+routing (cited discriminator-test + observable evidence) and
+**surfaces** it as the practice-11 ranked table; the operator
+**binds** it as second-judge whenever they review. Routing is NEVER
+auto-applied — an unattended firing produces only a surfaced
+first-judge artifact; auto-promoting recurring→lens is forbidden.
+The pass is **dispatched to a fresh context** (the cross-run and
+classification independence; practice 3) — its facts relied on, its
+interpretation re-checked.
+
+**Scope: caught-side only.** The receipt routes ONLY what a
+falsification pass (mechanical §3.4 OR intent §3.4.1) **caught**;
+"caught" = a pass fired and caught it, so an intent-pass finding of
+design-gap character is still caught-side. The **missed side**
+(escapes — concerns NO pass caught) is out of scope and routes by
+the per-run missed-side review (`anneal-dev`
+`self-review-missed-side`). This caught/missed split is *why* the
+two do not merge. The receipt does not depend on a failure-class
+register; recurring classes can FEED one when built.
+
+This rule classifies as **structural enforcement** per practice 8:
+the **evidence-bearing by-class tally** (counts + cited located
+instances + the SG3 forced justification, surfaced via the
+practice-11 table) is the un-fakeable artifact. Its routing
+soundness is **weak** (`core.md` §3.1) — checkable in presence, not
+bound by it; the operator second-judges (SG2). Earns its place at
+n=1.
 
 ## The release loop
 

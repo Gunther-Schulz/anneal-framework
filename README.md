@@ -113,8 +113,9 @@ binding and lens set.
   repo and its instances evolve. Routes corpus-evolution work to the
   **anneal-dev** instance (which carries the method) and is the home
   of the framework-dev machinery: the development practices,
-  validation-watch governance, the coherence-audit cadence, and the
-  release loop with its discharge artifact.
+  validation-watch governance, the coherence-audit cadence, the
+  framework-gap receipt, and the release loop with its discharge
+  artifact.
 - [`anneal-dev/`](./anneal-dev/) — the **corpus-evolution instance**,
   co-located here (its domain *is* this corpus; it renders from `spec/`
   and is the single channel `development-process.md` routes building +
