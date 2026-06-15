@@ -342,12 +342,12 @@ design recorded in the tracker. It ends at [READY].
 
 1. **Investigation pass.** The AI investigates the relevant surfaces
    — ad-hoc inspection, by its own task-derived method, not a
-   prescribed one. The standardized lens set is known going in and
-   informs what the AI attends to (not how it investigates).
-   Findings are recorded in the tracker.
+   prescribed one. Findings are recorded in the tracker.
 2. **Standardized inspection pass.** Apply each standardized lens
-   whose scope this cycle's investigation touched — incremental, over
-   what this cycle produced. The pass emits the standardized-pass
+   whose scope this cycle's **edit-set** (the rule-text it adds or
+   amends) touched — independent of what the investigation attended
+   to; incremental, over what this cycle produced. The pass emits the
+   standardized-pass
    findings artifact (`modules.md` §3.2 carries the artifact-shape
    and citation requirements). The standardized lens set is
    specified by the domain instance.
@@ -597,9 +597,18 @@ The **intent-falsification pass** is a pure judgment surfacer: a
 fresh-context, criteria-first adversarial attack on whether the
 locked design **serves its intent**, against the requirements
 record (§4.1). Criteria-first means the subagent derives the
-success criteria from the requirements record **before** reading
-the design — the independence lever; the design is the attack's
-target, not its criteria source. It is dispatched to a
+success criteria from the operator's **verbatim request** (§4.1 —
+the requirements record's raw-request component, not the working
+context's R# enumeration) **before** reading the design — the
+independence lever; the design is the attack's target, not its
+criteria source. The pass additionally attacks whether the R#
+enumeration **faithfully captures** the verbatim request, surfacing
+an enumeration-capture error (a verbatim requirement the enumeration
+dropped) at convergence — earlier than verify §4.3's retained
+independent backstop. This faithfulness leg is a **soft judgment**
+(no mechanical predicate): it
+shrinks the capture-error residual, not the never-captured-intent
+residual. It is dispatched to a
 fresh-context subagent (§3.1's separate-checker requirement),
 briefed per `modules.md` §3.3, and produces the
 intent-falsification artifact (`modules.md` §3.4.1): a per-R#
@@ -632,6 +641,19 @@ Each finding routes by whether a runnable check exists:
   concern as judgment to skip the cycle) is judgment-adjacent but
   backstopped by the next cycle's fresh-context re-spawn
   (operator-independent), which re-attacks the same design.
+
+**Requirement-coverage completeness binds.** The per-R# coverage
+matrix (`modules.md` §3.4.1 — each R#'s serving-decisions) binds
+completeness: an R# with an empty serving-decisions set is a coverage
+gap that holds the phase (parallel to a `falsified` mechanical entry,
+above), forcing an explicit disposition recorded as a design decision
+(§5.2) — **serve** (add or amend a decision serving R#), **descope**
+(a committed decision that R# is out of scope, with basis), or
+**reject** (a committed decision that R# was mis-enumerated). Only
+completeness binds; the *quality* of a non-empty mapping stays the
+per-R# `served`/`finding` judgment (`surfaced` where pure judgment).
+This is the enumerable coverage check pulled upstream from verify
+(§4.3) to bind pre-implement.
 
 **The operator-independence boundary.** The pass's value is
 operator-**independent**: it force-fixes the checkable concerns
@@ -980,7 +1002,11 @@ verify is never silently taken as though it were independent.
   value-change.
 - **Requirements coverage** — each requirement in the requirements
   record (§4.1) is checked for coverage by a locked decision; an
-  uncovered requirement surfaces as a finding. This is the dual of
+  uncovered requirement surfaces as a finding. This re-checks, in
+  verify's isolated context, the same R#→D# coverage matrix bound
+  pre-implement at convergence (§4.1.4, `modules.md` §3.4.1) — one
+  matrix artifact, two readers: the upstream bind, and this
+  independent post-implement re-check. This is the dual of
   the design-completeness audit above: that audit catches a material
   element no decision designed (fact-correct); this catches a
   requirement no decision covers (intent-correct). The record's

@@ -225,8 +225,9 @@ judgment to orchestrator computation.
 
 **Intent-falsification pass** — the convergence cycle's
 judgment-class soundness pass: a fresh-context, criteria-first
-adversarial attack on whether the locked design **serves its
-intent**, against the requirements record — distinct from the
+(criteria derived from the operator's verbatim request) adversarial
+attack on whether the locked design **serves its intent**, against
+the requirements record — distinct from the
 mechanical falsification pass, which attacks each [VERIFIED]
 D-entry's basis. A pure judgment surfacer: it feeds the operator's
 soundness pass, it does not certify soundness (a clean pass is not
@@ -429,7 +430,8 @@ requirement in the requirements record is covered by a locked
 decision; an uncovered requirement is a finding. The dual of the
 design-completeness audit (intent-correct, where that audit is
 fact-correct). Includes a soft-judgment leg checking the enumeration
-against the verbatim request. Specified in `core.md` §4.3.
+against the verbatim request. The R#→D# matrix it checks is bound
+pre-implement at §4.1.4. Specified in `core.md` §4.3 and §4.1.4.
 
 **Dispatch unit** — a group of design decisions implemented together
 as one piece of impl-phase work. Derived from the locked design at

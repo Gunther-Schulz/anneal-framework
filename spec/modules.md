@@ -450,9 +450,12 @@ Two line kinds:
 **Per-R# attack line** — one per requirement (R#) in the
 requirements record:
 
-`{R#, attempted-refutation, outcome}`
+`{R#, serving-decisions, attempted-refutation, outcome}`
 
 - **R#** — the requirement attacked.
+- **serving-decisions** — the D#(s) serving R# (the R#→D#
+  coverage-matrix cell); an empty set marks R# unserved — a
+  coverage gap that holds the phase per `core.md` §4.1.4.
 - **attempted-refutation** — the attack mounted against the
   design's serving of R# (the located read or query the attack
   ran).
