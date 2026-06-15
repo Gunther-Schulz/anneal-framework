@@ -110,7 +110,10 @@ interaction-points with a runtime surface ("if I won't apply here, surface why")
   #2); mitigate with **fresh-context + ideally model-diversity**. (2) **signal-threshold / flooding**
   (`surface-non-task-observations`'s hard Q) — a mis-calibrated evaluator **shifts** load (operator wades
   through over-flags) instead of reducing it; the **dedup/retrieval** leg is pure win, the **triage** leg carries
-  the risk. Needs a practice-9 design surface. Origin: operator, 2026-06-15 (this run's Q3 datapoint, below).
+  the risk. Needs a practice-9 design surface. **Positive datapoint (2026-06-15):** a 5-subagent (sonnet) grounding
+sweep of the 70-item backlog ran exactly this triage shape (dedup/classify/state-tag — the retrieval leg)
+and caught every shipped-stale item + the archive conflict with compact output. The *sound* leg works in
+practice; cheap-model (sonnet) sufficed for retrieval/classification. Origin: operator, 2026-06-15 (this run's Q3 datapoint, below).
 
 ## Relates to
 - `self-improvement-signal-architecture` — the umbrella; this is its **missed row** (Q2+Q3).

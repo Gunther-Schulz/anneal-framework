@@ -20,6 +20,13 @@ not synced to the map. Concrete near-miss this run: a proposed convergence-clust
 statuses that were stale (most convergence items had shipped/parked); caught by grounding, but the catch was
 **willed** (re-read the files), not structural.
 
+**Empirical (2026-06-15 full grounding sweep):** a body-grounded sweep of all 70 open items (5 subagents)
+found **~14 (20%) materially mis-stated** — 5–6 shipped-stale (still in `backlog/` after their fix shipped,
+incl. a same-slug `backlog/`↔`archive/` conflict on `anneal-dev-impl-skillcraft-gate`) + ~8 partials whose
+`OPEN` status-line oversells a mostly-shipped body. Reading bodies was the only way to catch them; the
+leading token did not. Cost-of-absence: three consecutive batch-cluster picks (⑤, the ③ pair) failed on
+stale/heterogeneous state a greppable status-token would have surfaced in one query.
+
 ## Why it matters now (the trigger)
 `proportional-cycle-weight`'s coherence-batch finding (n=1, 2026-06-15) makes **"identify a coherent
 ship-ready cluster"** a **first-class, recurring** operation — every aggressive-batch planning step does

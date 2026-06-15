@@ -1,6 +1,6 @@
 # Intent-falsification sharpenings — bind requirement-coverage completeness at convergence (+ criteria from verbatim)
 
-**Status:** OPEN — operator-raised **and agreed** 2026-06-08 (session 14). **NEXT-UP #2** (after
+**Status:** SHIPPED 2026-06-15 (`7880be6`, run `convergence-machinery-batch`; batched with #3 as D4/D5/D6). Archived. — operator-raised + agreed 2026-06-08 (session 14); was NEXT-UP #2 (after
 `framework-gap-receipt`; ahead of `investigation-pass-lens-priming` — this is *agreed + ungated*, priming
 is *test-first + gated on the receipt*). **Method-kernel edit** (`core.md` §4.1.4 / §3.4.1 + `modules.md`
 §3.4.1) → anneal-dev + kernel-independent verify (skill-craft form + operator soundness + foundation-

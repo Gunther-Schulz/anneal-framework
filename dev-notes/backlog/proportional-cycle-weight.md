@@ -97,6 +97,14 @@ A coherent batch has a **sweet spot**, not a maximum. The lever licenses **"batc
 cluster"** (= the campaign-map unit, `dev-notes/backlog/README.md` ▶ Campaign map), NOT "batch more items."
 This empirically supports the campaign-map thesis (drain a coherent campaign as one cycle).
 
+**Correction (2026-06-15 full grounding sweep):** the earlier impression that clean coherent
+comparable-weight clusters are *rare* was a **status-line-picking artifact** — picking candidate clusters
+from status-lines/titles (⑤, the ③ pair) kept hitting heterogeneous or stale items. A body-grounded sweep
+of all 70 open items found **≥3 clean comparable-weight open-ready light pairs** (core-structural:
+`core-md-bloat-measure-then-cut` + `verify-disposition-citation-reopen-explicit-leg`; release/hooks;
+render-conventions). So aggressive batching is **more available than reactive picking suggested** — the
+bottleneck was queryability (`backlog-status-queryability`), not scarcity.
+
 **Measure it next:** n=1 + an estimate. Pair the next aggressive coherent batch with the token-measurement
 (`measurement-harness-mve`) for a real number, and watch specifically for the churn/dilution ceiling.
 

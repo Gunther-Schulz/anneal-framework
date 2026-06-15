@@ -1,6 +1,6 @@
 # anneal-dev impl dispatch doesn't INVOKE skill-craft → pre-edit gate blocks dispatched rule-corpus edits
 
-**Status:** OPEN — anneal-dev / gate-interaction finding. Filed 2026-06-04 as the real residual of
+**Status:** OPEN — ⚠ **DISAMBIGUATE (2026-06-15): a same-slug copy is in `archive/` marked DONE 2026-06-02 (`ee9e2e6`), and this session's `convergence-machinery-batch` run empirically shows the impl-dispatch-invokes-skill-craft fix WORKS (the impl subagent invoked skill-craft + edited successfully) — so this re-filed residual may already be resolved. Verify against current `implement.md` ("invoke skill-craft via the Skill tool before any rule-corpus edit") before any next touch; likely archivable.** anneal-dev / gate-interaction finding. Filed 2026-06-04 as the real residual of
 `skill-craft-pre-edit-hook-findings` Finding 3 (which was MOOT *as a hook bug* — the hook side is
 correct; this is the dispatch side). Editing anneal-dev = corpus-evolution → routes through
 anneal-dev + kernel-independent verify.

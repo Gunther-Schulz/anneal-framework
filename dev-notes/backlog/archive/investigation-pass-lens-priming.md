@@ -1,6 +1,6 @@
 # Investigation-pass lens priming — keep the legs pure (should the lens set prime the investigation pass at all?)
 
-**Status:** OPEN — **REMOVAL DECIDED (operator, 2026-06-08, session 14).** Remove the lens-set priming of
+**Status:** SHIPPED 2026-06-15 (`7880be6`, run `convergence-machinery-batch`; batched with #2 as D2/D3'). V-32 instantiated at ship. Archived. — **REMOVAL DECIDED (operator, 2026-06-08, session 14).** Removed the lens-set priming of
 the investigation pass (keep the legs pure); **ship-and-observe via daily use + the `framework-gap-receipt`
 watch, NOT a controlled test** (see Decision below — consistent with the project's revealed-preference-over-
 toy-tests finding). **Agreed + ungated → one convergence-machinery campaign with
