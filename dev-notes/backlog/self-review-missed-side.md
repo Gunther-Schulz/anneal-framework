@@ -97,6 +97,20 @@ interaction-points with a runtime surface ("if I won't apply here, surface why")
 - Register **home + layering** (framework vs instance; one file or a slot like the invariant registers).
 - The **feed-back loop** (novel class → register entry — who adds, when).
 - Composition with V-30 (its 4-class catalog made first-class) + `framework-blindspot-class-analysis` (the populator).
+- **Subagent pre-evaluator for surfaced candidates** (operator-load-reducer; operator-raised 2026-06-15). A
+  subagent that **triages** the (ii)-feeder's surfaced improvement-candidates *before* the operator: **relate-
+  before-add dedup** ("already tracked?" — a backlog search, **retrieval not ceiling-bound** → pure load-
+  reduction), **classification/routing** (which cell Q2/Q3, which existing item it feeds, which failure-class),
+  and a **first-pass severity** — producing a structured first-judge list the operator **second-judges**.
+  **NOT a new mechanism-class:** it's the existing intent-falsification (subagent force-fixes the checkable,
+  surfaces the residual; operator judges) + **practice-11** (subagent detects → AI first-judge → operator
+  second-judge) pattern applied to the self-improvement channel. **Bounding caveats (or it oversells):**
+  (1) **shared reasoning-depth ceiling** (the INV-3 / `verify-model-diversity` logic) — a subagent of the
+  surfacer's model inherits its blind spots, so it **cannot be the gate** (operator-irreducible per discipline
+  #2); mitigate with **fresh-context + ideally model-diversity**. (2) **signal-threshold / flooding**
+  (`surface-non-task-observations`'s hard Q) — a mis-calibrated evaluator **shifts** load (operator wades
+  through over-flags) instead of reducing it; the **dedup/retrieval** leg is pure win, the **triage** leg carries
+  the risk. Needs a practice-9 design surface. Origin: operator, 2026-06-15 (this run's Q3 datapoint, below).
 
 ## Relates to
 - `self-improvement-signal-architecture` — the umbrella; this is its **missed row** (Q2+Q3).
