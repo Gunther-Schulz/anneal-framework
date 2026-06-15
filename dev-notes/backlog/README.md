@@ -133,7 +133,49 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 **Coverage:** all 45 items placed (44 prior + `proportional-cycle-weight`); campaign ② SHIPPED 2026-06-05
 (5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +4 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`, `anneal-self-improvement-loop`) → 56 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
-### ▶ Where we are + next steps (2026-06-08 session 14 — READ FIRST)
+### ▶ Where we are + next steps (2026-06-15 session 15 — READ FIRST)
+
+**▶ SHIPPED this session:** `convergence-machinery-batch` (`7880be6`, spec-only) — batched
+**`intent-falsification-coverage-binding`** (#2: R#→D# coverage-completeness bind at convergence +
+criteria-first-from-verbatim + enumeration-faithfulness leg) **+** **`investigation-pass-lens-priming`**
+(#3: de-prime the investigation pass + re-anchor the standardized-pass trigger to the edit-set). Both
+**archived**. Method-kernel; render-debt queued (`instance-reinstantiation`). **This was the
+aggressive-batching experiment, run #1** (2 coherent §4.1.4 items, one cycle; convergence caught a real
+R2 seam → D3 amended; verify + skill-craft self-review clean; operator soundness SOUND).
+
+**▶ HYGIENE (70-item grounding sweep, 2026-06-15):** a body-grounded sweep of all open items (5 subagents)
+found **~20% materially mis-stated**. Cleared: **5 archived** (the 2 above + `glossary-binding-table-interface-completeness`
++ `instance-template-slot-scaffolding` + `l3-prior-art-methodologies`); **`anneal-dev-impl-skillcraft-gate` flagged**
+(same-slug backlog/archive conflict — disambiguate, likely archivable); **V-32 filed** (the de-priming quality-watch
+the ship owed). **Open count 70 → 65.** ~8 partials still oversell `OPEN` (`clippy-run-findings-dispatch-coupling`,
+`contract1-depollution-cluster`, `framework-spec-cleanup`, `runs-data-preservation`, `self-improvement-signal-architecture`,
+`intent-falsification-soundness-sweep`, `self-hosting-inplace-integrity-clean-precondition`) — status-lines to normalize.
+
+**▶ NEW + FOLDED (session-15 captures):** `backlog-status-queryability` (NEW); `proportional-cycle-weight`
+(+coherence-batch economics + batch-size ceiling + F9-isolation lesson + clean-batches-exist correction);
+`self-review-missed-side` (+subagent pre-evaluator candidate + 20%-staleness + subagent-triage-worked, all Q3);
+`convergence-mechanical-pass-value` (+mechanical-firing survey fold).
+
+**▶ TERMINAL FINDING (the session's real result):** the aggressive-batching experiment never produced a
+batch-economics *number* — **five** grounded batch candidates (⑤ anneal-dev-method, the ③ core-dedup pair,
+the core-structural pair, and `core-md-bloat` itself) each turned out **stale / delicate / already-done** once
+its *body/current-state* was read. **The bottleneck is backlog staleness, not batching mechanics** — the deepest
+validation of `backlog-status-queryability`. Highest-value next work is the **staleness itself**, not another batch.
+
+**▶ NEXT-UP (revised 2026-06-15):**
+1. **`backlog-status-queryability`** — implement the greppable status-token convention (the 20%-staleness + five
+   stale-candidate picks are the evidence it earns its place). Makes future cluster-picking cheap + drift-free.
+2. **staleness drain** — normalize the ~8 oversold partial status-lines; disambiguate `anneal-dev-impl-skillcraft-gate`;
+   resolve the **abandoned `move1-tail-honest-relabel` run** (IN-PROGRESS across 3 sessions — resume or close).
+3. **`framework-gap-receipt`** — the live session-14 #1, still open (heavy, solo).
+4. **batch-economics measurement** — DEFERRED until a body-confirmed clean comparable-weight light pair exists
+   (sweep candidates: `release-commit-formation-from-checkpoints`+`commit-msg-hook-packaging-overmatch`;
+   `anneal-dev-rerender-changeset-by-source-delta`+`firewall-regex-wrap-tolerance` — body-confirm first).
+   (`core-md-bloat-measure-then-cut`: measured → D-point-2 already-addressed, D-point-1 minor trim; downgraded.)
+
+*(Session-14 block below — superseded; #2/#3 shipped + archived, #1 `framework-gap-receipt` + #4 `in-flight-cross-cycle-learning` remain. History.)*
+
+### ▶ Where we are + next steps (2026-06-08 session 14 — superseded by session 15)
 
 **▶ NEXT-UP (operator-set 2026-06-08 — both from the session-14 leg-decomposition thread):**
 1. **`framework-gap-receipt`** — a *periodic, post-hoc, fresh-context* reader of `.clippy/runs/*.passes.md`

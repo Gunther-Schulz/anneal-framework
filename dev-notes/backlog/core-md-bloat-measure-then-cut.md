@@ -1,6 +1,13 @@
 # core.md bloat — measure-then-cut (core↔modules convergence dedup)
 
-**Status:** OPEN — split off 2026-06-04 from `kernel-consolidation-glossary-hygiene` (its **D-point-1**),
+**Status:** OPEN (DOWNGRADED — measured 2026-06-15) — ⚠ **the 2026-06-04 premise is largely STALE.** Re-measure
+(core.md now **1304ln**, §4.1.4 now `:475-702`, not the cited `:408-429`): **D-point-2 already-addressed** — the
+glossary entries (Self-check/Integrity-check/Spawn-fallback/Status-tag) already **index** core bodies with `§`
+pointers, not restate them (intervening work tightened them). **D-point-1 down to a minor delicate trim** — §4.1.4
+↔ `modules.md §3.4` already cross-ref heavily; only §4.1.4's coverage-check (i)-(v) re-enumerates a few artifact
+fields modules owns. **Per measure-then-cut / NO-blind-rewrite: minor residual or close** — do NOT run a full
+gated-kernel cycle for a few-line reword (proportional-cycle-weight). — split off 2026-06-04 from
+`kernel-consolidation-glossary-hygiene` (its **D-point-1**),
 to keep the glossary/dev-process-home consolidation run (`kernel-consolidation-batch`) coherent. The
 delicate **core/modules structural** half. Framework-spec edit → **anneal-dev + kernel-independent
 verify**. Tier-2 F3 (or F-prefix consolidation), **after** `kernel-consolidation-batch`.
