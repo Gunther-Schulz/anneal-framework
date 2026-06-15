@@ -1,6 +1,6 @@
 # Measurement harness — wiring skill-creator's runner to the anneal MVE
 
-**Status:** ⏸ **HARNESS BUILT + PROVEN; the A/B it feeds is PARKED** (negative/structural verdict —
+**Status:** [PARKED] ⏸ **HARNESS BUILT + PROVEN; the A/B it feeds is PARKED** (negative/structural verdict —
 see `anneal-empirical-validation-experiment.md` VERDICT 2026-06-06). The harness works end-to-end
 (frozen pack + oracles + well-formedness gate + arm briefs `eval/arms/`; opus both arms; token +
 grounding capture from the foreground subagent `<usage>`). What it *measured* is the point: **7

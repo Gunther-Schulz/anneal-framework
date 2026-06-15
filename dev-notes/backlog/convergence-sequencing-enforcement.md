@@ -1,6 +1,6 @@
 # Convergence-pass sequencing — enforce intent→mechanical ordering structurally (not prose)
 
-**Status:** L3 (skill-craft) **SHIPPED 2026-06-05** (v1.0.58); L1 (anneal-dev kernel) **SHIPPED 2026-06-05**
+**Status:** [PARTIAL] L3 (skill-craft) **SHIPPED 2026-06-05** (v1.0.58); L1 (anneal-dev kernel) **SHIPPED 2026-06-05**
 (spec-only release `f74b145`; render-follow queued to `instance-reinstantiation`). **Both levels shipped — this
 item archives once the render-debt batch carries L1's source-delta into the instances.** Discovered 2026-06-05
 when the orchestrator (the AI) ran the convergence cycle's

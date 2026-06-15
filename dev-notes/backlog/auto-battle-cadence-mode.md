@@ -1,6 +1,6 @@
 # Interactive "auto-cycle to [READY]" menu affordance (auto-advance cycles, halt at the phase gate)
 
-**Status:** OPEN — framework mode-mechanics idea, operator-raised 2026-06-04, **direction resolved
+**Status:** [PARKED] — framework mode-mechanics idea, operator-raised 2026-06-04, **direction resolved
 2026-06-04** (see Resolution). **Not for now** (filed per no-silent-deferral). Framework-spec
 (`foundations.md`/`core.md` Modes + `SKILL.md` Modes + the closed-artifact menu) → anneal-dev +
 kernel-independent verify when pursued. (Filename `auto-battle-cadence-mode` is legacy — the resolved

@@ -1,6 +1,6 @@
 # Method-kernel edit — where the operator's irreducible soundness verdict actually binds (the [READY]-vs-step-4 split)
 
-**Status:** OPEN — process-clarity gap, surfaced 2026-06-05 by running the `move1-s3.1-honest-relabel`
+**Status:** [READY] — process-clarity gap, surfaced 2026-06-05 by running the `move1-s3.1-honest-relabel`
 anneal-dev cycle (a method-kernel edit). Low-to-medium severity; a specification/framing gap in
 `development-process.md`'s method-kernel rule, not a behavior bug. **Next action:** decide whether to sharpen
 the method-kernel-edit verify discipline to name the two soundness touchpoints explicitly; if so, a small

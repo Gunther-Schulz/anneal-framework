@@ -1,6 +1,6 @@
 # Streamline / rename / reorder the instructional-file set
 
-**Status:** OPEN — operator-raised 2026-06-03, parked for AFTER `corpus-flows-redesign`
+**Status:** [PARKED] — operator-raised 2026-06-03, parked for AFTER `corpus-flows-redesign`
 lands. Idea, not yet a design. A clarity/structure pass over the framework's
 instructional files now that the routing redesign has settled their roles.
 

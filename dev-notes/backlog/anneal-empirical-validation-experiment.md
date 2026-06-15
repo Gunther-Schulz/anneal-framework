@@ -1,6 +1,6 @@
 # Empirical validation experiment — does design-first (anneal) beat act-first? (v0)
 
-**Status:** ⏸ **PARKED 2026-06-06** — the controlled single-task A/B **structurally ties at
+**Status:** [PARKED] ⏸ **PARKED 2026-06-06** — the controlled single-task A/B **structurally ties at
 frontier capability** (opus). This is the proof-thread's *terminal verdict* (see VERDICT below),
 not a TODO. The harness that feeds it is built + proven (`eval/`, `measurement-harness-mve.md`);
 the *experiment* is parked, not the harness. (Prior: OPEN — experiment design v0, operator-requested

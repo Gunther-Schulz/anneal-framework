@@ -1,6 +1,6 @@
 # Worktree isolation + integration — merge-tree-gated integration, reflink cache provisioning, escape-theater cut
 
-**Status:** OPEN — **substantially reframed + de-risked 2026-06-07** (operator-driven
+**Status:** [DESIGN] — **substantially reframed + de-risked 2026-06-07** (operator-driven
 git/filesystem-capabilities research). Was: a 4-part finding (cross-session clippy run, 2026-06-02),
 campaign ④a **fork-first** (gated on a cache architectural decision). Now: **the fork-first gate
 dissolves** — (b) was misdiagnosed, (a) is already rendered, (c) folds into the gate, and **(d) is

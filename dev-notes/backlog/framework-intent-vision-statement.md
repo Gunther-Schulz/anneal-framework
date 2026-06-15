@@ -1,6 +1,6 @@
 # Framework intent / vision statement — candidate articulation (ratify, don't canonize)
 
-**Status:** OPEN — surfaced 2026-06-06 (operator's strategic step-back: "what's the intent as you
+**Status:** [READY] — surfaced 2026-06-06 (operator's strategic step-back: "what's the intent as you
 see it? is it worth it / do we ever reach V1?"). **LOW-gating** — a foundation-level articulation;
 does NOT block the proof-first order (harness → enforcement-batch → verdict). Foundation-level edit
 → `foundation.md` (or a dedicated VISION), via anneal-dev + **irreducible operator soundness** (the

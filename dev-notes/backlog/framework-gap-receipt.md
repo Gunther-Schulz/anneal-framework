@@ -1,6 +1,6 @@
 # Framework-gap receipt — cross-run falsification-pattern tally → lens / framework / neither routing
 
-**Status:** OPEN — operator-raised 2026-06-08 (session 14), **NEXT-UP #1** (ahead of
+**Status:** [READY] — operator-raised 2026-06-08 (session 14), **NEXT-UP #1** (ahead of
 `investigation-pass-lens-priming`). **Additive machinery OUTSIDE the per-run kernel** — a *periodic,
 post-hoc reader* of existing run records, not a new per-run obligation. The low-risk first cut (it
 *tells you* whether kernel questions like investigation-pass priming are real, before you touch the

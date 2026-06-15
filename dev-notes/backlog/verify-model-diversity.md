@@ -1,6 +1,6 @@
 # Verify model-diversity — should the checker run on a different model than the actor?
 
-**Status:** OPEN (narrowed + renamed 2026-06-04, was `multivoter-verify-no-predicate-claims` —
+**Status:** [PARKED] (narrowed + renamed 2026-06-04, was `multivoter-verify-no-predicate-claims` —
 the old name implied multi-voting, which is dead; see below). Two of this item's three threads
 are CLOSED, leaving ONE live residual:
 

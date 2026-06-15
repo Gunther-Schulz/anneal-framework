@@ -1,6 +1,6 @@
 # Validation-watch register — full per-entry conformance sweep
 
-**Status:** OPEN — follow-on filed 2026-06-06 by the `v-entry-is-post-ship-only` run (its D6 / F7;
+**Status:** [READY] — follow-on filed 2026-06-06 by the `v-entry-is-post-ship-only` run (its D6 / F7;
 the run's spot-audit found the entries conformant but the FULL per-entry sweep is separable). Not
 urgent. Touches `dev-notes/validation-watch/` entries only (no spec/kernel) → a mechanical audit,
 not an anneal-dev kernel cycle (anneal-dev only if a finding implies a lifecycle-spec change).

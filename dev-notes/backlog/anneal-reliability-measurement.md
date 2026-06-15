@@ -1,6 +1,6 @@
 # Measuring anneal's value — can we show a run is actually more sound/dependable?
 
-**Status:** OPEN — exploratory, **operator-flagged next exploration** (2026-06-03).
+**Status:** [DESIGN] — exploratory, **operator-flagged next exploration** (2026-06-03).
 Confirmed by the deep-research run (`wf_7dbc2c5e`, raw at
 `dev-notes/research/anneal-placement-deep-research-2026-06-03.raw.json`) as the
 **biggest real gap** — and the run gave it concrete material + a lead design (below).

@@ -1,6 +1,6 @@
 # Bidirectional lens coverage — a core tenet + a lens-set audit
 
-**Status:** OPEN — operator-raised 2026-06-07 ("bidirectional → we should check what other lenses are
+**Status:** [READY] — operator-raised 2026-06-07 ("bidirectional → we should check what other lenses are
 missing bidirectional; it's a core tenet we need to have"), spawned by `clippy-write-side-boundary` (F29).
 **Queued: AFTER `clippy-write-side-boundary` lands** (that run extends Silent-substitution-at-boundary to
 bidirectional — the first instance of the tenet).

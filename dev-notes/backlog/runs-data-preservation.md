@@ -1,6 +1,6 @@
 # Run-state preservation — track the run-state slot instead of gitignoring it
 
-**Status:** DECIDED 2026-06-06 (simple path) — framework formalization pending. Resolved
+**Status:** [PARTIAL] DECIDED 2026-06-06 (simple path) — framework formalization pending. Resolved
 through a multi-step operator discussion during the `v-entry-is-post-ship-only` run: **track
 the run-state slot in place; do NOT gitignore it** (default-on). No archive folder, no
 lifecycle extension, no relocation — see "SIMPLEST approach" below (the decided answer). It is

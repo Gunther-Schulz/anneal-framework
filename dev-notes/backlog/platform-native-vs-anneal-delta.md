@@ -1,6 +1,6 @@
 # Platform-native vs anneal-genuine — what Anthropic's official docs already solve
 
-**Status:** OPEN — surfaced 2026-06-06 (operator: "look at Anthropic's official skill-building docs;
+**Status:** [READY] — surfaced 2026-06-06 (operator: "look at Anthropic's official skill-building docs;
 a lot of what anneal is trying to do may already be solved"). **Strategic/audit finding**, grounded
 via `claude-code-guide` against the live official docs + a direct read of the local `anthropics/skills`
 clone (`~/dev/reference/skills/`). Complementary to the **session-4 kill-switch research** (which

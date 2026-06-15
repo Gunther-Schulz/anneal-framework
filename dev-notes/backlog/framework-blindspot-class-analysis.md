@@ -1,6 +1,6 @@
 # Framework blind-spot class analysis — proactively enumerate the classes of verification blind spot the framework may have
 
-**Status:** OPEN — operator-raised 2026-06-04, generalizing the
+**Status:** [DESIGN] — operator-raised 2026-06-04, generalizing the
 `foundation-invariants-register` run's intent-falsification discovery. **Meta/analytical**
 (produces candidate framework changes; not itself a change). High interest. The analysis is
 OF the framework → acting on its findings = method-kernel edits through anneal-dev.

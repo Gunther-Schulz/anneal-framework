@@ -1,9 +1,11 @@
 # Intent-falsification soundness sweep — audit shipped enforcement for the self-certifying-form blind spot
 
-**Status:** SECOND PASS DONE 2026-06-05 (8 targets total: the 3 hooks + step-4 design, then the
+**Status:** [PARTIAL] SECOND PASS DONE 2026-06-05 (8 targets total: the 3 hooks + step-4 design, then the
 structural-enforcement practices + the §3.1 keystone + the falsification machinery + the
 intent-falsification pass itself). Fix-queue below reduces to 5 root moves. Only scope-item-2 (shipped
-run artifacts) remains unswept. Originally operator-requested 2026-06-04, surfaced FROM the
+run artifacts) remains unswept. **Move-1 tail:** the run `move1-tail-honest-relabel` is PARKED
+(operator 2026-06-15) — 2 sites (hook PASS-signal disclaimer + dev-process:438 relabel) designed +
+realization-ready; resume when ①-light is drained (its campaign home). Originally operator-requested 2026-06-04, surfaced FROM the
 `foundation-invariants-register` anneal-dev run (B1/B2 intent-falsification findings).
 Retrospective audit effort; **own scope, NOT the foundation-invariants run's.** A sweep,
 not a single edit — it generates a fix-queue (each confirmed finding → its own method-kernel

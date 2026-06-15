@@ -1,6 +1,6 @@
 # Re-instantiate the instances from the cleaned spec (via anneal-dev)
 
-**Status:** OPEN — **the effort that closes the framework-spec-cleanup render-tail**,
+**Status:** [PARTIAL] — **the effort that closes the framework-spec-cleanup render-tail**,
 expanded into its own home (operator-scoped 2026-06-03). Multi-run; downstream of
 merging the spec cleanup. Coordinates the per-instance render work under one sequence
 + one governing principle. **(2026-06-04: the 3 bundled sub-efforts — render-resync,

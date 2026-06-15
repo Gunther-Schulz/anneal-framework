@@ -1,6 +1,6 @@
 # anneal-dev evaluation discipline — render skill-craft v1.0.61's Tier 1/2 into anneal-dev-the-plugin
 
-**Status:** OPEN — filed 2026-06-05. Renders skill-craft v1.0.61's new evaluation
+**Status:** [READY] — filed 2026-06-05. Renders skill-craft v1.0.61's new evaluation
 discipline (Tier 1 triggering + Tier 2 behaviour-delta signature) into anneal-dev-the-plugin
 specifically. **Scoped to anneal-dev only** — the broader question of method-level
 meta-evaluation (promoting `anneal-empirical-validation-experiment` / `anneal-reliability-measurement`

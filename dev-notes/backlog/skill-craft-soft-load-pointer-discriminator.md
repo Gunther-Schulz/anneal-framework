@@ -1,6 +1,6 @@
 # skill-craft: add a provenance-vs-load-bearing discriminator to the Soft-load-pointer anti-pattern
 
-**Status:** OPEN — queued for a future skill-craft cycle. Small, Path-1
+**Status:** [READY] — queued for a future skill-craft cycle. Small, Path-1
 (incident-grounded). Surfaced 2026-06-02 by the anneal-dev step-5 render
 skill-craft review.
 

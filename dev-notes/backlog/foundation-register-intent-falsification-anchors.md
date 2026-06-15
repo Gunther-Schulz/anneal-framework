@@ -1,6 +1,6 @@
 # Foundation-invariants register — anchor the intent-falsification (validation) leg
 
-**Status:** OPEN — operator-requested 2026-06-04, from a literature pass on
+**Status:** [READY] — operator-requested 2026-06-04, from a literature pass on
 "the way we interpret intent falsification." A **foundation/method-kernel edit** to
 `dev-notes/foundation-invariants/` → runs through **anneal-dev + the operator's
 step-4 soundness pass** (`development-process.md` §2); per CLAUDE.md, re-ground in the

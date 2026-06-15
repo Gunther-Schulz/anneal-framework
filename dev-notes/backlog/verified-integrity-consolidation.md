@@ -1,6 +1,6 @@
 # FB-5. Verified-integrity — consolidate the "[VERIFIED] claims more than was checked" family
 
-**Status:** open finding — a **consolidation cycle** (not a one-off), needs a practice-9 design surface. Operator-raised 2026-06-01.
+**Status:** [DESIGN] — a **consolidation cycle** (not a one-off), needs a practice-9 design surface. Operator-raised 2026-06-01.
 
 **The principle.** A `[VERIFIED]` tag must be earned by *actually
 checking the actual claim*. When a claim can't be fully checked ahead of

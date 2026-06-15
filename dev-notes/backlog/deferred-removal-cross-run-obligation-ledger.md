@@ -1,6 +1,6 @@
 # Cross-run owed-removal has no forcing-function ("delete X at the future cutover" → forgotten)
 
-**Status:** OPEN — surfaced 2026-06-07 by a beat-the-books runs-investigation (operator-driven, the
+**Status:** [DESIGN] — surfaced 2026-06-07 by a beat-the-books runs-investigation (operator-driven, the
 companion to `co-producer-format-parity`). Empirical n=1 rich (the `unit_014`-cutover-never-ran →
 Unit-26-divergence → already-bet re-alert production bug, fully quotable from `.clippy/runs/`) + 3
 clean counter-examples isolating the failure to *cross-run* removals. **Adherence-failure-driven, but

@@ -6,7 +6,7 @@ that are small / cosmetic / behavior-preserving / grab-bag, reserving full
 ceremony (convergence + intent+mechanical falsification + isolated verify) for
 method-kernel + load-bearing semantic edits.
 
-**Status / stage:** DEFERRED — campaign ⑦ (rate machinery). **Practice now,
+**Status / stage:** [PARKED] DEFERRED — campaign ⑦ (rate machinery). **Practice now,
 formalize only if proven** — now **n=2 evidenced** (2026-06-06 v-entry lever (A);
 2026-06-07 clippy-write-side lever (B), below), so the "proven" bar is closer. The
 *practice* is already available: the operator calls cycle-weight per item in-loop

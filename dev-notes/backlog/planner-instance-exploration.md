@@ -1,6 +1,6 @@
 # Planner-instance exploration — design notes
 
-**Status:** design locked, pre-build (gray-zone fork **(a)** operator-confirmed
+**Status:** [DESIGN] design locked, pre-build (gray-zone fork **(a)** operator-confirmed
 2026-05-29). Planner spec not yet written — by design, pass-1 isolated subagent
 writes it. Not yet a rule-corpus edit cycle for the planner.
 **Working name:** "planner" (provisional — undersells it; see Naming).

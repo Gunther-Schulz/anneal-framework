@@ -1,6 +1,6 @@
 # Convergence cycle is unenforced (behavioral rule, no gate) → silently skippable in auto-battle
 
-**Status:** OPEN — surfaced 2026-06-06 by a clippy Unit-18 auto-battle run (other session, carried
+**Status:** [READY] — surfaced 2026-06-06 by a clippy Unit-18 auto-battle run (other session, carried
 in by the operator; re-grounded against the live spec here, not taken on the session's word).
 **High-stakes** — the convergence cycle is *the* un-fakeable-bind soundness mechanism (`core.md
 §3.1`/§4.1.4), and it can be silently skipped. **Method-kernel** (`core.md §4.1.4` convergence

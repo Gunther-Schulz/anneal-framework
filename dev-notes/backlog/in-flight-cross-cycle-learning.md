@@ -1,6 +1,6 @@
 # In-flight cross-cycle learning — the recurrence signal, run live: patch-sooner (speed) + basin-jump (quality)
 
-**Status:** OPEN — exploratory design, operator-raised 2026-06-08 (session 14). The **fast-loop twin** of
+**Status:** [DESIGN] — exploratory design, operator-raised 2026-06-08 (session 14). The **fast-loop twin** of
 `framework-gap-receipt`: the *same* recurring-falsification-class signal, consumed **within a run, in-flight**
 (next cycle) instead of cross-run, post-hoc (framework edit). Two consumers — a **speed** branch and a
 **quality** branch. Built on the receipt's class-tally mechanism (shares it). When built: method-kernel

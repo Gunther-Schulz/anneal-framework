@@ -1,5 +1,7 @@
 # Contract-1 de-pollution cluster — design capture
 
+**Status:** [PARTIAL] — main cycles a/b/c shipped (`3a2245b`/`8bf4d47`/…); residuals: a V-26 watch + a clippy render-debt (tracked elsewhere). Design-capture dossier — see Resume below.
+
 Durable design artifact for the **next framework effort**: removing
 the three coding-domain leaks from the anneal-framework core so the
 spec is domain-independent at the *mechanism* level, not just the

@@ -1,6 +1,6 @@
 # anneal self-improvement loop — harness-as-oracle, tiered (unattended Tier-A + operator-gated Tier-B)
 
-**Status:** OPEN — exploratory, operator-raised 2026-06-06. **GATE REFRAMED (session-11): the loop is
+**Status:** [GATED] — exploratory, operator-raised 2026-06-06. **GATE REFRAMED (session-11): the loop is
 gated on a REGRESSION NET + the tiered mechanical gate — NOT on a methodology-proof / "positive A/B
 verdict."** The proof (does anneal's compounding value beat act-first?) turned out **unprovable cheaply**
 (session-11 — controlled one-shot tests tie; the value is compounding + regime-dependent) AND — the key

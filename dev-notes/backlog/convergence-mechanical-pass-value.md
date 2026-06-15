@@ -1,6 +1,6 @@
 # Convergence mechanical-falsification pass — value & cost given intent-falsification
 
-**Status:** OPEN — design question, operator-raised 2026-06-05 (during the `campaign3-enforcement-fidelity` [READY] gate); **re-raised 2026-06-15** (during `convergence-machinery-batch`) with a request for an **empirical-firing survey** (folded in below). **Parked, not scheduled** — gated on evidence (see "How the evidence accrues"). Method-kernel (`spec/core.md` §4.1.4) if ever pursued → anneal-dev + kernel-independent verify. NOT urgent.
+**Status:** [PARKED] — design question, operator-raised 2026-06-05 (during the `campaign3-enforcement-fidelity` [READY] gate); **re-raised 2026-06-15** (during `convergence-machinery-batch`) with a request for an **empirical-firing survey** (folded in below). **Parked, not scheduled** — gated on evidence (see "How the evidence accrues"). Method-kernel (`spec/core.md` §4.1.4) if ever pursued → anneal-dev + kernel-independent verify. NOT urgent.
 
 ## The observation (anecdotal, n=few)
 Once the convergence cycle's **intent-falsification** pass comes up clean, the **mechanical** falsification pass has (anecdotally) held **first-pass** every time. Before intent-falsification existed, the mechanical pass often needed several passes. Operator's question: does mechanical still earn its cost, or could it fold / scope down?

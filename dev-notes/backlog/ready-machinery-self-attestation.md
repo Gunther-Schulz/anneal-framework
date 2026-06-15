@@ -1,6 +1,6 @@
 # [READY] / fresh-session-implementability — orchestrator-self-attested verdict
 
-**Status:** OPEN — promoted 2026-06-05 from `intent-falsification-soundness-sweep`'s
+**Status:** [DESIGN] — promoted 2026-06-05 from `intent-falsification-soundness-sweep`'s
 "Unswept" register (where it was logged as a NEW target discovered by running the move-1
 cycle). Standalone because it has its own scope, observed n=1, and anneal-dev cycle.
 Sibling failure-class fix to `convergence-sequencing-enforcement` (L1 shipped today,

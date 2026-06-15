@@ -1,6 +1,6 @@
 # A wrong "non-issue" disposition at recording time shields the design from the entire lens apparatus
 
-**Status:** OPEN — surfaced 2026-06-06 by a **clippy** Unit-24 auto-battle run (project beat-the-books,
+**Status:** [GATED] — surfaced 2026-06-06 by a **clippy** Unit-24 auto-battle run (project beat-the-books,
 run `.clippy/runs/2026-06-06-unit-24-rejection-taxonomy.md`; carried in by the operator). A
 **method-kernel** candidate (`spec/core.md` §3.x disposition definition + the falsification/verify
 scope) + its instance render (`tracker.md` finding-state #3, `lenses.md`) → anneal-dev + kernel-

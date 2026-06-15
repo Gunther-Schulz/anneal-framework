@@ -1,8 +1,12 @@
 # Backlog status-queryability — cluster/campaign reasoning is stale-prone or expensive
 
-**Status:** OPEN — process/hygiene gap, surfaced 2026-06-15 (during `convergence-machinery-batch`,
+**Status:** [PARTIAL] — process/hygiene gap, surfaced 2026-06-15 (during `convergence-machinery-batch`,
 operator-raised). Dev-notes hygiene (NOT method-kernel) → a dev-process tweak, not an anneal-dev cycle.
 **Gated on need:** earns its place IF coherent-cluster batching becomes routine (see Trigger). NOT urgent.
+**ADOPTED + applied 2026-06-15:** the greppable token ([READY]/[DESIGN]/[PARKED]/[GATED]/[PARTIAL]) is now
+documented in the README convention and applied across all open items (this pass). The "earns-its-place-if-routine"
+gate resolved YES — the marginal cost is ~zero (a format on the status-line first-word you already edit). Residual:
+the self-audit is a documented grep recipe; a pre-commit hook is a future option, not built (would be over-building now).
 
 ## The phenomenon
 An item's **real status** (open-and-ready vs parked vs gated vs partially-shipped vs deferred-pending-

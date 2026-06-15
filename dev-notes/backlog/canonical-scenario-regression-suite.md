@@ -1,6 +1,6 @@
 # Canonical-scenario regression suite — "executable verification" for the method itself
 
-**Status:** OPEN — filed 2026-06-04 from the `foundation-invariants-register` run (candidate
+**Status:** [DESIGN] — filed 2026-06-04 from the `foundation-invariants-register` run (candidate
 (2) of the foundation-self-certification machinery, split out per the locked decision D5).
 The stronger complement to the foundation-invariants register; heavier, gated. Pursue via
 its own decide-ahead + run. **Promoted from tier 6 → tier 4 on 2026-06-05** (per skill-craft

@@ -1,6 +1,6 @@
 # A re-render's change-set must be enumerated by source-delta diff, not an eyeball audit
 
-**Status:** OPEN — anneal-dev (instance) method finding, surfaced 2026-06-03 during the
+**Status:** [READY] — anneal-dev (instance) method finding, surfaced 2026-06-03 during the
 `anneal-dev-rerender` run (cycles 2 + 4 falsifications). An instance-mechanics sharpening,
 NOT a kernel gap (the kernel's basis rule + convergence falsification already cover it).
 

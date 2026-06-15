@@ -1,5 +1,7 @@
 # Clippy-run findings — dispatch model/isolation + behavioral-coupling discharge
 
+**Status:** [PARTIAL] — all cycles + G released; the live residual is the Cycle 2.5 `bindings.md` slot-collapse (deferred). Working-record dossier.
+
 Working record of three framework/instance findings surfaced by a
 clippy run (azuro impl, 2026-05-29) where a single-unit plan was
 operator-directed to dispatch. Captured per `development-process.md`

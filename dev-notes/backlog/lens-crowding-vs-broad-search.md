@@ -1,6 +1,6 @@
 # Lens crowding vs broad search — do focused directives trade off against open-ended falsification?
 
-**Status:** OPEN — **hypothesis / open question**, anecdotal (n=5, a single observation). Surfaced
+**Status:** [PARKED] — **hypothesis / open question**, anecdotal (n=5, a single observation). Surfaced
 session-11 (2026-06-06) in the real-codebase A/B. **NOT claimed** — flagged for a future controlled
 test. Operator-flagged twice as "the single most interesting thing to test next."
 

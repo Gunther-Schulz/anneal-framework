@@ -1,6 +1,6 @@
 # Dispatch brief — "reference by letter" is unenforceable for a context-less spawned agent
 
-**Status:** OPEN — finding (cross-session clippy run, 2026-06-02). Framework/
+**Status:** [READY] — finding (cross-session clippy run, 2026-06-02). Framework/
 instance dispatch-mechanism gap. Distinct from the cluster in
 [[clippy-run-findings-dispatch-coupling]] (model/isolation/behavioral) and from
 [[anneal-dev-impl-skillcraft-gate]] (invoking skill-craft from dispatch).

@@ -1,6 +1,6 @@
 # Does the [READY]-presented impl-plan unit decomposition bind the dispatch?
 
-**Status:** OPEN — framework-clarity question, surfaced 2026-06-07 (operator-raised) during the
+**Status:** [READY] — framework-clarity question, surfaced 2026-06-07 (operator-raised) during the
 `f0-render-conventions` run's implement phase. Small; not a re-render blocker.
 
 ## The gap

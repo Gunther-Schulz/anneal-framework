@@ -1,6 +1,6 @@
 # clippy reference/phase-file de-bloat
 
-**Status:** OPEN — follow-up spawned by the `clippy-reinstantiation` run (2026-06-07, D15 [AUTO-ACCEPTED]). Low-priority; not staleness, structural budget.
+**Status:** [PARKED] — follow-up spawned by the `clippy-reinstantiation` run (2026-06-07, D15 [AUTO-ACCEPTED]). Low-priority; not staleness, structural budget.
 
 ## What
 

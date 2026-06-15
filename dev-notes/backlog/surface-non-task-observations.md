@@ -1,6 +1,6 @@
 # FB-1. Surface non-task observations (work/codebase) — no channel for what the agent notices outside the task
 
-**Status:** open finding — needs a practice-9 design surface. Operator-raised 2026-06-01 (Notes 2 + 5, merged).
+**Status:** [DESIGN] — needs a practice-9 design surface. Operator-raised 2026-06-01 (Notes 2 + 5, merged).
 
 **▶ Consolidation (session 14):** originally two sub-shapes; **(b) protocol-tensions moved to
 `self-review-missed-side`** (it's a Q3 framework-gap feeder — see `self-improvement-signal-architecture`).

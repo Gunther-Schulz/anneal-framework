@@ -4,7 +4,7 @@
 2026-06-06 to a second vector — design-formation — after a same-run, same-root instance (see
 "The root is multi-vector"). Filename keeps the keystone-vector slug.*
 
-**Status:** OPEN — framework finding, surfaced by dogfooding 2026-06-06 (during the
+**Status:** [DESIGN] — framework finding, surfaced by dogfooding 2026-06-06 (during the
 `v-entry-is-post-ship-only` run, operator caught it mid-flight). Empirical base **n=2 — two
 vectors in one run** (see "The root is multi-vector"); the mechanism is **structural** (the
 additive reflex, amplified by an unbounded requirement + the convergence loop), not a one-off slip.

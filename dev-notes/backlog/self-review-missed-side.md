@@ -1,6 +1,6 @@
 # Self-review (missed-side) — unified design: Q3 novel-escape hunt + Q2 known-escape probe (+ the protocol-tension feeder)
 
-**Status:** OPEN — **consolidation (session 14, operator-confirmed 2026-06-08)** of
+**Status:** [DESIGN] — **consolidation (session 14, operator-confirmed 2026-06-08)** of
 `post-run-review-failure-class-register` (absorbed → archived) + `surface-non-task-observations` **(b)
 protocol-tension** (folded; the **(a)** work-observation half stays standalone). The **missed row** of
 `self-improvement-signal-architecture` — i.e. what `post-run-review` *becomes* once its caught-side ambitions

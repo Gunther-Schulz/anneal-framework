@@ -1,6 +1,6 @@
 # Post-run review should catch ANY nonsensical / wasteful cycle — not only protocol-forced grind, not a fixed catalog
 
-**Status:** OPEN — operator-clarified 2026-06-06 (during the `v-entry-is-post-ship-only` run:
+**Status:** [READY] — operator-clarified 2026-06-06 (during the `v-entry-is-post-ship-only` run:
 "when I said post review should catch such nonsensical cycles I meant it should catch **any**
 nonsensical cycles"). Framework: `post-run-review.md` Q3 (corpus-evolution) + possibly
 `spec/modules.md` §4 post-run-review minimum-shape (**method-kernel**) → anneal-dev +

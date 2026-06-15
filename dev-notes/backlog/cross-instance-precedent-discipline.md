@@ -1,6 +1,6 @@
 # Cross-instance precedent discipline — no forcing-function to check sibling instances for prior art
 
-**Status:** OPEN (candidate — evaluate whether it earns a lens vs. "investigate harder").
+**Status:** [DESIGN] (candidate — evaluate whether it earns a lens vs. "investigate harder").
 Surfaced as a meta-observation during the `anneal-dev-model-tier-policy` run (2026-06-04,
 session 7).
 

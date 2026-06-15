@@ -1,6 +1,6 @@
 # Ad-hoc anneal use + graduation to an instance
 
-**Status:** OPEN — exploration, operator-raised 2026-06-03 (operator reports doing it
+**Status:** [READY] — exploration, operator-raised 2026-06-03 (operator reports doing it
 already, "works reasonably well"). **No skill yet — earn it** (see recommendation). Two
 mechanisms, kept separate: (1) ephemeral ad-hoc application; (2) graduation to a real
 instance when a domain recurs.

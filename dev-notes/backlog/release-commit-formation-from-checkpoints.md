@@ -1,6 +1,6 @@
 # Release-commit formation from anneal-dev checkpoints (the D7 discharge-attachment gap)
 
-**Status:** OPEN — framework finding, surfaced at the `corpus-flows-redesign` release
+**Status:** [READY] — framework finding, surfaced at the `corpus-flows-redesign` release
 (2026-06-03). Small but real; methodology-correctness → operator-judged. Not blocking
 (this run handled it pragmatically).
 

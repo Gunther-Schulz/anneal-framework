@@ -1,6 +1,6 @@
 # Skill-craft anti-patterns describe this session's failures but didn't FIRE — loaded-but-inert
 
-**Status:** OPEN — surfaced 2026-06-06 (operator probe: "would skill-craft have caught this?").
+**Status:** [DESIGN] — surfaced 2026-06-06 (operator probe: "would skill-craft have caught this?").
 A **skill-craft** finding (captured in the anneal-framework backlog as the triad's working hub;
 when worked it is a skill-craft-canonical edit → runs through anneal-dev + skill-craft's own
 Layer-4 self-review mandate). **Deliberate, not now** — a marathon-session capture; classify

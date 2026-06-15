@@ -1,6 +1,6 @@
 # Citation-firewall coherence-check regex is not wrap-tolerant
 
-**Status:** OPEN — spawned by the `clippy-reinstantiation` run (2026-06-07). Method/kernel robustness; low-sev but real.
+**Status:** [READY] — spawned by the `clippy-reinstantiation` run (2026-06-07). Method/kernel robustness; low-sev but real.
 
 ## The gap
 

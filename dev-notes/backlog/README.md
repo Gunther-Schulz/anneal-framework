@@ -16,6 +16,14 @@ README is the **ordered** view (what to do, in what order).
   item *is* (a stable identity), not its type or status.
 - **Status lives in the file, not the name.** Each item's first lines state
   what it is, its status/stage, where deeper detail lives, and the next action.
+- **Status starts with a greppable state-token** (adopted 2026-06-15, `backlog-status-queryability`).
+  The `**Status:**` line begins with a bracketed token from a closed enum: **[READY]** (concrete, ready
+  to run) · **[DESIGN]** (needs a design surface first) · **[PARKED]** (deliberately deferred) ·
+  **[GATED]** (blocked on a decision/dependency) · **[PARTIAL]** (substantially shipped, named residual).
+  (Shipped → `git mv` to `archive/`, not a token.) It's a *format on the status-line first word you already
+  edit when state changes* — near-zero marginal cost — and makes cluster/campaign reasoning one grep, not a
+  body-read. **Self-audit:** `grep -hoE '^\*\*Status[^*]*:\*\* \[[A-Z]+\]' *.md` lists state; cross-check
+  [READY]/[PARTIAL] tokens against recent `git log` ships to catch drift.
 - **When an item ships / closes:** `git mv` it into `archive/`.
 - **Memory:** one pointer ([[project-framework-backlog]]) auto-loads and says
   "read `dev-notes/backlog/`." Update it only when the *structure* changes.
@@ -134,6 +142,13 @@ auto-cycle the investigate→falsify→verify loops in every campaign; the level
 (5 archived) → 40 open; campaign ③ run 1 (−2 archived, +3 spawned, +1 post-run) + 2 concurrent-session adds (`measurement-harness-mve`, `design-decision-implication-depth-gaps`) + `post-run-review-failure-class-register` → 45 open; **+ `convergence-surfaced-finding-action-brake` + `post-run-review-nonsensical-cycle-probe` (2026-06-06, both spawned dogfooding the resumed `v-entry-is-post-ship-only` run) → 47 open; **+ `validation-watch-entry-conformance-sweep` (the run's D6 follow-on) + `runs-data-preservation` (operator note) → 49 open; − `v-entry-is-post-ship-only` (SHIPPED + archived 2026-06-06) → 48 open.** Notes 1/4/5 of the 2026-06-06 operator discussion folded into existing items (`post-run-review-nonsensical-cycle-probe`, `instance-domain-invariant-register`, `worktree-isolation-and-integration`); note 3 covered by V-1/V-4 + the standardized-pass/verify mechanism; **+ `replacement-side-effect-behavior-parity` (clippy Unit-5 retrospective carried in by the operator — the behaviors-clause sibling of the shipped `structural-change-dependent-enumeration`) → 49 open; + `skill-craft-antipatterns-loaded-but-inert` → 50 open; + `convergence-cycle-mechanical-enforcement` (clippy Unit-18: the convergence cycle is unenforced → silently skippable in auto-battle; method-kernel) → 51 open; + `framework-intent-vision-statement` (operator step-back — candidate intent articulation, ratify-don't-canonize, low-gating) → 52 open.** **Session 10 (2026-06-06): `purpose-mechanism-clause` SHIPPED (`24fdb5f`; `framework-intent-vision-statement` stays open — asymptote half + ratification remain); +4 items (`disposition-misclassification-shields-design`, `platform-native-vs-anneal-delta`, `l3-prior-art-methodologies`, `anneal-self-improvement-loop`) → 56 open; 10 session-9/10 orphans placed into the campaign batching (see session-10 block).** Nothing dropped.
 
 ### ▶ Where we are + next steps (2026-06-15 session 15 — READ FIRST)
+
+**▶ UPDATE (later 2026-06-15 — the tokenize-and-drain pass ran):** NEXT-UP #1 `backlog-status-queryability`
+**ADOPTED + applied** — the greppable token ([READY]/[DESIGN]/[PARKED]/[GATED]/[PARTIAL]) is now in the
+Convention + on **every** open item (22 READY · 18 DESIGN · 11 PARKED · 11 PARTIAL · 2 GATED) — and #2
+**staleness drain done** (the resolved `impl-skillcraft-gate` residual archived; the 2 dossier items +
+the partials tokenized; `move1-tail-honest-relabel` parked with a resume-condition). **Open 65 → 64.**
+NEXT-UP now advances to **`framework-gap-receipt`** (the live #1, heavy) + the deferred batch-economics measurement.
 
 **▶ SHIPPED this session:** `convergence-machinery-batch` (`7880be6`, spec-only) — batched
 **`intent-falsification-coverage-binding`** (#2: R#→D# coverage-completeness bind at convergence +

@@ -1,6 +1,6 @@
 # commit-msg hook over-matches packaging manifests (+ disagrees with the pre-edit hook)
 
-**Status:** OPEN — small hook-consistency finding, surfaced at the `corpus-flows-redesign`
+**Status:** [READY] — small hook-consistency finding, surfaced at the `corpus-flows-redesign`
 C1b release (2026-06-03). Methodology-correctness → operator-judged. Not blocking.
 
 ## What

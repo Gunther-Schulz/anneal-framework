@@ -1,6 +1,6 @@
 # When-to-force discriminator — force / surface-honestly / leave-as-prose (skill-craft consolidation candidate)
 
-**Status:** OPEN — surfaced 2026-06-07 (operator step-back, post `enumeration-target-blindness`
+**Status:** [READY] — surfaced 2026-06-07 (operator step-back, post `enumeration-target-blindness`
 run: "when do we use forcing functions; we may under-use them without over-using; this relates
 to skill-craft itself"). **Consolidation candidate, NOT a new rule** — must REDUCE the four
 scattered statements below or it is itself the additive-reflex it warns against (Pareto pre-test).

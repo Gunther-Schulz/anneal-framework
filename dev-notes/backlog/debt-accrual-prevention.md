@@ -1,6 +1,6 @@
 # Debt accrual: shift from trailing detection (Clippy) to leading prevention
 
-**Status:** OPEN — operator strategic insight 2026-06-07 (beat-the-books debt investigation, after the F29 run).
+**Status:** [DESIGN] — operator strategic insight 2026-06-07 (beat-the-books debt investigation, after the F29 run).
 Framework/-dev + clippy. The deeper frame behind several existing items — files the **root** + cross-references.
 
 ## The insight (operator)

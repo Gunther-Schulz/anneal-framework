@@ -1,6 +1,6 @@
 # Instance-domain-invariant register — locked cross-run primitives the instance evolves against
 
-**Status:** OPEN — filed 2026-06-05 after a cross-session analysis of clippy's
+**Status:** [DESIGN] — filed 2026-06-05 after a cross-session analysis of clippy's
 silent-correctness bug class (other-session investigation; carried in by the operator).
 Anneal-framework architectural addition: the work-product analogue of anneal's own
 foundation-invariants register, scoped to the **instance's domain corpus** (clippy → code;

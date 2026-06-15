@@ -1,6 +1,6 @@
 # Single-source-of-truth cure for co-produced shared-key values (the structural fix, not the enumeration)
 
-**Status:** OPEN — filed 2026-06-07 as the discharge of decision **D6** of the
+**Status:** [READY] — filed 2026-06-07 as the discharge of decision **D6** of the
 `enumeration-target-blindness` anneal-dev run (tracker
 `.anneal-dev/runs/enumeration-target-blindness.md`, D6/D6'). That run sharpened
 `core.md §3.2.2` to **enumerate** co-producers of a shared equality-compared sink (the

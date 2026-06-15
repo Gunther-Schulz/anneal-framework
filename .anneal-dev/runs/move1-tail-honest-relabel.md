@@ -7,6 +7,10 @@
   deferred from keystone release `819e84e` — the remaining
   generic-binding-overclaim sites the keystone left untouched. Move-1 of the
   intent-falsification soundness sweep (`dev-notes/backlog/intent-falsification-soundness-sweep.md`).
+- **Parked:** operator 2026-06-15 — investigate-design ~90% done (D1/D2/D3 [VERIFIED], realization-ready;
+  F2/F3 the only open checks). Low-urgency ①-light. Resume when ①-light is drained; design preserved here.
+  (Run Status stays IN-PROGRESS — honestly unfinished — but it is a *known-parked* run, not abandoned;
+  the parent item `intent-falsification-soundness-sweep` carries the pointer.)
 
 ## Requirements record (task-input; separated from the proposed FQ-list solution)
 

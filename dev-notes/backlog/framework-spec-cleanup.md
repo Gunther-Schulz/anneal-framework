@@ -1,6 +1,6 @@
 # Framework-spec cleanup — rederive / de-chaos via anneal-dev
 
-**Status:** **AUDIT DEBT FULLY DISCHARGED 2026-06-02/03 — effort essentially DONE** (keep open only for the parked render-tail). All six S-items closed across two anneal-dev runs:
+**Status:** [PARTIAL] **AUDIT DEBT FULLY DISCHARGED 2026-06-02/03 — effort essentially DONE** (keep open only for the parked render-tail). All six S-items closed across two anneal-dev runs:
 - **Run 1 (§4 phase-pipeline cluster) DONE 2026-06-02** (`framework-spec-cleanup-pipeline`, verify [PASSED] + kernel-independent review; commit `bf32f9c`): S1 (§4.2→§4.2.1–8) + S2 (de-dup core §4.1.4→modules §3.4) + S4 ([READY] consolidate §5.3→bridge + two-vs-three passes) + folded S5 (§Purpose→foundation.md) + S6 (3 core breadcrumbs). Convergence cycle caught + fixed a real scope-count regex-boundary defect.
 - **Run 2 (S3) DONE 2026-06-03** (`spec-cleanup-s3-attribution`, verify [PASSED] + kernel-independent review; commit `e453678`): practice-1/8 three-form attribution fix (forms→practice 8, enumeration→practice 1) across development-process/glossary/modules + the S6 glossary-breadcrumb residual. Impl dispatched to a subagent — validated the skill-craft hook fix in-phase.
 - **The other two planned clusters need no run:** the **tracker+status-machine (§5)** and **inspection+lens (§2)** clusters were **drift-skim-confirmed clean** (the coherence audit flagged no debt there; all six S-items landed in §4 / cross-triad). Re-deriving them would be re-derivation for its own sake.

@@ -1,6 +1,6 @@
 # Design-decision implication-depth gaps — three classes of "model saw the fact, didn't connect it to the decision"
 
-**Status:** OPEN — operator-raised 2026-06-05, evidenced by retrospective
+**Status:** [DESIGN] — operator-raised 2026-06-05, evidenced by retrospective
 root-cause analysis of 6 post-ship bugs in the beat-the-books clippy instance
 (3 within-scope of a Clippy run that missed them; 3 out-of-scope — only the
 within-scope misses are in scope here). **Empirical, strongly evidenced (n=3

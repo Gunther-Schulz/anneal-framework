@@ -1,6 +1,6 @@
 # Self-improvement signal architecture — the caught/missed × known/novel map (umbrella)
 
-**Status:** OPEN — organizing **umbrella**, operator-raised 2026-06-08 (session 14). Frames a cluster of
+**Status:** [PARTIAL] — organizing **umbrella**, operator-raised 2026-06-08 (session 14). Frames a cluster of
 existing items as one coherent design so they stop fragmenting (the "backlog is a corpus too" discipline at
 cluster scale). Carries the **prune analysis** the operator asked for (does receipt/tracker overlap
 self-review?) and the consolidation it licenses. The spec-touching part (narrowing `post-run-review`'s

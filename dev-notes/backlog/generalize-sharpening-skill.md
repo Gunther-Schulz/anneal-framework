@@ -1,6 +1,6 @@
 # Generalize the sharpening skill — extract a PBS-decoupled standalone (sibling to coherence-audit)
 
-**Status:** open item — cross-repo tooling extraction, low-priority / parked.
+**Status:** [PARKED] item — cross-repo tooling extraction, low-priority / parked.
 Surfaced 2026-06-01 during the `framework-dev-as-anneal` decision-design
 session, which ran `pbs:decision-design-sharpening` and had to substitute
 anneal's own anchors (foundation contracts / practice 9 / validation-watch)
