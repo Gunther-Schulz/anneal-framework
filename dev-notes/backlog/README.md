@@ -204,10 +204,18 @@ validation of `backlog-status-queryability`. Highest-value next work is the **st
    `commit-msg-hook-kernel-source-overmatch` spawned. **Open 63 → 62.**
    (`core-md-bloat-measure-then-cut`: measured → D-point-2 already-addressed, D-point-1 minor trim; downgraded.)
 
-**▶ NEXT-UP now:** the second candidate pair (`anneal-dev-rerender-changeset-by-source-delta` +
-`firewall-regex-wrap-tolerance` — body-confirm first; note `anneal-dev-rerender` likely touches anneal-dev/spec =
-method-kernel → operator-soundness gate), or the next live tier item per the ▶ Campaign map. The
-session-14 #4 `in-flight-cross-cycle-learning` also remains.
+**▶ SHIPPED (2026-06-16, `103e2e7`):** `firewall-regex-wrap-tolerance` → the citation-firewall coherence-check
+regex is now wrap-tolerant (`rg -U '(core|modules)\.md[^A-Za-z0-9]{0,12}§'`; catches the newline-split §-cite the
+old single-line regex missed). Built via anneal-dev (auto-battle); verify [PASSED] (loopback on a self-stale
+line-ref → content anchor; step-4 caught the naked `{0,12}` bound). Archived. **Open 62 → 61.** Datapoint: a
+design grounded by an empirical test *upfront* converged in 2 cycles (vs the 6-cycle batch); but the loopback
++ step-4 still added a cycle — small items aren't free.
+
+**▶ NEXT-UP now:** the pair's second item — `anneal-dev-rerender-changeset-by-source-delta` (re-render change-set
+basis = source-delta diff, not eyeball; the `render-and-open-diff` primitive). **It likely touches `anneal-dev/spec`
+= method-kernel → operator-soundness gate** (drive to verify, then pause for the operator's soundness sign-off
+before commit; NOT fully auto-battle-able). Or the next live tier item per the ▶ Campaign map. The session-14
+#4 `in-flight-cross-cycle-learning` also remains.
 
 *(Session-14 block below — superseded; #2/#3 shipped + archived, #1 `framework-gap-receipt` + #4 `in-flight-cross-cycle-learning` remain. History.)*
 

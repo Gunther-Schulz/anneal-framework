@@ -1,6 +1,13 @@
 # Citation-firewall coherence-check regex is not wrap-tolerant
 
-**Status:** [READY] — spawned by the `clippy-reinstantiation` run (2026-06-07). Method/kernel robustness; low-sev but real.
+**▶ SHIPPED + ARCHIVED 2026-06-16 — `103e2e7` (main, pushed).** Via anneal-dev (run
+`firewall-regex-wrap-tolerance`, auto-battle). The firewall regex at instantiation-guide.md:189 →
+wrap-tolerant `rg -U '(core|modules)\.md[^A-Za-z0-9]{0,12}§'` (catches the newline-split §-cite the
+old single-line regex missed; empirically validated — wrap caught, zero prose false positives; bound
+criterion stated). Render-debt queued for instances. verify [PASSED] isolated (loopback on a self-stale
+line-ref → content anchor → delta-verify; step-4 self-review caught + fixed the naked `{0,12}` bound).
+
+**Status:** SHIPPED (was [READY]) — spawned by the `clippy-reinstantiation` run (2026-06-07). Method/kernel robustness; low-sev but real.
 
 ## The gap
 
