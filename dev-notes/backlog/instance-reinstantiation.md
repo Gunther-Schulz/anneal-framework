@@ -179,6 +179,18 @@ obligation is cleared. (The `anneal-dev-model-tier-policy` entry is ANNEAL-DEV-O
   + `references/tracker.md` (§3.4.1 per-R# `serving-decisions` field) + `phases/verify.md` (§4.3 matrix
   re-check) + the 2 glossary term homes. Commit ref: `7880be6`.
 
+- **firewall-regex-wrap-tolerance** — run `.anneal-dev/runs/firewall-regex-wrap-tolerance.md`; spec-only
+  fix (pending commit) on `main`. Source-delta: `instantiation-guide.md:189` — the citation-firewall
+  coherence-check regex is now **wrap-tolerant**: `rg '(core|modules)\.md[^\n]{0,4}§'` (single-line, MISSED a
+  §-cite split across a line wrap) → `rg -U '(core|modules)\.md[^A-Za-z0-9]{0,12}§'` (multiline `-U` + a
+  non-alphanumeric gap, catches the wrap residual without prose false positives). **Render obligation**
+  (deferred, ALL instances rendering the firewall check): each instance's render-verify (clippy/daneel
+  `phases/verify.md` firewall coherence-check) renders the OLD single-line regex → re-render to the
+  wrap-tolerant form. Correctness fix (catches a residual that escaped a real run — the clippy-reinstantiation
+  finding-B), not behavior-preserving for the missed case → the re-rendered check must exercise the wrap
+  fixture. **Discharges** the already-filed `firewall-regex-wrap-tolerance` tail (filed under clippy's
+  reinstantiation residual-tails list). Commit ref: pending.
+
 ## Capability-by-instance render matrix (2026-06-05)
 
 The queue above is **per-source-delta** (each anneal-dev run's edit). This is the

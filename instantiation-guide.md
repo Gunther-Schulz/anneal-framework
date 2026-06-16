@@ -186,9 +186,14 @@ boundary.
 
 The rule is checked mechanically: an instance repo's spec and
 rendered files carry zero framework section-number citations —
-`rg '(core|modules)\.md[^\n]{0,4}§' <instance>` returns empty. The
-render-verify runs this as a coherence check; a non-empty result is a
-finding.
+`rg -U '(core|modules)\.md[^A-Za-z0-9]{0,12}§' <instance>` returns
+empty. The check is **wrap-tolerant** — `-U` (multiline) plus a
+non-alphanumeric gap (`[^A-Za-z0-9]{0,12}`, 12 covering a wrapped
+cite's backtick + newline + the corpus's shallow indent, with headroom)
+catches a §-citation split across a line wrap, while intervening prose
+is no false positive because words break the gap (the basis-rule wrap-tolerant idiom,
+`glossary.md` Completeness claim / `core.md` §3.2). The render-verify
+runs this as a coherence check; a non-empty result is a finding.
 
 ## 4. Deriving the standardized lens set
 
