@@ -194,10 +194,20 @@ validation of `backlog-status-queryability`. Highest-value next work is the **st
 2. **staleness drain** — normalize the ~8 oversold partial status-lines; disambiguate `anneal-dev-impl-skillcraft-gate`;
    resolve the **abandoned `move1-tail-honest-relabel` run** (IN-PROGRESS across 3 sessions — resume or close).
 3. ~~**`framework-gap-receipt`**~~ — ✅ **SHIPPED 2026-06-15 (`6673e29`)**, archived (practice 13; see the ▶ SHIPPED note above).
-4. **batch-economics measurement** — DEFERRED until a body-confirmed clean comparable-weight light pair exists
-   (sweep candidates: `release-commit-formation-from-checkpoints`+`commit-msg-hook-packaging-overmatch`;
-   `anneal-dev-rerender-changeset-by-source-delta`+`firewall-regex-wrap-tolerance` — body-confirm first).
+4. ~~**batch-economics measurement**~~ — ✅ **RUN 2026-06-16 (`b8f53df`)** via run `release-machinery-batch`
+   (the `release-commit-formation-from-checkpoints`+`commit-msg-hook-packaging-overmatch` pair, body-confirmed
+   clean). **Datapoint:** the "light pair" still ran **cycles 1→6** — 3 convergence passes each surfaced a real
+   seam (instance-template sibling · exempt-only residual · stale docstring). **Batching does NOT reduce per-cycle
+   convergence cost** (the falsification machinery runs at full weight regardless of item size); the saving is the
+   **shared investigation** (the two items shared the discharge-gate surface). Rule of thumb: **batch when items
+   share a surface** (real investigation saving), don't expect convergence-cost savings. 2 items shipped + archived;
+   `commit-msg-hook-kernel-source-overmatch` spawned. **Open 63 → 62.**
    (`core-md-bloat-measure-then-cut`: measured → D-point-2 already-addressed, D-point-1 minor trim; downgraded.)
+
+**▶ NEXT-UP now:** the second candidate pair (`anneal-dev-rerender-changeset-by-source-delta` +
+`firewall-regex-wrap-tolerance` — body-confirm first; note `anneal-dev-rerender` likely touches anneal-dev/spec =
+method-kernel → operator-soundness gate), or the next live tier item per the ▶ Campaign map. The
+session-14 #4 `in-flight-cross-cycle-learning` also remains.
 
 *(Session-14 block below — superseded; #2/#3 shipped + archived, #1 `framework-gap-receipt` + #4 `in-flight-cross-cycle-learning` remain. History.)*
 

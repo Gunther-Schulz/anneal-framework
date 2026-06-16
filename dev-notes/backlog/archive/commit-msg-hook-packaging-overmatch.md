@@ -1,6 +1,13 @@
 # commit-msg hook over-matches packaging manifests (+ disagrees with the pre-edit hook)
 
-**Status:** [READY] — small hook-consistency finding, surfaced at the `corpus-flows-redesign`
+**▶ SHIPPED + ARCHIVED 2026-06-16 — `b8f53df` (main, pushed).** Batched with
+`release-commit-formation-from-checkpoints` via anneal-dev (run `release-machinery-batch`, auto-battle).
+RULE_CORPUS_PATTERN dropped `.claude-plugin/*` + narrowed `instance-template/.+\.md`→`instance-template/spec/.+\.md`
+(practice-4 class completion: CLAUDE.md/README.md housekeeping exempt); now agrees with the pre-edit hook;
+docstring/comments aligned. Verify [PASSED] isolated (9/9 gate, 5/5 exempt). Spawned the sibling
+`commit-msg-hook-kernel-source-overmatch` (filed [DESIGN]).
+
+**Status:** SHIPPED (was [READY]) — small hook-consistency finding, surfaced at the `corpus-flows-redesign`
 C1b release (2026-06-03). Methodology-correctness → operator-judged. Not blocking.
 
 ## What

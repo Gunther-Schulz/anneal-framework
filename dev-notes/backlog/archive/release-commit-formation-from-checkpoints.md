@@ -1,6 +1,13 @@
 # Release-commit formation from anneal-dev checkpoints (the D7 discharge-attachment gap)
 
-**Status:** [READY] — framework finding, surfaced at the `corpus-flows-redesign` release
+**▶ SHIPPED + ARCHIVED 2026-06-16 — `b8f53df` (main, pushed).** Batched with
+`commit-msg-hook-packaging-overmatch` via anneal-dev (run `release-machinery-batch`, auto-battle).
+Resolution: the **"final discharge commit, hook-validated"** option — development-process.md step 5 now
+specifies the release commit is a FINAL commit re-touching any rule-corpus file the run changed (hook
+validates the discharge), not a squash (no interactive rebase) or amend (messy across a merge); exempt-only
+runs need no discharge. (The other 2 options rejected per the env/merge constraints.) Verify [PASSED] isolated.
+
+**Status:** SHIPPED (was [READY]) — framework finding, surfaced at the `corpus-flows-redesign` release
 (2026-06-03). Small but real; methodology-correctness → operator-judged. Not blocking
 (this run handled it pragmatically).
 
