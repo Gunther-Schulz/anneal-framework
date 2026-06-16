@@ -5,7 +5,7 @@ commit-msg hook — validates the Step-4 discharge artifact for rule-corpus comm
 Per anneal-framework development-process.md step 4 (release loop):
 - Detects if the commit touches rule-corpus files (spec/, development-process.md,
   instantiation-guide.md, foundation.md, post-run-review.md, plugin/skills/,
-  instance-template/)
+  instance-template/spec/)
 - If so, requires a Step-4 discharge artifact in the commit message
 - Validates each of the 7 required checks is present
 - Pattern-fails on rationalize-away-as-covered shapes ("folded into",
@@ -33,14 +33,18 @@ from pathlib import Path
 
 # Optional `anneal-dev/` prefix: after the anneal-dev↔anneal-framework
 # merge (corpus-flows-redesign D5), anneal-dev's rule-corpus lives at
-# `anneal-dev/{spec,plugin/skills,.claude-plugin}/…` within this repo. The
+# `anneal-dev/{spec,plugin/skills}/…` within this repo. The
 # `^`-anchored patterns must match that relocated location too, or the
 # merged instance's rule-corpus commits bypass the discharge gate (D9).
+# EXEMPT (deliberately NOT gated, so the pattern below omits them): packaging
+# manifests (`.claude-plugin/*`) and instance-template housekeeping
+# (`instance-template/CLAUDE.md` / `README.md`) — repo-local, not rendered from
+# spec, per the instantiation-guide packaging carve-out. This aligns with the
+# pre-edit hook (`skill-craft-pre-edit.py`), which already exempts them.
 RULE_CORPUS_PATTERN = re.compile(
     r"^(anneal-dev/)?(spec/.+\.md|development-process\.md|post-run-review\.md|"
     r"instantiation-guide\.md|foundation\.md|plugin/skills/.+\.md|"
-    r"instance-template/.+\.md|"
-    r"\.claude-plugin/.+|plugin/\.claude-plugin/.+)$"
+    r"instance-template/spec/.+\.md)$"
 )
 
 # Instance plugin render path — plugin/skills/<not-skill-craft>/*.

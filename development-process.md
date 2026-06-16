@@ -817,6 +817,20 @@ kernel-independent review at verify:
    carries a `Coherence-audit-handoff: <subagent-id>` line. The
    marker grounds practice 12's mechanical cycle-counting; its
    absence on an audit-bearing commit is malformed.
+
+   **Release commit from checkpoints.** When an anneal-dev run's
+   work lands across N (possibly non-contiguous) `anneal-checkpoint:`
+   commits (see "Checkpoint ≠ release-commit" above), this release
+   commit is a FINAL commit carrying the Step-4 discharge that
+   re-touches any rule-corpus file the run changed — so the
+   commit-msg discharge hook fires on it and validates the discharge
+   rather than leaving it merely body-recorded. It is NOT a squash
+   (interactive rebase is unavailable in-env) and NOT an amend of the
+   last checkpoint (messy across a merge or a non-contiguous
+   checkpoint run). The `anneal-checkpoint:` commits stay as
+   hook-skipped resume points. A run whose final diff contains no
+   rule-corpus file (packaging / housekeeping only) produces no
+   rule-corpus commit and correctly needs no discharge.
 6. **Release the instance** — version-bump the plugin, commit and
    push to remote, then for each affected instance **pull the
    marketplace clone and run `claude plugin update`**:
