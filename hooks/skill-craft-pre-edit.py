@@ -54,6 +54,13 @@ SPEC_SOURCE_PATTERNS = [
     re.compile(r"/post-run-review\.md$"),
     re.compile(r"/instantiation-guide\.md$"),
     re.compile(r"/foundation\.md$"),
+    # Operator's global instruction frame (dotfiles source + deployed
+    # symlink) — rule-corpus by operator decision 2026-07-10; edits
+    # follow claude/CLAUDE-maintenance.md via a skill-craft-vetted
+    # process. CLAUDE-maintenance.md itself is maintenance doctrine
+    # (ungated), matching the dev-notes carve-out rationale.
+    re.compile(r"/dotfiles/claude/CLAUDE\.md$"),
+    re.compile(r"/\.claude/CLAUDE\.md$"),
 ]
 
 # Non-corpus working areas — scratch/notes/draft copies that may contain
