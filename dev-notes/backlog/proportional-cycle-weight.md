@@ -118,14 +118,15 @@ but the lesson binds: **proportional weight scopes the brief, never the independ
 
 **Field datapoint — pbs reviewer-regel-kanal (2026-07-16, separate instance): the heavy-end confirmation.**
 A Stufe-B rule-corpus change (a new GOVERNANCE §Weiterentwicklung verfahren + a PROZESS §B1.9
-generalization) in a sibling instance (pbs) ran **full ceremony** — 11 investigate-design cycles, 4
-convergence attempts, 6 falsification/verify subagent dispatches (~80–115k tokens each). **Verdict:** full
+generalization) in a sibling instance (pbs) ran **full ceremony** — 11 cycles total (6 investigate-design + 5 convergence,
+the 5th converging; recounted against the on-disk cycle artifacts 2026-07-16 — an earlier booking said
+“11 investigate-design / 4 attempts”, a from-memory count), 6 falsification/verify subagent dispatches (~80–115k tokens each). **Verdict:** full
 ceremony was **worth it for this class** — the convergence falsification caught **2 would-ship defects** in
 a governance doc (a silently-bypassable channel; a channel not reaching its central case). The **heavy-item
 end** of the axis, complementing the clippy light-item datapoints above. Two calibration signals: (i) the
 cost is **dominated by the per-convergence falsification weight** (each attempt re-runs intent+mechanical at
 full weight — consistent with the coherence-batch finding), itself the argument for the thesis: a
-typo/single-value/doctype-content edit must NOT pay this. (ii) ~2 of the 4 convergence deltas were
+typo/single-value/doctype-content edit must NOT pay this. (ii) ~2 of the 4 non-converging deltas were
 **self-inflicted** (broken-basis-not-propagated; shallow symptom-fix) — a chunk of the "heavy" cost was
 avoidable in-cycle-completeness churn, not intrinsic weight (cross-ref `design-decision-implication-depth-gaps`
 §Second-run; `in-flight-cross-cycle-learning` breadth/scope signals). Operator line: **full for

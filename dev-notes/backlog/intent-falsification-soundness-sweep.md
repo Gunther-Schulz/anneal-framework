@@ -279,7 +279,7 @@ points for the sweep to chase:
   cosmetic-render carve-out) is a sweep question, not yet adjudicated.
 
 ## Field seed — pbs reviewer-regel-kanal (2026-07-16, separate instance): criteria-first stays discipline-grade + a fix direction
-A full run in a sibling instance (pbs) exercised the intent-falsification dispatch 4× (convergence cycles).
+A full run in a sibling instance (pbs) exercised the intent-falsification dispatch 5× (cycles 3/5/7/9/11 — recounted against the on-disk cycle artifacts 2026-07-16; an earlier booking said 4×, a from-memory count).
 The **criteria-first requirement** (derive success criteria from the requirements record BEFORE reading the
 design — the independence lever) and the **uncontaminated-brief requirement** (the orchestrator must not
 pass its own reasoning) were honored **by discipline only** — nothing mechanical confirmed the subagent

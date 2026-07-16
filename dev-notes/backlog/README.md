@@ -98,7 +98,8 @@ rendered-plugin instance** — for a rule-corpus-only instance 2 of 3 legs (rend
 are N/A, leaving coherence; the fitted battery is "run the corpus's own mechanical checks" (hooks/CI/
 compile/wired guards) — the instance should *define* its executable-verification battery rather than
 inherit the render-centric one (= `clippy-category-b-recalibration` #1 generalized to a strain, not just a
-clippy fix); (ii) **criteria-first + no-contamination in the falsification dispatch stay discipline-grade**
+clippy fix; filed: `verify-battery-nonrender-instance.md` — index line added 2026-07-16, the filing commit
+had skipped the README); (ii) **criteria-first + no-contamination in the falsification dispatch stay discipline-grade**
 — no mechanical check confirms the subagent derived criteria before reading the design or that the brief
 was uncontaminated. Booked-detail sibling: `design-decision-implication-depth-gaps.md`,
 `in-flight-cross-cycle-learning.md`, `anneal-adhoc-use-and-graduation.md` (field datapoints, 2026-07-16).
