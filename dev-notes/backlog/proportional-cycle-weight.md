@@ -116,6 +116,21 @@ run in a separate context. Leaning the BRIEF (lever B) is the safe economy; drop
 — even for a "trivial" fix — is the sensitive lever-(A) shape. Re-ran isolated: [F9 CLOSED — clean], no harm,
 but the lesson binds: **proportional weight scopes the brief, never the independence.**
 
+**Field datapoint — pbs reviewer-regel-kanal (2026-07-16, separate instance): the heavy-end confirmation.**
+A Stufe-B rule-corpus change (a new GOVERNANCE §Weiterentwicklung verfahren + a PROZESS §B1.9
+generalization) in a sibling instance (pbs) ran **full ceremony** — 11 investigate-design cycles, 4
+convergence attempts, 6 falsification/verify subagent dispatches (~80–115k tokens each). **Verdict:** full
+ceremony was **worth it for this class** — the convergence falsification caught **2 would-ship defects** in
+a governance doc (a silently-bypassable channel; a channel not reaching its central case). The **heavy-item
+end** of the axis, complementing the clippy light-item datapoints above. Two calibration signals: (i) the
+cost is **dominated by the per-convergence falsification weight** (each attempt re-runs intent+mechanical at
+full weight — consistent with the coherence-batch finding), itself the argument for the thesis: a
+typo/single-value/doctype-content edit must NOT pay this. (ii) ~2 of the 4 convergence deltas were
+**self-inflicted** (broken-basis-not-propagated; shallow symptom-fix) — a chunk of the "heavy" cost was
+avoidable in-cycle-completeness churn, not intrinsic weight (cross-ref `design-decision-implication-depth-gaps`
+§Second-run; `in-flight-cross-cycle-learning` breadth/scope signals). Operator line: **full for
+M-level/Stufe-B/closed-vocabulary; one-pass for trivial** — the split this item proposes, heavy-end confirmed.
+
 **Relates to:** `auto-battle-cadence-mode` (sibling ⑦ mode-mechanic — cadence vs
 weight; distinct concerns) · `convergence-surfaced-finding-action-brake` (complementary:
 the brake prevents gold-plating *within* a convergence cycle; proportional-weight *avoids*

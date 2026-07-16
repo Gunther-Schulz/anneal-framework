@@ -278,6 +278,22 @@ points for the sweep to chase:
   Whether that is correct (a render edit IS a rule-corpus change) or over-scoped (no
   cosmetic-render carve-out) is a sweep question, not yet adjudicated.
 
+## Field seed — pbs reviewer-regel-kanal (2026-07-16, separate instance): criteria-first stays discipline-grade + a fix direction
+A full run in a sibling instance (pbs) exercised the intent-falsification dispatch 4× (convergence cycles).
+The **criteria-first requirement** (derive success criteria from the requirements record BEFORE reading the
+design — the independence lever) and the **uncontaminated-brief requirement** (the orchestrator must not
+pass its own reasoning) were honored **by discipline only** — nothing mechanical confirmed the subagent
+derived criteria before reading the design, or that the brief carried no design-rationale. Exactly this
+sweep's "does it actually bind, or self-certify" question applied to the falsification dispatch's own
+soundness key.
+**Fix direction (the evidence-bearing-artifact rule applied to the brief boundary):** require the
+falsification subagent to **return its derived success criteria as the FIRST artifact, before the design
+attack** ("criteria from R1..Rn" → then "attack on the design") — the ordered artifact is itself evidence
+the criteria preceded the design read, making criteria-first *checkable* rather than merely instructed.
+Complement: a cheap contamination-lint on the dispatch brief (does it carry design-rationale / "because"
+chains / the answer?). Neither fully closes the residual (a subagent can fabricate criteria post-hoc), but
+both convert a discipline-grade brief into an artifact a checker can re-open.
+
 ## Relates to
 - **Prospective sibling** — `verify-model-diversity` (reframed this session:
   mechanism → single intent-falsification; add an intent-falsification leg to anneal-dev's

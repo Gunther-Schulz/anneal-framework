@@ -95,6 +95,18 @@ n=1 evidence the signal would have real value; the operator independently reache
 what/how goes into a cycle" diagnosis before the chain audit was shown. Booked-sibling:
 `design-decision-implication-depth-gaps.md` §Second-run confirmation.
 
+**Two further run-signals the same run exhibited** (candidate signals beyond recurring-class, same
+"surface a run-level signal" family; both cheap to compute from the persisted cycle artifacts): (i)
+**investigation-breadth-debt** — existing corpus machinery (a registered reflux step; an already-present
+reflux mechanism) surfaced as *expensive convergence findings* rather than cheap cycle-1 investigation,
+because cycle 1 did not sweep the touched surface to its visible close nor grep the ledger/registry for
+prior statements of the concept being introduced. A cycle-1 breadth-completeness prompt (read touched
+surfaces whole; registry-grep the introduced concept) would front-load them — distinct from the depth
+lever (trace-don't-list), and partly intrinsic (some overlaps are only searchable once the design is
+concrete). (ii) **scope-instability** — the design's central classify grew 2→3→4-way across cycles; the
+framework re-opens scope on target growth but surfaces no *instability signal* ("this scope has grown N
+times — is the design foundation mis-framed?").
+
 ## Relates to
 - `framework-gap-receipt` — the **slow-loop twin** (same recurring-class signal; cross-run post-hoc →
   framework edit). This is within-run in-flight → next-cycle. Reuses its class-tally; build on top.
