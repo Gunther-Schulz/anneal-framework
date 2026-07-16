@@ -4,6 +4,15 @@
 `verify-model-diversity.md` §2026-07-16). Three lens/discipline candidates whose common
 mechanism is **converting judgment-class failures into attention-class procedure** — the class
 scaffolding reliably catches at any tier. Complements (does not replace) the model-axis lever.
+**Campaigned (operator disposition 2026-07-16): runs as ONE anneal-dev campaign with
+`verify-model-diversity.md`** (fork (a) narrow decided there; same datapoint, shared
+verify-machinery locus; gated-kernel cadence). Design priors going in (priors, not locks —
+the cycle adjudicates): the crowding evidence argues AGAINST three more standardized lenses
+and FOR homing each candidate where it becomes mechanical — closed-set sweep → the mechanical
+falsification pass (a deterministic enumeration predicate, no judgment); worked-boundary-example
+→ a [READY]-gate obligation on the design; domain-claim re-derivation (incl. data-beats-commentary)
+→ the falsification-dispatch brief discipline (criteria-first-adjacent). That homing keeps
+judgment out of the mechanical pass and adds no operator-detection dependence.
 
 ## The evidence shape
 Three real judgment-class defects passed same-tier anneal verify clean and fell only to a

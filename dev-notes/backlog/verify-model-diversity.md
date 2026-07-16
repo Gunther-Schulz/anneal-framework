@@ -1,7 +1,20 @@
 # Verify model-diversity — should the checker run on a different model than the actor?
 
-**Status:** [PARKED] (narrowed + renamed 2026-06-04, was `multivoter-verify-no-predicate-claims` —
-the old name implied multi-voting, which is dead; see below). Two of this item's three threads
+**Status:** [DESIGN] — **operator disposition 2026-07-16 (in-chat): fork (a) NARROW.** Verify
+carve-out from the model-tier floor, scoped to the **judgment-class leg** (intent-falsification):
+checker tier ≥ actor tier, cross-model where available. The mechanical/lens legs STAY inside the
+floor — the §2026-07-16 datapoint shows they hold tier-independently, so a full carve-out would
+exceed the evidence and burn top-tier budget without a measured gain. Rejected: (b)
+within-top-tier diversity (not realizable — fable-5 currently has no same-tier sibling) and (c)
+hold-the-trade (the operator's own revisit-on-evidence reservation named exactly this evidence).
+Not [READY]: the **top-tier-actor case** ("checker ≥ fable" has no higher tier; candidate: honest
+residual + operator-soundness backstop, complemented by the sibling's judgment→attention
+conversion) is an open design question for the cycle. **Runs as ONE campaign with
+`judgment-to-mechanical-lens-candidates.md`** (same datapoint, shared verify-machinery locus;
+gated-kernel cadence — method-kernel edit via anneal-dev).
+(History: narrowed + renamed 2026-06-04, was `multivoter-verify-no-predicate-claims` — the old
+name implied multi-voting, which is dead; [PARKED] 2026-06-05 per fork ε accept-the-trade;
+reopened by the §2026-07-16 false-accept datapoint below.) Two of this item's three threads
 are CLOSED, leaving ONE live residual:
 
 - **Multi-voting / quorum — DROPPED.** The verify-techniques research deflated it ("model
@@ -29,6 +42,7 @@ are CLOSED, leaving ONE live residual:
     **dropped from the ② cycle** (its live residual is a held decision, not a design). Stays OPEN
     holding the option — revisit only if the model-tier floor is reopened (then carve-out vs
     within-tier-diversity is the live fork). Not method-kernel work until then.
+    **→ Superseded 2026-07-16: the floor IS reopened and the fork settled to (a) narrow — see Status.**
 
 **(History below — the reframe + the shipped intent-falsification design — kept as context.)**
 
@@ -120,7 +134,7 @@ use the check — exactly how the foundation-invariants run used it.)
   resolved (e.g. diversity *within* the top tier, or an explicit floor carve-out for verify), not
   assumed away.
 
-## 2026-07-16 field datapoint (pbs instance) — first false-accept-side evidence; operator to disposition (NOT unilaterally transitioned)
+## 2026-07-16 field datapoint (pbs instance) — first false-accept-side evidence; dispositioned same day (fork (a) narrow — see Status)
 The reopen-trigger this item holds the option open for has a field measurement now:
 - **Incident:** the pbs operator ran a full build day on opus-4.8 believing the session was
   fable-5 (discovered via the per-commit `Co-Authored-By` model trailer — which thereby proved
