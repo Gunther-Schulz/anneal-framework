@@ -38,8 +38,16 @@ Merksatz: **A heilt das bessere Modell, B heilt nur Mechanik.**
 3. **Prüfer-Tier ≥ Produzenten-Tier** — nie Same-Model-Selbst-Benotung für
    den Urteils-Gegencheck. Same-Model-Frischkontext bleibt wertvoll für
    Aufmerksamkeits-Klasse + Rahmungs-Blindheit; den Urteils-Deckel hebt nur
-   das stärkere Modell. (pbs-Regel: GOVERNANCE §Weiterentwicklung Nr. 8b
-   „Modell-Achse"; Framework-Fork offen in `backlog/verify-model-diversity.md`.)
+   das stärkere Modell. **Top-Tier-Grenzfall (Fable-Session):** ein höheres
+   Prüfer-Tier existiert dann nicht — es gilt Frisch-Kontext-Prüfung (fängt
+   auch same-model erstaunlich viel: 7 substanzielle Befunde im Fable-eigenen
+   M13-Entwurf, davon urteilsnahe) + Regel 4 (Konvertierung); der
+   verbleibende Urteils-Rest ist OFFEN BENANNTES Residuum mit
+   Operator-Soundness als Backstop — nie eine stillschweigend erfüllte
+   Achse. (pbs-Regel: GOVERNANCE §Weiterentwicklung Nr. 8b „Modell-Achse"
+   inkl. Grenzfall-Klausel 9ec004e; die kanonische Carve-out-Form entscheidet
+   der anneal-dev-Zyklus zu `backlog/verify-model-diversity.md` — danach
+   diese Passage auf dessen Formulierung ziehen.)
 4. **Urteil → Aufmerksamkeit konvertieren:** die drei Linsen-Kandidaten
    (Domain-Claim-Re-Derivation inkl. „data beats commentary" ·
    Worked-Boundary-Example · Closed-Set-Sweep) machen Urteils-Fehler
