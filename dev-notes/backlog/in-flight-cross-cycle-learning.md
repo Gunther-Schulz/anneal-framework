@@ -83,6 +83,18 @@ recurrence count) and the action stays conservative (below).
    conservative/informational, to preserve the broad re-form that makes convergence stable
    (`lens-crowding-vs-broad-search`).
 
+## Field datapoint — pbs reviewer-regel-kanal (2026-07-16, separate deployed instance)
+A corpus-evolution run in a sibling instance (Planungsbüro-Schulz pbs rule-corpus, in-context) is a
+**textbook case for Branch B (basin-jump)**: the intent-falsification pass found a real finding on
+**three consecutive convergence cycles (7, 9, 11), all in the same area — the intake-surface placement**
+(findability → applicability → diff-anchor asymmetry), each a refinement of the prior. No signal told the
+forming context "you have circled the same surface 3×; step back and re-derive the intake surface whole."
+The class-recurrence was **externally visible** in the persisted `.cycle-N.intent-falsification.md`
+artifacts (the soundness key holds — orchestrator-computable from falsification artifacts, not self-review).
+n=1 evidence the signal would have real value; the operator independently reached the same "root is
+what/how goes into a cycle" diagnosis before the chain audit was shown. Booked-sibling:
+`design-decision-implication-depth-gaps.md` §Second-run confirmation.
+
 ## Relates to
 - `framework-gap-receipt` — the **slow-loop twin** (same recurring-class signal; cross-run post-hoc →
   framework edit). This is within-run in-flight → next-cycle. Reuses its class-tally; build on top.

@@ -26,6 +26,18 @@ An *instance* = **fixed** bindings for a **known** domain. Ad-hoc = **eliciting*
 an **unknown** domain at runtime. An "ad-hoc instance" = an instance with no fixed bindings,
 i.e. not an instance. The right artifact is a **thin entry-point + a slot-binding checklist**.
 
+## Field datapoint — pbs anneal-dev in-context/skeleton mode (2026-07-16)
+A full anneal-dev run driven **in-context (skeleton "followed-in-context", not an installed plugin)** in a
+sibling deployment (pbs rule-corpus). Confirms the in-context mode *works* end-to-end
+(investigate-design → implement → verify [PASSED], 6 real defects caught) **and** surfaces its cost: the
+orchestrator role fell on the forming context, which introduced small self-inflicted slips it then had to
+self-catch (a bloat D-entry added then removed; a pull-before-commit mis-order). Exactly the
+adherence-burden class a rendered/packaged orchestrator removes mechanically — a concrete datapoint for the
+**graduation-is-the-prize** thesis: this deployment now holds accumulated real-run evidence seeding a
+graduation should the domain recur (it will — corpus-evolution is standing). The skeleton mode is the
+weakest enforcement tier (the forming context polices its own protocol adherence), consistent with the
+framework's own distrust of self-certification.
+
 ## Recommendation (additive-reflex discipline)
 **Codify it first as a section in `instantiation-guide.md`** ("Applying anneal ad-hoc, without
 building an instance") — the cheapest move, no new corpus artifact to maintain. **Promote to a

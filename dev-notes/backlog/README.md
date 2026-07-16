@@ -73,6 +73,22 @@ the cycle-chain audit: `design-decision-implication-depth-gaps.md` §Second-run 
 that item's line-227 thesis (a design-time trace-clause *reduces* cycle count). Datapoint, not a new
 item — no count change.
 
+**Further field signals from the same run (operator to disposition — NOT unilaterally transitioned).**
+*Confirmations* (validation-watch candidates): the isolated falsification caught **two self-blind defects
+the forming context had introduced** (a stale enumeration after a classify widened; a shallow symptom-fix)
+→ V-19 (convergence-cycle-isolation) load-bearing confirmation; the cycle-1 standardized pass front-loaded
+5 real concerns before any write → V-1 (standardized-lens-timing); the append-only tracker carried a long
+multi-turn run as the on-disk ledger → V-3/V-14; the [VERIFIED — surfaced]-vs-mechanical-candidate split
+let convergence actually terminate → V-10/V-24. *Two strains* (new): (i) **verify's battery assumes a
+rendered-plugin instance** — for a rule-corpus-only instance 2 of 3 legs (render-fidelity, skill-quality)
+are N/A, leaving coherence; the fitted battery is "run the corpus's own mechanical checks" (hooks/CI/
+compile/wired guards) — the instance should *define* its executable-verification battery rather than
+inherit the render-centric one (= `clippy-category-b-recalibration` #1 generalized to a strain, not just a
+clippy fix); (ii) **criteria-first + no-contamination in the falsification dispatch stay discipline-grade**
+— no mechanical check confirms the subagent derived criteria before reading the design or that the brief
+was uncontaminated. Booked-detail sibling: `design-decision-implication-depth-gaps.md`,
+`in-flight-cross-cycle-learning.md`, `anneal-adhoc-use-and-graduation.md` (field datapoints, 2026-07-16).
+
 ### ▶ Campaign map (2026-06-05 — the execution view; READ FIRST)
 
 The rate fix: **stop draining one item per cycle.** The 45 open items group into **6 coherent drain
