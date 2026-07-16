@@ -230,6 +230,30 @@ obs 3: convergence (fresh-context) is the working backstop; a design-time trace-
 (over-fixing); this is convergence catching *real defects the design missed* (depth gaps). Two
 different failure modes, two different items.
 
+## Second-run confirmation — reviewer-regel-kanal (2026-07-16, pbs rule-corpus, operator-surfaced)
+A corpus-evolution run in a **separate deployed instance** (the Planungsbüro-Schulz pbs rule-corpus,
+anneal-dev bound in-context, not clippy) reached [READY] over ~5 convergence attempts. Auditing the
+cycle chain gives a **third instance** of the shape *and* n=1 evidence for "iterated convergence-cost is
+the visible **symptom** of design-time depth gaps, not a case for capping iterations":
+- **Broken-basis-not-propagated (the line-216 "trace-don't-list" candidate, 3rd confirmed instance).**
+  A cycle changed decision **D3'** (a 3→4-way classify); the same-context design did **not** propagate
+  that to **D10'** — a dependent decision whose rule-text still enumerated only the old 3 classes. The
+  next fresh-context convergence pass caught the stale enumeration. Textbook "saw the change, didn't
+  trace what it did to the dependent decision."
+- **Symptom-fix-not-root (a related depth flavor).** A wiring gap was first patched with a shallow
+  cross-ref (findability); the next convergence pass showed it closed findability but not
+  *applicability* (the referenced mechanism was scope-limited — TöB-round-only). A "root or symptom?"
+  checkpoint at design-lock would have collapsed those two cycles into one.
+- **Convergence-cost reading (the counter-datapoint to `clippy-category-b-recalibration.md` #3).**
+  4 of the ~5 convergence attempts each found a real delta — so #3's "cheapen convergence to a
+  stop-signal, one cycle not iterated" would have **shipped** them, not saved cost. But ~2 of those
+  deltas (the two above) were **self-inflicted / shallow-fix consequences**, avoidable by a design-time
+  trace-clause + a root-not-symptom checkpoint. **This is direct support for this item's line-227
+  conclusion** (a design-time trace-clause *reduces* convergence-cycle count) and a **counter-datapoint
+  to #3's framing**: the cost root is design-time completeness, not iteration count. The operator
+  independently diagnosed the same — "#3 is aimed at the wrong root; it's about what/how goes into a
+  cycle" — before the chain audit was shown, converging on this item's existing thesis.
+
 ## Cross-class observations
 
 1. **The intent-falsification pass and convergence falsification (both

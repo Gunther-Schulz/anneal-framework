@@ -61,6 +61,18 @@ dropped-but-open (fork ε), V-31 watch filed, render-debt queued to ⑥. 40 open
 per-campaign cadence levels + a pre-campaign re-ground/re-evaluate discipline were added to the ▶ Campaign map,
 and the stale session-8 NEXT-UP was marked superseded — no count change, 40 open; **then campaign ③ run 1 SHIPPED** (`014b7b0`, run `campaign3-enforcement-fidelity`, spec-only): D3.1 (`core.md §5.1` deferred sub-case (c) deferred-pending-authoring) shipped; `deferred-finding-owed-artifact-forcing-function` + `completeness-search-enforcement` archived; `basis-recorded-query-fidelity` kept watch-as-backlog; 3 items spawned (`convergence-mechanical-pass-value`, `v-entry-is-post-ship-only`, `verify-disposition-citation-reopen-explicit-leg`) → **41 open**; §5.1 render-debt → ⑥; **then the run's post-run review filed `self-hosting-inplace-integrity-clean-precondition` (spec×self-hosting friction) → 42 open** + logged auto-battle datapoint-3; **then (concurrent sessions, accidental — now reconciled) `measurement-harness-mve` filed + Step-0 eval scaffold shipped (`abcb0af`/`025d3f7`, tier 6) and `design-decision-implication-depth-gaps` integrated** (moved from a stray marketplace-clone copy → tier-4 blind-spot cluster as framework-blindspot's empirical core; the campaign-③ side-quest `v-entry-is-post-ship-only` PAUSED mid-run, α/β lifecycle fork) → 44 open; **then filed `post-run-review-failure-class-register`** (the post-run review's self-review should proactively probe a maintained failure-class register — additive to Q1's reactive listing; consolidates V-30/design-decision/blindspot/instance-domain catalogs) → **45 open.**)
 
+### ▶ Cross-instance datapoint (2026-07-16 — READ FIRST): a second deployed instance confirms the design-time-depth-gap thesis
+A corpus-evolution run (`reviewer-regel-kanal`) in a **separate deployed anneal-dev instance** (the
+Planungsbüro-Schulz pbs rule-corpus, bound in-context — not clippy) independently reproduced the
+`design-decision-implication-depth-gaps` shape (broken-basis-not-propagated: a 3→4-way classify change
+not traced to a dependent decision's enumeration; caught by the next fresh-context convergence pass) and
+its **convergence-cost corollary**, operator-diagnosed live: iterated convergence cost is the visible
+*symptom* of design-time depth gaps, **not** a case for capping iterations — a **counter-datapoint to
+`clippy-category-b-recalibration.md` #3** ("cheapen convergence to one cycle, not iterated"). Detail +
+the cycle-chain audit: `design-decision-implication-depth-gaps.md` §Second-run confirmation; reinforces
+that item's line-227 thesis (a design-time trace-clause *reduces* cycle count). Datapoint, not a new
+item — no count change.
+
 ### ▶ Campaign map (2026-06-05 — the execution view; READ FIRST)
 
 The rate fix: **stop draining one item per cycle.** The 45 open items group into **6 coherent drain
