@@ -119,3 +119,28 @@ use the check — exactly how the foundation-invariants run used it.)
   model-diversity for anneal-dev's verify collides with the model-tier floor — the conflict must be
   resolved (e.g. diversity *within* the top tier, or an explicit floor carve-out for verify), not
   assumed away.
+
+## 2026-07-16 field datapoint (pbs instance) — first false-accept-side evidence; operator to disposition (NOT unilaterally transitioned)
+The reopen-trigger this item holds the option open for has a field measurement now:
+- **Incident:** the pbs operator ran a full build day on opus-4.8 believing the session was
+  fable-5 (discovered via the per-commit `Co-Authored-By` model trailer — which thereby proved
+  itself as the model-provenance audit trail). All same-day anneal-dev verify/coherence passes
+  ran same-model (opus checking opus).
+- **Measurement:** three fresh-context **cross-tier** adversarial reviews (fable over the opus
+  day-work) split cleanly: the same-tier passes HAD caught the attention-class (orphaned IDs,
+  state-leaks, M2 duplicates — confirming the mechanical/lens legs work tier-independently),
+  but **judgment-class defects passed same-tier verify clean and only fell cross-tier**: a
+  fencepost + under-enforcement in a legal predicate (max(1 month, 30 days), inclusive
+  counting), a legally-overclaiming monitor message (statutory extension option unmodeled), an
+  Ermessen-vs-automatism error hardcoded in shipped generator text, and a grounding error where
+  the author trusted a stale in-file comment against the file's own data.
+- **Reading:** prior evidence was true-positive-only ("the intent-falsification pass keeps
+  earning its keep"); this is the first **false-accept** observation — same-tier
+  intent-falsification structurally under-detects judgment-class flaws the next tier up sees.
+  Argues for reopening the model-tier floor with a **verify carve-out** (verify tier ≥ actor
+  tier, or cross-model within top tier), at minimum for the judgment-class leg.
+- **Instance precedent (cross-instance-precedent-discipline):** the pbs corpus minted the rule
+  at corpus level (GOVERNANCE §Weiterentwicklung Nr. 8b "Modell-Achse": checker tier ≥ producer
+  tier; same-model checking covers only the attention class). Sibling filing:
+  `judgment-to-mechanical-lens-candidates.md` (the complementary lever: convert judgment-class
+  into attention-class so same-tier scaffolding catches more of it).
