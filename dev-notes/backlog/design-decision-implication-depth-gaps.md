@@ -254,6 +254,20 @@ the visible **symptom** of design-time depth gaps, not a case for capping iterat
   independently diagnosed the same — "#3 is aimed at the wrong root; it's about what/how goes into a
   cycle" — before the chain audit was shown, converging on this item's existing thesis.
 
+## Framing guard — the levers target avoidable churn, NOT the generative iteration (operator, 2026-07-16)
+A caution on reading the Second-run datapoint (and the `in-flight` / `proportional-cycle-weight` siblings):
+the iterative loop has **two kinds of "found in a later cycle," and only one is avoidable.** (A) **Generative
+refinement** — a finding that only *became searchable* once the design was concrete enough (progressive
+concreteness → new searchable surface → new finding). This is the loop working as designed — the whole
+reason cycles build on each other; **it must not be compressed into cycle 1.** (B) **Avoidable churn** — a
+self-inflicted delta (a decision changed without propagating its consequences) or something *already
+searchable in cycle 1* but not read to completeness. The depth lever (trace-don't-list) and the cycle-1
+breadth lever (`in-flight` §further-signals) target **only (B)**. Applied to (A) they become **the dual of
+the cap-iterations error** (`clippy-category-b-recalibration` #3): where #3 caps iteration from above,
+"front-load everything into cycle 1" suppresses it from below — both misread the iteration itself as the
+cost. "Fewer, fuller cycles" means *leave the next cycle less cleanup-debt*, **not** *pre-run the
+refinement*. The generative iteration is the value; the levers only remove the friction around it.
+
 ## Cross-class observations
 
 1. **The intent-falsification pass and convergence falsification (both
