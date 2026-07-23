@@ -19,6 +19,9 @@ Action:
   - If not found in the current turn → block (exit 2 with
     permissionDecision: deny). Forces AI to invoke skill-craft via
     Skill tool in this turn before proceeding.
+  - Operator-CLAUDE.md paths additionally require a same-turn Read
+    of CLAUDE-maintenance.md (composition rules live there, stack
+    layer 3 — skill-craft is layer 2 and does not carry them).
 
 Per anneal-framework development-process.md practice 5: skill-craft
 invocation gates Edits to rule-corpus files. Per-turn enforcement
@@ -63,6 +66,17 @@ SPEC_SOURCE_PATTERNS = [
     re.compile(r"/\.claude/CLAUDE\.md$"),
 ]
 
+# Operator-CLAUDE.md paths additionally gate on a same-turn Read of
+# CLAUDE-maintenance.md (operator decision 2026-07-23): its composition
+# rules (provenance, density, render test) live in stack layer 3, which
+# the skill-craft check (layer 2) does not carry. Only these two paths —
+# the anneal spec paths carry their composition rules in the specs
+# themselves.
+CLAUDEMD_PATTERNS = [
+    re.compile(r"/dotfiles/claude/CLAUDE\.md$"),
+    re.compile(r"/\.claude/CLAUDE\.md$"),
+]
+
 # Non-corpus working areas — scratch/notes/draft copies that may contain
 # spec-shaped paths but are NOT canonical rule-corpus (e.g. a draft instance
 # spec under dev-notes/derivation-pass1/spec/). dev-notes is the repo's
@@ -98,6 +112,18 @@ per-turn enforcement at the transcript-scan layer). Invocations
 in prior turns do NOT discharge the current turn's gate; each
 operator message starts a fresh enforcement window."""
 
+MAINTENANCE_DENY_REASON = """CLAUDE-maintenance.md Read required in the
+current turn before editing the operator CLAUDE.md. The composition
+rules (provenance, density, render test) live in the maintenance
+doctrine — a read earlier in the session has gone inert at the edit
+moment before (incident 2026-07-23).
+
+To proceed:
+  1. Read ~/.claude/CLAUDE-maintenance.md (the Read tool, this turn).
+  2. Retry this Edit/Write — the hook will scan again and allow.
+
+Each operator message starts a fresh enforcement window."""
+
 SPEC_ORIGIN_REMINDER = """Spec-origin trace required for this plugin
 render edit (per anneal-framework development-process.md practice 5
 "Spec-origin grounding for plugin edits" + contract 2). Surface which
@@ -129,19 +155,10 @@ def is_anneal_instance_render(file_path: str) -> bool:
     return os.path.isdir(os.path.join(repo_root, "spec"))
 
 
-def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
-    """Scan the JSONL transcript: find the last operator-prompt
-    user message (a user-role event with isMeta unset, origin
-    unset, and text/string content), then check if any subsequent
-    assistant Skill skill-craft tool_use exists.
-
-    Returns True if skill-craft was invoked since the last
-    operator prompt, False otherwise.
-
-    Fail-open policy: returns True ("allow the Edit") on any of
-    the following failure modes — the True here is NOT
-    "invocation found"; it's "couldn't verify, so don't block."
-    Caller treats True as the allow-condition.
+def _events_after_last_prompt(transcript_path: str):
+    """Events after the last operator-prompt boundary, or None on the
+    fail-open failure modes (callers treat None as "couldn't verify,
+    so don't block"):
 
       1. Transcript file unreadable (OSError/IOError).
       2. No operator-prompt boundary found in events (empty
@@ -162,7 +179,7 @@ def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
     except (OSError, IOError):
         # Transcript unreadable — fail-open. Defensive: should not
         # happen in normal operation.
-        return True
+        return None
 
     # Find index of last operator-prompt user message. Discriminators
     # observed in Claude Code transcripts:
@@ -207,11 +224,19 @@ def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
     if last_prompt_idx == -1:
         # No user prompt found yet — degenerate case (very early in
         # session, before any prompt). Fail-open.
-        return True
+        return None
 
-    # Scan events after the last operator prompt for any Skill
-    # tool_use invoking skill-craft.
-    for event in events[last_prompt_idx + 1:]:
+    return events[last_prompt_idx + 1:]
+
+
+def _tool_uses_after_last_prompt(transcript_path: str):
+    """(name, input) of every assistant tool_use after the boundary,
+    or None on the fail-open modes of _events_after_last_prompt."""
+    tail = _events_after_last_prompt(transcript_path)
+    if tail is None:
+        return None
+    uses = []
+    for event in tail:
         msg = event.get("message")
         if not isinstance(msg, dict):
             continue
@@ -225,16 +250,41 @@ def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
                 continue
             if block.get("type") != "tool_use":
                 continue
-            if block.get("name") != "Skill":
-                continue
             tool_input = block.get("input", {})
-            if not isinstance(tool_input, dict):
-                continue
-            skill = tool_input.get("skill", "")
-            if SKILL_CRAFT_INVOCATION.search(str(skill)):
-                return True
+            uses.append((block.get("name"),
+                         tool_input if isinstance(tool_input, dict) else {}))
+    return uses
 
-    return False
+
+def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
+    """True if skill-craft was invoked via the Skill tool since the
+    last operator prompt — or on the fail-open modes (couldn't
+    verify, so don't block)."""
+    uses = _tool_uses_after_last_prompt(transcript_path)
+    if uses is None:
+        return True
+    return any(
+        name == "Skill" and SKILL_CRAFT_INVOCATION.search(str(inp.get("skill", "")))
+        for name, inp in uses
+    )
+
+
+def has_maintenance_read_this_turn(transcript_path: str) -> bool:
+    """True if CLAUDE-maintenance.md was Read since the last operator
+    prompt — or on the fail-open modes (couldn't verify, so don't
+    block). Same per-turn window as the skill-craft check: the
+    composition rules (provenance, density, render test) live in the
+    maintenance doctrine, not in skill-craft, and a read 100K tokens
+    ago has demonstrably gone inert at the edit moment — the re-anchor
+    must sit at the decision, not somewhere in the session."""
+    uses = _tool_uses_after_last_prompt(transcript_path)
+    if uses is None:
+        return True
+    return any(
+        name == "Read"
+        and str(inp.get("file_path", "")).endswith("/CLAUDE-maintenance.md")
+        for name, inp in uses
+    )
 
 
 def resolve_scan_transcript(transcript_path: str, agent_id: str) -> str:
@@ -309,6 +359,13 @@ def main() -> int:
     if not has_skill_craft_invocation_this_turn(scan_path):
         deny(DENY_REASON)
         # Unreachable; deny() exits.
+
+    # Operator-CLAUDE.md: second condition — same-turn maintenance-doctrine
+    # read (see CLAUDEMD_PATTERNS comment).
+    if any(p.search(file_path) for p in CLAUDEMD_PATTERNS):
+        if not has_maintenance_read_this_turn(scan_path):
+            deny(MAINTENANCE_DENY_REASON)
+            # Unreachable; deny() exits.
 
     # Skill-craft was invoked in the current turn. Allow, with an
     # informational spec-origin reminder for anneal-INSTANCE plugin renders

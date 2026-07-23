@@ -167,6 +167,49 @@ def run():
         check("later old-format prompt is the boundary -> earlier skill-craft does not discharge",
               h.has_skill_craft_invocation_this_turn(parent) is False)
 
+        # --- operator-CLAUDE.md second condition: same-turn maintenance read ---
+        def ev_read(path):
+            return {"type": "assistant", "message": {"role": "assistant", "content": [
+                {"type": "tool_use", "name": "Read", "input": {"file_path": path}}]}}
+
+        # skill-craft yes, maintenance read no -> maintenance check must say False
+        write_jsonl(parent, [ev_prompt_human("edit CLAUDE.md"), ev_skill_invocation()])
+        check("CLAUDE.md: skill-craft alone does NOT satisfy maintenance-read",
+              h.has_maintenance_read_this_turn(parent) is False)
+
+        # both present -> satisfied (dotfiles source path)
+        write_jsonl(parent, [ev_prompt_human("edit CLAUDE.md"), ev_skill_invocation(),
+                             ev_read("/home/g/dev/Gunther-Schulz/dotfiles/claude/CLAUDE-maintenance.md")])
+        check("CLAUDE.md: maintenance read (dotfiles path) satisfies",
+              h.has_maintenance_read_this_turn(parent) is True)
+
+        # deployed-symlink path counts too
+        write_jsonl(parent, [ev_prompt_human("edit CLAUDE.md"),
+                             ev_read("/home/g/.claude/CLAUDE-maintenance.md")])
+        check("CLAUDE.md: maintenance read (deployed symlink path) satisfies",
+              h.has_maintenance_read_this_turn(parent) is True)
+
+        # read BEFORE the boundary is inert -> not satisfied (the incident shape:
+        # doctrine read 100K tokens earlier, edit in a later turn)
+        write_jsonl(parent, [ev_read("/home/g/.claude/CLAUDE-maintenance.md"),
+                             ev_prompt_human("edit CLAUDE.md"), ev_skill_invocation()])
+        check("CLAUDE.md: maintenance read BEFORE boundary does not satisfy",
+              h.has_maintenance_read_this_turn(parent) is False)
+
+        # a Read of some OTHER file must not satisfy
+        write_jsonl(parent, [ev_prompt_human("edit CLAUDE.md"),
+                             ev_read("/home/g/dev/x/README.md")])
+        check("CLAUDE.md: unrelated Read does not satisfy",
+              h.has_maintenance_read_this_turn(parent) is False)
+
+        # scoping: the second condition applies to CLAUDE.md paths only
+        check("scoping: dotfiles CLAUDE.md matches CLAUDEMD_PATTERNS",
+              any(p.search("/home/g/dev/Gunther-Schulz/dotfiles/claude/CLAUDE.md")
+                  for p in h.CLAUDEMD_PATTERNS))
+        check("scoping: anneal spec path does NOT match CLAUDEMD_PATTERNS",
+              not any(p.search("/home/g/dev/Gunther-Schulz/coding-clippy/spec/core.md")
+                      for p in h.CLAUDEMD_PATTERNS))
+
     print("\n%d passed, %d failed" % (passed, failed))
     return 0 if failed == 0 else 1
 
