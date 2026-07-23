@@ -27,7 +27,20 @@ _spec.loader.exec_module(h)
 # --- event builders (mirror observed transcript shapes) ---
 def ev_prompt(text):
     # operator prompt / subagent dispatch brief: user, string content, no isMeta/origin
+    # (old transcript format — kept as coverage for pre-2026-07 transcripts)
     return {"type": "user", "message": {"role": "user", "content": text}}
+
+def ev_prompt_human(text):
+    # operator prompt, CURRENT transcript format (observed 2026-07-23):
+    # real prompts carry origin={"kind": "human"}. The gate died silently
+    # when it blanket-skipped every truthy origin — these fixtures pin it.
+    return {"type": "user", "origin": {"kind": "human"},
+            "message": {"role": "user", "content": text}}
+
+def ev_task_notification():
+    # non-prompt user event: origin kind other than human -> must be skipped
+    return {"type": "user", "origin": {"kind": "task-notification"},
+            "message": {"role": "user", "content": "agent finished"}}
 
 def ev_skill_invocation():
     return {"type": "assistant", "message": {"role": "assistant", "content": [
@@ -122,6 +135,37 @@ def run():
         scan = h.resolve_scan_transcript(parent, agent_id)
         check("skill-craft BEFORE boundary -> does not discharge",
               h.has_skill_craft_invocation_this_turn(scan) is False)
+
+        # --- current transcript format: origin={"kind":"human"} on real prompts ---
+        # THE regression (2026-07-23): blanket origin-skip found no boundary in
+        # current-format transcripts -> degenerate fail-open -> gate allowed every
+        # corpus edit. A current-format prompt WITHOUT skill-craft must block.
+        write_jsonl(parent, [ev_prompt_human("operator: edit the spec"),
+                             ev_other_assistant()])
+        check("origin-human prompt WITHOUT skill-craft -> gate blocks (dead-gate regression)",
+              h.has_skill_craft_invocation_this_turn(parent) is False)
+
+        # current-format prompt WITH skill-craft -> discharges
+        write_jsonl(parent, [ev_prompt_human("operator: edit the spec"),
+                             ev_skill_invocation(), ev_tool_result()])
+        check("origin-human prompt WITH skill-craft -> gate discharges",
+              h.has_skill_craft_invocation_this_turn(parent) is True)
+
+        # non-human origin kinds are still skipped as boundaries: a task
+        # notification AFTER the prompt must not reset the window and hide
+        # the missing invocation
+        write_jsonl(parent, [ev_prompt_human("operator: edit the spec"),
+                             ev_skill_invocation(), ev_task_notification(),
+                             ev_other_assistant()])
+        check("task-notification after prompt is not a boundary -> still discharged",
+              h.has_skill_craft_invocation_this_turn(parent) is True)
+
+        # mixed formats: old-format prompt later in file supersedes an earlier
+        # human-origin prompt as the boundary
+        write_jsonl(parent, [ev_prompt_human("first prompt"), ev_skill_invocation(),
+                             ev_prompt("second prompt (old format)"), ev_other_assistant()])
+        check("later old-format prompt is the boundary -> earlier skill-craft does not discharge",
+              h.has_skill_craft_invocation_this_turn(parent) is False)
 
     print("\n%d passed, %d failed" % (passed, failed))
     return 0 if failed == 0 else 1

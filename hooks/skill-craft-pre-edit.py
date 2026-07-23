@@ -168,16 +168,18 @@ def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
     # observed in Claude Code transcripts:
     #   - isMeta=True user-role events carry Skill outputs and system
     #     notifications as text content under role=user. Skip them.
-    #   - Non-empty `origin` field marks non-prompt user events
-    #     (e.g., {'kind': 'task-notification'} from subagent
-    #     completions). Real operator prompts have no `origin`.
-    #     Skip them.
+    #   - The `origin` field has changed meaning across transcript
+    #     formats. Old format: real prompts carry NO origin; a non-empty
+    #     origin (e.g. {'kind': 'task-notification'}) marks a non-prompt.
+    #     Current format (observed 2026-07-23): real operator prompts
+    #     carry origin={'kind': 'human'}. Blanket-skipping every truthy
+    #     origin therefore found NO boundary in current transcripts and
+    #     silently fail-opened the gate on every corpus edit. Rule:
+    #     accept origin absent (old prompts) or kind=='human' (current
+    #     prompts); skip any other origin kind.
     #   - Tool-result user events have content as a list with
     #     tool_result blocks (no text block). Skip them via the
     #     content-shape check below.
-    #   - Operator prompts: role=user, isMeta is None/absent, origin
-    #     is None/absent, content is a string (or list with at least
-    #     one text block).
     last_prompt_idx = -1
     for i, event in enumerate(events):
         msg = event.get("message")
@@ -187,7 +189,8 @@ def has_skill_craft_invocation_this_turn(transcript_path: str) -> bool:
             continue
         if event.get("isMeta") is True:
             continue
-        if event.get("origin"):
+        origin = event.get("origin")
+        if origin and not (isinstance(origin, dict) and origin.get("kind") == "human"):
             continue
         content = msg.get("content")
         if isinstance(content, str):
