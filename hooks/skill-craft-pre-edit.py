@@ -60,8 +60,7 @@ SPEC_SOURCE_PATTERNS = [
     # Operator's global instruction frame (dotfiles source + deployed
     # symlink) — rule-corpus by operator decision 2026-07-10; edits
     # follow claude/CLAUDE-maintenance.md via a skill-craft-vetted
-    # process. CLAUDE-maintenance.md itself is maintenance doctrine
-    # (ungated), matching the dev-notes carve-out rationale.
+    # process.
     re.compile(r"/dotfiles/claude/CLAUDE\.md$"),
     re.compile(r"/\.claude/CLAUDE\.md$"),
     # The operational corpus is CLAUDE.md + dispatch-discipline.md
@@ -70,6 +69,15 @@ SPEC_SOURCE_PATTERNS = [
     # (operator catch 2026-07-26). Same gate pair as CLAUDE.md.
     re.compile(r"/dotfiles/claude/dispatch-discipline\.md$"),
     re.compile(r"/\.claude/dispatch-discipline\.md$"),
+    # CLAUDE-maintenance.md — the governance layer (stack layer 3)
+    # binding skill-craft as the corpus vetting standard: rule text,
+    # not a journal, so the dev-notes/journal carve-out rationale
+    # does not apply ("the governor is not exempt", its own
+    # consolidation-pass rule; operator GO 2026-07-26). Skill-craft
+    # gate only — no CLAUDEMD_PATTERNS entry: its composition rules
+    # live in itself, and Edit already requires a prior read.
+    re.compile(r"/dotfiles/claude/CLAUDE-maintenance\.md$"),
+    re.compile(r"/\.claude/CLAUDE-maintenance\.md$"),
 ]
 
 # Operational-corpus paths additionally gate on a same-turn Read of

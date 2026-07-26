@@ -219,10 +219,16 @@ def run():
                   any(p.search(dd) for p in h.SPEC_SOURCE_PATTERNS))
             check("gate scope: %s in CLAUDEMD_PATTERNS" % dd,
                   any(p.search(dd) for p in h.CLAUDEMD_PATTERNS))
-        # neighbors that must stay ungated: maintenance doctrine + non-corpus md
-        check("gate scope: CLAUDE-maintenance.md stays ungated",
-              not any(p.search("/home/g/dev/Gunther-Schulz/dotfiles/claude/CLAUDE-maintenance.md")
-                      for p in h.SPEC_SOURCE_PATTERNS + h.CLAUDEMD_PATTERNS))
+        # CLAUDE-maintenance.md: governance layer, gated on skill-craft
+        # (operator GO 2026-07-26) but NOT on the maintenance-read second
+        # condition (its composition rules live in itself)
+        for cm in ("/home/g/dev/Gunther-Schulz/dotfiles/claude/CLAUDE-maintenance.md",
+                   "/home/g/.claude/CLAUDE-maintenance.md"):
+            check("gate scope: %s in SPEC_SOURCE_PATTERNS" % cm,
+                  any(p.search(cm) for p in h.SPEC_SOURCE_PATTERNS))
+            check("gate scope: %s NOT in CLAUDEMD_PATTERNS" % cm,
+                  not any(p.search(cm) for p in h.CLAUDEMD_PATTERNS))
+        # journal stays the ungated control case: a write target, not rule text
         check("gate scope: JOURNAL.md stays ungated",
               not any(p.search("/home/g/dev/Gunther-Schulz/dotfiles/claude/JOURNAL.md")
                       for p in h.SPEC_SOURCE_PATTERNS + h.CLAUDEMD_PATTERNS))
