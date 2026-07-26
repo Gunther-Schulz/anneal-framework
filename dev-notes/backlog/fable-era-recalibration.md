@@ -72,3 +72,21 @@ remains standalone is #2 (model-tier slot semantics) and the #1
 validation-watch entry. Evidence base: the two beat-the-books trackers
 (`.clippy/runs/2026-07-26-*.md`) + seven falsification artifacts.
 Fresh session, anneal-dev vehicle, together with the clippy todo item.
+
+## Update 2026-07-27 — live delta-semantics evidence for item 4
+
+The game-matching run's fix cycle (clippy todo, "Evidence addendum"
++ "Amendments from the game-matching fix-cycle", same file as the
+instance findings) executed the missing middle tier live:
+decision-scoped re-verify — untouched decisions carried forward with
+an explicit basis line, the amended decision's citation closure fully
+re-attested, finding-closure proven by re-running the ORIGINAL
+detection probes (mutants must now die), executable battery never
+scoped down. Verify rd2 [PASSED] on that scoping. Bearing on item 4:
+when the convergence requirement's wording is re-opened, the delta
+semantics should be defined by CITATION CLOSURE of the amended
+decisions (mechanical, computable from tracker basis lines), not by
+the binary behavior-preserving/fresh classification — the framework
+spec section clippy's phase file instantiates is still where this
+binds. Also note: the run's compressed cycle was operator-authorized
+ad-hoc; the framework change is what makes it protocol-legal.
