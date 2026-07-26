@@ -202,13 +202,30 @@ def run():
         check("CLAUDE.md: unrelated Read does not satisfy",
               h.has_maintenance_read_this_turn(parent) is False)
 
-        # scoping: the second condition applies to CLAUDE.md paths only
+        # scoping: the second condition applies to operational-corpus paths only
         check("scoping: dotfiles CLAUDE.md matches CLAUDEMD_PATTERNS",
               any(p.search("/home/g/dev/Gunther-Schulz/dotfiles/claude/CLAUDE.md")
                   for p in h.CLAUDEMD_PATTERNS))
         check("scoping: anneal spec path does NOT match CLAUDEMD_PATTERNS",
               not any(p.search("/home/g/dev/Gunther-Schulz/coding-clippy/spec/core.md")
                       for p in h.CLAUDEMD_PATTERNS))
+
+        # --- dispatch-discipline.md is operational corpus (ungated-by-omission
+        # regression, operator catch 2026-07-26): both the primary gate and the
+        # maintenance-read condition must cover it, source and symlink paths ---
+        for dd in ("/home/g/dev/Gunther-Schulz/dotfiles/claude/dispatch-discipline.md",
+                   "/home/g/.claude/dispatch-discipline.md"):
+            check("gate scope: %s in SPEC_SOURCE_PATTERNS" % dd,
+                  any(p.search(dd) for p in h.SPEC_SOURCE_PATTERNS))
+            check("gate scope: %s in CLAUDEMD_PATTERNS" % dd,
+                  any(p.search(dd) for p in h.CLAUDEMD_PATTERNS))
+        # neighbors that must stay ungated: maintenance doctrine + non-corpus md
+        check("gate scope: CLAUDE-maintenance.md stays ungated",
+              not any(p.search("/home/g/dev/Gunther-Schulz/dotfiles/claude/CLAUDE-maintenance.md")
+                      for p in h.SPEC_SOURCE_PATTERNS + h.CLAUDEMD_PATTERNS))
+        check("gate scope: JOURNAL.md stays ungated",
+              not any(p.search("/home/g/dev/Gunther-Schulz/dotfiles/claude/JOURNAL.md")
+                      for p in h.SPEC_SOURCE_PATTERNS + h.CLAUDEMD_PATTERNS))
 
     print("\n%d passed, %d failed" % (passed, failed))
     return 0 if failed == 0 else 1

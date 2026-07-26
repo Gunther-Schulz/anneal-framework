@@ -64,17 +64,25 @@ SPEC_SOURCE_PATTERNS = [
     # (ungated), matching the dev-notes carve-out rationale.
     re.compile(r"/dotfiles/claude/CLAUDE\.md$"),
     re.compile(r"/\.claude/CLAUDE\.md$"),
+    # The operational corpus is CLAUDE.md + dispatch-discipline.md
+    # (CLAUDE-maintenance.md "Corpus-wide amendment audit"); the
+    # latter was ungated by omission until an ungated edit landed
+    # (operator catch 2026-07-26). Same gate pair as CLAUDE.md.
+    re.compile(r"/dotfiles/claude/dispatch-discipline\.md$"),
+    re.compile(r"/\.claude/dispatch-discipline\.md$"),
 ]
 
-# Operator-CLAUDE.md paths additionally gate on a same-turn Read of
+# Operational-corpus paths additionally gate on a same-turn Read of
 # CLAUDE-maintenance.md (operator decision 2026-07-23): its composition
 # rules (provenance, density, render test) live in stack layer 3, which
-# the skill-craft check (layer 2) does not carry. Only these two paths —
-# the anneal spec paths carry their composition rules in the specs
-# themselves.
+# the skill-craft check (layer 2) does not carry. Scope: the two files
+# CLAUDE-maintenance.md declares as the operational corpus — the anneal
+# spec paths carry their composition rules in the specs themselves.
 CLAUDEMD_PATTERNS = [
     re.compile(r"/dotfiles/claude/CLAUDE\.md$"),
     re.compile(r"/\.claude/CLAUDE\.md$"),
+    re.compile(r"/dotfiles/claude/dispatch-discipline\.md$"),
+    re.compile(r"/\.claude/dispatch-discipline\.md$"),
 ]
 
 # Non-corpus working areas — scratch/notes/draft copies that may contain
