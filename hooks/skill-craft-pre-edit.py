@@ -152,6 +152,34 @@ The citation IS the artifact; a plugin edit without a cited spec
 origin is drift (Edit-without-spec-origin anti-pattern,
 skill-craft references/anti-patterns.md)."""
 
+# In-file date introduction into the operational corpus — the
+# provenance rule's narrow legitimacy classes (CLAUDE-maintenance.md
+# Provenance), surfaced AT the edit because the rule has been read
+# and still misapplied at the edit moment (mint-attribution slip,
+# operator catch 2026-07-27).
+DATE_INTRODUCTION = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\(operator[,:]")
+
+PROVENANCE_REMINDER = """This edit introduces a date (or operator
+attribution) into the operational corpus. Per CLAUDE-maintenance.md
+Provenance, in-file dates are legitimate ONLY as (1) a binding's
+staleness stamp ("as of", "valid while") or (2) attribution of a
+standing operator decision whose AUTHORITY rests on it (fiat the
+rule cannot justify itself). Mint dates and incident narration go
+to JOURNAL/commit — a dated occurrence inside a rule goes stale as
+prose. Neither class → strip the date before landing."""
+
+
+def introduces_date(tool_input: dict) -> bool:
+    """True iff the edit's NEW text carries a date/attribution marker
+    the OLD text did not — Write compares against empty (every date
+    in a full-file Write counts as introduced; noisy but rare, and
+    the reminder is informational)."""
+    new = str(tool_input.get("new_string")
+              or tool_input.get("content") or "")
+    old = str(tool_input.get("old_string") or "")
+    return bool(set(DATE_INTRODUCTION.findall(new))
+                - set(DATE_INTRODUCTION.findall(old)))
+
 
 def is_anneal_instance_render(file_path: str) -> bool:
     """A plugin render that belongs to an anneal INSTANCE — it renders from an
@@ -382,6 +410,18 @@ def main() -> int:
         if not has_maintenance_read_this_turn(scan_path):
             deny(MAINTENANCE_DENY_REASON)
             # Unreachable; deny() exits.
+        # Third check, informational: date/attribution introduced into
+        # corpus text — surface the provenance legitimacy classes at
+        # the edit moment (reminder, never a block: both legitimacy
+        # classes are judgment calls the gate cannot compute).
+        if introduces_date(tool_input):
+            print(json.dumps({
+                "hookSpecificOutput": {
+                    "hookEventName": "PreToolUse",
+                    "additionalContext": PROVENANCE_REMINDER,
+                }
+            }))
+            return 0
 
     # Skill-craft was invoked in the current turn. Allow, with an
     # informational spec-origin reminder for anneal-INSTANCE plugin renders
