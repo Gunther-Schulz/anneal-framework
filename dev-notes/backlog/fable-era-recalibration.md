@@ -115,3 +115,24 @@ the binary behavior-preserving/fresh classification — the framework
 spec section clippy's phase file instantiates is still where this
 binds. Also note: the run's compressed cycle was operator-authorized
 ad-hoc; the framework change is what makes it protocol-legal.
+
+## Update 2026-07-27 (2) — two-session routing forensics (items 2+3, boundary datapoint)
+
+Transcript analysis of the two prior fable sessions on beat-the-books
+(b7b9: 50 dispatches, 32 sonnet/18 opus; 7051: 3 dispatches, config-
+driven): the DISPATCH direction was already disciplined wherever
+routing was deliberate or config-prescribed — opus held the judgment/
+falsification tier near-perfectly (29/30 judgment dispatches across
+both sessions). The failure lives entirely at the INTAKE moment of
+ad-hoc errands: inline discovery streaks of 43 (b7b9) and 18 (7051)
+calls, with the largest statable-complete errands (22-round prod SQL
+sweep; 15-round post-deploy verification checklist) run inline. New
+boundary fact for item 2: the uncovered zone is the NON-PROTOCOL TAIL
+(deploy verification, prod probes, doc work after the protocol arc
+ends) — inside a protocol the config class decides, the tail has no
+harness; the recurring deploy-verification sweep is script-or-dispatch
+shaped (same N queries every deploy) and recurs across sessions, so a
+`discovery:` model class alone does not close it. Evidence: session
+scratchpad analyses routing-analysis-b7b9.md +
+session-7051-routing-analysis.md (2× sonnet transcript forensics,
+2026-07-27).
