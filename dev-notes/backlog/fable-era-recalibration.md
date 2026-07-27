@@ -73,6 +73,31 @@ validation-watch entry. Evidence base: the two beat-the-books trackers
 (`.clippy/runs/2026-07-26-*.md`) + seven falsification artifacts.
 Fresh session, anneal-dev vehicle, together with the clippy todo item.
 
+## Update 2026-07-27 — discovery-dispatch evidence for items 2 + 3 (line-matching run)
+
+Item 3 now has live evidence in BOTH directions, so its question
+sharpens from "does core.md need a distinguishing sentence" to "the
+distinction is three-way": (a) blindness-motivated dispatch —
+tier-independent, keep (2026-07-26 evidence above); (b)
+capability-motivated dispatch — obsolete when orchestrator ≥ checker,
+replaced by inline re-grounding; (c) NEW: quota-motivated dispatch —
+discovery sub-questions statable complete before the answer is known,
+routed to a cheaper tier at citation parity (line-matching run cycle 1:
+sonnet surface map, 4/4 load-bearing citations re-grounded clean),
+while open-judgment reads stay inline (the run's load-bearing find —
+quarter-line signature distortion — was unbriefable, surfaced only by
+reading). Bearing on item 2: the operator's top tier draws a CAPPED
+pool (sub limit), so routing currency is orchestrator-tokens-spent,
+not token totals — this decides floor-vs-per-class in favor of
+per-class routing and adds a third class candidate (`discovery`)
+beside impl/verify at the bindings level. Instance capture:
+coding-clippy/todo fable-era findings, Finding 4 (revised 2026-07-27
+to the two-directional form). The operator-corpus rendering of the
+same rule (CLAUDE.md model-routing cost gloss + dispatch-discipline
+discovery-brief exception) landed 2026-07-27 (dotfiles 66fcea0) —
+item 2's bindings semantics should stay coherent with that form when
+it executes.
+
 ## Update 2026-07-27 — live delta-semantics evidence for item 4
 
 The game-matching run's fix cycle (clippy todo, "Evidence addendum"

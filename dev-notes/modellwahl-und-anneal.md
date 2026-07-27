@@ -56,7 +56,19 @@ Merksatz: **A heilt das bessere Modell, B heilt nur Mechanik.**
    getrackten Vorgriff, pbs-office/anneal-dev.config/lenses.md).
 5. **Dispatch-Heuristik:** Gerüst kompensiert Aufmerksamkeit, Prüfer-Tier
    kompensiert Urteil. Opus + anneal für gut gebriefte Umsetzung; Fable für
-   offene Design-Entscheidungen und als Prüfer.
+   offene Design-Entscheidungen und als Prüfer. **Ergänzung 2026-07-27
+   (Quota-Achse):** Fable zieht aus einem GEDECKELTEN Pool (Sub-Limit) —
+   Routing-Währung ist Fable-Tokens-verbraucht, nie Token-Summen über
+   Tiers. Discovery-Fragen (vollständig formulierbar, bevor die Antwort
+   bekannt ist: Fakten-Karten, Konsumenten-Enumeration, Prod-Proben) →
+   günstigeres Tier mit Facts-only-Brief (N benannte Fakten in der
+   Schlussnachricht, Pointer gelten ungeprüft, keine Report-Dateien);
+   Zitat-Parität belegt (Line-Matching-Lauf 2026-07-27). Inline bleibt,
+   was offenes Urteil ist oder dessen Umgebung die Folge-Zyklen
+   wiederverwenden — der tragende Fund des Laufs (Quarter-Line-
+   Verzerrung) war nicht briefbar, nur lesbar. Kanonische Form:
+   dotfiles CLAUDE.md Model routing (66fcea0); Instanz-Seite:
+   coding-clippy/todo Fable-era Finding 4 (revidiert 2026-07-27).
 6. **Modell-Provenienz:** der `Co-Authored-By`-Trailer jedes Commits trägt
    das Modell — bei Zweifel, wer was produziert hat, ist er die erste
    Prüfquelle (so wurde der Vorfall überhaupt rekonstruierbar).
