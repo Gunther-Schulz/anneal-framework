@@ -206,13 +206,15 @@ Soft-load-pointers, Additive-reflex, Amendment) are active at
 drafting.
 
 System-side enforcement: the PreToolUse hook
-`hooks/skill-craft-pre-edit.py` scans the transcript since the
-last operator-prompt boundary (a user-role event with isMeta
-unset and text content) for a Skill skill-craft invocation;
-blocks the Edit if absent. Per-turn enforcement aligns the gate
-with operator-request boundaries — a new operator message starts
-a new turn requiring fresh invocation. Invocations in prior
-turns do NOT discharge the current turn's gate. Mid-turn cycle
+`skill-craft-pre-edit.py` — machine-scope: it lives in the
+operator's dotfiles (`claude/hooks/`), wired from
+`~/.claude/settings.json`, not in this repo — scans the
+transcript since the last operator-prompt boundary (a user-role
+event with isMeta unset and text content) for a Skill skill-craft
+invocation; blocks the Edit if absent. Per-turn enforcement
+aligns the gate with operator-request boundaries — a new operator
+message starts a new turn requiring fresh invocation. Invocations
+in prior turns do NOT discharge the current turn's gate. Mid-turn
 boundaries (multiple scopes of change within one operator
 response) are an AI-discipline goal; once invoked in a turn,
 subsequent Edits in the same turn pass the gate mechanically.

@@ -125,17 +125,24 @@ binding and lens set.
   empirical-validation procedure (the Q-set for analyzing a real
   run against the spec; rendered into each instance's
   `references/post-run-review.md`).
-- [`hooks/`](./hooks/) — hooks that enforce the development
-  process. The `commit-msg` git hook validates the Step-4
-  discharge artifact for rule-corpus commits (rejects commits
-  missing required check labels or carrying fold-into
-  rationalizations). The `skill-craft-pre-edit.py` PreToolUse hook
-  (configured in user settings) fires on Edit/Write/NotebookEdit
-  to skill-craft, framework spec, or instance skill files —
-  scans the current turn's transcript (since the last operator
-  message) and BLOCKS the Edit if no Skill tool_use invoking
-  skill-craft is found in that window; allows once invoked.
-  Plugin renders additionally receive a spec-origin reminder.
+- [`hooks/`](./hooks/) — repo-scoped hooks that enforce the
+  development process. The `commit-msg` git hook validates the
+  Step-4 discharge artifact for rule-corpus commits (rejects
+  commits missing required check labels or carrying fold-into
+  rationalizations). `anneal-dev-run-gate.py` gates edits to
+  method-kernel source files behind an active anneal-dev run.
+
+  Machine-scope companion, deliberately NOT in this directory:
+  the `skill-craft-pre-edit.py` PreToolUse hook lives with the
+  operator's machine policy (dotfiles `claude/hooks/`, wired from
+  `~/.claude/settings.json`), because it gates rule-corpus files
+  in every repo carrying a spec or a plugin render, not just this
+  one. It fires on Edit/Write/NotebookEdit to skill-craft,
+  framework spec, or instance skill files — scans the current
+  turn's transcript (since the last operator message) and BLOCKS
+  the Edit if no Skill tool_use invoking skill-craft is found in
+  that window; allows once invoked. Plugin renders additionally
+  receive a spec-origin reminder.
 
 ## License
 
