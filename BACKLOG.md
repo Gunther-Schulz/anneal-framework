@@ -50,3 +50,14 @@ development process (soundness verdict included), never a ride-along.
   re-rendered; one live corpus-evolution run at the new shape with
   per-dispatch usage recorded and compared against the 2026-07-30
   baseline numbers above.
+  EVIDENCE POINTERS (for the re-check): the 3.1M cost record lives in
+  claude-code-cache-fix `.anneal-dev/runs/widen-definition-parentage.md`
+  (its closing "Cost record" section; per-dispatch usage extractable
+  from that session's subagent transcripts under
+  `~/.claude/projects/<cwd-hash>/<session>/subagents/`). The 79k
+  exemplar: skill-craft commit f2a97a5 (findings + dispositions in its
+  message), the pattern itself in skill-craft
+  `references/self-review.md`. The truncated-run caveat's detail: the
+  same tracker's "Operator override" and "Retroactive isolated verify"
+  sections. Framework-side run history for the re-check:
+  `.anneal-dev/runs/` in any repo anneal-dev has run in.
