@@ -25,15 +25,20 @@ development process (soundness verdict included), never a ride-along.
   derivation before seeing the design is the parentage breaker inline
   categorically cannot replicate — sized narrow;
   (d) tracker, requirements record, basis rule, loopbacks untouched.
-  Net target: 4-5 spawns (one at ~3.1M tokens) → 2 narrow spawns
-  (~100-150k each).
-  GROUNDING (measured 2026-07-30, one day, same reviewer tier both
-  sides): anneal isolated verify = 3.12M tokens processed, unique
-  catch one cosmetic line-wrap (which then became a free standing
-  mechanism — diff-scoped wrap check); skill-craft L4 self-review =
-  79k tokens, three substantive findings, two in the cross-file
-  class inline authoring is documentedly blind to. ~40x cost, inverse
-  yield; the variable is check design, not model tier.
+  Net target: 4-5 spawns (one at ≈1.1M processed) → 2 narrow spawns
+  (each L4-sized: ≈500k processed / ≈220k cost-weighted).
+  GROUNDING (measured 2026-07-30, dedup-CORRECTED same day —
+  transcript usage entries are per-stream snapshots, several per API
+  call; dedupe by call id, one instrument both sides): anneal
+  isolated verify = 12 calls, ≈1.10M processed (108.8k creation /
+  962k reads / 28.0k out), unique catch one cosmetic line-wrap
+  (which then became a free standing mechanism — diff-scoped wrap
+  check); skill-craft L4 self-review = 8 calls, ≈502k processed
+  (78.9k creation / 400k reads / 16.7k out), three substantive
+  findings, two in the cross-file class inline authoring is
+  documentedly blind to. ≈2.2x raw / ≈1.7x cost-weighted — the
+  YIELD asymmetry carries the argument, not an order-of-magnitude
+  cost gap; the variable is check design, not model tier.
   NAMED CONSTRAINTS: (1) the distillation-boundary's founding
   evidence ("a falsification round killed a decision the prior round
   had confirmed") predates the current top tier — cheapen the
