@@ -720,9 +720,14 @@ kernel-independent review at verify:
    exists to skip checks that are *observably* inapplicable, not
    to compress effort on checks that are arguably-applicable.
 
-   **Vet tier regiment (render-fidelity and skill-craft-review
-   dispatches).** Default tier: opus (`anneal-dev.config/
-   model-tier.md` carries the pin). Every such dispatch brief
+   **Vet tier regiment — SCOPE: render-fidelity and
+   skill-craft-review dispatches run OUTSIDE an anneal-dev run (the
+   Fable-direct and hand-run release paths). Inside an anneal-dev
+   run, the blanket model-tier binding (`anneal-dev/spec/bindings.md`
+   Dispatch model tier: every dispatch at the configured tier, no
+   per-dispatch judgment) governs unchanged; this regiment does not
+   reach it.** Default tier for the regiment's scope: opus, on the
+   2026-08-05 paired-vet evidence. Every such dispatch brief
    carries one mandatory line: *"Execute any instrument the change
    ships (commands, scripts, globs) against real data and paste the
    output — a text-level pass over an instrument is not a review of

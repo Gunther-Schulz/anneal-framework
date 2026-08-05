@@ -725,7 +725,8 @@ convergence cycle is observed clean — for the intent-falsification
 pass, **clean means its findings are dispositioned, not the pass
 silent**: every mechanically-confirmable finding resolved (the
 affected entry re-[VERIFIED] across a cycle, bounded by the
-zero-D-delta convergence) and every pure-judgment finding terminal
+convergence requirement — zero above-floor deltas, §4.1.5) and
+every pure-judgment finding terminal
 at [VERIFIED — surfaced]. A perpetually-skeptical pass converges:
 its surfaced concerns terminate and accumulate in the record;
 only an open mechanically-confirmable finding holds the phase, so
@@ -733,7 +734,7 @@ the cycle cannot loop forever on judgment surfacing. **The
 convergence cycle's outputs (investigation pass artifact +
 intent-falsification pass artifact + mechanical falsification pass
 artifact, or its recorded skip + zero-above-floor-D-delta status —
-sub-floor deltas converted to pins per §4.1.5 — ) form part of
+sub-floor deltas converted to pins per §4.1.5) form part of
 the [READY] artifact** alongside §4.1.2's fresh-session result
 line.
 
