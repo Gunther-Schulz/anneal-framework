@@ -122,3 +122,12 @@ frames the latter as an "importable acceptance gate sharper than
 re-checkability" — i.e. adoptable, not held. Their live form is already
 carried by INV-5 (exclusion via a named, runnable falsifier); the
 standalone candidate gates remain backlog material, not register entries.
+
+## Verdict log
+
+- 2026-08-05, commit `dce568a` (kernel lines: core.md §5.1(c)
+  deferred-artifact binding, glossary.md watch-vocabulary pointer):
+  operator soundness verdict **SOUND** — given over the focusing
+  ledger (subagent a94a7e2: INV-1/2/5 violates→fixed, INV-4 holds,
+  INV-3 untouched) and its applied fixes; operator wording "ok
+  soudns good" in the releasing session, same day.
