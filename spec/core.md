@@ -732,7 +732,8 @@ only an open mechanically-confirmable finding holds the phase, so
 the cycle cannot loop forever on judgment surfacing. **The
 convergence cycle's outputs (investigation pass artifact +
 intent-falsification pass artifact + mechanical falsification pass
-artifact, or its recorded skip + zero-D-delta status) form part of
+artifact, or its recorded skip + zero-above-floor-D-delta status —
+sub-floor deltas converted to pins per §4.1.5 — ) form part of
 the [READY] artifact** alongside §4.1.2's fresh-session result
 line.
 

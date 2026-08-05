@@ -56,7 +56,8 @@ out-of-order sections make the artifact malformed:
    [READY] (the convergence cycle's investigation-pass artifact
    citation + intent-falsification-pass artifact citation +
    mechanical falsification-pass artifact citation, or its recorded
-   skip, + zero-D-delta confirmation per `core.md` §4.1.4),
+   skip, + zero-above-floor-D-delta confirmation — sub-floor deltas
+   converted to pins per `core.md` §4.1.5),
    named blockers preventing [READY] (open [PENDING] decisions
    and weak-basis ledger entries) — [AUTO-ACCEPTED] residuals
    **stratified by load-bearingness** (the instance's operational
