@@ -536,3 +536,109 @@ cycle with fixed firing semantics, exposed read-only context, and
 permitted effect scope. Named member of a closed set specified in
 `instantiation-guide.md` §5. The set is closed — instances do not
 invent points.
+
+## Convergence economics and dispatch artifacts
+
+**Absolute-stakes list** — the per-run list of failure-scenario
+classes that always count above the severity floor, frozen in the
+tracker at the first convergence cycle; class vocabulary is
+instance-bound. Specified in `core.md` §4.1.5.
+
+**Severity floor** — the convergence rule that a finding or D-track
+delta whose failure scenario reaches no absolute-stakes class
+converts to a named pin rather than re-opening the loop; governs
+looping, never leg-skipping. Specified in `core.md` §4.1.5.
+
+**Pin / pin register** — a pin is a sub-floor finding converted to a
+brief-carried obligation `{pin-ID, origin finding, target dispatch
+unit, verification obligation}`; the pin register is the named
+tracker section holding them. Specified in `modules.md` §3.1,
+`core.md` §4.1.5.
+
+**Loop-health line** — the per-convergence-cycle computed tracker
+line: falls-per-entry over the run plus any entry at ≥2 falls.
+Specified in `core.md` §4.1.6.
+
+**Stop indicators** — the computable pair (two consecutive cycles
+with absolute-stakes classes clean; every above-floor finding in an
+executable-verification-catchable class) that forces a stop/hand-off
+disposition. Specified in `core.md` §4.1.6.
+
+**Continuation audit** — the fresh-context dispatch (past four
+paired falsification rounds) answering the loop's continuation
+question from the tracker and the frozen stakes list only.
+Specified in `core.md` §4.1.6.
+
+**Retro line** — the per-falsification-absorbing-cycle appended line
+answering the scope and protocol prompts; presence-triggered.
+Specified in `core.md` §4.1.6.
+
+**Operator-slot delegation** — auto-battle's assignment of
+between-rounds judgment (scope vetoes, floor dispositions,
+stop/hand-off calls, protocol-rigidity overrides) to the
+orchestrator, every deviation recorded with its basis; the evidence
+discipline is never delegated. Specified in `modules.md` §1.2.
+
+**Reduce / compose projection** — the two tracker projection forms
+for dispatch briefs: reduce (latest line per entry, for
+falsification dispatches) and compose (latest line plus every
+still-standing inherited clause from the amendment chain, each
+citing its source line — for implement and verify dispatches).
+Specified in `modules.md` §3.3.
+
+**Served-attack register** — the accumulated executed results of
+falsification attacks already independently reproduced, carried in
+falsification briefs so later rounds do not re-mount them; results
+only, never dispatcher reasoning. Specified in `modules.md` §3.3.
+
+**Dispatch pack** — an instance-rendered load file for falsification
+dispatches carrying the artifact formats and grounding essentials in
+place of the full skill files. Specified in `modules.md` §3.3.
+
+**Basis-lint** — the mechanical pre-check before each falsification
+dispatch that re-executes every [VERIFIED] entry's re-runnable basis
+and repairs pure bookkeeping drift as sub-annotations. Specified in
+`core.md` §4.1.4.
+
+**Citation-disposition map** — the verify-dispatch input resolving
+each design citation at the design's base state vs the current work
+(SAME / MOVED / CONTENT-CHANGED with commissioning decision /
+unresolved); verify re-opens citations through it. Specified in
+`core.md` §4.3.
+
+**Expected-return horizon** — the per-dispatch stated return time
+whose breach is a finding triggering staged recovery (peek → resume
+narrowed → re-dispatch). Specified in `core.md` §6.
+
+**External evidence** — the named weaker evidence class for
+artifacts outside the problem space: admissible only
+snapshot-persisted, class-labeled, re-derived against the snapshot;
+outranked by local re-runnable evidence; upgradeable to a local
+executable check. Specified in `core.md` §3.2.5.
+
+**Bounded fix-cycle** — the default return path on verify [ISSUES
+FOUND]: mint only the fix-decisions, falsification delta-scoped to
+their citation closure, with mechanical widening and a
+closure-fraction abort into the full loopback. Specified in
+`core.md` §4.3.
+
+**Citation closure** — a decision's set of dependent decisions
+computed by searching current [VERIFIED] bases for the decision's
+old identifiers (the amendment-cascade check). Specified in
+`core.md` §5.2.
+
+**Detection probe** — the re-runnable recipe (command, mutation,
+query) a finding records at finding time; closure is proven by
+re-running it against the fixed work. Specified in `modules.md`
+§3.1, `core.md` §4.3.
+
+**Decision-scoped re-verify** — the middle re-verify tier:
+untouched attestations carry forward with an explicit
+untouched-basis line, amended/new decisions fully attested,
+closure proven by detection probes, executable battery never
+shrunk. Specified in `core.md` §4.3.
+
+**Instrument-and-park** — the sequencing rule shipping a watcher
+plus fail-closed counted filter ahead of expensive grounding for
+an unmeasured population; evidence-of-demand before
+proof-of-semantics. Specified in `core.md` §4.1.7.

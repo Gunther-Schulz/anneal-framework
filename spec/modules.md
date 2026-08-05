@@ -8,10 +8,16 @@ used as defined there.
 
 ## 1. Modes
 
-A run is driven in one of two modes. A run is interactive by
-default; it is in auto-battle only when auto-battle is explicitly
-requested at invocation. The orchestrator detects the mode at run
-start (`core.md` §6).
+A run is driven in one of two modes. **Auto-battle is the default**
+when the orchestrator's session model is within the instance's
+delegation trust grade (§1.2 operator-slot delegation; the grade is
+an instance/operator binding). A run is interactive when the
+operator requests it at invocation, or when the session model is
+below the trust grade. The operator's free-form interjection
+remains available mid-run in either mode — an idle auto-battle run
+stays interruptible without state loss (the tracker carries the
+state). The orchestrator detects the mode at run start (`core.md`
+§6) and records it in the tracker header.
 
 ### 1.1 interactive
 
@@ -52,7 +58,14 @@ out-of-order sections make the artifact malformed:
    mechanical falsification-pass artifact citation, or its recorded
    skip, + zero-D-delta confirmation per `core.md` §4.1.4),
    named blockers preventing [READY] (open [PENDING] decisions
-   and weak-basis ledger entries), **impl plan preview at
+   and weak-basis ledger entries) — [AUTO-ACCEPTED] residuals
+   **stratified by load-bearingness** (the instance's operational
+   test: does another decision, a contract surface, or the [READY]
+   declaration rest on it?): load-bearing-and-unfed decisions
+   listed FIRST and flagged, safe gap-fills (a timeout default, a
+   naming choice) below — the flat list hides the dangerous
+   quadrant (high-stakes AND assumption-resting) among the safe
+   ones, **impl plan preview at
    [READY]** — header line with unit count + run-level
    sequential-vs-parallel summary + the disjointness basis
    citation; followed by one line per dispatch unit naming
@@ -123,6 +136,38 @@ the operator's post-run review. Other halt conditions — phases that
 genuinely cannot complete on causes other than [ISSUES FOUND] —
 remain a separate effort, not yet undertaken.
 
+**Operator-slot delegation (between-rounds judgment).** In
+auto-battle the orchestrator EXERCISES the judgment the operator
+would apply between rounds, rather than carrying every question
+through the adversarial loop or waiting to be asked:
+
+- **Scope vetoes** — an addition that grows the design
+  mid-convergence is judged for withdrawal or booking at ADD-time,
+  not carried until falsified.
+- **Floor dispositions** — severity-floor classifications and
+  sub-floor→pin conversions (`core.md` §4.1.5), made against the
+  frozen absolute-stakes list.
+- **Stop/hand-off calls** — when the stop indicators (`core.md`
+  §4.1.6) are met, the orchestrator DISPOSES (stops the loop,
+  converts residue to pins, advances the phase) rather than
+  surfacing a recommendation and waiting.
+- **Protocol-rigidity overrides** — where a protocol step's cost
+  visibly exceeds its remaining discrimination value, the
+  orchestrator may deviate deliberately.
+
+Bounds: every deviation and every delegated disposition is
+**recorded in the tracker with its basis** — silent deviation is
+drift; the operator's free-form override against the record remains
+the interface, and the delegation is revocable per run or per
+decision. The **evidence discipline is not delegated**: bases,
+executed predicates, red-first obligations, the append-only ledger
+are unchanged — the delegated item is the judgment slot, never the
+grounding bar. The delegation presumes an orchestrator the operator
+trusts with operator-slot judgment; which session models qualify is
+an instance/operator binding, not spec content. Where the
+orchestrator suspects its own frame, the fresh-context continuation
+audit (`core.md` §4.1.6) is the escalation.
+
 ## 2. The standardized lens set
 
 The standardized lenses are the pre-written inspection criteria the
@@ -160,7 +205,11 @@ tag, a summary, and an evidence-or-basis field — and carries nothing
 else:
 
 - **Finding** — a status tag, a summary of what was found, and its
-  verification evidence.
+  verification evidence. A finding surfaced by an executed check
+  additionally records its **detection probe** as a re-runnable
+  recipe (the command, mutation, or query that surfaced it) — the
+  input that makes decision-scoped re-verify's closure proof
+  (`core.md` §4.3) evidence rather than trust-the-fixer.
 - **Design decision** — a status tag, a summary of the committed
   position, and its basis (`core.md` §3.2).
 
@@ -239,6 +288,16 @@ strengthen the parent's own claim verbatim, or does it constitute
 its own observation? Verbatim-strengthening → sub-annotation;
 new observation → peer-level entry.
 
+**The pin register.** The tracker carries a named **pin register**
+section — the carrier between a sub-floor conversion (`core.md`
+§4.1.5) and the brief that honors it. Each pin is one line:
+`{pin-ID, origin finding, target dispatch unit, verification
+obligation}`. The impl plan's unit entries MUST transcribe their
+pins (§3.3): a unit dispatched without the pins the register
+assigns it is a malformed brief; the unit verifies each pin as
+part of implementation, and verify (`core.md` §4.3) re-checks
+them.
+
 ### 3.2 The standardized-pass findings artifact
 
 Each cycle's standardized inspection pass emits a findings artifact
@@ -287,20 +346,42 @@ locked design.
 
 **Dispatch-brief schema.** Each dispatch carries a brief to its
 subagent that follows a closed-section form: (a) **load
-instructions** — the orchestrator's skill files to read; (b)
-**tracker reference** — at implement dispatch, full tracker or
-the cited reduction (`core.md` §4.2.2); at verify dispatch
-(`core.md` §4.3), convergence-falsification dispatch, and
-intent-falsification dispatch (both `core.md` §4.1.4), the §3.1
-reduced-to-latest projection — the orchestrator produces the
-projection before brief construction; the raw tracker remains
-accessible to the subagent for ledger-history inspection; the
+instructions** — the orchestrator's skill files to read; for
+falsification dispatches an instance MAY render a dedicated
+**dispatch pack** (the artifact formats + grounding essentials,
+rendered from the same spec sections) in place of the full skill
+files — the attack surface stays FULL (every [VERIFIED] entry;
+delta-only surfaces are rejected: attack value has been shown to
+come from old, unchanged entries); (b)
+**tracker reference** — two projection forms, chosen by dispatch
+kind: **reduce** (latest line per entry, §3.1) for
+convergence-falsification and intent-falsification dispatches
+(`core.md` §4.1.4), which attack an entry's basis; **compose**
+(latest line PLUS every still-standing inherited clause from the
+entry's amendment chain, each clause citing the ledger line it
+came from) for implement (`core.md` §4.2.2) and verify (`core.md`
+§4.3) dispatches — a locked entry's latest line is typically an
+amendment ("re-forms X; everything else unchanged"), so
+reduce-to-latest strips the contract surfaces a builder or
+verifier needs and would force it to design. The orchestrator
+produces the projection before brief construction; the raw
+tracker remains accessible to the subagent for ledger-history
+inspection. At implement dispatch the full tracker remains
+permitted per `core.md` §4.2.2. The
 intent-falsification dispatch additionally carries the
-requirements record (`core.md` §4.1, the criteria source);
+requirements record (`core.md` §4.1, the criteria source).
+Every falsification brief additionally carries (i) the run's
+**current cycle number** (attempt numbering drifts without it)
+and (ii) the **served-attack register** — the accumulated
+EXECUTED results of attacks already independently reproduced
+("independently reproduced, do not re-mount"), executed results
+only, never the dispatcher's reasoning (the
+verifier-independence line);
 (c) **unit scope** —
 at implement dispatch, the [VERIFIED] decisions this unit
 implements (by tracker identifier) plus the unit's element
-and contract scopes; at convergence-falsification dispatch,
+and contract scopes plus the pins the pin register (§3.1)
+assigns the unit; at convergence-falsification dispatch,
 the [VERIFIED] D-entry set at the convergence cycle's start
 (by tracker identifier) **plus this cycle's intent-clean
 verdict** — the §3.4.1 intent-falsification artifact for this

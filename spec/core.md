@@ -329,6 +329,29 @@ actual artifact before anything rests on it.
 Only load-bearing claims and premises carry the basis apparatus; a
 claim of bounded, contained cost does not.
 
+#### 3.2.5 External evidence
+
+Evidence from artifacts outside the problem space — another
+project's source, a standard, external documentation — is a
+**named weaker class** than local evidence, admissible as a basis
+only under all three conditions: (a) the cited external content is
+**snapshotted into the run's persisted evidence** at citation time,
+and the citation resolves to the snapshot — a live external source
+mutates and takes the re-checkability with it; (b) the decision
+resting on it carries the class label (`basis: external`), so the
+weaker class is visible wherever the decision is read; (c)
+falsification passes and verify re-derive against the **snapshot**,
+never the live source. Rank: where local re-runnable evidence and
+external evidence bear on the same claim, the local evidence
+governs. Upgrade path: where the external claim can be encoded as a
+local executable check (a test or probe asserting the assumed
+behavior), the external citation is the prototype and the local
+check is the deliverable — the decision then re-grounds on the
+local check and drops the class label. External-exemplar study can
+thereby convert an otherwise-unfed [AUTO-ACCEPTED] decision into a
+grounded one on a greenfield or thinly-specified task, without
+diluting the local-evidence bar where local evidence exists.
+
 ---
 
 ## 4. Phase specs
@@ -519,6 +542,21 @@ by any prior cycle's citation of the same source. A convergence cycle that
 produces no new-surface citations (only re-attestations of
 prior surfaces) is a malformed artifact.
 
+**Basis-lint before the dispatch.** Before each falsification
+dispatch fires, the orchestrator runs a mechanical pre-check over
+every [VERIFIED] entry's recorded basis: re-execute each
+re-runnable query verbatim and compare, resolve each cited
+location and confirm the named observable fact, stat each
+claimed-new path. Pure bookkeeping drift — a citation moved by an
+unrelated edit, a count changed by a sibling decision's own
+commissioned delta — is repaired as basis-refinement
+sub-annotations (`modules.md` §3.1; no [INVALIDATED] cascade for
+bookkeeping), so the falsification tier spends its rounds on
+substance instead of citation hygiene. A mismatch that is NOT
+mere bookkeeping — the observable fact itself no longer holds —
+is a real falsification and takes the normal
+[INVALIDATED]→[PENDING] path.
+
 The **mechanical falsification pass** iterates each [VERIFIED]
 D-entry at the convergence cycle's start. For an entry still
 [CONDITIONAL] or [AUTO-ACCEPTED], only the
@@ -680,7 +718,9 @@ it, never replaces it.
 If the convergence cycle surfaces D-track deltas (new decisions
 or amendments, or falsified [VERIFIED] entries reopened), the
 design is not [READY]: the deltas feed into the next cycle and
-the loop continues. [READY] is presented only after a
+the loop continues — subject to the severity floor (§4.1.5),
+under which a sub-floor delta converts to a named pin instead of
+re-opening the loop. [READY] is presented only after a
 convergence cycle is observed clean — for the intent-falsification
 pass, **clean means its findings are dispositioned, not the pass
 silent**: every mechanically-confirmable finding resolved (the
@@ -699,6 +739,154 @@ line.
 The convergence cycle fires in both modes (interactive and
 auto-battle). In auto-battle no operator override is available;
 the AI cycles until convergence is observed, then proceeds.
+
+**Absorption discipline (on any falsification round's return).**
+Two rules govern how a cycle absorbs a round's findings, and one
+mechanical check closes the append:
+
+- **A falsifier's proposed cure is an input, never a
+  disposition.** Each finding's DEFECT is booked on the
+  falsifier's evidence; each proposed CURE is re-derived by the
+  orchestrator against the governing artifact — the enum, schema,
+  code, or executed probe, never another report: a falsification
+  report is testimony about the artifact, and testimony does not
+  become definition by having survived one round. The tell that
+  the rule was skipped: a cycle append whose cure wording is
+  copy-identical to the report's.
+- **Amending a closed set restates the whole set.** A cycle that
+  adds members to a closed set (an enum, a dispatch table, a
+  column list, a caller enumeration) RESTATES the authoritative
+  complete set at the amendment site — latest-wins then has one
+  carrier, not a scatter of deltas whose definition lives in
+  another cycle's append.
+- **Append-completeness (mechanical, before the cycle closes).**
+  Every finding ID enumerable from the round's falsification
+  artifacts must be matched by a disposition mention in the cycle
+  append's text — an ID-set difference, computed, empty. A
+  non-empty difference surfaces the missing IDs loudly; the
+  orchestrator disposes them before the cycle closes. The same
+  check covers **deferred dispositions**: every
+  `[VERIFIED — deferred to <path>]` written this cycle must
+  resolve to a grep-able entry at that path BEFORE the append
+  commits — a deferral citing an artifact that was never written
+  is the malformed-deferral shape, caught at write time rather
+  than at verify.
+
+#### 4.1.5 Severity-floored convergence (absolute stakes)
+
+The zero-D-delta requirement behaves asymptotically on a large
+design: each round's fixes are themselves auditable surface, and as
+cycles specify the design further, ever-smaller plumbing becomes
+named mechanisms — a floor defined against "invalidates a named
+mechanism" recedes as the run approaches it. The floor is therefore
+defined against **absolute stakes fixed at the run's first
+convergence cycle**, never against design granularity.
+
+- **The frozen absolute-stakes list.** At the first convergence
+  cycle the orchestrator records in the tracker the run's
+  absolute-stakes list: the classes of failure scenario that always
+  count above the floor. The class vocabulary is instance-bound
+  (`instantiation-guide.md` slot); the concrete list is per-run,
+  frozen in the tracker, and immune to later design granularity
+  growth.
+- **The floor test (computable).** A finding or D-track delta is
+  ABOVE the floor iff its recorded failure scenario reaches a
+  frozen absolute-stakes class. Ambiguity resolves UP (loop again).
+- **Completion under the floor.** Convergence MAY complete when two
+  consecutive convergence cycles produce deltas only BELOW the
+  floor. A sub-floor delta does not re-open the loop: it converts
+  to a **named pin** — origin finding, target dispatch unit,
+  verification obligation — recorded in the tracker's pin register
+  (`modules.md` §3.1) and transcribed into the affected unit's
+  brief; the unit verifies it and verify (§4.3) re-checks it.
+- **The floor governs LOOPING, not leg-skipping.** The mechanical
+  falsification pass still runs, once, over the final locked set —
+  its catch classes (`target-existence` on absent artifacts,
+  unexecutable mechanisms) are structurally unreachable by the
+  intent loop, and the floor never skips it.
+
+#### 4.1.6 Loop health and stop indicators
+
+- **Loop-health line (per convergence cycle, presence-triggered).**
+  Every convergence cycle's tracker append carries one computed
+  line: falls-per-entry over the run (D-track [INVALIDATED] events
+  ÷ D-entry families, computable from the tracker), the identity
+  of any entry at ≥2 falls, and this round's two counters —
+  falsification candidates executed, verdict flips — so
+  rounds-to-convergence and kill rate by class are computable from
+  the tracker on every run instead of reconstructed. An absent
+  line is a skipped check, visible in the append.
+- **Repeated same-shape falls are an instrument defect.** An entry
+  falsified ≥2 times on the same coupling shape marks the
+  instrument that defines its class — the pattern, scan, or
+  enumeration its scope rests on — structurally incomplete, not the
+  member set. The next re-form MUST replace the instrument (or
+  convert the class to a standing guard) and MUST NOT merely append
+  the found member. Predicate: entry id + shape, both already
+  recorded in every falsification line.
+- **Stop indicators (computable from the tracker).** When two
+  consecutive convergence cycles show (a) the absolute-stakes
+  classes clean AND (b) every above-floor finding in a class the
+  next phase's executable verification catches by executing, the
+  retro line MUST surface a stop/hand-off disposition — in
+  interactive mode as a recommendation without waiting to be
+  asked; in auto-battle the orchestrator disposes per the
+  operator-slot delegation (`modules.md` §1.2).
+- **Continuation audit (fresh context, past N=4 falsification
+  rounds).** Past four paired falsification rounds, the retro
+  line's continuation question is answered by a small
+  fresh-context dispatch briefed with the tracker and two
+  questions only — classify the last two rounds' findings against
+  the frozen absolute-stakes list; is another falsification round
+  the cheapest verifier for what remains, or has proof-where-cheap
+  moved to the next phase? — never the orchestrator's reasoning.
+  The mid-loop orchestrator holds continuation as its frame and
+  re-reads its own floor classifications as settled ground; the
+  audit removes that self-blindness. Its verdict is a
+  recommendation, disposed per mode.
+- **Retro line (per falsification-absorbing cycle,
+  presence-triggered).** Every cycle that absorbs a falsification
+  round appends one retro line answering two prompts: **scope**
+  (convergence scope vs next-ship scope — where part of the
+  design's value rests on evidence that arrives only after an
+  earlier unit ships, that part routes to a gated end-state and
+  the convergence window narrows to the shipping surface; a
+  shipping element depending on a parked element is above-floor by
+  construction) and **protocol** (did this round's cost/finding
+  profile evidence a protocol defect — including "is the loop
+  still paying?", answered against the stop indicators above). A
+  protocol adjustment cites the round's own observed evidence;
+  "could we do better" without round evidence re-opens settled
+  protocol and is drift. The retro PROPOSES; disposition follows
+  the mode's operator slot.
+
+#### 4.1.7 Evidence economics (investigation ordering)
+
+Three sequencing rules govern where investigation spends its
+grounding budget:
+
+- **Cheapest-evidence ordering.** When a claim rests on an
+  EXTERNAL system's behavior and the internally-owned population
+  is empty or thin, check — before source/contract archaeology and
+  before an unverified label — whether the external system exposes
+  a population the project does not own (public history, an
+  indexer over all users, third-party archives). Order: owned
+  population → foreign population → source-of-truth text →
+  types/docs. "No population" read as "no OWNED population" is the
+  recorded blind spot this closes.
+- **Instrument-and-park.** When a design premise needs EXPENSIVE
+  grounding AND the feature's value rests on an UNMEASURED
+  population, first ask whether an instrument-and-park unit — a
+  watcher counting the phenomenon plus a fail-closed, counted
+  filter of the affected cases — can ship alone, deferring the
+  expensive proof until the watcher shows the population exists.
+  Evidence-of-demand before proof-of-semantics. Guard: the parked
+  feature's filter must be fail-closed and counted — silent
+  narrowing is the failure this must not reintroduce.
+- **Guard-ordering.** A guard enforcing a class is designed only
+  AFTER that class's membership stabilizes (one clean round), or
+  it re-forms once per class re-form — a guard designed against a
+  moving class inherits every one of the class's falls.
 
 ### 4.2 implement
 
@@ -761,11 +949,13 @@ degraded path that waives the isolation guarantee, mirroring
 verify (§4.3). The subagent is briefed
 artifact-driven, mirroring verify (§4.3): it loads the
 orchestrator's skill files and receives the tracker plus the
-locked contracts the unit honors. The default is the full
-tracker; reduction to the unit's in-scope decisions is permitted
-only when the orchestrator cites a concrete cause (e.g., tracker
-size exceeds the subagent's context budget), recorded as the
-basis (§3.2) for the reduction. It implements the in-scope
+locked contracts the unit honors. The default form is the
+**compose projection** (`modules.md` §3.3); the full tracker
+remains permitted. Reduction below the composed form — to the
+unit's in-scope decisions — is permitted only when the
+orchestrator cites a concrete cause (e.g., tracker size exceeds
+the subagent's context budget), recorded as the basis (§3.2) for
+the reduction. It implements the in-scope
 decisions; it does not design — any actioned finding halts it
 (below).
 Parallel-eligible units may be dispatched concurrently; the
@@ -968,6 +1158,26 @@ silently.
 verify checks the completed work against the locked design and the
 standardized lenses.
 
+**Citation-disposition map (verify input).** The locked design's
+citations predate the implementation that realizes them, so a
+verify pass re-opening them positionally meets stale facts that
+are not defects — a check that fires on non-defects trains its
+reader to discount red results. At verify dispatch the
+orchestrator regenerates a **citation-disposition map** over the
+locked design's citations: each resolved at the design's base
+state vs the current work — SAME / MOVED (with the new location)
+/ CONTENT-CHANGED (with the D-entry whose commissioned delta
+explains it) / unresolved. verify re-opens citations THROUGH the
+map, not positionally. The map's second yield binds: a
+CONTENT-CHANGED citation that resolves to NO decision's
+commissioned delta is a finding (a collateral change no decision
+ordered) — the design-side dual of implement's
+change-set-vs-listed-scope check (§4.2.5). The map is regenerated
+at each verify dispatch (it decays whenever the work changes);
+the generating instrument is instance tooling, proven live in
+both directions (a MOVED case and a SAME case) before its output
+is trusted.
+
 verify is conducted in a context **isolated** from the run's working
 context — the context that conducted investigate-design and
 implement. An actor checking its own work carries its own anchoring
@@ -1046,14 +1256,69 @@ short of [VERIFIED] is a malformed artifact.
 [ISSUES FOUND] returns the run to investigate-design (§6 loopback),
 and the orchestrator produces the loopback root-cause triage on
 receipt (§4.2.7), citing the verify finding as its basis.
-The fix runs through the full procedure: investigate-design →
-implement → verify. There is no in-place shortcut at verify-terminal
-— no fix-in-implement bypass and no accept-as-followup at the
-verify boundary in either mode. The re-run is a **delta
-verify** (confirm finding closed + minimal regression) when the
-fix is **behavior-preserving** (instance-defined); otherwise a
-**fresh verify pass** (full re-attest). Classification recorded
-in tracker; un-classified defaults to fresh.
+The fix runs through the procedure — investigate-design →
+implement → verify — with no in-place shortcut at verify-terminal:
+no fix-in-implement bypass and no accept-as-followup at the verify
+boundary in either mode.
+
+**Bounded fix-cycle (default on [ISSUES FOUND]).** The default
+return path is BOUNDED, entered by machinery, never by a severity
+judgment: mint only the fix-decision(s); falsification is
+delta-scoped to them plus every decision whose basis cites them
+(the citation closure, computed by the amendment-cascade check,
+§5.2). **Escalation is mechanical, not judged:** when the fix-work
+amends an existing [VERIFIED] decision, the bounded path WIDENS to
+that decision's citation closure; it ABORTS into the full loopback
+(re-falsification over the whole [VERIFIED] set) only when the
+closure exceeds a stated fraction of the decision set — default
+one third, instance-tunable, frozen per run in the tracker. Cost
+asymmetry closes both ways: truly-minor = one fix-cycle instead of
+a full sweep; looked-minor-but-larger = one aborted fix-cycle,
+then the full path — never a shipped defect, never a prediction.
+
+**Fix-executor routing (decided at findings-received, BEFORE the
+first edit — once fix work starts, sunk context legitimately
+favors inline and the routing question is already lost).**
+Preference order: (a) re-brief the verifier — it already holds the
+findings, the work, and the tracker; doing so ENDS its
+independence, so the re-verify goes to a FRESH context; (b) a
+fresh implement-tier dispatch briefed with the verify report +
+tracker (independence intact); (c) the orchestrator inline — only
+for the trivial tail, named narrowly: single-file, single-hunk, no
+test changes.
+
+**Re-verify scope (decision-scoped middle tier).** The re-run is
+one of three, classified mechanically and recorded in the tracker
+(un-classified defaults to fresh): a **fresh verify pass** (full
+re-attest) when the fix is not behavior-preserving and the bounded
+path aborted; a **delta verify** (confirm finding closed + minimal
+regression) when the fix is behavior-preserving
+(instance-defined); or — the default under the bounded fix-cycle —
+a **decision-scoped re-verify**: untouched decisions'
+attestations carry forward, each with an explicit "fix change-set
+does not touch its substance" basis line; the amended and new
+decisions are fully attested; finding-closure is proven by
+RE-RUNNING each finding's original detection probe against the
+fixed work and requiring it to no longer reproduce — evidence,
+never a re-read of the fixer's change; and the executable battery
+NEVER shrinks. For this to be trustable by construction, **every
+F-entry records its detection probe as a re-runnable recipe**
+(command, mutation, query) at finding time (`modules.md` §3.1) —
+without stored probes the middle tier degrades to
+trust-the-fixer.
+
+**Executable-battery dedup (verify inputs).** The orchestrator MAY
+run the executable verification itself and hand the verifier its
+outputs AS ARTIFACTS — commands + verbatim output + the state
+identifier they ran against; the verifier treats them as evidence
+and RETAINS both the right to spot-re-run anything it distrusts
+AND the right to EXTEND with probes beyond its brief — the
+extension right is part of what independence buys (a verifier's
+self-invented probe has caught what the prescribed ones did not).
+The judgment checks — planned-vs-actual, the lens pass — never
+move to the orchestrator; a verify without an isolated judgment
+pass is not a verify. verify's result records which mode each
+check used.
 
 ---
 
@@ -1175,7 +1440,11 @@ the element of the work product being committed, or a behavior of one;
 (`glossary.md`); for an amendment to an existing element, the change as
 a delta against current state; (c) the
 **acceptance criteria** — observable conditions for the decision to
-count as implemented; (d) the **side effects and failure modes** —
+count as implemented; a criterion naming an artifact the run's own
+scope will edit anchors to CONTENT (a pattern the artifact must
+contain, or the change-set showing the cited lines as unchanged
+context), never to a position (a line range) — a positional anchor
+in a file the same change edits decays into a false alarm; (d) the **side effects and failure modes** —
 what's observable on success and at boundaries; (e) the **basis** per
 §3.2 (for amendment decisions, (e) carries the §3.2.2
 completeness enumeration; (b) carries the shape of the delta).
@@ -1237,6 +1506,19 @@ ones. This holds whether or not the affected decision's work
 product exists yet — the contradiction is between decisions,
 not in the work product.
 
+**Amendment-cascade check (mechanical, at re-lock).** The
+incremental examination above is prose executed by the working
+context — exactly where it has gone inert. Its computable slice:
+on any amendment to a [VERIFIED]/[AUTO-ACCEPTED] decision, search
+the tracker's current [VERIFIED] bases for the re-formed
+decision's OLD identifiers (the names, locations, and counts the
+amendment changed) and surface every hit BEFORE the next
+falsification dispatch fires. Hits are repaired (basis
+strengthened or the dependent reopened) rather than left for the
+next round to trip over — the single most expensive recurring
+reopen class. The same search computes the **citation closure**
+the bounded fix-cycle scopes to (§4.3).
+
 ### 5.3 Relationship to [READY]
 
 The status tags gate [READY] (§4.1.1): an [INVALIDATED] finding, a
@@ -1293,6 +1575,20 @@ phase it is in — persists across interruptions in an instance-bound
 location, not assumed to share a container with the work product; a
 run interrupted mid-flight resumes from that state rather than
 restarting.
+
+**Dispatch horizons and staged recovery.** Every dispatch — impl
+unit, falsification, verify — states an **expected-return
+horizon** at dispatch time, recorded where its passing is
+checkable. Silence past the horizon is a FINDING (inspect the
+dispatch), never more waiting. Recovery is staged: (1) peek at
+the dispatch's state; (2) RESUME the agent with a narrowed
+close-out instruction ("finish with the evidence you have; an
+executed attack line is complete") — a resume re-enters the
+agent's accumulated context, which a fresh dispatch re-pays; (3)
+only after a failed resume, kill and re-dispatch. A report
+written but never delivered presents as the same silence and the
+same demand cures it. A horizon breach and its recovery are
+recorded like any other finding, not silently re-waited.
 
 **Halt and surface.** When the orchestrator cannot advance — a phase
 cannot complete — it halts the run and surfaces the reason; it does
