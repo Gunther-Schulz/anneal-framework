@@ -746,6 +746,36 @@ kernel-independent review at verify:
    and caught a shipped instrument red on real data while opus
    stayed text-level and said so — the gap is brief-recoverable,
    which is why the line is mandatory rather than the tier raised.
+   **Two-stage decomposition** (validated 2026-08-05, dispatch-guards
+   skill-ify vet, `dispatch-guards` `4acc95e`): where the vet
+   decomposes into exhaustive mechanical ENUMERATION plus judgment
+   over the enumeration — clause-survival/render diffs, dependents
+   audits, completeness claims, sanitization scrubs — the
+   enumeration half routes to opus and the GRADING stays at
+   tier ≥ producer, done by the dispatcher inline over the
+   enumeration with the source in hand. Renderer-blindness is a
+   failure to NOTICE; an externally produced, unfiltered enumeration
+   moves the noticing out of the renderer, leaving only judging.
+   Brief rules that made it hold, each earned: no materiality
+   judgment in the enumeration ("report every difference; do not
+   filter" — filtering is where a cheaper tier silently
+   under-reports); a fixed difference taxonomy (ABSENT / REWORDED /
+   WEAKENED / RELOCATED / ADDITION / TAIL-DIFF); exactly-defined
+   exclusions for known-noise classes, listed separately rather
+   than dropped; a demanded coverage artifact (source range walked
+   + per-class counts, zeros explicit — an enumeration "clean"
+   without it is weak evidence); byte-exactness demanded where
+   byte-exactness is the requirement; a frozen source copy as the
+   immutable reference with declared deliberate deltas listed as
+   claims-to-verify; both-side quotes per item so grading needs no
+   re-search. Outcome evidence for the split: the opus sweep caught
+   renderer-blind misses, and ~two-thirds of its 46 items graded
+   non-material at producer tier — materiality was the tier-heavy
+   half and never left it. NOT for vets where the noticing itself
+   needs judgment — design-fit review, statistical grading,
+   falsification rounds stay fresh-context at tier ≥ producer.
+   Under-bar enumeration → redo one tier up; never iterate at the
+   failing tier.
    Escalate to the top tier for method-kernel edits (whose
    outside-kernel review the kernel rule already requires) and for
    first-of-class renders (a new render profile, a new instance). A
