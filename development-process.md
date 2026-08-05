@@ -720,6 +720,25 @@ kernel-independent review at verify:
    exists to skip checks that are *observably* inapplicable, not
    to compress effort on checks that are arguably-applicable.
 
+   **Vet tier regiment (render-fidelity and skill-craft-review
+   dispatches).** Default tier: opus (`anneal-dev.config/
+   model-tier.md` carries the pin). Every such dispatch brief
+   carries one mandatory line: *"Execute any instrument the change
+   ships (commands, scripts, globs) against real data and paste the
+   output — a text-level pass over an instrument is not a review of
+   it."* Instrument execution is not initiative-optional: in the
+   2026-08-05 paired-vet comparison the top tier executed unprompted
+   and caught a shipped instrument red on real data while opus
+   stayed text-level and said so — the gap is brief-recoverable,
+   which is why the line is mandatory rather than the tier raised.
+   Escalate to the top tier for method-kernel edits (whose
+   outside-kernel review the kernel rule already requires) and for
+   first-of-class renders (a new render profile, a new instance). A
+   tier divergence on the same artifact re-opens this routing
+   (verdict record: coding-clippy
+   `dev-notes/fable-direct-render-test-2026-08-05.md`, opus-vet
+   grading).
+
    **Doubt-voicing about whether a check applies is itself evidence
    the check applies — dispatch it.** Rationalizations the AI
    constructs for not dispatching ("this is a small change," "prior
