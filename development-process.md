@@ -455,6 +455,16 @@ second judge intervene. Narrating "subagent PASS with one nit
 (handled)" loses the operator's check on whether the nit was
 correctly disposed.
 
+**Dispositions close against the findings ARTIFACT, never a
+summary of it.** When a reviewer's findings arrive as a summary
+message plus a findings file, the first-judge dispositions are
+derived from the FILE, and the table closes only when the
+disposition ID set equals the artifact's row set — a computed set
+difference, empty — with any count a summary states reconciled
+against the enumerated rows. A summary is a label over its body;
+a count that does not reconcile is the drift announcing itself
+before booking.
+
 **Plain-English summary after the table.** A one-paragraph
 summary follows the table — one sentence per finding mapping
 severity + disposition to language that uses no skill-craft
