@@ -152,9 +152,13 @@ through the adversarial loop or waiting to be asked:
   §4.1.6) are met, the orchestrator DISPOSES (stops the loop,
   converts residue to pins, advances the phase) rather than
   surfacing a recommendation and waiting.
-- **Protocol-rigidity overrides** — where a protocol step's cost
-  visibly exceeds its remaining discrimination value, the
-  orchestrator may deviate deliberately.
+- **Protocol-rigidity overrides** — where a protocol step's
+  remaining discrimination value is exceeded by its cost as
+  EVIDENCED by the run's own computed record — the override's
+  recorded basis cites at least one of: the loop-health line, the
+  stop indicators, the served-attack register, or a measured
+  per-dispatch cost — the orchestrator may deviate deliberately.
+  An override whose basis cites none of these is malformed.
 
 Bounds: every deviation and every delegated disposition is
 **recorded in the tracker with its basis** — silent deviation is

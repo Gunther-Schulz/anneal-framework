@@ -556,8 +556,9 @@ tracker section holding them. Specified in `modules.md` §3.1,
 `core.md` §4.1.5.
 
 **Loop-health line** — the per-convergence-cycle computed tracker
-line: falls-per-entry over the run plus any entry at ≥2 falls.
-Specified in `core.md` §4.1.6.
+line: falls-per-entry over the run, any entry at ≥2 falls, and the
+round's two counters (falsification candidates executed, verdict
+flips). Specified in `core.md` §4.1.6.
 
 **Stop indicators** — the computable pair (two consecutive cycles
 with absolute-stakes classes clean; every above-floor finding in an
@@ -642,3 +643,33 @@ shrunk. Specified in `core.md` §4.3.
 plus fail-closed counted filter ahead of expensive grounding for
 an unmeasured population; evidence-of-demand before
 proof-of-semantics. Specified in `core.md` §4.1.7.
+
+**Cheapest-evidence ordering** — the grounding-budget order for
+claims about an external system's behavior: owned population →
+foreign population → source-of-truth text → types/docs. Specified
+in `core.md` §4.1.7.
+
+**Guard-ordering** — a class-enforcing guard is designed only after
+the class's membership stabilizes (one clean round), or re-forms
+once per class re-form. Specified in `core.md` §4.1.7.
+
+**Append-completeness check** — the mechanical ID-set diff run
+before a cycle append commits: every finding ID from the round's
+falsification artifacts has a disposition mention, and every
+deferred-to-path disposition resolves to an existing entry.
+Specified in `core.md` §4.1.4.
+
+**Closed-set restatement** — a cycle amending a closed set restates
+the authoritative complete set at the amendment site. Specified in
+`core.md` §4.1.4.
+
+**Fix-executor routing** — the preference order for who executes a
+bounded fix-cycle's work, decided at findings-received: re-briefed
+verifier (independence ends; fresh re-verify) → fresh impl-tier
+dispatch → orchestrator inline for the trivial tail only.
+Specified in `core.md` §4.3.
+
+**Executable-battery dedup** — the orchestrator may hand the
+verifier the executable verification's outputs as artifacts; the
+verifier keeps spot-re-run and extension rights, and the judgment
+checks never move. Specified in `core.md` §4.3.
