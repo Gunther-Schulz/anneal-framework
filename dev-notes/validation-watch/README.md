@@ -1,3 +1,9 @@
+> **ARCHIVED REGISTER (2026-08-05, operator backlog-clear GO).** All
+> V-entries live in `archive/`. The post-ship watch role is now a parked
+> root-`BACKLOG.md` entry with its closing rule; re-mint from fresh
+> evidence only — never move an archived file back. The text below is
+> the role's historical definition.
+
 # Anneal Framework — Validation Watch
 
 Companion to the Anneal-framework spec; not part of it. The spec

@@ -1,7 +1,7 @@
 # Pre-registered task pack — silent-failure regime (Step 1)
 
 **Frozen by rubric, NOT by performance.** Each task below is argued in-regime
-from the 5-point rubric in `dev-notes/backlog/measurement-harness-mve.md`, and
+from the 5-point rubric in `dev-notes/backlog/archive/measurement-harness-mve.md`, and
 the pack is committed *before* any scored arm run. We do **not** filter tasks by
 running an arm and keeping its misses — that is the experiment doc's
 selection-bias threat. A rubric-conformant task that an arm happens to catch is a
@@ -45,7 +45,7 @@ defect, (b) held-out oracle < 1.0 on the defect, (c) reference correct fix
   total, from `metrics.json` — refine, not ruminate.
 
 Predictions + refutation conditions live in
-`dev-notes/backlog/anneal-empirical-validation-experiment.md` and are pre-registered
+`dev-notes/backlog/archive/anneal-empirical-validation-experiment.md` and are pre-registered
 by reference (not restated here, to keep one source of truth).
 
 ## The pack (10 tasks)

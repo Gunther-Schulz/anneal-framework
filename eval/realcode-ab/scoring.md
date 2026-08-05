@@ -28,7 +28,7 @@ only settles `legs[0]`. Both real; not used in the headline tally.
 
 ## Result tables
 The ×5 finding-rate tables (non-blind act-first/vanilla/adhoc; blind act-first/vanilla) live in
-`../../dev-notes/backlog/anneal-empirical-validation-experiment.md` (Addendum 1 + Addendum 2) — single
+`../../dev-notes/backlog/archive/anneal-empirical-validation-experiment.md` (Addendum 1 + Addendum 2) — single
 source of truth, not duplicated here to avoid drift. Headline: non-blind looked like a dose-response
 (2.6/3.4/4.4); **blind collapsed it to a tie (2.2 vs 2.4)** → the prompt-disciplines effect was a framing
 artifact; the framework-as-process remains untested.

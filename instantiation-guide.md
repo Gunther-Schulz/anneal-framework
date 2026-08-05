@@ -454,10 +454,11 @@ With the spec settled — bindings, lens set, run-artifact persistence,
 optionally presentation and lifecycle extensions — the **pre-channel
 design step is done**: §§1–5 are derivation, the design work this guide
 owns. **From here the instance enters the channel** — built and evolved
-as **corpus-evolution work** through the **anneal-dev** instance, which
-carries the method (render, verify in a separate context, validate,
-change). `development-process.md` is the canonical home of that routing
-(one channel, three entry-conditions) and the release machinery. The
+as **corpus-evolution work** per `development-process.md`'s release
+loop (direct path default; the anneal-dev instance carries the
+explicitly-routed adversarial run). That file is the canonical home
+of the routing (one channel, three entry-conditions) and the release
+machinery. The
 first build is that process run once over the whole instance; every
 later change runs it over the affected parts. This guide does not
 restate it.
@@ -486,9 +487,9 @@ originates.
 A change to how <Instance> behaves goes to the framework spec or
 the instance spec first: committed there, then re-rendered into
 these files and verified in a separate context. Changing instance
-behavior is corpus-evolution work — run it through the **anneal-dev**
-instance (in the `anneal-framework` repo, `development-process.md`
-routes corpus work to anneal-dev and carries the release machinery).
+behavior is corpus-evolution work — run it per the `anneal-framework`
+repo's `development-process.md` release loop (direct path default;
+the anneal-dev instance on explicit routing).
 Hand-editing a skill file as if it were source breaks
 re-derivability: the spec and the instance drift, and the change
 cannot be reproduced for another instance.

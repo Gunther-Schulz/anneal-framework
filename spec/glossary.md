@@ -443,10 +443,12 @@ parallel-eligibility marker. Produced at implement-phase start;
 persisted alongside the tracker. Specified in `core.md` §4.2.1 and
 `modules.md` §3.3.
 
-*Validation-watch / dev-process vocabulary (Production signal,
-Watch-entry lifecycle states, Load-bearing instance, edit cycle)
-lives at its source, not here — see `dev-notes/validation-watch/`
-README and `development-process.md`.*
+*Watch-entry / dev-process vocabulary (production signal,
+watch-kind, closing rule, edit cycle) lives at its source, not
+here — `development-process.md` ("Watch-entry vocabulary" + the
+edit-cycle definition); the archived
+`dev-notes/validation-watch/` README holds the historical
+lifecycle-state vocabulary.*
 
 **Recall pool** — the working context's accumulated set of
 already-recorded findings and design decisions when answering a

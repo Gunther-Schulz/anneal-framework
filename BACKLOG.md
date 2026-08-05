@@ -6,63 +6,53 @@ or are dropped with a one-line reason. Consumer: the session that
 picks the item up — method-kernel items additionally run the full
 development process (soundness verdict included), never a ride-along.
 
-- READY — **anneal-dev machinery cost redesign: buy fresh context
-  retail, not wholesale.** Principle: mechanical verifiers gain no
-  verdict value from a fresh context; freshness pays only at
-  self-blindness surfaces. Design sketch (cut-list):
-  (a) mechanical falsification pass → orchestrator-run, no dispatch —
-  the protocol already distrusts subagent judgment there (closed
-  predicates, orchestrator-computed verdicts); candidate derivation
-  from a basis's declared coupling shapes is mechanical;
-  (b) isolated verify → narrow L4-shaped review: fresh context ONLY
-  for the judgment residue (design-completeness audit, requirements
-  coverage incl. the verbatim-request leg, cold-read restatement of
-  the produced text); every mechanical check (gates, greps, render
-  batteries) runs orchestrator-side with outputs pasted into the
-  tracker; anything precipitable leaves the protocol into standing
-  tools;
-  (c) intent-falsification KEEPS its fresh dispatch — criteria-first
-  derivation before seeing the design is the parentage breaker inline
-  categorically cannot replicate — sized narrow;
-  (d) tracker, requirements record, basis rule, loopbacks untouched.
-  Net target: 4-5 spawns (one at ≈1.1M processed) → 2 narrow spawns
-  (each L4-sized: ≈500k processed / ≈220k cost-weighted).
-  GROUNDING (measured 2026-07-30, dedup-CORRECTED same day —
-  transcript usage entries are per-stream snapshots, several per API
-  call; dedupe by call id, one instrument both sides): anneal
-  isolated verify = 12 calls, ≈1.10M processed (108.8k creation /
-  962k reads / 28.0k out), unique catch one cosmetic line-wrap
-  (which then became a free standing mechanism — diff-scoped wrap
-  check); skill-craft L4 self-review = 8 calls, ≈502k processed
-  (78.9k creation / 400k reads / 16.7k out), three substantive
-  findings, two in the cross-file class inline authoring is
-  documentedly blind to. ≈2.2x raw / ≈1.7x cost-weighted — the
-  YIELD asymmetry carries the argument, not an order-of-magnitude
-  cost gap; the variable is check design, not model tier.
-  NAMED CONSTRAINTS: (1) the distillation-boundary's founding
-  evidence ("a falsification round killed a decision the prior round
-  had confirmed") predates the current top tier — cheapen the
-  falsification machinery, never delete the concept; the fire-rate
-  lens decides retirement, not this redesign. (2) This is a
-  method-kernel edit (spec + renders): full development process,
-  operator soundness verdict included. (3) Evidence caveat: the
-  grounding runs were operator-truncated (the 3.1M verify was
-  retroactive on an already-shipped edit; the falsification
-  dispatches were vetoed) — n is small; the redesign session
-  re-checks against the framework's own recorded run history before
-  cutting.
-  DONE-CRITERION: revised spec through the dev process; anneal-dev
-  re-rendered; one live corpus-evolution run at the new shape with
-  per-dispatch usage recorded and compared against the 2026-07-30
-  baseline numbers above.
-  EVIDENCE POINTERS (for the re-check): the 3.1M cost record lives in
-  claude-code-cache-fix `.anneal-dev/runs/widen-definition-parentage.md`
-  (its closing "Cost record" section; per-dispatch usage extractable
-  from that session's subagent transcripts under
-  `~/.claude/projects/<cwd-hash>/<session>/subagents/`). The 79k
-  exemplar: skill-craft commit f2a97a5 (findings + dispositions in its
-  message), the pattern itself in skill-craft
-  `references/self-review.md`. The truncated-run caveat's detail: the
-  same tracker's "Operator override" and "Retroactive isolated verify"
-  sections. Framework-side run history for the re-check:
-  `.anneal-dev/runs/` in any repo anneal-dev has run in.
+- PARKED — **framework two-layer legitimacy (spec→render for a
+  single-consumer instance).** Operator devil's-advocate question
+  2026-08-05: does the spec/render split still earn its carrying
+  cost in the direct-path era, or does the plugin become the source
+  of truth with the spec as design record? Named evidence that
+  settles it, all three required: (1) the control-arm study's
+  graded outcome (registered in coding-clippy
+  `dev-notes/fable-direct-render-test-2026-08-05.md` — if clippy's
+  jurisdiction shrinks, the spec's scope re-derives); (2) the
+  propagation count from git history (how many framework→instance
+  propagations actually happened; daneel untouched since
+  2026-07-29 is the first datapoint); (3) the 2026-08-05 vet
+  tables split into multi-home-CAUSED vs multi-home-CAUGHT
+  defects; daneel's wholesale render lag (last commit 2026-07-29,
+  pre-v-next — its post-run-review render retains the archived
+  V-register wording) is datapoint (2)'s live instance and awaits
+  this verdict before any re-render. Trigger: control-arm study
+  graded. One-session evidence
+  pass; method-kernel consequences run the full process. Watch
+  form: production signal = the control-arm grading lands;
+  closing rule = the three-source evidence pass executed →
+  keep-split or collapse decision recorded here by commit ref.
+
+- PARKED — **INV register lacks an entry for §3.1 (the
+  evidence-bearing-artifact rule).** Focusing-artifact gap, found
+  2026-08-05: the rule the kernel loads hardest is gradeable only
+  by reference-pull through INV-1/§3.2; a ledger from the five
+  registered entries cannot aim the operator at a §3.1-class risk
+  on its own. Trigger: the next method-kernel edit that touches
+  §3.1's load (mint INV-6 with its external anchor then, with the
+  operator's soundness pass on the anchor choice).
+
+Cleared 2026-08-05 (operator backlog-clear GO): the READY
+"anneal-dev machinery cost redesign" item DROPPED — its goal
+(cheapen anneal-dev's dispatch machinery) is superseded by the
+direct-path release loop (development-process.md, same day), which
+retires that machinery as the default rather than cheapening it.
+Honest disposition against its named constraints: constraint (1)
+(falsification machinery cheapened, never deleted) is SUPERSEDED by
+operator decision under an architecture change — the pruning basis
+skill-craft's durability doctrine requires — not "honored": the
+fresh intent-falsification dispatch survives only in the
+explicit-routing path, and the direct path's consolidated vet is a
+verify-battery mechanism, a different act. Constraint (3) (re-check
+against recorded run history before cutting) was not separately
+re-run; the 2026-08-05 direct-path evidence (render half proven,
+acceptance pending) stands in, by the same operator decision. The
+dev-notes/backlog corpus (67 items) and validation-watch register
+(30 entries) were archived wholesale the same day; re-mints come
+from fresh incident evidence only, never from the archive.

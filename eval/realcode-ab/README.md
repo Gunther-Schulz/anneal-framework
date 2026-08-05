@@ -15,7 +15,7 @@ Repo: `~/dev/Gunther-Schulz/beat-the-books` (not part of this repo).
   PENDING process-varied design. Wording is load-bearing — copy exactly, don't paraphrase.
 - `scoring.md` — the 5-bug oracle + per-shape catchability + pointer to the result tables.
 
-**Status / what's run:** see `../../dev-notes/backlog/anneal-empirical-validation-experiment.md`
+**Status / what's run:** see `../../dev-notes/backlog/archive/anneal-empirical-validation-experiment.md`
 (VERDICT + Addendum 1 + Addendum 2) — the live writeup, results tables, and honest net state.
 Short version: prompt-level anneal ≈ act-first once blind; the **framework-as-process is untested**;
 the one open decision is the process-varied test in `arms.md` (run it prompt-constant, process-varied,

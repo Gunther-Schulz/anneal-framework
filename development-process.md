@@ -12,21 +12,28 @@ work governed here.
 
 The generic anneal method this process once restated clause-by-clause now
 lives in **anneal-dev** — the framework instantiated for corpus-evolution
-(co-located at `anneal-dev/` in this repo). anneal-dev is the **single
-channel** for all rule-corpus building and evolution — phases, basis rule,
-lens set, render-verify, the verify battery. Three **entry-conditions**
-feed it; they are starting states, not separate systems:
+(co-located at `anneal-dev/` in this repo). **Routing default
+(2026-08-05): the DIRECT PATH.** Rule-corpus building and evolution
+run the release loop below directly — a session within the delegation
+trust grade edits spec-first inline; the loop's step-4 vet and the
+mechanical floor (spec-origin traces, discharge hook, skill-craft
+edit gate) carry the guarantees. The anneal-dev RUN machinery is the
+explicit-routing exception: it runs when the orchestrator is below
+the delegation grade, or when the operator routes a change through a
+full adversarial run (the fresh intent-falsification dispatch lives
+only there). Three **entry-conditions**
+feed the loop; they are starting states, not separate systems:
 
 1. **New instantiation** — derive the instance spec first (the pre-channel
-   design step, `instantiation-guide.md`), then build through anneal-dev
+   design step, `instantiation-guide.md`), then build through the loop
    like any corpus work.
 2. **Dev-on-anneal** — a change to the framework spec, skill-craft, or this
-   dev-process machinery. **Corpus-evolution work** (anneal-dev is rendered
-   from none of these) runs through anneal-dev. A **method-kernel edit** —
+   dev-process machinery: the direct path, per the default above. A
+   **method-kernel edit** —
    the edited file is anneal-dev's render/foundation source
    (`anneal-framework/spec/*`, `foundation.md`, or `anneal-dev/spec/*`;
-   anything else is corpus-evolution) — runs through anneal-dev too, adding
-   one rule: anneal-dev **never** certifies a kernel edit alone (a checker
+   anything else is corpus-evolution) — adds
+   one rule IN EITHER PATH: the working context **never** certifies a kernel edit alone (a checker
    built from the kernel shares its blind spots), so verify **must** add a
    review grounded **outside** the kernel — the skill-craft self-review
    (form/discipline regressions) **and** the operator (the
@@ -43,13 +50,14 @@ feed it; they are starting states, not separate systems:
    the operator's). anneal-dev's own lens/coherence pass does not
    substitute. Drive freely; never self-certify the foundation.
 3. **Re-render an existing instance** — propagating a settled spec change
-   into its rendered plugin. Not a separate path: the **render-tail** every
-   spec-changing run already carries (the verify battery's render-fidelity
-   check + the `render-and-open-diff` extension).
+   into its rendered plugin. Not a separate path: the step-4
+   render-fidelity vet is the render-tail (in an explicitly-routed
+   anneal-dev run, its verify battery's render-fidelity check).
 
-**Enforcement — a structural floor, not a hard channel-gate.** Routing
-through anneal-dev is the rigor-preferred channel; the load-bearing
-guarantees are enforced independently of it, so a stray hand-edit cannot
+**Enforcement — a structural floor, not a hard channel-gate.** The
+explicitly-routed adversarial run is the rigor-maximal channel, the
+direct path the default; the load-bearing
+guarantees are enforced independently of either, so a stray hand-edit cannot
 ship un-checked — the **pre-edit skill-craft gate** (practice 5) blocks any
 rule-corpus Edit lacking a same-turn skill-craft invocation, and the
 **commit-msg discharge hook** (release loop step 4) blocks any rule-corpus
@@ -64,7 +72,8 @@ honestly produced mid-implement, verify is downstream — and gates only the
 operator-approved release commit (step 5).
 
 This document is the home of the shared framework-dev machinery —
-validation-watch governance, the skill-craft pre-edit gate, the
+watch-entry governance (parked root-`BACKLOG.md` entries), the
+skill-craft pre-edit gate, the
 coherence-audit cadence, the framework-gap receipt, and the
 release/marketplace loop; the other
 routing docs (`instantiation-guide.md` §6, `spec/README.md`, `README.md`,
@@ -104,8 +113,12 @@ A deviation found by running the instance is triaged. A *render gap*
 — the instance file does not faithfully carry the spec → fix the
 render. A *spec gap* — the render is faithful, the AI followed it,
 and it still broke → a finding for the framework or the instance
-spec. A *conformant success* — followed and worked → a positive
-signal, logged to `dev-notes/validation-watch/`. The subtle case is a
+spec. (Under the direct path, corpus-evolution work produces no
+falsification-pass records — the framework-gap receipt reads
+instance RUN records; the corpus-evolution missed-side rides the
+consolidated vet.) A *conformant success* — followed and worked → a
+positive signal, logged as a parked root-`BACKLOG.md` watch entry
+when watch-worthy. The subtle case is a
 faithful render the AI did *not* follow: do not call it a render gap
 by reflex. First test the rule for underspecification — if it was
 loose enough to admit the violating reading, it fails the framework's
@@ -137,8 +150,9 @@ drops clauses, and the renderer cannot see its own flattening — it
 reads its output as faithful. So a render is verified by a **separate
 context**, never the one that produced it, by clause-level diff against
 the source. The rendering-fidelity rule is skill-craft's (`Rendering
-from a source`); for corpus-evolution work, anneal-dev's
-render-fidelity battery (`verify`) is what runs it.
+from a source`); the release loop's step-4 render-fidelity dispatch
+runs it (in an explicitly-routed anneal-dev run, its verify
+battery).
 
 ### 3. Subagents for context-heavy work
 
@@ -296,25 +310,28 @@ three structural-enforcement forms (practice 8), discharged with
 cited per-form failure reasons — accept the residual (recorded as
 observation, not as resolution).
 
-**Validation-watch is not a deferral journal.** `dev-notes/validation-
-watch.md` records observations about framework design choices
-made under *genuine uncertainty* — choices the framework
-couldn't classify cleanly at decision time. Writing a V-N entry
-whose Production-Signal section reads "if recurrent X, then
+**Watch-entry vocabulary.** A post-ship watch entry carries its
+**production signal** (the observable that would prompt revisiting
+the decision), its **watch-kind** (correctness-watch — a specific
+rule's residual — or quality-watch — a class-level trade-off), and
+its **closing rule** (the confirm/refute predicate that ends the
+watch; default cadence: one load-bearing instance confirms or
+refutes).
+
+**A watch entry is not a deferral journal.** A post-ship watch
+(a parked root-`BACKLOG.md` entry with its closing rule; the
+archived `dev-notes/validation-watch/` register was this role's
+former home) records genuine uncertainty about a design choice —
+one the framework couldn't classify cleanly at decision time.
+Writing a watch whose closing rule reads "if recurrent X, then
 change Y" — where Y is a classifiable fix (mechanical criteria /
 structural enforcement / safety net) earning its place at n=1 —
 is cost-gating dressed as epistemic humility. The fix earns its
-place now; the V-N entry, if written, records the observation
-that produced the fix, not the deferral of the fix. Distinguish:
-genuine uncertainty about a design choice's correctness =
-validation-watch material; classifiable fix whose form is
-already in hand = practice-8 n=1 commit material.
-
-**Entry hygiene.** Validation-watch entries are scoped to their
-own titled question. An observation that doesn't bear on that
-question is either its own V-N entry (if it's genuine uncertainty
-about a separate design choice) or doesn't belong in
-validation-watch at all (if it's classifiable per the three forms,
+place now; the watch, if written, records the observation that
+produced the fix, not the deferral of the fix. A watch entry is
+scoped to its own titled question; an observation that doesn't
+bear on it is its own watch (if genuine uncertainty) or doesn't
+belong in a watch at all (if it's classifiable per the three forms,
 or operator-side tracking, or a gap in some other doc). A
 footnote-style observation tagging along inside an unrelated V-N
 is a **stowaway** — same root failure as the deferral journal
@@ -672,11 +689,16 @@ n=1.
 
 ## The release loop
 
-A change runs the same loop — for corpus-evolution work, steps 1–4 are
-anneal-dev's run (investigate-design → implement → verify, whose
-battery is step 4's discharge) and steps 5–7 are the release it hands
-off to; a method-kernel edit also runs through anneal-dev, adding a
-kernel-independent review at verify:
+A change runs the same loop, on the direct-path default (routing +
+carve-outs: "One channel", above; render half proven 2026-08-05 —
+the Fable-direct render test, verdict in coding-clippy
+`dev-notes/fable-direct-render-test-2026-08-05.md` — its
+live-acceptance half is registered there and pending). Related
+changes batch so step 4 runs ONE consolidated vet per RELEASE
+COMMIT — the batch IS the release commit's diff (checkpoint commits
+stay hook-skipped; a batch never spans release commits, so every
+discharge cites a vet that examined its own diff) — never a vet per
+item:
 
 1. **Diagnose the level** — skill-craft, framework, or instance
    (practice 1).
@@ -897,25 +919,17 @@ kernel-independent review at verify:
    hook-skipped resume points. A run whose final diff contains no
    rule-corpus file (packaging / housekeeping only) produces no
    rule-corpus commit and correctly needs no discharge.
-6. **Release the instance** — version-bump the plugin, commit and
-   push to remote, then for each affected instance **pull the
-   marketplace clone and run `claude plugin update`**:
-   ```
-   cd ~/.claude/plugins/marketplaces/<instance>/ && git pull --ff-only
-   claude plugin update <plugin>@<marketplace>
-   ```
-   Repeat for every affected instance (clippy / daneel /
-   campaign-craft / ...). **Operator runs `/reload-plugins` to
-   activate the new version** — `claude plugin update` bumps the
-   installed pin; `/reload-plugins` re-reads the pin so subsequent
-   skill invocations resolve to the new installPath (see skill-
-   craft `references/plugin-engineering.md` "Activation" for the
-   two-pin model and the in-flight-skill caveat). Without these
-   steps the release is committed and pushed but not active in
-   the running session. The AI completes pull + `claude plugin
-   update` as part of the release and surfaces the reload-required
-   state to the operator — `/reload-plugins` is the only operator
-   handoff for the version bump itself; session restart is needed
-   only when hook errors from a prior load persist.
+6. **Release the instance** — run skill-craft's `/release-plugin`
+   per affected instance (clippy / daneel / campaign-craft / ...):
+   it gates the version bump, commits+pushes, updates marketplace +
+   pin, verifies the pin moved, and hands the operator the single
+   `/reload-plugins` activation step (two-pin model + in-flight
+   caveat: skill-craft `references/plugin-engineering.md`
+   "Activation"; the stale-pin gate catches a skipped reload at the
+   next Skill call). A release is not active in running sessions
+   until that reload; a session restart is needed only when hook
+   errors from a prior load persist — those survive
+   `/reload-plugins`. (Deliberate cross-level dependency: the
+   release step assumes the skill-craft plugin is installed.)
 7. **Persist outcomes** — real-run findings and deferred ideas in the
    instance's status log; process changes back into this document.

@@ -110,17 +110,16 @@ binding and lens set.
   recognises; copy as the seed for a new instance repo and fill /
   delete per the instantiation guide.
 - [`development-process.md`](./development-process.md) — how this
-  repo and its instances evolve. Routes corpus-evolution work to the
-  **anneal-dev** instance (which carries the method) and is the home
-  of the framework-dev machinery: the development practices,
-  validation-watch governance, the coherence-audit cadence, the
-  framework-gap receipt, and the release loop with its discharge
-  artifact.
+  repo and its instances evolve. Carries the release loop (direct
+  path default, 2026-08-05; the **anneal-dev** instance is the
+  explicitly-routed adversarial channel) and the framework-dev
+  machinery: the development practices, the coherence-audit cadence,
+  the framework-gap receipt, and the discharge artifact.
 - [`anneal-dev/`](./anneal-dev/) — the **corpus-evolution instance**,
-  co-located here (its domain *is* this corpus; it renders from `spec/`
-  and is the single channel `development-process.md` routes building +
-  evolution through). `anneal-dev/spec/` is its domain binding;
-  `anneal-dev/plugin/` is the rendered tool.
+  co-located here (its domain *is* this corpus; it renders from
+  `spec/`; `development-process.md` routes explicitly-commissioned
+  adversarial runs through it). `anneal-dev/spec/` is its domain
+  binding; `anneal-dev/plugin/` is the rendered tool.
 - [`post-run-review.md`](./post-run-review.md) — the framework's
   empirical-validation procedure (the Q-set for analyzing a real
   run against the spec; rendered into each instance's

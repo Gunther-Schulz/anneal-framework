@@ -42,7 +42,7 @@ findings list.
   NOT act-first → CONFOUND. For any clean run, **either omit effort framing from all, or apply it to
   all identically.** The blind runs omitted it from both (correct).
 
-## What's been run (✓) vs not (✗) — see `../../dev-notes/backlog/anneal-empirical-validation-experiment.md`
+## What's been run (✓) vs not (✗) — see `../../dev-notes/backlog/archive/anneal-empirical-validation-experiment.md`
 - NON-BLIND ×5 each: act-first ✓, vanilla ✓, adhoc ✓  (the "ladder" — confounded by effort + non-blind)
 - BLIND ×5 each: act-first ✓, vanilla ✓  (gap collapsed to a tie)
 - BLIND adhoc ✗ (the provenance directive untested blind — re-test before trusting the 2/5→5/5 result)
@@ -76,7 +76,7 @@ one-shot reviews came up null, which likely indicts the regime/instrument (one-s
 not the framework. See experiment-doc Addendum 3.
 
 ## Distributed-lens arm (crowding mitigation — gated; operator idea 2026-06-07)
-Variant for the crowding test (`../../dev-notes/backlog/lens-crowding-vs-broad-search.md`): instead of
+Variant for the crowding test (`../../dev-notes/backlog/archive/lens-crowding-vs-broad-search.md`): instead of
 stacking the focused directives into one agent (current adhoc), **distribute across agents** — a
 **broad-main agent with NO lenses** (preserves the omission sweep) + **one fresh-context lens-agent per
 focus** (e.g. a provenance-agent), **findings merged**. Tests whether distribution recovers the broad

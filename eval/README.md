@@ -10,9 +10,9 @@ verification, i.e. silent-failure tasks?
 (`python eval/wellformedness.py`). The frozen pack + its rubric argument live in
 `PACK.md`. Still to build: the arms (`arm_A_clippy` / `arm_B_actfirst`) + the k=3
 dispatch (Phase 2, operator-gated). The decision and rationale live in
-`dev-notes/backlog/measurement-harness-mve.md`. The designs it implements:
-`dev-notes/backlog/anneal-reliability-measurement.md` (metrics) and
-`dev-notes/backlog/anneal-empirical-validation-experiment.md` (A/B/C protocol).
+`dev-notes/backlog/archive/measurement-harness-mve.md`. The designs it implements:
+`dev-notes/backlog/archive/anneal-reliability-measurement.md` (metrics) and
+`dev-notes/backlog/archive/anneal-empirical-validation-experiment.md` (A/B/C protocol).
 
 ## Approach: borrow the runner, keep our design
 We do **not** build a runner. Anthropic's `skill-creator`

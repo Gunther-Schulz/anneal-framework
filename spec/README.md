@@ -61,9 +61,11 @@ and the release machinery).
   itself is instance-supplied), artifact and tracker formats.
 - `README.md` — this file.
 
-`../dev-notes/validation-watch/` is a maintainer-side companion:
-records fixed decisions made under uncertainty and the production
-signal to watch. Not part of the spec.
+Post-ship watches (fixed decisions made under uncertainty + the
+production signal to revisit) live as parked entries in the root
+`BACKLOG.md`, each with its closing rule. (The former
+`../dev-notes/validation-watch/` register is archived, 2026-08-05.)
+Not part of the spec.
 
 `../instantiation-guide.md` is a separate companion: how to derive a
 new Anneal-based plugin for a domain.
@@ -94,9 +96,9 @@ The spec states fixed decisions. It does not hedge, mark items "to be
 decided," or carry tradeoffs.
 
 A decision made best-effort under genuine uncertainty is still stated
-as fixed. The uncertainty is recorded separately in
-`../dev-notes/validation-watch/` — the decision, why it was
-uncertain, and the production signal that would prompt revisiting it. The spec is
+as fixed. The uncertainty is recorded separately as a parked
+root-`BACKLOG.md` entry — the decision, why it was uncertain, and
+the production signal that would prompt revisiting it. The spec is
 best-effort on current information and revised through production
 learning, but that provisional nature is understood, never written
 into the spec.

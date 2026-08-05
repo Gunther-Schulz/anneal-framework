@@ -2,7 +2,7 @@
 """Pre-freeze well-formedness gate for the silent-failure task pack.
 
 For every task in the frozen pack, verify the rubric's 3-way check
-(`dev-notes/backlog/measurement-harness-mve.md`):
+(`dev-notes/backlog/archive/measurement-harness-mve.md`):
 
   (a) the advertised WEAK check passes on the seeded-defect starter
       (`tasks/<slug>/solution.py` — the file shipped to the agent);

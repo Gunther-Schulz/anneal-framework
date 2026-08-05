@@ -1379,8 +1379,13 @@ A finding — an observation recorded by inspection — moves through:
      on the absent artifact. The artifact's existence is the
      un-fakeable evidence: faking the disposition requires authoring
      the artifact, which is doing the work. The artifact kind is
-     instance-defined (for corpus-evolution: a validation-watch
-     V-entry).
+     instance-defined (for corpus-evolution: a parked watch entry
+     in the corpus repo's root `BACKLOG.md`, carrying its closing
+     rule — cited as a located read of the ENTRY, its title line +
+     closing rule, §3.2 form (b), never the bare file path: the
+     file pre-exists, so only the entry's presence is the
+     un-fakeable evidence and an absent entry leaves the basis
+     malformed).
    - **surfaced** — a judgment-class concern raised by the
      intent-falsification pass (§4.1.4) with no runnable
      mechanical check and no observable re-fire trigger. Its

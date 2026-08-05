@@ -1,6 +1,9 @@
 # Post-run review
 
-Companion to `dev-notes/validation-watch/`; not part of the spec. The
+Companion to the corpus's post-ship watch entries (parked
+root-`BACKLOG.md` lines with closing rules; the former
+`dev-notes/validation-watch/` register is archived, 2026-08-05); not
+part of the spec. The
 framework's empirical-validation procedure: when a session has run
 the instance on a real task, review the run against the spec. The
 review's deviations are triaged (`development-process.md` practice
@@ -160,39 +163,23 @@ is the framework's primary catcher; its discipline failing means
 the catcher itself is failing. Mechanical checks; adherence vs
 spec triage applies.
 
-### Q7. Validation-watch cross-check
+### Q7. Watch-entry cross-check
 
-> For each V-N entry file in `dev-notes/validation-watch/` (the
-> active set; `archive/` holds RESOLVED entries, re-walked only on a
-> recurrence), read the entry's Status line and respond per state:
->
-> - **WATCHING**: walk the production signal against this run's
->   tracker. Classify as **confirms** (cite the evidence),
->   **refutes** (cite the evidence), or **no relevant evidence in
->   this run**.
-> - **FIX-SHIPPED**: walk the entry against its closing rule
->   (`dev-notes/validation-watch/README.md` Entry lifecycle), per its
->   watch kind. Classify as **opportunity-handled** (`caught` for a
->   correctness-watch / `produced-clean` for a quality-watch — cite the
->   counter-factual: would the *old* protocol/form have failed?),
->   **opportunity not exercised** (no case arose this run where the
->   failure could have occurred — no evidence, stays open), or **fix
->   evaded** (a case arose and the fix did not hold — INVALIDATED
->   trigger).
-> - **RESOLVED**: skip — already validated; only re-walk if a
->   later recurrence surfaces in Q1-Q4 findings.
-> - **INVALIDATED**: skip — already known to need new analysis.
+> For each parked watch entry in the corpus repo's root
+> `BACKLOG.md` (a parked entry carrying a closing rule), walk its
+> closing rule against this run's tracker. Classify as **confirms**
+> (cite the evidence), **refutes** (cite the evidence), or **no
+> relevant evidence in this run**.
 
 Q7 actively closes the watch loop. The "outcomes land" routing
 below picks up signals passively — it captures only Q1-Q4
-findings that happen to bear on a V-N. Q7 forces the per-entry
+findings that happen to bear on a watch. Q7 forces the per-entry
 walk so signals accumulate systematically rather than waiting
 for fortuitous correlations. "No relevant evidence" across many
-WATCHING entries is itself useful signal — a watch entry nobody
-exercises warrants its own scrutiny. An **opportunity-handled**
-finding on a FIX-SHIPPED entry is the evidence needed to promote it
-to RESOLVED. The operator decides which V-Ns to transition from the
-walk's findings.
+watches is itself useful signal — a watch nobody exercises
+warrants its own scrutiny. The operator decides which watches to
+close from the walk's findings (an entry leaves the backlog by
+commit ref, per the file's own convention).
 
 ### Q2. Value attribution
 
@@ -222,13 +209,13 @@ hit-rate (Q2).
 
 - **A render / spec / adherence gap** — per
   `development-process.md` practice 1; the triage routes each.
-- **A signal informing a `validation-watch/` entry** — append to
-  or amend the relevant V-N (the watchlist). Before filing a **new**
-  entry for a seemingly-new issue, scan
-  `dev-notes/validation-watch/archive/` for a matching — or **adjacent**
-  (same root, different manifestation) — RESOLVED entry; a match is a
-  recurrence/regression: `git mv` it back to the active folder and set
-  INVALIDATED, not a new `V-`. Only a clean scan gets a new entry.
+- **A signal informing a watch entry** — amend the relevant parked
+  `BACKLOG.md` entry. For a seemingly-new issue, scan the archived
+  register (`dev-notes/validation-watch/archive/`) for a matching or
+  **adjacent** (same root, different manifestation) entry; a match is
+  a recurrence — re-mint it as a NEW parked entry citing the archived
+  file as history, never by moving the archived file back (re-mint
+  rule, `dev-notes/backlog/README.md`).
 - **An instance-level F-finding** — if the instance has an
   F-finding record (e.g. coding-clippy's `spec/STATUS.md`),
   record there.

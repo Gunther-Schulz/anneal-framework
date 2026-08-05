@@ -309,7 +309,7 @@ its own foundation).
 
 > **RESOLVED 2026-06-02** at the framework core (the "observable from outside"
 > discriminator was abstracted to a coupling-based test); live status +
-> resolution in `dev-notes/backlog/anneal-dev-framework-flowback.md` R1. Kept
+> resolution in `dev-notes/backlog/archive/anneal-dev-framework-flowback.md` R1. Kept
 > below as the derivation's original finding.
 
 **Strains against:** `core.md` §5.2 Body shape (b)+(c) + the
@@ -411,7 +411,7 @@ R3 is about one check being human.)
 > extension" (this section's framing, and the C2 framing above, were both misled
 > by the glossary presenting dependents=search / behavior=runtime as a clean
 > split). Fix: a glossary bridge sentence (`glossary.md` Coupling shape).
-> Live status in `dev-notes/backlog/anneal-dev-framework-flowback.md` R4. Kept
+> Live status in `dev-notes/backlog/archive/anneal-dev-framework-flowback.md` R4. Kept
 > below as the derivation's original (over-stated) finding.
 
 **Strains against:** `glossary.md` Coupling shape — the runtime-

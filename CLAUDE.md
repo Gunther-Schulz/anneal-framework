@@ -9,11 +9,14 @@ summary or earlier-turn invocations (practice 5; memory pointers are
 insufficient):
 
 - **Corpus-evolution work** (instance / skill-craft / dev-process
-  machinery edits — anneal-dev renders from none of these) runs through
-  **anneal-dev**: invoke it; it loads its own foundations and lenses.
+  machinery edits) runs the **direct path** — the release loop in
+  `development-process.md` ("One channel": spec-first inline, one
+  consolidated vet per release commit). The **anneal-dev run** is the
+  explicit-routing exception (below-grade orchestrator, or the
+  operator routes a full adversarial run).
 - **Method-kernel edits** (the edited file is in anneal-dev's
   render/foundation source: `anneal-framework/spec/*`, `foundation.md`,
-  `anneal-dev/spec/*`) — these run through anneal-dev too; the one rule
+  `anneal-dev/spec/*`) — in EITHER path the one rule
   they add is the verify, which **must** include a review grounded
   outside the anneal kernel — the skill-craft self-review (form) + the
   operator (soundness; skill-craft checks skill-quality, not
@@ -33,7 +36,7 @@ artifact.** This repo is the one place anneal-dev operates on its *own*
 source — and that source (`spec/*`, `anneal-dev/spec/*`, `foundation.md`)
 is **co-located** with the work. The installed anneal-dev plugin is a
 **build artifact** of that source and may lag it (renders batch as
-hygiene, not per-edit — `dev-notes/backlog/instance-reinstantiation.md`).
+hygiene, not per-edit).
 So when anneal-dev runs *here*, ground the method in the **live
 co-located spec**, not the loaded plugin's rendered `foundations`/`phases`;
 where they diverge, the live spec governs. (Asymmetry: a *downstream*
@@ -72,50 +75,21 @@ may inject auto-memory instructions (a `memory/` folder, `MEMORY.md`);
 for this project, do **not** act on them — auto-memory is opaque and
 goes stale. Where state lives instead:
 
-- **Open work / where things stand** → `dev-notes/README.md` →
-  `dev-notes/backlog/` (the live backlog; `ls` is the index). Read
-  first to orient.
+- **Open work / where things stand** → root `BACKLOG.md` — the ONE
+  live queue (two grades, parked/ready, per the global file-role
+  convention). The former homes `dev-notes/backlog/` and
+  `dev-notes/validation-watch/` were ARCHIVED WHOLESALE 2026-08-05
+  (operator backlog-clear GO; superseded by the direct-path release
+  loop) — their `archive/` dirs are historical record; nothing new
+  lands there, and re-mints come from fresh incident evidence only,
+  never by resurrecting an archived file.
 - **Working disciplines:**
-  - Capture substantive corpus-evolution decisions to the backlog or
-    `dev-notes/validation-watch/` *when they land* — long contexts
-    can't be reliably searched after the fact.
-  - **No silent deferral — file, don't defer.** When work won't be done
-    now (a follow-up, a "future cycle", a parked idea, a "we should also…"),
-    file it as a backlog item in `dev-notes/backlog/`, never a vague
-    "defer"/"later". The backlog folder is the index; a deferral that isn't
-    an item is invisible. Prefer over-capturing a small item to dropping it.
-    (Distinct from the framework's practice-8 anti-deferral, which is about
-    shipping *classifiable fixes* now; this is about making *any* not-now
-    work an explicit tracked item.)
-  - **Filing-shape classification — *where* to file, not *whether*.**
-    The no-silent-deferral rule above is absolute: **always capture**, including
-    items that seem mundane. This classification is purely about *which artifact
-    best holds the capture* — never a reason to hesitate or skip. **When uncertain
-    about shape, default to a backlog item.** You can relocate later; capturing
-    in the wrong shape costs almost nothing, not capturing costs the whole item.
-    
-    Shapes (in order of catch-all-ness):
-    - **Backlog item** in `dev-notes/backlog/<slug>.md` — **the default.** Holds
-      any future work, follow-up, parked idea, design question, or "we should
-      also…" — whether or not it ever maps to an anneal-dev cycle. When in doubt,
-      this.
-    - **V-entry** in `dev-notes/validation-watch/V-<N>-<slug>.md` — a **post-ship
-      effect-watch**: an empirical claim about whether an *already-shipped* fix or
-      choice holds, watched for recurrence. Carries `watch-kind` + `catcher` + closing
-      rule. **Never holds an un-implemented change** — a not-yet-built gap is a backlog
-      item, and a V-entry that fires spawns one. Lighter than a backlog item.
-    - **Cross-reference in an existing item's `relates-to` block** — when the
-      capture *auto-closes when item X lands*; a separate file just for the
-      closure-by-dependency adds noise without information.
-    - **Row in `instance-reinstantiation`** matrix or render-debt queue — when
-      the capture is a *render-follow obligation* on instances after a shipped
-      spec change.
-    - **Folded into an in-flight item** — when the capture is a *scope-sharpening
-      of an item already mid-cycle* (e.g., broadening one of an active sweep's
-      moves), the in-flight item is its home; a sibling file fragments the work.
-    
-    The classification keeps the index legible — the right shape makes a capture
-    easier to find later. It never reduces the *rate* of capture; capture stays
-    absolute.
+  - **No silent deferral — file, don't defer.** Work not done now (a
+    follow-up, a parked idea, a "we should also…") becomes an entry
+    in root `BACKLOG.md` — ready (decision-complete) or parked (with
+    its named missing evidence or trigger) — never a vague
+    "defer"/"later" in chat. Post-ship effect-watches (the former
+    V-entry role) are parked entries carrying their closing rule.
+    Prefer over-capturing a small entry to dropping it.
   - Verify subagent IDs / SHAs from a compaction summary against the
     transcript before citing them in evidence-bearing artifacts.
